@@ -1,0 +1,408 @@
+openapi: 3.0.1
+info:
+  title: Onshape REST Account Insertable API
+  description: '## Welcome to the Onshape REST API Explorer
+
+
+    **See the [API Explorer Guide](https://onshape-public.github.io/docs/api-intro/explorer/) for help navigating this page.**
+
+
+    ### Using this page
+
+    1. Sign in to your [Onshape](https://cad.onshape.com) account in another tab.
+
+    2. Click the `Try it out` button below. It toggles to a `Cancel` button when selected.
+
+
+    ### Authenticating
+
+    To authenticate your calls, click the `Authorize` button. See [API Explorer Guide: Authentication](https://onshape-public.github.io/docs/api-intro/explorer/#authentication) for details. Calls made when authenticated via API Keys or OAuth count against your annual [API limits](https://onshape-public.github.io/docs/auth/limits/#annual-api-call-limits).
+
+    * **Tip:** To ensure the current session isn''t used when trying other authentication techniques, make sure to [remove the Onshape cookie](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site) as per the instructions for your browser, or use a private or incognito window.
+
+
+    ### Additional resources
+
+
+    * [Onshape API Guide](https://onshape-public.github.io/docs/): Our full suite of developer guides, to be used as an accompaniment to this API Explorer.
+
+    * [Onshape Developer Portal](https://cad.onshape.com/appstore/dev-portal): The Onshape portal for managing your API keys, OAuth2 credentials, your Onshape applications, and your Onshape App Store entries.
+
+    * [Authentication Guide](https://onshape-public.github.io/docs/auth/): Our guide to using API keys, request signatures, and OAuth2 in your Onshape applications.'
+  termsOfService: https://www.onshape.com/legal/terms-of-use
+  contact:
+    email: api-support@onshape.zendesk.com
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  version: 1.218.84032-34acba44be17
+  x-logo:
+    url: images/logo-onshape-gray-green-nav-bar.svg
+    backgroundColor: '#ffffff'
+    altText: Onshape
+    href: images/logo-onshape-gray-green-nav-bar.svg
+  x-indeterministic-schemas:
+  - BTDiffInfo
+  - BTParameterSpecArray-2600
+  - BTSplineDescription-2118
+  - NodeModel
+  - BTPFunctionDeclaration-246
+  - BTPFunctionOrPredicateDeclaration-247
+  - BTPExpression-9
+  - SkinModel
+  - BTMAnnotation-4664
+  x-filter-info: ?restUserRole=PUBLIC
+servers:
+- url: https://cad.onshape.com/api/v16
+  description: Current
+security:
+- BasicAuth: []
+tags:
+- name: Insertable
+  description: Access the list of things that can be inserted into a document.
+paths:
+  /insertables/d/{did}/latest:
+    get:
+      tags:
+      - Insertable
+      summary: Get a list of things in this document that can be inserted elsewhere.
+      description: "* Returns only the latest revision of released insertables. \n* Use the document ID (`did`) parameter to specify the source document, not the insertion target. \n* For example, you can insert a custom Feature library into another custom Feature library, insert Parts into an Assembly or a Drawing, etc."
+      operationId: getLatestInDocument
+      parameters:
+      - name: did
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: includeParts
+        in: query
+        schema:
+          type: boolean
+          default: false
+      - name: includeSurfaces
+        in: query
+        schema:
+          type: boolean
+          default: false
+      - name: includeSketches
+        in: query
+        schema:
+          type: boolean
+          default: false
+      - name: includeReferenceFeatures
+        in: query
+        schema:
+          type: boolean
+          default: false
+      - name: includeAssemblies
+        in: query
+        schema:
+          type: boolean
+          default: false
+      - name: includeFeatureStudios
+        in: query
+        schema:
+          type: boolean
+          default: false
+      - name: includeBlobs
+        in: query
+        schema:
+          type: boolean
+          default: false
+      - name: allowedBlobMimeTypes
+        in: query
+        schema:
+          type: string
+          default: ''
+      - name: excludeNewerFSVersions
+        in: query
+        schema:
+          type: boolean
+          default: false
+      - name: maxFeatureScriptVersion
+        in: query
+        schema:
+          type: integer
+          format: int32
+      - name: includePartStudios
+        in: query
+        schema:
+          type: boolean
+          default: false
+      - name: includeFeatures
+        in: query
+        schema:
+          type: boolean
+          default: false
+      - name: includeMeshes
+        in: query
+        schema:
+          type: boolean
+          default: false
+      - name: includeWires
+        in: query
+        schema:
+          type: boolean
+          default: false
+      - name: includeFlattenedBodies
+        in: query
+        schema:
+          type: boolean
+          default: false
+      - name: includeApplications
+        in: query
+        schema:
+          type: boolean
+          default: false
+      - name: allowedApplicationMimeTypes
+        in: query
+        schema:
+          type: string
+          default: ''
+      - name: includeCompositeParts
+        in: query
+        schema:
+          type: boolean
+          default: false
+      - name: includeFSTables
+        in: query
+        schema:
+          type: boolean
+          default: false
+      - name: includeFSComputedPartPropertyFunctions
+        in: query
+        schema:
+          type: boolean
+          default: false
+      - name: includeVariables
+        in: query
+        schema:
+          type: boolean
+          default: false
+      - name: includeVariableStudios
+        in: query
+        schema:
+          type: boolean
+          default: false
+      - name: allowedBlobExtensions
+        in: query
+        schema:
+          type: string
+          default: ''
+      - name: isObsoletion
+        in: query
+        schema:
+          type: boolean
+          default: false
+      responses:
+        default:
+          description: default response
+          content:
+            application/json;charset=UTF-8; qs=0.09:
+              schema:
+                $ref: '#/components/schemas/BTListResponseBTInsertableInfo'
+      deprecated: false
+      security:
+      - OAuth2:
+        - OAuth2Read
+        BasicAuth:
+        - OAuth2Read
+      x-BTVisibility: PRODUCTION
+components:
+  schemas:
+    GBTMeshState:
+      type: string
+      enum:
+      - NO_MESH
+      - MIXED
+      - ALL_MESH
+      - UNKNOWN
+    BTInsertableInfo:
+      type: object
+      properties:
+        areFaultsIgnored:
+          type: boolean
+        bodyType:
+          $ref: '#/components/schemas/GBTBodyType'
+        classType:
+          type: integer
+          format: int32
+        configuration:
+          type: string
+        configurationParameterValues:
+          type: array
+          items:
+            type: string
+            format: byte
+        configurationParameters:
+          type: array
+          items:
+            type: string
+            format: byte
+        dataType:
+          type: string
+        deterministicId:
+          type: string
+        documentId:
+          type: string
+        elementId:
+          type: string
+        elementName:
+          type: string
+        elementType:
+          $ref: '#/components/schemas/GBTElementType'
+        featureId:
+          type: string
+        featureName:
+          type: string
+        featureSpec:
+          type: array
+          items:
+            type: string
+            format: byte
+        featureType:
+          type: string
+        fsComputedPartPropertySpec:
+          type: array
+          items:
+            type: string
+            format: byte
+        fsTableSpec:
+          type: array
+          items:
+            type: string
+            format: byte
+        hasFaults:
+          type: boolean
+        href:
+          type: string
+          description: URI to fetch complete information of the resource.
+          format: uri
+        id:
+          type: string
+          description: Id of the resource.
+        insertableQuery:
+          type: string
+        isFlattenedBody:
+          type: boolean
+        isMesh:
+          type: boolean
+        meshState:
+          $ref: '#/components/schemas/GBTMeshState'
+        microversionId:
+          type: string
+        name:
+          type: string
+          description: Name of the resource.
+        parentId:
+          type: string
+        partIdentity:
+          type: string
+        partName:
+          type: string
+        predictableThumbnailId:
+          type: string
+        sourceFileExtension:
+          type: string
+        thumbnailUri:
+          type: string
+        unflattenedPartDeterministicId:
+          type: string
+        variableName:
+          type: string
+        versionId:
+          type: string
+        versionName:
+          type: string
+        viewRef:
+          type: string
+          description: URI to visualize the resource in a webclient if applicable.
+          format: uri
+        workspaceId:
+          type: string
+        workspaceName:
+          type: string
+      description: Array of items in the current page.
+    GBTBodyType:
+      type: string
+      enum:
+      - SOLID
+      - SHEET
+      - WIRE
+      - POINT
+      - MATE_CONNECTOR
+      - COMPOSITE
+      - UNKNOWN
+    BTListResponseBTInsertableInfo:
+      type: object
+      properties:
+        href:
+          type: string
+          description: URI for current page of resources.
+          format: uri
+        items:
+          type: array
+          description: Array of items in the current page.
+          items:
+            $ref: '#/components/schemas/BTInsertableInfo'
+        next:
+          type: string
+          description: URI for next page of the resources if more are available.
+          format: uri
+        previous:
+          type: string
+          description: URI for previous page of the resources.
+          format: uri
+      description: A list of resources that typically supports paging.
+    GBTElementType:
+      type: string
+      enum:
+      - PARTSTUDIO
+      - ASSEMBLY
+      - DRAWING
+      - FEATURESTUDIO
+      - BLOB
+      - APPLICATION
+      - TABLE
+      - BILLOFMATERIALS
+      - VARIABLESTUDIO
+      - PUBLICATIONITEM
+      - UNKNOWN
+  securitySchemes:
+    OAuth2:
+      type: oauth2
+      description: Use OAuth 2.0 to authenticate requests.
+      flows:
+        authorizationCode:
+          authorizationUrl: /oauth/authorize
+          tokenUrl: /oauth/token
+          refreshUrl: /oauth/token
+          scopes:
+            OAuth2Internal: Application is Onshape Internal
+            OAuth2ReadPII: Application can read your profile information
+            OAuth2Read: Application can read your documents
+            OAuth2Write: Application can write to your documents
+            OAuth2Delete: Application can delete your documents and workspaces
+            OAuth2Purchase: Application can request purchases on your behalf
+            OAuth2Share: Application can share and unshare documents on your behalf
+            document.create: Atlas Application can create a document
+            document.edit: Atlas Application can edit a document
+            document.delete: Atlas Application can delete a document
+            document.read: Atlas Application can read a document
+            enterprise.create: Atlas Application can create an enterprise
+            enterprise.read: Atlas Application can read from an enterprise
+            enterprise.edit: Atlas Application can edit an enterprise
+            enterprise.delete: Atlas Application can delete an enterprise
+            enterprise.member.create: Atlas Application can create an enterprise member
+            enterprise.member.read: Atlas Application can read the details of an enterprise member
+            enterprise.member.edit: Atlas Application can edit the details of an enterprise member
+            enterprise.member.delete: Atlas Application can delete a member from an enterprise
+            webhook.create: Atlas Application can create a webhook on behalf of the logged-in user
+            webhook.edit: Atlas Application can edit a webhook on behalf of the logged-in user
+            webhook.read: Atlas Application can read a webhook on behalf of the logged-in user
+            webhook.delete: Atlas Application can delete a webhook on behalf of the logged-in user
+            PLMIntegration: PLM automation can invoke limited operations
+    BasicAuth:
+      type: http
+      description: Use Basic Authentication with API Keys (key as username and secret as password) to authenticate requests.
+      scheme: basic

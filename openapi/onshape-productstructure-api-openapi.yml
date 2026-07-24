@@ -1,0 +1,563 @@
+openapi: 3.0.1
+info:
+  title: Onshape REST Account ProductStructure API
+  description: '## Welcome to the Onshape REST API Explorer
+
+
+    **See the [API Explorer Guide](https://onshape-public.github.io/docs/api-intro/explorer/) for help navigating this page.**
+
+
+    ### Using this page
+
+    1. Sign in to your [Onshape](https://cad.onshape.com) account in another tab.
+
+    2. Click the `Try it out` button below. It toggles to a `Cancel` button when selected.
+
+
+    ### Authenticating
+
+    To authenticate your calls, click the `Authorize` button. See [API Explorer Guide: Authentication](https://onshape-public.github.io/docs/api-intro/explorer/#authentication) for details. Calls made when authenticated via API Keys or OAuth count against your annual [API limits](https://onshape-public.github.io/docs/auth/limits/#annual-api-call-limits).
+
+    * **Tip:** To ensure the current session isn''t used when trying other authentication techniques, make sure to [remove the Onshape cookie](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site) as per the instructions for your browser, or use a private or incognito window.
+
+
+    ### Additional resources
+
+
+    * [Onshape API Guide](https://onshape-public.github.io/docs/): Our full suite of developer guides, to be used as an accompaniment to this API Explorer.
+
+    * [Onshape Developer Portal](https://cad.onshape.com/appstore/dev-portal): The Onshape portal for managing your API keys, OAuth2 credentials, your Onshape applications, and your Onshape App Store entries.
+
+    * [Authentication Guide](https://onshape-public.github.io/docs/auth/): Our guide to using API keys, request signatures, and OAuth2 in your Onshape applications.'
+  termsOfService: https://www.onshape.com/legal/terms-of-use
+  contact:
+    email: api-support@onshape.zendesk.com
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  version: 1.218.84032-34acba44be17
+  x-logo:
+    url: images/logo-onshape-gray-green-nav-bar.svg
+    backgroundColor: '#ffffff'
+    altText: Onshape
+    href: images/logo-onshape-gray-green-nav-bar.svg
+  x-indeterministic-schemas:
+  - BTDiffInfo
+  - BTParameterSpecArray-2600
+  - BTSplineDescription-2118
+  - NodeModel
+  - BTPFunctionDeclaration-246
+  - BTPFunctionOrPredicateDeclaration-247
+  - BTPExpression-9
+  - SkinModel
+  - BTMAnnotation-4664
+  x-filter-info: ?restUserRole=PUBLIC
+servers:
+- url: https://cad.onshape.com/api/v16
+  description: Current
+security:
+- BasicAuth: []
+tags:
+- name: ProductStructure
+  description: Access information on how entities are structured within designs and documents.
+paths:
+  /productstructure/whereused:
+    get:
+      tags:
+      - ProductStructure
+      summary: Find where a part or assembly is used.
+      description: 'Only supported for Enterprise and Professional plans. See [Dev Docs: Where Used](https://onshape-public.github.io/docs/api-adv/relmgmt/#where-used) for a tutorial on using this endpoint.'
+      operationId: getWhereUsed
+      parameters:
+      - name: documentId
+        in: query
+        description: Document that contains the part or assembly.
+        schema:
+          type: string
+      - name: elementId
+        in: query
+        description: Element that contains the part or assembly.
+        schema:
+          type: string
+      - name: versionId
+        in: query
+        description: Version that contains the part or assembly. One of `versionId` and `useLatestVersion` is required.
+        schema:
+          type: string
+      - name: configuration
+        in: query
+        description: URL-encoded string of configuration values (separated by `;`). See the [Configurations API Guide](https://onshape-public.github.io/docs/api-adv/configs/) for details.
+        schema:
+          type: string
+      - name: partId
+        in: query
+        description: Part to find. When `elementId` is a Part Studio, `partId` or `partNumber` is required. Call [getPartsWMVE](https://cad.onshape.com/glassworks/explorer/#/Part/getPartsWMVE) to get a list of parts in the Part Studio.
+        schema:
+          type: string
+      - name: partNumber
+        in: query
+        description: Part to find. When `elementId` is a Part Studio, `partId` or `partNumber` is required. Call [getPartsWMVE](https://cad.onshape.com/glassworks/explorer/#/Part/getPartsWMVE) to get a list of parts in the Part Studio.
+        schema:
+          type: string
+      - name: includeProperties
+        in: query
+        description: If true, include metadata properties for each result item.
+        schema:
+          type: boolean
+          default: false
+      - name: filter
+        in: query
+        description: 'Filter results by one of the following:  `0: LATEST_REVISION, 1: ALL_REVISIONS, 2: ALL_VERSIONS (default), 3: ALL, 5: LATEST_VERSIONS, 6: MOST_RECENT_REVISION`.'
+        schema:
+          type: integer
+          format: int32
+      - name: includeVersionInfo
+        in: query
+        description: If `true`, include the list of document versions in which the queried item has been referenced by other documents. Each entry contains the version ID and name.
+        schema:
+          type: boolean
+      - name: useLatestVersion
+        in: query
+        description: If `true`, automatically resolves to the most recent referenced document version for the queried item. One of `versionId` and `useLatestVersion` is required.
+        schema:
+          type: boolean
+          default: false
+      - name: limitToTypes
+        in: query
+        description: 'Comma-separated list of element types to limit results to. Valid values: `0: PARTSTUDIO, 1: ASSEMBLY, 2: DRAWING`.'
+        schema:
+          pattern: ^(\d(,\d)*)*$
+          type: string
+          default: ''
+      responses:
+        '200':
+          description: Success!
+          content:
+            application/json;charset=UTF-8; qs=0.09:
+              schema:
+                $ref: '#/components/schemas/BTWhereUsedItemInfoList'
+      deprecated: false
+      security:
+      - OAuth2:
+        - OAuth2Read
+        BasicAuth:
+        - OAuth2Read
+      x-BTVisibility: PRODUCTION
+components:
+  schemas:
+    BTThumbnailInfo:
+      type: object
+      properties:
+        href:
+          type: string
+          format: uri
+        id:
+          type: string
+        secondarySizes:
+          type: array
+          items:
+            type: array
+            items:
+              $ref: '#/components/schemas/BTThumbnailSizeInfo'
+        sizes:
+          type: array
+          items:
+            $ref: '#/components/schemas/BTThumbnailSizeInfo'
+    BTWhereUsedItemInfoList:
+      type: object
+      properties:
+        defaultConfig:
+          type: array
+          description: The resolved default configuration parameters for the queried element. Only populated when the configuration query parameter is set to 'default'.
+          items:
+            $ref: '#/components/schemas/ConfigInfo'
+        href:
+          type: string
+          description: URI for current page of resources.
+          format: uri
+        items:
+          type: array
+          description: Array of items in the current page.
+          items:
+            $ref: '#/components/schemas/BTProductStructureItemInfo'
+        next:
+          type: string
+          description: URI for next page of the resources if more are available.
+          format: uri
+        previous:
+          type: string
+          description: URI for previous page of the resources.
+          format: uri
+        versions:
+          type: array
+          description: List of document versions in which the queried item is referenced. Each entry contains the version info, referring document and element details, configuration, revision, and part identifiers. Only populated when includeVersionInfo is true.
+          items:
+            $ref: '#/components/schemas/BTWhereUsedVersionReferencedInfo'
+      x-BTVisibility-properties:
+        someResultsOmitted: INTERNAL
+        permissionSet: INTERNAL
+        someFailedCaptureResultsOmitted: INTERNAL
+        failedCaptureDocs: INTERNAL
+        pathToRoot: INTERNAL
+        status: INTERNAL
+    BTThumbnailSizeInfo:
+      type: object
+      properties:
+        href:
+          type: string
+          format: uri
+        mediaType:
+          type: string
+        renderMode:
+          type: string
+        sheetName:
+          type: string
+        size:
+          type: string
+        uniqueId:
+          type: string
+        viewOrientation:
+          type: string
+    BTUserBasicSummaryInfo:
+      required:
+      - jsonType
+      type: object
+      properties:
+        jsonType:
+          type: string
+      discriminator:
+        propertyName: jsonType
+        mapping:
+          user-summary: '#/components/schemas/BTUserBasicSummaryInfo'
+          user-detail-summary: '#/components/schemas/BTUserDetailSummaryInfo'
+      allOf:
+      - $ref: '#/components/schemas/BTBaseInfo'
+      - type: object
+        properties:
+          href:
+            type: string
+            description: URI to fetch complete information of the resource.
+            format: uri
+          id:
+            type: string
+            description: Id of the resource.
+          image:
+            type: string
+          isOnshapeSupport:
+            type: boolean
+          name:
+            type: string
+            description: Name of the resource.
+          state:
+            type: integer
+            format: int32
+          viewRef:
+            type: string
+            description: URI to visualize the resource in a webclient if applicable.
+            format: uri
+    Property:
+      type: object
+      properties:
+        id:
+          type: string
+          description: The property ID.
+        name:
+          type: string
+          description: The property name.
+        type:
+          type: string
+          description: The data type of the property.
+        value:
+          type: string
+          description: The property value.
+      description: Standard metadata properties of the item.
+      x-BTVisibility-properties:
+        sortable: INTERNAL
+    BTBaseInfo:
+      type: object
+      properties:
+        href:
+          type: string
+          description: URI to fetch complete information of the resource.
+          format: uri
+        id:
+          type: string
+          description: Id of the resource.
+        name:
+          type: string
+          description: Name of the resource.
+        viewRef:
+          type: string
+          description: URI to visualize the resource in a webclient if applicable.
+          format: uri
+    ConfigInfo:
+      type: object
+      properties:
+        displayValue:
+          type: string
+          description: The formatted display value of the configuration parameter.
+        displayValueAbbrUnit:
+          type: string
+          description: The abbreviated display value with unit for the configuration parameter.
+        id:
+          type: string
+          description: The configuration parameter ID.
+        name:
+          type: string
+          description: The configuration parameter name.
+        type:
+          type: integer
+          description: 'The configuration parameter type. `0: ENUM | 1: BOOLEAN | 2: STRING | 3: QUANTITY`'
+          format: int32
+        value:
+          type: string
+          description: The raw value of the configuration parameter.
+      description: The configuration parameters of the referring element.
+      x-BTVisibility-properties:
+        isCosmetic: INTERNAL
+        isVisible: INTERNAL
+    BTProductStructureItemInfo:
+      required:
+      - jsonType
+      type: object
+      properties:
+        jsonType:
+          type: string
+      description: Array of items in the current page.
+      discriminator:
+        propertyName: jsonType
+        mapping:
+          product-structure-item-base: '#/components/schemas/BTProductStructureItemInfo'
+          product-part: '#/components/schemas/BTProductStructurePartInfo'
+          product-element: '#/components/schemas/BTProductStructureElementInfo'
+      allOf:
+      - $ref: '#/components/schemas/BTBaseInfo'
+      - type: object
+        properties:
+          configuration:
+            type: array
+            description: The configuration parameters of the referring element.
+            items:
+              $ref: '#/components/schemas/ConfigInfo'
+          documentId:
+            type: string
+            description: The document ID of the referring element.
+          documentName:
+            type: string
+            description: The name of the document containing the referring element.
+          documentState:
+            type: integer
+            format: int32
+          elementId:
+            type: string
+            description: The element ID of the referring element.
+          elementType:
+            type: integer
+            description: The element type ordinal of the referring element.
+            format: int32
+          flattenedBody:
+            type: boolean
+            description: Whether the item represents a flattened sheet metal body.
+          folderId:
+            type: string
+            description: The folder ID containing the document.
+          hasDrawing:
+            type: boolean
+            description: Whether the item has an associated drawing.
+          href:
+            type: string
+            description: URI to fetch complete information of the resource.
+            format: uri
+          id:
+            type: string
+            description: Id of the resource.
+          latestRevision:
+            type: boolean
+            description: Whether this item is the latest revision.
+          name:
+            type: string
+            description: Name of the resource.
+          notRevisionManaged:
+            type: boolean
+            description: Whether this item is not revision-managed.
+          partNumber:
+            type: string
+            description: The part number of the referring element.
+          projectId:
+            type: string
+            description: The project ID associated with the document.
+          properties:
+            type: array
+            description: Custom metadata properties of the item. Only populated when includeProperties is true.
+            items:
+              $ref: '#/components/schemas/BTMetadataValueInfo'
+          resourceType:
+            type: string
+            description: The resource type of this item.
+          revision:
+            type: string
+            description: The revision of the referring element.
+          revisionObsolete:
+            type: boolean
+            description: Whether the revision is obsolete.
+          standardProperties:
+            type: array
+            description: Standard metadata properties of the item.
+            items:
+              $ref: '#/components/schemas/Property'
+          thumbnail:
+            $ref: '#/components/schemas/BTThumbnailInfo'
+          thumbnailHref:
+            type: string
+            description: The thumbnail href URI for the referring element.
+            format: uri
+          versionId:
+            type: string
+            description: The version ID of the document containing the referring element.
+          versionName:
+            type: string
+            description: The version name of the document containing the referring element.
+          viewRef:
+            type: string
+            description: URI to visualize the resource in a webclient if applicable.
+            format: uri
+          wvCreatedAt:
+            type: string
+            description: The timestamp when the version or workspace was created.
+            format: date-time
+      x-BTVisibility-properties:
+        peerPartNumber: INTERNAL
+        peerWvType: INTERNAL
+        meshState: INTERNAL
+        peerOwnerId: INTERNAL
+        peerOutOfDateDocumentMv: INTERNAL
+        documentSummary: INTERNAL
+        peerPartName: INTERNAL
+        peerConfiguration: INTERNAL
+        peerElementId: INTERNAL
+        peerElementType: INTERNAL
+        thumbnailId: INTERNAL
+        workspaceName: INTERNAL
+        peerWvId: INTERNAL
+        peerDocumentId: INTERNAL
+        peerPartId: INTERNAL
+        workspaceId: INTERNAL
+    BTDocumentBaseSummaryInfo:
+      type: object
+      properties:
+        createdBy:
+          $ref: '#/components/schemas/BTUserBasicSummaryInfo'
+        href:
+          type: string
+          description: URI to fetch complete information of the resource.
+          format: uri
+        id:
+          type: string
+          description: Id of the resource.
+        modifiedBy:
+          $ref: '#/components/schemas/BTUserBasicSummaryInfo'
+        name:
+          type: string
+          description: Name of the resource.
+        state:
+          type: integer
+          format: int32
+        storageSize:
+          type: integer
+          format: int64
+        viewRef:
+          type: string
+          description: URI to visualize the resource in a webclient if applicable.
+          format: uri
+      description: Summary information about the document containing the reference.
+    BTMetadataValueInfo:
+      required:
+      - jsonType
+      type: object
+      properties:
+        jsonType:
+          type: string
+        propertyId:
+          type: string
+        value:
+          type: string
+      description: Custom metadata properties of the item. Only populated when includeProperties is true.
+      discriminator:
+        propertyName: jsonType
+    BTWhereUsedVersionReferencedInfo:
+      type: object
+      properties:
+        configuration:
+          type: array
+          description: The configuration parameters of the referenced item in this version.
+          items:
+            $ref: '#/components/schemas/ConfigInfo'
+        createdAt:
+          type: string
+          description: The timestamp when this version was created.
+          format: date-time
+        document:
+          $ref: '#/components/schemas/BTDocumentBaseSummaryInfo'
+        elementId:
+          type: string
+          description: The element ID of the referring element in this version.
+        elementType:
+          type: integer
+          description: The element type ordinal of the referring element.
+          format: int32
+        partId:
+          type: string
+          description: The part ID of the referenced item.
+        partName:
+          type: string
+          description: The part name of the referenced item.
+        partNumber:
+          type: string
+          description: The part number of the referenced item.
+        revision:
+          type: string
+          description: The revision id of the referenced item.
+        revisionObsolete:
+          type: boolean
+          description: Whether the revision of this item is obsolete.
+        version:
+          $ref: '#/components/schemas/BTBaseInfo'
+      description: List of document versions in which the queried item is referenced. Each entry contains the version info, referring document and element details, configuration, revision, and part identifiers. Only populated when includeVersionInfo is true.
+  securitySchemes:
+    OAuth2:
+      type: oauth2
+      description: Use OAuth 2.0 to authenticate requests.
+      flows:
+        authorizationCode:
+          authorizationUrl: /oauth/authorize
+          tokenUrl: /oauth/token
+          refreshUrl: /oauth/token
+          scopes:
+            OAuth2Internal: Application is Onshape Internal
+            OAuth2ReadPII: Application can read your profile information
+            OAuth2Read: Application can read your documents
+            OAuth2Write: Application can write to your documents
+            OAuth2Delete: Application can delete your documents and workspaces
+            OAuth2Purchase: Application can request purchases on your behalf
+            OAuth2Share: Application can share and unshare documents on your behalf
+            document.create: Atlas Application can create a document
+            document.edit: Atlas Application can edit a document
+            document.delete: Atlas Application can delete a document
+            document.read: Atlas Application can read a document
+            enterprise.create: Atlas Application can create an enterprise
+            enterprise.read: Atlas Application can read from an enterprise
+            enterprise.edit: Atlas Application can edit an enterprise
+            enterprise.delete: Atlas Application can delete an enterprise
+            enterprise.member.create: Atlas Application can create an enterprise member
+            enterprise.member.read: Atlas Application can read the details of an enterprise member
+            enterprise.member.edit: Atlas Application can edit the details of an enterprise member
+            enterprise.member.delete: Atlas Application can delete a member from an enterprise
+            webhook.create: Atlas Application can create a webhook on behalf of the logged-in user
+            webhook.edit: Atlas Application can edit a webhook on behalf of the logged-in user
+            webhook.read: Atlas Application can read a webhook on behalf of the logged-in user
+            webhook.delete: Atlas Application can delete a webhook on behalf of the logged-in user
+            PLMIntegration: PLM automation can invoke limited operations
+    BasicAuth:
+      type: http
+      description: Use Basic Authentication with API Keys (key as username and secret as password) to authenticate requests.
+      scheme: basic

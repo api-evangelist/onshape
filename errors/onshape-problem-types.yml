@@ -1,0 +1,34 @@
+generated: '2026-07-20'
+method: derived
+source: openapi/onshape-openapi-original.json
+format: json
+notes: >-
+  Onshape does not use RFC 9457 application/problem+json; errors are returned as a
+  JSON body with an HTTP status code and a human-readable message. The OpenAPI spec
+  models most error responses as a generic `default` response, so this catalog is
+  derived from the standard HTTP status codes Onshape returns plus the documented
+  rate-limit behavior.
+envelope:
+  fields: [status, message, code, moreInfoUrl]
+problems:
+  - status: 400
+    title: Bad Request
+    remediation: The request was malformed or a parameter was invalid; check the request body and query parameters.
+  - status: 401
+    title: Unauthorized
+    remediation: Authentication is missing or invalid; re-check API key signature or OAuth token.
+  - status: 403
+    title: Forbidden
+    remediation: The authenticated principal lacks permission (or OAuth scope) for the target document/resource.
+  - status: 404
+    title: Not Found
+    remediation: The referenced document (did), element (eid), or workspace/version was not found.
+  - status: 429
+    title: Too Many Requests
+    remediation: Per-endpoint rate limit exceeded; back off and retry. See rate-limits/onshape-rate-limits.yml.
+  - status: 402
+    title: Payment Required
+    remediation: The company/user annual API call quota is exhausted; contact Onshape to purchase additional calls.
+  - status: 500
+    title: Internal Server Error
+    remediation: An unexpected server error occurred; retry with backoff and contact api-support@onshape.com if it persists.

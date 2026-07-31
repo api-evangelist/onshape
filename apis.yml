@@ -1,22 +1,637 @@
 aid: onshape
 name: Onshape
-description: Onshape is a company surfaced as a portfolio company of a16z and added to the API Evangelist
-  network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+description: >-
+  Onshape is a cloud-native computer-aided design (CAD) and product data management
+  (PDM) platform, part of PTC, that runs entirely in a web browser with real-time
+  collaboration, versioning, and configurations. Its public REST API (OpenAPI 3.0.1,
+  base https://cad.onshape.com/api/v16) exposes documents, workspaces, versions and
+  microversions, Part Studios, parts, assemblies, drawings, metadata, translations
+  (CAD import/export), release management, and webhooks. Authentication is via OAuth 2.0
+  or HMAC-signed API keys, with offset/limit pagination and per-endpoint plus annual
+  API call limits. Onshape was surfaced as an a16z portfolio company and enriched with
+  its real developer surface by the API Evangelist pipeline.
 url: https://raw.githubusercontent.com/api-evangelist/onshape/refs/heads/main/apis.yml
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://github.com/onshape-public.png
 x-type: company
 x-source: vc-portfolio
 x-backed-by:
 - a16z
-x-tier: stub
-x-tier-reason: portfolio-lead
+x-tier: profiled
+x-tier-reason: enriched-from-real-api-surface
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-20'
 tags:
 - Company
-apis: []
+- CAD
+- PLM
+- Product Data Management
+- Engineering
+- Manufacturing
+- Design
+- Cloud
+- Developer Tools
+apis:
+- aid: onshape:onshape-account-api
+  name: Onshape Account API
+  description: Manage user purchases, subscriptions, and consumables.
+  humanURL: https://onshape-public.github.io/docs/
+  baseURL: https://cad.onshape.com/api/v16
+  tags:
+  - Account
+  properties:
+  - type: OpenAPI
+    url: openapi/onshape-account-api-openapi.yml
+  - type: APIReference
+    url: https://cad.onshape.com/glassworks/explorer/
+- aid: onshape:onshape-alias-api
+  name: Onshape Alias API
+  description: Create and manage enterprise aliases. (Enterprise admins only.)
+  humanURL: https://onshape-public.github.io/docs/
+  baseURL: https://cad.onshape.com/api/v16
+  tags:
+  - Alias
+  properties:
+  - type: OpenAPI
+    url: openapi/onshape-alias-api-openapi.yml
+  - type: APIReference
+    url: https://cad.onshape.com/glassworks/explorer/
+- aid: onshape:onshape-apiapplication-api
+  name: Onshape APIApplication API
+  description: Manage application preferences.
+  humanURL: https://onshape-public.github.io/docs/
+  baseURL: https://cad.onshape.com/api/v16
+  tags:
+  - APIApplication
+  properties:
+  - type: OpenAPI
+    url: openapi/onshape-apiapplication-api-openapi.yml
+  - type: APIReference
+    url: https://cad.onshape.com/glassworks/explorer/
+- aid: onshape:onshape-appassociativedata-api
+  name: Onshape AppAssociativeData API
+  description: >-
+    Manage the application-specific metadata that associates application data with Onshape data.
+  humanURL: https://onshape-public.github.io/docs/
+  baseURL: https://cad.onshape.com/api/v16
+  tags:
+  - AppAssociativeData
+  properties:
+  - type: OpenAPI
+    url: openapi/onshape-appassociativedata-api-openapi.yml
+  - type: APIReference
+    url: https://cad.onshape.com/glassworks/explorer/
+- aid: onshape:onshape-appelement-api
+  name: Onshape AppElement API
+  description: Access and modify application elements.
+  humanURL: https://onshape-public.github.io/docs/
+  baseURL: https://cad.onshape.com/api/v16
+  tags:
+  - AppElement
+  properties:
+  - type: OpenAPI
+    url: openapi/onshape-appelement-api-openapi.yml
+  - type: APIReference
+    url: https://cad.onshape.com/glassworks/explorer/
+- aid: onshape:onshape-assembly-api
+  name: Onshape Assembly API
+  description: Create and manage assemblies.
+  humanURL: https://onshape-public.github.io/docs/
+  baseURL: https://cad.onshape.com/api/v16
+  tags:
+  - Assembly
+  properties:
+  - type: OpenAPI
+    url: openapi/onshape-assembly-api-openapi.yml
+  - type: APIReference
+    url: https://cad.onshape.com/glassworks/explorer/
+- aid: onshape:onshape-billing-api
+  name: Onshape Billing API
+  description: Get billing plan data for applications.
+  humanURL: https://onshape-public.github.io/docs/
+  baseURL: https://cad.onshape.com/api/v16
+  tags:
+  - Billing
+  properties:
+  - type: OpenAPI
+    url: openapi/onshape-billing-api-openapi.yml
+  - type: APIReference
+    url: https://cad.onshape.com/glassworks/explorer/
+- aid: onshape:onshape-blobelement-api
+  name: Onshape BlobElement API
+  description: Create, modify, and translate blob elements.
+  humanURL: https://onshape-public.github.io/docs/
+  baseURL: https://cad.onshape.com/api/v16
+  tags:
+  - BlobElement
+  properties:
+  - type: OpenAPI
+    url: openapi/onshape-blobelement-api-openapi.yml
+  - type: APIReference
+    url: https://cad.onshape.com/glassworks/explorer/
+- aid: onshape:onshape-comment-api
+  name: Onshape Comment API
+  description: Create, read, update, and delete comments.
+  humanURL: https://onshape-public.github.io/docs/
+  baseURL: https://cad.onshape.com/api/v16
+  tags:
+  - Comment
+  properties:
+  - type: OpenAPI
+    url: openapi/onshape-comment-api-openapi.yml
+  - type: APIReference
+    url: https://cad.onshape.com/glassworks/explorer/
+- aid: onshape:onshape-company-api
+  name: Onshape Company API
+  description: Access company information.
+  humanURL: https://onshape-public.github.io/docs/
+  baseURL: https://cad.onshape.com/api/v16
+  tags:
+  - Company
+  properties:
+  - type: OpenAPI
+    url: openapi/onshape-company-api-openapi.yml
+  - type: APIReference
+    url: https://cad.onshape.com/glassworks/explorer/
+- aid: onshape:onshape-document-api
+  name: Onshape Document API
+  description: Create and manage documents.
+  humanURL: https://onshape-public.github.io/docs/
+  baseURL: https://cad.onshape.com/api/v16
+  tags:
+  - Document
+  properties:
+  - type: OpenAPI
+    url: openapi/onshape-document-api-openapi.yml
+  - type: APIReference
+    url: https://cad.onshape.com/glassworks/explorer/
+- aid: onshape:onshape-drawing-api
+  name: Onshape Drawing API
+  description: Access, create, and translate drawings.
+  humanURL: https://onshape-public.github.io/docs/
+  baseURL: https://cad.onshape.com/api/v16
+  tags:
+  - Drawing
+  properties:
+  - type: OpenAPI
+    url: openapi/onshape-drawing-api-openapi.yml
+  - type: APIReference
+    url: https://cad.onshape.com/glassworks/explorer/
+- aid: onshape:onshape-element-api
+  name: Onshape Element API
+  description: >-
+    Access and manage Elements. Every Element in an Onshape document is represented by a tab.
+  humanURL: https://onshape-public.github.io/docs/
+  baseURL: https://cad.onshape.com/api/v16
+  tags:
+  - Element
+  properties:
+  - type: OpenAPI
+    url: openapi/onshape-element-api-openapi.yml
+  - type: APIReference
+    url: https://cad.onshape.com/glassworks/explorer/
+- aid: onshape:onshape-exportrule-api
+  name: Onshape ExportRule API
+  description: Access valid export rules.
+  humanURL: https://onshape-public.github.io/docs/
+  baseURL: https://cad.onshape.com/api/v16
+  tags:
+  - ExportRule
+  properties:
+  - type: OpenAPI
+    url: openapi/onshape-exportrule-api-openapi.yml
+  - type: APIReference
+    url: https://cad.onshape.com/glassworks/explorer/
+- aid: onshape:onshape-featurestudio-api
+  name: Onshape FeatureStudio API
+  description: Access and manage Feature Studio Elements.
+  humanURL: https://onshape-public.github.io/docs/
+  baseURL: https://cad.onshape.com/api/v16
+  tags:
+  - FeatureStudio
+  properties:
+  - type: OpenAPI
+    url: openapi/onshape-featurestudio-api-openapi.yml
+  - type: APIReference
+    url: https://cad.onshape.com/glassworks/explorer/
+- aid: onshape:onshape-folder-api
+  name: Onshape Folder API
+  description: Access and modify folder sharing permissions.
+  humanURL: https://onshape-public.github.io/docs/
+  baseURL: https://cad.onshape.com/api/v16
+  tags:
+  - Folder
+  properties:
+  - type: OpenAPI
+    url: openapi/onshape-folder-api-openapi.yml
+  - type: APIReference
+    url: https://cad.onshape.com/glassworks/explorer/
+- aid: onshape:onshape-insertable-api
+  name: Onshape Insertable API
+  description: Access the list of things that can be inserted into a document.
+  humanURL: https://onshape-public.github.io/docs/
+  baseURL: https://cad.onshape.com/api/v16
+  tags:
+  - Insertable
+  properties:
+  - type: OpenAPI
+    url: openapi/onshape-insertable-api-openapi.yml
+  - type: APIReference
+    url: https://cad.onshape.com/glassworks/explorer/
+- aid: onshape:onshape-item-api
+  name: Onshape Item API
+  description: >-
+    Manage non-geometric [items](https://cad.onshape.com/help/Content/Plans/items.htm). (Professional,
+    Educator, and Enterprise accounts only.)
+  humanURL: https://onshape-public.github.io/docs/
+  baseURL: https://cad.onshape.com/api/v16
+  tags:
+  - Item
+  properties:
+  - type: OpenAPI
+    url: openapi/onshape-item-api-openapi.yml
+  - type: APIReference
+    url: https://cad.onshape.com/glassworks/explorer/
+- aid: onshape:onshape-material-api
+  name: Onshape Material API
+  description: Work with the Onshape Material Library.
+  humanURL: https://onshape-public.github.io/docs/
+  baseURL: https://cad.onshape.com/api/v16
+  tags:
+  - Material
+  properties:
+  - type: OpenAPI
+    url: openapi/onshape-material-api-openapi.yml
+  - type: APIReference
+    url: https://cad.onshape.com/glassworks/explorer/
+- aid: onshape:onshape-metadata-api
+  name: Onshape Metadata API
+  description: Access and modify metadata.
+  humanURL: https://onshape-public.github.io/docs/
+  baseURL: https://cad.onshape.com/api/v16
+  tags:
+  - Metadata
+  properties:
+  - type: OpenAPI
+    url: openapi/onshape-metadata-api-openapi.yml
+  - type: APIReference
+    url: https://cad.onshape.com/glassworks/explorer/
+- aid: onshape:onshape-metadatacategory-api
+  name: Onshape MetadataCategory API
+  description: Access properties associated with metadata categories.
+  humanURL: https://onshape-public.github.io/docs/
+  baseURL: https://cad.onshape.com/api/v16
+  tags:
+  - MetadataCategory
+  properties:
+  - type: OpenAPI
+    url: openapi/onshape-metadatacategory-api-openapi.yml
+  - type: APIReference
+    url: https://cad.onshape.com/glassworks/explorer/
+- aid: onshape:onshape-numberingscheme-api
+  name: Onshape NumberingScheme API
+  description: Manage the set of valid part numbers.
+  humanURL: https://onshape-public.github.io/docs/
+  baseURL: https://cad.onshape.com/api/v16
+  tags:
+  - NumberingScheme
+  properties:
+  - type: OpenAPI
+    url: openapi/onshape-numberingscheme-api-openapi.yml
+  - type: APIReference
+    url: https://cad.onshape.com/glassworks/explorer/
+- aid: onshape:onshape-openapi-api
+  name: Onshape OpenApi API
+  description: Get the OpenAPI specification for the Onshape API.
+  humanURL: https://onshape-public.github.io/docs/
+  baseURL: https://cad.onshape.com/api/v16
+  tags:
+  - OpenApi
+  properties:
+  - type: OpenAPI
+    url: openapi/onshape-openapi-api-openapi.yml
+  - type: APIReference
+    url: https://cad.onshape.com/glassworks/explorer/
+- aid: onshape:onshape-part-api
+  name: Onshape Part API
+  description: Export Parts and access Part details.
+  humanURL: https://onshape-public.github.io/docs/
+  baseURL: https://cad.onshape.com/api/v16
+  tags:
+  - Part
+  properties:
+  - type: OpenAPI
+    url: openapi/onshape-part-api-openapi.yml
+  - type: APIReference
+    url: https://cad.onshape.com/glassworks/explorer/
+- aid: onshape:onshape-partnumber-api
+  name: Onshape PartNumber API
+  description: Create valid part numbers.
+  humanURL: https://onshape-public.github.io/docs/
+  baseURL: https://cad.onshape.com/api/v16
+  tags:
+  - PartNumber
+  properties:
+  - type: OpenAPI
+    url: openapi/onshape-partnumber-api-openapi.yml
+  - type: APIReference
+    url: https://cad.onshape.com/glassworks/explorer/
+- aid: onshape:onshape-partstudio-api
+  name: Onshape PartStudio API
+  description: Access and modify Part Studios.
+  humanURL: https://onshape-public.github.io/docs/
+  baseURL: https://cad.onshape.com/api/v16
+  tags:
+  - PartStudio
+  properties:
+  - type: OpenAPI
+    url: openapi/onshape-partstudio-api-openapi.yml
+  - type: APIReference
+    url: https://cad.onshape.com/glassworks/explorer/
+- aid: onshape:onshape-productstructure-api
+  name: Onshape ProductStructure API
+  description: Access information on how entities are structured within designs and documents.
+  humanURL: https://onshape-public.github.io/docs/
+  baseURL: https://cad.onshape.com/api/v16
+  tags:
+  - ProductStructure
+  properties:
+  - type: OpenAPI
+    url: openapi/onshape-productstructure-api-openapi.yml
+  - type: APIReference
+    url: https://cad.onshape.com/glassworks/explorer/
+- aid: onshape:onshape-propertiestabletemplate-api
+  name: Onshape PropertiesTableTemplate API
+  description: Create, access, and delete templates for properties tables.
+  humanURL: https://onshape-public.github.io/docs/
+  baseURL: https://cad.onshape.com/api/v16
+  tags:
+  - PropertiesTableTemplate
+  properties:
+  - type: OpenAPI
+    url: openapi/onshape-propertiestabletemplate-api-openapi.yml
+  - type: APIReference
+    url: https://cad.onshape.com/glassworks/explorer/
+- aid: onshape:onshape-publication-api
+  name: Onshape Publication API
+  description: Access publication information.
+  humanURL: https://onshape-public.github.io/docs/
+  baseURL: https://cad.onshape.com/api/v16
+  tags:
+  - Publication
+  properties:
+  - type: OpenAPI
+    url: openapi/onshape-publication-api-openapi.yml
+  - type: APIReference
+    url: https://cad.onshape.com/glassworks/explorer/
+- aid: onshape:onshape-releasepackage-api
+  name: Onshape ReleasePackage API
+  description: >-
+    Endpoints for creating , updating, and managing releases. See [API Guide: Release Management](https://onshape-public.github.io/docs/api-adv/relmgmt/).
+  humanURL: https://onshape-public.github.io/docs/
+  baseURL: https://cad.onshape.com/api/v16
+  tags:
+  - ReleasePackage
+  properties:
+  - type: OpenAPI
+    url: openapi/onshape-releasepackage-api-openapi.yml
+  - type: APIReference
+    url: https://cad.onshape.com/glassworks/explorer/
+- aid: onshape:onshape-revision-api
+  name: Onshape Revision API
+  description: >-
+    Get revision information. See [API Guide: Release Management](https://onshape-public.github.io/docs/api-adv/relmgmt/)
+  humanURL: https://onshape-public.github.io/docs/
+  baseURL: https://cad.onshape.com/api/v16
+  tags:
+  - Revision
+  properties:
+  - type: OpenAPI
+    url: openapi/onshape-revision-api-openapi.yml
+  - type: APIReference
+    url: https://cad.onshape.com/glassworks/explorer/
+- aid: onshape:onshape-sketch-api
+  name: Onshape Sketch API
+  description: Access sketch information.
+  humanURL: https://onshape-public.github.io/docs/
+  baseURL: https://cad.onshape.com/api/v16
+  tags:
+  - Sketch
+  properties:
+  - type: OpenAPI
+    url: openapi/onshape-sketch-api-openapi.yml
+  - type: APIReference
+    url: https://cad.onshape.com/glassworks/explorer/
+- aid: onshape:onshape-standardcontent-api
+  name: Onshape StandardContent API
+  description: Work with Onshape standard content.
+  humanURL: https://onshape-public.github.io/docs/
+  baseURL: https://cad.onshape.com/api/v16
+  tags:
+  - StandardContent
+  properties:
+  - type: OpenAPI
+    url: openapi/onshape-standardcontent-api-openapi.yml
+  - type: APIReference
+    url: https://cad.onshape.com/glassworks/explorer/
+- aid: onshape:onshape-task-api
+  name: Onshape Task API
+  description: Create, access, and modify Tasks and Action Items.
+  humanURL: https://onshape-public.github.io/docs/
+  baseURL: https://cad.onshape.com/api/v16
+  tags:
+  - Task
+  properties:
+  - type: OpenAPI
+    url: openapi/onshape-task-api-openapi.yml
+  - type: APIReference
+    url: https://cad.onshape.com/glassworks/explorer/
+- aid: onshape:onshape-team-api
+  name: Onshape Team API
+  description: Access team information.
+  humanURL: https://onshape-public.github.io/docs/
+  baseURL: https://cad.onshape.com/api/v16
+  tags:
+  - Team
+  properties:
+  - type: OpenAPI
+    url: openapi/onshape-team-api-openapi.yml
+  - type: APIReference
+    url: https://cad.onshape.com/glassworks/explorer/
+- aid: onshape:onshape-thumbnail-api
+  name: Onshape Thumbnail API
+  description: Access, modify, and delete thumbnails.
+  humanURL: https://onshape-public.github.io/docs/
+  baseURL: https://cad.onshape.com/api/v16
+  tags:
+  - Thumbnail
+  properties:
+  - type: OpenAPI
+    url: openapi/onshape-thumbnail-api-openapi.yml
+  - type: APIReference
+    url: https://cad.onshape.com/glassworks/explorer/
+- aid: onshape:onshape-translation-api
+  name: Onshape Translation API
+  description: >-
+    Import and export Onshape surfaces, parts, Part Studios, Assemblies, and subassemblies to/from other
+    file formats (STL, PARASOLID, etc).
+  humanURL: https://onshape-public.github.io/docs/
+  baseURL: https://cad.onshape.com/api/v16
+  tags:
+  - Translation
+  properties:
+  - type: OpenAPI
+    url: openapi/onshape-translation-api-openapi.yml
+  - type: APIReference
+    url: https://cad.onshape.com/glassworks/explorer/
+- aid: onshape:onshape-user-api
+  name: Onshape User API
+  description: Access user information.
+  humanURL: https://onshape-public.github.io/docs/
+  baseURL: https://cad.onshape.com/api/v16
+  tags:
+  - User
+  properties:
+  - type: OpenAPI
+    url: openapi/onshape-user-api-openapi.yml
+  - type: APIReference
+    url: https://cad.onshape.com/glassworks/explorer/
+- aid: onshape:onshape-variables-api
+  name: Onshape Variables API
+  description: Create, modify, and access variables.
+  humanURL: https://onshape-public.github.io/docs/
+  baseURL: https://cad.onshape.com/api/v16
+  tags:
+  - Variables
+  properties:
+  - type: OpenAPI
+    url: openapi/onshape-variables-api-openapi.yml
+  - type: APIReference
+    url: https://cad.onshape.com/glassworks/explorer/
+- aid: onshape:onshape-version-api
+  name: Onshape Version API
+  description: Get all versions of the Onshape REST APIs.
+  humanURL: https://onshape-public.github.io/docs/
+  baseURL: https://cad.onshape.com/api/v16
+  tags:
+  - Version
+  properties:
+  - type: OpenAPI
+    url: openapi/onshape-version-api-openapi.yml
+  - type: APIReference
+    url: https://cad.onshape.com/glassworks/explorer/
+- aid: onshape:onshape-webhook-api
+  name: Onshape Webhook API
+  description: Create and manage [webhooks](https://onshape-public.github.io/docs/app-dev/webhook/).
+  humanURL: https://onshape-public.github.io/docs/
+  baseURL: https://cad.onshape.com/api/v16
+  tags:
+  - Webhook
+  properties:
+  - type: OpenAPI
+    url: openapi/onshape-webhook-api-openapi.yml
+  - type: APIReference
+    url: https://cad.onshape.com/glassworks/explorer/
+- aid: onshape:onshape-workflow-api
+  name: Onshape Workflow API
+  description: Access and modify workflows.
+  humanURL: https://onshape-public.github.io/docs/
+  baseURL: https://cad.onshape.com/api/v16
+  tags:
+  - Workflow
+  properties:
+  - type: OpenAPI
+    url: openapi/onshape-workflow-api-openapi.yml
+  - type: APIReference
+    url: https://cad.onshape.com/glassworks/explorer/
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+common:
+- type: DomainSecurity
+  url: security/onshape-domain-security.yml
+- type: AgenticAccess
+  url: agentic-access/onshape-agentic-access.yml
+- type: OAuthScopes
+  url: scopes/onshape-scopes.yml
+- type: Authentication
+  url: authentication/onshape-authentication.yml
+- type: Packages
+  url: packages/onshape-packages.yml
+- type: SDKs
+  url: packages/onshape-packages.yml
+- type: MCPServer
+  url: mcp/onshape-mcp.yml
+- type: LLMsTxt
+  url: llms/onshape-llms.txt
+- type: Overlay
+  url: overlays/onshape-openapi-overlay.yaml
+- type: Conformance
+  url: conformance/onshape-conformance.yml
+- type: Compliance
+  url: https://www.onshape.com/en/security
+- type: ErrorCatalog
+  url: errors/onshape-problem-types.yml
+- type: Lifecycle
+  url: lifecycle/onshape-lifecycle.yml
+- type: StatusPage
+  url: https://status.onshape.com/
+- type: Deprecation
+  url: https://onshape-public.github.io/docs/api-versions/
+- type: Conventions
+  url: conventions/onshape-conventions.yml
+- type: DataModel
+  url: data-model/onshape-data-model.yml
+- type: Webhooks
+  url: asyncapi/onshape-events-webhooks.yml
+- type: RateLimits
+  url: rate-limits/onshape-rate-limits.yml
+- type: ChangeLog
+  url: changelog/onshape-changelog.yml
+- type: AgentSkill
+  url: skills/_index.yml
+- type: VulnerabilityDisclosure
+  url: security/onshape-vulnerability-disclosure.yml
+- type: Security
+  url: https://www.onshape.com/en/security
+- type: TrustCenter
+  url: security/onshape-trust-center.yml
+- type: DeveloperPortal
+  url: https://cad.onshape.com/appstore/dev-portal
+- type: Documentation
+  url: https://onshape-public.github.io/docs/
+- type: APIReference
+  url: https://cad.onshape.com/glassworks/explorer/
+- type: GettingStarted
+  url: https://onshape-public.github.io/docs/api-intro/quickstart/
+- type: Support
+  url: https://onshape-public.github.io/docs/help/
+- type: Blog
+  url: https://www.onshape.com/en/blog
+- type: GitHubOrganization
+  url: https://github.com/onshape-public
+- type: Pricing
+  url: https://www.onshape.com/en/pricing
+- type: SignUp
+  url: https://cad.onshape.com/signup
+- type: TermsOfService
+  url: https://www.onshape.com/en/legal/terms-of-use
+x-enrichment:
+  date: '2026-07-20'
+  status: enriched
+  artifacts_added: 23
+  pass: local-v1

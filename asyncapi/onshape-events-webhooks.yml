@@ -1,0 +1,44 @@
+generated: '2026-07-20'
+method: searched
+source: https://onshape-public.github.io/docs/app-dev/webhook/
+type: Webhooks
+docs: https://onshape-public.github.io/docs/app-dev/webhook/
+transport: HTTP POST (JSON body) to a subscriber-provided HTTPS URL (CA-signed certs required)
+registration:
+  operation: createWebhook
+  endpoint: POST /webhooks
+  validation: Onshape sends a trial `webhook.register` notification to confirm reachability.
+  dedup: No deduplication — each registration returns a new webhook ID.
+  scopes: [webhook.create, webhook.read, webhook.edit, webhook.delete]
+payload_fields: [timestamp, event, webhookId, messageId, documentId, workspaceId, elementId, data]
+events:
+  application:
+    - onshape.user.lifecycle.updateappsettings
+  document:
+    - onshape.comment.create
+    - onshape.comment.delete
+    - onshape.comment.update
+    - onshape.document.lifecycle.created
+    - onshape.document.lifecycle.shared
+    - onshape.document.lifecycle.statechange
+    - onshape.model.lifecycle.changed
+    - onshape.model.lifecycle.changed.externalreferences
+    - onshape.model.lifecycle.createelement
+    - onshape.model.lifecycle.createversion
+    - onshape.model.lifecycle.createworkspace
+    - onshape.model.lifecycle.deleteelement
+    - onshape.model.lifecycle.metadata
+    - onshape.model.translation.complete
+    - onshape.revision.created
+  workflow:
+    - onshape.workflow.transition
+  lifecycle:
+    - webhook.register
+    - webhook.unregister
+    - webhook.ping
+management_operations:
+  - getWebhooks
+  - getWebhook
+  - updateWebhook
+  - unregisterWebhook
+  - pingWebhook

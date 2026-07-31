@@ -1,0 +1,30 @@
+generated: '2026-07-20'
+method: searched
+source: https://onshape-public.github.io/docs/auth/limits/
+docs: https://onshape-public.github.io/docs/auth/limits/
+model: per-endpoint burst limits plus company/user-level annual call quotas
+burst:
+  response_status: 429
+  response_status_name: Too Many Requests
+  notes: Exceeding a per-endpoint threshold returns HTTP 429; callers should back off and optimize call patterns.
+annual_limits:
+  enforcement_status: 402
+  enforcement_status_name: Payment Required
+  counted: Only calls returning 2xx or 3xx count toward the annual limit.
+  exemptions: Public App Store applications are exempt from annual limits.
+  tiers:
+    - plan: Enterprise / Enterprise GOV
+      limit_count: 10000
+      unit: per Full User per year
+    - plan: Professional
+      limit_count: 5000
+      unit: per User per year
+    - plan: EDU Enterprise
+      limit_count: 10000
+      unit: per Enterprise per year
+    - plan: Standard / Free / EDU Student
+      limit_count: 2500
+      unit: per User per year
+    - plan: EDU Educator / Pro Discovery
+      limit_count: 2500
+      unit: per Company per year

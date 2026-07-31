@@ -1,0 +1,28 @@
+generated: '2026-07-20'
+method: searched
+source: https://onshape-public.github.io/docs/changelog/
+docs: https://onshape-public.github.io/docs/changelog/
+scheme: dated release notes (rel-1.x) paired with numbered API versions (Vn)
+current_version: rel-1.218
+current_api_version: v16
+entries:
+  - version: rel-1.218
+    date: '2026-07-17'
+    additions: [material library endpoints, hole callout create/edit, section view drawing support]
+    breaking: false
+  - version: rel-1.217
+    date: '2026-06-26'
+    additions: [modify annotations on inactive sheets, delete drawing annotations]
+    breaking: false
+  - version: rel-1.216
+    date: '2026-06-05'
+    additions: [product structure endpoint, document notes creation]
+    breaking: false
+  - version: rel-1.215
+    date: '2026-05-15'
+    additions: [API version V16, assembly instance suppression configuration, sketch creation improvements]
+    breaking: false
+  - version: rel-1.214
+    date: '2026-04-24'
+    additions: [API version V15, sketch validation, expanded URDF translation options]
+    breaking: false

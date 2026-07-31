@@ -1,0 +1,35 @@
+# Onshape
+
+> Onshape is a cloud-native CAD and product data management (PDM) platform (part of PTC) that runs entirely in the browser. Its REST API exposes documents, part studios, assemblies, drawings, translations/imports-exports, release management, metadata, and webhooks over HTTPS.
+
+## APIs
+- [Onshape REST API Explorer](https://cad.onshape.com/glassworks/explorer/): Interactive API reference (Glassworks).
+- [OpenAPI spec](https://cad.onshape.com/api/openapi): OpenAPI 3.0.1, base https://cad.onshape.com/api/v16.
+
+## Specs
+- [OpenAPI (harvested)](openapi/onshape-openapi-original.json): 248 paths, 42 tags, OAuth2 + API-key Basic auth.
+- [Webhooks / event catalog](asyncapi/onshape-events-webhooks.yml)
+- [Authentication](authentication/onshape-authentication.yml)
+- [OAuth scopes](scopes/onshape-scopes.yml)
+- [Conventions](conventions/onshape-conventions.yml)
+- [Error catalog](errors/onshape-problem-types.yml)
+- [Rate limits](rate-limits/onshape-rate-limits.yml)
+- [Lifecycle](lifecycle/onshape-lifecycle.yml)
+- [Data model](data-model/onshape-data-model.yml)
+
+## Docs
+- [Developer guides](https://onshape-public.github.io/docs/)
+- [Authentication guide](https://onshape-public.github.io/docs/auth/)
+- [API keys](https://onshape-public.github.io/docs/auth/apikeys/)
+- [OAuth](https://onshape-public.github.io/docs/auth/oauth/)
+- [API call limits](https://onshape-public.github.io/docs/auth/limits/)
+- [Webhooks](https://onshape-public.github.io/docs/app-dev/webhook/)
+- [Changelog](https://onshape-public.github.io/docs/changelog/)
+- [Developer Portal](https://cad.onshape.com/appstore/dev-portal)
+- [GitHub org](https://github.com/onshape-public)
+- [Status](https://status.onshape.com/)
+
+## SDKs
+- [Python (onshape-client)](https://pypi.org/project/onshape-client/)
+- [Go (go-client)](https://pkg.go.dev/github.com/onshape-public/go-client)
+- [TypeScript (onshape-ts-client)](https://github.com/onshape-public/onshape-ts-client)

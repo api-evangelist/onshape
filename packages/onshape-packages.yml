@@ -1,0 +1,42 @@
+generated: '2026-07-20'
+method: searched
+source: https://github.com/onshape-public
+packages:
+  - language: python
+    registry: pypi
+    name: onshape-client
+    url: https://pypi.org/project/onshape-client/
+    install: pip install onshape-client
+    repository: https://github.com/onshape-public/onshape-clients
+    official: true
+    notes: Official Python client for the Onshape REST API (summary "Onshape REST API").
+  - language: go
+    registry: go
+    name: github.com/onshape-public/go-client
+    url: https://pkg.go.dev/github.com/onshape-public/go-client
+    install: go get github.com/onshape-public/go-client
+    repository: https://github.com/onshape-public/go-client
+    official: true
+    notes: Official Go bindings for the Onshape API.
+  - language: typescript
+    registry: github
+    name: onshape-ts-client
+    url: https://github.com/onshape-public/onshape-ts-client
+    repository: https://github.com/onshape-public/onshape-ts-client
+    official: true
+    notes: Official TypeScript API client with examples (source-only, not published to npm).
+  - language: javascript
+    registry: npm
+    name: "@onshape/apikey"
+    url: https://www.npmjs.com/package/@onshape/apikey
+    install: npm install @onshape/apikey
+    repository: https://github.com/onshape-public/apikey
+    official: true
+    notes: First-party sample application/library demonstrating API-key HMAC request signing.
+  - language: multi
+    registry: github
+    name: onshape-clients
+    url: https://github.com/onshape-public/onshape-clients
+    repository: https://github.com/onshape-public/onshape-clients
+    official: true
+    notes: Archived monorepo that generated Python/JavaScript/Go/Java clients from the OpenAPI spec.

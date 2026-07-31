@@ -1,0 +1,84 @@
+generated: '2026-07-20'
+method: derived
+source: openapi/onshape-openapi-original.json
+notes: >-
+  Derived from Onshape's path structure and id-reference parameters. Onshape's core
+  addressing model is Document -> (Workspace | Version | Microversion) -> Element,
+  with Parts living inside Part Studio elements.
+entities:
+  - name: Document
+    id_param: did
+    description: Top-level container for a design; holds workspaces, versions, and elements.
+  - name: Workspace
+    id_param: wid
+    belongs_to: Document
+    description: A mutable editing context (the "w" in the w|v|m selector).
+  - name: Version
+    id_param: vid
+    belongs_to: Document
+    description: An immutable snapshot of a document (the "v" in the w|v|m selector).
+  - name: Microversion
+    id_param: mid
+    belongs_to: Document
+    description: A fine-grained immutable point in document history (the "m" in the w|v|m selector).
+  - name: Element
+    id_param: eid
+    belongs_to: Document
+    description: A tab within a document (Part Studio, Assembly, Drawing, Blob, App element, Feature Studio).
+  - name: PartStudio
+    kind: Element
+    description: Parametric modeling element that produces parts.
+  - name: Part
+    id_param: pid
+    belongs_to: PartStudio
+    description: A solid/surface body produced by a Part Studio.
+  - name: Assembly
+    kind: Element
+    description: Element that assembles parts and subassemblies with mates.
+  - name: Drawing
+    kind: Element
+    description: 2D drawing element with views and annotations.
+  - name: Translation
+    id_param: tid
+    description: An import/export/translation job.
+  - name: Webhook
+    id_param: webhookid
+    description: A registered event-notification subscription.
+  - name: ReleasePackage
+    id_param: rpid
+    description: A release candidate for one or more items under a workflow.
+  - name: Revision
+    description: A released revision of a part/assembly/drawing.
+relationships:
+  - from: Workspace
+    type: belongs_to
+    to: Document
+    via: did
+  - from: Version
+    type: belongs_to
+    to: Document
+    via: did
+  - from: Element
+    type: belongs_to
+    to: Document
+    via: did
+  - from: Part
+    type: belongs_to
+    to: Element
+    via: eid
+  - from: Part
+    type: belongs_to
+    to: Document
+    via: did
+  - from: Document
+    type: has_many
+    to: Element
+    via: eid
+  - from: Document
+    type: has_many
+    to: Version
+    via: vid
+  - from: Document
+    type: has_many
+    to: Workspace
+    via: wid

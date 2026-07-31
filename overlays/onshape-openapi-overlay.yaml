@@ -1,0 +1,19 @@
+overlay: 1.0.0
+info:
+  title: API Evangelist enhancements for Onshape REST API
+  version: 1.0.0
+extends: openapi/onshape-openapi-original.json
+actions:
+  - target: $.info
+    update:
+      x-apievangelist-enriched: '2026-07-20'
+      x-apievangelist-provider: onshape
+      x-authentication-doc: authentication/onshape-authentication.yml
+      x-conventions-doc: conventions/onshape-conventions.yml
+      x-webhooks-doc: asyncapi/onshape-events-webhooks.yml
+      x-rate-limits-doc: rate-limits/onshape-rate-limits.yml
+  - target: $.info
+    update:
+      x-pagination-style: offset
+      x-idempotency-supported: false
+      x-versioning: uri-path (v16)

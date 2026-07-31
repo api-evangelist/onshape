@@ -1,0 +1,157 @@
+generated: '2026-07-20'
+method: searched
+source: openapi/onshape-openapi-original.json
+docs: https://onshape-public.github.io/docs/auth/oauth/
+schemes:
+- name: OAuth2
+  source: openapi/onshape-openapi-original.json
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: /oauth/authorize
+    tokenUrl: /oauth/token
+  description: Use OAuth 2.0 to authenticate requests.
+scopes:
+- scope: OAuth2Delete
+  description: Application can delete your documents and workspaces
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/onshape-openapi-original.json
+- scope: OAuth2Internal
+  description: Application is Onshape Internal
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/onshape-openapi-original.json
+- scope: OAuth2Purchase
+  description: Application can request purchases on your behalf
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/onshape-openapi-original.json
+- scope: OAuth2Read
+  description: Application can read your documents
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/onshape-openapi-original.json
+- scope: OAuth2ReadPII
+  description: Application can read your profile information
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/onshape-openapi-original.json
+- scope: OAuth2Share
+  description: Application can share and unshare documents on your behalf
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/onshape-openapi-original.json
+- scope: OAuth2Write
+  description: Application can write to your documents
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/onshape-openapi-original.json
+- scope: PLMIntegration
+  description: PLM automation can invoke limited operations
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/onshape-openapi-original.json
+- scope: document.create
+  description: Atlas Application can create a document
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/onshape-openapi-original.json
+- scope: document.delete
+  description: Atlas Application can delete a document
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/onshape-openapi-original.json
+- scope: document.edit
+  description: Atlas Application can edit a document
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/onshape-openapi-original.json
+- scope: document.read
+  description: Atlas Application can read a document
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/onshape-openapi-original.json
+- scope: enterprise.create
+  description: Atlas Application can create an enterprise
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/onshape-openapi-original.json
+- scope: enterprise.delete
+  description: Atlas Application can delete an enterprise
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/onshape-openapi-original.json
+- scope: enterprise.edit
+  description: Atlas Application can edit an enterprise
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/onshape-openapi-original.json
+- scope: enterprise.member.create
+  description: Atlas Application can create an enterprise member
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/onshape-openapi-original.json
+- scope: enterprise.member.delete
+  description: Atlas Application can delete a member from an enterprise
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/onshape-openapi-original.json
+- scope: enterprise.member.edit
+  description: Atlas Application can edit the details of an enterprise member
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/onshape-openapi-original.json
+- scope: enterprise.member.read
+  description: Atlas Application can read the details of an enterprise member
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/onshape-openapi-original.json
+- scope: enterprise.read
+  description: Atlas Application can read from an enterprise
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/onshape-openapi-original.json
+- scope: webhook.create
+  description: Atlas Application can create a webhook on behalf of the logged-in user
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/onshape-openapi-original.json
+- scope: webhook.delete
+  description: Atlas Application can delete a webhook on behalf of the logged-in user
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/onshape-openapi-original.json
+- scope: webhook.edit
+  description: Atlas Application can edit a webhook on behalf of the logged-in user
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/onshape-openapi-original.json
+- scope: webhook.read
+  description: Atlas Application can read a webhook on behalf of the logged-in user
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/onshape-openapi-original.json

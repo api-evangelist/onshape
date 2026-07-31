@@ -1,0 +1,16 @@
+generated: '2026-07-20'
+method: generated
+source: openapi/onshape-openapi-original.json
+skills:
+  - file: onshape-import-and-translate-cad.md
+    name: Import and translate a CAD file into Onshape
+    api: openapi/onshape-openapi-original.json
+    operations: [createDocument, createTranslation, getTranslation]
+  - file: onshape-subscribe-to-model-webhooks.md
+    name: Subscribe to Onshape model change webhooks
+    api: openapi/onshape-openapi-original.json
+    operations: [createWebhook, getWebhooks, getWebhook, pingWebhook, unregisterWebhook]
+  - file: onshape-release-a-part.md
+    name: Create a release package and revision in Onshape
+    api: openapi/onshape-openapi-original.json
+    operations: [createReleasePackage, getReleasePackage, updateReleasePackage, enumerateRevisions]

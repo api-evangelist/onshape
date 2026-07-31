@@ -1,0 +1,51 @@
+generated: '2026-07-20'
+method: searched
+source: https://onshape-public.github.io/docs/
+authentication:
+  styles: [oauth2, api-key-hmac]
+  oauth2:
+    flow: authorizationCode
+    authorization_url: https://oauth.onshape.com/oauth/authorize
+    token_url: https://oauth.onshape.com/oauth/token
+    docs: https://onshape-public.github.io/docs/auth/oauth/
+  api_key:
+    scheme: HMAC-signed request (API access key as username, secret key as password) via HTTP Basic; signed requests use a Date + On-Nonce + Authorization signature.
+    docs: https://onshape-public.github.io/docs/auth/apikeys/
+  ref: authentication/onshape-authentication.yml
+idempotency:
+  supported: false
+  notes: >-
+    Onshape does not document an Idempotency-Key header; no idempotency-key
+    parameter appears in the OpenAPI. Webhook registration is explicitly NOT
+    deduplicated (each createWebhook call yields a new webhook ID).
+pagination:
+  style: offset
+  params: [offset, limit]
+  response_fields: [next, previous, href, items]
+  notes: List endpoints return a paginated envelope with next/previous cursor URLs; limit/offset query parameters control the window.
+versioning:
+  scheme: uri-path
+  current: v16
+  base_url: https://cad.onshape.com/api/v16
+  version_listing: https://cad.onshape.com/api/versions
+  release_notation: rel-1.x (dated changelog releases)
+  ref: lifecycle/onshape-lifecycle.yml
+document_addressing:
+  model: >-
+    Onshape resources are addressed by a Document ID (did), a Workspace/Version/Microversion
+    selector (wvm = w|v|m) plus its id (wvmid), and an Element ID (eid); parts add a part id (pid).
+  key_params: [did, wid, vid, mid, wvm, wvmid, eid, pid]
+rate_limiting:
+  per_request: HTTP 429 Too Many Requests on burst thresholds (per-endpoint).
+  annual_limits: Company/user-level annual API call quota; 402 Payment Required when the annual limit is exhausted; only 2xx/3xx calls count.
+  docs: https://onshape-public.github.io/docs/auth/limits/
+  ref: rate-limits/onshape-rate-limits.yml
+error_envelope:
+  format: json
+  fields: [status, message, code, moreInfoUrl]
+  notes: Errors are returned as JSON with an HTTP status; Onshape does not use RFC 9457 application/problem+json.
+  ref: errors/onshape-problem-types.yml
+webhooks:
+  supported: true
+  register_operation: createWebhook
+  ref: asyncapi/onshape-events-webhooks.yml

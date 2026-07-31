@@ -1,0 +1,25 @@
+generated: '2026-07-20'
+method: derived
+source: openapi/onshape-openapi-original.json
+standards:
+  - id: oauth2
+    conforms: true
+    evidence: OpenAPI securitySchemes declares an oauth2 authorizationCode flow (OAuth2 scheme).
+  - id: http-basic
+    conforms: true
+    evidence: BasicAuth http/basic scheme used for API-key HMAC-signed requests.
+  - id: openapi-3
+    conforms: true
+    evidence: Provider publishes an OpenAPI 3.0.1 description at https://cad.onshape.com/api/openapi.
+  - id: rfc9457-problem-details
+    conforms: false
+    evidence: Errors are plain JSON, not application/problem+json.
+  - id: pagination-offset
+    conforms: true
+    evidence: List endpoints expose offset/limit query parameters with next/previous envelope fields.
+  - id: idempotency
+    conforms: false
+    evidence: No Idempotency-Key header/parameter documented or present in the spec.
+  - id: webhooks
+    conforms: true
+    evidence: Webhook registration/management operations and a documented event catalog.

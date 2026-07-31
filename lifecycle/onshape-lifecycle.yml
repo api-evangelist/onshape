@@ -1,0 +1,21 @@
+generated: '2026-07-20'
+method: searched
+source: https://onshape-public.github.io/docs/changelog/
+versioning:
+  scheme: uri-path
+  current: v16
+  base_url: https://cad.onshape.com/api/v16
+  version_listing: https://cad.onshape.com/api/versions
+  docs: https://onshape-public.github.io/docs/api-versions/
+  notes: >-
+    Onshape maintains numbered API versions (V6..V16) so clients can opt into
+    behavioral changes while retaining backward compatibility. Release notes use
+    rel-1.x dated notation.
+deprecation:
+  policy_url: https://onshape-public.github.io/docs/api-versions/
+  notes: Behavioral changes are gated behind new numbered API versions; older versions remain callable.
+sla:
+  status_page: https://status.onshape.com/
+status_page: https://status.onshape.com/
+changelog: https://onshape-public.github.io/docs/changelog/
+deprecated_operations: []

@@ -1,0 +1,360 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Onshape REST Account Drawing API",
+    "version": "1.218.84032-34acba44be17"
+  },
+  "request": {
+    "auth": {
+      "type": "basic",
+      "username": "{{username}}",
+      "password": "{{password}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Drawing",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Create a new drawing in a document.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://cad.onshape.com/api/v16/drawings/d/:did/w/:wid/create",
+            "params": [
+              {
+                "name": "did",
+                "value": "",
+                "type": "path",
+                "description": "ID of the document in which to create the drawing."
+              },
+              {
+                "name": "wid",
+                "value": "",
+                "type": "path",
+                "description": "ID of the workspace in which to create the drawing."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "/oauth/authorize",
+              "accessTokenUrl": "/oauth/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "This endpoint takes a JSON Schema as input. See the schema docs below for details, and see [API Guide: Drawings](https://onshape-public.github.io/docs/api-adv/drawings/) for more information."
+        },
+        {
+          "info": {
+            "name": "Modify a drawing via JSON payload.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://cad.onshape.com/api/v16/drawings/d/:did/w/:wid/e/:eid/modify",
+            "params": [
+              {
+                "name": "did",
+                "value": "",
+                "type": "path",
+                "description": "The id of the document in which to perform the operation."
+              },
+              {
+                "name": "linkDocumentId",
+                "value": "",
+                "type": "query",
+                "description": "The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both."
+              },
+              {
+                "name": "wid",
+                "value": "",
+                "type": "path",
+                "description": "The id of the workspace in which to perform the operation."
+              },
+              {
+                "name": "eid",
+                "value": "",
+                "type": "path",
+                "description": "The id of the element in which to perform the operation."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "/oauth/authorize",
+              "accessTokenUrl": "/oauth/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "See [API Guide: Drawings](https://onshape-public.github.io/docs/api-adv/drawings/) for more information.When polling for drawing modifications to complete, use a reasonable interval (e.g., avoid polling multiple times a second, use an exponential backoff strategy, etc.). See [Rate Limiting](/docs/api-adv/errors/#429) and [API Limits](/docs/auth/limits) for more information."
+        },
+        {
+          "info": {
+            "name": "Get a list of all valid formats the drawing can be translated (exported) to.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://cad.onshape.com/api/v16/drawings/d/:did/w/:wid/e/:eid/translationformats",
+            "params": [
+              {
+                "name": "did",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "wid",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "eid",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "See [API Guide: Translations](https://onshape-public.github.io/docs/api-adv/translation/#export-a-drawing-as-a-json) for more information."
+        },
+        {
+          "info": {
+            "name": "Get details of all drawing views.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://cad.onshape.com/api/v16/drawings/d/:did/:wvm/:wvmid/e/:eid/views",
+            "params": [
+              {
+                "name": "did",
+                "value": "",
+                "type": "path",
+                "description": "The id of the document in which to perform the operation."
+              },
+              {
+                "name": "linkDocumentId",
+                "value": "",
+                "type": "query",
+                "description": "The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both."
+              },
+              {
+                "name": "wvm",
+                "value": "",
+                "type": "path",
+                "description": "Indicates which of workspace (w), version (v), or document microversion (m) id is specified below."
+              },
+              {
+                "name": "wvmid",
+                "value": "",
+                "type": "path",
+                "description": "The id of the workspace, version or document microversion in which the operation should be performed."
+              },
+              {
+                "name": "eid",
+                "value": "",
+                "type": "path",
+                "description": "The id of the element in which to perform the operation."
+              },
+              {
+                "name": "transactionId",
+                "value": "",
+                "type": "query",
+                "description": "The id of the transaction in which this operation should take place. Transaction ids can be generated through the AppElement startTransaction API."
+              },
+              {
+                "name": "changeId",
+                "value": "",
+                "type": "query",
+                "description": "The id of the last change made to this application element. This can be retrieved from the response for any app element modification endpoint."
+              }
+            ],
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "/oauth/authorize",
+              "accessTokenUrl": "/oauth/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Get details of all drawing views."
+        },
+        {
+          "info": {
+            "name": "Get view geometry of a drawing view in JSON format.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://cad.onshape.com/api/v16/drawings/d/:did/:wvm/:wvmid/e/:eid/views/:viewid/jsongeometry",
+            "params": [
+              {
+                "name": "did",
+                "value": "",
+                "type": "path",
+                "description": "The id of the document in which to perform the operation."
+              },
+              {
+                "name": "linkDocumentId",
+                "value": "",
+                "type": "query",
+                "description": "The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both."
+              },
+              {
+                "name": "wvm",
+                "value": "",
+                "type": "path",
+                "description": "Indicates which of workspace (w), version (v), or document microversion (m) id is specified below."
+              },
+              {
+                "name": "wvmid",
+                "value": "",
+                "type": "path",
+                "description": "The id of the workspace, version or document microversion in which the operation should be performed."
+              },
+              {
+                "name": "eid",
+                "value": "",
+                "type": "path",
+                "description": "The id of the element in which to perform the operation."
+              },
+              {
+                "name": "viewid",
+                "value": "",
+                "type": "path",
+                "description": "The id of the view in which to perform the operation."
+              },
+              {
+                "name": "transactionId",
+                "value": "",
+                "type": "query",
+                "description": "The id of the transaction in which this operation should take place. Transaction ids can be generated through the AppElement startTransaction API."
+              },
+              {
+                "name": "changeId",
+                "value": "",
+                "type": "query",
+                "description": "The id of the last change made to this application element. This can be retrieved from the response for any app element modification endpoint."
+              },
+              {
+                "name": "scale",
+                "value": "",
+                "type": "query",
+                "description": "Scale for measurements."
+              }
+            ],
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "/oauth/authorize",
+              "accessTokenUrl": "/oauth/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Get view geometry of a drawing view in JSON format."
+        },
+        {
+          "info": {
+            "name": "Translate (export) a drawing to a different format.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://cad.onshape.com/api/v16/drawings/d/:did/:wv/:wvid/e/:eid/translations",
+            "params": [
+              {
+                "name": "did",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "wv",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "wvid",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "eid",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "/oauth/authorize",
+              "accessTokenUrl": "/oauth/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Export a drawing to a different format within a document. Use `getDrawingTranslatorFormats` for a list of supported translation (i.e., import/export) formats. See [API Guide: Translations](https://onshape-public.github.io/docs/api-adv/translation/#export-a-drawing-as-a-json) for more information."
+        },
+        {
+          "info": {
+            "name": "Get the status of a drawing modification operation.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://cad.onshape.com/api/v16/drawings/modify/status/:mrid",
+            "params": [
+              {
+                "name": "mrid",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "/oauth/authorize",
+              "accessTokenUrl": "/oauth/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Get the status of a drawing modification operation."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,1053 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Onshape REST Account Part API",
+    "version": "1.218.84032-34acba44be17"
+  },
+  "request": {
+    "auth": {
+      "type": "basic",
+      "username": "{{username}}",
+      "password": "{{password}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Part",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get all parts in a workspace, version, or microversion.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://cad.onshape.com/api/v16/parts/d/:did/:wvm/:wvmid",
+            "params": [
+              {
+                "name": "did",
+                "value": "",
+                "type": "path",
+                "description": "The id of the document in which to perform the operation."
+              },
+              {
+                "name": "linkDocumentId",
+                "value": "",
+                "type": "query",
+                "description": "The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both."
+              },
+              {
+                "name": "wvm",
+                "value": "",
+                "type": "path",
+                "description": "Indicates which of workspace (w), version (v), or document microversion (m) id is specified below."
+              },
+              {
+                "name": "wvmid",
+                "value": "",
+                "type": "path",
+                "description": "The id of the workspace, version or document microversion in which the operation should be performed."
+              },
+              {
+                "name": "elementId",
+                "value": "",
+                "type": "query",
+                "description": "The id of the element in which to perform the operation."
+              },
+              {
+                "name": "configuration",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "withThumbnails",
+                "value": "",
+                "type": "query",
+                "description": "Whether or not to include thumbnails (not supported for microversion)"
+              },
+              {
+                "name": "includePropertyDefaults",
+                "value": "",
+                "type": "query",
+                "description": "If true, include metadata schema property defaults in response"
+              },
+              {
+                "name": "includeFlatParts",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "/oauth/authorize",
+              "accessTokenUrl": "/oauth/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Get all parts in a workspace, version, or microversion."
+        },
+        {
+          "info": {
+            "name": "Get all parts in an element.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://cad.onshape.com/api/v16/parts/d/:did/:wvm/:wvmid/e/:eid",
+            "params": [
+              {
+                "name": "did",
+                "value": "",
+                "type": "path",
+                "description": "Document ID."
+              },
+              {
+                "name": "wvm",
+                "value": "",
+                "type": "path",
+                "description": "One of w or v or m corresponding to whether a workspace or version or microversion was entered."
+              },
+              {
+                "name": "wvmid",
+                "value": "",
+                "type": "path",
+                "description": "Workspace (w), Version (v) or Microversion (m) ID."
+              },
+              {
+                "name": "eid",
+                "value": "",
+                "type": "path",
+                "description": "Element ID."
+              },
+              {
+                "name": "withThumbnails",
+                "value": "",
+                "type": "query",
+                "description": "Whether or not to include thumbnails (not supported for microversion)"
+              },
+              {
+                "name": "includePropertyDefaults",
+                "value": "",
+                "type": "query",
+                "description": "If true, include metadata schema property defaults in response"
+              },
+              {
+                "name": "includeFlatParts",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "configuration",
+                "value": "",
+                "type": "query",
+                "description": "URL-encoded string of configuration values (separated by `;`). See the [Configurations API Guide](https://onshape-public.github.io/docs/api-adv/configs/) for details."
+              },
+              {
+                "name": "linkDocumentId",
+                "value": "",
+                "type": "query",
+                "description": "Id of document that links to the document being accessed. This may provide additional access rights to the document. Allowed only with version (v) path parameter."
+              }
+            ],
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "/oauth/authorize",
+              "accessTokenUrl": "/oauth/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Get all parts in an element."
+        },
+        {
+          "info": {
+            "name": "Get a part's body details.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://cad.onshape.com/api/v16/parts/d/:did/:wvm/:wvmid/e/:eid/partid/:partid/bodydetails",
+            "params": [
+              {
+                "name": "did",
+                "value": "",
+                "type": "path",
+                "description": "The id of the document in which to perform the operation."
+              },
+              {
+                "name": "linkDocumentId",
+                "value": "",
+                "type": "query",
+                "description": "The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both."
+              },
+              {
+                "name": "wvm",
+                "value": "",
+                "type": "path",
+                "description": "Indicates which of workspace (w), version (v), or document microversion (m) id is specified below."
+              },
+              {
+                "name": "wvmid",
+                "value": "",
+                "type": "path",
+                "description": "The id of the workspace, version or document microversion in which the operation should be performed."
+              },
+              {
+                "name": "eid",
+                "value": "",
+                "type": "path",
+                "description": "The id of the element in which to perform the operation."
+              },
+              {
+                "name": "configuration",
+                "value": "",
+                "type": "query",
+                "description": "URL-encoded string of configuration values (separated by `;`). See the [Configurations API Guide](https://onshape-public.github.io/docs/api-adv/configs/) for details."
+              },
+              {
+                "name": "rollbackBarIndex",
+                "value": "",
+                "type": "query",
+                "description": "Index specifying the location of the rollback bar when the call is evaluated. A -1 indicates that it should be at the end of the featurelist."
+              },
+              {
+                "name": "elementMicroversionId",
+                "value": "",
+                "type": "query",
+                "description": "A specific element microversion in which to evaluate the request."
+              },
+              {
+                "name": "partid",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "includeGeometricData",
+                "value": "",
+                "type": "query",
+                "description": "Whether or not geometric data should be included in the response."
+              }
+            ],
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "/oauth/authorize",
+              "accessTokenUrl": "/oauth/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "All coordinates are in meters (m)."
+        },
+        {
+          "info": {
+            "name": "Get a part's bounding box details.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://cad.onshape.com/api/v16/parts/d/:did/:wvm/:wvmid/e/:eid/partid/:partid/boundingboxes",
+            "params": [
+              {
+                "name": "did",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "wvm",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "wvmid",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "eid",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "partid",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "includeHidden",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "configuration",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "linkDocumentId",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "/oauth/authorize",
+              "accessTokenUrl": "/oauth/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Get a part's bounding box details."
+        },
+        {
+          "info": {
+            "name": "Synchronously export a part to a glTF file.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://cad.onshape.com/api/v16/parts/d/:did/:wvm/:wvmid/e/:eid/partid/:partid/gltf",
+            "params": [
+              {
+                "name": "did",
+                "value": "",
+                "type": "path",
+                "description": "The id of the document in which to perform the operation."
+              },
+              {
+                "name": "linkDocumentId",
+                "value": "",
+                "type": "query",
+                "description": "The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both."
+              },
+              {
+                "name": "wvm",
+                "value": "",
+                "type": "path",
+                "description": "Indicates which of workspace (w), version (v), or document microversion (m) id is specified below."
+              },
+              {
+                "name": "wvmid",
+                "value": "",
+                "type": "path",
+                "description": "The id of the workspace, version or document microversion in which the operation should be performed."
+              },
+              {
+                "name": "eid",
+                "value": "",
+                "type": "path",
+                "description": "The id of the element in which to perform the operation."
+              },
+              {
+                "name": "configuration",
+                "value": "",
+                "type": "query",
+                "description": "URL-encoded string of configuration values (separated by `;`). See the [Configurations API Guide](https://onshape-public.github.io/docs/api-adv/configs/) for details."
+              },
+              {
+                "name": "rollbackBarIndex",
+                "value": "",
+                "type": "query",
+                "description": "Index specifying the location of the rollback bar when the call is evaluated. A -1 indicates that it should be at the end of the featurelist."
+              },
+              {
+                "name": "elementMicroversionId",
+                "value": "",
+                "type": "query",
+                "description": "A specific element microversion in which to evaluate the request."
+              },
+              {
+                "name": "partid",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "angleTolerance",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "chordTolerance",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "precomputedLevelOfDetail",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "outputSeparateFaceNodes",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "faceId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "outputFaceAppearances",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "maxFacetWidth",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "/oauth/authorize",
+              "accessTokenUrl": "/oauth/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Creates a synchronous export of the part (with limited tessellation settings) to a glTF file. \n* Returns a 307 redirect from which to download the exported file. \n* Export is much faster than asynchronous endpoints at the expense of limited control on tessellation settings. \n* Use the [PartStudio/createPartStudioTranslation](#/PartStudio/createPartStudioTranslation) asynchronous export for greater control. \n \nSee [API Guide: Synchronous Exports](https://onshape-public.github.io/docs/api-adv/tran"
+        },
+        {
+          "info": {
+            "name": "Get a part's mass properties.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://cad.onshape.com/api/v16/parts/d/:did/:wvm/:wvmid/e/:eid/partid/:partid/massproperties",
+            "params": [
+              {
+                "name": "did",
+                "value": "",
+                "type": "path",
+                "description": "The id of the document in which to perform the operation."
+              },
+              {
+                "name": "linkDocumentId",
+                "value": "",
+                "type": "query",
+                "description": "The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both."
+              },
+              {
+                "name": "wvm",
+                "value": "",
+                "type": "path",
+                "description": "Indicates which of workspace (w), version (v), or document microversion (m) id is specified below."
+              },
+              {
+                "name": "wvmid",
+                "value": "",
+                "type": "path",
+                "description": "The id of the workspace, version or document microversion in which the operation should be performed."
+              },
+              {
+                "name": "eid",
+                "value": "",
+                "type": "path",
+                "description": "The id of the element in which to perform the operation."
+              },
+              {
+                "name": "configuration",
+                "value": "",
+                "type": "query",
+                "description": "URL-encoded string of configuration values (separated by `;`). See the [Configurations API Guide](https://onshape-public.github.io/docs/api-adv/configs/) for details."
+              },
+              {
+                "name": "rollbackBarIndex",
+                "value": "",
+                "type": "query",
+                "description": "Index specifying the location of the rollback bar when the call is evaluated. A -1 indicates that it should be at the end of the featurelist."
+              },
+              {
+                "name": "elementMicroversionId",
+                "value": "",
+                "type": "query",
+                "description": "A specific element microversion in which to evaluate the request."
+              },
+              {
+                "name": "partid",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "inferMetadataOwner",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "useMassPropertyOverrides",
+                "value": "",
+                "type": "query",
+                "description": "If true, use the user mass property overrides when calculated mass properties"
+              }
+            ],
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "/oauth/authorize",
+              "accessTokenUrl": "/oauth/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Parts must have density. The returned schema includes the same information as in the Onshape [Mass Properties Tool](https://cad.onshape.com/help/Content/massprops-ps.htm). \nWhen three values are returned: \n * The first is the calculated value. \n * The second is the minimum possible value, considering tolerance. \n * The third is the maximum possible value, considering tolerance."
+        },
+        {
+          "info": {
+            "name": "Synchronously export a part to a Parasolid file.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://cad.onshape.com/api/v16/parts/d/:did/:wvm/:wvmid/e/:eid/partid/:partid/parasolid",
+            "params": [
+              {
+                "name": "did",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "wvm",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "wvmid",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "eid",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "partid",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "version",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "configuration",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "linkDocumentId",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "/oauth/authorize",
+              "accessTokenUrl": "/oauth/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Creates a synchronous export of the part (with limited tessellation settings) to a Parasolid file. \n* Returns a 307 redirect from which to download the exported file. \n* Export is much faster than asynchronous endpoints at the expense of limited control on tessellation settings. \n* Use the [PartStudio/createPartStudioTranslation](#/PartStudio/createPartStudioTranslation) asynchronous export for greater control. \n \nSee [API Guide: Synchronous Exports](https://onshape-public.github.io/docs/api-adv"
+        },
+        {
+          "info": {
+            "name": "Get a part's shaded views.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://cad.onshape.com/api/v16/parts/d/:did/:wvm/:wvmid/e/:eid/partid/:partid/shadedviews",
+            "params": [
+              {
+                "name": "did",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "wvm",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "wvmid",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "eid",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "partid",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "viewMatrix",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "outputHeight",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "outputWidth",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "pixelSize",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "edges",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "useAntiAliasing",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "configuration",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "linkDocumentId",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "/oauth/authorize",
+              "accessTokenUrl": "/oauth/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Get a part's shaded views."
+        },
+        {
+          "info": {
+            "name": "Get a part's sheet metal bend table.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://cad.onshape.com/api/v16/parts/d/:did/:wvm/:wvmid/e/:eid/partid/:partid/sheetmetal/bendtable",
+            "params": [
+              {
+                "name": "did",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "wvm",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "wvmid",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "eid",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "partid",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "linkDocumentId",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "/oauth/authorize",
+              "accessTokenUrl": "/oauth/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Get a part's sheet metal bend table."
+        },
+        {
+          "info": {
+            "name": "Synchronously export a part to an STL file.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://cad.onshape.com/api/v16/parts/d/:did/:wvm/:wvmid/e/:eid/partid/:partid/stl",
+            "params": [
+              {
+                "name": "did",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "wvm",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "wvmid",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "eid",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "partid",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "mode",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "grouping",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "scale",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "units",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "angleTolerance",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "chordTolerance",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "maxFacetWidth",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "minFacetWidth",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "configuration",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "linkDocumentId",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "/oauth/authorize",
+              "accessTokenUrl": "/oauth/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Creates a synchronous export of the part (with limited tessellation settings) to an STL file. \n* Returns a 307 redirect from which to download the exported file. \n* Export is much faster than asynchronous endpoints at the expense of limited control on tessellation settings. \n* Use the [PartStudio/createPartStudioTranslation](#/PartStudio/createPartStudioTranslation) asynchronous export for greater control. \n \nSee [API Guide: Synchronous Exports](https://onshape-public.github.io/docs/api-adv/tran"
+        },
+        {
+          "info": {
+            "name": "Get a list of a part's tessellation edges.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://cad.onshape.com/api/v16/parts/d/:did/:wvm/:wvmid/e/:eid/partid/:partid/tessellatededges",
+            "params": [
+              {
+                "name": "did",
+                "value": "",
+                "type": "path",
+                "description": "The id of the document in which to perform the operation."
+              },
+              {
+                "name": "linkDocumentId",
+                "value": "",
+                "type": "query",
+                "description": "The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both."
+              },
+              {
+                "name": "wvm",
+                "value": "",
+                "type": "path",
+                "description": "Indicates which of workspace (w), version (v), or document microversion (m) id is specified below."
+              },
+              {
+                "name": "wvmid",
+                "value": "",
+                "type": "path",
+                "description": "The id of the workspace, version or document microversion in which the operation should be performed."
+              },
+              {
+                "name": "eid",
+                "value": "",
+                "type": "path",
+                "description": "The id of the element in which to perform the operation."
+              },
+              {
+                "name": "configuration",
+                "value": "",
+                "type": "query",
+                "description": "URL-encoded string of configuration values (separated by `;`). See the [Configurations API Guide](https://onshape-public.github.io/docs/api-adv/configs/) for details."
+              },
+              {
+                "name": "rollbackBarIndex",
+                "value": "",
+                "type": "query",
+                "description": "Index specifying the location of the rollback bar when the call is evaluated. A -1 indicates that it should be at the end of the featurelist."
+              },
+              {
+                "name": "elementMicroversionId",
+                "value": "",
+                "type": "query",
+                "description": "A specific element microversion in which to evaluate the request."
+              },
+              {
+                "name": "partid",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "angleTolerance",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "chordTolerance",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "precomputedLevelOfDetail",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "edgeId",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "/oauth/authorize",
+              "accessTokenUrl": "/oauth/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Returns the coordinates (in meters) of each edge's endpoints."
+        },
+        {
+          "info": {
+            "name": "Get a list of a part's tessellation faces.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://cad.onshape.com/api/v16/parts/d/:did/:wvm/:wvmid/e/:eid/partid/:partid/tessellatedfaces",
+            "params": [
+              {
+                "name": "did",
+                "value": "",
+                "type": "path",
+                "description": "The id of the document in which to perform the operation."
+              },
+              {
+                "name": "linkDocumentId",
+                "value": "",
+                "type": "query",
+                "description": "The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both."
+              },
+              {
+                "name": "wvm",
+                "value": "",
+                "type": "path",
+                "description": "Indicates which of workspace (w), version (v), or document microversion (m) id is specified below."
+              },
+              {
+                "name": "wvmid",
+                "value": "",
+                "type": "path",
+                "description": "The id of the workspace, version or document microversion in which the operation should be performed."
+              },
+              {
+                "name": "eid",
+                "value": "",
+                "type": "path",
+                "description": "The id of the element in which to perform the operation."
+              },
+              {
+                "name": "configuration",
+                "value": "",
+                "type": "query",
+                "description": "URL-encoded string of configuration values (separated by `;`). See the [Configurations API Guide](https://onshape-public.github.io/docs/api-adv/configs/) for details."
+              },
+              {
+                "name": "rollbackBarIndex",
+                "value": "",
+                "type": "query",
+                "description": "Index specifying the location of the rollback bar when the call is evaluated. A -1 indicates that it should be at the end of the featurelist."
+              },
+              {
+                "name": "elementMicroversionId",
+                "value": "",
+                "type": "query",
+                "description": "A specific element microversion in which to evaluate the request."
+              },
+              {
+                "name": "partid",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "angleTolerance",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "chordTolerance",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "precomputedLevelOfDetail",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "faceId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "outputFaceAppearances",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "maxFacetWidth",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "outputVertexNormals",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "outputFacetNormals",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "outputTextureCoordinates",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "outputIndexTable",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "outputErrorFaces",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "combineCompositePartConstituents",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "/oauth/authorize",
+              "accessTokenUrl": "/oauth/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Coordinates are in meters (m)."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,235 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Onshape REST Account APIApplication API",
+    "version": "1.218.84032-34acba44be17"
+  },
+  "request": {
+    "auth": {
+      "type": "basic",
+      "username": "{{username}}",
+      "password": "{{password}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "APIApplication",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get company-level preference settings for an application.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://cad.onshape.com/api/v16/applications/clients/:cid/settings/companies/:cpid",
+            "params": [
+              {
+                "name": "cpid",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "cid",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "documentId",
+                "value": "",
+                "type": "query",
+                "description": "A document owned by the company. Read access to this document allows read access to its owning company's settings."
+              },
+              {
+                "name": "key",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "This API is only usable with an OAuth token and only by the current user or admin."
+        },
+        {
+          "info": {
+            "name": "Update company preference settings for an application.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://cad.onshape.com/api/v16/applications/clients/:cid/settings/companies/:cpid",
+            "params": [
+              {
+                "name": "cpid",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "cid",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "This API is only usable with an OAuth token and only by the current user or admin. \n* Add or update a setting identified by key with value. \n* Operation and field may optionally be specified when updating Map type settings. \n* Field specifies the key of the setting Map to update. \n* Operation may be one of: \n    * `ADD`: Add or update an existing field of the settings Map. \n    * `UPDATE`: Update an existing field of the settings Map and return an error if the field does not exist. \n    * `REMOV"
+        },
+        {
+          "info": {
+            "name": "Delete a company's application preference settings.",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://cad.onshape.com/api/v16/applications/clients/:cid/settings/companies/:cpid",
+            "params": [
+              {
+                "name": "cpid",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "cid",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "key",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "This API is only usable with an OAuth token and only by the current user or admin."
+        },
+        {
+          "info": {
+            "name": "Get user-level preference settings for an application.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://cad.onshape.com/api/v16/applications/clients/:cid/settings/users/:uid",
+            "params": [
+              {
+                "name": "uid",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "cid",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "key",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "This API is only usable with an OAuth token and only by the current user or admin."
+        },
+        {
+          "info": {
+            "name": "Update a user's application preference settings.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://cad.onshape.com/api/v16/applications/clients/:cid/settings/users/:uid",
+            "params": [
+              {
+                "name": "uid",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "cid",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "This API is only usable with an OAuth token and only by the current user or admin. \n* Add or update a setting identified by key with value. \n* Operation and field may optionally be specified when updating Map type settings. \n* Field specifies the key of the setting Map to update. \n* Operation may be one of: \n    * `ADD`: Add or update an existing field of the settings Map. \n    * `UPDATE`: Update an existing field of the settings Map and return an error if the field does not exist. \n    * `REMOV"
+        },
+        {
+          "info": {
+            "name": "Delete a user's application preference settings.",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://cad.onshape.com/api/v16/applications/clients/:cid/settings/users/:uid",
+            "params": [
+              {
+                "name": "uid",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "cid",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "key",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "This API is only usable with an OAuth token and only by the current user or admin."
+        },
+        {
+          "info": {
+            "name": "Get a list of the client extensions the specified user has granted/accepted terms for.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://cad.onshape.com/api/v16/applications/extensions/user/:uid/client/:cid",
+            "params": [
+              {
+                "name": "uid",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "cid",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "validPurchases",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "/oauth/authorize",
+              "accessTokenUrl": "/oauth/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Get a list of the client extensions the specified user has granted/accepted terms for."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,1584 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Onshape REST Account AppElement API",
+    "version": "1.218.84032-34acba44be17"
+  },
+  "request": {
+    "auth": {
+      "type": "basic",
+      "username": "{{username}}",
+      "password": "{{password}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "AppElement",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Create a new application element.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://cad.onshape.com/api/v16/appelements/d/:did/w/:wid",
+            "params": [
+              {
+                "name": "did",
+                "value": "",
+                "type": "path",
+                "description": "The id of the document in which to perform the operation."
+              },
+              {
+                "name": "linkDocumentId",
+                "value": "",
+                "type": "query",
+                "description": "The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both."
+              },
+              {
+                "name": "wid",
+                "value": "",
+                "type": "path",
+                "description": "The id of the workspace in which to perform the operation."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "/oauth/authorize",
+              "accessTokenUrl": "/oauth/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "See [API Guide: Structured Storage](https://onshape-public.github.io/docs/app-dev/structuredstorage/) for more information."
+        },
+        {
+          "info": {
+            "name": "Create multiple empty application elements at once.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://cad.onshape.com/api/v16/appelements/d/:did/w/:wid/bulkcreate",
+            "params": [
+              {
+                "name": "did",
+                "value": "",
+                "type": "path",
+                "description": "The id of the document in which to perform the operation."
+              },
+              {
+                "name": "linkDocumentId",
+                "value": "",
+                "type": "query",
+                "description": "The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both."
+              },
+              {
+                "name": "wid",
+                "value": "",
+                "type": "path",
+                "description": "The id of the workspace in which to perform the operation."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "/oauth/authorize",
+              "accessTokenUrl": "/oauth/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Call this faster API instead of creating multiple app elements one at a time or in parallel."
+        },
+        {
+          "info": {
+            "name": "Download the blob element (i.e., a file) stored in an app element in a document's workspace.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://cad.onshape.com/api/v16/appelements/d/:did/w/:wid/e/:eid/blob/:bid",
+            "headers": [
+              {
+                "name": "If-None-Match",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "did",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "wid",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "eid",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "bid",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "contentDisposition",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "transactionId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "changeId",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "/oauth/authorize",
+              "accessTokenUrl": "/oauth/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "The downloaded file can be used to retrieve stored subelements."
+        },
+        {
+          "info": {
+            "name": "Create a new blob subelement from an uploaded file.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://cad.onshape.com/api/v16/appelements/d/:did/w/:wid/e/:eid/blob/:bid",
+            "params": [
+              {
+                "name": "did",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "wid",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "eid",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "bid",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "multipart-form",
+              "data": []
+            },
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "/oauth/authorize",
+              "accessTokenUrl": "/oauth/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Request body parameters are multipart fields, so you must use `\"Content-Type\":\"multipart/form-data\"` in the request header."
+        },
+        {
+          "info": {
+            "name": "Delete a blob subelement from an app element.",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://cad.onshape.com/api/v16/appelements/d/:did/w/:wid/e/:eid/blob/:bid",
+            "params": [
+              {
+                "name": "did",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "wid",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "eid",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "bid",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "transactionId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "changeId",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "/oauth/authorize",
+              "accessTokenUrl": "/oauth/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Delete a blob subelement from an app element."
+        },
+        {
+          "info": {
+            "name": "Get a list of all transactions performed on an element.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://cad.onshape.com/api/v16/appelements/d/:did/w/:wid/e/:eid/transactions",
+            "params": [
+              {
+                "name": "did",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "eid",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "wid",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "/oauth/authorize",
+              "accessTokenUrl": "/oauth/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Get a list of all transactions performed on an element."
+        },
+        {
+          "info": {
+            "name": "Start a transaction",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://cad.onshape.com/api/v16/appelements/d/:did/w/:wid/e/:eid/transactions",
+            "params": [
+              {
+                "name": "did",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "eid",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "wid",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "/oauth/authorize",
+              "accessTokenUrl": "/oauth/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Creates a microbranch (i.e., a branch for a new microversion)."
+        },
+        {
+          "info": {
+            "name": "Abort a transaction.",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://cad.onshape.com/api/v16/appelements/d/:did/w/:wid/e/:eid/transactions/:tid",
+            "params": [
+              {
+                "name": "did",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "eid",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "wid",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "tid",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "returnError",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "/oauth/authorize",
+              "accessTokenUrl": "/oauth/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Deletes a microbranch (i.e., the branch with the microversion for the transaction)."
+        },
+        {
+          "info": {
+            "name": "Merge multiple transactions into one microversion.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://cad.onshape.com/api/v16/appelements/d/:did/w/:wid/transactions",
+            "params": [
+              {
+                "name": "did",
+                "value": "",
+                "type": "path",
+                "description": "The id of the document in which to perform the operation."
+              },
+              {
+                "name": "linkDocumentId",
+                "value": "",
+                "type": "query",
+                "description": "The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both."
+              },
+              {
+                "name": "wid",
+                "value": "",
+                "type": "path",
+                "description": "The id of the workspace in which to perform the operation."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "/oauth/authorize",
+              "accessTokenUrl": "/oauth/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "If successful, all transactions will be committed to a single microversion. If the call raises an error, nothing will be committed."
+        },
+        {
+          "info": {
+            "name": "Download a blob subelement from the specified app element.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://cad.onshape.com/api/v16/appelements/d/:did/:vm/:vmid/e/:eid/blob/:bid",
+            "headers": [
+              {
+                "name": "If-None-Match",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "did",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "vm",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "vmid",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "eid",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "bid",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "contentDisposition",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "transactionId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "changeId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "linkDocumentId",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "/oauth/authorize",
+              "accessTokenUrl": "/oauth/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Download a blob subelement as a file."
+        },
+        {
+          "info": {
+            "name": "Get a list of all blob subelement IDs for the specified workspace, version, or microversion.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://cad.onshape.com/api/v16/appelements/d/:did/:wvm/:wvmid/e/:eid/blob",
+            "params": [
+              {
+                "name": "did",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "eid",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "wvm",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "wvmid",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "transactionId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "changeId",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "/oauth/authorize",
+              "accessTokenUrl": "/oauth/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Get a list of all blob subelement IDs for the specified workspace, version, or microversion."
+        },
+        {
+          "info": {
+            "name": "Compare app element JSON trees between workspaces/versions/microversions in a document.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://cad.onshape.com/api/v16/appelements/d/:did/:wvm/:wvmid/e/:eid/compare",
+            "params": [
+              {
+                "name": "did",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "wvm",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "wvmid",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "eid",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "workspaceId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "versionId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "microversionId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "linkDocumentId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "jsonDifferenceFormat",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "/oauth/authorize",
+              "accessTokenUrl": "/oauth/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Specify the source workspace/version/microversion in the URL and specify the target workspace/version/microversion in the query parameters."
+        },
+        {
+          "info": {
+            "name": "Get a list of all subelement IDs in a specified workspace/version/microversion.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://cad.onshape.com/api/v16/appelements/d/:did/:wvm/:wvmid/e/:eid/content",
+            "params": [
+              {
+                "name": "did",
+                "value": "",
+                "type": "path",
+                "description": "The id of the document in which to perform the operation."
+              },
+              {
+                "name": "linkDocumentId",
+                "value": "",
+                "type": "query",
+                "description": "The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both."
+              },
+              {
+                "name": "wvm",
+                "value": "",
+                "type": "path",
+                "description": "Indicates which of workspace (w), version (v), or document microversion (m) id is specified below."
+              },
+              {
+                "name": "wvmid",
+                "value": "",
+                "type": "path",
+                "description": "The id of the workspace, version or document microversion in which the operation should be performed."
+              },
+              {
+                "name": "eid",
+                "value": "",
+                "type": "path",
+                "description": "The id of the element in which to perform the operation."
+              },
+              {
+                "name": "transactionId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "changeId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "baseChangeId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "subelementId",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "/oauth/authorize",
+              "accessTokenUrl": "/oauth/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Get a list of all subelement IDs in a specified workspace/version/microversion."
+        },
+        {
+          "info": {
+            "name": "Update the content for the specified app element.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://cad.onshape.com/api/v16/appelements/d/:did/:wvm/:wvmid/e/:eid/content",
+            "params": [
+              {
+                "name": "did",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "eid",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "wvm",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "wvmid",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "/oauth/authorize",
+              "accessTokenUrl": "/oauth/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "See [API Guide: Structured Storage](https://onshape-public.github.io/docs/app-dev/structuredstorage/) for more information."
+        },
+        {
+          "info": {
+            "name": "Get the history of the specified all element.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://cad.onshape.com/api/v16/appelements/d/:did/:wvm/:wvmid/e/:eid/content/history",
+            "params": [
+              {
+                "name": "did",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "eid",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "wvm",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "wvmid",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "/oauth/authorize",
+              "accessTokenUrl": "/oauth/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Get the history of the specified all element."
+        },
+        {
+          "info": {
+            "name": "Get a list of all subelement IDs in a specified workspace/version/microversion.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://cad.onshape.com/api/v16/appelements/d/:did/:wvm/:wvmid/e/:eid/content/ids",
+            "params": [
+              {
+                "name": "did",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "eid",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "wvm",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "wvmid",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "transactionId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "changeId",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "/oauth/authorize",
+              "accessTokenUrl": "/oauth/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Get a list of all subelement IDs in a specified workspace/version/microversion."
+        },
+        {
+          "info": {
+            "name": "Get the full JSON tree for the specified workspace/version/microversion.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://cad.onshape.com/api/v16/appelements/d/:did/:wvm/:wvmid/e/:eid/content/json",
+            "params": [
+              {
+                "name": "did",
+                "value": "",
+                "type": "path",
+                "description": "The id of the document in which to perform the operation."
+              },
+              {
+                "name": "linkDocumentId",
+                "value": "",
+                "type": "query",
+                "description": "The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both."
+              },
+              {
+                "name": "wvm",
+                "value": "",
+                "type": "path",
+                "description": "Indicates which of workspace (w), version (v), or document microversion (m) id is specified below."
+              },
+              {
+                "name": "wvmid",
+                "value": "",
+                "type": "path",
+                "description": "The id of the workspace, version or document microversion in which the operation should be performed."
+              },
+              {
+                "name": "eid",
+                "value": "",
+                "type": "path",
+                "description": "The id of the element in which to perform the operation."
+              },
+              {
+                "name": "transactionId",
+                "value": "",
+                "type": "query",
+                "description": "The id of the transaction in which this operation should take place. Transaction ids can be generated through the AppElement startTransaction API."
+              },
+              {
+                "name": "changeId",
+                "value": "",
+                "type": "query",
+                "description": "The id of the last change made to this application element. This can be retrieved from the response for any app element modification endpoint."
+              }
+            ],
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "/oauth/authorize",
+              "accessTokenUrl": "/oauth/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Get the full JSON tree for the specified workspace/version/microversion."
+        },
+        {
+          "info": {
+            "name": "Get the JSON at specified paths for an element.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://cad.onshape.com/api/v16/appelements/d/:did/:wvm/:wvmid/e/:eid/content/jsonpaths",
+            "params": [
+              {
+                "name": "did",
+                "value": "",
+                "type": "path",
+                "description": "The id of the document in which to perform the operation."
+              },
+              {
+                "name": "linkDocumentId",
+                "value": "",
+                "type": "query",
+                "description": "The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both."
+              },
+              {
+                "name": "wvm",
+                "value": "",
+                "type": "path",
+                "description": "Indicates which of workspace (w), version (v), or document microversion (m) id is specified below."
+              },
+              {
+                "name": "wvmid",
+                "value": "",
+                "type": "path",
+                "description": "The id of the workspace, version or document microversion in which the operation should be performed."
+              },
+              {
+                "name": "eid",
+                "value": "",
+                "type": "path",
+                "description": "The id of the element in which to perform the operation."
+              },
+              {
+                "name": "transactionId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "changeId",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "/oauth/authorize",
+              "accessTokenUrl": "/oauth/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Use this endpoint to return the JSON at the specified path instead of returning the entire JSON for the element. This POST endpoint does not write any information."
+        },
+        {
+          "info": {
+            "name": "Get a list of multiple subelements by document ID, workspace or version or microversion ID, tab ID, and subelement IDs.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://cad.onshape.com/api/v16/appelements/d/:did/:wvm/:wvmid/e/:eid/content/subelements",
+            "params": [
+              {
+                "name": "did",
+                "value": "",
+                "type": "path",
+                "description": "The id of the document in which to perform the operation."
+              },
+              {
+                "name": "linkDocumentId",
+                "value": "",
+                "type": "query",
+                "description": "The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both."
+              },
+              {
+                "name": "wvm",
+                "value": "",
+                "type": "path",
+                "description": "Indicates which of workspace (w), version (v), or document microversion (m) id is specified below."
+              },
+              {
+                "name": "wvmid",
+                "value": "",
+                "type": "path",
+                "description": "The id of the workspace, version or document microversion in which the operation should be performed."
+              },
+              {
+                "name": "eid",
+                "value": "",
+                "type": "path",
+                "description": "The id of the element in which to perform the operation."
+              },
+              {
+                "name": "transactionId",
+                "value": "",
+                "type": "query",
+                "description": "The id of the transaction in which this operation should take place. Transaction ids can be generated through the AppElement startTransaction API."
+              },
+              {
+                "name": "changeId",
+                "value": "",
+                "type": "query",
+                "description": "The id of the last change made to this application element. This can be retrieved from the response for any app element modification endpoint."
+              },
+              {
+                "name": "baseChangeId",
+                "value": "",
+                "type": "query",
+                "description": "The id of a change made prior to the specified or implied changeId. If specified, only changes made after the base changeId are returned."
+              },
+              {
+                "name": "subelementIds",
+                "value": "",
+                "type": "query",
+                "description": "The array of subelementIds in format: `&subelementIds=ID1& &subelementIds=ID2...&subelementIds=IDn.`"
+              }
+            ],
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "/oauth/authorize",
+              "accessTokenUrl": "/oauth/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Get a list of multiple subelements by document ID, workspace or version or microversion ID, tab ID, and subelement IDs."
+        },
+        {
+          "info": {
+            "name": "Delete multiple subelements array by document ID, workspace or version or microversion ID, tab ID, and subelement IDs.",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://cad.onshape.com/api/v16/appelements/d/:did/:wvm/:wvmid/e/:eid/content/subelements",
+            "params": [
+              {
+                "name": "did",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "eid",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "wvm",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "wvmid",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "subelementIds",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "transactionId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "parentChangeId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "description",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "/oauth/authorize",
+              "accessTokenUrl": "/oauth/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Delete multiple subelements array by document ID, workspace or version or microversion ID, tab ID, and subelement IDs."
+        },
+        {
+          "info": {
+            "name": "Deletes the content from the specified app element.",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://cad.onshape.com/api/v16/appelements/d/:did/:wvm/:wvmid/e/:eid/content/subelements/:sid",
+            "params": [
+              {
+                "name": "did",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "eid",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "wvm",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "wvmid",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "sid",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "transactionId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "parentChangeId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "description",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "/oauth/authorize",
+              "accessTokenUrl": "/oauth/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Deletes the content from the specified app element."
+        },
+        {
+          "info": {
+            "name": "Creates a reference to an app element.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://cad.onshape.com/api/v16/appelements/d/:did/:wvm/:wvmid/e/:eid/references",
+            "params": [
+              {
+                "name": "did",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "eid",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "wvm",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "wvmid",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "/oauth/authorize",
+              "accessTokenUrl": "/oauth/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Creates a reference to an app element."
+        },
+        {
+          "info": {
+            "name": "Resolves a single reference to an app element.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://cad.onshape.com/api/v16/appelements/d/:did/:wvm/:wvmid/e/:eid/references/:rid",
+            "params": [
+              {
+                "name": "did",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "eid",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "wvm",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "wvmid",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "rid",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "transactionId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "parentChangeId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "includeInternal",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "linkDocumentId",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "/oauth/authorize",
+              "accessTokenUrl": "/oauth/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "For single operations only. Use `resolveReferences` for bulk operations."
+        },
+        {
+          "info": {
+            "name": "Update an app element reference.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://cad.onshape.com/api/v16/appelements/d/:did/:wvm/:wvmid/e/:eid/references/:rid",
+            "params": [
+              {
+                "name": "did",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "eid",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "wvm",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "wvmid",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "rid",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "/oauth/authorize",
+              "accessTokenUrl": "/oauth/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Update an app element reference."
+        },
+        {
+          "info": {
+            "name": "Delete an app element reference.",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://cad.onshape.com/api/v16/appelements/d/:did/:wvm/:wvmid/e/:eid/references/:rid",
+            "params": [
+              {
+                "name": "did",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "eid",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "wvm",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "wvmid",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "rid",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "transactionId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "parentChangeId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "description",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "/oauth/authorize",
+              "accessTokenUrl": "/oauth/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Delete an app element reference."
+        },
+        {
+          "info": {
+            "name": "Resolves bulk app element references.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://cad.onshape.com/api/v16/appelements/d/:did/:wvm/:wvmid/e/:eid/resolvereferences",
+            "params": [
+              {
+                "name": "did",
+                "value": "",
+                "type": "path",
+                "description": "The id of the document in which to perform the operation."
+              },
+              {
+                "name": "linkDocumentId",
+                "value": "",
+                "type": "query",
+                "description": "The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both."
+              },
+              {
+                "name": "wvm",
+                "value": "",
+                "type": "path",
+                "description": "Indicates which of workspace (w), version (v), or document microversion (m) id is specified below."
+              },
+              {
+                "name": "wvmid",
+                "value": "",
+                "type": "path",
+                "description": "The id of the workspace, version or document microversion in which the operation should be performed."
+              },
+              {
+                "name": "eid",
+                "value": "",
+                "type": "path",
+                "description": "The id of the element in which to perform the operation."
+              },
+              {
+                "name": "transactionId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "parentChangeId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "includeInternal",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "referenceIds",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "/oauth/authorize",
+              "accessTokenUrl": "/oauth/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "For bulk operations only. Use `resolveReference` for a single operation."
+        },
+        {
+          "info": {
+            "name": "Resolves bulk app element references.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://cad.onshape.com/api/v16/appelements/d/:did/:wvm/:wvmid/resolvereferences",
+            "params": [
+              {
+                "name": "did",
+                "value": "",
+                "type": "path",
+                "description": "The id of the document in which to perform the operation."
+              },
+              {
+                "name": "linkDocumentId",
+                "value": "",
+                "type": "query",
+                "description": "The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both."
+              },
+              {
+                "name": "wvm",
+                "value": "",
+                "type": "path",
+                "description": "Indicates which of workspace (w), version (v), or document microversion (m) id is specified below."
+              },
+              {
+                "name": "wvmid",
+                "value": "",
+                "type": "path",
+                "description": "The id of the workspace, version or document microversion in which the operation should be performed."
+              },
+              {
+                "name": "transactionId",
+                "value": "",
+                "type": "query",
+                "description": "The id of the transaction in which this operation should take place. Transaction ids can be generated through the AppElement startTransaction API."
+              },
+              {
+                "name": "parentChangeId",
+                "value": "",
+                "type": "query",
+                "description": "The id of the last change made to this application element. This can be retrieved from the response for any app element modification endpoint."
+              },
+              {
+                "name": "includeInternal",
+                "value": "",
+                "type": "query",
+                "description": "Whether to include references that have been deleted or inactivated."
+              },
+              {
+                "name": "referenceIds",
+                "value": "",
+                "type": "query",
+                "description": "Comma separated string of reference ids find."
+              },
+              {
+                "name": "elementIds",
+                "value": "",
+                "type": "query",
+                "description": "Comma separated string of element ids to search for references in."
+              },
+              {
+                "name": "drawingsOnly",
+                "value": "",
+                "type": "query",
+                "description": "Whether to find references for only Onshape drawing app elements."
+              }
+            ],
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "/oauth/authorize",
+              "accessTokenUrl": "/oauth/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Resolve all references for all workspace elements. For bulk operations  only. Use `resolveReferences` for a single element."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

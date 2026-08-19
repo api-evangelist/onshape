@@ -1,0 +1,1025 @@
+{
+  "item": [
+    {
+      "id": "d58dc429-18e9-4c9d-8c68-f5d9cf898a22",
+      "name": "APIApplication",
+      "description": {
+        "content": "Manage application preferences.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "a0d79beb-c89b-418f-b14b-d5cad766376f",
+          "name": "Get company-level preference settings for an application.",
+          "request": {
+            "name": "Get company-level preference settings for an application.",
+            "description": {
+              "content": "This API is only usable with an OAuth token and only by the current user or admin.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "applications",
+                "clients",
+                ":cid",
+                "settings",
+                "companies",
+                ":cpid"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "documentId",
+                  "value": "<string>",
+                  "description": "A document owned by the company. Read access to this document allows read access to its owning company's settings."
+                },
+                {
+                  "disabled": false,
+                  "key": "key",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "key",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "cpid",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "cid",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json;charset=UTF-8; qs=0.09"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "5e25aaca-134b-4365-b187-d6c0a03f995e",
+              "name": "default response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "applications",
+                    "clients",
+                    ":cid",
+                    "settings",
+                    "companies",
+                    ":cpid"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "documentId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "key",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "key",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "cpid",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "cid",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json;charset=UTF-8; qs=0.09"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json;charset=UTF-8; qs=0.09"
+                }
+              ],
+              "body": "{\n  \"settings\": [\n    {\n      \"key\": \"string\",\n      \"value\": {}\n    },\n    {\n      \"key\": \"string\",\n      \"value\": {}\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "658dfc50-09a9-4bfc-8dd1-cb323fe44f8a",
+          "name": "Update company preference settings for an application.",
+          "request": {
+            "name": "Update company preference settings for an application.",
+            "description": {
+              "content": "This API is only usable with an OAuth token and only by the current user or admin. \n* Add or update a setting identified by key with value. \n* Operation and field may optionally be specified when updating Map type settings. \n* Field specifies the key of the setting Map to update. \n* Operation may be one of: \n    * `ADD`: Add or update an existing field of the settings Map. \n    * `UPDATE`: Update an existing field of the settings Map and return an error if the field does not exist. \n    * `REMOVE`: Remove the field from the settings Map. \n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "applications",
+                "clients",
+                ":cid",
+                "settings",
+                "companies",
+                ":cpid"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "cpid",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "cid",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json;charset=UTF-8; qs=0.09"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json;charset=UTF-8; qs=0.09"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"settings\": [\n    {\n      \"field\": \"<string>\",\n      \"key\": \"<string>\",\n      \"operation\": \"<string>\",\n      \"value\": \"<object>\"\n    },\n    {\n      \"field\": \"<string>\",\n      \"key\": \"<string>\",\n      \"operation\": \"<string>\",\n      \"value\": \"<object>\"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "1e6fd0e5-a658-4ff2-9fb1-b8a2cf54e8b3",
+              "name": "default response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "applications",
+                    "clients",
+                    ":cid",
+                    "settings",
+                    "companies",
+                    ":cpid"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "cpid",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "cid",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json;charset=UTF-8; qs=0.09"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"settings\": [\n    {\n      \"field\": \"<string>\",\n      \"key\": \"<string>\",\n      \"operation\": \"<string>\",\n      \"value\": \"<object>\"\n    },\n    {\n      \"field\": \"<string>\",\n      \"key\": \"<string>\",\n      \"operation\": \"<string>\",\n      \"value\": \"<object>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json;charset=UTF-8; qs=0.09"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e6f633a5-60f0-49cb-8909-7877c8cf0113",
+          "name": "Delete a company's application preference settings.",
+          "request": {
+            "name": "Delete a company's application preference settings.",
+            "description": {
+              "content": "This API is only usable with an OAuth token and only by the current user or admin.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "applications",
+                "clients",
+                ":cid",
+                "settings",
+                "companies",
+                ":cpid"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "key",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "key",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "cpid",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "cid",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json;charset=UTF-8; qs=0.09"
+              }
+            ],
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "7613243a-4738-4ccf-a4de-90a4c1886d88",
+              "name": "default response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "applications",
+                    "clients",
+                    ":cid",
+                    "settings",
+                    "companies",
+                    ":cpid"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "key",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "key",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "cpid",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "cid",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json;charset=UTF-8; qs=0.09"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json;charset=UTF-8; qs=0.09"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "7555dbfa-d67d-43df-abba-cfcab0a28f02",
+          "name": "Get user-level preference settings for an application.",
+          "request": {
+            "name": "Get user-level preference settings for an application.",
+            "description": {
+              "content": "This API is only usable with an OAuth token and only by the current user or admin.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "applications",
+                "clients",
+                ":cid",
+                "settings",
+                "users",
+                ":uid"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "key",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "key",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "uid",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "cid",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json;charset=UTF-8; qs=0.09"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "4ac37ae7-a06e-46ac-a595-f40a83dc99e6",
+              "name": "default response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "applications",
+                    "clients",
+                    ":cid",
+                    "settings",
+                    "users",
+                    ":uid"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "key",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "key",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "uid",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "cid",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json;charset=UTF-8; qs=0.09"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json;charset=UTF-8; qs=0.09"
+                }
+              ],
+              "body": "{\n  \"settings\": [\n    {\n      \"key\": \"string\",\n      \"value\": {}\n    },\n    {\n      \"key\": \"string\",\n      \"value\": {}\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "6be23037-5978-4bd6-9a01-c45daca2927e",
+          "name": "Update a user's application preference settings.",
+          "request": {
+            "name": "Update a user's application preference settings.",
+            "description": {
+              "content": "This API is only usable with an OAuth token and only by the current user or admin. \n* Add or update a setting identified by key with value. \n* Operation and field may optionally be specified when updating Map type settings. \n* Field specifies the key of the setting Map to update. \n* Operation may be one of: \n    * `ADD`: Add or update an existing field of the settings Map. \n    * `UPDATE`: Update an existing field of the settings Map and return an error if the field does not exist. \n    * `REMOVE`: Remove the field from the settings Map. \n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "applications",
+                "clients",
+                ":cid",
+                "settings",
+                "users",
+                ":uid"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "uid",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "cid",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json;charset=UTF-8; qs=0.09"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json;charset=UTF-8; qs=0.09"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"settings\": [\n    {\n      \"field\": \"<string>\",\n      \"key\": \"<string>\",\n      \"operation\": \"<string>\",\n      \"value\": \"<object>\"\n    },\n    {\n      \"field\": \"<string>\",\n      \"key\": \"<string>\",\n      \"operation\": \"<string>\",\n      \"value\": \"<object>\"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "0b509536-475a-4907-92b6-dbc2d17740f1",
+              "name": "default response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "applications",
+                    "clients",
+                    ":cid",
+                    "settings",
+                    "users",
+                    ":uid"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "uid",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "cid",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json;charset=UTF-8; qs=0.09"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"settings\": [\n    {\n      \"field\": \"<string>\",\n      \"key\": \"<string>\",\n      \"operation\": \"<string>\",\n      \"value\": \"<object>\"\n    },\n    {\n      \"field\": \"<string>\",\n      \"key\": \"<string>\",\n      \"operation\": \"<string>\",\n      \"value\": \"<object>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json;charset=UTF-8; qs=0.09"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "db81e722-e89d-405e-ae3e-0420cdf5862a",
+          "name": "Delete a user's application preference settings.",
+          "request": {
+            "name": "Delete a user's application preference settings.",
+            "description": {
+              "content": "This API is only usable with an OAuth token and only by the current user or admin.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "applications",
+                "clients",
+                ":cid",
+                "settings",
+                "users",
+                ":uid"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "key",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "key",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "uid",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "cid",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "29138172-9b05-4bf2-b689-8d93f37169a3",
+              "name": "Success!",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "applications",
+                    "clients",
+                    ":cid",
+                    "settings",
+                    "users",
+                    ":uid"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "key",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "key",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "uid",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "cid",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "8a1cf7c7-062c-42f2-b306-41947d8dee74",
+          "name": "Get a list of the client extensions the specified user has granted/accepted terms for.",
+          "request": {
+            "name": "Get a list of the client extensions the specified user has granted/accepted terms for.",
+            "description": {},
+            "url": {
+              "path": [
+                "applications",
+                "extensions",
+                "user",
+                ":uid",
+                "client",
+                ":cid"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "validPurchases",
+                  "value": "false"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "uid",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "cid",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json;charset=UTF-8; qs=0.09"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "scope",
+                  "value": "OAuth2Internal OAuth2ReadPII OAuth2Read OAuth2Write OAuth2Delete OAuth2Purchase OAuth2Share document.create document.edit document.delete document.read enterprise.create enterprise.read enterprise.edit enterprise.delete enterprise.member.create enterprise.member.read enterprise.member.edit enterprise.member.delete webhook.create webhook.edit webhook.read webhook.delete PLMIntegration"
+                },
+                {
+                  "key": "redirect_uri",
+                  "value": "/oauth/token"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "/oauth/token"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "/oauth/authorize"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "5d2d7c5d-6804-4d0c-bdb4-8f0960b14a84",
+              "name": "default response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "applications",
+                    "extensions",
+                    "user",
+                    ":uid",
+                    "client",
+                    ":cid"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "validPurchases",
+                      "value": "false"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "uid",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "cid",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json;charset=UTF-8; qs=0.09"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json;charset=UTF-8; qs=0.09"
+                }
+              ],
+              "body": "[\n  {\n    \"actionBody\": \"string\",\n    \"actionType\": 3413,\n    \"actionUrl\": \"string\",\n    \"applicationId\": \"string\",\n    \"clientId\": \"string\",\n    \"description\": \"string\",\n    \"extensionContext\": 6890,\n    \"extensionLocation\": 6515,\n    \"hasIcon\": false,\n    \"hasPendingIcon\": true,\n    \"href\": \"https://UAGojDEUBo.lwmxLtBb36lm2GPF+y6ozyZWwbLZLTq0s,JNslVVrZWrE\",\n    \"iconUrl\": \"string\",\n    \"id\": \"string\",\n    \"name\": \"string\",\n    \"parentAppPrimaryFormat\": \"string\",\n    \"plusMenuApp\": true,\n    \"showBetaLabel\": false,\n    \"showResponse\": false,\n    \"showUpgradeLabel\": true,\n    \"systemAppExtension\": false,\n    \"systemAppIconName\": \"string\",\n    \"viewRef\": \"http://kRyDCCosqgu.xgkK-xb69A0UGoSA+jfYcWrHs2V,ldMWFJXPHE7ghK3KRWD7-I.NLR5\",\n    \"visibilityRule\": \"string\"\n  },\n  {\n    \"actionBody\": \"string\",\n    \"actionType\": 8395,\n    \"actionUrl\": \"string\",\n    \"applicationId\": \"string\",\n    \"clientId\": \"string\",\n    \"description\": \"string\",\n    \"extensionContext\": 1110,\n    \"extensionLocation\": 6945,\n    \"hasIcon\": true,\n    \"hasPendingIcon\": true,\n    \"href\": \"https://FypumXrTmhNFcNNITmPPBWEyWeQWRo.kkodMz9hF7PUO41Bl0bb0Vgd5Dvgy0TT7l7ywIXHEp0dJroo7JjW\",\n    \"iconUrl\": \"string\",\n    \"id\": \"string\",\n    \"name\": \"string\",\n    \"parentAppPrimaryFormat\": \"string\",\n    \"plusMenuApp\": true,\n    \"showBetaLabel\": true,\n    \"showResponse\": true,\n    \"showUpgradeLabel\": false,\n    \"systemAppExtension\": true,\n    \"systemAppIconName\": \"string\",\n    \"viewRef\": \"http://sXSuIvnoJJIBsWnYJFbEnt.imeuJ+wcEa\",\n    \"visibilityRule\": \"string\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://cad.onshape.com/api/v16",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "basic",
+    "basic": [
+      {
+        "key": "username",
+        "value": "{{basicAuthUsername}}"
+      },
+      {
+        "key": "password",
+        "value": "{{basicAuthPassword}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "7f518a45-46b8-4269-8199-405217da9093",
+    "name": "Onshape REST Account APIApplication API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "## Welcome to the Onshape REST API Explorer\n\n**See the [API Explorer Guide](https://onshape-public.github.io/docs/api-intro/explorer/) for help navigating this page.**\n\n### Using this page\n1. Sign in to your [Onshape](https://cad.onshape.com) account in another tab.\n2. Click the `Try it out` button below. It toggles to a `Cancel` button when selected.\n\n### Authenticating\nTo authenticate your calls, click the `Authorize` button. See [API Explorer Guide: Authentication](https://onshape-public.github.io/docs/api-intro/explorer/#authentication) for details. Calls made when authenticated via API Keys or OAuth count against your annual [API limits](https://onshape-public.github.io/docs/auth/limits/#annual-api-call-limits).\n* **Tip:** To ensure the current session isn't used when trying other authentication techniques, make sure to [remove the Onshape cookie](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site) as per the instructions for your browser, or use a private or incognito window.\n\n### Additional resources\n\n* [Onshape API Guide](https://onshape-public.github.io/docs/): Our full suite of developer guides, to be used as an accompaniment to this API Explorer.\n* [Onshape Developer Portal](https://cad.onshape.com/appstore/dev-portal): The Onshape portal for managing your API keys, OAuth2 credentials, your Onshape applications, and your Onshape App Store entries.\n* [Authentication Guide](https://onshape-public.github.io/docs/auth/): Our guide to using API keys, request signatures, and OAuth2 in your Onshape applications.\n\nContact Support:\n Email: api-support@onshape.zendesk.com",
+      "type": "text/plain"
+    }
+  }
+}

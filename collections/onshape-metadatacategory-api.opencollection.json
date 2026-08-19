@@ -1,0 +1,103 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Onshape REST Account MetadataCategory API",
+    "version": "1.218.84032-34acba44be17"
+  },
+  "request": {
+    "auth": {
+      "type": "basic",
+      "username": "{{username}}",
+      "password": "{{password}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "MetadataCategory",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get properties associated with the specified metadata categories.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://cad.onshape.com/api/v16/metadatacategory/categoryproperties",
+            "params": [
+              {
+                "name": "ownerId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "ownerType",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "documentId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "categoryIds",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "objectType",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "strict",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "includeObjectTypeDefaults",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "includeComputedProperties",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "includePartPropertiesTableOnlyProperties",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "onlyActive",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "onlyObjectTypeDefaults",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "/oauth/authorize",
+              "accessTokenUrl": "/oauth/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "An object's category specifies its type: Part, Assembly, Drawing, etc. Available properties depend on the object's category."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

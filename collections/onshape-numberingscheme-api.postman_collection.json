@@ -1,0 +1,192 @@
+{
+  "item": [
+    {
+      "id": "4b387e01-88c0-426c-a78c-114e23b45bcd",
+      "name": "NumberingScheme",
+      "description": {
+        "content": "Manage the set of valid part numbers.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "3af8ccfa-1045-42a8-9e78-6eba706b7974",
+          "name": "Get the next available part number for a release item.",
+          "request": {
+            "name": "Get the next available part number for a release item.",
+            "description": {
+              "content": "Provide either the company ID or the ID of a document owned by the company. See [API Guide: Release Management](https://onshape-public.github.io/docs/api-adv/relmgmt/#get-the-next-available-part-number) for an example.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "numberingscheme",
+                "nextnumbers"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "cid",
+                  "value": "<string>",
+                  "description": "Company ID"
+                },
+                {
+                  "disabled": false,
+                  "key": "did",
+                  "value": "<string>",
+                  "description": "Document ID"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json;charset=UTF-8; qs=0.09"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json;charset=UTF-8; qs=0.09"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "scope",
+                  "value": "OAuth2Internal OAuth2ReadPII OAuth2Read OAuth2Write OAuth2Delete OAuth2Purchase OAuth2Share document.create document.edit document.delete document.read enterprise.create enterprise.read enterprise.edit enterprise.delete enterprise.member.create enterprise.member.read enterprise.member.edit enterprise.member.delete webhook.create webhook.edit webhook.read webhook.delete PLMIntegration"
+                },
+                {
+                  "key": "redirect_uri",
+                  "value": "/oauth/token"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "/oauth/token"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "/oauth/authorize"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"itemPartNumbers\": [\n    {\n      \"categories\": [\n        {\n          \"id\": \"<string>\",\n          \"name\": \"<string>\"\n        },\n        {\n          \"id\": \"<string>\",\n          \"name\": \"<string>\"\n        }\n      ],\n      \"configuration\": \"<string>\",\n      \"documentId\": \"<string>\",\n      \"elementId\": \"<string>\",\n      \"elementType\": \"<integer>\",\n      \"id\": \"<string>\",\n      \"mimeType\": \"<string>\",\n      \"numberSchemeResourceTypeId\": \"<string>\",\n      \"partId\": \"<string>\",\n      \"partNumber\": \"<string>\",\n      \"versionId\": \"<string>\",\n      \"workspaceId\": \"<string>\"\n    },\n    {\n      \"categories\": [\n        {\n          \"id\": \"<string>\",\n          \"name\": \"<string>\"\n        },\n        {\n          \"id\": \"<string>\",\n          \"name\": \"<string>\"\n        }\n      ],\n      \"configuration\": \"<string>\",\n      \"documentId\": \"<string>\",\n      \"elementId\": \"<string>\",\n      \"elementType\": \"<integer>\",\n      \"id\": \"<string>\",\n      \"mimeType\": \"<string>\",\n      \"numberSchemeResourceTypeId\": \"<string>\",\n      \"partId\": \"<string>\",\n      \"partNumber\": \"<string>\",\n      \"versionId\": \"<string>\",\n      \"workspaceId\": \"<string>\"\n    }\n  ],\n  \"skipPartNumbers\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "c99ffaba-f538-4cdd-8bce-ede4709dbf15",
+              "name": "default response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "numberingscheme",
+                    "nextnumbers"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "cid",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "did",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json;charset=UTF-8; qs=0.09"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"itemPartNumbers\": [\n    {\n      \"categories\": [\n        {\n          \"id\": \"<string>\",\n          \"name\": \"<string>\"\n        },\n        {\n          \"id\": \"<string>\",\n          \"name\": \"<string>\"\n        }\n      ],\n      \"configuration\": \"<string>\",\n      \"documentId\": \"<string>\",\n      \"elementId\": \"<string>\",\n      \"elementType\": \"<integer>\",\n      \"id\": \"<string>\",\n      \"mimeType\": \"<string>\",\n      \"numberSchemeResourceTypeId\": \"<string>\",\n      \"partId\": \"<string>\",\n      \"partNumber\": \"<string>\",\n      \"versionId\": \"<string>\",\n      \"workspaceId\": \"<string>\"\n    },\n    {\n      \"categories\": [\n        {\n          \"id\": \"<string>\",\n          \"name\": \"<string>\"\n        },\n        {\n          \"id\": \"<string>\",\n          \"name\": \"<string>\"\n        }\n      ],\n      \"configuration\": \"<string>\",\n      \"documentId\": \"<string>\",\n      \"elementId\": \"<string>\",\n      \"elementType\": \"<integer>\",\n      \"id\": \"<string>\",\n      \"mimeType\": \"<string>\",\n      \"numberSchemeResourceTypeId\": \"<string>\",\n      \"partId\": \"<string>\",\n      \"partNumber\": \"<string>\",\n      \"versionId\": \"<string>\",\n      \"workspaceId\": \"<string>\"\n    }\n  ],\n  \"skipPartNumbers\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json;charset=UTF-8; qs=0.09"
+                }
+              ],
+              "body": "{\n  \"key_0\": [\n    {\n      \"categories\": [\n        {\n          \"id\": \"string\",\n          \"name\": \"string\",\n          \"plmId\": \"string\"\n        },\n        {\n          \"id\": \"string\",\n          \"name\": \"string\",\n          \"plmId\": \"string\"\n        }\n      ],\n      \"configuration\": \"string\",\n      \"documentId\": \"string\",\n      \"elementId\": \"string\",\n      \"elementType\": 8805,\n      \"errorMessage\": \"string\",\n      \"id\": \"string\",\n      \"mimeType\": \"string\",\n      \"partId\": \"string\",\n      \"partNumber\": \"string\",\n      \"prefix\": \"string\",\n      \"resourceType\": 7922,\n      \"versionId\": \"string\",\n      \"workspaceId\": \"string\"\n    },\n    {\n      \"categories\": [\n        {\n          \"id\": \"string\",\n          \"name\": \"string\",\n          \"plmId\": \"string\"\n        },\n        {\n          \"id\": \"string\",\n          \"name\": \"string\",\n          \"plmId\": \"string\"\n        }\n      ],\n      \"configuration\": \"string\",\n      \"documentId\": \"string\",\n      \"elementId\": \"string\",\n      \"elementType\": 8734,\n      \"errorMessage\": \"string\",\n      \"id\": \"string\",\n      \"mimeType\": \"string\",\n      \"partId\": \"string\",\n      \"partNumber\": \"string\",\n      \"prefix\": \"string\",\n      \"resourceType\": 3489,\n      \"versionId\": \"string\",\n      \"workspaceId\": \"string\"\n    }\n  ],\n  \"key_1\": [\n    {\n      \"categories\": [\n        {\n          \"id\": \"string\",\n          \"name\": \"string\",\n          \"plmId\": \"string\"\n        },\n        {\n          \"id\": \"string\",\n          \"name\": \"string\",\n          \"plmId\": \"string\"\n        }\n      ],\n      \"configuration\": \"string\",\n      \"documentId\": \"string\",\n      \"elementId\": \"string\",\n      \"elementType\": 1373,\n      \"errorMessage\": \"string\",\n      \"id\": \"string\",\n      \"mimeType\": \"string\",\n      \"partId\": \"string\",\n      \"partNumber\": \"string\",\n      \"prefix\": \"string\",\n      \"resourceType\": 9766,\n      \"versionId\": \"string\",\n      \"workspaceId\": \"string\"\n    },\n    {\n      \"categories\": [\n        {\n          \"id\": \"string\",\n          \"name\": \"string\",\n          \"plmId\": \"string\"\n        },\n        {\n          \"id\": \"string\",\n          \"name\": \"string\",\n          \"plmId\": \"string\"\n        }\n      ],\n      \"configuration\": \"string\",\n      \"documentId\": \"string\",\n      \"elementId\": \"string\",\n      \"elementType\": 8718,\n      \"errorMessage\": \"string\",\n      \"id\": \"string\",\n      \"mimeType\": \"string\",\n      \"partId\": \"string\",\n      \"partNumber\": \"string\",\n      \"prefix\": \"string\",\n      \"resourceType\": 6975,\n      \"versionId\": \"string\",\n      \"workspaceId\": \"string\"\n    }\n  ],\n  \"key_2\": [\n    {\n      \"categories\": [\n        {\n          \"id\": \"string\",\n          \"name\": \"string\",\n          \"plmId\": \"string\"\n        },\n        {\n          \"id\": \"string\",\n          \"name\": \"string\",\n          \"plmId\": \"string\"\n        }\n      ],\n      \"configuration\": \"string\",\n      \"documentId\": \"string\",\n      \"elementId\": \"string\",\n      \"elementType\": 2386,\n      \"errorMessage\": \"string\",\n      \"id\": \"string\",\n      \"mimeType\": \"string\",\n      \"partId\": \"string\",\n      \"partNumber\": \"string\",\n      \"prefix\": \"string\",\n      \"resourceType\": 4037,\n      \"versionId\": \"string\",\n      \"workspaceId\": \"string\"\n    },\n    {\n      \"categories\": [\n        {\n          \"id\": \"string\",\n          \"name\": \"string\",\n          \"plmId\": \"string\"\n        },\n        {\n          \"id\": \"string\",\n          \"name\": \"string\",\n          \"plmId\": \"string\"\n        }\n      ],\n      \"configuration\": \"string\",\n      \"documentId\": \"string\",\n      \"elementId\": \"string\",\n      \"elementType\": 5968,\n      \"errorMessage\": \"string\",\n      \"id\": \"string\",\n      \"mimeType\": \"string\",\n      \"partId\": \"string\",\n      \"partNumber\": \"string\",\n      \"prefix\": \"string\",\n      \"resourceType\": 6161,\n      \"versionId\": \"string\",\n      \"workspaceId\": \"string\"\n    }\n  ],\n  \"key_3\": [\n    {\n      \"categories\": [\n        {\n          \"id\": \"string\",\n          \"name\": \"string\",\n          \"plmId\": \"string\"\n        },\n        {\n          \"id\": \"string\",\n          \"name\": \"string\",\n          \"plmId\": \"string\"\n        }\n      ],\n      \"configuration\": \"string\",\n      \"documentId\": \"string\",\n      \"elementId\": \"string\",\n      \"elementType\": 4809,\n      \"errorMessage\": \"string\",\n      \"id\": \"string\",\n      \"mimeType\": \"string\",\n      \"partId\": \"string\",\n      \"partNumber\": \"string\",\n      \"prefix\": \"string\",\n      \"resourceType\": 467,\n      \"versionId\": \"string\",\n      \"workspaceId\": \"string\"\n    },\n    {\n      \"categories\": [\n        {\n          \"id\": \"string\",\n          \"name\": \"string\",\n          \"plmId\": \"string\"\n        },\n        {\n          \"id\": \"string\",\n          \"name\": \"string\",\n          \"plmId\": \"string\"\n        }\n      ],\n      \"configuration\": \"string\",\n      \"documentId\": \"string\",\n      \"elementId\": \"string\",\n      \"elementType\": 1926,\n      \"errorMessage\": \"string\",\n      \"id\": \"string\",\n      \"mimeType\": \"string\",\n      \"partId\": \"string\",\n      \"partNumber\": \"string\",\n      \"prefix\": \"string\",\n      \"resourceType\": 8845,\n      \"versionId\": \"string\",\n      \"workspaceId\": \"string\"\n    }\n  ],\n  \"key_4\": [\n    {\n      \"categories\": [\n        {\n          \"id\": \"string\",\n          \"name\": \"string\",\n          \"plmId\": \"string\"\n        },\n        {\n          \"id\": \"string\",\n          \"name\": \"string\",\n          \"plmId\": \"string\"\n        }\n      ],\n      \"configuration\": \"string\",\n      \"documentId\": \"string\",\n      \"elementId\": \"string\",\n      \"elementType\": 3928,\n      \"errorMessage\": \"string\",\n      \"id\": \"string\",\n      \"mimeType\": \"string\",\n      \"partId\": \"string\",\n      \"partNumber\": \"string\",\n      \"prefix\": \"string\",\n      \"resourceType\": 4934,\n      \"versionId\": \"string\",\n      \"workspaceId\": \"string\"\n    },\n    {\n      \"categories\": [\n        {\n          \"id\": \"string\",\n          \"name\": \"string\",\n          \"plmId\": \"string\"\n        },\n        {\n          \"id\": \"string\",\n          \"name\": \"string\",\n          \"plmId\": \"string\"\n        }\n      ],\n      \"configuration\": \"string\",\n      \"documentId\": \"string\",\n      \"elementId\": \"string\",\n      \"elementType\": 885,\n      \"errorMessage\": \"string\",\n      \"id\": \"string\",\n      \"mimeType\": \"string\",\n      \"partId\": \"string\",\n      \"partNumber\": \"string\",\n      \"prefix\": \"string\",\n      \"resourceType\": 2538,\n      \"versionId\": \"string\",\n      \"workspaceId\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://cad.onshape.com/api/v16",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "basic",
+    "basic": [
+      {
+        "key": "username",
+        "value": "{{basicAuthUsername}}"
+      },
+      {
+        "key": "password",
+        "value": "{{basicAuthPassword}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "0d8957bc-afbc-482a-a7e0-41e4c5b4d2f6",
+    "name": "Onshape REST Account NumberingScheme API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "## Welcome to the Onshape REST API Explorer\n\n**See the [API Explorer Guide](https://onshape-public.github.io/docs/api-intro/explorer/) for help navigating this page.**\n\n### Using this page\n1. Sign in to your [Onshape](https://cad.onshape.com) account in another tab.\n2. Click the `Try it out` button below. It toggles to a `Cancel` button when selected.\n\n### Authenticating\nTo authenticate your calls, click the `Authorize` button. See [API Explorer Guide: Authentication](https://onshape-public.github.io/docs/api-intro/explorer/#authentication) for details. Calls made when authenticated via API Keys or OAuth count against your annual [API limits](https://onshape-public.github.io/docs/auth/limits/#annual-api-call-limits).\n* **Tip:** To ensure the current session isn't used when trying other authentication techniques, make sure to [remove the Onshape cookie](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site) as per the instructions for your browser, or use a private or incognito window.\n\n### Additional resources\n\n* [Onshape API Guide](https://onshape-public.github.io/docs/): Our full suite of developer guides, to be used as an accompaniment to this API Explorer.\n* [Onshape Developer Portal](https://cad.onshape.com/appstore/dev-portal): The Onshape portal for managing your API keys, OAuth2 credentials, your Onshape applications, and your Onshape App Store entries.\n* [Authentication Guide](https://onshape-public.github.io/docs/auth/): Our guide to using API keys, request signatures, and OAuth2 in your Onshape applications.\n\nContact Support:\n Email: api-support@onshape.zendesk.com",
+      "type": "text/plain"
+    }
+  }
+}

@@ -1,0 +1,393 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Onshape REST Account Company API",
+    "version": "1.218.84032-34acba44be17"
+  },
+  "request": {
+    "auth": {
+      "type": "basic",
+      "username": "{{username}}",
+      "password": "{{password}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Company",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get all companies to which the specified user belongs.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://cad.onshape.com/api/v16/companies",
+            "params": [
+              {
+                "name": "uid",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "activeOnly",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "includeAll",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "If no user is specified, will return all companies associated with the current user."
+        },
+        {
+          "info": {
+            "name": "Get company information by company ID.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://cad.onshape.com/api/v16/companies/:cid",
+            "params": [
+              {
+                "name": "cid",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get company information by company ID."
+        },
+        {
+          "info": {
+            "name": "Get document by exact document name.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://cad.onshape.com/api/v16/companies/:cid/documentsbyname",
+            "params": [
+              {
+                "name": "cid",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "name",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "/oauth/authorize",
+              "accessTokenUrl": "/oauth/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "This API can only be called by company admins. Use the `name` field for the exact document name string."
+        },
+        {
+          "info": {
+            "name": "Add one or more global permissions to company user or team.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://cad.onshape.com/api/v16/companies/:cid/globalpermission/:type/:id",
+            "params": [
+              {
+                "name": "cid",
+                "value": "",
+                "type": "path",
+                "description": "Company ID"
+              },
+              {
+                "name": "type",
+                "value": "",
+                "type": "path",
+                "description": "`0`: USER | `1`: TEAM"
+              },
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "User ID or Team ID, depending on `type`"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "/oauth/authorize",
+              "accessTokenUrl": "/oauth/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "List of global permissions to grant. See [Onshape Help: Global Permissions](https://cad.onshape.com/help/Content/Plans/global_permissions.htm#Assignin) for details on each of the available permissions. \n * `0`: Manage role based access control \n * `1`: Manage users, teams, and aliases \n * `2`: Enterprise administrator \n * `3`: Permanently delete \n * `4`: Analytics administrator \n * `5`: Invite guest users \n * `6`: Create projects \n * `7`: Approve releases \n * `8`: Enable link sharing \n * `9`: Cr"
+        },
+        {
+          "info": {
+            "name": "Remove global permissions for a company user or team.",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://cad.onshape.com/api/v16/companies/:cid/globalpermission/:type/:id",
+            "params": [
+              {
+                "name": "cid",
+                "value": "",
+                "type": "path",
+                "description": "Company ID"
+              },
+              {
+                "name": "type",
+                "value": "",
+                "type": "path",
+                "description": "`0`: USER | `1`: TEAM"
+              },
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "User ID or Team ID, depending on `type`"
+              },
+              {
+                "name": "permission",
+                "value": "",
+                "type": "query",
+                "description": "List of global permissions to grant. See [Onshape Help: Global Permissions](https://cad.onshape.com/help/Content/Plans/global_permissions.htm#Assignin) for details on each of the available permissions. \n * `0`: Manage role based access control \n * `1`: Manage users, teams, and aliases \n * `2`: Enterprise administrator \n * `3`: Permanently delete \n * `4`: Analytics administrator \n * `5`: Invite guest users \n * `6`: Create projects \n * `7`: Approve releases \n * `8`: Enable link sharing \n * `9`: Create releases \n * `10`: Allow access to the App Store \n * `11`: Create documents and folders in the Enterprise root \n * `12`: Allow access to public documents \n * `17`: Manage non-geometric items \n * `18`: Manage workflows \n * `19`: Transfer documents out of Enterprise \n * `20`: Sync to configured PLM Integration in Enterprise settings \n * `21`: Create tasks \n * `22`: Manage standard content metadata \n * `23`: Workspace protection permissions \n * `24`: Import files \n * `25`: Use revision tools \n * `26`: Export files \n * `27`: Allow access to Onshape Labs \n"
+              }
+            ],
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "/oauth/authorize",
+              "accessTokenUrl": "/oauth/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Clear all or some of a user's global permissions"
+        },
+        {
+          "info": {
+            "name": "Get a list of members in a company.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://cad.onshape.com/api/v16/companies/:cid/users",
+            "params": [
+              {
+                "name": "cid",
+                "value": "",
+                "type": "path",
+                "description": "Company ID"
+              },
+              {
+                "name": "sortColumn",
+                "value": "",
+                "type": "query",
+                "description": "`createdAt | modifiedAt | name | firstName | lastName | email | light | lastLoginTime | userRole | state`"
+              },
+              {
+                "name": "sortOrder",
+                "value": "",
+                "type": "query",
+                "description": "`desc` (descending, default) | `asc` (ascending)"
+              },
+              {
+                "name": "q",
+                "value": "",
+                "type": "query",
+                "description": "Search string to filter users by name or email."
+              },
+              {
+                "name": "includeGlobalPermissions",
+                "value": "",
+                "type": "query",
+                "description": "Whether to include global permission info for each user."
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query",
+                "description": "Offset. Determines where search results begin. Default value is 0."
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "Number of results to return per page. Default value is 20 (also the maximum)."
+              },
+              {
+                "name": "roleFilter",
+                "value": "",
+                "type": "query",
+                "description": "Filter by user role ordinal: `0` (OWNER), `1` (ADMIN), `2` (MEMBER). Multiple values allowed. Defaults to all roles."
+              },
+              {
+                "name": "afterDateAdded",
+                "value": "",
+                "type": "query",
+                "description": "Filter users added after this date (ISO 8601, e.g. 2026-01-01T00:00:00Z)."
+              },
+              {
+                "name": "beforeDateAdded",
+                "value": "",
+                "type": "query",
+                "description": "Filter users added before this date (ISO 8601, e.g. 2026-12-31T23:59:59Z)."
+              }
+            ],
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "/oauth/authorize",
+              "accessTokenUrl": "/oauth/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Returns a list of members in the specified company."
+        },
+        {
+          "info": {
+            "name": "Add a user to a company.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://cad.onshape.com/api/v16/companies/:cid/users",
+            "params": [
+              {
+                "name": "cid",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "/oauth/authorize",
+              "accessTokenUrl": "/oauth/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Returns the company user info."
+        },
+        {
+          "info": {
+            "name": "Update the company's information for a user.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://cad.onshape.com/api/v16/companies/:cid/users/:uid",
+            "params": [
+              {
+                "name": "cid",
+                "value": "",
+                "type": "path",
+                "description": "Company ID"
+              },
+              {
+                "name": "uid",
+                "value": "",
+                "type": "path",
+                "description": "User ID"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "/oauth/authorize",
+              "accessTokenUrl": "/oauth/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Returns updated company user info. `globalPermissions` field is deprecated. Please use the following: \n* [addGlobalPermissionsForIdentity](#/Company/addGlobalPermissionsForIdentity) \n* [clearGlobalPermissions](#/Company/clearGlobalPermissions)"
+        },
+        {
+          "info": {
+            "name": "Remove a user from a company, company teams, and all the direct shares.",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://cad.onshape.com/api/v16/companies/:cid/users/:uid",
+            "params": [
+              {
+                "name": "cid",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "uid",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "removeFromTeams",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "removeDirectShares",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "/oauth/authorize",
+              "accessTokenUrl": "/oauth/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Remove a user from a company, company teams, and all the direct shares."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

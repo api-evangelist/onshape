@@ -1,0 +1,214 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Onshape REST Account Webhook API",
+    "version": "1.218.84032-34acba44be17"
+  },
+  "request": {
+    "auth": {
+      "type": "basic",
+      "username": "{{username}}",
+      "password": "{{password}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Webhook",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get a list of all webhooks registered by a user or company.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://cad.onshape.com/api/v16/webhooks",
+            "params": [
+              {
+                "name": "company",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "user",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "/oauth/authorize",
+              "accessTokenUrl": "/oauth/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "See [API Guide: Webhooks](https://onshape-public.github.io/docs/app-dev/webhook/) for implementation details."
+        },
+        {
+          "info": {
+            "name": "Create a new webhook.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://cad.onshape.com/api/v16/webhooks",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "/oauth/authorize",
+              "accessTokenUrl": "/oauth/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Click **Callbacks** below for a list of events your app can subscribe to. See [API Guide: Webhooks](https://onshape-public.github.io/docs/app-dev/webhook/) for implementation details."
+        },
+        {
+          "info": {
+            "name": "Get webhook info by webhook ID.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://cad.onshape.com/api/v16/webhooks/:webhookid",
+            "params": [
+              {
+                "name": "webhookid",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "/oauth/authorize",
+              "accessTokenUrl": "/oauth/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "See [API Guide: Webhooks](https://onshape-public.github.io/docs/app-dev/webhook/) for implementation details."
+        },
+        {
+          "info": {
+            "name": "Update a webhook.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://cad.onshape.com/api/v16/webhooks/:webhookid",
+            "params": [
+              {
+                "name": "webhookid",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "/oauth/authorize",
+              "accessTokenUrl": "/oauth/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "See [API Guide: Webhooks](https://onshape-public.github.io/docs/app-dev/webhook/) for implementation details."
+        },
+        {
+          "info": {
+            "name": "Unregister a webhook.",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://cad.onshape.com/api/v16/webhooks/:webhookid",
+            "params": [
+              {
+                "name": "webhookid",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "blockNotification",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "/oauth/authorize",
+              "accessTokenUrl": "/oauth/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "See [API Guide: Webhooks](https://onshape-public.github.io/docs/app-dev/webhook/) for implementation details."
+        },
+        {
+          "info": {
+            "name": "Ping a webhook.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://cad.onshape.com/api/v16/webhooks/:webhookid/ping",
+            "params": [
+              {
+                "name": "webhookid",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "/oauth/authorize",
+              "accessTokenUrl": "/oauth/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "See [API Guide: Webhooks](https://onshape-public.github.io/docs/app-dev/webhook/) for implementation details."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

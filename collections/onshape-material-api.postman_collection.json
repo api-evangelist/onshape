@@ -1,0 +1,408 @@
+{
+  "item": [
+    {
+      "id": "f2fc488f-6a30-4723-92af-c82a8ba45bda",
+      "name": "Material",
+      "description": {
+        "content": "Work with the Onshape Material Library.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "0478773b-c05b-45f9-b673-5023f9bc0633",
+          "name": "Updates an existing material library",
+          "request": {
+            "name": "Updates an existing material library",
+            "description": {
+              "content": "Update a material in an Onshape Material Library from a csv file. Changes made replace the existing library.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "materials",
+                "libraries",
+                "d",
+                ":did",
+                "w",
+                ":wid",
+                "e",
+                ":eid",
+                "csv"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "did",
+                  "description": "(Required) Document ID."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "wid",
+                  "description": "(Required) Workspace ID."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "eid",
+                  "description": "(Required) Element ID."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "multipart/form-data"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json;charset=UTF-8; qs=0.09"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "scope",
+                  "value": "OAuth2Internal OAuth2ReadPII OAuth2Read OAuth2Write OAuth2Delete OAuth2Purchase OAuth2Share document.create document.edit document.delete document.read enterprise.create enterprise.read enterprise.edit enterprise.delete enterprise.member.create enterprise.member.read enterprise.member.edit enterprise.member.delete webhook.create webhook.edit webhook.read webhook.delete PLMIntegration"
+                },
+                {
+                  "key": "redirect_uri",
+                  "value": "/oauth/token"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "/oauth/token"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "/oauth/authorize"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code"
+                }
+              ]
+            },
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "file",
+                  "type": "file",
+                  "description": "The file to upload."
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "91347877-43d6-4300-90c1-e92ffdb72245",
+              "name": "default response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "materials",
+                    "libraries",
+                    "d",
+                    ":did",
+                    "w",
+                    ":wid",
+                    "e",
+                    ":eid",
+                    "csv"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "did",
+                      "description": "(Required) Document ID."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "wid",
+                      "description": "(Required) Workspace ID."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "eid",
+                      "description": "(Required) Element ID."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json;charset=UTF-8; qs=0.09"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "description": {
+                        "content": "The file to upload.",
+                        "type": "text/plain"
+                      },
+                      "key": "file",
+                      "value": "<binary>",
+                      "type": "text"
+                    }
+                  ]
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json;charset=UTF-8; qs=0.09"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "42bba563-64e8-4f38-a3fc-67d3e4570fc1",
+          "name": "Get a list of materials from a material library.",
+          "request": {
+            "name": "Get a list of materials from a material library.",
+            "description": {
+              "content": "Get a JSON representation of the material library.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "materials",
+                "libraries",
+                "d",
+                ":did",
+                ":wvm",
+                ":wvmid",
+                "e",
+                ":eid"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "did",
+                  "description": "(Required) Document ID."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "wvm",
+                  "description": "(Required) One of w or v or m corresponding to whether a workspace or version or microversion was entered."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "wvmid",
+                  "description": "(Required) Workspace (w), Version (v) or Microversion (m) ID."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "eid",
+                  "description": "(Required) Element ID."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json;charset=UTF-8; qs=0.09"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "scope",
+                  "value": "OAuth2Internal OAuth2ReadPII OAuth2Read OAuth2Write OAuth2Delete OAuth2Purchase OAuth2Share document.create document.edit document.delete document.read enterprise.create enterprise.read enterprise.edit enterprise.delete enterprise.member.create enterprise.member.read enterprise.member.edit enterprise.member.delete webhook.create webhook.edit webhook.read webhook.delete PLMIntegration"
+                },
+                {
+                  "key": "redirect_uri",
+                  "value": "/oauth/token"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "/oauth/token"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "/oauth/authorize"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "a21dd12b-ed89-4dcf-981c-463dc5ff0841",
+              "name": "Success!",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "materials",
+                    "libraries",
+                    "d",
+                    ":did",
+                    ":wvm",
+                    ":wvmid",
+                    "e",
+                    ":eid"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "did",
+                      "description": "(Required) Document ID."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "wvm",
+                      "description": "(Required) One of w or v or m corresponding to whether a workspace or version or microversion was entered."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "wvmid",
+                      "description": "(Required) Workspace (w), Version (v) or Microversion (m) ID."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "eid",
+                      "description": "(Required) Element ID."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json;charset=UTF-8; qs=0.09"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json;charset=UTF-8; qs=0.09"
+                }
+              ],
+              "body": "{\n  \"description\": \"string\",\n  \"displayName\": \"string\",\n  \"externalElementReference\": {\n    \"documentId\": \"string\",\n    \"elementId\": \"string\",\n    \"elementMicroversionId\": \"string\",\n    \"versionId\": \"string\"\n  },\n  \"materials\": [\n    {\n      \"category\": \"string\",\n      \"displayName\": \"string\",\n      \"id\": \"string\",\n      \"propertyValues\": {\n        \"key_0\": \"string\",\n        \"key_1\": \"string\"\n      }\n    },\n    {\n      \"category\": \"string\",\n      \"displayName\": \"string\",\n      \"id\": \"string\",\n      \"propertyValues\": {\n        \"key_0\": \"string\",\n        \"key_1\": \"string\",\n        \"key_2\": \"string\"\n      }\n    }\n  ],\n  \"name\": \"string\",\n  \"propertyDefinitions\": [\n    {\n      \"category\": \"string\",\n      \"description\": \"string\",\n      \"displayName\": \"string\",\n      \"displayUnits\": \"string\",\n      \"name\": \"string\",\n      \"type\": \"string\",\n      \"units\": \"string\",\n      \"unitsChoices\": [\n        \"string\"\n      ]\n    },\n    {\n      \"category\": \"string\",\n      \"description\": \"string\",\n      \"displayName\": \"string\",\n      \"displayUnits\": \"string\",\n      \"name\": \"string\",\n      \"type\": \"string\",\n      \"units\": \"string\",\n      \"unitsChoices\": [\n        \"string\"\n      ]\n    }\n  ],\n  \"versioned\": true\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://cad.onshape.com/api/v16",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "basic",
+    "basic": [
+      {
+        "key": "username",
+        "value": "{{basicAuthUsername}}"
+      },
+      {
+        "key": "password",
+        "value": "{{basicAuthPassword}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "9d021ce3-ad36-4a78-a0ba-12bea7ed0cb8",
+    "name": "Onshape REST Account Material API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "## Welcome to the Onshape REST API Explorer\n\n**See the [API Explorer Guide](https://onshape-public.github.io/docs/api-intro/explorer/) for help navigating this page.**\n\n### Using this page\n1. Sign in to your [Onshape](https://cad.onshape.com) account in another tab.\n2. Click the `Try it out` button below. It toggles to a `Cancel` button when selected.\n\n### Authenticating\nTo authenticate your calls, click the `Authorize` button. See [API Explorer Guide: Authentication](https://onshape-public.github.io/docs/api-intro/explorer/#authentication) for details. Calls made when authenticated via API Keys or OAuth count against your annual [API limits](https://onshape-public.github.io/docs/auth/limits/#annual-api-call-limits).\n* **Tip:** To ensure the current session isn't used when trying other authentication techniques, make sure to [remove the Onshape cookie](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site) as per the instructions for your browser, or use a private or incognito window.\n\n### Additional resources\n\n* [Onshape API Guide](https://onshape-public.github.io/docs/): Our full suite of developer guides, to be used as an accompaniment to this API Explorer.\n* [Onshape Developer Portal](https://cad.onshape.com/appstore/dev-portal): The Onshape portal for managing your API keys, OAuth2 credentials, your Onshape applications, and your Onshape App Store entries.\n* [Authentication Guide](https://onshape-public.github.io/docs/auth/): Our guide to using API keys, request signatures, and OAuth2 in your Onshape applications.\n\nContact Support:\n Email: api-support@onshape.zendesk.com",
+      "type": "text/plain"
+    }
+  }
+}

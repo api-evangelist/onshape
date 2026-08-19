@@ -2,47 +2,52 @@ generated: '2026-07-20'
 method: derived
 status: candidate
 source: openapi/onshape-openapi-original.json
-notes: >-
-  No official Onshape-hosted MCP server was found as of this pass. This is a
-  candidate tool list derived from marquee Onshape REST API operations; each tool
-  maps to a real operationId in the OpenAPI spec.
+notes: No official Onshape-hosted MCP server was found as of this pass. This is a candidate tool list
+  derived from marquee Onshape REST API operations; each tool maps to a real operationId in the OpenAPI
+  spec.
 server:
   name: onshape
   transport: http
 tools:
-  - name: list_documents
-    description: List Onshape documents matching filter criteria.
-    source_operation: openapi/onshape-openapi-original.json#getDocuments
-  - name: create_document
-    description: Create and upload a new Onshape document.
-    source_operation: openapi/onshape-openapi-original.json#createDocument
-  - name: list_document_versions
-    description: Retrieve the versions of a document.
-    source_operation: openapi/onshape-openapi-original.json#getDocumentVersions
-  - name: create_version
-    description: Create a new version of a document.
-    source_operation: openapi/onshape-openapi-original.json#createVersion
-  - name: get_configuration
-    description: Get the configuration definition for a Part Studio, Variable Studio, or Assembly.
-    source_operation: openapi/onshape-openapi-original.json#getConfiguration
-  - name: get_mass_properties
-    description: Get a part's mass properties.
-    source_operation: openapi/onshape-openapi-original.json#getMassProperties
-  - name: export_part_gltf
-    description: Synchronously export a part to a glTF file.
-    source_operation: openapi/onshape-openapi-original.json#exportPartGltf
-  - name: create_translation
-    description: Import or translate a CAD file into or out of Onshape.
-    source_operation: openapi/onshape-openapi-original.json#createTranslation
-  - name: get_translation
-    description: Get the status/result of an in-progress or completed translation.
-    source_operation: openapi/onshape-openapi-original.json#getTranslation
-  - name: create_webhook
-    description: Register a new webhook for Onshape event notifications.
-    source_operation: openapi/onshape-openapi-original.json#createWebhook
-  - name: list_webhooks
-    description: List webhooks registered by a user or company.
-    source_operation: openapi/onshape-openapi-original.json#getWebhooks
-  - name: create_release_package
-    description: Create a new release candidate for one or more items.
-    source_operation: openapi/onshape-openapi-original.json#createReleasePackage
+- name: list_documents
+  description: List Onshape documents matching filter criteria.
+  source_operation: openapi/onshape-openapi-original.json#getDocuments
+- name: create_document
+  description: Create and upload a new Onshape document.
+  source_operation: openapi/onshape-openapi-original.json#createDocument
+- name: list_document_versions
+  description: Retrieve the versions of a document.
+  source_operation: openapi/onshape-openapi-original.json#getDocumentVersions
+- name: create_version
+  description: Create a new version of a document.
+  source_operation: openapi/onshape-openapi-original.json#createVersion
+- name: get_configuration
+  description: Get the configuration definition for a Part Studio, Variable Studio, or Assembly.
+  source_operation: openapi/onshape-openapi-original.json#getConfiguration
+- name: get_mass_properties
+  description: Get a part's mass properties.
+  source_operation: openapi/onshape-openapi-original.json#getMassProperties
+- name: export_part_gltf
+  description: Synchronously export a part to a glTF file.
+  source_operation: openapi/onshape-openapi-original.json#exportPartGltf
+- name: create_translation
+  description: Import or translate a CAD file into or out of Onshape.
+  source_operation: openapi/onshape-openapi-original.json#createTranslation
+- name: get_translation
+  description: Get the status/result of an in-progress or completed translation.
+  source_operation: openapi/onshape-openapi-original.json#getTranslation
+- name: create_webhook
+  description: Register a new webhook for Onshape event notifications.
+  source_operation: openapi/onshape-openapi-original.json#createWebhook
+- name: list_webhooks
+  description: List webhooks registered by a user or company.
+  source_operation: openapi/onshape-openapi-original.json#getWebhooks
+- name: create_release_package
+  description: Create a new release candidate for one or more items.
+  source_operation: openapi/onshape-openapi-original.json#createReleasePackage
+deployment:
+  mode: none
+  verified: derived
+  tools: 12
+  checked: '2026-08-12'
+  source: catalog MCP census

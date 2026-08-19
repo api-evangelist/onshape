@@ -1,0 +1,224 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Onshape REST Account Workflow API",
+    "version": "1.218.84032-34acba44be17"
+  },
+  "request": {
+    "auth": {
+      "type": "basic",
+      "username": "{{username}}",
+      "password": "{{password}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Workflow",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get all active workflows for the currently logged in user's company.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://cad.onshape.com/api/v16/workflow/active",
+            "params": [
+              {
+                "name": "documentId",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "/oauth/authorize",
+              "accessTokenUrl": "/oauth/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Optionally takes a document ID to return all workflows for that document's owning company."
+        },
+        {
+          "info": {
+            "name": "Get all identities allowed to be approvers on a workflow object.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://cad.onshape.com/api/v16/workflow/c/:companyId/approvers",
+            "params": [
+              {
+                "name": "companyId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "q",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "expandTeams",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "includeSelf",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "excludeConnections",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "/oauth/authorize",
+              "accessTokenUrl": "/oauth/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "* Identities can be users and/or teams. \n* For Enterprise accounts, also includes roles and any aliases that contain allowed users/teams. \n* Not object- or property-specific. \n* Used for delegation and company settings."
+        },
+        {
+          "info": {
+            "name": "Enumerate all of a company's workflowable objects.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://cad.onshape.com/api/v16/workflow/companies/:cid/objects",
+            "params": [
+              {
+                "name": "cid",
+                "value": "",
+                "type": "path",
+                "description": "The company or enterprise ID that owns the resource."
+              },
+              {
+                "name": "objectTypes",
+                "value": "",
+                "type": "query",
+                "description": "Optionally filter for specific workflowable types. Defaults to RELEASE and OBSOLETION"
+              },
+              {
+                "name": "states",
+                "value": "",
+                "type": "query",
+                "description": "Optionally filter for specific workflow states like PENDING, RELEASED"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "The number of list entries to return in a single API call."
+              },
+              {
+                "name": "modifiedAfter",
+                "value": "",
+                "type": "query",
+                "description": "The earliest modification date of workflowable object to find."
+              }
+            ],
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "/oauth/authorize",
+              "accessTokenUrl": "/oauth/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "* For example, you can enumerate RELEASES, TASKS, etc in a company by last modified time. \n* Caller must be a company admin. \n* Specify `modifiedAfter` and use the `next` URI for complete enumeration."
+        },
+        {
+          "info": {
+            "name": "Lightweight information about the current state of a workflowable object like release package.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://cad.onshape.com/api/v16/workflow/obj/:objectId",
+            "params": [
+              {
+                "name": "objectId",
+                "value": "",
+                "type": "path",
+                "description": "Id of a workflowable object like release package, task etc."
+              },
+              {
+                "name": "requestId",
+                "value": "",
+                "type": "query",
+                "description": "Optional request ID to filter error messages. If provided, returns the most recent error associated with that specific request."
+              },
+              {
+                "name": "afterDateTime",
+                "value": "",
+                "type": "query",
+                "description": "Optional date-time (ISO-8601 format) to filter error messages. If provided (and requestId is not), returns the most recent error after this date."
+              }
+            ],
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "/oauth/authorize",
+              "accessTokenUrl": "/oauth/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Caller must be a company admin as this api allows access to all company owned workflowable objects."
+        },
+        {
+          "info": {
+            "name": "Get all audit log entries for a workflowable object.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://cad.onshape.com/api/v16/workflow/obj/:objectId/auditlog",
+            "params": [
+              {
+                "name": "objectId",
+                "value": "",
+                "type": "path",
+                "description": "Id of a workflowable object like release package, task etc."
+              }
+            ],
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "/oauth/authorize",
+              "accessTokenUrl": "/oauth/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Get all audit log entries for a workflowable object."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

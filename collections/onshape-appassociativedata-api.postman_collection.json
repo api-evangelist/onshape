@@ -1,0 +1,1044 @@
+{
+  "item": [
+    {
+      "id": "d1c974ea-0507-42f6-bfbc-e061b871c7c9",
+      "name": "AppAssociativeData",
+      "description": {
+        "content": "Manage the application-specific metadata that associates application data with Onshape data.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "3cd8f587-118c-485c-8252-f473cd015551",
+          "name": "Copy associative data from one view to another.",
+          "request": {
+            "name": "Copy associative data from one view to another.",
+            "description": {
+              "content": "You can manage associativity with [translateIds](https://cad.onshape.com/glassworks/explorer/#/PartStudio/translateIds).",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "appelements",
+                "d",
+                ":did",
+                "w",
+                ":wid",
+                "e",
+                ":eid",
+                "copyassociativedata"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "did",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "wid",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "eid",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json;charset=UTF-8; qs=0.09"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json;charset=UTF-8; qs=0.09"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "scope",
+                  "value": "OAuth2Internal OAuth2ReadPII OAuth2Read OAuth2Write OAuth2Delete OAuth2Purchase OAuth2Share document.create document.edit document.delete document.read enterprise.create enterprise.read enterprise.edit enterprise.delete enterprise.member.create enterprise.member.read enterprise.member.edit enterprise.member.delete webhook.create webhook.edit webhook.read webhook.delete PLMIntegration"
+                },
+                {
+                  "key": "redirect_uri",
+                  "value": "/oauth/token"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "/oauth/token"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "/oauth/authorize"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"description\": \"<string>\",\n  \"items\": [\n    {\n      \"associativeDataIds\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"destinationViewId\": \"<string>\",\n      \"sourceDocumentId\": \"<string>\",\n      \"sourceElementId\": \"<string>\",\n      \"sourceViewId\": \"<string>\",\n      \"sourceWvm\": \"<string>\",\n      \"sourceWvmId\": \"<string>\"\n    },\n    {\n      \"associativeDataIds\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"destinationViewId\": \"<string>\",\n      \"sourceDocumentId\": \"<string>\",\n      \"sourceElementId\": \"<string>\",\n      \"sourceViewId\": \"<string>\",\n      \"sourceWvm\": \"<string>\",\n      \"sourceWvmId\": \"<string>\"\n    }\n  ],\n  \"parentChangeId\": \"<string>\",\n  \"transactionId\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "cd2faaa4-2cfb-46ec-b362-8a43c7109b30",
+              "name": "default response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "appelements",
+                    "d",
+                    ":did",
+                    "w",
+                    ":wid",
+                    "e",
+                    ":eid",
+                    "copyassociativedata"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "did",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "wid",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "eid",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json;charset=UTF-8; qs=0.09"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"description\": \"<string>\",\n  \"items\": [\n    {\n      \"associativeDataIds\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"destinationViewId\": \"<string>\",\n      \"sourceDocumentId\": \"<string>\",\n      \"sourceElementId\": \"<string>\",\n      \"sourceViewId\": \"<string>\",\n      \"sourceWvm\": \"<string>\",\n      \"sourceWvmId\": \"<string>\"\n    },\n    {\n      \"associativeDataIds\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"destinationViewId\": \"<string>\",\n      \"sourceDocumentId\": \"<string>\",\n      \"sourceElementId\": \"<string>\",\n      \"sourceViewId\": \"<string>\",\n      \"sourceWvm\": \"<string>\",\n      \"sourceWvmId\": \"<string>\"\n    }\n  ],\n  \"parentChangeId\": \"<string>\",\n  \"transactionId\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json;charset=UTF-8; qs=0.09"
+                }
+              ],
+              "body": "{\n  \"changeId\": \"string\",\n  \"errorCode\": 3883,\n  \"errorDescription\": \"string\",\n  \"errorValue\": \"NOT_FOUND\",\n  \"items\": [\n    {\n      \"associativeDataId\": \"string\",\n      \"data\": [\n        {\n          \"name\": \"string\",\n          \"value\": \"string\"\n        },\n        {\n          \"name\": \"string\",\n          \"value\": \"string\"\n        }\n      ],\n      \"documentId\": \"string\",\n      \"documentMicroversion\": \"string\",\n      \"elementId\": \"string\",\n      \"error\": \"string\",\n      \"idTag\": \"string\",\n      \"microversionId\": \"string\",\n      \"occurrenceId\": \"string\",\n      \"type\": \"MODEL_TOPOLOGY\",\n      \"versionId\": \"string\"\n    },\n    {\n      \"associativeDataId\": \"string\",\n      \"data\": [\n        {\n          \"name\": \"string\",\n          \"value\": \"string\"\n        },\n        {\n          \"name\": \"string\",\n          \"value\": \"string\"\n        }\n      ],\n      \"documentId\": \"string\",\n      \"documentMicroversion\": \"string\",\n      \"elementId\": \"string\",\n      \"error\": \"string\",\n      \"idTag\": \"string\",\n      \"microversionId\": \"string\",\n      \"occurrenceId\": \"string\",\n      \"type\": \"UNKNOWN\",\n      \"versionId\": \"string\"\n    }\n  ],\n  \"parentChangeId\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "79010573-06f1-4742-bbe2-572ff0743d20",
+          "name": "Get the associative data for the specified app element.",
+          "request": {
+            "name": "Get the associative data for the specified app element.",
+            "description": {
+              "content": "You can manage associativity with [translateIds](https://cad.onshape.com/glassworks/explorer/#/PartStudio/translateIds).",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "appelements",
+                "d",
+                ":did",
+                ":wvm",
+                ":wvmid",
+                "e",
+                ":eid",
+                "associativedata"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "linkDocumentId",
+                  "value": "",
+                  "description": "The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both."
+                },
+                {
+                  "disabled": false,
+                  "key": "transactionId",
+                  "value": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "changeId",
+                  "value": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "associativeDataId",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "associativeDataId",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "externalDocumentId",
+                  "value": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "elementId",
+                  "value": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "viewId",
+                  "value": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "microversionId",
+                  "value": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "documentMicroversion",
+                  "value": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "deterministicId",
+                  "value": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "featureId",
+                  "value": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "entityId",
+                  "value": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "occurrenceId",
+                  "value": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "returnIdTags",
+                  "value": "false"
+                },
+                {
+                  "disabled": false,
+                  "key": "referenceId",
+                  "value": ""
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "did",
+                  "description": "(Required) The id of the document in which to perform the operation."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "wvm",
+                  "description": "(Required) Indicates which of workspace (w), version (v), or document microversion (m) id is specified below."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "wvmid",
+                  "description": "(Required) The id of the workspace, version or document microversion in which the operation should be performed."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "eid",
+                  "description": "(Required) The id of the element in which to perform the operation."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json;charset=UTF-8; qs=0.09"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "scope",
+                  "value": "OAuth2Internal OAuth2ReadPII OAuth2Read OAuth2Write OAuth2Delete OAuth2Purchase OAuth2Share document.create document.edit document.delete document.read enterprise.create enterprise.read enterprise.edit enterprise.delete enterprise.member.create enterprise.member.read enterprise.member.edit enterprise.member.delete webhook.create webhook.edit webhook.read webhook.delete PLMIntegration"
+                },
+                {
+                  "key": "redirect_uri",
+                  "value": "/oauth/token"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "/oauth/token"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "/oauth/authorize"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "65c7332d-c6f6-44cf-abea-b56179f64bc2",
+              "name": "default response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "appelements",
+                    "d",
+                    ":did",
+                    ":wvm",
+                    ":wvmid",
+                    "e",
+                    ":eid",
+                    "associativedata"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "linkDocumentId",
+                      "value": ""
+                    },
+                    {
+                      "key": "transactionId",
+                      "value": ""
+                    },
+                    {
+                      "key": "changeId",
+                      "value": ""
+                    },
+                    {
+                      "key": "associativeDataId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "associativeDataId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "externalDocumentId",
+                      "value": ""
+                    },
+                    {
+                      "key": "elementId",
+                      "value": ""
+                    },
+                    {
+                      "key": "viewId",
+                      "value": ""
+                    },
+                    {
+                      "key": "microversionId",
+                      "value": ""
+                    },
+                    {
+                      "key": "documentMicroversion",
+                      "value": ""
+                    },
+                    {
+                      "key": "deterministicId",
+                      "value": ""
+                    },
+                    {
+                      "key": "featureId",
+                      "value": ""
+                    },
+                    {
+                      "key": "entityId",
+                      "value": ""
+                    },
+                    {
+                      "key": "occurrenceId",
+                      "value": ""
+                    },
+                    {
+                      "key": "returnIdTags",
+                      "value": "false"
+                    },
+                    {
+                      "key": "referenceId",
+                      "value": ""
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "did",
+                      "description": "(Required) The id of the document in which to perform the operation."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "wvm",
+                      "description": "(Required) Indicates which of workspace (w), version (v), or document microversion (m) id is specified below."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "wvmid",
+                      "description": "(Required) The id of the workspace, version or document microversion in which the operation should be performed."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "eid",
+                      "description": "(Required) The id of the element in which to perform the operation."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json;charset=UTF-8; qs=0.09"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json;charset=UTF-8; qs=0.09"
+                }
+              ],
+              "body": "{\n  \"changeId\": \"string\",\n  \"errorCode\": 3221,\n  \"errorDescription\": \"string\",\n  \"errorValue\": \"INCONSISTENT_CHANGES\",\n  \"items\": [\n    {\n      \"associativeDataId\": \"string\",\n      \"data\": [\n        {\n          \"name\": \"string\",\n          \"value\": \"string\"\n        },\n        {\n          \"name\": \"string\",\n          \"value\": \"string\"\n        }\n      ],\n      \"documentId\": \"string\",\n      \"documentMicroversion\": \"string\",\n      \"elementId\": \"string\",\n      \"error\": \"string\",\n      \"idTag\": \"string\",\n      \"microversionId\": \"string\",\n      \"occurrenceId\": \"string\",\n      \"type\": \"MODEL_TOPOLOGY\",\n      \"versionId\": \"string\"\n    },\n    {\n      \"associativeDataId\": \"string\",\n      \"data\": [\n        {\n          \"name\": \"string\",\n          \"value\": \"string\"\n        },\n        {\n          \"name\": \"string\",\n          \"value\": \"string\"\n        }\n      ],\n      \"documentId\": \"string\",\n      \"documentMicroversion\": \"string\",\n      \"elementId\": \"string\",\n      \"error\": \"string\",\n      \"idTag\": \"string\",\n      \"microversionId\": \"string\",\n      \"occurrenceId\": \"string\",\n      \"type\": \"UNKNOWN\",\n      \"versionId\": \"string\"\n    }\n  ],\n  \"parentChangeId\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "8fb43bb2-33fb-495f-a391-0473881acf01",
+          "name": "Set the associative data for the specified app element.",
+          "request": {
+            "name": "Set the associative data for the specified app element.",
+            "description": {
+              "content": "You can manage associativity with [translateIds](https://cad.onshape.com/glassworks/explorer/#/PartStudio/translateIds).",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "appelements",
+                "d",
+                ":did",
+                ":wvm",
+                ":wvmid",
+                "e",
+                ":eid",
+                "associativedata"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "did",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "eid",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "wvm",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "wvmid",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json;charset=UTF-8; qs=0.09"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json;charset=UTF-8; qs=0.09"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "scope",
+                  "value": "OAuth2Internal OAuth2ReadPII OAuth2Read OAuth2Write OAuth2Delete OAuth2Purchase OAuth2Share document.create document.edit document.delete document.read enterprise.create enterprise.read enterprise.edit enterprise.delete enterprise.member.create enterprise.member.read enterprise.member.edit enterprise.member.delete webhook.create webhook.edit webhook.read webhook.delete PLMIntegration"
+                },
+                {
+                  "key": "redirect_uri",
+                  "value": "/oauth/token"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "/oauth/token"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "/oauth/authorize"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "<string>",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "ae377223-e3b5-43f6-ad27-38caec1ec2c8",
+              "name": "default response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "appelements",
+                    "d",
+                    ":did",
+                    ":wvm",
+                    ":wvmid",
+                    "e",
+                    ":eid",
+                    "associativedata"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "did",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "eid",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "wvm",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "wvmid",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json;charset=UTF-8; qs=0.09"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "<string>",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json;charset=UTF-8; qs=0.09"
+                }
+              ],
+              "body": "{\n  \"changeId\": \"string\",\n  \"errorCode\": 3221,\n  \"errorDescription\": \"string\",\n  \"errorValue\": \"INCONSISTENT_CHANGES\",\n  \"items\": [\n    {\n      \"associativeDataId\": \"string\",\n      \"data\": [\n        {\n          \"name\": \"string\",\n          \"value\": \"string\"\n        },\n        {\n          \"name\": \"string\",\n          \"value\": \"string\"\n        }\n      ],\n      \"documentId\": \"string\",\n      \"documentMicroversion\": \"string\",\n      \"elementId\": \"string\",\n      \"error\": \"string\",\n      \"idTag\": \"string\",\n      \"microversionId\": \"string\",\n      \"occurrenceId\": \"string\",\n      \"type\": \"MODEL_TOPOLOGY\",\n      \"versionId\": \"string\"\n    },\n    {\n      \"associativeDataId\": \"string\",\n      \"data\": [\n        {\n          \"name\": \"string\",\n          \"value\": \"string\"\n        },\n        {\n          \"name\": \"string\",\n          \"value\": \"string\"\n        }\n      ],\n      \"documentId\": \"string\",\n      \"documentMicroversion\": \"string\",\n      \"elementId\": \"string\",\n      \"error\": \"string\",\n      \"idTag\": \"string\",\n      \"microversionId\": \"string\",\n      \"occurrenceId\": \"string\",\n      \"type\": \"UNKNOWN\",\n      \"versionId\": \"string\"\n    }\n  ],\n  \"parentChangeId\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "26ec58b7-8c95-4d99-b572-7d62158c9f80",
+          "name": "Delete the associative data from the specified app element.",
+          "request": {
+            "name": "Delete the associative data from the specified app element.",
+            "description": {
+              "content": "You can manage associativity with [translateIds](https://cad.onshape.com/glassworks/explorer/#/PartStudio/translateIds).",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "appelements",
+                "d",
+                ":did",
+                ":wvm",
+                ":wvmid",
+                "e",
+                ":eid",
+                "associativedata"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "transactionId",
+                  "value": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "parentChangeId",
+                  "value": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "associativeDataId",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "associativeDataId",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "externalDocumentId",
+                  "value": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "elementId",
+                  "value": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "viewId",
+                  "value": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "microversionId",
+                  "value": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "documentMicroversion",
+                  "value": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "deterministicId",
+                  "value": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "featureId",
+                  "value": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "entityId",
+                  "value": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "occurrenceId",
+                  "value": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "referenceId",
+                  "value": ""
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "did",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "eid",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "wvm",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "wvmid",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json;charset=UTF-8; qs=0.09"
+              }
+            ],
+            "method": "DELETE",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "scope",
+                  "value": "OAuth2Internal OAuth2ReadPII OAuth2Read OAuth2Write OAuth2Delete OAuth2Purchase OAuth2Share document.create document.edit document.delete document.read enterprise.create enterprise.read enterprise.edit enterprise.delete enterprise.member.create enterprise.member.read enterprise.member.edit enterprise.member.delete webhook.create webhook.edit webhook.read webhook.delete PLMIntegration"
+                },
+                {
+                  "key": "redirect_uri",
+                  "value": "/oauth/token"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "/oauth/token"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "/oauth/authorize"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "45d4eeb6-c086-4153-bb89-0e619c6fe923",
+              "name": "default response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "appelements",
+                    "d",
+                    ":did",
+                    ":wvm",
+                    ":wvmid",
+                    "e",
+                    ":eid",
+                    "associativedata"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "transactionId",
+                      "value": ""
+                    },
+                    {
+                      "key": "parentChangeId",
+                      "value": ""
+                    },
+                    {
+                      "key": "associativeDataId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "associativeDataId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "externalDocumentId",
+                      "value": ""
+                    },
+                    {
+                      "key": "elementId",
+                      "value": ""
+                    },
+                    {
+                      "key": "viewId",
+                      "value": ""
+                    },
+                    {
+                      "key": "microversionId",
+                      "value": ""
+                    },
+                    {
+                      "key": "documentMicroversion",
+                      "value": ""
+                    },
+                    {
+                      "key": "deterministicId",
+                      "value": ""
+                    },
+                    {
+                      "key": "featureId",
+                      "value": ""
+                    },
+                    {
+                      "key": "entityId",
+                      "value": ""
+                    },
+                    {
+                      "key": "occurrenceId",
+                      "value": ""
+                    },
+                    {
+                      "key": "referenceId",
+                      "value": ""
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "did",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "eid",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "wvm",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "wvmid",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json;charset=UTF-8; qs=0.09"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json;charset=UTF-8; qs=0.09"
+                }
+              ],
+              "body": "{\n  \"changeId\": \"string\",\n  \"errorCode\": 8896,\n  \"errorDescription\": \"string\",\n  \"errorValue\": \"OK\",\n  \"parentChangeId\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://cad.onshape.com/api/v16",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "basic",
+    "basic": [
+      {
+        "key": "username",
+        "value": "{{basicAuthUsername}}"
+      },
+      {
+        "key": "password",
+        "value": "{{basicAuthPassword}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "15373bc2-9968-4e0e-939e-c6580681483c",
+    "name": "Onshape REST Account AppAssociativeData API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "## Welcome to the Onshape REST API Explorer\n\n**See the [API Explorer Guide](https://onshape-public.github.io/docs/api-intro/explorer/) for help navigating this page.**\n\n### Using this page\n1. Sign in to your [Onshape](https://cad.onshape.com) account in another tab.\n2. Click the `Try it out` button below. It toggles to a `Cancel` button when selected.\n\n### Authenticating\nTo authenticate your calls, click the `Authorize` button. See [API Explorer Guide: Authentication](https://onshape-public.github.io/docs/api-intro/explorer/#authentication) for details. Calls made when authenticated via API Keys or OAuth count against your annual [API limits](https://onshape-public.github.io/docs/auth/limits/#annual-api-call-limits).\n* **Tip:** To ensure the current session isn't used when trying other authentication techniques, make sure to [remove the Onshape cookie](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site) as per the instructions for your browser, or use a private or incognito window.\n\n### Additional resources\n\n* [Onshape API Guide](https://onshape-public.github.io/docs/): Our full suite of developer guides, to be used as an accompaniment to this API Explorer.\n* [Onshape Developer Portal](https://cad.onshape.com/appstore/dev-portal): The Onshape portal for managing your API keys, OAuth2 credentials, your Onshape applications, and your Onshape App Store entries.\n* [Authentication Guide](https://onshape-public.github.io/docs/auth/): Our guide to using API keys, request signatures, and OAuth2 in your Onshape applications.\n\nContact Support:\n Email: api-support@onshape.zendesk.com",
+      "type": "text/plain"
+    }
+  }
+}

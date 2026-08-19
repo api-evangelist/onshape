@@ -1,0 +1,64 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Onshape REST Account NumberingScheme API",
+    "version": "1.218.84032-34acba44be17"
+  },
+  "request": {
+    "auth": {
+      "type": "basic",
+      "username": "{{username}}",
+      "password": "{{password}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "NumberingScheme",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get the next available part number for a release item.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://cad.onshape.com/api/v16/numberingscheme/nextnumbers",
+            "params": [
+              {
+                "name": "cid",
+                "value": "",
+                "type": "query",
+                "description": "Company ID"
+              },
+              {
+                "name": "did",
+                "value": "",
+                "type": "query",
+                "description": "Document ID"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "/oauth/authorize",
+              "accessTokenUrl": "/oauth/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Provide either the company ID or the ID of a document owned by the company. See [API Guide: Release Management](https://onshape-public.github.io/docs/api-adv/relmgmt/#get-the-next-available-part-number) for an example."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

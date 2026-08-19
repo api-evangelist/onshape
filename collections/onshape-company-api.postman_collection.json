@@ -1,0 +1,1411 @@
+{
+  "item": [
+    {
+      "id": "d09ead2c-6c32-41da-b151-2fc1c77cdfae",
+      "name": "Company",
+      "description": {
+        "content": "Access company information.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "d68fe869-cd7d-45ce-a373-0caba64cb37a",
+          "name": "Get all companies to which the specified user belongs.",
+          "request": {
+            "name": "Get all companies to which the specified user belongs.",
+            "description": {
+              "content": "If no user is specified, will return all companies associated with the current user.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "companies"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "uid",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "activeOnly",
+                  "value": "true"
+                },
+                {
+                  "disabled": false,
+                  "key": "includeAll",
+                  "value": "false"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json;charset=UTF-8; qs=0.09"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "cf609f9d-3962-4b40-859a-e604e9e0b601",
+              "name": "default response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "companies"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "uid",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "activeOnly",
+                      "value": "true"
+                    },
+                    {
+                      "key": "includeAll",
+                      "value": "false"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json;charset=UTF-8; qs=0.09"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json;charset=UTF-8; qs=0.09"
+                }
+              ],
+              "body": "{\n  \"href\": \"http://LzJnFPkDGuKKZzYYRaRUPRofbedFzeeNk.ryw6cZ6YBjd\",\n  \"items\": [\n    {\n      \"address\": {\n        \"address\": \"string\",\n        \"city\": \"string\",\n        \"country\": \"string\",\n        \"countryCode\": \"string\",\n        \"id\": \"string\",\n        \"state\": \"string\",\n        \"stateCode\": \"string\",\n        \"zip\": \"string\"\n      },\n      \"admin\": true,\n      \"description\": \"string\",\n      \"domainPrefix\": \"string\",\n      \"enterpriseBaseUrl\": \"string\",\n      \"enterpriseSubtype\": 7333,\n      \"href\": \"https://KowRgPjAksJlJ.uzqSANuPoLvnbPiMJLTdRv9BlXx3E7LXTjpsvF6v43.W\",\n      \"id\": \"string\",\n      \"image\": \"string\",\n      \"name\": \"string\",\n      \"noPublicDocuments\": false,\n      \"ownerId\": \"string\",\n      \"purchase\": {\n        \"accountId\": \"string\",\n        \"actualAmountPaidCents\": 5301,\n        \"amountCents\": 3165,\n        \"apiAllocationByPlan\": 6299,\n        \"apiAllocationEndDate\": \"2016-10-25T08:27:09.913Z\",\n        \"apiAllocationOverride\": 1187,\n        \"apiAllocationStartDate\": \"1968-01-09T20:55:49.420Z\",\n        \"application\": {\n          \"applicationOwnerType\": 1762,\n          \"clientId\": \"string\",\n          \"description\": \"string\",\n          \"href\": \"http://yCRHawoWHwLmOTKaekSfwrBo.gbk9cOhbePtfd8RYqw1XPwbmXceIs\",\n          \"id\": \"string\",\n          \"name\": \"string\",\n          \"state\": 3105,\n          \"viewRef\": \"http://IidqohLzSVNVDAC.relvfocdVvFBIMcGVGM4yMEEqY\"\n        },\n        \"canceledAt\": \"1948-11-09T21:01:45.799Z\",\n        \"card\": {\n          \"billingAddress\": {\n            \"address\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"city\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"country\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"countryCode\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"id\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"state\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"stateCode\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"zip\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"expMonth\": 8708,\n          \"expYear\": 3856,\n          \"last4\": \"string\",\n          \"name\": \"string\",\n          \"type\": \"string\"\n        },\n        \"clientId\": \"string\",\n        \"couponAmountOff\": 2784,\n        \"couponPercentOff\": 1929,\n        \"createdBy\": \"string\",\n        \"currency\": \"string\",\n        \"duration\": 7825,\n        \"durationMonths\": 4632,\n        \"group\": \"string\",\n        \"href\": \"http://HdLWLukwoDFa.ngms+AhwR6J4zAncCN,GczPlnapUg1Jl7XMu90Oredw\",\n        \"id\": \"string\",\n        \"lastModified\": \"1976-01-07T00:10:22.358Z\",\n        \"lastModifiedBy\": \"string\",\n        \"lightSeats\": 8001,\n        \"name\": \"string\",\n        \"nextCharge\": {\n          \"amount\": 1637,\n          \"currentPeriodEnd\": \"2010-02-27T23:20:43.283Z\",\n          \"interval\": \"string\",\n          \"total\": 5273\n        },\n        \"overageEnabled\": false,\n        \"paymentType\": 6735,\n        \"pendingCancelation\": false,\n        \"plan\": {\n          \"amountCents\": 8478,\n          \"applicationId\": \"string\",\n          \"clientId\": \"string\",\n          \"companyPlan\": true,\n          \"consumableQuantity\": 5769,\n          \"deprecated\": false,\n          \"description\": \"string\",\n          \"discountInfo\": {\n            \"accountBalance\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"amountOff\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"couponType\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"couponValidMonths\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"createdAt\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"createdBy\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"expiresAt\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"href\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"id\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"name\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"ownerId\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"percentOff\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"planId\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"trialEndDate\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"usedAt\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"viewRef\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"group\": \"string\",\n          \"hidden\": false,\n          \"href\": \"http://aCRozaJgSIGCaTCdDhxQrygUBRYaqUq.jrmBJgyLzc3cUyatoq\",\n          \"id\": \"string\",\n          \"interval\": \"string\",\n          \"name\": \"string\",\n          \"onshapePlan\": false,\n          \"planType\": 1060,\n          \"trialPeriodDays\": 9022,\n          \"viewRef\": \"https://mvOw.touH1VASIdUDtfiCPrB2CnlBvWW,UZ3Wb\"\n        },\n        \"planId\": \"string\",\n        \"planName\": \"string\",\n        \"planType\": 7449,\n        \"preTrialPlanId\": \"string\",\n        \"proratedCharges\": [\n          {\n            \"amount\": 3891,\n            \"date\": \"2014-04-27T01:19:04.065Z\",\n            \"description\": \"string\"\n          },\n          {\n            \"amount\": 4625,\n            \"date\": \"1990-05-19T17:14:50.487Z\",\n            \"description\": \"string\"\n          }\n        ],\n        \"proratedTotal\": 1019,\n        \"purchaseDate\": \"2019-12-26T04:38:24.161Z\",\n        \"resellerName\": \"string\",\n        \"seats\": 129,\n        \"state\": 3363,\n        \"subscribers\": [\n          {\n            \"email\": \"string\",\n            \"firstName\": \"string\",\n            \"href\": \"https://XQHRSFLbooDjpceaYWRnGaqcso.kqzrbZ39DSDS2SRLWPnsZDJ24eBH0OAFAfl\",\n            \"id\": \"string\",\n            \"image\": \"string\",\n            \"lastName\": \"string\",\n            \"name\": \"string\",\n            \"state\": 1717,\n            \"viewRef\": \"https://BSYcizGPjuUVZQxruWcPdmRFt.ryTisfI4G9\"\n          },\n          {\n            \"email\": \"string\",\n            \"firstName\": \"string\",\n            \"href\": \"http://TWrRoTfJuQdOOZh.rpaic,3AiGrDArPmpT5s4jkWxI.g8nvU+lQby38xAqZm6Skvp+a\",\n            \"id\": \"string\",\n            \"image\": \"string\",\n            \"lastName\": \"string\",\n            \"name\": \"string\",\n            \"state\": 8675,\n            \"viewRef\": \"http://UALtqjuRBFsPodKiJooZqo.ueeum,WTGmeRVDhZrTObXX\"\n          }\n        ],\n        \"subscriptionBeginAt\": \"1953-04-06T19:26:37.007Z\",\n        \"subscriptionEndAt\": \"1999-06-19T11:59:45.691Z\",\n        \"subscriptionId\": \"string\",\n        \"subscriptionType\": 2297,\n        \"taxAmountCents\": 8580,\n        \"trialEnd\": \"1958-12-16T05:48:27.752Z\",\n        \"trialInitiatedBy\": \"string\",\n        \"viewRef\": \"https://pYQmIPhMOJZZJiJNrZRujru.aqzGKWm257Jfqb98xFaAO4ksqJNMQyKpf\"\n      },\n      \"secondaryDomainPrefixes\": [\n        \"string\"\n      ],\n      \"state\": 3948,\n      \"type\": 1642,\n      \"viewRef\": \"http://xewkWkyVdkIqqPHtwLS.ghkPsu9I4VWafH.W5iUzF6rMekV7\"\n    },\n    {\n      \"address\": {\n        \"address\": \"string\",\n        \"city\": \"string\",\n        \"country\": \"string\",\n        \"countryCode\": \"string\",\n        \"id\": \"string\",\n        \"state\": \"string\",\n        \"stateCode\": \"string\",\n        \"zip\": \"string\"\n      },\n      \"admin\": false,\n      \"description\": \"string\",\n      \"domainPrefix\": \"string\",\n      \"enterpriseBaseUrl\": \"string\",\n      \"enterpriseSubtype\": 3526,\n      \"href\": \"http://srjGPjcuJc.terD5RmKTGCXSzHSZUc,yAUUhuA\",\n      \"id\": \"string\",\n      \"image\": \"string\",\n      \"name\": \"string\",\n      \"noPublicDocuments\": false,\n      \"ownerId\": \"string\",\n      \"purchase\": {\n        \"accountId\": \"string\",\n        \"actualAmountPaidCents\": 6784,\n        \"amountCents\": 4626,\n        \"apiAllocationByPlan\": 8456,\n        \"apiAllocationEndDate\": \"1958-01-26T06:33:34.087Z\",\n        \"apiAllocationOverride\": 1506,\n        \"apiAllocationStartDate\": \"2000-09-24T19:53:40.739Z\",\n        \"application\": {\n          \"applicationOwnerType\": 9607,\n          \"clientId\": \"string\",\n          \"description\": \"string\",\n          \"href\": \"https://IOHKdbqhNvUT.pjQ2TAKVP2WzpdHoinbFNA,IBQ72bch-umN4-ipbfeMbZkyCT8MgmV36QVA+F8f8,reoA\",\n          \"id\": \"string\",\n          \"name\": \"string\",\n          \"state\": 9877,\n          \"viewRef\": \"https://nuRrHMulXLbpJRQzkbppjXIJvMVLegTf.jymISRIN\"\n        },\n        \"canceledAt\": \"1958-12-31T15:22:01.006Z\",\n        \"card\": {\n          \"billingAddress\": {\n            \"address\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"city\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"country\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"countryCode\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"id\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"state\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"stateCode\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"zip\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"expMonth\": 5971,\n          \"expYear\": 6195,\n          \"last4\": \"string\",\n          \"name\": \"string\",\n          \"type\": \"string\"\n        },\n        \"clientId\": \"string\",\n        \"couponAmountOff\": 8809,\n        \"couponPercentOff\": 698,\n        \"createdBy\": \"string\",\n        \"currency\": \"string\",\n        \"duration\": 977,\n        \"durationMonths\": 7184,\n        \"group\": \"string\",\n        \"href\": \"http://WOcCfXXIeLMDEhYcV.qmnjFqcpP9F1guaSxoFAcHPFi9+dp+xvMJd,E-ZFQzjbjiSvb.P5fqu3G3ad\",\n        \"id\": \"string\",\n        \"lastModified\": \"1971-08-12T15:07:31.248Z\",\n        \"lastModifiedBy\": \"string\",\n        \"lightSeats\": 2819,\n        \"name\": \"string\",\n        \"nextCharge\": {\n          \"amount\": 7131,\n          \"currentPeriodEnd\": \"2011-09-22T21:34:21.716Z\",\n          \"interval\": \"string\",\n          \"total\": 2288\n        },\n        \"overageEnabled\": true,\n        \"paymentType\": 8957,\n        \"pendingCancelation\": false,\n        \"plan\": {\n          \"amountCents\": 8206,\n          \"applicationId\": \"string\",\n          \"clientId\": \"string\",\n          \"companyPlan\": true,\n          \"consumableQuantity\": 9009,\n          \"deprecated\": false,\n          \"description\": \"string\",\n          \"discountInfo\": {\n            \"accountBalance\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"amountOff\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"couponType\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"couponValidMonths\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"createdAt\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"createdBy\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"expiresAt\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"href\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"id\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"name\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"ownerId\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"percentOff\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"planId\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"trialEndDate\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"usedAt\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"viewRef\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"group\": \"string\",\n          \"hidden\": false,\n          \"href\": \"https://VAXEWBaHQtvW.kvpmyHqHm97smbmsv9XvU6D.VkzGZ6NZGcXqmvSOPjorivUXHO-tIVq\",\n          \"id\": \"string\",\n          \"interval\": \"string\",\n          \"name\": \"string\",\n          \"onshapePlan\": true,\n          \"planType\": 989,\n          \"trialPeriodDays\": 721,\n          \"viewRef\": \"https://RqrSAzaNHxyhJfcwuowfuFMdn.sicw.UV7\"\n        },\n        \"planId\": \"string\",\n        \"planName\": \"string\",\n        \"planType\": 9886,\n        \"preTrialPlanId\": \"string\",\n        \"proratedCharges\": [\n          {\n            \"amount\": 6772,\n            \"date\": \"2001-03-25T09:25:47.593Z\",\n            \"description\": \"string\"\n          },\n          {\n            \"amount\": 4330,\n            \"date\": \"1962-07-11T17:22:27.522Z\",\n            \"description\": \"string\"\n          }\n        ],\n        \"proratedTotal\": 8951,\n        \"purchaseDate\": \"1993-04-30T02:14:16.013Z\",\n        \"resellerName\": \"string\",\n        \"seats\": 4919,\n        \"state\": 3873,\n        \"subscribers\": [\n          {\n            \"email\": \"string\",\n            \"firstName\": \"string\",\n            \"href\": \"http://KrZJAtlPOSkZyMekBwlHEEgnv.iyycUS62pCZ8UoimBUvD1rdx54FFmJQJK2lhPN-0BgURj\",\n            \"id\": \"string\",\n            \"image\": \"string\",\n            \"lastName\": \"string\",\n            \"name\": \"string\",\n            \"state\": 98,\n            \"viewRef\": \"http://SIYeMJZ.giyeVWHFgYiKp38vIsSwUmVsfg,S,uTlFxPYJGSQSujjKt0yBJq-qs9320na\"\n          },\n          {\n            \"email\": \"string\",\n            \"firstName\": \"string\",\n            \"href\": \"https://TmVbYkfwOzQ.hlEyCxttHhaB1UjIkCQG-HSAG95eRnXovvKthbLolZADBfcwHku,m06BrTh7\",\n            \"id\": \"string\",\n            \"image\": \"string\",\n            \"lastName\": \"string\",\n            \"name\": \"string\",\n            \"state\": 5998,\n            \"viewRef\": \"http://PqDb.lynoMPIAggvpQI,h6wmaeJF,vsTDn-\"\n          }\n        ],\n        \"subscriptionBeginAt\": \"1991-02-22T02:56:12.433Z\",\n        \"subscriptionEndAt\": \"1952-12-25T14:32:07.906Z\",\n        \"subscriptionId\": \"string\",\n        \"subscriptionType\": 5713,\n        \"taxAmountCents\": 3240,\n        \"trialEnd\": \"1965-09-21T10:27:42.044Z\",\n        \"trialInitiatedBy\": \"string\",\n        \"viewRef\": \"https://RgNnk.kxijo,SeBsudwd,zDRpkKUn5BMVnHjQqKQ1ZwkoCcrqu5AW7qfTkIyod\"\n      },\n      \"secondaryDomainPrefixes\": [\n        \"string\"\n      ],\n      \"state\": 4539,\n      \"type\": 3142,\n      \"viewRef\": \"https://VQM.ubrhDFAcAIZ7eXdIeu0rSitrsdgs6JYuV1SFqCi6mWym4SybcFdpV70gyGexw\"\n    }\n  ],\n  \"next\": \"https://fRIYiNl.tcbhqSqZKlQvMsUrmUIgTvUQznvCw2fSzHd7RKqE8K5OL\",\n  \"previous\": \"https://CnfXJmaEnlXqLZSjkjHhbZTTHsWHJ.fkYxQBWmCWs5eTNeCPS\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "86f25dda-df13-4839-ad26-c4ac31a78e99",
+          "name": "Get company information by company ID.",
+          "request": {
+            "name": "Get company information by company ID.",
+            "description": {},
+            "url": {
+              "path": [
+                "companies",
+                ":cid"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "cid",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json;charset=UTF-8; qs=0.09"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "72b30d64-ffff-4d53-ab1d-88d4c45f2e79",
+              "name": "default response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "companies",
+                    ":cid"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "cid",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json;charset=UTF-8; qs=0.09"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json;charset=UTF-8; qs=0.09"
+                }
+              ],
+              "body": "{\n  \"address\": {\n    \"address\": \"string\",\n    \"city\": \"string\",\n    \"country\": \"string\",\n    \"countryCode\": \"string\",\n    \"id\": \"string\",\n    \"state\": \"string\",\n    \"stateCode\": \"string\",\n    \"zip\": \"string\"\n  },\n  \"admin\": false,\n  \"description\": \"string\",\n  \"domainPrefix\": \"string\",\n  \"enterpriseBaseUrl\": \"string\",\n  \"enterpriseSubtype\": 1176,\n  \"href\": \"https://aepfuSgFHp.ouhrHTldF9Cja4.q-XRiy35m5e,HxPgRoJnETWxq8pAu\",\n  \"id\": \"string\",\n  \"image\": \"string\",\n  \"name\": \"string\",\n  \"noPublicDocuments\": false,\n  \"ownerId\": \"string\",\n  \"purchase\": {\n    \"accountId\": \"string\",\n    \"actualAmountPaidCents\": 1812,\n    \"amountCents\": 7995,\n    \"apiAllocationByPlan\": 7667,\n    \"apiAllocationEndDate\": \"1971-08-21T16:16:54.974Z\",\n    \"apiAllocationOverride\": 7447,\n    \"apiAllocationStartDate\": \"2016-01-08T00:05:25.031Z\",\n    \"application\": {\n      \"applicationOwnerType\": 7527,\n      \"clientId\": \"string\",\n      \"description\": \"string\",\n      \"href\": \"http://F.txuLG-6xZWEZxLVcNTHswIqQpJU6zK4vaf,B1pe-4\",\n      \"id\": \"string\",\n      \"name\": \"string\",\n      \"state\": 7685,\n      \"viewRef\": \"https://FGNUMoCzvMShKBhxSIOSfrzYCqASr.mnhHgMsT9wwXKWlWJcxBMz,lp.JxHAqtvBfPvtWSBGSZxTbl9\"\n    },\n    \"canceledAt\": \"1992-07-06T21:05:31.822Z\",\n    \"card\": {\n      \"billingAddress\": {\n        \"address\": \"string\",\n        \"city\": \"string\",\n        \"country\": \"string\",\n        \"countryCode\": \"string\",\n        \"id\": \"string\",\n        \"state\": \"string\",\n        \"stateCode\": \"string\",\n        \"zip\": \"string\"\n      },\n      \"expMonth\": 5375,\n      \"expYear\": 1287,\n      \"last4\": \"string\",\n      \"name\": \"string\",\n      \"type\": \"string\"\n    },\n    \"clientId\": \"string\",\n    \"couponAmountOff\": 2302,\n    \"couponPercentOff\": 8124,\n    \"createdBy\": \"string\",\n    \"currency\": \"string\",\n    \"duration\": 8897,\n    \"durationMonths\": 6649,\n    \"group\": \"string\",\n    \"href\": \"http://EIurmShPhmtXq.jfjQhZYh-ncwVZQxDDXBm\",\n    \"id\": \"string\",\n    \"lastModified\": \"1993-10-04T08:20:59.021Z\",\n    \"lastModifiedBy\": \"string\",\n    \"lightSeats\": 7071,\n    \"name\": \"string\",\n    \"nextCharge\": {\n      \"amount\": 6304,\n      \"currentPeriodEnd\": \"1975-10-25T03:41:52.858Z\",\n      \"interval\": \"string\",\n      \"total\": 7727\n    },\n    \"overageEnabled\": true,\n    \"paymentType\": 6690,\n    \"pendingCancelation\": true,\n    \"plan\": {\n      \"amountCents\": 3875,\n      \"applicationId\": \"string\",\n      \"clientId\": \"string\",\n      \"companyPlan\": true,\n      \"consumableQuantity\": 9899,\n      \"deprecated\": true,\n      \"description\": \"string\",\n      \"discountInfo\": {\n        \"accountBalance\": 9644,\n        \"amountOff\": 9947,\n        \"couponType\": 1278,\n        \"couponValidMonths\": 9031,\n        \"createdAt\": \"1986-07-23T04:49:51.296Z\",\n        \"createdBy\": {\n          \"company\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"companyUserState\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"confirmationRequested\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"documentationNameOverride\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"globalPermissions\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"invitationState\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"isExternal\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"isGuest\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"isLight\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"lastLoginTime\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"personalMessageAllowed\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"source\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"expiresAt\": \"1963-05-28T21:15:56.902Z\",\n        \"href\": \"http://Wj.mdZqETKz7Acj,wDeI816ZLGsaW2oT8ob\",\n        \"id\": \"string\",\n        \"name\": \"string\",\n        \"ownerId\": \"string\",\n        \"percentOff\": 1614,\n        \"planId\": \"string\",\n        \"trialEndDate\": \"string\",\n        \"usedAt\": \"1974-12-26T05:02:26.984Z\",\n        \"viewRef\": \"http://IxXuQGEz.ntcI4KoRPSlFWK.a-IgFivDu0uwIBBjRh3NOOr+XKkR\"\n      },\n      \"group\": \"string\",\n      \"hidden\": false,\n      \"href\": \"http://YYxlnYkLvdyAfqOjwxDbGypo.soN,MFSknAyhNyBY9DKxTevy.E0vGSTt8ixmN0ErHy6sOBl\",\n      \"id\": \"string\",\n      \"interval\": \"string\",\n      \"name\": \"string\",\n      \"onshapePlan\": true,\n      \"planType\": 7136,\n      \"trialPeriodDays\": 2582,\n      \"viewRef\": \"http://RzXVT.doAZubI\"\n    },\n    \"planId\": \"string\",\n    \"planName\": \"string\",\n    \"planType\": 8538,\n    \"preTrialPlanId\": \"string\",\n    \"proratedCharges\": [\n      {\n        \"amount\": 444,\n        \"date\": \"1956-12-16T06:16:45.411Z\",\n        \"description\": \"string\"\n      },\n      {\n        \"amount\": 6876,\n        \"date\": \"1976-07-19T15:52:09.910Z\",\n        \"description\": \"string\"\n      }\n    ],\n    \"proratedTotal\": 8794,\n    \"purchaseDate\": \"1976-11-17T00:03:45.104Z\",\n    \"resellerName\": \"string\",\n    \"seats\": 2387,\n    \"state\": 9237,\n    \"subscribers\": [\n      {\n        \"email\": \"string\",\n        \"firstName\": \"string\",\n        \"href\": \"http://ZYxRQugtLTiSFoVe.epUW+Oy,B.2e46APPzUEVv,ELXBEiVjQAC6sg,1JaEBH.5Dxw9Xeb48Ut2FkrwkMgQYhL6\",\n        \"id\": \"string\",\n        \"image\": \"string\",\n        \"lastName\": \"string\",\n        \"name\": \"string\",\n        \"state\": 6767,\n        \"viewRef\": \"http://vSkBcJPzgHFLHKBPsnLYF.zomJkSk6g24HSm\"\n      },\n      {\n        \"email\": \"string\",\n        \"firstName\": \"string\",\n        \"href\": \"https://ZVGzrJlcaUBcnpHsTZTHKodEpqyE.odxzELlNUM5BovRVvAJzDJcpnH4q9LUpmlOOtlJ20xrrUymgvFO2nQmt\",\n        \"id\": \"string\",\n        \"image\": \"string\",\n        \"lastName\": \"string\",\n        \"name\": \"string\",\n        \"state\": 3172,\n        \"viewRef\": \"http://jJMjmwkUnQsv.popc1MWF8fnktnNTcgputXvPxJoa0SRrLdqixzBT+h-+IZ\"\n      }\n    ],\n    \"subscriptionBeginAt\": \"2001-05-15T06:21:52.914Z\",\n    \"subscriptionEndAt\": \"2014-11-23T22:01:25.162Z\",\n    \"subscriptionId\": \"string\",\n    \"subscriptionType\": 1994,\n    \"taxAmountCents\": 1020,\n    \"trialEnd\": \"1972-11-03T16:32:16.142Z\",\n    \"trialInitiatedBy\": \"string\",\n    \"viewRef\": \"https://vZIzYIlJViJrRXDllcqoUFro.ioY9JClxSK11AHGH7NBcZuy9ZfP++wxadFLev4f2lfniQs58vO+47\"\n  },\n  \"secondaryDomainPrefixes\": [\n    \"string\"\n  ],\n  \"state\": 2534,\n  \"type\": 9550,\n  \"viewRef\": \"https://bnxUyF.oouvmdDqHOcrkGEkiOgo9hu5ScjJx\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "2f814ea6-ef66-4663-9e18-cc31d28b0fec",
+          "name": "Get document by exact document name.",
+          "request": {
+            "name": "Get document by exact document name.",
+            "description": {
+              "content": "This API can only be called by company admins. Use the `name` field for the exact document name string.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "companies",
+                ":cid",
+                "documentsbyname"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "name",
+                  "value": "<string>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "cid",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json;charset=UTF-8; qs=0.09"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "scope",
+                  "value": "OAuth2Internal OAuth2ReadPII OAuth2Read OAuth2Write OAuth2Delete OAuth2Purchase OAuth2Share document.create document.edit document.delete document.read enterprise.create enterprise.read enterprise.edit enterprise.delete enterprise.member.create enterprise.member.read enterprise.member.edit enterprise.member.delete webhook.create webhook.edit webhook.read webhook.delete PLMIntegration"
+                },
+                {
+                  "key": "redirect_uri",
+                  "value": "/oauth/token"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "/oauth/token"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "/oauth/authorize"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "9f5c74aa-fb56-4fae-a9de-691fdbcad60a",
+              "name": "default response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "companies",
+                    ":cid",
+                    "documentsbyname"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "name",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "cid",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json;charset=UTF-8; qs=0.09"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json;charset=UTF-8; qs=0.09"
+                }
+              ],
+              "body": "[\n  {\n    \"jsonType\": \"string\",\n    \"canMove\": true,\n    \"connectionName\": \"string\",\n    \"connectionNames\": [\n      \"string\",\n      \"string\"\n    ],\n    \"createdAt\": \"1951-06-19T22:09:10.749Z\",\n    \"createdBy\": {\n      \"jsonType\": \"string\",\n      \"href\": \"https://TUObVQFOYCAQSWObDGobsXrOJl.ykrpbnZ-uybZP-hUBjNWwy\",\n      \"id\": \"string\",\n      \"name\": \"string\",\n      \"viewRef\": \"http://jlOexr.ffR\",\n      \"image\": \"string\",\n      \"isOnshapeSupport\": true,\n      \"state\": 5903\n    },\n    \"description\": \"string\",\n    \"href\": \"https://IpKBRMLqhKtLtMTjoIjyMTp.jkQ68tx1Vq,\",\n    \"id\": \"string\",\n    \"isContainer\": true,\n    \"isEnterpriseOwned\": true,\n    \"isExternalConnectionResource\": true,\n    \"isMutable\": false,\n    \"modifiedAt\": \"1974-08-30T15:38:55.794Z\",\n    \"modifiedBy\": {\n      \"jsonType\": \"string\",\n      \"href\": \"https://lpUYSntNlGYGQP.yzxyBXgMBj,KwkaZH+hJ2mA.uw6AHKPjE+eZV.D,G.-XqpHI0STVuZ3s\",\n      \"id\": \"string\",\n      \"name\": \"string\",\n      \"viewRef\": \"https://kab.kvqcPui.VWOqLdI-LnAwobENCWZJ0HZ.6keoyjzwsKVp-W+GuaZO4MWbDT6-8-\",\n      \"image\": \"string\",\n      \"isOnshapeSupport\": false,\n      \"state\": 6878\n    },\n    \"name\": \"string\",\n    \"owner\": {\n      \"href\": \"http://VNMaKKMJJZahEiqSKM.zsaKQs,cI,8QaBrO9FlxHvxzYPUZ3EYCaU78rLrNr0a\",\n      \"id\": \"string\",\n      \"image\": \"string\",\n      \"isEnterpriseOwnedResource\": false,\n      \"name\": \"string\",\n      \"type\": 1006,\n      \"viewRef\": \"http://ggLsjAfFjVPUmbdVsBeBlMyyx.jjtmF7Dn.7PzPDTRhcEMfX7ov8oH2X1VXalXcK-QdeZDJ\"\n    },\n    \"parentId\": \"string\",\n    \"projectId\": \"string\",\n    \"resourceType\": \"string\",\n    \"treeHref\": \"string\",\n    \"unparentHref\": \"string\",\n    \"viewRef\": \"http://KxbmNO.afly-eMLm++tSy\",\n    \"anonymousAccessAllowed\": false,\n    \"anonymousAllowsExport\": false,\n    \"canUnshare\": true,\n    \"createdWithEducationPlan\": false,\n    \"defaultElementId\": \"string\",\n    \"defaultWorkspace\": {\n      \"canDelete\": true,\n      \"createdAt\": \"2022-04-23T07:07:31.047Z\",\n      \"creator\": {\n        \"jsonType\": \"string\",\n        \"href\": \"https://WqwjrCm.rubkAN,ugXKSR-mkkfL98HTZ3Vd9Rg\",\n        \"id\": \"string\",\n        \"name\": \"string\",\n        \"viewRef\": \"http://p.agwnjhm0ZZk89me\",\n        \"image\": \"string\",\n        \"isOnshapeSupport\": true,\n        \"state\": 3645\n      },\n      \"description\": \"string\",\n      \"documentId\": \"string\",\n      \"href\": \"https://fXgtlyDGxyUvWHSvgaHCXctkAArUeH.ixxiJ-fof,m5T.q1Gc,dGvCm3IkINnqoPohnMfHACuzdUHz1XRnJCyc1eMUCmh7\",\n      \"id\": \"string\",\n      \"isReadOnly\": false,\n      \"lastModifier\": {\n        \"jsonType\": \"string\",\n        \"href\": \"https://Vl.xnlJpsqOgM-Wk.mc-5YTDGFjQzpOuLRDofbIXiyHNgbOVtGDI2EQ\",\n        \"id\": \"string\",\n        \"name\": \"string\",\n        \"viewRef\": \"https://FInugT.jdcqG6AZmJemUynkb708BeevCLWJVYnKTzOdOduOL23WV0GpMJZJlCNsKtt\",\n        \"image\": \"string\",\n        \"isOnshapeSupport\": false,\n        \"state\": 5500\n      },\n      \"microversion\": \"string\",\n      \"modifiedAt\": \"2010-09-28T21:35:29.070Z\",\n      \"name\": \"string\",\n      \"overrideDate\": \"2005-03-19T15:34:39.462Z\",\n      \"parent\": \"string\",\n      \"parents\": [\n        {\n          \"createdAt\": \"2026-06-08T08:08:11.258Z\",\n          \"creator\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"description\": \"string\",\n          \"documentId\": \"string\",\n          \"href\": \"http://WsegTKhdJfZKxBCxCPepdXc.jbzwm,,d++dGrv7R8tm+kgjNkAvY\",\n          \"id\": \"string\",\n          \"lastModifier\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"metadataWorkspaceId\": \"string\",\n          \"microversion\": \"string\",\n          \"modifiedAt\": \"2025-01-26T00:21:03.164Z\",\n          \"name\": \"string\",\n          \"overrideDate\": \"2012-11-24T09:29:40.431Z\",\n          \"parent\": \"string\",\n          \"purpose\": 6717,\n          \"thumbnail\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"type\": \"string\",\n          \"viewRef\": \"https://IhxQzKCaxHTPVTaAPfeLDLSnVeZ.mgjozdvLkULMFpetgvTM\"\n        },\n        {\n          \"createdAt\": \"1952-01-25T07:00:10.543Z\",\n          \"creator\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"description\": \"string\",\n          \"documentId\": \"string\",\n          \"href\": \"http://IPocmqpCEpmrn.opwsM.LZ10\",\n          \"id\": \"string\",\n          \"lastModifier\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"metadataWorkspaceId\": \"string\",\n          \"microversion\": \"string\",\n          \"modifiedAt\": \"1993-07-01T03:45:12.299Z\",\n          \"name\": \"string\",\n          \"overrideDate\": \"1957-09-22T18:00:34.523Z\",\n          \"parent\": \"string\",\n          \"purpose\": 9348,\n          \"thumbnail\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"type\": \"string\",\n          \"viewRef\": \"http://uOBJoakWvgEqSUXNNmJu.utzM0eJcKwYMfjAumydwtXPzXM1mAwM1MDJrXzlut.-oZUpxM67RJheKyicLr+Ekjje8BfzGbFK\"\n        }\n      ],\n      \"protectionRule\": \"OPEN\",\n      \"state\": \"ACTIVE\",\n      \"thumbnail\": {\n        \"href\": \"https://nzfJPHaUpcUOBSAfOrqIxxZnMkjcFjn.qswpxxyR,NL8LqPEPn65VqjlhlOrQG3E65CPSVWMVGkcBlXOWmMMHCRJEFvACP\",\n        \"id\": \"string\",\n        \"secondarySizes\": [\n          [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ],\n          [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ]\n        ],\n        \"sizes\": [\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        ]\n      },\n      \"type\": \"string\",\n      \"viewRef\": \"http://GWshYNDglmvoLuLzNupSqlvCNg.gsiCHzwCgsYxkka1pWEwoYhjmmSKaiya3IAfRH\"\n    },\n    \"documentLabels\": [\n      {\n        \"jsonType\": \"string\",\n        \"canMove\": false,\n        \"connectionName\": \"string\",\n        \"connectionNames\": [\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        ],\n        \"createdAt\": \"1962-12-16T05:02:25.929Z\",\n        \"createdBy\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"description\": \"string\",\n        \"href\": \"http://rgYuJdCYPBUeFOmzgaoHZcqCBpP.lshgEWjR-9Elg0gGGVW7bL.TXzlSACa5jZyJSNVmkqzEtFMa2nSDpskYCwltdWj4jTHYVb\",\n        \"id\": \"string\",\n        \"isContainer\": false,\n        \"isEnterpriseOwned\": false,\n        \"isExternalConnectionResource\": false,\n        \"isMutable\": true,\n        \"modifiedAt\": \"1957-06-30T21:56:09.803Z\",\n        \"modifiedBy\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"name\": \"string\",\n        \"owner\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"parentId\": \"string\",\n        \"projectId\": \"string\",\n        \"resourceType\": \"string\",\n        \"treeHref\": \"string\",\n        \"unparentHref\": \"string\",\n        \"viewRef\": \"http://ISteGlLHbyzNns.wbjnX4AmGKAjP2EHX3b12RJbXQ7yJVuq,RTUeKLJ\",\n        \"parentLabelId\": \"string\",\n        \"path\": \"string\"\n      },\n      {\n        \"jsonType\": \"string\",\n        \"canMove\": true,\n        \"connectionName\": \"string\",\n        \"connectionNames\": [\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        ],\n        \"createdAt\": \"2023-03-17T17:58:13.843Z\",\n        \"createdBy\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"description\": \"string\",\n        \"href\": \"https://lsONnDTJDbCpictHRysPaZQEjEJmwFq.qsalBYG9afLuICtz.WknGzzonrTuwKXNJBw1eWxH2xJB8BF0DkwJOsnMrqQ0KYLh4KZSOCWxbUMgFhoTF\",\n        \"id\": \"string\",\n        \"isContainer\": true,\n        \"isEnterpriseOwned\": false,\n        \"isExternalConnectionResource\": true,\n        \"isMutable\": false,\n        \"modifiedAt\": \"2002-12-23T05:42:51.949Z\",\n        \"modifiedBy\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"name\": \"string\",\n        \"owner\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"parentId\": \"string\",\n        \"projectId\": \"string\",\n        \"resourceType\": \"string\",\n        \"treeHref\": \"string\",\n        \"unparentHref\": \"string\",\n        \"viewRef\": \"https://vslKuCMpVoOpSrhdnkZnepirIPetRg.xunakTZ9Oj3rEXXk.,leaf4XdTjmNxFzcwQR1qQm7Cj8-GpB3JLnmTbFmYVcsrCaZhzSeV\",\n        \"parentLabelId\": \"string\",\n        \"path\": \"string\"\n      }\n    ],\n    \"documentType\": 2097,\n    \"forceExportRules\": true,\n    \"hasReleaseRevisionableObjects\": false,\n    \"hasRelevantInsertables\": true,\n    \"isUsingManagedWorkflow\": true,\n    \"likedByCurrentUser\": true,\n    \"likes\": 227,\n    \"notRevisionManaged\": true,\n    \"notes\": \"string\",\n    \"numberOfTimesCopied\": 2803,\n    \"numberOfTimesReferenced\": 1681,\n    \"permission\": \"OWNER\",\n    \"permissionSet\": [\n      \"string\",\n      \"string\"\n    ],\n    \"public\": true,\n    \"publishedVersionId\": \"string\",\n    \"recentVersion\": {\n      \"href\": \"https://KdKhubertiuMGdC.yejfD6N9GUJ-IQb5N4O26u\",\n      \"id\": \"string\",\n      \"name\": \"string\",\n      \"viewRef\": \"http://IyrxMSPmEEXGEAseGZGPAuhiBRTK.jbpMhft336c-gip.9cg0kEAxFCQDVUcEqTUO7fjPACgloOatFhjk-lIX\"\n    },\n    \"sequence\": \"string\",\n    \"supportTeamUserAndShared\": true,\n    \"tags\": [\n      \"string\",\n      \"string\"\n    ],\n    \"thumbnail\": {\n      \"href\": \"http://yZPIEWVHbrAUuGSfCkGgec.gjU+3tLjYR\",\n      \"id\": \"string\",\n      \"secondarySizes\": [\n        [\n          {\n            \"href\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"mediaType\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"renderMode\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"sheetName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"size\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"uniqueId\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"viewOrientation\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          {\n            \"href\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"mediaType\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"renderMode\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"sheetName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"size\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"uniqueId\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"viewOrientation\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        ],\n        [\n          {\n            \"href\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"mediaType\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"renderMode\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"sheetName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"size\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"uniqueId\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"viewOrientation\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          {\n            \"href\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"mediaType\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"renderMode\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"sheetName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"size\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"uniqueId\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"viewOrientation\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        ]\n      ],\n      \"sizes\": [\n        {\n          \"href\": \"https://YfcXCNTgotVzBueOgk.sshq3jcBjg.dXsQ1XzsmnYsoZOdlfZdzKNXi\",\n          \"mediaType\": \"string\",\n          \"renderMode\": \"string\",\n          \"sheetName\": \"string\",\n          \"size\": \"string\",\n          \"uniqueId\": \"string\",\n          \"viewOrientation\": \"string\"\n        },\n        {\n          \"href\": \"https://RCYNtq.bkapZ9GjCihL+1aPaL3d,xTdPkunU6Xu\",\n          \"mediaType\": \"string\",\n          \"renderMode\": \"string\",\n          \"sheetName\": \"string\",\n          \"size\": \"string\",\n          \"uniqueId\": \"string\",\n          \"viewOrientation\": \"string\"\n        }\n      ]\n    },\n    \"trash\": false,\n    \"trashedAt\": \"1974-02-05T05:38:32.130Z\",\n    \"userAccountLimitsBreached\": false\n  },\n  {\n    \"jsonType\": \"string\",\n    \"canMove\": true,\n    \"connectionName\": \"string\",\n    \"connectionNames\": [\n      \"string\",\n      \"string\"\n    ],\n    \"createdAt\": \"1964-11-22T14:40:22.422Z\",\n    \"createdBy\": {\n      \"jsonType\": \"string\",\n      \"href\": \"http://LTFeQDZNM.ctkyl3NrSGnFW\",\n      \"id\": \"string\",\n      \"name\": \"string\",\n      \"viewRef\": \"https://rqBGSJBVWBriWwfFOKGEfjfbAns.uqkz54qIrteR2\",\n      \"image\": \"string\",\n      \"isOnshapeSupport\": true,\n      \"state\": 5881\n    },\n    \"description\": \"string\",\n    \"href\": \"http://THQwfkafOvTAPuXlezisRbalIk.rotqskzx-4uExkkV\",\n    \"id\": \"string\",\n    \"isContainer\": false,\n    \"isEnterpriseOwned\": false,\n    \"isExternalConnectionResource\": true,\n    \"isMutable\": false,\n    \"modifiedAt\": \"2000-04-17T19:10:50.846Z\",\n    \"modifiedBy\": {\n      \"jsonType\": \"string\",\n      \"href\": \"https://b.diX.dweS6esD\",\n      \"id\": \"string\",\n      \"name\": \"string\",\n      \"viewRef\": \"https://KwKUFKJdToHPRT.woyvgOG5py+GNCBPtVWzT86IJLyW.l9m2KQcE2ykb-ZWLsdls4o8S.CvY\",\n      \"image\": \"string\",\n      \"isOnshapeSupport\": true,\n      \"state\": 3388\n    },\n    \"name\": \"string\",\n    \"owner\": {\n      \"href\": \"https://bYnpMjQiLkwG.qkbqQaqyeCcUXnY5Qgs+LEEinVlg4tRpctqVvaglB1smiGRkRVcuuMIunC6yzou9M0\",\n      \"id\": \"string\",\n      \"image\": \"string\",\n      \"isEnterpriseOwnedResource\": false,\n      \"name\": \"string\",\n      \"type\": 5413,\n      \"viewRef\": \"http://gEddArrkObdbKpMVIockFTbdXbILGUIS.qgunJ+1d9WiWA.xTScfChk6Ai2jzPvj-aXp8IWSVO-Oq3\"\n    },\n    \"parentId\": \"string\",\n    \"projectId\": \"string\",\n    \"resourceType\": \"string\",\n    \"treeHref\": \"string\",\n    \"unparentHref\": \"string\",\n    \"viewRef\": \"https://DpRNBSIdCnEiTNGz.uxeeWijU0iP.SozvIfhb440R7ccOmEyRzWdG7-Y5jZz.Q8D3UJ-SPEgTByXilhkHBsI-XhDVz\",\n    \"anonymousAccessAllowed\": false,\n    \"anonymousAllowsExport\": true,\n    \"canUnshare\": false,\n    \"createdWithEducationPlan\": true,\n    \"defaultElementId\": \"string\",\n    \"defaultWorkspace\": {\n      \"canDelete\": true,\n      \"createdAt\": \"1965-09-03T02:59:50.275Z\",\n      \"creator\": {\n        \"jsonType\": \"string\",\n        \"href\": \"http://yOzVHinopsuBl.tbsxZONm58jyen1Xuny9Lcfyumy8v5hUMTiLc6XcU5t3lzV3NMl77QC4YfuS\",\n        \"id\": \"string\",\n        \"name\": \"string\",\n        \"viewRef\": \"https://QWgFVVdMsf.bwPKlkWurRK1hHRxMtSgpTkyUbAy\",\n        \"image\": \"string\",\n        \"isOnshapeSupport\": true,\n        \"state\": 6402\n      },\n      \"description\": \"string\",\n      \"documentId\": \"string\",\n      \"href\": \"https://yOgCmUcuPvwbLRJA.bvwrj4.wdOiMFPlJZdl+,QAcnC3\",\n      \"id\": \"string\",\n      \"isReadOnly\": false,\n      \"lastModifier\": {\n        \"jsonType\": \"string\",\n        \"href\": \"http://CQZXLlLXfBYn.vscN.ZeZlltsZhTOepwchJSq4GNFCnyA+WB7Qj.gqPPqVo8oaAdJI9kYuCGOwaSkmOkb\",\n        \"id\": \"string\",\n        \"name\": \"string\",\n        \"viewRef\": \"https://bRrOOwAcrFdfinMQxRJyjhhahM.obyamp5Ts4769LXzoEMKGgjHUvsbd3.mr27hmtqwurg032BHy3p+KoWp\",\n        \"image\": \"string\",\n        \"isOnshapeSupport\": true,\n        \"state\": 6766\n      },\n      \"microversion\": \"string\",\n      \"modifiedAt\": \"1986-07-12T08:50:41.491Z\",\n      \"name\": \"string\",\n      \"overrideDate\": \"1984-09-30T03:34:22.971Z\",\n      \"parent\": \"string\",\n      \"parents\": [\n        {\n          \"createdAt\": \"1960-11-27T15:47:54.374Z\",\n          \"creator\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"description\": \"string\",\n          \"documentId\": \"string\",\n          \"href\": \"http://KQjdowUXdhg.cfenOvWubK2iDQ80+Gxb-HfL0Xv5E2rFdkQejTpgLrfE\",\n          \"id\": \"string\",\n          \"lastModifier\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"metadataWorkspaceId\": \"string\",\n          \"microversion\": \"string\",\n          \"modifiedAt\": \"1995-11-01T15:32:35.230Z\",\n          \"name\": \"string\",\n          \"overrideDate\": \"1993-10-11T01:55:24.119Z\",\n          \"parent\": \"string\",\n          \"purpose\": 9039,\n          \"thumbnail\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"type\": \"string\",\n          \"viewRef\": \"https://brwECKOPJuPx.wxdzNZnfPvZM5i,CLMy34ahYb2Q6bbS.zQRcc4itrzE5eblMGaEQg\"\n        },\n        {\n          \"createdAt\": \"2007-09-04T06:19:54.475Z\",\n          \"creator\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"description\": \"string\",\n          \"documentId\": \"string\",\n          \"href\": \"http://HvqtWXNYEFrnKuZnfHlirKG.hulmKMB8RDzOgUIvoiCPYhu.26NwkK2gW+-wC7,glO22iJVL9yFGObus\",\n          \"id\": \"string\",\n          \"lastModifier\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"metadataWorkspaceId\": \"string\",\n          \"microversion\": \"string\",\n          \"modifiedAt\": \"2018-01-28T10:47:03.907Z\",\n          \"name\": \"string\",\n          \"overrideDate\": \"2012-09-02T03:11:34.455Z\",\n          \"parent\": \"string\",\n          \"purpose\": 580,\n          \"thumbnail\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"type\": \"string\",\n          \"viewRef\": \"http://B.uiihEaMxtFbOrjmjDgbGIU\"\n        }\n      ],\n      \"protectionRule\": \"OPEN\",\n      \"state\": \"DELETED\",\n      \"thumbnail\": {\n        \"href\": \"https://EkrUYbhMoMikZamHAkez.kwsC3mH1JehIVu+lor0v9YQCBIT3EKg-UHIkonJHroBEkpSJoEj9\",\n        \"id\": \"string\",\n        \"secondarySizes\": [\n          [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ],\n          [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ]\n        ],\n        \"sizes\": [\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        ]\n      },\n      \"type\": \"string\",\n      \"viewRef\": \"https://mpuvXvlqFvZjRJiTFAbrLFM.huFMVqUm867ka-NeoGmBVw\"\n    },\n    \"documentLabels\": [\n      {\n        \"jsonType\": \"string\",\n        \"canMove\": false,\n        \"connectionName\": \"string\",\n        \"connectionNames\": [\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        ],\n        \"createdAt\": \"2002-04-21T06:25:53.665Z\",\n        \"createdBy\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"description\": \"string\",\n        \"href\": \"https://NfmRQuFnNngMmmLMkoPLcyCnt.fsbi-tMc2IUkZzsg5V3RuMxV.Mg1a1brOrzAGKV.vVJu4\",\n        \"id\": \"string\",\n        \"isContainer\": false,\n        \"isEnterpriseOwned\": true,\n        \"isExternalConnectionResource\": true,\n        \"isMutable\": true,\n        \"modifiedAt\": \"1999-09-02T14:00:37.708Z\",\n        \"modifiedBy\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"name\": \"string\",\n        \"owner\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"parentId\": \"string\",\n        \"projectId\": \"string\",\n        \"resourceType\": \"string\",\n        \"treeHref\": \"string\",\n        \"unparentHref\": \"string\",\n        \"viewRef\": \"http://q.phvvueC-BUyVfD.D3iInvxVSdiwL5rzQ5UX8VlAfFMEI+BqLy.HJ6nk4SWxs1\",\n        \"parentLabelId\": \"string\",\n        \"path\": \"string\"\n      },\n      {\n        \"jsonType\": \"string\",\n        \"canMove\": false,\n        \"connectionName\": \"string\",\n        \"connectionNames\": [\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        ],\n        \"createdAt\": \"1992-08-28T20:36:30.374Z\",\n        \"createdBy\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"description\": \"string\",\n        \"href\": \"http://Cf.ysG1KBjbTbeJZSZbK,RE+oHgtioxCwmsKEDldrbEeDeME\",\n        \"id\": \"string\",\n        \"isContainer\": false,\n        \"isEnterpriseOwned\": false,\n        \"isExternalConnectionResource\": true,\n        \"isMutable\": true,\n        \"modifiedAt\": \"2018-12-29T11:27:30.066Z\",\n        \"modifiedBy\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"name\": \"string\",\n        \"owner\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"parentId\": \"string\",\n        \"projectId\": \"string\",\n        \"resourceType\": \"string\",\n        \"treeHref\": \"string\",\n        \"unparentHref\": \"string\",\n        \"viewRef\": \"https://rSYWxqJDXfmuOolpD.uyUu5mNCd\",\n        \"parentLabelId\": \"string\",\n        \"path\": \"string\"\n      }\n    ],\n    \"documentType\": 3984,\n    \"forceExportRules\": true,\n    \"hasReleaseRevisionableObjects\": true,\n    \"hasRelevantInsertables\": true,\n    \"isUsingManagedWorkflow\": false,\n    \"likedByCurrentUser\": true,\n    \"likes\": 4149,\n    \"notRevisionManaged\": true,\n    \"notes\": \"string\",\n    \"numberOfTimesCopied\": 7571,\n    \"numberOfTimesReferenced\": 4542,\n    \"permission\": \"NOACCESS\",\n    \"permissionSet\": [\n      \"string\",\n      \"string\"\n    ],\n    \"public\": false,\n    \"publishedVersionId\": \"string\",\n    \"recentVersion\": {\n      \"href\": \"https://uFnuPDQuuWUpqMuKSGlzkqqj.vftIELj8IXoWm50+YSXjp9,ZuxGD0vaIf38hyKJcephanxFzFWrzi6IeSmORP.QjUrBY\",\n      \"id\": \"string\",\n      \"name\": \"string\",\n      \"viewRef\": \"http://IqaOuQynORBB.alkobqDG50Yjb\"\n    },\n    \"sequence\": \"string\",\n    \"supportTeamUserAndShared\": true,\n    \"tags\": [\n      \"string\",\n      \"string\"\n    ],\n    \"thumbnail\": {\n      \"href\": \"https://yEmByRwhjcTwJMOKwWUv.est8SamScUmftCSju3JqS\",\n      \"id\": \"string\",\n      \"secondarySizes\": [\n        [\n          {\n            \"href\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"mediaType\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"renderMode\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"sheetName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"size\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"uniqueId\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"viewOrientation\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          {\n            \"href\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"mediaType\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"renderMode\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"sheetName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"size\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"uniqueId\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"viewOrientation\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        ],\n        [\n          {\n            \"href\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"mediaType\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"renderMode\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"sheetName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"size\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"uniqueId\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"viewOrientation\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          {\n            \"href\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"mediaType\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"renderMode\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"sheetName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"size\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"uniqueId\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"viewOrientation\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        ]\n      ],\n      \"sizes\": [\n        {\n          \"href\": \"http://XpBmNNMKKsimnNtTnfwNCEFS.idbxJgOnu.QeeQ.3wCKIXkgPCHJgfKzvGQG,mEruslTsV\",\n          \"mediaType\": \"string\",\n          \"renderMode\": \"string\",\n          \"sheetName\": \"string\",\n          \"size\": \"string\",\n          \"uniqueId\": \"string\",\n          \"viewOrientation\": \"string\"\n        },\n        {\n          \"href\": \"https://ltmYcbZURRjwLflEMSOUl.ahncPfDTrCpyggyapYyUGf\",\n          \"mediaType\": \"string\",\n          \"renderMode\": \"string\",\n          \"sheetName\": \"string\",\n          \"size\": \"string\",\n          \"uniqueId\": \"string\",\n          \"viewOrientation\": \"string\"\n        }\n      ]\n    },\n    \"trash\": false,\n    \"trashedAt\": \"2019-01-20T20:29:24.359Z\",\n    \"userAccountLimitsBreached\": true\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ab4a714b-9b6d-4949-91a1-e660a9c7d903",
+          "name": "Add one or more global permissions to company user or team.",
+          "request": {
+            "name": "Add one or more global permissions to company user or team.",
+            "description": {
+              "content": "List of global permissions to grant. See [Onshape Help: Global Permissions](https://cad.onshape.com/help/Content/Plans/global_permissions.htm#Assignin) for details on each of the available permissions. \n * `0`: Manage role based access control \n * `1`: Manage users, teams, and aliases \n * `2`: Enterprise administrator \n * `3`: Permanently delete \n * `4`: Analytics administrator \n * `5`: Invite guest users \n * `6`: Create projects \n * `7`: Approve releases \n * `8`: Enable link sharing \n * `9`: Create releases \n * `10`: Allow access to the App Store \n * `11`: Create documents and folders in the Enterprise root \n * `12`: Allow access to public documents \n * `17`: Manage non-geometric items \n * `18`: Manage workflows \n * `19`: Transfer documents out of Enterprise \n * `20`: Sync to configured PLM Integration in Enterprise settings \n * `21`: Create tasks \n * `22`: Manage standard content metadata \n * `23`: Workspace protection permissions \n * `24`: Import files \n * `25`: Use revision tools \n * `26`: Export files \n * `27`: Allow access to Onshape Labs \n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "companies",
+                ":cid",
+                "globalpermission",
+                ":type",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "cid",
+                  "description": "(Required) Company ID"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "type",
+                  "description": "(Required) `0`: USER | `1`: TEAM"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) User ID or Team ID, depending on `type`"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json;charset=UTF-8; qs=0.09"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json;charset=UTF-8; qs=0.09"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "scope",
+                  "value": "OAuth2Internal OAuth2ReadPII OAuth2Read OAuth2Write OAuth2Delete OAuth2Purchase OAuth2Share document.create document.edit document.delete document.read enterprise.create enterprise.read enterprise.edit enterprise.delete enterprise.member.create enterprise.member.read enterprise.member.edit enterprise.member.delete webhook.create webhook.edit webhook.read webhook.delete PLMIntegration"
+                },
+                {
+                  "key": "redirect_uri",
+                  "value": "/oauth/token"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "/oauth/token"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "/oauth/authorize"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "[\n  \"<integer>\",\n  \"<integer>\"\n]",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "1ded31ad-7999-4273-bb6a-25a1df83aba0",
+              "name": "default response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "companies",
+                    ":cid",
+                    "globalpermission",
+                    ":type",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "cid",
+                      "description": "(Required) Company ID"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "type",
+                      "description": "(Required) `0`: USER | `1`: TEAM"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) User ID or Team ID, depending on `type`"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json;charset=UTF-8; qs=0.09"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  \"<integer>\",\n  \"<integer>\"\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json;charset=UTF-8; qs=0.09"
+                }
+              ],
+              "body": "{\n  \"items\": [\n    {\n      \"code\": 32,\n      \"identities\": [\n        {\n          \"company\": {\n            \"admin\": true,\n            \"description\": \"string\",\n            \"domainPrefix\": \"string\",\n            \"enterpriseBaseUrl\": \"string\",\n            \"enterpriseSubtype\": 9816,\n            \"href\": \"https://AwPObRRVxaRpLedtHsDfAhP.mrhwuH6CJWN6ccnhz+t,gyqTKXvLvXzVHwarIp-SKv5nlwAb\",\n            \"id\": \"string\",\n            \"image\": \"string\",\n            \"name\": \"string\",\n            \"noPublicDocuments\": false,\n            \"ownerId\": \"string\",\n            \"secondaryDomainPrefixes\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"state\": 1203,\n            \"type\": 4897,\n            \"viewRef\": \"http://jxLLMcFoGQA.sufmpFYIBbtYWuYaZs.7PACqnr8VHqKmIU2zsR6.cb9ISFwjMhDYT,6lO6Q\"\n          },\n          \"href\": \"http://OJkVBUirKQSktuBVofgizvUPfE.lmH,1rSSJEtzah+z-gi+jWEjerg4slRtl4jk1YtT5kt42WcXKBhT5cfQihm\",\n          \"id\": \"string\",\n          \"identityType\": 7043,\n          \"team\": {\n            \"active\": true,\n            \"canMove\": false,\n            \"connectionName\": \"string\",\n            \"connectionNames\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"createdAt\": \"2007-07-22T05:52:21.998Z\",\n            \"createdBy\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"description\": \"string\",\n            \"href\": \"http://vDyqBF.sitqVepq5MrkKSCmE\",\n            \"id\": \"string\",\n            \"isContainer\": false,\n            \"isEnterpriseOwned\": true,\n            \"isExternalConnectionResource\": false,\n            \"isMutable\": true,\n            \"modifiedAt\": \"1978-01-05T07:32:09.131Z\",\n            \"modifiedBy\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"name\": \"string\",\n            \"owner\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"parentId\": \"string\",\n            \"predefinedTeam\": 6617,\n            \"predefinedTeamMutable\": false,\n            \"projectId\": \"string\",\n            \"resourceType\": \"string\",\n            \"treeHref\": \"string\",\n            \"unparentHref\": \"string\",\n            \"viewRef\": \"https://BvpaFJUzOOhodrLGLwdd.jhwHCDTTwLvhFW,5\"\n          },\n          \"user\": {\n            \"company\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"companyUserState\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"confirmationRequested\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"documentationNameOverride\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"globalPermissions\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"invitationState\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"isExternal\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"isGuest\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"isLight\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"lastLoginTime\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"personalMessageAllowed\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"source\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"viewRef\": \"https://jyHdXRSbDJsXfdAYfDgCma.koMa7hsKZi\"\n        },\n        {\n          \"company\": {\n            \"admin\": true,\n            \"description\": \"string\",\n            \"domainPrefix\": \"string\",\n            \"enterpriseBaseUrl\": \"string\",\n            \"enterpriseSubtype\": 6449,\n            \"href\": \"http://sIPXvk.prfu59037Y2-BD5AZ3pHfx+WnpKd4wUEJBoh3U8g.byqMtK0s+\",\n            \"id\": \"string\",\n            \"image\": \"string\",\n            \"name\": \"string\",\n            \"noPublicDocuments\": true,\n            \"ownerId\": \"string\",\n            \"secondaryDomainPrefixes\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"state\": 754,\n            \"type\": 7181,\n            \"viewRef\": \"https://zliYGCZ.jnhVkCZP65W,ogD,gtjy9n2uZVdQLvaN1m\"\n          },\n          \"href\": \"https://WhLvKzSdbXfjlXSXp.yyrfvXzfyLEUAJS5Excewibwja9k-TXrwkGYcI7Q8S9DB6YTSRXI\",\n          \"id\": \"string\",\n          \"identityType\": 6565,\n          \"team\": {\n            \"active\": false,\n            \"canMove\": true,\n            \"connectionName\": \"string\",\n            \"connectionNames\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"createdAt\": \"1973-03-23T05:19:14.173Z\",\n            \"createdBy\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"description\": \"string\",\n            \"href\": \"https://aFeTLmHMZnuQcOxRuWjNaI.xca.at.dFLxSMhzy4VytASxRyU1JOcsA,I2k2APwl+eY1zWBK3vw7jYFWn\",\n            \"id\": \"string\",\n            \"isContainer\": true,\n            \"isEnterpriseOwned\": true,\n            \"isExternalConnectionResource\": true,\n            \"isMutable\": true,\n            \"modifiedAt\": \"1956-11-02T20:52:33.451Z\",\n            \"modifiedBy\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"name\": \"string\",\n            \"owner\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"parentId\": \"string\",\n            \"predefinedTeam\": 3456,\n            \"predefinedTeamMutable\": false,\n            \"projectId\": \"string\",\n            \"resourceType\": \"string\",\n            \"treeHref\": \"string\",\n            \"unparentHref\": \"string\",\n            \"viewRef\": \"https://iNUmWSIuVbHTttpv.roqcL3SNH9KAmdgAmCVRRm9523XLQrDQdHluFMcBD7Og\"\n          },\n          \"user\": {\n            \"company\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"companyUserState\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"confirmationRequested\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"documentationNameOverride\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"globalPermissions\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"invitationState\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"isExternal\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"isGuest\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"isLight\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"lastLoginTime\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"personalMessageAllowed\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"source\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"viewRef\": \"https://KmbIevrRLWkbMPfnSeUtnCFtfNaGVJS.xnixk+TP7Y5xwbeCWJPj6fiGHDteokC6.CA-wa1mAelcSZbnfUPk8iJQvOF-6u\"\n        }\n      ]\n    },\n    {\n      \"code\": 7474,\n      \"identities\": [\n        {\n          \"company\": {\n            \"admin\": true,\n            \"description\": \"string\",\n            \"domainPrefix\": \"string\",\n            \"enterpriseBaseUrl\": \"string\",\n            \"enterpriseSubtype\": 7251,\n            \"href\": \"http://En.qrvtij\",\n            \"id\": \"string\",\n            \"image\": \"string\",\n            \"name\": \"string\",\n            \"noPublicDocuments\": true,\n            \"ownerId\": \"string\",\n            \"secondaryDomainPrefixes\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"state\": 6595,\n            \"type\": 972,\n            \"viewRef\": \"https://tcqBWxPXuWvbpKyGR.xyqGSErtVaqblI.-1FKOPw-qNtez+C8GrVvOOBGi.TvxxXIyfNTn.wFLivV\"\n          },\n          \"href\": \"https://qFFgBrKlXfyR.jrmpHn4Q3BQdfqrAwf1AqPE7\",\n          \"id\": \"string\",\n          \"identityType\": 1832,\n          \"team\": {\n            \"active\": true,\n            \"canMove\": true,\n            \"connectionName\": \"string\",\n            \"connectionNames\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"createdAt\": \"2017-07-27T02:44:41.771Z\",\n            \"createdBy\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"description\": \"string\",\n            \"href\": \"http://yuOGY.hrrd9lbdLBDwKlBR3SavwcugVCr+k4OMJFs0mQe+\",\n            \"id\": \"string\",\n            \"isContainer\": false,\n            \"isEnterpriseOwned\": false,\n            \"isExternalConnectionResource\": false,\n            \"isMutable\": true,\n            \"modifiedAt\": \"1999-03-01T07:07:33.033Z\",\n            \"modifiedBy\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"name\": \"string\",\n            \"owner\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"parentId\": \"string\",\n            \"predefinedTeam\": 4277,\n            \"predefinedTeamMutable\": true,\n            \"projectId\": \"string\",\n            \"resourceType\": \"string\",\n            \"treeHref\": \"string\",\n            \"unparentHref\": \"string\",\n            \"viewRef\": \"http://iDVzCJVDZuDFFsJutSKYouRjOVSxuCPB.boxD5BLXjr3tYVPba1nx,rQdvKGcOrFaLGSobkjWnTP0mrkuuIPO0ZYOfvf.DXRBqpIn\"\n          },\n          \"user\": {\n            \"company\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"companyUserState\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"confirmationRequested\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"documentationNameOverride\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"globalPermissions\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"invitationState\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"isExternal\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"isGuest\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"isLight\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"lastLoginTime\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"personalMessageAllowed\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"source\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"viewRef\": \"http://tsJSUomLUHAjRPuvPiITXwlYcpM.pbgUZ6lYf5l391tGnr6At6bajaIuBuGm7o\"\n        },\n        {\n          \"company\": {\n            \"admin\": true,\n            \"description\": \"string\",\n            \"domainPrefix\": \"string\",\n            \"enterpriseBaseUrl\": \"string\",\n            \"enterpriseSubtype\": 18,\n            \"href\": \"http://akSMkbmXv.waenUmiFzgtcHc,OEWaJgy0+6hX7sWQwWIBvc+xttn\",\n            \"id\": \"string\",\n            \"image\": \"string\",\n            \"name\": \"string\",\n            \"noPublicDocuments\": false,\n            \"ownerId\": \"string\",\n            \"secondaryDomainPrefixes\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"state\": 7356,\n            \"type\": 2341,\n            \"viewRef\": \"https://XzMHrRccwxJwIzxfuAoZYP.uktprPdla,AmgpUvrgqSWsgOAsOQBR6EIdT9cH4VrCeaWp\"\n          },\n          \"href\": \"http://buaSfkUvFwejTEUqUUzRZsPuLElJiav.bmiojPlryYyI6t34+eJFkEVqk7za0+ORZNUD70Zh+9zlX\",\n          \"id\": \"string\",\n          \"identityType\": 6233,\n          \"team\": {\n            \"active\": true,\n            \"canMove\": false,\n            \"connectionName\": \"string\",\n            \"connectionNames\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"createdAt\": \"1991-01-11T22:47:40.943Z\",\n            \"createdBy\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"description\": \"string\",\n            \"href\": \"http://RSCeZZheG.lwus1UzCgEMhS2V\",\n            \"id\": \"string\",\n            \"isContainer\": false,\n            \"isEnterpriseOwned\": true,\n            \"isExternalConnectionResource\": false,\n            \"isMutable\": false,\n            \"modifiedAt\": \"1978-01-19T13:20:22.604Z\",\n            \"modifiedBy\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"name\": \"string\",\n            \"owner\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"parentId\": \"string\",\n            \"predefinedTeam\": 9670,\n            \"predefinedTeamMutable\": false,\n            \"projectId\": \"string\",\n            \"resourceType\": \"string\",\n            \"treeHref\": \"string\",\n            \"unparentHref\": \"string\",\n            \"viewRef\": \"https://WkWp.foxW,6-ENZxMREvZbdVOXY2CJHqm7SkVew2nevKbyNFm,7n4kWzyIwOHE\"\n          },\n          \"user\": {\n            \"company\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"companyUserState\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"confirmationRequested\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"documentationNameOverride\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"globalPermissions\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"invitationState\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"isExternal\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"isGuest\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"isLight\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"lastLoginTime\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"personalMessageAllowed\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"source\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"viewRef\": \"http://QvJBVTndTEuMt.zqbhRiAL5s.SOLBzyTDxhqHsuIzDcR\"\n        }\n      ]\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "bc9644d1-ad4d-4374-8e12-d3f63675e0c9",
+          "name": "Remove global permissions for a company user or team.",
+          "request": {
+            "name": "Remove global permissions for a company user or team.",
+            "description": {
+              "content": "Clear all or some of a user's global permissions",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "companies",
+                ":cid",
+                "globalpermission",
+                ":type",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "permission",
+                  "value": "<integer>",
+                  "description": "List of global permissions to grant. See [Onshape Help: Global Permissions](https://cad.onshape.com/help/Content/Plans/global_permissions.htm#Assignin) for details on each of the available permissions. \n * `0`: Manage role based access control \n * `1`: Manage users, teams, and aliases \n * `2`: Enterprise administrator \n * `3`: Permanently delete \n * `4`: Analytics administrator \n * `5`: Invite guest users \n * `6`: Create projects \n * `7`: Approve releases \n * `8`: Enable link sharing \n * `9`: Create releases \n * `10`: Allow access to the App Store \n * `11`: Create documents and folders in the Enterprise root \n * `12`: Allow access to public documents \n * `17`: Manage non-geometric items \n * `18`: Manage workflows \n * `19`: Transfer documents out of Enterprise \n * `20`: Sync to configured PLM Integration in Enterprise settings \n * `21`: Create tasks \n * `22`: Manage standard content metadata \n * `23`: Workspace protection permissions \n * `24`: Import files \n * `25`: Use revision tools \n * `26`: Export files \n * `27`: Allow access to Onshape Labs \n"
+                },
+                {
+                  "disabled": false,
+                  "key": "permission",
+                  "value": "<integer>",
+                  "description": "List of global permissions to grant. See [Onshape Help: Global Permissions](https://cad.onshape.com/help/Content/Plans/global_permissions.htm#Assignin) for details on each of the available permissions. \n * `0`: Manage role based access control \n * `1`: Manage users, teams, and aliases \n * `2`: Enterprise administrator \n * `3`: Permanently delete \n * `4`: Analytics administrator \n * `5`: Invite guest users \n * `6`: Create projects \n * `7`: Approve releases \n * `8`: Enable link sharing \n * `9`: Create releases \n * `10`: Allow access to the App Store \n * `11`: Create documents and folders in the Enterprise root \n * `12`: Allow access to public documents \n * `17`: Manage non-geometric items \n * `18`: Manage workflows \n * `19`: Transfer documents out of Enterprise \n * `20`: Sync to configured PLM Integration in Enterprise settings \n * `21`: Create tasks \n * `22`: Manage standard content metadata \n * `23`: Workspace protection permissions \n * `24`: Import files \n * `25`: Use revision tools \n * `26`: Export files \n * `27`: Allow access to Onshape Labs \n"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "cid",
+                  "description": "(Required) Company ID"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "type",
+                  "description": "(Required) `0`: USER | `1`: TEAM"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) User ID or Team ID, depending on `type`"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json;charset=UTF-8; qs=0.09"
+              }
+            ],
+            "method": "DELETE",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "scope",
+                  "value": "OAuth2Internal OAuth2ReadPII OAuth2Read OAuth2Write OAuth2Delete OAuth2Purchase OAuth2Share document.create document.edit document.delete document.read enterprise.create enterprise.read enterprise.edit enterprise.delete enterprise.member.create enterprise.member.read enterprise.member.edit enterprise.member.delete webhook.create webhook.edit webhook.read webhook.delete PLMIntegration"
+                },
+                {
+                  "key": "redirect_uri",
+                  "value": "/oauth/token"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "/oauth/token"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "/oauth/authorize"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "6cab3fef-3039-4dfb-8cf0-f3516acbea44",
+              "name": "default response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "companies",
+                    ":cid",
+                    "globalpermission",
+                    ":type",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "permission",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "permission",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "cid",
+                      "description": "(Required) Company ID"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "type",
+                      "description": "(Required) `0`: USER | `1`: TEAM"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) User ID or Team ID, depending on `type`"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json;charset=UTF-8; qs=0.09"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json;charset=UTF-8; qs=0.09"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "15d8cc89-cece-447b-a9a0-af54a034478f",
+          "name": "Get a list of members in a company.",
+          "request": {
+            "name": "Get a list of members in a company.",
+            "description": {
+              "content": "Returns a list of members in the specified company.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "companies",
+                ":cid",
+                "users"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "sortColumn",
+                  "value": "createdAt",
+                  "description": "`createdAt | modifiedAt | name | firstName | lastName | email | light | lastLoginTime | userRole | state`"
+                },
+                {
+                  "disabled": false,
+                  "key": "sortOrder",
+                  "value": "desc",
+                  "description": "`desc` (descending, default) | `asc` (ascending)"
+                },
+                {
+                  "disabled": false,
+                  "key": "q",
+                  "value": "",
+                  "description": "Search string to filter users by name or email."
+                },
+                {
+                  "disabled": false,
+                  "key": "includeGlobalPermissions",
+                  "value": "false",
+                  "description": "Whether to include global permission info for each user."
+                },
+                {
+                  "disabled": false,
+                  "key": "offset",
+                  "value": "0",
+                  "description": "Offset. Determines where search results begin. Default value is 0."
+                },
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "20",
+                  "description": "Number of results to return per page. Default value is 20 (also the maximum)."
+                },
+                {
+                  "disabled": false,
+                  "key": "roleFilter",
+                  "value": "<integer>",
+                  "description": "Filter by user role ordinal: `0` (OWNER), `1` (ADMIN), `2` (MEMBER). Multiple values allowed. Defaults to all roles."
+                },
+                {
+                  "disabled": false,
+                  "key": "roleFilter",
+                  "value": "<integer>",
+                  "description": "Filter by user role ordinal: `0` (OWNER), `1` (ADMIN), `2` (MEMBER). Multiple values allowed. Defaults to all roles."
+                },
+                {
+                  "disabled": false,
+                  "key": "afterDateAdded",
+                  "value": "<dateTime>",
+                  "description": "Filter users added after this date (ISO 8601, e.g. 2026-01-01T00:00:00Z)."
+                },
+                {
+                  "disabled": false,
+                  "key": "beforeDateAdded",
+                  "value": "<dateTime>",
+                  "description": "Filter users added before this date (ISO 8601, e.g. 2026-12-31T23:59:59Z)."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "cid",
+                  "description": "(Required) Company ID"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json;charset=UTF-8; qs=0.09"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "scope",
+                  "value": "OAuth2Internal OAuth2ReadPII OAuth2Read OAuth2Write OAuth2Delete OAuth2Purchase OAuth2Share document.create document.edit document.delete document.read enterprise.create enterprise.read enterprise.edit enterprise.delete enterprise.member.create enterprise.member.read enterprise.member.edit enterprise.member.delete webhook.create webhook.edit webhook.read webhook.delete PLMIntegration"
+                },
+                {
+                  "key": "redirect_uri",
+                  "value": "/oauth/token"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "/oauth/token"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "/oauth/authorize"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "9c859316-014d-4679-ac82-5555773f5bcb",
+              "name": "default response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "companies",
+                    ":cid",
+                    "users"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "sortColumn",
+                      "value": "createdAt"
+                    },
+                    {
+                      "key": "sortOrder",
+                      "value": "desc"
+                    },
+                    {
+                      "key": "q",
+                      "value": ""
+                    },
+                    {
+                      "key": "includeGlobalPermissions",
+                      "value": "false"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "0"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "20"
+                    },
+                    {
+                      "key": "roleFilter",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "roleFilter",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "afterDateAdded",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "key": "beforeDateAdded",
+                      "value": "<dateTime>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "cid",
+                      "description": "(Required) Company ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json;charset=UTF-8; qs=0.09"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json;charset=UTF-8; qs=0.09"
+                }
+              ],
+              "body": "{\n  \"href\": \"http://kAJSQeWFLl.wknizthb6yg+cxspVFQPuTVKS8SIIbOb4f6wr32mW8rG4kKsegHYW5Los0JF5Y8NGp\",\n  \"items\": [\n    {\n      \"admin\": true,\n      \"company\": {\n        \"admin\": false,\n        \"description\": \"string\",\n        \"domainPrefix\": \"string\",\n        \"enterpriseBaseUrl\": \"string\",\n        \"enterpriseSubtype\": 527,\n        \"href\": \"http://SpGvhZDb.gzxCMVrV9nA1b8gMNjHTvRl5scxTtEzy1CmtT+c1mOketHuHSQWL\",\n        \"id\": \"string\",\n        \"image\": \"string\",\n        \"name\": \"string\",\n        \"noPublicDocuments\": false,\n        \"ownerId\": \"string\",\n        \"secondaryDomainPrefixes\": [\n          \"string\"\n        ],\n        \"state\": 931,\n        \"type\": 586,\n        \"viewRef\": \"http://qpOsQPFVyJoUWXBgLtueFA.jryrASc,AYoicv,w0Fi\"\n      },\n      \"dateAdded_\": \"2011-03-18T10:00:22.703Z\",\n      \"documentationNameOverride\": \"string\",\n      \"guest\": false,\n      \"href\": \"http://wryNdHrwMTl.zceS4fnRFQ0LYjwjSDDMTVVn8kAb2kqPoYI\",\n      \"id\": \"string\",\n      \"lastLoginTime\": \"1952-02-18T18:15:07.323Z\",\n      \"light\": true,\n      \"makePersonalCopies\": false,\n      \"name\": \"string\",\n      \"scheduledRemovalDate\": \"1946-12-17T02:27:41.041Z\",\n      \"state\": 8458,\n      \"user\": {\n        \"jsonType\": \"string\",\n        \"href\": \"https://NjTHZnjlJoeE.muVbd2bPqiJn2+aMhc\",\n        \"id\": \"string\",\n        \"name\": \"string\",\n        \"viewRef\": \"https://TilbEbxAmRsHBrxsHZaLDQgjFD.jtmpzRn08hQ8Qc\",\n        \"image\": \"string\",\n        \"isOnshapeSupport\": true,\n        \"state\": 6455\n      },\n      \"userRolePriority\": \"ADMIN\",\n      \"viewRef\": \"https://DolvqehYu.shbdcDsAw9BIcROTT8QIbk7TN-PL0aUJqrMEkHF5-WN9\"\n    },\n    {\n      \"admin\": false,\n      \"company\": {\n        \"admin\": false,\n        \"description\": \"string\",\n        \"domainPrefix\": \"string\",\n        \"enterpriseBaseUrl\": \"string\",\n        \"enterpriseSubtype\": 1886,\n        \"href\": \"http://OegWwXOKpRunduPCQ.onzi9,4Tpjg5-TovzhAHuEOheJ4yHn9ndbHd8kpnLNUDa1yAcpW79xFCd\",\n        \"id\": \"string\",\n        \"image\": \"string\",\n        \"name\": \"string\",\n        \"noPublicDocuments\": true,\n        \"ownerId\": \"string\",\n        \"secondaryDomainPrefixes\": [\n          \"string\"\n        ],\n        \"state\": 6200,\n        \"type\": 6423,\n        \"viewRef\": \"https://yTlDQqGfptVkNzDoO.asdalcbsFJ3MsMX18TlDL5zaDPCqMVsMrzuKkhrbQg-OHl2QGTSOnDUEEmTQ8V\"\n      },\n      \"dateAdded_\": \"2016-07-17T03:38:06.270Z\",\n      \"documentationNameOverride\": \"string\",\n      \"guest\": false,\n      \"href\": \"http://zqUkT.hcF\",\n      \"id\": \"string\",\n      \"lastLoginTime\": \"2016-02-28T13:32:16.469Z\",\n      \"light\": false,\n      \"makePersonalCopies\": false,\n      \"name\": \"string\",\n      \"scheduledRemovalDate\": \"1957-01-10T18:58:34.796Z\",\n      \"state\": 1940,\n      \"user\": {\n        \"jsonType\": \"string\",\n        \"href\": \"http://AnqttXjKWLRNfvzACTVxBZabh.jfgX-cNHyDGWT5wE3gw\",\n        \"id\": \"string\",\n        \"name\": \"string\",\n        \"viewRef\": \"https://nqZvvVrZlMxWma.yiUoS+iDCWKL3LjnFKmRiuOqgflF,11GABcLpSTE-.UJm1Gr5.lCb+duTfe.ODMq\",\n        \"image\": \"string\",\n        \"isOnshapeSupport\": false,\n        \"state\": 6754\n      },\n      \"userRolePriority\": \"MEMBER\",\n      \"viewRef\": \"http://vLApbgAjyFapIsrcEQBw.pkcPjkcUxO5LBuU\"\n    }\n  ],\n  \"next\": \"https://zjUCqp.ryhIRSzFCX4AnPlumlF46yvTJsECizsT6gEPeZvy3SZzy\",\n  \"previous\": \"http://lEklZuOPVFtiIfFmldHOpmCcZZec.uqiht7mReRHH0iyL4\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "59455523-beb8-4b6a-89b8-a682c86b7af0",
+          "name": "Add a user to a company.",
+          "request": {
+            "name": "Add a user to a company.",
+            "description": {
+              "content": "Returns the company user info.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "companies",
+                ":cid",
+                "users"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "cid",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json;charset=UTF-8; qs=0.09"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json;charset=UTF-8; qs=0.09"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "scope",
+                  "value": "OAuth2Internal OAuth2ReadPII OAuth2Read OAuth2Write OAuth2Delete OAuth2Purchase OAuth2Share document.create document.edit document.delete document.read enterprise.create enterprise.read enterprise.edit enterprise.delete enterprise.member.create enterprise.member.read enterprise.member.edit enterprise.member.delete webhook.create webhook.edit webhook.read webhook.delete PLMIntegration"
+                },
+                {
+                  "key": "redirect_uri",
+                  "value": "/oauth/token"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "/oauth/token"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "/oauth/authorize"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"admin\": \"<boolean>\",\n  \"companyId\": \"<string>\",\n  \"documentationNameOverride\": \"<string>\",\n  \"email\": \"<string>\",\n  \"globalPermissions\": [\n    \"<integer>\",\n    \"<integer>\"\n  ],\n  \"guest\": \"<boolean>\",\n  \"light\": \"<boolean>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "86fd6dd6-bb88-490d-a259-65bab3136aaa",
+              "name": "default response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "companies",
+                    ":cid",
+                    "users"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "cid",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json;charset=UTF-8; qs=0.09"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"admin\": \"<boolean>\",\n  \"companyId\": \"<string>\",\n  \"documentationNameOverride\": \"<string>\",\n  \"email\": \"<string>\",\n  \"globalPermissions\": [\n    \"<integer>\",\n    \"<integer>\"\n  ],\n  \"guest\": \"<boolean>\",\n  \"light\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json;charset=UTF-8; qs=0.09"
+                }
+              ],
+              "body": "{\n  \"admin\": true,\n  \"company\": {\n    \"admin\": true,\n    \"description\": \"string\",\n    \"domainPrefix\": \"string\",\n    \"enterpriseBaseUrl\": \"string\",\n    \"enterpriseSubtype\": 9864,\n    \"href\": \"http://ksovaaf.upTCnI3aECw\",\n    \"id\": \"string\",\n    \"image\": \"string\",\n    \"name\": \"string\",\n    \"noPublicDocuments\": false,\n    \"ownerId\": \"string\",\n    \"secondaryDomainPrefixes\": [\n      \"string\"\n    ],\n    \"state\": 6913,\n    \"type\": 3643,\n    \"viewRef\": \"http://xFzLRl.hoghjceD84BKMbfZYFcm,,\"\n  },\n  \"dateAdded_\": \"2022-03-19T00:41:28.880Z\",\n  \"documentationNameOverride\": \"string\",\n  \"guest\": false,\n  \"href\": \"https://SUezqg.bwykpjCSNJWeoNR-gnZx3-+f9HgKGUSZLej9uwezWjUwU3wpq31Arb0ABUYOErCleC7\",\n  \"id\": \"string\",\n  \"lastLoginTime\": \"2023-08-13T15:03:01.081Z\",\n  \"light\": false,\n  \"makePersonalCopies\": true,\n  \"name\": \"string\",\n  \"scheduledRemovalDate\": \"1975-12-12T06:32:43.995Z\",\n  \"state\": 485,\n  \"user\": {\n    \"jsonType\": \"string\",\n    \"href\": \"http://dTeLgGANuPeagKbLTYye.lcWJwzN,SY\",\n    \"id\": \"string\",\n    \"name\": \"string\",\n    \"viewRef\": \"https://XlYvsEsxtUQzU.viaptlhBkP+.UvZKlRDFPo6-9CdoPqKE2e\",\n    \"image\": \"string\",\n    \"isOnshapeSupport\": false,\n    \"state\": 7977\n  },\n  \"userRolePriority\": \"MEMBER\",\n  \"viewRef\": \"https://PhzwNBKUDmMICZglfoiEPOAguhnN.arGljfaA,9A9WTR3psQycOCuuydIUXUcY8k9IPdZXZaSmJbH\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "4509e9af-ab0b-4a9e-a4b6-108a394abfd5",
+          "name": "Update the company's information for a user.",
+          "request": {
+            "name": "Update the company's information for a user.",
+            "description": {
+              "content": "Returns updated company user info. `globalPermissions` field is deprecated. Please use the following: \n* [addGlobalPermissionsForIdentity](#/Company/addGlobalPermissionsForIdentity) \n* [clearGlobalPermissions](#/Company/clearGlobalPermissions)",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "companies",
+                ":cid",
+                "users",
+                ":uid"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "cid",
+                  "description": "(Required) Company ID"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "uid",
+                  "description": "(Required) User ID"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json;charset=UTF-8; qs=0.09"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json;charset=UTF-8; qs=0.09"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "scope",
+                  "value": "OAuth2Internal OAuth2ReadPII OAuth2Read OAuth2Write OAuth2Delete OAuth2Purchase OAuth2Share document.create document.edit document.delete document.read enterprise.create enterprise.read enterprise.edit enterprise.delete enterprise.member.create enterprise.member.read enterprise.member.edit enterprise.member.delete webhook.create webhook.edit webhook.read webhook.delete PLMIntegration"
+                },
+                {
+                  "key": "redirect_uri",
+                  "value": "/oauth/token"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "/oauth/token"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "/oauth/authorize"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"admin\": \"<boolean>\",\n  \"companyId\": \"<string>\",\n  \"documentationNameOverride\": \"<string>\",\n  \"email\": \"<string>\",\n  \"globalPermissions\": [\n    \"<integer>\",\n    \"<integer>\"\n  ],\n  \"guest\": \"<boolean>\",\n  \"light\": \"<boolean>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "46147bdf-8d91-436c-9d8b-b255016e6bba",
+              "name": "default response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "companies",
+                    ":cid",
+                    "users",
+                    ":uid"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "cid",
+                      "description": "(Required) Company ID"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "uid",
+                      "description": "(Required) User ID"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json;charset=UTF-8; qs=0.09"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"admin\": \"<boolean>\",\n  \"companyId\": \"<string>\",\n  \"documentationNameOverride\": \"<string>\",\n  \"email\": \"<string>\",\n  \"globalPermissions\": [\n    \"<integer>\",\n    \"<integer>\"\n  ],\n  \"guest\": \"<boolean>\",\n  \"light\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json;charset=UTF-8; qs=0.09"
+                }
+              ],
+              "body": "{\n  \"admin\": true,\n  \"company\": {\n    \"admin\": true,\n    \"description\": \"string\",\n    \"domainPrefix\": \"string\",\n    \"enterpriseBaseUrl\": \"string\",\n    \"enterpriseSubtype\": 9864,\n    \"href\": \"http://ksovaaf.upTCnI3aECw\",\n    \"id\": \"string\",\n    \"image\": \"string\",\n    \"name\": \"string\",\n    \"noPublicDocuments\": false,\n    \"ownerId\": \"string\",\n    \"secondaryDomainPrefixes\": [\n      \"string\"\n    ],\n    \"state\": 6913,\n    \"type\": 3643,\n    \"viewRef\": \"http://xFzLRl.hoghjceD84BKMbfZYFcm,,\"\n  },\n  \"dateAdded_\": \"2022-03-19T00:41:28.880Z\",\n  \"documentationNameOverride\": \"string\",\n  \"guest\": false,\n  \"href\": \"https://SUezqg.bwykpjCSNJWeoNR-gnZx3-+f9HgKGUSZLej9uwezWjUwU3wpq31Arb0ABUYOErCleC7\",\n  \"id\": \"string\",\n  \"lastLoginTime\": \"2023-08-13T15:03:01.081Z\",\n  \"light\": false,\n  \"makePersonalCopies\": true,\n  \"name\": \"string\",\n  \"scheduledRemovalDate\": \"1975-12-12T06:32:43.995Z\",\n  \"state\": 485,\n  \"user\": {\n    \"jsonType\": \"string\",\n    \"href\": \"http://dTeLgGANuPeagKbLTYye.lcWJwzN,SY\",\n    \"id\": \"string\",\n    \"name\": \"string\",\n    \"viewRef\": \"https://XlYvsEsxtUQzU.viaptlhBkP+.UvZKlRDFPo6-9CdoPqKE2e\",\n    \"image\": \"string\",\n    \"isOnshapeSupport\": false,\n    \"state\": 7977\n  },\n  \"userRolePriority\": \"MEMBER\",\n  \"viewRef\": \"https://PhzwNBKUDmMICZglfoiEPOAguhnN.arGljfaA,9A9WTR3psQycOCuuydIUXUcY8k9IPdZXZaSmJbH\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a1549c4d-b873-4418-bfeb-b18870ec4731",
+          "name": "Remove a user from a company, company teams, and all the direct shares.",
+          "request": {
+            "name": "Remove a user from a company, company teams, and all the direct shares.",
+            "description": {},
+            "url": {
+              "path": [
+                "companies",
+                ":cid",
+                "users",
+                ":uid"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "removeFromTeams",
+                  "value": "true"
+                },
+                {
+                  "disabled": false,
+                  "key": "removeDirectShares",
+                  "value": "true"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "cid",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "uid",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json;charset=UTF-8; qs=0.09"
+              }
+            ],
+            "method": "DELETE",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "scope",
+                  "value": "OAuth2Internal OAuth2ReadPII OAuth2Read OAuth2Write OAuth2Delete OAuth2Purchase OAuth2Share document.create document.edit document.delete document.read enterprise.create enterprise.read enterprise.edit enterprise.delete enterprise.member.create enterprise.member.read enterprise.member.edit enterprise.member.delete webhook.create webhook.edit webhook.read webhook.delete PLMIntegration"
+                },
+                {
+                  "key": "redirect_uri",
+                  "value": "/oauth/token"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "/oauth/token"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "/oauth/authorize"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "6a00413e-d0ca-4e0b-bf43-141c25b6a3eb",
+              "name": "default response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "companies",
+                    ":cid",
+                    "users",
+                    ":uid"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "removeFromTeams",
+                      "value": "true"
+                    },
+                    {
+                      "key": "removeDirectShares",
+                      "value": "true"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "cid",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "uid",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json;charset=UTF-8; qs=0.09"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json;charset=UTF-8; qs=0.09"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://cad.onshape.com/api/v16",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "basic",
+    "basic": [
+      {
+        "key": "username",
+        "value": "{{basicAuthUsername}}"
+      },
+      {
+        "key": "password",
+        "value": "{{basicAuthPassword}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "1907df4e-93a0-47b0-9f48-a1fa30efa858",
+    "name": "Onshape REST Account Company API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "## Welcome to the Onshape REST API Explorer\n\n**See the [API Explorer Guide](https://onshape-public.github.io/docs/api-intro/explorer/) for help navigating this page.**\n\n### Using this page\n1. Sign in to your [Onshape](https://cad.onshape.com) account in another tab.\n2. Click the `Try it out` button below. It toggles to a `Cancel` button when selected.\n\n### Authenticating\nTo authenticate your calls, click the `Authorize` button. See [API Explorer Guide: Authentication](https://onshape-public.github.io/docs/api-intro/explorer/#authentication) for details. Calls made when authenticated via API Keys or OAuth count against your annual [API limits](https://onshape-public.github.io/docs/auth/limits/#annual-api-call-limits).\n* **Tip:** To ensure the current session isn't used when trying other authentication techniques, make sure to [remove the Onshape cookie](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site) as per the instructions for your browser, or use a private or incognito window.\n\n### Additional resources\n\n* [Onshape API Guide](https://onshape-public.github.io/docs/): Our full suite of developer guides, to be used as an accompaniment to this API Explorer.\n* [Onshape Developer Portal](https://cad.onshape.com/appstore/dev-portal): The Onshape portal for managing your API keys, OAuth2 credentials, your Onshape applications, and your Onshape App Store entries.\n* [Authentication Guide](https://onshape-public.github.io/docs/auth/): Our guide to using API keys, request signatures, and OAuth2 in your Onshape applications.\n\nContact Support:\n Email: api-support@onshape.zendesk.com",
+      "type": "text/plain"
+    }
+  }
+}

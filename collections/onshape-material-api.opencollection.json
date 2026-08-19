@@ -1,0 +1,117 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Onshape REST Account Material API",
+    "version": "1.218.84032-34acba44be17"
+  },
+  "request": {
+    "auth": {
+      "type": "basic",
+      "username": "{{username}}",
+      "password": "{{password}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Material",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Updates an existing material library",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://cad.onshape.com/api/v16/materials/libraries/d/:did/w/:wid/e/:eid/csv",
+            "params": [
+              {
+                "name": "did",
+                "value": "",
+                "type": "path",
+                "description": "Document ID."
+              },
+              {
+                "name": "wid",
+                "value": "",
+                "type": "path",
+                "description": "Workspace ID."
+              },
+              {
+                "name": "eid",
+                "value": "",
+                "type": "path",
+                "description": "Element ID."
+              }
+            ],
+            "body": {
+              "type": "multipart-form",
+              "data": []
+            },
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "/oauth/authorize",
+              "accessTokenUrl": "/oauth/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Update a material in an Onshape Material Library from a csv file. Changes made replace the existing library."
+        },
+        {
+          "info": {
+            "name": "Get a list of materials from a material library.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://cad.onshape.com/api/v16/materials/libraries/d/:did/:wvm/:wvmid/e/:eid",
+            "params": [
+              {
+                "name": "did",
+                "value": "",
+                "type": "path",
+                "description": "Document ID."
+              },
+              {
+                "name": "wvm",
+                "value": "",
+                "type": "path",
+                "description": "One of w or v or m corresponding to whether a workspace or version or microversion was entered."
+              },
+              {
+                "name": "wvmid",
+                "value": "",
+                "type": "path",
+                "description": "Workspace (w), Version (v) or Microversion (m) ID."
+              },
+              {
+                "name": "eid",
+                "value": "",
+                "type": "path",
+                "description": "Element ID."
+              }
+            ],
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "/oauth/authorize",
+              "accessTokenUrl": "/oauth/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Get a JSON representation of the material library."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

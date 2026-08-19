@@ -1,0 +1,780 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Onshape REST Account Metadata API",
+    "version": "1.218.84032-34acba44be17"
+  },
+  "request": {
+    "auth": {
+      "type": "basic",
+      "username": "{{username}}",
+      "password": "{{password}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Metadata",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get the metadata for all elements in a document.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://cad.onshape.com/api/v16/metadata/d/:did/:wvm/:wvmid/e",
+            "params": [
+              {
+                "name": "did",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "wvm",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "wvmid",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "linkDocumentId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "inferMetadataOwner",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "depth",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "includeComputedProperties",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "includeComputedAssemblyProperties",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "thumbnail",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "/oauth/authorize",
+              "accessTokenUrl": "/oauth/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "See [API Guide: Metadata](https://onshape-public.github.io/docs/api-adv/metadata/) for details. \n* You can specify the optional `depth` query parameter to get multiple levels in an assembly. Default `depth` is `1`. \n* `linkDocumentId` can be specified where applicable. Combined with `inferMetadataOwner` (default value is `false`), this is used to infer metadata owner. \n* `includeComputedProperties` can be used to include or omit computed properties. Default value is `true`. \n* `includeComputedAs"
+        },
+        {
+          "info": {
+            "name": "Get the metadata for an element.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://cad.onshape.com/api/v16/metadata/d/:did/:wvm/:wvmid/e/:eid",
+            "params": [
+              {
+                "name": "did",
+                "value": "",
+                "type": "path",
+                "description": "The id of the document in which to perform the operation."
+              },
+              {
+                "name": "linkDocumentId",
+                "value": "",
+                "type": "query",
+                "description": "The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both."
+              },
+              {
+                "name": "wvm",
+                "value": "",
+                "type": "path",
+                "description": "Indicates which of workspace (w), version (v), or document microversion (m) id is specified below."
+              },
+              {
+                "name": "wvmid",
+                "value": "",
+                "type": "path",
+                "description": "The id of the workspace, version or document microversion in which the operation should be performed."
+              },
+              {
+                "name": "eid",
+                "value": "",
+                "type": "path",
+                "description": "The id of the element in which to perform the operation."
+              },
+              {
+                "name": "configuration",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "inferMetadataOwner",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "depth",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "includeComputedProperties",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "includeComputedAssemblyProperties",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "thumbnail",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "/oauth/authorize",
+              "accessTokenUrl": "/oauth/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "See [API Guide: Metadata](https://onshape-public.github.io/docs/api-adv/metadata/) for details. \n* `linkDocumentId` can be specified where applicable and this combined with the query param `inferMetadataOwner` (default value is `false`) will be used to infer metadata owner. \n* `configuration` optional query parameter defaults to default configuration. \n* You can specify an optional `depth` query parameter to get multiple levels in an assembly. Default `depth` is `1`. \n* `includeComputedPropertie"
+        },
+        {
+          "info": {
+            "name": "Update the metadata for an element.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://cad.onshape.com/api/v16/metadata/d/:did/:wvm/:wvmid/e/:eid",
+            "params": [
+              {
+                "name": "did",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "wvm",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "wvmid",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "eid",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "configuration",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "/oauth/authorize",
+              "accessTokenUrl": "/oauth/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "See [API Guide: Metadata](https://onshape-public.github.io/docs/api-adv/metadata/) for details. \n* Microversion (`m`) in `wvm` path parameter option is not supported. \n* Specify the property metadata to update in the Request body."
+        },
+        {
+          "info": {
+            "name": "Get the metadata for an assembly, including supporting metadata.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://cad.onshape.com/api/v16/metadata/d/:did/:wvm/:wvmid/e/:eid/assembly-debug",
+            "params": [
+              {
+                "name": "did",
+                "value": "",
+                "type": "path",
+                "description": "The id of the document in which to perform the operation."
+              },
+              {
+                "name": "linkDocumentId",
+                "value": "",
+                "type": "query",
+                "description": "The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both."
+              },
+              {
+                "name": "wvm",
+                "value": "",
+                "type": "path",
+                "description": "Indicates which of workspace (w), version (v), or document microversion (m) id is specified below."
+              },
+              {
+                "name": "wvmid",
+                "value": "",
+                "type": "path",
+                "description": "The id of the workspace, version or document microversion in which the operation should be performed."
+              },
+              {
+                "name": "eid",
+                "value": "",
+                "type": "path",
+                "description": "The id of the element in which to perform the operation."
+              },
+              {
+                "name": "configuration",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "/oauth/authorize",
+              "accessTokenUrl": "/oauth/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "See [API Guide: Metadata](https://onshape-public.github.io/docs/api-adv/metadata/) for details. \n* `linkDocumentId` can be specified where applicable and this combined with the query param `inferMetadataOwner` (default value is `false`) will be used to infer metadata owner. \n* `configuration` optional query parameter defaults to default configuration. \n* `includeComputedProperties` can be used to include or omit computed properties. Default value is `true`. \n* `includeComputedAssemblyProperties`"
+        },
+        {
+          "info": {
+            "name": "Get the metadata for all parts in a document.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://cad.onshape.com/api/v16/metadata/d/:did/:wvm/:wvmid/e/:eid/p",
+            "params": [
+              {
+                "name": "did",
+                "value": "",
+                "type": "path",
+                "description": "The id of the document in which to perform the operation."
+              },
+              {
+                "name": "linkDocumentId",
+                "value": "",
+                "type": "query",
+                "description": "The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both."
+              },
+              {
+                "name": "wvm",
+                "value": "",
+                "type": "path",
+                "description": "Indicates which of workspace (w), version (v), or document microversion (m) id is specified below."
+              },
+              {
+                "name": "wvmid",
+                "value": "",
+                "type": "path",
+                "description": "The id of the workspace, version or document microversion in which the operation should be performed."
+              },
+              {
+                "name": "eid",
+                "value": "",
+                "type": "path",
+                "description": "The id of the element in which to perform the operation."
+              },
+              {
+                "name": "configuration",
+                "value": "",
+                "type": "query",
+                "description": "URL-encoded string of configuration values (separated by `;`). See the [Configurations API Guide](https://onshape-public.github.io/docs/api-adv/configs/) for details."
+              },
+              {
+                "name": "inferMetadataOwner",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "includeComputedProperties",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "includeComputedAssemblyProperties",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "thumbnail",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "/oauth/authorize",
+              "accessTokenUrl": "/oauth/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "See [API Guide: Metadata](https://onshape-public.github.io/docs/api-adv/metadata/) for details. \n* The `configuration` optional query parameter uses the default configuration unless otherwise specified. \n* You can specify an optional `depth` query parameter to get multiple levels in an assembly. Default `depth` is `1`. \n* `linkDocumentId` can be specified where applicable. Combined with `inferMetadataOwner` (default value is `false`), this is used to infer metadata owner. \n* `includeComputedProp"
+        },
+        {
+          "info": {
+            "name": "Get the metadata for a part.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://cad.onshape.com/api/v16/metadata/d/:did/:wvm/:wvmid/e/:eid/:iden/:pid",
+            "params": [
+              {
+                "name": "did",
+                "value": "",
+                "type": "path",
+                "description": "The id of the document in which to perform the operation."
+              },
+              {
+                "name": "linkDocumentId",
+                "value": "",
+                "type": "query",
+                "description": "The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both."
+              },
+              {
+                "name": "wvm",
+                "value": "",
+                "type": "path",
+                "description": "Indicates which of workspace (w), version (v), or document microversion (m) id is specified below."
+              },
+              {
+                "name": "wvmid",
+                "value": "",
+                "type": "path",
+                "description": "The id of the workspace, version or document microversion in which the operation should be performed."
+              },
+              {
+                "name": "eid",
+                "value": "",
+                "type": "path",
+                "description": "The id of the element in which to perform the operation."
+              },
+              {
+                "name": "configuration",
+                "value": "",
+                "type": "query",
+                "description": "URL-encoded string of configuration values (separated by `;`). See the [Configurations API Guide](https://onshape-public.github.io/docs/api-adv/configs/) for details."
+              },
+              {
+                "name": "rollbackBarIndex",
+                "value": "",
+                "type": "query",
+                "description": "Index specifying the location of the rollback bar when the call is evaluated. A -1 indicates that it should be at the end of the featurelist."
+              },
+              {
+                "name": "elementMicroversionId",
+                "value": "",
+                "type": "query",
+                "description": "A specific element microversion in which to evaluate the request."
+              },
+              {
+                "name": "iden",
+                "value": "",
+                "type": "path",
+                "description": "Denotes whether the pid specified is a part id (p) or a part identity (pi)."
+              },
+              {
+                "name": "pid",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "inferMetadataOwner",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "includeComputedProperties",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "includeComputedAssemblyProperties",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "thumbnail",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "/oauth/authorize",
+              "accessTokenUrl": "/oauth/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "See [API Guide: Metadata](https://onshape-public.github.io/docs/api-adv/metadata/) for details. \n* Specify the part in the `iden` or `pid` path parameter. \n* The `configuration` optional query parameter uses the default configuration unless otherwise specified. \n* `linkDocumentId` can be specified where applicable. Combined with `inferMetadataOwner` (default value is `false`), this is used to infer metadata owner. \n* `includeComputedProperties` can be used to include or omit computed properties."
+        },
+        {
+          "info": {
+            "name": "Update the metadata for a part.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://cad.onshape.com/api/v16/metadata/d/:did/:wvm/:wvmid/e/:eid/:iden/:pid",
+            "params": [
+              {
+                "name": "did",
+                "value": "",
+                "type": "path",
+                "description": "The id of the document in which to perform the operation."
+              },
+              {
+                "name": "linkDocumentId",
+                "value": "",
+                "type": "query",
+                "description": "The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both."
+              },
+              {
+                "name": "wvm",
+                "value": "",
+                "type": "path",
+                "description": "Indicates which of workspace (w), version (v), or document microversion (m) id is specified below."
+              },
+              {
+                "name": "wvmid",
+                "value": "",
+                "type": "path",
+                "description": "The id of the workspace, version or document microversion in which the operation should be performed."
+              },
+              {
+                "name": "eid",
+                "value": "",
+                "type": "path",
+                "description": "The id of the element in which to perform the operation."
+              },
+              {
+                "name": "configuration",
+                "value": "",
+                "type": "query",
+                "description": "URL-encoded string of configuration values (separated by `;`). See the [Configurations API Guide](https://onshape-public.github.io/docs/api-adv/configs/) for details."
+              },
+              {
+                "name": "rollbackBarIndex",
+                "value": "",
+                "type": "query",
+                "description": "Index specifying the location of the rollback bar when the call is evaluated. A -1 indicates that it should be at the end of the featurelist."
+              },
+              {
+                "name": "elementMicroversionId",
+                "value": "",
+                "type": "query",
+                "description": "A specific element microversion in which to evaluate the request."
+              },
+              {
+                "name": "iden",
+                "value": "",
+                "type": "path",
+                "description": "Denotes whether the pid specified is a part id (p) or a part identity (pi)."
+              },
+              {
+                "name": "pid",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "/oauth/authorize",
+              "accessTokenUrl": "/oauth/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "See [API Guide: Metadata](https://onshape-public.github.io/docs/api-adv/metadata/) for details. \n* Specify the part in the `iden` or `pid` path parameter. \n* The `configuration` optional query parameter uses the default configuration unless otherwise specified. \n* `linkDocumentId` can be specified where applicable. Combined with `inferMetadataOwner` (default value is `false`), this is used to infer metadata owner. \n* Specify the property metadata to update in the Request body."
+        },
+        {
+          "info": {
+            "name": "Get the metadata for a workspace or version.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://cad.onshape.com/api/v16/metadata/d/:did/:wv/:wvid",
+            "params": [
+              {
+                "name": "did",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "wv",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "wvid",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "linkDocumentId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "inferMetadataOwner",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "depth",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "includeComputedProperties",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "includeComputedAssemblyProperties",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "thumbnail",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "/oauth/authorize",
+              "accessTokenUrl": "/oauth/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "See [API Guide: Metadata](https://onshape-public.github.io/docs/api-adv/metadata/) for details. \n* `linkDocumentId` can be specified where applicable. Combined with `inferMetadataOwner` (default value is `false`), this is used to infer metadata owner. \n* You can specify an optional `depth` query parameter to get multiple levels in an assembly. Default `depth` is `1`. \n* `includeComputedProperties` can be used to include or omit computed properties. Default value is `true`. \n* `includeComputedAss"
+        },
+        {
+          "info": {
+            "name": "Update the metadata for a workspace or version.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://cad.onshape.com/api/v16/metadata/d/:did/:wv/:wvid",
+            "params": [
+              {
+                "name": "did",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "wv",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "wvid",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "/oauth/authorize",
+              "accessTokenUrl": "/oauth/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "See [API Guide: Metadata](https://onshape-public.github.io/docs/api-adv/metadata/) for details."
+        },
+        {
+          "info": {
+            "name": "Update the metadata for a standard content part.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://cad.onshape.com/api/v16/metadata/standardcontent/d/:did",
+            "params": [
+              {
+                "name": "did",
+                "value": "",
+                "type": "path",
+                "description": "The ID of the document that owns the standard content part."
+              },
+              {
+                "name": "linkDocumentId",
+                "value": "",
+                "type": "query",
+                "description": "The ID of the document in which you have inserted the standard content part."
+              },
+              {
+                "name": "companyId",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "/oauth/authorize",
+              "accessTokenUrl": "/oauth/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Specify the property metadata to update in the Request body. See [API Guide: Metadata](https://onshape-public.github.io/docs/api-adv/metadata/#update-standard-content-part-metadata) for an example."
+        },
+        {
+          "info": {
+            "name": "Get the metadata for a standard content part.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://cad.onshape.com/api/v16/metadata/standardcontent/d/:did/v/:vid/e/:eid/p/:pid",
+            "params": [
+              {
+                "name": "did",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "vid",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "eid",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "pid",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "configuration",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "linkDocumentId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "companyId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "includeComputedProperties",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "includeComputedAssemblyProperties",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "thumbnail",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "/oauth/authorize",
+              "accessTokenUrl": "/oauth/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "See [API Guide: Metadata](https://onshape-public.github.io/docs/api-adv/metadata/) for details. \n* Specify the part in the `pid` path parameter. \n* The `configuration` and `linkDocumentId` query parameters are required. \n* `includeComputedProperties` can be used to include or omit computed properties. Default value is `true`. \n* `includeComputedAssemblyProperties` can be used to query computed assembly properties which are generally expensive. Default value is `false`. \n* You can also choose to "
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

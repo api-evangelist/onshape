@@ -1,0 +1,115 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Onshape REST Account OpenApi API",
+    "version": "1.218.84032-34acba44be17"
+  },
+  "request": {
+    "auth": {
+      "type": "basic",
+      "username": "{{username}}",
+      "password": "{{password}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "OpenApi",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get the OpenAPI specification for the Onshape REST API.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://cad.onshape.com/api/v16/openapi",
+            "params": [
+              {
+                "name": "version",
+                "value": "",
+                "type": "query",
+                "description": "Specify a version of Onshape from which the OpenAPI is generated. If '*' is specified in any of the version fields, that indicates any version if acceptable."
+              },
+              {
+                "name": "versionAlias",
+                "value": "",
+                "type": "query",
+                "description": "Version aliases based on the currently released version."
+              },
+              {
+                "name": "noFilter",
+                "value": "",
+                "type": "query",
+                "description": "Do not filter the specification at all."
+              },
+              {
+                "name": "includedTags",
+                "value": "",
+                "type": "query",
+                "description": "Return only operations with tags included in includedTags."
+              },
+              {
+                "name": "excludedTags",
+                "value": "",
+                "type": "query",
+                "description": "If an operation contains an excluded tag, it is not returned from this endpoint."
+              },
+              {
+                "name": "includeDeprecated",
+                "value": "",
+                "type": "query",
+                "description": "Include deprecated endpoints."
+              },
+              {
+                "name": "onlyDeprecated",
+                "value": "",
+                "type": "query",
+                "description": "Only include deprecated endpoints."
+              },
+              {
+                "name": "documentationStatuses",
+                "value": "",
+                "type": "query",
+                "description": "Only return endpoints that have the specified documentation status. Default is to return all the endpoints the user should have access to."
+              },
+              {
+                "name": "restUserRole",
+                "value": "",
+                "type": "query",
+                "description": "The REST user role for which this spec is requested."
+              },
+              {
+                "name": "operationIds",
+                "value": "",
+                "type": "query",
+                "description": "Only return operations with specified ids."
+              },
+              {
+                "name": "excludedOperationIds",
+                "value": "",
+                "type": "query",
+                "description": "Do not return operations with specified ids."
+              }
+            ]
+          },
+          "docs": "The Onshape API OpenAPI specification is returned in the JSON format."
+        },
+        {
+          "info": {
+            "name": "Get the list of tags in the Onshape OpenAPI specification.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://cad.onshape.com/api/v16/openapi/tags"
+          },
+          "docs": "Tags are used to group operations. For example, `Document` groups operations on documents."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

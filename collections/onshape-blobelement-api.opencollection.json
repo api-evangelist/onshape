@@ -1,0 +1,294 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Onshape REST Account BlobElement API",
+    "version": "1.218.84032-34acba44be17"
+  },
+  "request": {
+    "auth": {
+      "type": "basic",
+      "username": "{{username}}",
+      "password": "{{password}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "BlobElement",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Upload a file and create a blob element from it.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://cad.onshape.com/api/v16/blobelements/d/:did/w/:wid",
+            "params": [
+              {
+                "name": "did",
+                "value": "",
+                "type": "path",
+                "description": "The id of the document in which to perform the operation."
+              },
+              {
+                "name": "linkDocumentId",
+                "value": "",
+                "type": "query",
+                "description": "The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both."
+              },
+              {
+                "name": "wid",
+                "value": "",
+                "type": "path",
+                "description": "The id of the workspace in which to perform the operation."
+              }
+            ],
+            "body": {
+              "type": "multipart-form",
+              "data": []
+            },
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "/oauth/authorize",
+              "accessTokenUrl": "/oauth/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Request body parameters are multipart fields, so you must use `\"Content-Type\":\"multipart/form-data\"` in the request header."
+        },
+        {
+          "info": {
+            "name": "Download a file from a blob element for the specified workspace/version/microversion.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://cad.onshape.com/api/v16/blobelements/d/:did/w/:wid/e/:eid",
+            "headers": [
+              {
+                "name": "If-None-Match",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "did",
+                "value": "",
+                "type": "path",
+                "description": "The id of the document in which to perform the operation."
+              },
+              {
+                "name": "linkDocumentId",
+                "value": "",
+                "type": "query",
+                "description": "The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both."
+              },
+              {
+                "name": "wid",
+                "value": "",
+                "type": "path",
+                "description": "The id of the workspace in which to perform the operation."
+              },
+              {
+                "name": "eid",
+                "value": "",
+                "type": "path",
+                "description": "The id of the element in which to perform the operation."
+              },
+              {
+                "name": "contentDisposition",
+                "value": "",
+                "type": "query",
+                "description": "If \"attachment\", includes a Content-Disposition return header with the filename."
+              }
+            ],
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "/oauth/authorize",
+              "accessTokenUrl": "/oauth/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "See [API Guide: Model Translation](https://onshape-public.github.io/docs/api-adv/translation/) for more details."
+        },
+        {
+          "info": {
+            "name": "Update a blob element by uploading a file.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://cad.onshape.com/api/v16/blobelements/d/:did/w/:wid/e/:eid",
+            "params": [
+              {
+                "name": "did",
+                "value": "",
+                "type": "path",
+                "description": "The id of the document in which to perform the operation."
+              },
+              {
+                "name": "linkDocumentId",
+                "value": "",
+                "type": "query",
+                "description": "The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both."
+              },
+              {
+                "name": "wid",
+                "value": "",
+                "type": "path",
+                "description": "The id of the workspace in which to perform the operation."
+              },
+              {
+                "name": "eid",
+                "value": "",
+                "type": "path",
+                "description": "The id of the element in which to perform the operation."
+              },
+              {
+                "name": "parentChangeId",
+                "value": "",
+                "type": "query",
+                "description": "The id of the last change made to this application element. This can be retrieved from the response for any app element modification endpoint."
+              }
+            ],
+            "body": {
+              "type": "multipart-form",
+              "data": []
+            },
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "/oauth/authorize",
+              "accessTokenUrl": "/oauth/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Request body parameters are multipart fields, so you must use `\"Content-Type\":\"multipart/form-data\"` in the request header."
+        },
+        {
+          "info": {
+            "name": "Change the measurement units for the blob element.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://cad.onshape.com/api/v16/blobelements/d/:did/w/:wid/e/:eid/units",
+            "params": [
+              {
+                "name": "did",
+                "value": "",
+                "type": "path",
+                "description": "The id of the document in which to perform the operation."
+              },
+              {
+                "name": "linkDocumentId",
+                "value": "",
+                "type": "query",
+                "description": "The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both."
+              },
+              {
+                "name": "wid",
+                "value": "",
+                "type": "path",
+                "description": "The id of the workspace in which to perform the operation."
+              },
+              {
+                "name": "eid",
+                "value": "",
+                "type": "path",
+                "description": "The id of the element in which to perform the operation."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "/oauth/authorize",
+              "accessTokenUrl": "/oauth/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Change the measurement units for the blob element."
+        },
+        {
+          "info": {
+            "name": "Export a blob element to another format.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://cad.onshape.com/api/v16/blobelements/d/:did/:wv/:wvid/e/:eid/translations",
+            "params": [
+              {
+                "name": "did",
+                "value": "",
+                "type": "path",
+                "description": "The id of the document in which to perform the operation."
+              },
+              {
+                "name": "linkDocumentId",
+                "value": "",
+                "type": "query",
+                "description": "The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both."
+              },
+              {
+                "name": "wv",
+                "value": "",
+                "type": "path",
+                "description": "Indicates which of workspace (w) or version (v) id is specified below."
+              },
+              {
+                "name": "wvid",
+                "value": "",
+                "type": "path",
+                "description": "The id of the workspace, version in which the operation should be performed."
+              },
+              {
+                "name": "eid",
+                "value": "",
+                "type": "path",
+                "description": "The id of the element in which to perform the operation."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "/oauth/authorize",
+              "accessTokenUrl": "/oauth/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "* Use `formatName` in the JSON request body to specify the export file type. Use [Translations/getAllTranslatorFormats]#/Translation/getAllTranslatorFormats) to get a list of valid export file formats. \n* Set `storeInDocument` to `false` to export to a data file. Set to `true` to export to a blob element in the same document. \n* See [API Guide: Model Translation](https://onshape-public.github.io/docs/api-adv/translation/) for more details."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,261 @@
+{
+  "item": [
+    {
+      "id": "160da2fc-4e3c-4cc6-92bd-4f54a4c97967",
+      "name": "ProductStructure",
+      "description": {
+        "content": "Access information on how entities are structured within designs and documents.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "0cc0af8c-07a7-48c3-bc64-b932fe34dfbb",
+          "name": "Find where a part or assembly is used.",
+          "request": {
+            "name": "Find where a part or assembly is used.",
+            "description": {
+              "content": "Only supported for Enterprise and Professional plans. See [Dev Docs: Where Used](https://onshape-public.github.io/docs/api-adv/relmgmt/#where-used) for a tutorial on using this endpoint.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "productstructure",
+                "whereused"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "documentId",
+                  "value": "<string>",
+                  "description": "Document that contains the part or assembly."
+                },
+                {
+                  "disabled": false,
+                  "key": "elementId",
+                  "value": "<string>",
+                  "description": "Element that contains the part or assembly."
+                },
+                {
+                  "disabled": false,
+                  "key": "versionId",
+                  "value": "<string>",
+                  "description": "Version that contains the part or assembly. One of `versionId` and `useLatestVersion` is required."
+                },
+                {
+                  "disabled": false,
+                  "key": "configuration",
+                  "value": "<string>",
+                  "description": "URL-encoded string of configuration values (separated by `;`). See the [Configurations API Guide](https://onshape-public.github.io/docs/api-adv/configs/) for details."
+                },
+                {
+                  "disabled": false,
+                  "key": "partId",
+                  "value": "<string>",
+                  "description": "Part to find. When `elementId` is a Part Studio, `partId` or `partNumber` is required. Call [getPartsWMVE](https://cad.onshape.com/glassworks/explorer/#/Part/getPartsWMVE) to get a list of parts in the Part Studio."
+                },
+                {
+                  "disabled": false,
+                  "key": "partNumber",
+                  "value": "<string>",
+                  "description": "Part to find. When `elementId` is a Part Studio, `partId` or `partNumber` is required. Call [getPartsWMVE](https://cad.onshape.com/glassworks/explorer/#/Part/getPartsWMVE) to get a list of parts in the Part Studio."
+                },
+                {
+                  "disabled": false,
+                  "key": "includeProperties",
+                  "value": "false",
+                  "description": "If true, include metadata properties for each result item."
+                },
+                {
+                  "disabled": false,
+                  "key": "filter",
+                  "value": "<integer>",
+                  "description": "Filter results by one of the following:  `0: LATEST_REVISION, 1: ALL_REVISIONS, 2: ALL_VERSIONS (default), 3: ALL, 5: LATEST_VERSIONS, 6: MOST_RECENT_REVISION`."
+                },
+                {
+                  "disabled": false,
+                  "key": "includeVersionInfo",
+                  "value": "<boolean>",
+                  "description": "If `true`, include the list of document versions in which the queried item has been referenced by other documents. Each entry contains the version ID and name."
+                },
+                {
+                  "disabled": false,
+                  "key": "useLatestVersion",
+                  "value": "false",
+                  "description": "If `true`, automatically resolves to the most recent referenced document version for the queried item. One of `versionId` and `useLatestVersion` is required."
+                },
+                {
+                  "disabled": false,
+                  "key": "limitToTypes",
+                  "value": "",
+                  "description": "Comma-separated list of element types to limit results to. Valid values: `0: PARTSTUDIO, 1: ASSEMBLY, 2: DRAWING`."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json;charset=UTF-8; qs=0.09"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "scope",
+                  "value": "OAuth2Internal OAuth2ReadPII OAuth2Read OAuth2Write OAuth2Delete OAuth2Purchase OAuth2Share document.create document.edit document.delete document.read enterprise.create enterprise.read enterprise.edit enterprise.delete enterprise.member.create enterprise.member.read enterprise.member.edit enterprise.member.delete webhook.create webhook.edit webhook.read webhook.delete PLMIntegration"
+                },
+                {
+                  "key": "redirect_uri",
+                  "value": "/oauth/token"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "/oauth/token"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "/oauth/authorize"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "aa8afe65-76db-4ae4-b043-1232e32fdea5",
+              "name": "Success!",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "productstructure",
+                    "whereused"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "documentId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "elementId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "versionId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "configuration",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "partId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "partNumber",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "includeProperties",
+                      "value": "false"
+                    },
+                    {
+                      "key": "filter",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "includeVersionInfo",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "useLatestVersion",
+                      "value": "false"
+                    },
+                    {
+                      "key": "limitToTypes",
+                      "value": ""
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json;charset=UTF-8; qs=0.09"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json;charset=UTF-8; qs=0.09"
+                }
+              ],
+              "body": "{\n  \"defaultConfig\": [\n    {\n      \"displayValue\": \"string\",\n      \"displayValueAbbrUnit\": \"string\",\n      \"id\": \"string\",\n      \"name\": \"string\",\n      \"type\": 3726,\n      \"value\": \"string\"\n    },\n    {\n      \"displayValue\": \"string\",\n      \"displayValueAbbrUnit\": \"string\",\n      \"id\": \"string\",\n      \"name\": \"string\",\n      \"type\": 1969,\n      \"value\": \"string\"\n    }\n  ],\n  \"href\": \"https://mTskPwX.kqtF-IOliLzDgKRiW2qSIzHDkiYB.1eq2CKeWWfkQnK-a\",\n  \"items\": [\n    {\n      \"jsonType\": \"string\",\n      \"href\": \"https://fUMPovgmMFtpYmVCfFzYGbmJ.rujdRaWhvm8tM5Yqz9qQynbm1AgGy.ECtkC1vMisxfCCah6oYtwOISAg2,aMN70KnEpIomH-Tus\",\n      \"id\": \"string\",\n      \"name\": \"string\",\n      \"viewRef\": \"https://lCuCM.ljs6cKIhEa8W5s+Z56G9,cLHKFeKf5vKmP2iH6\",\n      \"configuration\": [\n        {\n          \"displayValue\": \"string\",\n          \"displayValueAbbrUnit\": \"string\",\n          \"id\": \"string\",\n          \"name\": \"string\",\n          \"type\": 1477,\n          \"value\": \"string\"\n        },\n        {\n          \"displayValue\": \"string\",\n          \"displayValueAbbrUnit\": \"string\",\n          \"id\": \"string\",\n          \"name\": \"string\",\n          \"type\": 2784,\n          \"value\": \"string\"\n        }\n      ],\n      \"documentId\": \"string\",\n      \"documentName\": \"string\",\n      \"documentState\": 8779,\n      \"elementId\": \"string\",\n      \"elementType\": 129,\n      \"flattenedBody\": true,\n      \"folderId\": \"string\",\n      \"hasDrawing\": true,\n      \"latestRevision\": true,\n      \"notRevisionManaged\": false,\n      \"partNumber\": \"string\",\n      \"projectId\": \"string\",\n      \"properties\": [\n        {\n          \"jsonType\": \"string\",\n          \"propertyId\": \"string\",\n          \"value\": \"string\"\n        },\n        {\n          \"jsonType\": \"string\",\n          \"propertyId\": \"string\",\n          \"value\": \"string\"\n        }\n      ],\n      \"resourceType\": \"string\",\n      \"revision\": \"string\",\n      \"revisionObsolete\": true,\n      \"standardProperties\": [\n        {\n          \"id\": \"string\",\n          \"name\": \"string\",\n          \"type\": \"string\",\n          \"value\": \"string\"\n        },\n        {\n          \"id\": \"string\",\n          \"name\": \"string\",\n          \"type\": \"string\",\n          \"value\": \"string\"\n        }\n      ],\n      \"thumbnail\": {\n        \"href\": \"https://idWpbHPmhbiyTjLcjTeqYX.xuqhac\",\n        \"id\": \"string\",\n        \"secondarySizes\": [\n          [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ],\n          [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ]\n        ],\n        \"sizes\": [\n          {\n            \"href\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"mediaType\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"renderMode\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"sheetName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"size\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"uniqueId\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"viewOrientation\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          {\n            \"href\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"mediaType\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"renderMode\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"sheetName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"size\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"uniqueId\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"viewOrientation\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        ]\n      },\n      \"thumbnailHref\": \"https://LLsTyGSfUcRnbU.qoneghTD\",\n      \"versionId\": \"string\",\n      \"versionName\": \"string\",\n      \"wvCreatedAt\": \"1995-01-22T20:33:05.130Z\"\n    },\n    {\n      \"jsonType\": \"string\",\n      \"href\": \"https://QBNowXEtxVFY.ubebWQti9otAfiHHNpab8EtpQK8Y4Lx43rPlqb\",\n      \"id\": \"string\",\n      \"name\": \"string\",\n      \"viewRef\": \"http://oznpvVVJdGwuqJbEJhWR.zpwggM8I1pT\",\n      \"configuration\": [\n        {\n          \"displayValue\": \"string\",\n          \"displayValueAbbrUnit\": \"string\",\n          \"id\": \"string\",\n          \"name\": \"string\",\n          \"type\": 765,\n          \"value\": \"string\"\n        },\n        {\n          \"displayValue\": \"string\",\n          \"displayValueAbbrUnit\": \"string\",\n          \"id\": \"string\",\n          \"name\": \"string\",\n          \"type\": 5453,\n          \"value\": \"string\"\n        }\n      ],\n      \"documentId\": \"string\",\n      \"documentName\": \"string\",\n      \"documentState\": 9939,\n      \"elementId\": \"string\",\n      \"elementType\": 7756,\n      \"flattenedBody\": true,\n      \"folderId\": \"string\",\n      \"hasDrawing\": true,\n      \"latestRevision\": true,\n      \"notRevisionManaged\": false,\n      \"partNumber\": \"string\",\n      \"projectId\": \"string\",\n      \"properties\": [\n        {\n          \"jsonType\": \"string\",\n          \"propertyId\": \"string\",\n          \"value\": \"string\"\n        },\n        {\n          \"jsonType\": \"string\",\n          \"propertyId\": \"string\",\n          \"value\": \"string\"\n        }\n      ],\n      \"resourceType\": \"string\",\n      \"revision\": \"string\",\n      \"revisionObsolete\": false,\n      \"standardProperties\": [\n        {\n          \"id\": \"string\",\n          \"name\": \"string\",\n          \"type\": \"string\",\n          \"value\": \"string\"\n        },\n        {\n          \"id\": \"string\",\n          \"name\": \"string\",\n          \"type\": \"string\",\n          \"value\": \"string\"\n        }\n      ],\n      \"thumbnail\": {\n        \"href\": \"https://VELciyfrwUqVgfSv.bihV\",\n        \"id\": \"string\",\n        \"secondarySizes\": [\n          [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ],\n          [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ]\n        ],\n        \"sizes\": [\n          {\n            \"href\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"mediaType\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"renderMode\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"sheetName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"size\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"uniqueId\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"viewOrientation\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          {\n            \"href\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"mediaType\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"renderMode\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"sheetName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"size\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"uniqueId\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"viewOrientation\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        ]\n      },\n      \"thumbnailHref\": \"https://FNwaAzcBUtUfUWxbyTIYzOKVsi.bcndoYvWfzLemVfz9OR.L8AtE1\",\n      \"versionId\": \"string\",\n      \"versionName\": \"string\",\n      \"wvCreatedAt\": \"2014-06-18T08:12:04.555Z\"\n    }\n  ],\n  \"next\": \"http://nbpNBGGvKgFSGNHhCKzWi.pjjgYcmwL5zQaUwk4.x4MNni2f.qwcx8VynBem-2YiBYG2yEV5l\",\n  \"previous\": \"https://KNkruN.pbetVJIixAHTcrL\",\n  \"versions\": [\n    {\n      \"configuration\": [\n        {\n          \"displayValue\": \"string\",\n          \"displayValueAbbrUnit\": \"string\",\n          \"id\": \"string\",\n          \"name\": \"string\",\n          \"type\": 2485,\n          \"value\": \"string\"\n        },\n        {\n          \"displayValue\": \"string\",\n          \"displayValueAbbrUnit\": \"string\",\n          \"id\": \"string\",\n          \"name\": \"string\",\n          \"type\": 2195,\n          \"value\": \"string\"\n        }\n      ],\n      \"createdAt\": \"1957-10-23T16:52:01.786Z\",\n      \"document\": {\n        \"createdBy\": {\n          \"jsonType\": \"string\",\n          \"href\": \"http://PToOQcZEQStrZXIYxsdSztMIlBVy.npIoKy6vmLhy.yjwvlECmKTCgU21ogNy9KWFN\",\n          \"id\": \"string\",\n          \"name\": \"string\",\n          \"viewRef\": \"https://AuSA.ciLFBYWoKnDdOJ8dQ1c9SDXeDOli3LTvuvXYB7XS3TZzrunk7SNrzO8ASxhf\",\n          \"image\": \"string\",\n          \"isOnshapeSupport\": true,\n          \"state\": 5693\n        },\n        \"href\": \"https://SlkxxJDkYrBTJ.duTZg-sNfmeGGTVWwNft54nFmR+.jhb.eraKDLmjRCw\",\n        \"id\": \"string\",\n        \"modifiedBy\": {\n          \"jsonType\": \"string\",\n          \"href\": \"https://Mh.ypdF9m2Tq,H2HAXzqQ3KqrbZ5c6Dn\",\n          \"id\": \"string\",\n          \"name\": \"string\",\n          \"viewRef\": \"http://gWNFHXhzGusN.hnCe-bM2gwmxdgrc7H5EmsrrN2mUdb3\",\n          \"image\": \"string\",\n          \"isOnshapeSupport\": false,\n          \"state\": 4824\n        },\n        \"name\": \"string\",\n        \"state\": 4950,\n        \"storageSize\": 4175,\n        \"viewRef\": \"https://dg.mfVq+iacssthufbqRQ5Qkt,C6nhMf9TFLceZ0PGELXFvVCy\"\n      },\n      \"elementId\": \"string\",\n      \"elementType\": 2429,\n      \"partId\": \"string\",\n      \"partName\": \"string\",\n      \"partNumber\": \"string\",\n      \"revision\": \"string\",\n      \"revisionObsolete\": true,\n      \"version\": {\n        \"href\": \"http://eoFEQoiHEpkGlkmZbjjmtlKQplzxDOJa.elIljF.gjp1Esdml-SmFygkV\",\n        \"id\": \"string\",\n        \"name\": \"string\",\n        \"viewRef\": \"http://cxaMjRkTcSewMGp.rxmXLK-fdUQ4YEwDjCSN.O,J.6HOMSFODQwhROmcf\"\n      }\n    },\n    {\n      \"configuration\": [\n        {\n          \"displayValue\": \"string\",\n          \"displayValueAbbrUnit\": \"string\",\n          \"id\": \"string\",\n          \"name\": \"string\",\n          \"type\": 5335,\n          \"value\": \"string\"\n        },\n        {\n          \"displayValue\": \"string\",\n          \"displayValueAbbrUnit\": \"string\",\n          \"id\": \"string\",\n          \"name\": \"string\",\n          \"type\": 4065,\n          \"value\": \"string\"\n        }\n      ],\n      \"createdAt\": \"1983-06-20T06:57:45.880Z\",\n      \"document\": {\n        \"createdBy\": {\n          \"jsonType\": \"string\",\n          \"href\": \"http://TmyOuIgHQiRgTGxioYYzqBGyQ.hyhHvPWDsSqdYLUccvT-lpw4I5xDUKkeakSz1vu\",\n          \"id\": \"string\",\n          \"name\": \"string\",\n          \"viewRef\": \"http://OBVHTYOcMCSPAjmEsbVGokQwmGdRGC.yvfBhizfCfW,Xa2iWeFx7y+N7YOr2pZ3S4bltmg2+OfA2CZ\",\n          \"image\": \"string\",\n          \"isOnshapeSupport\": true,\n          \"state\": 7173\n        },\n        \"href\": \"https://UFmLdVFcLnx.qalbAs1v,lu,SClNNr3l\",\n        \"id\": \"string\",\n        \"modifiedBy\": {\n          \"jsonType\": \"string\",\n          \"href\": \"https://DOSw.oycpXenjCjIIpOWQXJcYqYLBnSI7C-X,UGGorJ,oQohZR-BEqzjtHVTuuPOnu2hA\",\n          \"id\": \"string\",\n          \"name\": \"string\",\n          \"viewRef\": \"http://xSCLZEAgb.rcglHrfSApBw3.6zoqg1OdpZT-\",\n          \"image\": \"string\",\n          \"isOnshapeSupport\": false,\n          \"state\": 9009\n        },\n        \"name\": \"string\",\n        \"state\": 4465,\n        \"storageSize\": 4773,\n        \"viewRef\": \"https://grCXAHaucneYauMpw.xyddq7CWd4EwkYn\"\n      },\n      \"elementId\": \"string\",\n      \"elementType\": 6045,\n      \"partId\": \"string\",\n      \"partName\": \"string\",\n      \"partNumber\": \"string\",\n      \"revision\": \"string\",\n      \"revisionObsolete\": false,\n      \"version\": {\n        \"href\": \"http://slVOJEJdDfhp.yqzvykQqPzfjG\",\n        \"id\": \"string\",\n        \"name\": \"string\",\n        \"viewRef\": \"https://ckguYUOKAChCdkoZ.eevfnXeJPUL2-F.H,5GyIBkZrZ503jhubmVlwct5Az77X\"\n      }\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://cad.onshape.com/api/v16",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "basic",
+    "basic": [
+      {
+        "key": "username",
+        "value": "{{basicAuthUsername}}"
+      },
+      {
+        "key": "password",
+        "value": "{{basicAuthPassword}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "a369cf70-de65-4f0d-93a2-6fb1b3c3327b",
+    "name": "Onshape REST Account ProductStructure API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "## Welcome to the Onshape REST API Explorer\n\n**See the [API Explorer Guide](https://onshape-public.github.io/docs/api-intro/explorer/) for help navigating this page.**\n\n### Using this page\n1. Sign in to your [Onshape](https://cad.onshape.com) account in another tab.\n2. Click the `Try it out` button below. It toggles to a `Cancel` button when selected.\n\n### Authenticating\nTo authenticate your calls, click the `Authorize` button. See [API Explorer Guide: Authentication](https://onshape-public.github.io/docs/api-intro/explorer/#authentication) for details. Calls made when authenticated via API Keys or OAuth count against your annual [API limits](https://onshape-public.github.io/docs/auth/limits/#annual-api-call-limits).\n* **Tip:** To ensure the current session isn't used when trying other authentication techniques, make sure to [remove the Onshape cookie](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site) as per the instructions for your browser, or use a private or incognito window.\n\n### Additional resources\n\n* [Onshape API Guide](https://onshape-public.github.io/docs/): Our full suite of developer guides, to be used as an accompaniment to this API Explorer.\n* [Onshape Developer Portal](https://cad.onshape.com/appstore/dev-portal): The Onshape portal for managing your API keys, OAuth2 credentials, your Onshape applications, and your Onshape App Store entries.\n* [Authentication Guide](https://onshape-public.github.io/docs/auth/): Our guide to using API keys, request signatures, and OAuth2 in your Onshape applications.\n\nContact Support:\n Email: api-support@onshape.zendesk.com",
+      "type": "text/plain"
+    }
+  }
+}

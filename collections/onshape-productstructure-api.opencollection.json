@@ -1,0 +1,114 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Onshape REST Account ProductStructure API",
+    "version": "1.218.84032-34acba44be17"
+  },
+  "request": {
+    "auth": {
+      "type": "basic",
+      "username": "{{username}}",
+      "password": "{{password}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "ProductStructure",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Find where a part or assembly is used.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://cad.onshape.com/api/v16/productstructure/whereused",
+            "params": [
+              {
+                "name": "documentId",
+                "value": "",
+                "type": "query",
+                "description": "Document that contains the part or assembly."
+              },
+              {
+                "name": "elementId",
+                "value": "",
+                "type": "query",
+                "description": "Element that contains the part or assembly."
+              },
+              {
+                "name": "versionId",
+                "value": "",
+                "type": "query",
+                "description": "Version that contains the part or assembly. One of `versionId` and `useLatestVersion` is required."
+              },
+              {
+                "name": "configuration",
+                "value": "",
+                "type": "query",
+                "description": "URL-encoded string of configuration values (separated by `;`). See the [Configurations API Guide](https://onshape-public.github.io/docs/api-adv/configs/) for details."
+              },
+              {
+                "name": "partId",
+                "value": "",
+                "type": "query",
+                "description": "Part to find. When `elementId` is a Part Studio, `partId` or `partNumber` is required. Call [getPartsWMVE](https://cad.onshape.com/glassworks/explorer/#/Part/getPartsWMVE) to get a list of parts in the Part Studio."
+              },
+              {
+                "name": "partNumber",
+                "value": "",
+                "type": "query",
+                "description": "Part to find. When `elementId` is a Part Studio, `partId` or `partNumber` is required. Call [getPartsWMVE](https://cad.onshape.com/glassworks/explorer/#/Part/getPartsWMVE) to get a list of parts in the Part Studio."
+              },
+              {
+                "name": "includeProperties",
+                "value": "",
+                "type": "query",
+                "description": "If true, include metadata properties for each result item."
+              },
+              {
+                "name": "filter",
+                "value": "",
+                "type": "query",
+                "description": "Filter results by one of the following:  `0: LATEST_REVISION, 1: ALL_REVISIONS, 2: ALL_VERSIONS (default), 3: ALL, 5: LATEST_VERSIONS, 6: MOST_RECENT_REVISION`."
+              },
+              {
+                "name": "includeVersionInfo",
+                "value": "",
+                "type": "query",
+                "description": "If `true`, include the list of document versions in which the queried item has been referenced by other documents. Each entry contains the version ID and name."
+              },
+              {
+                "name": "useLatestVersion",
+                "value": "",
+                "type": "query",
+                "description": "If `true`, automatically resolves to the most recent referenced document version for the queried item. One of `versionId` and `useLatestVersion` is required."
+              },
+              {
+                "name": "limitToTypes",
+                "value": "",
+                "type": "query",
+                "description": "Comma-separated list of element types to limit results to. Valid values: `0: PARTSTUDIO, 1: ASSEMBLY, 2: DRAWING`."
+              }
+            ],
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "/oauth/authorize",
+              "accessTokenUrl": "/oauth/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Only supported for Enterprise and Professional plans. See [Dev Docs: Where Used](https://onshape-public.github.io/docs/api-adv/relmgmt/#where-used) for a tutorial on using this endpoint."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,736 @@
+{
+  "item": [
+    {
+      "id": "0410255d-d6eb-4c95-89a7-41fcaa431b28",
+      "name": "FeatureStudio",
+      "description": {
+        "content": "Access and manage Feature Studio Elements.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "e4ec4a70-242a-4072-83f9-03a5c5fdabb3",
+          "name": "Create a new Feature Studio tab in a document.",
+          "request": {
+            "name": "Create a new Feature Studio tab in a document.",
+            "description": {
+              "content": "Specify the name for the new tab in the request body.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "featurestudios",
+                "d",
+                ":did",
+                "w",
+                ":wid"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "did",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "wid",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json;charset=UTF-8; qs=0.09"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json;charset=UTF-8; qs=0.09"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "scope",
+                  "value": "OAuth2Internal OAuth2ReadPII OAuth2Read OAuth2Write OAuth2Delete OAuth2Purchase OAuth2Share document.create document.edit document.delete document.read enterprise.create enterprise.read enterprise.edit enterprise.delete enterprise.member.create enterprise.member.read enterprise.member.edit enterprise.member.delete webhook.create webhook.edit webhook.read webhook.delete PLMIntegration"
+                },
+                {
+                  "key": "redirect_uri",
+                  "value": "/oauth/token"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "/oauth/token"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "/oauth/authorize"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "c004be02-5b46-4431-9305-5b75bfe45deb",
+              "name": "default response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "featurestudios",
+                    "d",
+                    ":did",
+                    "w",
+                    ":wid"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "did",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "wid",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json;charset=UTF-8; qs=0.09"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json;charset=UTF-8; qs=0.09"
+                }
+              ],
+              "body": "{\n  \"accelerationUnits\": \"string\",\n  \"angleUnits\": \"string\",\n  \"angularVelocityUnits\": \"string\",\n  \"applicationTarget\": {\n    \"baseHref\": \"https://RPgulEbGfIfO.lgoyxqEDzRKFQtEcfD.b9C8eRX\",\n    \"clientId\": \"string\",\n    \"supportsCollaboration\": true,\n    \"tabIconHref\": \"http://zL.gfkYjG\"\n  },\n  \"areaUnits\": \"string\",\n  \"dataType\": \"string\",\n  \"deleted\": true,\n  \"densityUnits\": \"string\",\n  \"elementType\": \"BLOB\",\n  \"energyUnits\": \"string\",\n  \"filename\": \"string\",\n  \"forceUnits\": \"string\",\n  \"foreignDataId\": \"string\",\n  \"frequencyUnits\": \"string\",\n  \"id\": \"string\",\n  \"lengthUnits\": \"string\",\n  \"massUnits\": \"string\",\n  \"microversionId\": \"string\",\n  \"momentUnits\": \"string\",\n  \"name\": \"string\",\n  \"pressureUnits\": \"string\",\n  \"prettyType\": \"string\",\n  \"safeToShow\": true,\n  \"specifiedUnit\": \"string\",\n  \"thumbnailInfo\": {\n    \"href\": \"http://r.hmtnL,sI7X2d0DDJ73Taz6z1bB\",\n    \"id\": \"string\",\n    \"secondarySizes\": [\n      [\n        {\n          \"href\": \"http://KyO.zbym4Kx7RCSSYhdxefhcfmdrj0g99Qf8fPAkzMwwVlvwY.YoZDeT-V\",\n          \"mediaType\": \"string\",\n          \"renderMode\": \"string\",\n          \"sheetName\": \"string\",\n          \"size\": \"string\",\n          \"uniqueId\": \"string\",\n          \"viewOrientation\": \"string\"\n        },\n        {\n          \"href\": \"http://qLFOPdshEjhnTxKt.uqRX.yV\",\n          \"mediaType\": \"string\",\n          \"renderMode\": \"string\",\n          \"sheetName\": \"string\",\n          \"size\": \"string\",\n          \"uniqueId\": \"string\",\n          \"viewOrientation\": \"string\"\n        }\n      ],\n      [\n        {\n          \"href\": \"https://L.kwqmnPFR+yePWAdXD9YJHzn-LPxiHc9wKV6Khjga1BeH\",\n          \"mediaType\": \"string\",\n          \"renderMode\": \"string\",\n          \"sheetName\": \"string\",\n          \"size\": \"string\",\n          \"uniqueId\": \"string\",\n          \"viewOrientation\": \"string\"\n        },\n        {\n          \"href\": \"https://bNnYnarZIUHgzeDvYyntphj.kdxvq.c,E\",\n          \"mediaType\": \"string\",\n          \"renderMode\": \"string\",\n          \"sheetName\": \"string\",\n          \"size\": \"string\",\n          \"uniqueId\": \"string\",\n          \"viewOrientation\": \"string\"\n        }\n      ]\n    ],\n    \"sizes\": [\n      {\n        \"href\": \"https://cVWIEeFI.rfubZbg7TvC-Fkjjlg9k3\",\n        \"mediaType\": \"string\",\n        \"renderMode\": \"string\",\n        \"sheetName\": \"string\",\n        \"size\": \"string\",\n        \"uniqueId\": \"string\",\n        \"viewOrientation\": \"string\"\n      },\n      {\n        \"href\": \"https://sXAoiCIbcmedn.opjpAGzD0BjOR2E1eqY4.B.StflEnpP2DKYv1c8vf+TZQacK,wt8HpC5\",\n        \"mediaType\": \"string\",\n        \"renderMode\": \"string\",\n        \"sheetName\": \"string\",\n        \"size\": \"string\",\n        \"uniqueId\": \"string\",\n        \"viewOrientation\": \"string\"\n      }\n    ]\n  },\n  \"thumbnails\": \"http://FhwBfRSwviZcOOAemXTxbtPfN.cbrSuZTPNlavRxXEipe3lG+DGUpdvC+sA,7xRI\",\n  \"timeUnits\": \"string\",\n  \"type\": \"string\",\n  \"unupdatable\": false,\n  \"volumeUnits\": \"string\",\n  \"zip\": {\n    \"files\": [\n      \"string\",\n      \"string\"\n    ]\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c9b45846-c820-4a69-8038-edf21a1bcad7",
+          "name": "Get the text for a Feature Studio element.",
+          "request": {
+            "name": "Get the text for a Feature Studio element.",
+            "description": {},
+            "url": {
+              "path": [
+                "featurestudios",
+                "d",
+                ":did",
+                ":wvm",
+                ":wvmid",
+                "e",
+                ":eid"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "did",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "wvm",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "wvmid",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "eid",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json;charset=UTF-8; qs=0.09"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "scope",
+                  "value": "OAuth2Internal OAuth2ReadPII OAuth2Read OAuth2Write OAuth2Delete OAuth2Purchase OAuth2Share document.create document.edit document.delete document.read enterprise.create enterprise.read enterprise.edit enterprise.delete enterprise.member.create enterprise.member.read enterprise.member.edit enterprise.member.delete webhook.create webhook.edit webhook.read webhook.delete PLMIntegration"
+                },
+                {
+                  "key": "redirect_uri",
+                  "value": "/oauth/token"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "/oauth/token"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "/oauth/authorize"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "bec84168-e581-49ab-a875-036ec9523b53",
+              "name": "default response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "featurestudios",
+                    "d",
+                    ":did",
+                    ":wvm",
+                    ":wvmid",
+                    "e",
+                    ":eid"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "did",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "wvm",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "wvmid",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "eid",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json;charset=UTF-8; qs=0.09"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json;charset=UTF-8; qs=0.09"
+                }
+              ],
+              "body": "{\n  \"btType\": \"string\",\n  \"libraryVersion\": 6160,\n  \"microversionSkew\": true,\n  \"rejectMicroversionSkew\": false,\n  \"serializationVersion\": \"string\",\n  \"sourceMicroversion\": \"string\",\n  \"contents\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "8afc45e0-441c-4372-a9a6-f90ebc6d5f87",
+          "name": "Update the text for a Feature Studio element.",
+          "request": {
+            "name": "Update the text for a Feature Studio element.",
+            "description": {},
+            "url": {
+              "path": [
+                "featurestudios",
+                "d",
+                ":did",
+                ":wvm",
+                ":wvmid",
+                "e",
+                ":eid"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "did",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "wvm",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "wvmid",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "eid",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json;charset=UTF-8; qs=0.09"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json;charset=UTF-8; qs=0.09"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "scope",
+                  "value": "OAuth2Internal OAuth2ReadPII OAuth2Read OAuth2Write OAuth2Delete OAuth2Purchase OAuth2Share document.create document.edit document.delete document.read enterprise.create enterprise.read enterprise.edit enterprise.delete enterprise.member.create enterprise.member.read enterprise.member.edit enterprise.member.delete webhook.create webhook.edit webhook.read webhook.delete PLMIntegration"
+                },
+                {
+                  "key": "redirect_uri",
+                  "value": "/oauth/token"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "/oauth/token"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "/oauth/authorize"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"btType\": \"<string>\",\n  \"libraryVersion\": \"<integer>\",\n  \"microversionSkew\": \"<boolean>\",\n  \"rejectMicroversionSkew\": \"<boolean>\",\n  \"serializationVersion\": \"<string>\",\n  \"sourceMicroversion\": \"<string>\",\n  \"contents\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "5d38557d-fda1-4399-985b-c566b64b9c42",
+              "name": "default response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "featurestudios",
+                    "d",
+                    ":did",
+                    ":wvm",
+                    ":wvmid",
+                    "e",
+                    ":eid"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "did",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "wvm",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "wvmid",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "eid",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json;charset=UTF-8; qs=0.09"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"btType\": \"<string>\",\n  \"libraryVersion\": \"<integer>\",\n  \"microversionSkew\": \"<boolean>\",\n  \"rejectMicroversionSkew\": \"<boolean>\",\n  \"serializationVersion\": \"<string>\",\n  \"sourceMicroversion\": \"<string>\",\n  \"contents\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json;charset=UTF-8; qs=0.09"
+                }
+              ],
+              "body": "{\n  \"btType\": \"<string>\",\n  \"libraryVersion\": \"<integer>\",\n  \"microversionSkew\": \"<boolean>\",\n  \"rejectMicroversionSkew\": \"<boolean>\",\n  \"serializationVersion\": \"<string>\",\n  \"sourceMicroversion\": \"<string>\",\n  \"contents\": \"<string>\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "0a06ae7d-e86e-45b7-ab53-cbb24599d08b",
+          "name": "Get the feature specs for a Feature Studio element.",
+          "request": {
+            "name": "Get the feature specs for a Feature Studio element.",
+            "description": {},
+            "url": {
+              "path": [
+                "featurestudios",
+                "d",
+                ":did",
+                ":wvm",
+                ":wvmid",
+                "e",
+                ":eid",
+                "featurespecs"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "did",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "wvm",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "wvmid",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "eid",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json;charset=UTF-8; qs=0.09"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "scope",
+                  "value": "OAuth2Internal OAuth2ReadPII OAuth2Read OAuth2Write OAuth2Delete OAuth2Purchase OAuth2Share document.create document.edit document.delete document.read enterprise.create enterprise.read enterprise.edit enterprise.delete enterprise.member.create enterprise.member.read enterprise.member.edit enterprise.member.delete webhook.create webhook.edit webhook.read webhook.delete PLMIntegration"
+                },
+                {
+                  "key": "redirect_uri",
+                  "value": "/oauth/token"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "/oauth/token"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "/oauth/authorize"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "6169c472-7f1c-4997-b852-c4c017ca863a",
+              "name": "default response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "featurestudios",
+                    "d",
+                    ":did",
+                    ":wvm",
+                    ":wvmid",
+                    "e",
+                    ":eid",
+                    "featurespecs"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "did",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "wvm",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "wvmid",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "eid",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json;charset=UTF-8; qs=0.09"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json;charset=UTF-8; qs=0.09"
+                }
+              ],
+              "body": "{\n  \"btType\": \"string\",\n  \"featureSpecs\": [\n    {\n      \"allParameters\": [\n        {\n          \"btType\": \"string\",\n          \"columnName\": \"string\",\n          \"defaultValue\": {\n            \"btType\": \"string\",\n            \"libraryRelationType\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"nodeId\": \"string\",\n            \"parameterId\": \"string\",\n            \"parameterName\": \"string\",\n            \"valueString\": \"string\"\n          },\n          \"enumOptions\": [\n            \"string\",\n            \"string\"\n          ],\n          \"iconUri\": \"string\",\n          \"localizableName\": \"string\",\n          \"parameterDescription\": \"string\",\n          \"parameterId\": \"string\",\n          \"parameterName\": \"string\",\n          \"quantityType\": \"TIME\",\n          \"stringsToLocalize\": [\n            \"string\",\n            \"string\"\n          ],\n          \"uiHint\": \"string\",\n          \"uiHints\": [\n            \"QUERY_VARIABLE_NAME\",\n            \"READ_ONLY\"\n          ],\n          \"visibilityCondition\": {\n            \"btType\": \"string\",\n            \"selfOrChildAlwaysVisible\": false\n          }\n        },\n        {\n          \"btType\": \"string\",\n          \"columnName\": \"string\",\n          \"defaultValue\": {\n            \"btType\": \"string\",\n            \"libraryRelationType\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"nodeId\": \"string\",\n            \"parameterId\": \"string\",\n            \"parameterName\": \"string\",\n            \"valueString\": \"string\"\n          },\n          \"enumOptions\": [\n            \"string\",\n            \"string\"\n          ],\n          \"iconUri\": \"string\",\n          \"localizableName\": \"string\",\n          \"parameterDescription\": \"string\",\n          \"parameterId\": \"string\",\n          \"parameterName\": \"string\",\n          \"quantityType\": \"AREA\",\n          \"stringsToLocalize\": [\n            \"string\",\n            \"string\"\n          ],\n          \"uiHint\": \"string\",\n          \"uiHints\": [\n            \"SHOW_EXPRESSION\",\n            \"UNCONFIGURABLE\"\n          ],\n          \"visibilityCondition\": {\n            \"btType\": \"string\",\n            \"selfOrChildAlwaysVisible\": false\n          }\n        }\n      ],\n      \"btType\": \"string\",\n      \"computedPartPropertySpec\": false,\n      \"descriptionImageUri\": \"string\",\n      \"editingLogic\": {\n        \"btType\": \"string\",\n        \"functionName\": \"string\",\n        \"wantsClickedButton\": true,\n        \"wantsHiddenBodies\": false,\n        \"wantsIsCreating\": true,\n        \"wantsSpecifiedParameters\": true\n      },\n      \"featureNameTemplate\": \"string\",\n      \"featureType\": \"string\",\n      \"featureTypeDescription\": \"string\",\n      \"featureTypeName\": \"string\",\n      \"filterSelectors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fullFeatureType\": \"string\",\n      \"groups\": [\n        {\n          \"btType\": \"string\",\n          \"collapsedByDefault\": true,\n          \"drivingParameterId\": \"string\",\n          \"groupId\": \"string\",\n          \"groupName\": \"string\",\n          \"groupOrParameterIds\": [\n            \"string\",\n            \"string\"\n          ],\n          \"localizableName\": \"string\",\n          \"stringsToLocalize\": [\n            \"string\",\n            \"string\"\n          ]\n        },\n        {\n          \"btType\": \"string\",\n          \"collapsedByDefault\": true,\n          \"drivingParameterId\": \"string\",\n          \"groupId\": \"string\",\n          \"groupName\": \"string\",\n          \"groupOrParameterIds\": [\n            \"string\",\n            \"string\"\n          ],\n          \"localizableName\": \"string\",\n          \"stringsToLocalize\": [\n            \"string\",\n            \"string\"\n          ]\n        }\n      ],\n      \"iconUri\": \"string\",\n      \"languageVersion\": 8043,\n      \"linkedLocationName\": \"string\",\n      \"localizableName\": \"string\",\n      \"locationInfos\": [\n        {\n          \"btType\": \"string\",\n          \"character\": 8404,\n          \"column\": 2272,\n          \"document\": \"string\",\n          \"elementMicroversion\": \"string\",\n          \"endCharacter\": 3823,\n          \"endColumn\": 5521,\n          \"endLine\": 6418,\n          \"fromNode\": {\n            \"atomic\": false,\n            \"btType\": \"string\",\n            \"documentationType\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"endSourceLocation\": 3509,\n            \"nodeId\": \"string\",\n            \"shortDescriptor\": \"string\",\n            \"spaceAfter\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"spaceBefore\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"spaceDefault\": true,\n            \"startSourceLocation\": 5883\n          },\n          \"fromTemplate\": {\n            \"value\": \"<Circular reference to #/components/schemas/BTLocationInfo-226 detected>\"\n          },\n          \"languageVersion\": 4791,\n          \"line\": 405,\n          \"moduleIds\": {\n            \"btType\": \"string\",\n            \"documentId\": \"string\",\n            \"elementId\": \"string\",\n            \"versionId\": \"string\"\n          },\n          \"nodeId\": \"string\",\n          \"parseNodeId\": \"string\",\n          \"parseNodeIdRaw\": {\n            \"empty\": false\n          },\n          \"topLevel\": \"string\",\n          \"version\": \"string\"\n        },\n        {\n          \"btType\": \"string\",\n          \"character\": 8703,\n          \"column\": 590,\n          \"document\": \"string\",\n          \"elementMicroversion\": \"string\",\n          \"endCharacter\": 9376,\n          \"endColumn\": 8413,\n          \"endLine\": 9070,\n          \"fromNode\": {\n            \"atomic\": true,\n            \"btType\": \"string\",\n            \"documentationType\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"endSourceLocation\": 6682,\n            \"nodeId\": \"string\",\n            \"shortDescriptor\": \"string\",\n            \"spaceAfter\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"spaceBefore\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"spaceDefault\": false,\n            \"startSourceLocation\": 3959\n          },\n          \"fromTemplate\": {\n            \"value\": \"<Circular reference to #/components/schemas/BTLocationInfo-226 detected>\"\n          },\n          \"languageVersion\": 1837,\n          \"line\": 1564,\n          \"moduleIds\": {\n            \"btType\": \"string\",\n            \"documentId\": \"string\",\n            \"elementId\": \"string\",\n            \"versionId\": \"string\"\n          },\n          \"nodeId\": \"string\",\n          \"parseNodeId\": \"string\",\n          \"parseNodeIdRaw\": {\n            \"empty\": true\n          },\n          \"topLevel\": \"string\",\n          \"version\": \"string\"\n        }\n      ],\n      \"manipulatorChangeFunction\": \"string\",\n      \"namespace\": \"string\",\n      \"namespaceTheSource\": true,\n      \"parameterIdToSpec\": {\n        \"key_0\": {\n          \"btType\": \"string\",\n          \"columnName\": \"string\",\n          \"defaultValue\": {\n            \"btType\": \"string\",\n            \"libraryRelationType\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"nodeId\": \"string\",\n            \"parameterId\": \"string\",\n            \"parameterName\": \"string\",\n            \"valueString\": \"string\"\n          },\n          \"enumOptions\": [\n            \"string\",\n            \"string\"\n          ],\n          \"iconUri\": \"string\",\n          \"localizableName\": \"string\",\n          \"parameterDescription\": \"string\",\n          \"parameterId\": \"string\",\n          \"parameterName\": \"string\",\n          \"quantityType\": \"STRING\",\n          \"stringsToLocalize\": [\n            \"string\",\n            \"string\"\n          ],\n          \"uiHint\": \"string\",\n          \"uiHints\": [\n            \"COLLAPSE_ARRAY_ITEMS\",\n            \"ALWAYS_USE_DEPENDENCIES\"\n          ],\n          \"visibilityCondition\": {\n            \"btType\": \"string\",\n            \"selfOrChildAlwaysVisible\": true\n          }\n        }\n      },\n      \"parameterLibraryDefinitionIds\": [\n        \"string\",\n        \"string\"\n      ],\n      \"parameters\": [\n        {\n          \"btType\": \"string\",\n          \"columnName\": \"string\",\n          \"defaultValue\": {\n            \"btType\": \"string\",\n            \"libraryRelationType\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"nodeId\": \"string\",\n            \"parameterId\": \"string\",\n            \"parameterName\": \"string\",\n            \"valueString\": \"string\"\n          },\n          \"enumOptions\": [\n            \"string\",\n            \"string\"\n          ],\n          \"iconUri\": \"string\",\n          \"localizableName\": \"string\",\n          \"parameterDescription\": \"string\",\n          \"parameterId\": \"string\",\n          \"parameterName\": \"string\",\n          \"quantityType\": \"ENERGY\",\n          \"stringsToLocalize\": [\n            \"string\",\n            \"string\"\n          ],\n          \"uiHint\": \"string\",\n          \"uiHints\": [\n            \"SHOW_CREATE_SELECTION\",\n            \"COLLAPSE_ARRAY_ITEMS\"\n          ],\n          \"visibilityCondition\": {\n            \"btType\": \"string\",\n            \"selfOrChildAlwaysVisible\": true\n          }\n        },\n        {\n          \"btType\": \"string\",\n          \"columnName\": \"string\",\n          \"defaultValue\": {\n            \"btType\": \"string\",\n            \"libraryRelationType\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"nodeId\": \"string\",\n            \"parameterId\": \"string\",\n            \"parameterName\": \"string\",\n            \"valueString\": \"string\"\n          },\n          \"enumOptions\": [\n            \"string\",\n            \"string\"\n          ],\n          \"iconUri\": \"string\",\n          \"localizableName\": \"string\",\n          \"parameterDescription\": \"string\",\n          \"parameterId\": \"string\",\n          \"parameterName\": \"string\",\n          \"quantityType\": \"ANYTHING\",\n          \"stringsToLocalize\": [\n            \"string\",\n            \"string\"\n          ],\n          \"uiHint\": \"string\",\n          \"uiHints\": [\n            \"VARIABLE_NAME\",\n            \"SHOW_INLINE_CONFIG_INPUTS\"\n          ],\n          \"visibilityCondition\": {\n            \"btType\": \"string\",\n            \"selfOrChildAlwaysVisible\": true\n          }\n        }\n      ],\n      \"signature\": \"string\",\n      \"sourceLocation\": {\n        \"btType\": \"string\",\n        \"character\": 3988,\n        \"column\": 5867,\n        \"document\": \"string\",\n        \"elementMicroversion\": \"string\",\n        \"endCharacter\": 8768,\n        \"endColumn\": 7587,\n        \"endLine\": 1524,\n        \"fromNode\": {\n          \"atomic\": true,\n          \"btType\": \"string\",\n          \"documentationType\": \"UNDOCUMENTABLE\",\n          \"endSourceLocation\": 7067,\n          \"nodeId\": \"string\",\n          \"shortDescriptor\": \"string\",\n          \"spaceAfter\": {\n            \"btType\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"lines\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"nodeId\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"text\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"spaceBefore\": {\n            \"btType\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"lines\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"nodeId\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"text\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"spaceDefault\": true,\n          \"startSourceLocation\": 4103\n        },\n        \"fromTemplate\": {\n          \"value\": \"<Circular reference to #/components/schemas/BTLocationInfo-226 detected>\"\n        },\n        \"languageVersion\": 2807,\n        \"line\": 6148,\n        \"moduleIds\": {\n          \"btType\": \"string\",\n          \"documentId\": \"string\",\n          \"elementId\": \"string\",\n          \"versionId\": \"string\"\n        },\n        \"nodeId\": \"string\",\n        \"parseNodeId\": \"string\",\n        \"parseNodeIdRaw\": {\n          \"empty\": false\n        },\n        \"topLevel\": \"string\",\n        \"version\": \"string\"\n      },\n      \"sourceMicroversionId\": \"string\",\n      \"stringsToLocalize\": [\n        \"string\",\n        \"string\"\n      ],\n      \"tableSpec\": true,\n      \"toleranceSpec\": false,\n      \"tooltipTemplate\": \"string\",\n      \"uiHints\": [\n        \"QUERY_VARIABLE_NAME\",\n        \"ALWAYS_USE_DEPENDENCIES\"\n      ],\n      \"variableStudioReferenceSpec\": false\n    },\n    {\n      \"allParameters\": [\n        {\n          \"btType\": \"string\",\n          \"columnName\": \"string\",\n          \"defaultValue\": {\n            \"btType\": \"string\",\n            \"libraryRelationType\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"nodeId\": \"string\",\n            \"parameterId\": \"string\",\n            \"parameterName\": \"string\",\n            \"valueString\": \"string\"\n          },\n          \"enumOptions\": [\n            \"string\",\n            \"string\"\n          ],\n          \"iconUri\": \"string\",\n          \"localizableName\": \"string\",\n          \"parameterDescription\": \"string\",\n          \"parameterId\": \"string\",\n          \"parameterName\": \"string\",\n          \"quantityType\": \"DENSITY\",\n          \"stringsToLocalize\": [\n            \"string\",\n            \"string\"\n          ],\n          \"uiHint\": \"string\",\n          \"uiHints\": [\n            \"CONTROL_VISIBILITY\",\n            \"HIDE_LABEL\"\n          ],\n          \"visibilityCondition\": {\n            \"btType\": \"string\",\n            \"selfOrChildAlwaysVisible\": false\n          }\n        },\n        {\n          \"btType\": \"string\",\n          \"columnName\": \"string\",\n          \"defaultValue\": {\n            \"btType\": \"string\",\n            \"libraryRelationType\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"nodeId\": \"string\",\n            \"parameterId\": \"string\",\n            \"parameterName\": \"string\",\n            \"valueString\": \"string\"\n          },\n          \"enumOptions\": [\n            \"string\",\n            \"string\"\n          ],\n          \"iconUri\": \"string\",\n          \"localizableName\": \"string\",\n          \"parameterDescription\": \"string\",\n          \"parameterId\": \"string\",\n          \"parameterName\": \"string\",\n          \"quantityType\": \"ENERGY\",\n          \"stringsToLocalize\": [\n            \"string\",\n            \"string\"\n          ],\n          \"uiHint\": \"string\",\n          \"uiHints\": [\n            \"MATCH_LAST_ARRAY_ITEM\",\n            \"PRIMARY_AXIS\"\n          ],\n          \"visibilityCondition\": {\n            \"btType\": \"string\",\n            \"selfOrChildAlwaysVisible\": true\n          }\n        }\n      ],\n      \"btType\": \"string\",\n      \"computedPartPropertySpec\": false,\n      \"descriptionImageUri\": \"string\",\n      \"editingLogic\": {\n        \"btType\": \"string\",\n        \"functionName\": \"string\",\n        \"wantsClickedButton\": false,\n        \"wantsHiddenBodies\": true,\n        \"wantsIsCreating\": false,\n        \"wantsSpecifiedParameters\": false\n      },\n      \"featureNameTemplate\": \"string\",\n      \"featureType\": \"string\",\n      \"featureTypeDescription\": \"string\",\n      \"featureTypeName\": \"string\",\n      \"filterSelectors\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fullFeatureType\": \"string\",\n      \"groups\": [\n        {\n          \"btType\": \"string\",\n          \"collapsedByDefault\": false,\n          \"drivingParameterId\": \"string\",\n          \"groupId\": \"string\",\n          \"groupName\": \"string\",\n          \"groupOrParameterIds\": [\n            \"string\",\n            \"string\"\n          ],\n          \"localizableName\": \"string\",\n          \"stringsToLocalize\": [\n            \"string\",\n            \"string\"\n          ]\n        },\n        {\n          \"btType\": \"string\",\n          \"collapsedByDefault\": false,\n          \"drivingParameterId\": \"string\",\n          \"groupId\": \"string\",\n          \"groupName\": \"string\",\n          \"groupOrParameterIds\": [\n            \"string\",\n            \"string\"\n          ],\n          \"localizableName\": \"string\",\n          \"stringsToLocalize\": [\n            \"string\",\n            \"string\"\n          ]\n        }\n      ],\n      \"iconUri\": \"string\",\n      \"languageVersion\": 3080,\n      \"linkedLocationName\": \"string\",\n      \"localizableName\": \"string\",\n      \"locationInfos\": [\n        {\n          \"btType\": \"string\",\n          \"character\": 6703,\n          \"column\": 2485,\n          \"document\": \"string\",\n          \"elementMicroversion\": \"string\",\n          \"endCharacter\": 9446,\n          \"endColumn\": 5369,\n          \"endLine\": 5710,\n          \"fromNode\": {\n            \"atomic\": false,\n            \"btType\": \"string\",\n            \"documentationType\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"endSourceLocation\": 5886,\n            \"nodeId\": \"string\",\n            \"shortDescriptor\": \"string\",\n            \"spaceAfter\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"spaceBefore\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"spaceDefault\": true,\n            \"startSourceLocation\": 8033\n          },\n          \"fromTemplate\": {\n            \"value\": \"<Circular reference to #/components/schemas/BTLocationInfo-226 detected>\"\n          },\n          \"languageVersion\": 8978,\n          \"line\": 7131,\n          \"moduleIds\": {\n            \"btType\": \"string\",\n            \"documentId\": \"string\",\n            \"elementId\": \"string\",\n            \"versionId\": \"string\"\n          },\n          \"nodeId\": \"string\",\n          \"parseNodeId\": \"string\",\n          \"parseNodeIdRaw\": {\n            \"empty\": false\n          },\n          \"topLevel\": \"string\",\n          \"version\": \"string\"\n        },\n        {\n          \"btType\": \"string\",\n          \"character\": 8569,\n          \"column\": 4739,\n          \"document\": \"string\",\n          \"elementMicroversion\": \"string\",\n          \"endCharacter\": 6815,\n          \"endColumn\": 6841,\n          \"endLine\": 6198,\n          \"fromNode\": {\n            \"atomic\": false,\n            \"btType\": \"string\",\n            \"documentationType\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"endSourceLocation\": 9734,\n            \"nodeId\": \"string\",\n            \"shortDescriptor\": \"string\",\n            \"spaceAfter\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"spaceBefore\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"spaceDefault\": true,\n            \"startSourceLocation\": 70\n          },\n          \"fromTemplate\": {\n            \"value\": \"<Circular reference to #/components/schemas/BTLocationInfo-226 detected>\"\n          },\n          \"languageVersion\": 5837,\n          \"line\": 4430,\n          \"moduleIds\": {\n            \"btType\": \"string\",\n            \"documentId\": \"string\",\n            \"elementId\": \"string\",\n            \"versionId\": \"string\"\n          },\n          \"nodeId\": \"string\",\n          \"parseNodeId\": \"string\",\n          \"parseNodeIdRaw\": {\n            \"empty\": true\n          },\n          \"topLevel\": \"string\",\n          \"version\": \"string\"\n        }\n      ],\n      \"manipulatorChangeFunction\": \"string\",\n      \"namespace\": \"string\",\n      \"namespaceTheSource\": false,\n      \"parameterIdToSpec\": {\n        \"key_0\": {\n          \"btType\": \"string\",\n          \"columnName\": \"string\",\n          \"defaultValue\": {\n            \"btType\": \"string\",\n            \"libraryRelationType\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"nodeId\": \"string\",\n            \"parameterId\": \"string\",\n            \"parameterName\": \"string\",\n            \"valueString\": \"string\"\n          },\n          \"enumOptions\": [\n            \"string\",\n            \"string\"\n          ],\n          \"iconUri\": \"string\",\n          \"localizableName\": \"string\",\n          \"parameterDescription\": \"string\",\n          \"parameterId\": \"string\",\n          \"parameterName\": \"string\",\n          \"quantityType\": \"CURRENT\",\n          \"stringsToLocalize\": [\n            \"string\",\n            \"string\"\n          ],\n          \"uiHint\": \"string\",\n          \"uiHints\": [\n            \"ALLOW_FEATURE_SELECTION\",\n            \"HIDE_LABEL\"\n          ],\n          \"visibilityCondition\": {\n            \"btType\": \"string\",\n            \"selfOrChildAlwaysVisible\": true\n          }\n        },\n        \"key_1\": {\n          \"btType\": \"string\",\n          \"columnName\": \"string\",\n          \"defaultValue\": {\n            \"btType\": \"string\",\n            \"libraryRelationType\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"nodeId\": \"string\",\n            \"parameterId\": \"string\",\n            \"parameterName\": \"string\",\n            \"valueString\": \"string\"\n          },\n          \"enumOptions\": [\n            \"string\",\n            \"string\"\n          ],\n          \"iconUri\": \"string\",\n          \"localizableName\": \"string\",\n          \"parameterDescription\": \"string\",\n          \"parameterId\": \"string\",\n          \"parameterName\": \"string\",\n          \"quantityType\": \"TIME\",\n          \"stringsToLocalize\": [\n            \"string\",\n            \"string\"\n          ],\n          \"uiHint\": \"string\",\n          \"uiHints\": [\n            \"INITIAL_FOCUS\",\n            \"SHOW_TOLERANCE\"\n          ],\n          \"visibilityCondition\": {\n            \"btType\": \"string\",\n            \"selfOrChildAlwaysVisible\": true\n          }\n        }\n      },\n      \"parameterLibraryDefinitionIds\": [\n        \"string\",\n        \"string\"\n      ],\n      \"parameters\": [\n        {\n          \"btType\": \"string\",\n          \"columnName\": \"string\",\n          \"defaultValue\": {\n            \"btType\": \"string\",\n            \"libraryRelationType\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"nodeId\": \"string\",\n            \"parameterId\": \"string\",\n            \"parameterName\": \"string\",\n            \"valueString\": \"string\"\n          },\n          \"enumOptions\": [\n            \"string\",\n            \"string\"\n          ],\n          \"iconUri\": \"string\",\n          \"localizableName\": \"string\",\n          \"parameterDescription\": \"string\",\n          \"parameterId\": \"string\",\n          \"parameterName\": \"string\",\n          \"quantityType\": \"TEMPERATURE\",\n          \"stringsToLocalize\": [\n            \"string\",\n            \"string\"\n          ],\n          \"uiHint\": \"string\",\n          \"uiHints\": [\n            \"FOCUS_INNER_QUERY\",\n            \"ALLOW_FEATURE_SELECTION\"\n          ],\n          \"visibilityCondition\": {\n            \"btType\": \"string\",\n            \"selfOrChildAlwaysVisible\": true\n          }\n        },\n        {\n          \"btType\": \"string\",\n          \"columnName\": \"string\",\n          \"defaultValue\": {\n            \"btType\": \"string\",\n            \"libraryRelationType\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"nodeId\": \"string\",\n            \"parameterId\": \"string\",\n            \"parameterName\": \"string\",\n            \"valueString\": \"string\"\n          },\n          \"enumOptions\": [\n            \"string\",\n            \"string\"\n          ],\n          \"iconUri\": \"string\",\n          \"localizableName\": \"string\",\n          \"parameterDescription\": \"string\",\n          \"parameterId\": \"string\",\n          \"parameterName\": \"string\",\n          \"quantityType\": \"LENGTH\",\n          \"stringsToLocalize\": [\n            \"string\",\n            \"string\"\n          ],\n          \"uiHint\": \"string\",\n          \"uiHints\": [\n            \"CONTROL_VISIBILITY\",\n            \"MATCH_LAST_ARRAY_ITEM\"\n          ],\n          \"visibilityCondition\": {\n            \"btType\": \"string\",\n            \"selfOrChildAlwaysVisible\": false\n          }\n        }\n      ],\n      \"signature\": \"string\",\n      \"sourceLocation\": {\n        \"btType\": \"string\",\n        \"character\": 555,\n        \"column\": 6071,\n        \"document\": \"string\",\n        \"elementMicroversion\": \"string\",\n        \"endCharacter\": 2502,\n        \"endColumn\": 2246,\n        \"endLine\": 8119,\n        \"fromNode\": {\n          \"atomic\": false,\n          \"btType\": \"string\",\n          \"documentationType\": \"CONSTANT\",\n          \"endSourceLocation\": 8388,\n          \"nodeId\": \"string\",\n          \"shortDescriptor\": \"string\",\n          \"spaceAfter\": {\n            \"btType\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"lines\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"nodeId\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"text\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"spaceBefore\": {\n            \"btType\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"lines\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"nodeId\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"text\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"spaceDefault\": true,\n          \"startSourceLocation\": 4425\n        },\n        \"fromTemplate\": {\n          \"value\": \"<Circular reference to #/components/schemas/BTLocationInfo-226 detected>\"\n        },\n        \"languageVersion\": 5764,\n        \"line\": 6459,\n        \"moduleIds\": {\n          \"btType\": \"string\",\n          \"documentId\": \"string\",\n          \"elementId\": \"string\",\n          \"versionId\": \"string\"\n        },\n        \"nodeId\": \"string\",\n        \"parseNodeId\": \"string\",\n        \"parseNodeIdRaw\": {\n          \"empty\": true\n        },\n        \"topLevel\": \"string\",\n        \"version\": \"string\"\n      },\n      \"sourceMicroversionId\": \"string\",\n      \"stringsToLocalize\": [\n        \"string\",\n        \"string\"\n      ],\n      \"tableSpec\": false,\n      \"toleranceSpec\": true,\n      \"tooltipTemplate\": \"string\",\n      \"uiHints\": [\n        \"SHOW_LABEL\",\n        \"QUERY_VARIABLE_NAME\"\n      ],\n      \"variableStudioReferenceSpec\": true\n    }\n  ],\n  \"libraryVersion\": 4084,\n  \"microversionSkew\": true,\n  \"rejectMicroversionSkew\": false,\n  \"serializationVersion\": \"string\",\n  \"sourceMicroversion\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://cad.onshape.com/api/v16",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "basic",
+    "basic": [
+      {
+        "key": "username",
+        "value": "{{basicAuthUsername}}"
+      },
+      {
+        "key": "password",
+        "value": "{{basicAuthPassword}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "629a1159-1678-44ee-97d6-e4189a00bff9",
+    "name": "Onshape REST Account FeatureStudio API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "## Welcome to the Onshape REST API Explorer\n\n**See the [API Explorer Guide](https://onshape-public.github.io/docs/api-intro/explorer/) for help navigating this page.**\n\n### Using this page\n1. Sign in to your [Onshape](https://cad.onshape.com) account in another tab.\n2. Click the `Try it out` button below. It toggles to a `Cancel` button when selected.\n\n### Authenticating\nTo authenticate your calls, click the `Authorize` button. See [API Explorer Guide: Authentication](https://onshape-public.github.io/docs/api-intro/explorer/#authentication) for details. Calls made when authenticated via API Keys or OAuth count against your annual [API limits](https://onshape-public.github.io/docs/auth/limits/#annual-api-call-limits).\n* **Tip:** To ensure the current session isn't used when trying other authentication techniques, make sure to [remove the Onshape cookie](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site) as per the instructions for your browser, or use a private or incognito window.\n\n### Additional resources\n\n* [Onshape API Guide](https://onshape-public.github.io/docs/): Our full suite of developer guides, to be used as an accompaniment to this API Explorer.\n* [Onshape Developer Portal](https://cad.onshape.com/appstore/dev-portal): The Onshape portal for managing your API keys, OAuth2 credentials, your Onshape applications, and your Onshape App Store entries.\n* [Authentication Guide](https://onshape-public.github.io/docs/auth/): Our guide to using API keys, request signatures, and OAuth2 in your Onshape applications.\n\nContact Support:\n Email: api-support@onshape.zendesk.com",
+      "type": "text/plain"
+    }
+  }
+}

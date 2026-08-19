@@ -1,0 +1,43 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Onshape REST Account Billing API",
+    "version": "1.218.84032-34acba44be17"
+  },
+  "request": {
+    "auth": {
+      "type": "basic",
+      "username": "{{username}}",
+      "password": "{{password}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Billing",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get all billing plans and their information for an application by client ID.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://cad.onshape.com/api/v16/billing/plans/client/:cid",
+            "params": [
+              {
+                "name": "cid",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "This API should be used within the context of an OAuth-enabled application."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

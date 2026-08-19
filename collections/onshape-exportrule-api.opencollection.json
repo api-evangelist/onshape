@@ -1,0 +1,60 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Onshape REST Account ExportRule API",
+    "version": "1.218.84032-34acba44be17"
+  },
+  "request": {
+    "auth": {
+      "type": "basic",
+      "username": "{{username}}",
+      "password": "{{password}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "ExportRule",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": " Get a list of valid export rule options for the user or company.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://cad.onshape.com/api/v16/exportrules/options/:cu/:cuid",
+            "params": [
+              {
+                "name": "cu",
+                "value": "",
+                "type": "path",
+                "description": "Indicates which of company (c) or user (u) id is specified below."
+              },
+              {
+                "name": "cuid",
+                "value": "",
+                "type": "path",
+                "description": "The id of the company or user in which the operation should be performed."
+              }
+            ],
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "/oauth/authorize",
+              "accessTokenUrl": "/oauth/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Does NOT get the rules themselves; it gets the information used to create them."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

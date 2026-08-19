@@ -1,0 +1,187 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Onshape REST Account ReleasePackage API",
+    "version": "1.218.84032-34acba44be17"
+  },
+  "request": {
+    "auth": {
+      "type": "basic",
+      "username": "{{username}}",
+      "password": "{{password}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "ReleasePackage",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Create an obsoletion candidate to make an existing revision obsolete.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://cad.onshape.com/api/v16/releasepackages/obsoletion/:wfid",
+            "params": [
+              {
+                "name": "wfid",
+                "value": "",
+                "type": "path",
+                "description": "Workflow ID. See [getActiveWorkflow](#/Workflow/getActiveWorkflow)."
+              },
+              {
+                "name": "revisionId",
+                "value": "",
+                "type": "query",
+                "description": "ID of revision to obsolete. See [Revision](https://cad.onshape.com/glassworks/explorer/#/Revision)."
+              },
+              {
+                "name": "debugMode",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "/oauth/authorize",
+              "accessTokenUrl": "/oauth/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Create an obsoletion candidate to make an existing revision obsolete."
+        },
+        {
+          "info": {
+            "name": "Create a new release candidate for one or more items.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://cad.onshape.com/api/v16/releasepackages/release/:wfid",
+            "params": [
+              {
+                "name": "wfid",
+                "value": "",
+                "type": "path",
+                "description": "Workflow ID. See [getActiveWorkflow](#/Workflow/getActiveWorkflow)."
+              },
+              {
+                "name": "debugMode",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "/oauth/authorize",
+              "accessTokenUrl": "/oauth/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "This endpoint creates a release candidate with items added to it. It does <b>not</b> release the candidate. Once the release candidate is successfully created, use [updateReleasePackage](#/ReleasePackage/updateReleasePackage) to update all desired item/candidate properties, and transition it to the desired release state. See [API Guide: Release Management](https://onshape-public.github.io/docs/api-adv/relmgmt/) for examples. \n \nTo add items from other documents, you must select `Allow adding ite"
+        },
+        {
+          "info": {
+            "name": "Get details about the specified release candidate.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://cad.onshape.com/api/v16/releasepackages/:rpid",
+            "params": [
+              {
+                "name": "rpid",
+                "value": "",
+                "type": "path",
+                "description": "Release candidate package ID, as returned by [createReleasePackage](#/ReleasePackage/createReleasePackage)."
+              },
+              {
+                "name": "detailed",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "fullHistory",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "/oauth/authorize",
+              "accessTokenUrl": "/oauth/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Get details about the specified release candidate."
+        },
+        {
+          "info": {
+            "name": "Update the release/obsoletion candidate/item properties.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://cad.onshape.com/api/v16/releasepackages/:rpid",
+            "params": [
+              {
+                "name": "rpid",
+                "value": "",
+                "type": "path",
+                "description": "Release candidate package ID, as returned by [createReleasePackage](#/ReleasePackage/createReleasePackage)."
+              },
+              {
+                "name": "action",
+                "value": "",
+                "type": "query",
+                "description": "`UPDATE | ADD_ITEMS | REMOVE_ITEMS | SAVE_DRAFT`"
+              },
+              {
+                "name": "wfaction",
+                "value": "",
+                "type": "query",
+                "description": "Workflow action to perform on the release candidate. When using the Onshape default release or obsoletion workflows, allowed values are: \n \n`SUBMIT | CREATE_AND_RELEASE | RELEASE | REJECT | OBSOLETE | DISCARD | CREATE_AND_OBSOLETE` \n \n* `DISCARD` can only be performed by the creator of the release candidate and is the only transition that can be performed even if items have errors. \n \n* `CREATE_AND_RELEASE` and `CREATE_AND_OBSOLETE` can only be performed by creator if the [Release management settings](https://cad.onshape.com/help/Content/Plans/release_management_2.htm#rel_candidate_dialog) for the company allow release without approvers. If Release management settings restrict the approver list to a subset of company users, only those users can perform transitions. \n \nWhen using a custom workflow, allowed values are determined by the workflow definition. See [getActiveWorkflow](#/Workflow/getActiveWorkflow) to get the list of active workflows and their transitions."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "/oauth/authorize",
+              "accessTokenUrl": "/oauth/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Use this endpoint to submit the release. Release candidates must first be created with the [createReleasePackage](#/ReleasePackage/createObsoletionPackage) endpoint. \n \nThis endpoint can perform the following actions on release or obsoletion candidates: \n* Update candidate properties \n* Update properties of items in the candidate \n* Add items to the candidate \n* Remove items from the candidate \n* Transition the package to a new state with the `wfaction` query param \n \nSee [Onshape Help: Release "
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

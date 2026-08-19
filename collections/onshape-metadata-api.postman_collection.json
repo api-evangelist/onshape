@@ -1,0 +1,2460 @@
+{
+  "item": [
+    {
+      "id": "1dcdbab5-4c82-42ee-b4f7-5c0781af31c8",
+      "name": "Metadata",
+      "description": {
+        "content": "Access and modify metadata.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "9a3c9eaf-6780-4d88-a573-b914c5f156c9",
+          "name": "Get the metadata for all elements in a document.",
+          "request": {
+            "name": "Get the metadata for all elements in a document.",
+            "description": {
+              "content": "See [API Guide: Metadata](https://onshape-public.github.io/docs/api-adv/metadata/) for details. \n* You can specify the optional `depth` query parameter to get multiple levels in an assembly. Default `depth` is `1`. \n* `linkDocumentId` can be specified where applicable. Combined with `inferMetadataOwner` (default value is `false`), this is used to infer metadata owner. \n* `includeComputedProperties` can be used to include or omit computed properties. Default value is `true`. \n* `includeComputedAssemblyProperties` can be used to query computed assembly properties which are generally expensive. Default value is `false`. \n* You can also choose to include a `thumbnail`. Default value is `false`.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "metadata",
+                "d",
+                ":did",
+                ":wvm",
+                ":wvmid",
+                "e"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "linkDocumentId",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "inferMetadataOwner",
+                  "value": "false"
+                },
+                {
+                  "disabled": false,
+                  "key": "depth",
+                  "value": "1"
+                },
+                {
+                  "disabled": false,
+                  "key": "includeComputedProperties",
+                  "value": "true"
+                },
+                {
+                  "disabled": false,
+                  "key": "includeComputedAssemblyProperties",
+                  "value": "false"
+                },
+                {
+                  "disabled": false,
+                  "key": "thumbnail",
+                  "value": "false"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "did",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "wvm",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "wvmid",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json;charset=UTF-8; qs=0.09"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "scope",
+                  "value": "OAuth2Internal OAuth2ReadPII OAuth2Read OAuth2Write OAuth2Delete OAuth2Purchase OAuth2Share document.create document.edit document.delete document.read enterprise.create enterprise.read enterprise.edit enterprise.delete enterprise.member.create enterprise.member.read enterprise.member.edit enterprise.member.delete webhook.create webhook.edit webhook.read webhook.delete PLMIntegration"
+                },
+                {
+                  "key": "redirect_uri",
+                  "value": "/oauth/token"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "/oauth/token"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "/oauth/authorize"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "57adb7b4-1b20-45f2-a10b-7819f88c2b22",
+              "name": "default response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "metadata",
+                    "d",
+                    ":did",
+                    ":wvm",
+                    ":wvmid",
+                    "e"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "linkDocumentId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "inferMetadataOwner",
+                      "value": "false"
+                    },
+                    {
+                      "key": "depth",
+                      "value": "1"
+                    },
+                    {
+                      "key": "includeComputedProperties",
+                      "value": "true"
+                    },
+                    {
+                      "key": "includeComputedAssemblyProperties",
+                      "value": "false"
+                    },
+                    {
+                      "key": "thumbnail",
+                      "value": "false"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "did",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "wvm",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "wvmid",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json;charset=UTF-8; qs=0.09"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json;charset=UTF-8; qs=0.09"
+                }
+              ],
+              "body": "{\n  \"href\": \"string\",\n  \"items\": [\n    {\n      \"jsonType\": \"string\",\n      \"href\": \"string\",\n      \"properties\": [\n        {\n          \"aggregationSkippedFilteredOutValues\": true,\n          \"computedAssemblyProperty\": true,\n          \"computedProperty\": false,\n          \"computedPropertyError\": \"string\",\n          \"computedPropertyEvalInfo\": \"string\",\n          \"dateFormat\": \"string\",\n          \"defaultValue\": {},\n          \"dirty\": false,\n          \"editable\": true,\n          \"editableInUi\": false,\n          \"enumValues\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ],\n          \"initialValue\": {},\n          \"multivalued\": true,\n          \"name\": \"string\",\n          \"propertyId\": \"string\",\n          \"propertyOverrideStatus\": 8357,\n          \"propertySource\": 9175,\n          \"publicPartOverridable\": true,\n          \"required\": false,\n          \"schemaId\": \"string\",\n          \"uiHints\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"validator\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"value\": {},\n          \"valueType\": \"string\"\n        },\n        {\n          \"aggregationSkippedFilteredOutValues\": false,\n          \"computedAssemblyProperty\": true,\n          \"computedProperty\": true,\n          \"computedPropertyError\": \"string\",\n          \"computedPropertyEvalInfo\": \"string\",\n          \"dateFormat\": \"string\",\n          \"defaultValue\": {},\n          \"dirty\": true,\n          \"editable\": false,\n          \"editableInUi\": true,\n          \"enumValues\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ],\n          \"initialValue\": {},\n          \"multivalued\": true,\n          \"name\": \"string\",\n          \"propertyId\": \"string\",\n          \"propertyOverrideStatus\": 8340,\n          \"propertySource\": 817,\n          \"publicPartOverridable\": true,\n          \"required\": true,\n          \"schemaId\": \"string\",\n          \"uiHints\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"validator\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"value\": {},\n          \"valueType\": \"string\"\n        }\n      ],\n      \"thumbnail\": {\n        \"href\": \"http://s.okhdDe2X-FcSgYEpMz15zqvQouK5cgxatGctjzCrRB54wjjGf0mVIZl,.c1sVr\",\n        \"id\": \"string\",\n        \"secondarySizes\": [\n          [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ],\n          [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ]\n        ],\n        \"sizes\": [\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        ]\n      },\n      \"elementId\": \"string\",\n      \"elementType\": 167,\n      \"mimeType\": \"string\",\n      \"parts\": {\n        \"href\": \"string\",\n        \"items\": [\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        ],\n        \"next\": \"string\",\n        \"prev\": \"string\"\n      }\n    },\n    {\n      \"jsonType\": \"string\",\n      \"href\": \"string\",\n      \"properties\": [\n        {\n          \"aggregationSkippedFilteredOutValues\": false,\n          \"computedAssemblyProperty\": true,\n          \"computedProperty\": false,\n          \"computedPropertyError\": \"string\",\n          \"computedPropertyEvalInfo\": \"string\",\n          \"dateFormat\": \"string\",\n          \"defaultValue\": {},\n          \"dirty\": false,\n          \"editable\": false,\n          \"editableInUi\": false,\n          \"enumValues\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ],\n          \"initialValue\": {},\n          \"multivalued\": true,\n          \"name\": \"string\",\n          \"propertyId\": \"string\",\n          \"propertyOverrideStatus\": 884,\n          \"propertySource\": 2925,\n          \"publicPartOverridable\": true,\n          \"required\": false,\n          \"schemaId\": \"string\",\n          \"uiHints\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"validator\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"value\": {},\n          \"valueType\": \"string\"\n        },\n        {\n          \"aggregationSkippedFilteredOutValues\": true,\n          \"computedAssemblyProperty\": false,\n          \"computedProperty\": true,\n          \"computedPropertyError\": \"string\",\n          \"computedPropertyEvalInfo\": \"string\",\n          \"dateFormat\": \"string\",\n          \"defaultValue\": {},\n          \"dirty\": false,\n          \"editable\": false,\n          \"editableInUi\": false,\n          \"enumValues\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ],\n          \"initialValue\": {},\n          \"multivalued\": true,\n          \"name\": \"string\",\n          \"propertyId\": \"string\",\n          \"propertyOverrideStatus\": 1465,\n          \"propertySource\": 2026,\n          \"publicPartOverridable\": false,\n          \"required\": false,\n          \"schemaId\": \"string\",\n          \"uiHints\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"validator\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"value\": {},\n          \"valueType\": \"string\"\n        }\n      ],\n      \"thumbnail\": {\n        \"href\": \"https://MQcVZGavEySDgvlLNmiBtXBBdxQe.mgpdqY2g-G9jpQuDhOz+.XcuRKxS+d.TUKvhFSoQvxhvqwYoRqmzfrhFWGuWoQSt\",\n        \"id\": \"string\",\n        \"secondarySizes\": [\n          [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ],\n          [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ]\n        ],\n        \"sizes\": [\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        ]\n      },\n      \"elementId\": \"string\",\n      \"elementType\": 2545,\n      \"mimeType\": \"string\",\n      \"parts\": {\n        \"href\": \"string\",\n        \"items\": [\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        ],\n        \"next\": \"string\",\n        \"prev\": \"string\"\n      }\n    }\n  ],\n  \"next\": \"string\",\n  \"prev\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "8c98994e-89dd-485d-8bd5-061c5e0f1d95",
+          "name": "Get the metadata for an element.",
+          "request": {
+            "name": "Get the metadata for an element.",
+            "description": {
+              "content": "See [API Guide: Metadata](https://onshape-public.github.io/docs/api-adv/metadata/) for details. \n* `linkDocumentId` can be specified where applicable and this combined with the query param `inferMetadataOwner` (default value is `false`) will be used to infer metadata owner. \n* `configuration` optional query parameter defaults to default configuration. \n* You can specify an optional `depth` query parameter to get multiple levels in an assembly. Default `depth` is `1`. \n* `includeComputedProperties` can be used to include or omit computed properties. Default value is `true`. \n* `includeComputedAssemblyProperties` can be used to query computed assembly properties which are generally expensive. Default value is `false`. \n* You can also choose to include a `thumbnail`. Default value is `false`.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "metadata",
+                "d",
+                ":did",
+                ":wvm",
+                ":wvmid",
+                "e",
+                ":eid"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "linkDocumentId",
+                  "value": "",
+                  "description": "The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both."
+                },
+                {
+                  "disabled": false,
+                  "key": "configuration",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "inferMetadataOwner",
+                  "value": "false"
+                },
+                {
+                  "disabled": false,
+                  "key": "depth",
+                  "value": "1"
+                },
+                {
+                  "disabled": false,
+                  "key": "includeComputedProperties",
+                  "value": "true"
+                },
+                {
+                  "disabled": false,
+                  "key": "includeComputedAssemblyProperties",
+                  "value": "false"
+                },
+                {
+                  "disabled": false,
+                  "key": "thumbnail",
+                  "value": "false"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "did",
+                  "description": "(Required) The id of the document in which to perform the operation."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "wvm",
+                  "description": "(Required) Indicates which of workspace (w), version (v), or document microversion (m) id is specified below."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "wvmid",
+                  "description": "(Required) The id of the workspace, version or document microversion in which the operation should be performed."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "eid",
+                  "description": "(Required) The id of the element in which to perform the operation."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json;charset=UTF-8; qs=0.09"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "scope",
+                  "value": "OAuth2Internal OAuth2ReadPII OAuth2Read OAuth2Write OAuth2Delete OAuth2Purchase OAuth2Share document.create document.edit document.delete document.read enterprise.create enterprise.read enterprise.edit enterprise.delete enterprise.member.create enterprise.member.read enterprise.member.edit enterprise.member.delete webhook.create webhook.edit webhook.read webhook.delete PLMIntegration"
+                },
+                {
+                  "key": "redirect_uri",
+                  "value": "/oauth/token"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "/oauth/token"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "/oauth/authorize"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "c18d27d4-5f1c-4af1-b0e8-6d632010a796",
+              "name": "default response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "metadata",
+                    "d",
+                    ":did",
+                    ":wvm",
+                    ":wvmid",
+                    "e",
+                    ":eid"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "linkDocumentId",
+                      "value": ""
+                    },
+                    {
+                      "key": "configuration",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "inferMetadataOwner",
+                      "value": "false"
+                    },
+                    {
+                      "key": "depth",
+                      "value": "1"
+                    },
+                    {
+                      "key": "includeComputedProperties",
+                      "value": "true"
+                    },
+                    {
+                      "key": "includeComputedAssemblyProperties",
+                      "value": "false"
+                    },
+                    {
+                      "key": "thumbnail",
+                      "value": "false"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "did",
+                      "description": "(Required) The id of the document in which to perform the operation."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "wvm",
+                      "description": "(Required) Indicates which of workspace (w), version (v), or document microversion (m) id is specified below."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "wvmid",
+                      "description": "(Required) The id of the workspace, version or document microversion in which the operation should be performed."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "eid",
+                      "description": "(Required) The id of the element in which to perform the operation."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json;charset=UTF-8; qs=0.09"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json;charset=UTF-8; qs=0.09"
+                }
+              ],
+              "body": "{\n  \"jsonType\": \"string\",\n  \"href\": \"string\",\n  \"properties\": [\n    {\n      \"aggregationSkippedFilteredOutValues\": false,\n      \"computedAssemblyProperty\": false,\n      \"computedProperty\": false,\n      \"computedPropertyError\": \"string\",\n      \"computedPropertyEvalInfo\": \"string\",\n      \"dateFormat\": \"string\",\n      \"defaultValue\": {},\n      \"dirty\": true,\n      \"editable\": false,\n      \"editableInUi\": false,\n      \"enumValues\": [\n        {\n          \"label\": \"string\",\n          \"state\": 990,\n          \"value\": \"string\"\n        },\n        {\n          \"label\": \"string\",\n          \"state\": 9473,\n          \"value\": \"string\"\n        }\n      ],\n      \"initialValue\": {},\n      \"multivalued\": false,\n      \"name\": \"string\",\n      \"propertyId\": \"string\",\n      \"propertyOverrideStatus\": 2647,\n      \"propertySource\": 5882,\n      \"publicPartOverridable\": false,\n      \"required\": true,\n      \"schemaId\": \"string\",\n      \"uiHints\": {\n        \"multiline\": true\n      },\n      \"validator\": {\n        \"max\": 4998.895765631591,\n        \"maxCount\": 7304,\n        \"maxDate\": \"2000-04-11T05:41:27.774Z\",\n        \"maxLength\": 1989,\n        \"min\": 4907.9766837663865,\n        \"minCount\": 3232,\n        \"minDate\": \"2004-07-27T22:27:15.169Z\",\n        \"minLength\": 8346,\n        \"pattern\": \"string\",\n        \"quantityType\": 4213\n      },\n      \"value\": {},\n      \"valueType\": \"string\"\n    },\n    {\n      \"aggregationSkippedFilteredOutValues\": false,\n      \"computedAssemblyProperty\": true,\n      \"computedProperty\": true,\n      \"computedPropertyError\": \"string\",\n      \"computedPropertyEvalInfo\": \"string\",\n      \"dateFormat\": \"string\",\n      \"defaultValue\": {},\n      \"dirty\": true,\n      \"editable\": false,\n      \"editableInUi\": false,\n      \"enumValues\": [\n        {\n          \"label\": \"string\",\n          \"state\": 2389,\n          \"value\": \"string\"\n        },\n        {\n          \"label\": \"string\",\n          \"state\": 4386,\n          \"value\": \"string\"\n        }\n      ],\n      \"initialValue\": {},\n      \"multivalued\": true,\n      \"name\": \"string\",\n      \"propertyId\": \"string\",\n      \"propertyOverrideStatus\": 3112,\n      \"propertySource\": 254,\n      \"publicPartOverridable\": true,\n      \"required\": false,\n      \"schemaId\": \"string\",\n      \"uiHints\": {\n        \"multiline\": false\n      },\n      \"validator\": {\n        \"max\": 9712.838453592723,\n        \"maxCount\": 9299,\n        \"maxDate\": \"1962-11-13T06:49:44.653Z\",\n        \"maxLength\": 8449,\n        \"min\": 8701.454969563962,\n        \"minCount\": 4268,\n        \"minDate\": \"2009-01-11T10:13:23.376Z\",\n        \"minLength\": 9477,\n        \"pattern\": \"string\",\n        \"quantityType\": 9793\n      },\n      \"value\": {},\n      \"valueType\": \"string\"\n    }\n  ],\n  \"thumbnail\": {\n    \"href\": \"https://InVaWWKUfixIogNJkZuWahldXV.jtwlqIPpofO1NXarJ2HCqLdu.EwdeHHFmpAxlPFpT00F\",\n    \"id\": \"string\",\n    \"secondarySizes\": [\n      [\n        {\n          \"href\": \"http://wPyg.onakGARGxTbjCHCD\",\n          \"mediaType\": \"string\",\n          \"renderMode\": \"string\",\n          \"sheetName\": \"string\",\n          \"size\": \"string\",\n          \"uniqueId\": \"string\",\n          \"viewOrientation\": \"string\"\n        },\n        {\n          \"href\": \"http://XdMgdotHZoa.imyozqJWasbj8tjQNdfu,65WgzPMgY+YO9dUFgS0gbJrW,ZlAMdHmlhv+3FMxqKoMgAPIPpk59U64h9FlyMkb\",\n          \"mediaType\": \"string\",\n          \"renderMode\": \"string\",\n          \"sheetName\": \"string\",\n          \"size\": \"string\",\n          \"uniqueId\": \"string\",\n          \"viewOrientation\": \"string\"\n        }\n      ],\n      [\n        {\n          \"href\": \"http://HILoNpcwQLwn.oxpxW9ll8zsnkPkc,PcsUkKItmlRSvU\",\n          \"mediaType\": \"string\",\n          \"renderMode\": \"string\",\n          \"sheetName\": \"string\",\n          \"size\": \"string\",\n          \"uniqueId\": \"string\",\n          \"viewOrientation\": \"string\"\n        },\n        {\n          \"href\": \"http://xrJ.aewmFoeB6leHDOWAOZn4YaMrNG8vHBUtPOy\",\n          \"mediaType\": \"string\",\n          \"renderMode\": \"string\",\n          \"sheetName\": \"string\",\n          \"size\": \"string\",\n          \"uniqueId\": \"string\",\n          \"viewOrientation\": \"string\"\n        }\n      ]\n    ],\n    \"sizes\": [\n      {\n        \"href\": \"https://exsZpLxzevLOavSBpXKwFGKI.amdDIQXf+T7LMGTFza2ggZcGKHjbGfiF-m5CSXIExG58nHR94LaMraO8\",\n        \"mediaType\": \"string\",\n        \"renderMode\": \"string\",\n        \"sheetName\": \"string\",\n        \"size\": \"string\",\n        \"uniqueId\": \"string\",\n        \"viewOrientation\": \"string\"\n      },\n      {\n        \"href\": \"https://nlqOvaBcuM.cefGsXClFRK8TtSwhkBBmxbTROl9YyD3PeHkXt.G4EZKOIiF08aLADUCBu4bnyZZgnlCRirHP\",\n        \"mediaType\": \"string\",\n        \"renderMode\": \"string\",\n        \"sheetName\": \"string\",\n        \"size\": \"string\",\n        \"uniqueId\": \"string\",\n        \"viewOrientation\": \"string\"\n      }\n    ]\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "8b6b0d28-b917-451e-833c-df80b84f51b8",
+          "name": "Update the metadata for an element.",
+          "request": {
+            "name": "Update the metadata for an element.",
+            "description": {
+              "content": "See [API Guide: Metadata](https://onshape-public.github.io/docs/api-adv/metadata/) for details. \n* Microversion (`m`) in `wvm` path parameter option is not supported. \n* Specify the property metadata to update in the Request body.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "metadata",
+                "d",
+                ":did",
+                ":wvm",
+                ":wvmid",
+                "e",
+                ":eid"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "configuration",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "did",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "wvm",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "wvmid",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "eid",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json;charset=UTF-8; qs=0.09"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json;charset=UTF-8; qs=0.09"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "scope",
+                  "value": "OAuth2Internal OAuth2ReadPII OAuth2Read OAuth2Write OAuth2Delete OAuth2Purchase OAuth2Share document.create document.edit document.delete document.read enterprise.create enterprise.read enterprise.edit enterprise.delete enterprise.member.create enterprise.member.read enterprise.member.edit enterprise.member.delete webhook.create webhook.edit webhook.read webhook.delete PLMIntegration"
+                },
+                {
+                  "key": "redirect_uri",
+                  "value": "/oauth/token"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "/oauth/token"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "/oauth/authorize"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "<string>",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "ca08ec2f-cbde-4687-9a91-54c4f44ea524",
+              "name": "default response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "metadata",
+                    "d",
+                    ":did",
+                    ":wvm",
+                    ":wvmid",
+                    "e",
+                    ":eid"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "configuration",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "did",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "wvm",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "wvmid",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "eid",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json;charset=UTF-8; qs=0.09"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "<string>",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json;charset=UTF-8; qs=0.09"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "499ffcfe-1624-4b10-8bbe-0e2f5f6d8985",
+          "name": "Get the metadata for an assembly, including supporting metadata.",
+          "request": {
+            "name": "Get the metadata for an assembly, including supporting metadata.",
+            "description": {
+              "content": "See [API Guide: Metadata](https://onshape-public.github.io/docs/api-adv/metadata/) for details. \n* `linkDocumentId` can be specified where applicable and this combined with the query param `inferMetadataOwner` (default value is `false`) will be used to infer metadata owner. \n* `configuration` optional query parameter defaults to default configuration. \n* `includeComputedProperties` can be used to include or omit computed properties. Default value is `true`. \n* `includeComputedAssemblyProperties` can be used to query computed assembly properties which are generally expensive. Default value is `false`. \n* You can also choose to include a `thumbnail`. Default value is `false`.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "metadata",
+                "d",
+                ":did",
+                ":wvm",
+                ":wvmid",
+                "e",
+                ":eid",
+                "assembly-debug"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "linkDocumentId",
+                  "value": "",
+                  "description": "The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both."
+                },
+                {
+                  "disabled": false,
+                  "key": "configuration",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "did",
+                  "description": "(Required) The id of the document in which to perform the operation."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "wvm",
+                  "description": "(Required) Indicates which of workspace (w), version (v), or document microversion (m) id is specified below."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "wvmid",
+                  "description": "(Required) The id of the workspace, version or document microversion in which the operation should be performed."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "eid",
+                  "description": "(Required) The id of the element in which to perform the operation."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json;charset=UTF-8; qs=0.09"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "scope",
+                  "value": "OAuth2Internal OAuth2ReadPII OAuth2Read OAuth2Write OAuth2Delete OAuth2Purchase OAuth2Share document.create document.edit document.delete document.read enterprise.create enterprise.read enterprise.edit enterprise.delete enterprise.member.create enterprise.member.read enterprise.member.edit enterprise.member.delete webhook.create webhook.edit webhook.read webhook.delete PLMIntegration"
+                },
+                {
+                  "key": "redirect_uri",
+                  "value": "/oauth/token"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "/oauth/token"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "/oauth/authorize"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "5f800be4-d58a-4aeb-a652-3f81ddaa4e27",
+              "name": "default response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "metadata",
+                    "d",
+                    ":did",
+                    ":wvm",
+                    ":wvmid",
+                    "e",
+                    ":eid",
+                    "assembly-debug"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "linkDocumentId",
+                      "value": ""
+                    },
+                    {
+                      "key": "configuration",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "did",
+                      "description": "(Required) The id of the document in which to perform the operation."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "wvm",
+                      "description": "(Required) Indicates which of workspace (w), version (v), or document microversion (m) id is specified below."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "wvmid",
+                      "description": "(Required) The id of the workspace, version or document microversion in which the operation should be performed."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "eid",
+                      "description": "(Required) The id of the element in which to perform the operation."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json;charset=UTF-8; qs=0.09"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json;charset=UTF-8; qs=0.09"
+                }
+              ],
+              "body": "{\n  \"children\": [\n    {\n      \"children\": [\n        {\n          \"value\": \"<Circular reference to #/components/schemas/BTAssemblyItemMetadataInfo detected>\"\n        },\n        {\n          \"value\": \"<Circular reference to #/components/schemas/BTAssemblyItemMetadataInfo detected>\"\n        }\n      ],\n      \"propertyIdToError\": {\n        \"key_0\": \"string\",\n        \"key_1\": \"string\"\n      },\n      \"propertyIdToEvalInfo\": {\n        \"key_0\": \"string\",\n        \"key_1\": \"string\"\n      },\n      \"propertyIdToOverrideStatus\": {\n        \"key_0\": \"string\",\n        \"key_1\": \"string\"\n      },\n      \"propertyIdToSourceType\": {\n        \"key_0\": \"string\",\n        \"key_1\": \"string\"\n      },\n      \"propertyIdToValue\": {\n        \"key_0\": \"string\"\n      },\n      \"requestInfo\": {\n        \"apiConfig\": \"string\",\n        \"documentId\": \"string\",\n        \"elementId\": \"string\",\n        \"itemId\": \"string\",\n        \"linkedDocumentId\": \"string\",\n        \"partId\": \"string\",\n        \"wvmId\": \"string\",\n        \"wvmType\": \"string\"\n      }\n    },\n    {\n      \"children\": [\n        {\n          \"value\": \"<Circular reference to #/components/schemas/BTAssemblyItemMetadataInfo detected>\"\n        },\n        {\n          \"value\": \"<Circular reference to #/components/schemas/BTAssemblyItemMetadataInfo detected>\"\n        }\n      ],\n      \"propertyIdToError\": {\n        \"key_0\": \"string\",\n        \"key_1\": \"string\"\n      },\n      \"propertyIdToEvalInfo\": {\n        \"key_0\": \"string\",\n        \"key_1\": \"string\"\n      },\n      \"propertyIdToOverrideStatus\": {\n        \"key_0\": \"string\"\n      },\n      \"propertyIdToSourceType\": {\n        \"key_0\": \"string\",\n        \"key_1\": \"string\"\n      },\n      \"propertyIdToValue\": {\n        \"key_0\": \"string\",\n        \"key_1\": \"string\"\n      },\n      \"requestInfo\": {\n        \"apiConfig\": \"string\",\n        \"documentId\": \"string\",\n        \"elementId\": \"string\",\n        \"itemId\": \"string\",\n        \"linkedDocumentId\": \"string\",\n        \"partId\": \"string\",\n        \"wvmId\": \"string\",\n        \"wvmType\": \"string\"\n      }\n    }\n  ],\n  \"propertyIdToError\": {\n    \"key_0\": \"string\"\n  },\n  \"propertyIdToEvalInfo\": {\n    \"key_0\": \"string\",\n    \"key_1\": \"string\"\n  },\n  \"propertyIdToOverrideStatus\": {\n    \"key_0\": \"string\"\n  },\n  \"propertyIdToSourceType\": {\n    \"key_0\": \"string\",\n    \"key_1\": \"string\",\n    \"key_2\": \"string\",\n    \"key_3\": \"string\"\n  },\n  \"propertyIdToValue\": {\n    \"key_0\": \"string\",\n    \"key_1\": \"string\",\n    \"key_2\": \"string\"\n  },\n  \"requestInfo\": {\n    \"apiConfig\": \"string\",\n    \"documentId\": \"string\",\n    \"elementId\": \"string\",\n    \"itemId\": \"string\",\n    \"linkedDocumentId\": \"string\",\n    \"partId\": \"string\",\n    \"wvmId\": \"string\",\n    \"wvmType\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "96b03989-efde-4531-b678-993c10c26367",
+          "name": "Get the metadata for all parts in a document.",
+          "request": {
+            "name": "Get the metadata for all parts in a document.",
+            "description": {
+              "content": "See [API Guide: Metadata](https://onshape-public.github.io/docs/api-adv/metadata/) for details. \n* The `configuration` optional query parameter uses the default configuration unless otherwise specified. \n* You can specify an optional `depth` query parameter to get multiple levels in an assembly. Default `depth` is `1`. \n* `linkDocumentId` can be specified where applicable. Combined with `inferMetadataOwner` (default value is `false`), this is used to infer metadata owner. \n* `includeComputedProperties` can be used to include or omit computed properties. Default value is `true`. \n* `includeComputedAssemblyProperties` can be used to query computed assembly properties which are generally expensive. Default value is `false`. \n* You can also choose to include a `thumbnail`. Default value is `false`.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "metadata",
+                "d",
+                ":did",
+                ":wvm",
+                ":wvmid",
+                "e",
+                ":eid",
+                "p"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "linkDocumentId",
+                  "value": "",
+                  "description": "The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both."
+                },
+                {
+                  "disabled": false,
+                  "key": "configuration",
+                  "value": "",
+                  "description": "URL-encoded string of configuration values (separated by `;`). See the [Configurations API Guide](https://onshape-public.github.io/docs/api-adv/configs/) for details."
+                },
+                {
+                  "disabled": false,
+                  "key": "inferMetadataOwner",
+                  "value": "false"
+                },
+                {
+                  "disabled": false,
+                  "key": "includeComputedProperties",
+                  "value": "true"
+                },
+                {
+                  "disabled": false,
+                  "key": "includeComputedAssemblyProperties",
+                  "value": "false"
+                },
+                {
+                  "disabled": false,
+                  "key": "thumbnail",
+                  "value": "false"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "did",
+                  "description": "(Required) The id of the document in which to perform the operation."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "wvm",
+                  "description": "(Required) Indicates which of workspace (w), version (v), or document microversion (m) id is specified below."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "wvmid",
+                  "description": "(Required) The id of the workspace, version or document microversion in which the operation should be performed."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "eid",
+                  "description": "(Required) The id of the element in which to perform the operation."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json;charset=UTF-8; qs=0.09"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "scope",
+                  "value": "OAuth2Internal OAuth2ReadPII OAuth2Read OAuth2Write OAuth2Delete OAuth2Purchase OAuth2Share document.create document.edit document.delete document.read enterprise.create enterprise.read enterprise.edit enterprise.delete enterprise.member.create enterprise.member.read enterprise.member.edit enterprise.member.delete webhook.create webhook.edit webhook.read webhook.delete PLMIntegration"
+                },
+                {
+                  "key": "redirect_uri",
+                  "value": "/oauth/token"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "/oauth/token"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "/oauth/authorize"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "d01b6b27-7bce-4f83-a63f-97f5990c82ca",
+              "name": "default response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "metadata",
+                    "d",
+                    ":did",
+                    ":wvm",
+                    ":wvmid",
+                    "e",
+                    ":eid",
+                    "p"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "linkDocumentId",
+                      "value": ""
+                    },
+                    {
+                      "key": "configuration",
+                      "value": ""
+                    },
+                    {
+                      "key": "inferMetadataOwner",
+                      "value": "false"
+                    },
+                    {
+                      "key": "includeComputedProperties",
+                      "value": "true"
+                    },
+                    {
+                      "key": "includeComputedAssemblyProperties",
+                      "value": "false"
+                    },
+                    {
+                      "key": "thumbnail",
+                      "value": "false"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "did",
+                      "description": "(Required) The id of the document in which to perform the operation."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "wvm",
+                      "description": "(Required) Indicates which of workspace (w), version (v), or document microversion (m) id is specified below."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "wvmid",
+                      "description": "(Required) The id of the workspace, version or document microversion in which the operation should be performed."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "eid",
+                      "description": "(Required) The id of the element in which to perform the operation."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json;charset=UTF-8; qs=0.09"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json;charset=UTF-8; qs=0.09"
+                }
+              ],
+              "body": "{\n  \"href\": \"string\",\n  \"items\": [\n    {\n      \"jsonType\": \"string\",\n      \"href\": \"string\",\n      \"properties\": [\n        {\n          \"aggregationSkippedFilteredOutValues\": false,\n          \"computedAssemblyProperty\": false,\n          \"computedProperty\": true,\n          \"computedPropertyError\": \"string\",\n          \"computedPropertyEvalInfo\": \"string\",\n          \"dateFormat\": \"string\",\n          \"defaultValue\": {},\n          \"dirty\": true,\n          \"editable\": false,\n          \"editableInUi\": false,\n          \"enumValues\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ],\n          \"initialValue\": {},\n          \"multivalued\": true,\n          \"name\": \"string\",\n          \"propertyId\": \"string\",\n          \"propertyOverrideStatus\": 6926,\n          \"propertySource\": 1898,\n          \"publicPartOverridable\": true,\n          \"required\": true,\n          \"schemaId\": \"string\",\n          \"uiHints\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"validator\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"value\": {},\n          \"valueType\": \"string\"\n        },\n        {\n          \"aggregationSkippedFilteredOutValues\": true,\n          \"computedAssemblyProperty\": true,\n          \"computedProperty\": false,\n          \"computedPropertyError\": \"string\",\n          \"computedPropertyEvalInfo\": \"string\",\n          \"dateFormat\": \"string\",\n          \"defaultValue\": {},\n          \"dirty\": true,\n          \"editable\": true,\n          \"editableInUi\": true,\n          \"enumValues\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ],\n          \"initialValue\": {},\n          \"multivalued\": true,\n          \"name\": \"string\",\n          \"propertyId\": \"string\",\n          \"propertyOverrideStatus\": 3005,\n          \"propertySource\": 3880,\n          \"publicPartOverridable\": true,\n          \"required\": true,\n          \"schemaId\": \"string\",\n          \"uiHints\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"validator\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"value\": {},\n          \"valueType\": \"string\"\n        }\n      ],\n      \"thumbnail\": {\n        \"href\": \"https://XHkRLawlTiCDIQyQTUdzRfZGoFFWumunK.ldjqMbfk-oxAKK.bY8wKMjntDCbz3HCayqrS7ooUWsMXVBMeb-kRa\",\n        \"id\": \"string\",\n        \"secondarySizes\": [\n          [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ],\n          [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ]\n        ],\n        \"sizes\": [\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        ]\n      },\n      \"isFlattenedBody\": false,\n      \"isPublicPartOverridable\": true,\n      \"meshState\": 7932,\n      \"partId\": \"string\",\n      \"partIdentity\": \"string\",\n      \"partType\": \"string\",\n      \"unflattenedPartId\": \"string\"\n    },\n    {\n      \"jsonType\": \"string\",\n      \"href\": \"string\",\n      \"properties\": [\n        {\n          \"aggregationSkippedFilteredOutValues\": true,\n          \"computedAssemblyProperty\": false,\n          \"computedProperty\": true,\n          \"computedPropertyError\": \"string\",\n          \"computedPropertyEvalInfo\": \"string\",\n          \"dateFormat\": \"string\",\n          \"defaultValue\": {},\n          \"dirty\": true,\n          \"editable\": false,\n          \"editableInUi\": false,\n          \"enumValues\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ],\n          \"initialValue\": {},\n          \"multivalued\": true,\n          \"name\": \"string\",\n          \"propertyId\": \"string\",\n          \"propertyOverrideStatus\": 1664,\n          \"propertySource\": 6450,\n          \"publicPartOverridable\": true,\n          \"required\": false,\n          \"schemaId\": \"string\",\n          \"uiHints\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"validator\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"value\": {},\n          \"valueType\": \"string\"\n        },\n        {\n          \"aggregationSkippedFilteredOutValues\": true,\n          \"computedAssemblyProperty\": false,\n          \"computedProperty\": true,\n          \"computedPropertyError\": \"string\",\n          \"computedPropertyEvalInfo\": \"string\",\n          \"dateFormat\": \"string\",\n          \"defaultValue\": {},\n          \"dirty\": false,\n          \"editable\": true,\n          \"editableInUi\": true,\n          \"enumValues\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ],\n          \"initialValue\": {},\n          \"multivalued\": false,\n          \"name\": \"string\",\n          \"propertyId\": \"string\",\n          \"propertyOverrideStatus\": 8446,\n          \"propertySource\": 836,\n          \"publicPartOverridable\": false,\n          \"required\": false,\n          \"schemaId\": \"string\",\n          \"uiHints\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"validator\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"value\": {},\n          \"valueType\": \"string\"\n        }\n      ],\n      \"thumbnail\": {\n        \"href\": \"https://CLejRizCtQCcGGEW.ibEJUNl8,D.nfNeOIbBw1JTyS3VkeVOO,mthlhAwGebvW\",\n        \"id\": \"string\",\n        \"secondarySizes\": [\n          [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ],\n          [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ]\n        ],\n        \"sizes\": [\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        ]\n      },\n      \"isFlattenedBody\": false,\n      \"isPublicPartOverridable\": true,\n      \"meshState\": 1861,\n      \"partId\": \"string\",\n      \"partIdentity\": \"string\",\n      \"partType\": \"string\",\n      \"unflattenedPartId\": \"string\"\n    }\n  ],\n  \"next\": \"string\",\n  \"prev\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "f5a34cc2-5f32-4980-b17e-0154f90502a8",
+          "name": "Get the metadata for a part.",
+          "request": {
+            "name": "Get the metadata for a part.",
+            "description": {
+              "content": "See [API Guide: Metadata](https://onshape-public.github.io/docs/api-adv/metadata/) for details. \n* Specify the part in the `iden` or `pid` path parameter. \n* The `configuration` optional query parameter uses the default configuration unless otherwise specified. \n* `linkDocumentId` can be specified where applicable. Combined with `inferMetadataOwner` (default value is `false`), this is used to infer metadata owner. \n* `includeComputedProperties` can be used to include or omit computed properties. Default value is `true`. \n* `includeComputedAssemblyProperties` can be used to query computed assembly properties which are generally expensive. Default value is `false`. \n* You can also choose to include a `thumbnail`. Default value is `false`.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "metadata",
+                "d",
+                ":did",
+                ":wvm",
+                ":wvmid",
+                "e",
+                ":eid",
+                ":iden",
+                ":pid"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "linkDocumentId",
+                  "value": "",
+                  "description": "The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both."
+                },
+                {
+                  "disabled": false,
+                  "key": "configuration",
+                  "value": "",
+                  "description": "URL-encoded string of configuration values (separated by `;`). See the [Configurations API Guide](https://onshape-public.github.io/docs/api-adv/configs/) for details."
+                },
+                {
+                  "disabled": false,
+                  "key": "rollbackBarIndex",
+                  "value": "-1",
+                  "description": "Index specifying the location of the rollback bar when the call is evaluated. A -1 indicates that it should be at the end of the featurelist."
+                },
+                {
+                  "disabled": false,
+                  "key": "elementMicroversionId",
+                  "value": "<string>",
+                  "description": "A specific element microversion in which to evaluate the request."
+                },
+                {
+                  "disabled": false,
+                  "key": "inferMetadataOwner",
+                  "value": "false"
+                },
+                {
+                  "disabled": false,
+                  "key": "includeComputedProperties",
+                  "value": "true"
+                },
+                {
+                  "disabled": false,
+                  "key": "includeComputedAssemblyProperties",
+                  "value": "false"
+                },
+                {
+                  "disabled": false,
+                  "key": "thumbnail",
+                  "value": "false"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "did",
+                  "description": "(Required) The id of the document in which to perform the operation."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "wvm",
+                  "description": "(Required) Indicates which of workspace (w), version (v), or document microversion (m) id is specified below."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "wvmid",
+                  "description": "(Required) The id of the workspace, version or document microversion in which the operation should be performed."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "eid",
+                  "description": "(Required) The id of the element in which to perform the operation."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "iden",
+                  "description": "(Required) Denotes whether the pid specified is a part id (p) or a part identity (pi)."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "pid",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json;charset=UTF-8; qs=0.09"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "scope",
+                  "value": "OAuth2Internal OAuth2ReadPII OAuth2Read OAuth2Write OAuth2Delete OAuth2Purchase OAuth2Share document.create document.edit document.delete document.read enterprise.create enterprise.read enterprise.edit enterprise.delete enterprise.member.create enterprise.member.read enterprise.member.edit enterprise.member.delete webhook.create webhook.edit webhook.read webhook.delete PLMIntegration"
+                },
+                {
+                  "key": "redirect_uri",
+                  "value": "/oauth/token"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "/oauth/token"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "/oauth/authorize"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "d88fd797-e925-4e50-8833-396d227df0e8",
+              "name": "default response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "metadata",
+                    "d",
+                    ":did",
+                    ":wvm",
+                    ":wvmid",
+                    "e",
+                    ":eid",
+                    ":iden",
+                    ":pid"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "linkDocumentId",
+                      "value": ""
+                    },
+                    {
+                      "key": "configuration",
+                      "value": ""
+                    },
+                    {
+                      "key": "rollbackBarIndex",
+                      "value": "-1"
+                    },
+                    {
+                      "key": "elementMicroversionId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "inferMetadataOwner",
+                      "value": "false"
+                    },
+                    {
+                      "key": "includeComputedProperties",
+                      "value": "true"
+                    },
+                    {
+                      "key": "includeComputedAssemblyProperties",
+                      "value": "false"
+                    },
+                    {
+                      "key": "thumbnail",
+                      "value": "false"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "did",
+                      "description": "(Required) The id of the document in which to perform the operation."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "wvm",
+                      "description": "(Required) Indicates which of workspace (w), version (v), or document microversion (m) id is specified below."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "wvmid",
+                      "description": "(Required) The id of the workspace, version or document microversion in which the operation should be performed."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "eid",
+                      "description": "(Required) The id of the element in which to perform the operation."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "iden",
+                      "description": "(Required) Denotes whether the pid specified is a part id (p) or a part identity (pi)."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "pid",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json;charset=UTF-8; qs=0.09"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json;charset=UTF-8; qs=0.09"
+                }
+              ],
+              "body": "{\n  \"jsonType\": \"string\",\n  \"href\": \"string\",\n  \"properties\": [\n    {\n      \"aggregationSkippedFilteredOutValues\": false,\n      \"computedAssemblyProperty\": false,\n      \"computedProperty\": false,\n      \"computedPropertyError\": \"string\",\n      \"computedPropertyEvalInfo\": \"string\",\n      \"dateFormat\": \"string\",\n      \"defaultValue\": {},\n      \"dirty\": true,\n      \"editable\": false,\n      \"editableInUi\": false,\n      \"enumValues\": [\n        {\n          \"label\": \"string\",\n          \"state\": 990,\n          \"value\": \"string\"\n        },\n        {\n          \"label\": \"string\",\n          \"state\": 9473,\n          \"value\": \"string\"\n        }\n      ],\n      \"initialValue\": {},\n      \"multivalued\": false,\n      \"name\": \"string\",\n      \"propertyId\": \"string\",\n      \"propertyOverrideStatus\": 2647,\n      \"propertySource\": 5882,\n      \"publicPartOverridable\": false,\n      \"required\": true,\n      \"schemaId\": \"string\",\n      \"uiHints\": {\n        \"multiline\": true\n      },\n      \"validator\": {\n        \"max\": 4998.895765631591,\n        \"maxCount\": 7304,\n        \"maxDate\": \"2000-04-11T05:41:27.774Z\",\n        \"maxLength\": 1989,\n        \"min\": 4907.9766837663865,\n        \"minCount\": 3232,\n        \"minDate\": \"2004-07-27T22:27:15.169Z\",\n        \"minLength\": 8346,\n        \"pattern\": \"string\",\n        \"quantityType\": 4213\n      },\n      \"value\": {},\n      \"valueType\": \"string\"\n    },\n    {\n      \"aggregationSkippedFilteredOutValues\": false,\n      \"computedAssemblyProperty\": true,\n      \"computedProperty\": true,\n      \"computedPropertyError\": \"string\",\n      \"computedPropertyEvalInfo\": \"string\",\n      \"dateFormat\": \"string\",\n      \"defaultValue\": {},\n      \"dirty\": true,\n      \"editable\": false,\n      \"editableInUi\": false,\n      \"enumValues\": [\n        {\n          \"label\": \"string\",\n          \"state\": 2389,\n          \"value\": \"string\"\n        },\n        {\n          \"label\": \"string\",\n          \"state\": 4386,\n          \"value\": \"string\"\n        }\n      ],\n      \"initialValue\": {},\n      \"multivalued\": true,\n      \"name\": \"string\",\n      \"propertyId\": \"string\",\n      \"propertyOverrideStatus\": 3112,\n      \"propertySource\": 254,\n      \"publicPartOverridable\": true,\n      \"required\": false,\n      \"schemaId\": \"string\",\n      \"uiHints\": {\n        \"multiline\": false\n      },\n      \"validator\": {\n        \"max\": 9712.838453592723,\n        \"maxCount\": 9299,\n        \"maxDate\": \"1962-11-13T06:49:44.653Z\",\n        \"maxLength\": 8449,\n        \"min\": 8701.454969563962,\n        \"minCount\": 4268,\n        \"minDate\": \"2009-01-11T10:13:23.376Z\",\n        \"minLength\": 9477,\n        \"pattern\": \"string\",\n        \"quantityType\": 9793\n      },\n      \"value\": {},\n      \"valueType\": \"string\"\n    }\n  ],\n  \"thumbnail\": {\n    \"href\": \"https://InVaWWKUfixIogNJkZuWahldXV.jtwlqIPpofO1NXarJ2HCqLdu.EwdeHHFmpAxlPFpT00F\",\n    \"id\": \"string\",\n    \"secondarySizes\": [\n      [\n        {\n          \"href\": \"http://wPyg.onakGARGxTbjCHCD\",\n          \"mediaType\": \"string\",\n          \"renderMode\": \"string\",\n          \"sheetName\": \"string\",\n          \"size\": \"string\",\n          \"uniqueId\": \"string\",\n          \"viewOrientation\": \"string\"\n        },\n        {\n          \"href\": \"http://XdMgdotHZoa.imyozqJWasbj8tjQNdfu,65WgzPMgY+YO9dUFgS0gbJrW,ZlAMdHmlhv+3FMxqKoMgAPIPpk59U64h9FlyMkb\",\n          \"mediaType\": \"string\",\n          \"renderMode\": \"string\",\n          \"sheetName\": \"string\",\n          \"size\": \"string\",\n          \"uniqueId\": \"string\",\n          \"viewOrientation\": \"string\"\n        }\n      ],\n      [\n        {\n          \"href\": \"http://HILoNpcwQLwn.oxpxW9ll8zsnkPkc,PcsUkKItmlRSvU\",\n          \"mediaType\": \"string\",\n          \"renderMode\": \"string\",\n          \"sheetName\": \"string\",\n          \"size\": \"string\",\n          \"uniqueId\": \"string\",\n          \"viewOrientation\": \"string\"\n        },\n        {\n          \"href\": \"http://xrJ.aewmFoeB6leHDOWAOZn4YaMrNG8vHBUtPOy\",\n          \"mediaType\": \"string\",\n          \"renderMode\": \"string\",\n          \"sheetName\": \"string\",\n          \"size\": \"string\",\n          \"uniqueId\": \"string\",\n          \"viewOrientation\": \"string\"\n        }\n      ]\n    ],\n    \"sizes\": [\n      {\n        \"href\": \"https://exsZpLxzevLOavSBpXKwFGKI.amdDIQXf+T7LMGTFza2ggZcGKHjbGfiF-m5CSXIExG58nHR94LaMraO8\",\n        \"mediaType\": \"string\",\n        \"renderMode\": \"string\",\n        \"sheetName\": \"string\",\n        \"size\": \"string\",\n        \"uniqueId\": \"string\",\n        \"viewOrientation\": \"string\"\n      },\n      {\n        \"href\": \"https://nlqOvaBcuM.cefGsXClFRK8TtSwhkBBmxbTROl9YyD3PeHkXt.G4EZKOIiF08aLADUCBu4bnyZZgnlCRirHP\",\n        \"mediaType\": \"string\",\n        \"renderMode\": \"string\",\n        \"sheetName\": \"string\",\n        \"size\": \"string\",\n        \"uniqueId\": \"string\",\n        \"viewOrientation\": \"string\"\n      }\n    ]\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "12fa1490-8c85-4db2-8dfb-29e1a5b67b0d",
+          "name": "Update the metadata for a part.",
+          "request": {
+            "name": "Update the metadata for a part.",
+            "description": {
+              "content": "See [API Guide: Metadata](https://onshape-public.github.io/docs/api-adv/metadata/) for details. \n* Specify the part in the `iden` or `pid` path parameter. \n* The `configuration` optional query parameter uses the default configuration unless otherwise specified. \n* `linkDocumentId` can be specified where applicable. Combined with `inferMetadataOwner` (default value is `false`), this is used to infer metadata owner. \n* Specify the property metadata to update in the Request body.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "metadata",
+                "d",
+                ":did",
+                ":wvm",
+                ":wvmid",
+                "e",
+                ":eid",
+                ":iden",
+                ":pid"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "linkDocumentId",
+                  "value": "",
+                  "description": "The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both."
+                },
+                {
+                  "disabled": false,
+                  "key": "configuration",
+                  "value": "",
+                  "description": "URL-encoded string of configuration values (separated by `;`). See the [Configurations API Guide](https://onshape-public.github.io/docs/api-adv/configs/) for details."
+                },
+                {
+                  "disabled": false,
+                  "key": "rollbackBarIndex",
+                  "value": "-1",
+                  "description": "Index specifying the location of the rollback bar when the call is evaluated. A -1 indicates that it should be at the end of the featurelist."
+                },
+                {
+                  "disabled": false,
+                  "key": "elementMicroversionId",
+                  "value": "<string>",
+                  "description": "A specific element microversion in which to evaluate the request."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "did",
+                  "description": "(Required) The id of the document in which to perform the operation."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "wvm",
+                  "description": "(Required) Indicates which of workspace (w), version (v), or document microversion (m) id is specified below."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "wvmid",
+                  "description": "(Required) The id of the workspace, version or document microversion in which the operation should be performed."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "eid",
+                  "description": "(Required) The id of the element in which to perform the operation."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "iden",
+                  "description": "(Required) Denotes whether the pid specified is a part id (p) or a part identity (pi)."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "pid",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json;charset=UTF-8; qs=0.09"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json;charset=UTF-8; qs=0.09"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "scope",
+                  "value": "OAuth2Internal OAuth2ReadPII OAuth2Read OAuth2Write OAuth2Delete OAuth2Purchase OAuth2Share document.create document.edit document.delete document.read enterprise.create enterprise.read enterprise.edit enterprise.delete enterprise.member.create enterprise.member.read enterprise.member.edit enterprise.member.delete webhook.create webhook.edit webhook.read webhook.delete PLMIntegration"
+                },
+                {
+                  "key": "redirect_uri",
+                  "value": "/oauth/token"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "/oauth/token"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "/oauth/authorize"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "<string>",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "bb446dd6-0117-4588-b168-8f33d3aa37d2",
+              "name": "default response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "metadata",
+                    "d",
+                    ":did",
+                    ":wvm",
+                    ":wvmid",
+                    "e",
+                    ":eid",
+                    ":iden",
+                    ":pid"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "linkDocumentId",
+                      "value": ""
+                    },
+                    {
+                      "key": "configuration",
+                      "value": ""
+                    },
+                    {
+                      "key": "rollbackBarIndex",
+                      "value": "-1"
+                    },
+                    {
+                      "key": "elementMicroversionId",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "did",
+                      "description": "(Required) The id of the document in which to perform the operation."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "wvm",
+                      "description": "(Required) Indicates which of workspace (w), version (v), or document microversion (m) id is specified below."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "wvmid",
+                      "description": "(Required) The id of the workspace, version or document microversion in which the operation should be performed."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "eid",
+                      "description": "(Required) The id of the element in which to perform the operation."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "iden",
+                      "description": "(Required) Denotes whether the pid specified is a part id (p) or a part identity (pi)."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "pid",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json;charset=UTF-8; qs=0.09"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "<string>",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json;charset=UTF-8; qs=0.09"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "6f89b618-3c90-45ba-82ff-b760b75646c7",
+          "name": "Get the metadata for a workspace or version.",
+          "request": {
+            "name": "Get the metadata for a workspace or version.",
+            "description": {
+              "content": "See [API Guide: Metadata](https://onshape-public.github.io/docs/api-adv/metadata/) for details. \n* `linkDocumentId` can be specified where applicable. Combined with `inferMetadataOwner` (default value is `false`), this is used to infer metadata owner. \n* You can specify an optional `depth` query parameter to get multiple levels in an assembly. Default `depth` is `1`. \n* `includeComputedProperties` can be used to include or omit computed properties. Default value is `true`. \n* `includeComputedAssemblyProperties` can be used to query computed assembly properties which are generally expensive. Default value is `false`. \n* You can also choose to include a `thumbnail`. Default value is `false`.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "metadata",
+                "d",
+                ":did",
+                ":wv",
+                ":wvid"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "linkDocumentId",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "inferMetadataOwner",
+                  "value": "false"
+                },
+                {
+                  "disabled": false,
+                  "key": "depth",
+                  "value": "1"
+                },
+                {
+                  "disabled": false,
+                  "key": "includeComputedProperties",
+                  "value": "true"
+                },
+                {
+                  "disabled": false,
+                  "key": "includeComputedAssemblyProperties",
+                  "value": "false"
+                },
+                {
+                  "disabled": false,
+                  "key": "thumbnail",
+                  "value": "false"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "did",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "wv",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "wvid",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json;charset=UTF-8; qs=0.09"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "scope",
+                  "value": "OAuth2Internal OAuth2ReadPII OAuth2Read OAuth2Write OAuth2Delete OAuth2Purchase OAuth2Share document.create document.edit document.delete document.read enterprise.create enterprise.read enterprise.edit enterprise.delete enterprise.member.create enterprise.member.read enterprise.member.edit enterprise.member.delete webhook.create webhook.edit webhook.read webhook.delete PLMIntegration"
+                },
+                {
+                  "key": "redirect_uri",
+                  "value": "/oauth/token"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "/oauth/token"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "/oauth/authorize"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "be0ddb5e-5267-4aae-b0c1-fd4222720629",
+              "name": "default response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "metadata",
+                    "d",
+                    ":did",
+                    ":wv",
+                    ":wvid"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "linkDocumentId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "inferMetadataOwner",
+                      "value": "false"
+                    },
+                    {
+                      "key": "depth",
+                      "value": "1"
+                    },
+                    {
+                      "key": "includeComputedProperties",
+                      "value": "true"
+                    },
+                    {
+                      "key": "includeComputedAssemblyProperties",
+                      "value": "false"
+                    },
+                    {
+                      "key": "thumbnail",
+                      "value": "false"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "did",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "wv",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "wvid",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json;charset=UTF-8; qs=0.09"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json;charset=UTF-8; qs=0.09"
+                }
+              ],
+              "body": "{\n  \"jsonType\": \"string\",\n  \"href\": \"string\",\n  \"properties\": [\n    {\n      \"aggregationSkippedFilteredOutValues\": false,\n      \"computedAssemblyProperty\": false,\n      \"computedProperty\": false,\n      \"computedPropertyError\": \"string\",\n      \"computedPropertyEvalInfo\": \"string\",\n      \"dateFormat\": \"string\",\n      \"defaultValue\": {},\n      \"dirty\": true,\n      \"editable\": false,\n      \"editableInUi\": false,\n      \"enumValues\": [\n        {\n          \"label\": \"string\",\n          \"state\": 990,\n          \"value\": \"string\"\n        },\n        {\n          \"label\": \"string\",\n          \"state\": 9473,\n          \"value\": \"string\"\n        }\n      ],\n      \"initialValue\": {},\n      \"multivalued\": false,\n      \"name\": \"string\",\n      \"propertyId\": \"string\",\n      \"propertyOverrideStatus\": 2647,\n      \"propertySource\": 5882,\n      \"publicPartOverridable\": false,\n      \"required\": true,\n      \"schemaId\": \"string\",\n      \"uiHints\": {\n        \"multiline\": true\n      },\n      \"validator\": {\n        \"max\": 4998.895765631591,\n        \"maxCount\": 7304,\n        \"maxDate\": \"2000-04-11T05:41:27.774Z\",\n        \"maxLength\": 1989,\n        \"min\": 4907.9766837663865,\n        \"minCount\": 3232,\n        \"minDate\": \"2004-07-27T22:27:15.169Z\",\n        \"minLength\": 8346,\n        \"pattern\": \"string\",\n        \"quantityType\": 4213\n      },\n      \"value\": {},\n      \"valueType\": \"string\"\n    },\n    {\n      \"aggregationSkippedFilteredOutValues\": false,\n      \"computedAssemblyProperty\": true,\n      \"computedProperty\": true,\n      \"computedPropertyError\": \"string\",\n      \"computedPropertyEvalInfo\": \"string\",\n      \"dateFormat\": \"string\",\n      \"defaultValue\": {},\n      \"dirty\": true,\n      \"editable\": false,\n      \"editableInUi\": false,\n      \"enumValues\": [\n        {\n          \"label\": \"string\",\n          \"state\": 2389,\n          \"value\": \"string\"\n        },\n        {\n          \"label\": \"string\",\n          \"state\": 4386,\n          \"value\": \"string\"\n        }\n      ],\n      \"initialValue\": {},\n      \"multivalued\": true,\n      \"name\": \"string\",\n      \"propertyId\": \"string\",\n      \"propertyOverrideStatus\": 3112,\n      \"propertySource\": 254,\n      \"publicPartOverridable\": true,\n      \"required\": false,\n      \"schemaId\": \"string\",\n      \"uiHints\": {\n        \"multiline\": false\n      },\n      \"validator\": {\n        \"max\": 9712.838453592723,\n        \"maxCount\": 9299,\n        \"maxDate\": \"1962-11-13T06:49:44.653Z\",\n        \"maxLength\": 8449,\n        \"min\": 8701.454969563962,\n        \"minCount\": 4268,\n        \"minDate\": \"2009-01-11T10:13:23.376Z\",\n        \"minLength\": 9477,\n        \"pattern\": \"string\",\n        \"quantityType\": 9793\n      },\n      \"value\": {},\n      \"valueType\": \"string\"\n    }\n  ],\n  \"thumbnail\": {\n    \"href\": \"https://InVaWWKUfixIogNJkZuWahldXV.jtwlqIPpofO1NXarJ2HCqLdu.EwdeHHFmpAxlPFpT00F\",\n    \"id\": \"string\",\n    \"secondarySizes\": [\n      [\n        {\n          \"href\": \"http://wPyg.onakGARGxTbjCHCD\",\n          \"mediaType\": \"string\",\n          \"renderMode\": \"string\",\n          \"sheetName\": \"string\",\n          \"size\": \"string\",\n          \"uniqueId\": \"string\",\n          \"viewOrientation\": \"string\"\n        },\n        {\n          \"href\": \"http://XdMgdotHZoa.imyozqJWasbj8tjQNdfu,65WgzPMgY+YO9dUFgS0gbJrW,ZlAMdHmlhv+3FMxqKoMgAPIPpk59U64h9FlyMkb\",\n          \"mediaType\": \"string\",\n          \"renderMode\": \"string\",\n          \"sheetName\": \"string\",\n          \"size\": \"string\",\n          \"uniqueId\": \"string\",\n          \"viewOrientation\": \"string\"\n        }\n      ],\n      [\n        {\n          \"href\": \"http://HILoNpcwQLwn.oxpxW9ll8zsnkPkc,PcsUkKItmlRSvU\",\n          \"mediaType\": \"string\",\n          \"renderMode\": \"string\",\n          \"sheetName\": \"string\",\n          \"size\": \"string\",\n          \"uniqueId\": \"string\",\n          \"viewOrientation\": \"string\"\n        },\n        {\n          \"href\": \"http://xrJ.aewmFoeB6leHDOWAOZn4YaMrNG8vHBUtPOy\",\n          \"mediaType\": \"string\",\n          \"renderMode\": \"string\",\n          \"sheetName\": \"string\",\n          \"size\": \"string\",\n          \"uniqueId\": \"string\",\n          \"viewOrientation\": \"string\"\n        }\n      ]\n    ],\n    \"sizes\": [\n      {\n        \"href\": \"https://exsZpLxzevLOavSBpXKwFGKI.amdDIQXf+T7LMGTFza2ggZcGKHjbGfiF-m5CSXIExG58nHR94LaMraO8\",\n        \"mediaType\": \"string\",\n        \"renderMode\": \"string\",\n        \"sheetName\": \"string\",\n        \"size\": \"string\",\n        \"uniqueId\": \"string\",\n        \"viewOrientation\": \"string\"\n      },\n      {\n        \"href\": \"https://nlqOvaBcuM.cefGsXClFRK8TtSwhkBBmxbTROl9YyD3PeHkXt.G4EZKOIiF08aLADUCBu4bnyZZgnlCRirHP\",\n        \"mediaType\": \"string\",\n        \"renderMode\": \"string\",\n        \"sheetName\": \"string\",\n        \"size\": \"string\",\n        \"uniqueId\": \"string\",\n        \"viewOrientation\": \"string\"\n      }\n    ]\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "7fbf3f5c-91d1-4aeb-8106-2cf37f28bd2b",
+          "name": "Update the metadata for a workspace or version.",
+          "request": {
+            "name": "Update the metadata for a workspace or version.",
+            "description": {
+              "content": "See [API Guide: Metadata](https://onshape-public.github.io/docs/api-adv/metadata/) for details.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "metadata",
+                "d",
+                ":did",
+                ":wv",
+                ":wvid"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "did",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "wv",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "wvid",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json;charset=UTF-8; qs=0.09"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json;charset=UTF-8; qs=0.09"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "scope",
+                  "value": "OAuth2Internal OAuth2ReadPII OAuth2Read OAuth2Write OAuth2Delete OAuth2Purchase OAuth2Share document.create document.edit document.delete document.read enterprise.create enterprise.read enterprise.edit enterprise.delete enterprise.member.create enterprise.member.read enterprise.member.edit enterprise.member.delete webhook.create webhook.edit webhook.read webhook.delete PLMIntegration"
+                },
+                {
+                  "key": "redirect_uri",
+                  "value": "/oauth/token"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "/oauth/token"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "/oauth/authorize"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "<string>",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "3b4f34e8-0334-434f-8100-f79700d25735",
+              "name": "default response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "metadata",
+                    "d",
+                    ":did",
+                    ":wv",
+                    ":wvid"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "did",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "wv",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "wvid",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json;charset=UTF-8; qs=0.09"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "<string>",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json;charset=UTF-8; qs=0.09"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "56d68786-984a-49be-a44b-857c7b1616ea",
+          "name": "Update the metadata for a standard content part.",
+          "request": {
+            "name": "Update the metadata for a standard content part.",
+            "description": {
+              "content": "Specify the property metadata to update in the Request body. See [API Guide: Metadata](https://onshape-public.github.io/docs/api-adv/metadata/#update-standard-content-part-metadata) for an example.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "metadata",
+                "standardcontent",
+                "d",
+                ":did"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "linkDocumentId",
+                  "value": "<string>",
+                  "description": "The ID of the document in which you have inserted the standard content part."
+                },
+                {
+                  "disabled": false,
+                  "key": "companyId",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "did",
+                  "description": "(Required) The ID of the document that owns the standard content part."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json;charset=UTF-8; qs=0.09"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json;charset=UTF-8; qs=0.09"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "scope",
+                  "value": "OAuth2Internal OAuth2ReadPII OAuth2Read OAuth2Write OAuth2Delete OAuth2Purchase OAuth2Share document.create document.edit document.delete document.read enterprise.create enterprise.read enterprise.edit enterprise.delete enterprise.member.create enterprise.member.read enterprise.member.edit enterprise.member.delete webhook.create webhook.edit webhook.read webhook.delete PLMIntegration"
+                },
+                {
+                  "key": "redirect_uri",
+                  "value": "/oauth/token"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "/oauth/token"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "/oauth/authorize"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "<string>",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "ba6bf7d8-0489-4cbb-87db-bfc9515d90c2",
+              "name": "default response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "metadata",
+                    "standardcontent",
+                    "d",
+                    ":did"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "linkDocumentId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "companyId",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "did",
+                      "description": "(Required) The ID of the document that owns the standard content part."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json;charset=UTF-8; qs=0.09"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "<string>",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json;charset=UTF-8; qs=0.09"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "4052d731-c7d5-4208-bc5d-b52bd5c83e3f",
+          "name": "Get the metadata for a standard content part.",
+          "request": {
+            "name": "Get the metadata for a standard content part.",
+            "description": {
+              "content": "See [API Guide: Metadata](https://onshape-public.github.io/docs/api-adv/metadata/) for details. \n* Specify the part in the `pid` path parameter. \n* The `configuration` and `linkDocumentId` query parameters are required. \n* `includeComputedProperties` can be used to include or omit computed properties. Default value is `true`. \n* `includeComputedAssemblyProperties` can be used to query computed assembly properties which are generally expensive. Default value is `false`. \n* You can also choose to include a `thumbnail`. Default value is `false`.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "metadata",
+                "standardcontent",
+                "d",
+                ":did",
+                "v",
+                ":vid",
+                "e",
+                ":eid",
+                "p",
+                ":pid"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "configuration",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "linkDocumentId",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "companyId",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "includeComputedProperties",
+                  "value": "true"
+                },
+                {
+                  "disabled": false,
+                  "key": "includeComputedAssemblyProperties",
+                  "value": "false"
+                },
+                {
+                  "disabled": false,
+                  "key": "thumbnail",
+                  "value": "false"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "did",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "vid",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "eid",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "pid",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json;charset=UTF-8; qs=0.09"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "scope",
+                  "value": "OAuth2Internal OAuth2ReadPII OAuth2Read OAuth2Write OAuth2Delete OAuth2Purchase OAuth2Share document.create document.edit document.delete document.read enterprise.create enterprise.read enterprise.edit enterprise.delete enterprise.member.create enterprise.member.read enterprise.member.edit enterprise.member.delete webhook.create webhook.edit webhook.read webhook.delete PLMIntegration"
+                },
+                {
+                  "key": "redirect_uri",
+                  "value": "/oauth/token"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "/oauth/token"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "/oauth/authorize"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "cdbbc106-384f-4b78-85b7-345a118ccda4",
+              "name": "default response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "metadata",
+                    "standardcontent",
+                    "d",
+                    ":did",
+                    "v",
+                    ":vid",
+                    "e",
+                    ":eid",
+                    "p",
+                    ":pid"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "configuration",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "linkDocumentId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "companyId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "includeComputedProperties",
+                      "value": "true"
+                    },
+                    {
+                      "key": "includeComputedAssemblyProperties",
+                      "value": "false"
+                    },
+                    {
+                      "key": "thumbnail",
+                      "value": "false"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "did",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "vid",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "eid",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "pid",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json;charset=UTF-8; qs=0.09"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json;charset=UTF-8; qs=0.09"
+                }
+              ],
+              "body": "{\n  \"jsonType\": \"string\",\n  \"href\": \"string\",\n  \"properties\": [\n    {\n      \"aggregationSkippedFilteredOutValues\": false,\n      \"computedAssemblyProperty\": false,\n      \"computedProperty\": false,\n      \"computedPropertyError\": \"string\",\n      \"computedPropertyEvalInfo\": \"string\",\n      \"dateFormat\": \"string\",\n      \"defaultValue\": {},\n      \"dirty\": true,\n      \"editable\": false,\n      \"editableInUi\": false,\n      \"enumValues\": [\n        {\n          \"label\": \"string\",\n          \"state\": 990,\n          \"value\": \"string\"\n        },\n        {\n          \"label\": \"string\",\n          \"state\": 9473,\n          \"value\": \"string\"\n        }\n      ],\n      \"initialValue\": {},\n      \"multivalued\": false,\n      \"name\": \"string\",\n      \"propertyId\": \"string\",\n      \"propertyOverrideStatus\": 2647,\n      \"propertySource\": 5882,\n      \"publicPartOverridable\": false,\n      \"required\": true,\n      \"schemaId\": \"string\",\n      \"uiHints\": {\n        \"multiline\": true\n      },\n      \"validator\": {\n        \"max\": 4998.895765631591,\n        \"maxCount\": 7304,\n        \"maxDate\": \"2000-04-11T05:41:27.774Z\",\n        \"maxLength\": 1989,\n        \"min\": 4907.9766837663865,\n        \"minCount\": 3232,\n        \"minDate\": \"2004-07-27T22:27:15.169Z\",\n        \"minLength\": 8346,\n        \"pattern\": \"string\",\n        \"quantityType\": 4213\n      },\n      \"value\": {},\n      \"valueType\": \"string\"\n    },\n    {\n      \"aggregationSkippedFilteredOutValues\": false,\n      \"computedAssemblyProperty\": true,\n      \"computedProperty\": true,\n      \"computedPropertyError\": \"string\",\n      \"computedPropertyEvalInfo\": \"string\",\n      \"dateFormat\": \"string\",\n      \"defaultValue\": {},\n      \"dirty\": true,\n      \"editable\": false,\n      \"editableInUi\": false,\n      \"enumValues\": [\n        {\n          \"label\": \"string\",\n          \"state\": 2389,\n          \"value\": \"string\"\n        },\n        {\n          \"label\": \"string\",\n          \"state\": 4386,\n          \"value\": \"string\"\n        }\n      ],\n      \"initialValue\": {},\n      \"multivalued\": true,\n      \"name\": \"string\",\n      \"propertyId\": \"string\",\n      \"propertyOverrideStatus\": 3112,\n      \"propertySource\": 254,\n      \"publicPartOverridable\": true,\n      \"required\": false,\n      \"schemaId\": \"string\",\n      \"uiHints\": {\n        \"multiline\": false\n      },\n      \"validator\": {\n        \"max\": 9712.838453592723,\n        \"maxCount\": 9299,\n        \"maxDate\": \"1962-11-13T06:49:44.653Z\",\n        \"maxLength\": 8449,\n        \"min\": 8701.454969563962,\n        \"minCount\": 4268,\n        \"minDate\": \"2009-01-11T10:13:23.376Z\",\n        \"minLength\": 9477,\n        \"pattern\": \"string\",\n        \"quantityType\": 9793\n      },\n      \"value\": {},\n      \"valueType\": \"string\"\n    }\n  ],\n  \"thumbnail\": {\n    \"href\": \"https://InVaWWKUfixIogNJkZuWahldXV.jtwlqIPpofO1NXarJ2HCqLdu.EwdeHHFmpAxlPFpT00F\",\n    \"id\": \"string\",\n    \"secondarySizes\": [\n      [\n        {\n          \"href\": \"http://wPyg.onakGARGxTbjCHCD\",\n          \"mediaType\": \"string\",\n          \"renderMode\": \"string\",\n          \"sheetName\": \"string\",\n          \"size\": \"string\",\n          \"uniqueId\": \"string\",\n          \"viewOrientation\": \"string\"\n        },\n        {\n          \"href\": \"http://XdMgdotHZoa.imyozqJWasbj8tjQNdfu,65WgzPMgY+YO9dUFgS0gbJrW,ZlAMdHmlhv+3FMxqKoMgAPIPpk59U64h9FlyMkb\",\n          \"mediaType\": \"string\",\n          \"renderMode\": \"string\",\n          \"sheetName\": \"string\",\n          \"size\": \"string\",\n          \"uniqueId\": \"string\",\n          \"viewOrientation\": \"string\"\n        }\n      ],\n      [\n        {\n          \"href\": \"http://HILoNpcwQLwn.oxpxW9ll8zsnkPkc,PcsUkKItmlRSvU\",\n          \"mediaType\": \"string\",\n          \"renderMode\": \"string\",\n          \"sheetName\": \"string\",\n          \"size\": \"string\",\n          \"uniqueId\": \"string\",\n          \"viewOrientation\": \"string\"\n        },\n        {\n          \"href\": \"http://xrJ.aewmFoeB6leHDOWAOZn4YaMrNG8vHBUtPOy\",\n          \"mediaType\": \"string\",\n          \"renderMode\": \"string\",\n          \"sheetName\": \"string\",\n          \"size\": \"string\",\n          \"uniqueId\": \"string\",\n          \"viewOrientation\": \"string\"\n        }\n      ]\n    ],\n    \"sizes\": [\n      {\n        \"href\": \"https://exsZpLxzevLOavSBpXKwFGKI.amdDIQXf+T7LMGTFza2ggZcGKHjbGfiF-m5CSXIExG58nHR94LaMraO8\",\n        \"mediaType\": \"string\",\n        \"renderMode\": \"string\",\n        \"sheetName\": \"string\",\n        \"size\": \"string\",\n        \"uniqueId\": \"string\",\n        \"viewOrientation\": \"string\"\n      },\n      {\n        \"href\": \"https://nlqOvaBcuM.cefGsXClFRK8TtSwhkBBmxbTROl9YyD3PeHkXt.G4EZKOIiF08aLADUCBu4bnyZZgnlCRirHP\",\n        \"mediaType\": \"string\",\n        \"renderMode\": \"string\",\n        \"sheetName\": \"string\",\n        \"size\": \"string\",\n        \"uniqueId\": \"string\",\n        \"viewOrientation\": \"string\"\n      }\n    ]\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://cad.onshape.com/api/v16",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "basic",
+    "basic": [
+      {
+        "key": "username",
+        "value": "{{basicAuthUsername}}"
+      },
+      {
+        "key": "password",
+        "value": "{{basicAuthPassword}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "dd448e74-1d82-4b4f-9642-8cc767c7c6b8",
+    "name": "Onshape REST Account Metadata API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "## Welcome to the Onshape REST API Explorer\n\n**See the [API Explorer Guide](https://onshape-public.github.io/docs/api-intro/explorer/) for help navigating this page.**\n\n### Using this page\n1. Sign in to your [Onshape](https://cad.onshape.com) account in another tab.\n2. Click the `Try it out` button below. It toggles to a `Cancel` button when selected.\n\n### Authenticating\nTo authenticate your calls, click the `Authorize` button. See [API Explorer Guide: Authentication](https://onshape-public.github.io/docs/api-intro/explorer/#authentication) for details. Calls made when authenticated via API Keys or OAuth count against your annual [API limits](https://onshape-public.github.io/docs/auth/limits/#annual-api-call-limits).\n* **Tip:** To ensure the current session isn't used when trying other authentication techniques, make sure to [remove the Onshape cookie](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site) as per the instructions for your browser, or use a private or incognito window.\n\n### Additional resources\n\n* [Onshape API Guide](https://onshape-public.github.io/docs/): Our full suite of developer guides, to be used as an accompaniment to this API Explorer.\n* [Onshape Developer Portal](https://cad.onshape.com/appstore/dev-portal): The Onshape portal for managing your API keys, OAuth2 credentials, your Onshape applications, and your Onshape App Store entries.\n* [Authentication Guide](https://onshape-public.github.io/docs/auth/): Our guide to using API keys, request signatures, and OAuth2 in your Onshape applications.\n\nContact Support:\n Email: api-support@onshape.zendesk.com",
+      "type": "text/plain"
+    }
+  }
+}

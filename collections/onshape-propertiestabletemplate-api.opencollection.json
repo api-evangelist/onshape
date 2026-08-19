@@ -1,0 +1,205 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Onshape REST Account PropertiesTableTemplate API",
+    "version": "1.218.84032-34acba44be17"
+  },
+  "request": {
+    "auth": {
+      "type": "basic",
+      "username": "{{username}}",
+      "password": "{{password}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "PropertiesTableTemplate",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Create a new properties table template.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://cad.onshape.com/api/v16/tabletemplates",
+            "params": [
+              {
+                "name": "templateGroupId",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "/oauth/authorize",
+              "accessTokenUrl": "/oauth/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Create a new properties table template."
+        },
+        {
+          "info": {
+            "name": "Get all properties table templates available for a company.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://cad.onshape.com/api/v16/tabletemplates/companies/:cid",
+            "params": [
+              {
+                "name": "cid",
+                "value": "",
+                "type": "path",
+                "description": "The id of the company in which to perform the operation."
+              },
+              {
+                "name": "templateType",
+                "value": "",
+                "type": "query",
+                "description": "Indicates filter for table templates: 0 (BOM) or 1 (Revision Table)."
+              },
+              {
+                "name": "onlyActive",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "includeDefaults",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "/oauth/authorize",
+              "accessTokenUrl": "/oauth/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Get all properties table templates available for a company."
+        },
+        {
+          "info": {
+            "name": "Get all table templates that are available to use on the provided document.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://cad.onshape.com/api/v16/tabletemplates/d/:did",
+            "params": [
+              {
+                "name": "did",
+                "value": "",
+                "type": "path",
+                "description": "The id of the document in which to perform the operation."
+              },
+              {
+                "name": "templateType",
+                "value": "",
+                "type": "query",
+                "description": "Indicates filter for table templates: 0 (BOM) or 1 (Revision Table)."
+              },
+              {
+                "name": "onlyActive",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "includeDefaults",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "/oauth/authorize",
+              "accessTokenUrl": "/oauth/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Get all table templates that are available to use on the provided document."
+        },
+        {
+          "info": {
+            "name": "Get a properties table template by template ID.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://cad.onshape.com/api/v16/tabletemplates/:tid",
+            "params": [
+              {
+                "name": "tid",
+                "value": "",
+                "type": "path",
+                "description": "The id of the template in which to perform the operation."
+              }
+            ],
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "/oauth/authorize",
+              "accessTokenUrl": "/oauth/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Get a properties table template by template ID."
+        },
+        {
+          "info": {
+            "name": "Delete a properties table template.",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://cad.onshape.com/api/v16/tabletemplates/:tid",
+            "params": [
+              {
+                "name": "tid",
+                "value": "",
+                "type": "path",
+                "description": "The id of the template in which to perform the operation."
+              }
+            ],
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "/oauth/authorize",
+              "accessTokenUrl": "/oauth/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Delete a properties table template."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

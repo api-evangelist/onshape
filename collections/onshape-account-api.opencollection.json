@@ -1,0 +1,146 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Onshape REST Account API",
+    "version": "1.218.84032-34acba44be17"
+  },
+  "request": {
+    "auth": {
+      "type": "basic",
+      "username": "{{username}}",
+      "password": "{{password}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Account",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get a list of all app purchases made for the specified plan.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://cad.onshape.com/api/v16/accounts/plans/:planId/purchases",
+            "params": [
+              {
+                "name": "planId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get a list of all app purchases made for the specified plan."
+        },
+        {
+          "info": {
+            "name": "Get a list of all app purchases made by the current user.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://cad.onshape.com/api/v16/accounts/purchases",
+            "params": [
+              {
+                "name": "all",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "ownPurchaseOnly",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "This API should be used within the context of an OAuth-enabled application."
+        },
+        {
+          "info": {
+            "name": "Mark a purchase as consumed by the current user.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://cad.onshape.com/api/v16/accounts/purchases/:pid/consume",
+            "params": [
+              {
+                "name": "pid",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "/oauth/authorize",
+              "accessTokenUrl": "/oauth/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Mark a purchase as consumed by the current user."
+        },
+        {
+          "info": {
+            "name": "Cancel a recurring subscription for the specified account ID and purchase ID.",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://cad.onshape.com/api/v16/accounts/:aid/purchases/:pid",
+            "params": [
+              {
+                "name": "aid",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "pid",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "cancelImmediately",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "/oauth/authorize",
+              "accessTokenUrl": "/oauth/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Cancel a recurring subscription for the specified account ID and purchase ID."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,1287 @@
+{
+  "item": [
+    {
+      "id": "4a14a388-2026-457e-ba3c-8e0341f8d890",
+      "name": "Drawing",
+      "description": {
+        "content": "Access, create, and translate drawings.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "d6622a8d-440d-427a-a1a4-7b6ea8e34f52",
+          "name": "Create a new drawing in a document.",
+          "request": {
+            "name": "Create a new drawing in a document.",
+            "description": {
+              "content": "This endpoint takes a JSON Schema as input. See the schema docs below for details, and see [API Guide: Drawings](https://onshape-public.github.io/docs/api-adv/drawings/) for more information.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "drawings",
+                "d",
+                ":did",
+                "w",
+                ":wid",
+                "create"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "did",
+                  "description": "(Required) ID of the document in which to create the drawing."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "wid",
+                  "description": "(Required) ID of the workspace in which to create the drawing."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json;charset=UTF-8; qs=0.09"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json;charset=UTF-8; qs=0.09"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "scope",
+                  "value": "OAuth2Internal OAuth2ReadPII OAuth2Read OAuth2Write OAuth2Delete OAuth2Purchase OAuth2Share document.create document.edit document.delete document.read enterprise.create enterprise.read enterprise.edit enterprise.delete enterprise.member.create enterprise.member.read enterprise.member.edit enterprise.member.delete webhook.create webhook.edit webhook.read webhook.delete PLMIntegration"
+                },
+                {
+                  "key": "redirect_uri",
+                  "value": "/oauth/token"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "/oauth/token"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "/oauth/authorize"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"border\": false,\n  \"computeIntersection\": false,\n  \"decimalSeparator\": \"PERIOD\",\n  \"displayStateId\": \"<string>\",\n  \"documentId\": \"<string>\",\n  \"documentMicroversionId\": \"<string>\",\n  \"drawingName\": \"<string>\",\n  \"elementConfiguration\": \"<string>\",\n  \"elementId\": \"<string>\",\n  \"elementMicroversionId\": \"<string>\",\n  \"explosionId\": \"<string>\",\n  \"externalDocumentId\": \"<string>\",\n  \"externalDocumentVersionId\": \"<string>\",\n  \"hiddenLines\": \"<string>\",\n  \"includeSurfaces\": false,\n  \"includeWires\": false,\n  \"isFlattenedPart\": false,\n  \"isSketchOnly\": false,\n  \"isSurface\": false,\n  \"language\": \"en-us\",\n  \"location\": {\n    \"elementId\": \"<string>\",\n    \"position\": \"<integer>\"\n  },\n  \"modelType\": \"<string>\",\n  \"namedPositionId\": \"<string>\",\n  \"numberHorizontalZones\": 0,\n  \"numberVerticalZones\": 0,\n  \"partId\": \"<string>\",\n  \"partNumber\": \"<string>\",\n  \"partQuery\": \"<string>\",\n  \"projection\": \"<string>\",\n  \"pureSketch\": false,\n  \"qualityOption\": \"<string>\",\n  \"referenceType\": \"<integer>\",\n  \"referenceTypeEnum\": \"<string>\",\n  \"revision\": \"<string>\",\n  \"showCutGeomOnly\": false,\n  \"showMbdAnnotations\": false,\n  \"simplificationOption\": \"<string>\",\n  \"simplificationThreshold\": \"<double>\",\n  \"size\": \"<string>\",\n  \"sketchIds\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"standard\": \"<string>\",\n  \"startZones\": \"<string>\",\n  \"templateArgs\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"templateDocumentId\": \"<string>\",\n  \"templateElementId\": \"<string>\",\n  \"templateName\": \"<string>\",\n  \"templateVersionId\": \"<string>\",\n  \"templateWorkspaceId\": \"<string>\",\n  \"titleblock\": false,\n  \"units\": \"<string>\",\n  \"views\": \"<string>\",\n  \"workspaceId\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "84ec731d-8ba5-415c-ba0b-8e50bee235c7",
+              "name": "default response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "drawings",
+                    "d",
+                    ":did",
+                    "w",
+                    ":wid",
+                    "create"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "did",
+                      "description": "(Required) ID of the document in which to create the drawing."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "wid",
+                      "description": "(Required) ID of the workspace in which to create the drawing."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json;charset=UTF-8; qs=0.09"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"border\": false,\n  \"computeIntersection\": false,\n  \"decimalSeparator\": \"PERIOD\",\n  \"displayStateId\": \"<string>\",\n  \"documentId\": \"<string>\",\n  \"documentMicroversionId\": \"<string>\",\n  \"drawingName\": \"<string>\",\n  \"elementConfiguration\": \"<string>\",\n  \"elementId\": \"<string>\",\n  \"elementMicroversionId\": \"<string>\",\n  \"explosionId\": \"<string>\",\n  \"externalDocumentId\": \"<string>\",\n  \"externalDocumentVersionId\": \"<string>\",\n  \"hiddenLines\": \"<string>\",\n  \"includeSurfaces\": false,\n  \"includeWires\": false,\n  \"isFlattenedPart\": false,\n  \"isSketchOnly\": false,\n  \"isSurface\": false,\n  \"language\": \"en-us\",\n  \"location\": {\n    \"elementId\": \"<string>\",\n    \"position\": \"<integer>\"\n  },\n  \"modelType\": \"<string>\",\n  \"namedPositionId\": \"<string>\",\n  \"numberHorizontalZones\": 2,\n  \"numberVerticalZones\": 2,\n  \"partId\": \"<string>\",\n  \"partNumber\": \"<string>\",\n  \"partQuery\": \"<string>\",\n  \"projection\": \"<string>\",\n  \"pureSketch\": false,\n  \"qualityOption\": \"<string>\",\n  \"referenceType\": \"<integer>\",\n  \"referenceTypeEnum\": \"<string>\",\n  \"revision\": \"<string>\",\n  \"showCutGeomOnly\": false,\n  \"showMbdAnnotations\": false,\n  \"simplificationOption\": \"<string>\",\n  \"simplificationThreshold\": \"<double>\",\n  \"size\": \"<string>\",\n  \"sketchIds\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"standard\": \"ANSI\",\n  \"startZones\": \"A1\",\n  \"templateArgs\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"templateDocumentId\": \"<string>\",\n  \"templateElementId\": \"<string>\",\n  \"templateName\": \"<string>\",\n  \"templateVersionId\": \"<string>\",\n  \"templateWorkspaceId\": \"<string>\",\n  \"titleblock\": false,\n  \"units\": \"<string>\",\n  \"views\": \"<string>\",\n  \"workspaceId\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json;charset=UTF-8; qs=0.09"
+                }
+              ],
+              "body": "{\n  \"accelerationUnits\": \"string\",\n  \"angleUnits\": \"string\",\n  \"angularVelocityUnits\": \"string\",\n  \"applicationTarget\": {\n    \"baseHref\": \"http://uTpBkQtQJSdzG.lmTKjuNcZy\",\n    \"clientId\": \"string\",\n    \"supportsCollaboration\": true,\n    \"tabIconHref\": \"https://GZoulsevkWdr.pyAGDRTgBmhsdvL8+Apo.rEHbNYt-QBX6ek6oO3nqCoH.\"\n  },\n  \"areaUnits\": \"string\",\n  \"dataType\": \"string\",\n  \"deleted\": false,\n  \"densityUnits\": \"string\",\n  \"elementType\": \"PUBLICATIONITEM\",\n  \"energyUnits\": \"string\",\n  \"filename\": \"string\",\n  \"forceUnits\": \"string\",\n  \"foreignDataId\": \"string\",\n  \"frequencyUnits\": \"string\",\n  \"id\": \"string\",\n  \"lengthUnits\": \"string\",\n  \"massUnits\": \"string\",\n  \"microversionId\": \"string\",\n  \"momentUnits\": \"string\",\n  \"name\": \"string\",\n  \"pressureUnits\": \"string\",\n  \"prettyType\": \"string\",\n  \"safeToShow\": false,\n  \"specifiedUnit\": \"string\",\n  \"thumbnailInfo\": {\n    \"href\": \"https://RMeibGSbgNrNqrNZCFC.erlyKwrigcAkmhICpoORy8z4DRVt7r-l6k\",\n    \"id\": \"string\",\n    \"secondarySizes\": [\n      [\n        {\n          \"href\": \"https://LLURWjEthlGFTdnLkhcAd.fuI4tPHfjlssWeZhnyt2PxmG40RswpM9n0S6gAUOTh\",\n          \"mediaType\": \"string\",\n          \"renderMode\": \"string\",\n          \"sheetName\": \"string\",\n          \"size\": \"string\",\n          \"uniqueId\": \"string\",\n          \"viewOrientation\": \"string\"\n        },\n        {\n          \"href\": \"https://hIWFQXWcnAftXRPUqvfUWcvxUoX.nxaPARyae3ldABvqTGjbCpFyFuF\",\n          \"mediaType\": \"string\",\n          \"renderMode\": \"string\",\n          \"sheetName\": \"string\",\n          \"size\": \"string\",\n          \"uniqueId\": \"string\",\n          \"viewOrientation\": \"string\"\n        }\n      ],\n      [\n        {\n          \"href\": \"http://liXvOOlbGZNzMmpwQO.pkksTfZbxJgS5-MKK87tvhpC4gvVuiiZTtgjOh6L\",\n          \"mediaType\": \"string\",\n          \"renderMode\": \"string\",\n          \"sheetName\": \"string\",\n          \"size\": \"string\",\n          \"uniqueId\": \"string\",\n          \"viewOrientation\": \"string\"\n        },\n        {\n          \"href\": \"http://vSICTftsveXNDlydODpqX.uutBrcwiM,DES3ilVl7qRYCUAbad-exiC7IBNDUauZGrDf5h5dhqmgvIxIe\",\n          \"mediaType\": \"string\",\n          \"renderMode\": \"string\",\n          \"sheetName\": \"string\",\n          \"size\": \"string\",\n          \"uniqueId\": \"string\",\n          \"viewOrientation\": \"string\"\n        }\n      ]\n    ],\n    \"sizes\": [\n      {\n        \"href\": \"http://rqFYFeF.zdzrcRHqEbQ2qpq6Owcnsu+oM35PvkGSrKC9fiUKorgRIkc1X9U0DSN+A7m\",\n        \"mediaType\": \"string\",\n        \"renderMode\": \"string\",\n        \"sheetName\": \"string\",\n        \"size\": \"string\",\n        \"uniqueId\": \"string\",\n        \"viewOrientation\": \"string\"\n      },\n      {\n        \"href\": \"https://HLjpFcmNA.iltyvrQy3c.Mf,Herv\",\n        \"mediaType\": \"string\",\n        \"renderMode\": \"string\",\n        \"sheetName\": \"string\",\n        \"size\": \"string\",\n        \"uniqueId\": \"string\",\n        \"viewOrientation\": \"string\"\n      }\n    ]\n  },\n  \"thumbnails\": \"http://GBMQcipYRTzsPSHiLZNEFNkLNqXOMUii.mkvzwr9OFrimB-S-pxVLOLUg+tdtGaNaG-MURhiAlZ2MymXgHrUp0t\",\n  \"timeUnits\": \"string\",\n  \"type\": \"string\",\n  \"unupdatable\": true,\n  \"volumeUnits\": \"string\",\n  \"zip\": {\n    \"files\": [\n      \"string\",\n      \"string\"\n    ]\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b42d95ce-a7a7-455e-a048-97a8046a9dd6",
+          "name": "Modify a drawing via JSON payload.",
+          "request": {
+            "name": "Modify a drawing via JSON payload.",
+            "description": {
+              "content": "See [API Guide: Drawings](https://onshape-public.github.io/docs/api-adv/drawings/) for more information.When polling for drawing modifications to complete, use a reasonable interval (e.g., avoid polling multiple times a second, use an exponential backoff strategy, etc.). See [Rate Limiting](/docs/api-adv/errors/#429) and [API Limits](/docs/auth/limits) for more information.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "drawings",
+                "d",
+                ":did",
+                "w",
+                ":wid",
+                "e",
+                ":eid",
+                "modify"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "linkDocumentId",
+                  "value": "",
+                  "description": "The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "did",
+                  "description": "(Required) The id of the document in which to perform the operation."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "wid",
+                  "description": "(Required) The id of the workspace in which to perform the operation."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "eid",
+                  "description": "(Required) The id of the element in which to perform the operation."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json;charset=UTF-8; qs=0.09"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json;charset=UTF-8; qs=0.09"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "scope",
+                  "value": "OAuth2Internal OAuth2ReadPII OAuth2Read OAuth2Write OAuth2Delete OAuth2Purchase OAuth2Share document.create document.edit document.delete document.read enterprise.create enterprise.read enterprise.edit enterprise.delete enterprise.member.create enterprise.member.read enterprise.member.edit enterprise.member.delete webhook.create webhook.edit webhook.read webhook.delete PLMIntegration"
+                },
+                {
+                  "key": "redirect_uri",
+                  "value": "/oauth/token"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "/oauth/token"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "/oauth/authorize"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"description\": \"<string>\",\n  \"jsonRequests\": [\n    {\n      \"formatVersion\": \"<string>\",\n      \"messageName\": \"<string>\",\n      \"description\": \"<string>\",\n      \"otherFields\": {\n        \"key_0\": \"<object>\",\n        \"key_1\": \"<object>\"\n      }\n    },\n    {\n      \"formatVersion\": \"<string>\",\n      \"messageName\": \"<string>\",\n      \"description\": \"<string>\",\n      \"otherFields\": {\n        \"key_0\": \"<object>\",\n        \"key_1\": \"<object>\"\n      }\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "16231508-1894-4120-9c44-2798b2f459b2",
+              "name": "default response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "drawings",
+                    "d",
+                    ":did",
+                    "w",
+                    ":wid",
+                    "e",
+                    ":eid",
+                    "modify"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "linkDocumentId",
+                      "value": ""
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "did",
+                      "description": "(Required) The id of the document in which to perform the operation."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "wid",
+                      "description": "(Required) The id of the workspace in which to perform the operation."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "eid",
+                      "description": "(Required) The id of the element in which to perform the operation."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json;charset=UTF-8; qs=0.09"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"description\": \"<string>\",\n  \"jsonRequests\": [\n    {\n      \"formatVersion\": \"2021-01-01\",\n      \"messageName\": \"onshapeCreateAnnotations\",\n      \"description\": \"Replicate annotations\",\n      \"otherFields\": {\n        \"key_0\": \"<object>\"\n      }\n    },\n    {\n      \"formatVersion\": \"2021-01-01\",\n      \"messageName\": \"onshapeCreateAnnotations\",\n      \"description\": \"Replicate annotations\",\n      \"otherFields\": {\n        \"key_0\": \"<object>\"\n      }\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json;charset=UTF-8; qs=0.09"
+                }
+              ],
+              "body": "{\n  \"documentId\": \"string\",\n  \"elementId\": \"string\",\n  \"failureReason\": \"string\",\n  \"href\": \"http://pRMGyE.ipnvPh.y7CRbRnKvMnrQO\",\n  \"id\": \"string\",\n  \"name\": \"string\",\n  \"output\": \"string\",\n  \"outputStatusCode\": 4110,\n  \"parentDocumentMicroversionId\": \"string\",\n  \"parentElementMicroversionId\": \"string\",\n  \"requestState\": \"DONE\",\n  \"resultDocumentMicroversionId\": \"string\",\n  \"resultElementMicroversionId\": \"string\",\n  \"viewRef\": \"http://oDyNPHwMwjsJLzP.pxjwOb1.tGUS70VVlvq8R\",\n  \"workspaceId\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "95fe8f39-cdb4-4810-b06c-81e8ab948882",
+          "name": "Get a list of all valid formats the drawing can be translated (exported) to.",
+          "request": {
+            "name": "Get a list of all valid formats the drawing can be translated (exported) to.",
+            "description": {
+              "content": "See [API Guide: Translations](https://onshape-public.github.io/docs/api-adv/translation/#export-a-drawing-as-a-json) for more information.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "drawings",
+                "d",
+                ":did",
+                "w",
+                ":wid",
+                "e",
+                ":eid",
+                "translationformats"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "did",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "wid",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "eid",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json;charset=UTF-8; qs=0.09"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "e3aa0c80-78e1-4910-b2da-1c07000473b7",
+              "name": "default response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "drawings",
+                    "d",
+                    ":did",
+                    "w",
+                    ":wid",
+                    "e",
+                    ":eid",
+                    "translationformats"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "did",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "wid",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "eid",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json;charset=UTF-8; qs=0.09"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json;charset=UTF-8; qs=0.09"
+                }
+              ],
+              "body": "[\n  {\n    \"couldBeAssembly\": true,\n    \"name\": \"STEP\",\n    \"translatorName\": \"step\"\n  },\n  {\n    \"couldBeAssembly\": true,\n    \"name\": \"STEP\",\n    \"translatorName\": \"step\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "14f06e4c-b45c-4535-b410-97744cfd7e75",
+          "name": "Get details of all drawing views.",
+          "request": {
+            "name": "Get details of all drawing views.",
+            "description": {},
+            "url": {
+              "path": [
+                "drawings",
+                "d",
+                ":did",
+                ":wvm",
+                ":wvmid",
+                "e",
+                ":eid",
+                "views"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "linkDocumentId",
+                  "value": "",
+                  "description": "The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both."
+                },
+                {
+                  "disabled": false,
+                  "key": "transactionId",
+                  "value": "",
+                  "description": "The id of the transaction in which this operation should take place. Transaction ids can be generated through the AppElement startTransaction API."
+                },
+                {
+                  "disabled": false,
+                  "key": "changeId",
+                  "value": "",
+                  "description": "The id of the last change made to this application element. This can be retrieved from the response for any app element modification endpoint."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "did",
+                  "description": "(Required) The id of the document in which to perform the operation."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "wvm",
+                  "description": "(Required) Indicates which of workspace (w), version (v), or document microversion (m) id is specified below."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "wvmid",
+                  "description": "(Required) The id of the workspace, version or document microversion in which the operation should be performed."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "eid",
+                  "description": "(Required) The id of the element in which to perform the operation."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json;charset=UTF-8; qs=0.09"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "scope",
+                  "value": "OAuth2Internal OAuth2ReadPII OAuth2Read OAuth2Write OAuth2Delete OAuth2Purchase OAuth2Share document.create document.edit document.delete document.read enterprise.create enterprise.read enterprise.edit enterprise.delete enterprise.member.create enterprise.member.read enterprise.member.edit enterprise.member.delete webhook.create webhook.edit webhook.read webhook.delete PLMIntegration"
+                },
+                {
+                  "key": "redirect_uri",
+                  "value": "/oauth/token"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "/oauth/token"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "/oauth/authorize"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "48c01443-9a73-42f6-bbba-d7611521692e",
+              "name": "default response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "drawings",
+                    "d",
+                    ":did",
+                    ":wvm",
+                    ":wvmid",
+                    "e",
+                    ":eid",
+                    "views"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "linkDocumentId",
+                      "value": ""
+                    },
+                    {
+                      "key": "transactionId",
+                      "value": ""
+                    },
+                    {
+                      "key": "changeId",
+                      "value": ""
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "did",
+                      "description": "(Required) The id of the document in which to perform the operation."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "wvm",
+                      "description": "(Required) Indicates which of workspace (w), version (v), or document microversion (m) id is specified below."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "wvmid",
+                      "description": "(Required) The id of the workspace, version or document microversion in which the operation should be performed."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "eid",
+                      "description": "(Required) The id of the element in which to perform the operation."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json;charset=UTF-8; qs=0.09"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json;charset=UTF-8; qs=0.09"
+                }
+              ],
+              "body": "{\n  \"changeId\": \"string\",\n  \"errorCode\": 6917,\n  \"errorDescription\": \"string\",\n  \"errorValue\": \"OK\",\n  \"items\": [\n    {\n      \"associativityChangeId\": \"string\",\n      \"bomReferenceId\": \"string\",\n      \"brokenOutBBoxes\": {\n        \"key_0\": {\n          \"btType\": \"string\",\n          \"maxCorner\": {\n            \"btType\": \"string\",\n            \"x\": 3812.050180556,\n            \"y\": 1380.3979315446002,\n            \"z\": 6254.068065073204\n          },\n          \"minCorner\": {\n            \"btType\": \"string\",\n            \"x\": 7134.563306545169,\n            \"y\": 4319.3527136642215,\n            \"z\": 2985.802555202289\n          },\n          \"valid\": false\n        },\n        \"key_1\": {\n          \"btType\": \"string\",\n          \"maxCorner\": {\n            \"btType\": \"string\",\n            \"x\": 7606.307181598539,\n            \"y\": 2114.385711967529,\n            \"z\": 3577.1622557592773\n          },\n          \"minCorner\": {\n            \"btType\": \"string\",\n            \"x\": 1275.4296476204074,\n            \"y\": 9863.008218990586,\n            \"z\": 4864.228576199899\n          },\n          \"valid\": true\n        }\n      },\n      \"brokenOutEndConditions\": {\n        \"key_0\": {\n          \"btType\": \"string\",\n          \"hasOffset\": false,\n          \"hasUptoPoint\": true,\n          \"offsetDistance\": 9540.40039757972,\n          \"offsetOppositeDirection\": true,\n          \"uptoPoint\": [\n            9696.83180246021,\n            6016.435989234131\n          ],\n          \"uptoPoint3d\": {\n            \"btType\": \"string\",\n            \"x\": 5763.155581464466,\n            \"y\": 9911.53656219231,\n            \"z\": 7128.337149886045\n          }\n        },\n        \"key_1\": {\n          \"btType\": \"string\",\n          \"hasOffset\": false,\n          \"hasUptoPoint\": false,\n          \"offsetDistance\": 9556.145593835436,\n          \"offsetOppositeDirection\": true,\n          \"uptoPoint\": [\n            7499.898025862557,\n            3252.1261862076844\n          ],\n          \"uptoPoint3d\": {\n            \"btType\": \"string\",\n            \"x\": 2860.792467739981,\n            \"y\": 2928.6282132222186,\n            \"z\": 3244.66530490094\n          }\n        }\n      },\n      \"brokenOutPointNumbers\": [\n        7384,\n        3222\n      ],\n      \"changeId\": \"string\",\n      \"computeIntersection\": true,\n      \"cutPoint\": [\n        5421.170210396259,\n        6981.3757900983765\n      ],\n      \"depthSectionEndCondition\": {\n        \"btType\": \"string\",\n        \"hasOffset\": true,\n        \"hasUptoPoint\": true,\n        \"offsetDistance\": 5748.031577483425,\n        \"offsetOppositeDirection\": true,\n        \"uptoPoint\": [\n          6932.599713669415,\n          4781.08594007282\n        ],\n        \"uptoPoint3d\": {\n          \"btType\": \"string\",\n          \"x\": 3132.225509376211,\n          \"y\": 6201.533775300374,\n          \"z\": 3606.8454510240467\n        }\n      },\n      \"displayStateId\": \"string\",\n      \"errorCode\": 325,\n      \"errorDescription\": \"string\",\n      \"errorValue\": \"INCONSISTENT_CHANGES\",\n      \"explodedViewId\": \"string\",\n      \"hasSecondaryViewDefinition\": false,\n      \"hiddenLines\": \"string\",\n      \"ignoreFaultyParts\": false,\n      \"includeHiddenInstances\": false,\n      \"includeSurfaces\": true,\n      \"includeWires\": false,\n      \"isAlignedSection\": true,\n      \"isBrokenOutSection\": false,\n      \"isCopiedView\": true,\n      \"isCropView\": true,\n      \"isPartialSection\": false,\n      \"isSectionOfAlignedSection\": true,\n      \"isSectionOfSectionOnBase\": true,\n      \"isSurface\": false,\n      \"modelReferenceId\": \"string\",\n      \"modificationId\": \"string\",\n      \"namedPositionId\": \"string\",\n      \"occurrenceOrQueryToGeometryProperties\": {\n        \"key_0\": {\n          \"btType\": \"string\",\n          \"propertyToValue\": {\n            \"key_0\": \"string\",\n            \"key_1\": \"string\"\n          }\n        },\n        \"key_1\": {\n          \"btType\": \"string\",\n          \"propertyToValue\": {\n            \"key_0\": \"string\",\n            \"key_1\": \"string\"\n          }\n        }\n      },\n      \"offsetSectionPoints\": [\n        5082.546748005205,\n        9642.38261180573\n      ],\n      \"parentChangeId\": \"string\",\n      \"parentViewId\": \"string\",\n      \"perspective\": false,\n      \"projectionAngle\": \"string\",\n      \"qualityOption\": 5290,\n      \"renderSketches\": false,\n      \"sectionId\": \"string\",\n      \"sectionPlanes\": [\n        6370.000429172018,\n        9604.978449758284\n      ],\n      \"showAutoCenterlines\": true,\n      \"showAutoCentermarks\": true,\n      \"showCutGeomOnly\": true,\n      \"showTangentLines\": true,\n      \"showThreads\": false,\n      \"showViewingPlane\": false,\n      \"simplificationOption\": 9863,\n      \"simplificationThreshold\": 2618.267657349317,\n      \"useParentViewSectionData\": false,\n      \"viewDirection\": [\n        8212.999686512208,\n        1691.9206225815287\n      ],\n      \"viewId\": \"string\",\n      \"viewMatrix\": [\n        4069.405117870277,\n        1128.5593489507585\n      ],\n      \"viewVersion\": 341\n    },\n    {\n      \"associativityChangeId\": \"string\",\n      \"bomReferenceId\": \"string\",\n      \"brokenOutBBoxes\": {\n        \"key_0\": {\n          \"btType\": \"string\",\n          \"maxCorner\": {\n            \"btType\": \"string\",\n            \"x\": 9613.751851467143,\n            \"y\": 7848.064994325371,\n            \"z\": 216.94841550570553\n          },\n          \"minCorner\": {\n            \"btType\": \"string\",\n            \"x\": 8385.684725134068,\n            \"y\": 2072.303259712852,\n            \"z\": 6605.405680778374\n          },\n          \"valid\": false\n        }\n      },\n      \"brokenOutEndConditions\": {\n        \"key_0\": {\n          \"btType\": \"string\",\n          \"hasOffset\": false,\n          \"hasUptoPoint\": true,\n          \"offsetDistance\": 9843.390850535883,\n          \"offsetOppositeDirection\": false,\n          \"uptoPoint\": [\n            327.59518615387174,\n            8243.140025659355\n          ],\n          \"uptoPoint3d\": {\n            \"btType\": \"string\",\n            \"x\": 4413.399472821164,\n            \"y\": 7502.069747061019,\n            \"z\": 7427.608971441047\n          }\n        },\n        \"key_1\": {\n          \"btType\": \"string\",\n          \"hasOffset\": false,\n          \"hasUptoPoint\": false,\n          \"offsetDistance\": 5416.064674515739,\n          \"offsetOppositeDirection\": true,\n          \"uptoPoint\": [\n            19.728255683038043,\n            5810.296727098506\n          ],\n          \"uptoPoint3d\": {\n            \"btType\": \"string\",\n            \"x\": 3766.5482890644485,\n            \"y\": 4500.14519186972,\n            \"z\": 5783.471183710199\n          }\n        },\n        \"key_2\": {\n          \"btType\": \"string\",\n          \"hasOffset\": false,\n          \"hasUptoPoint\": true,\n          \"offsetDistance\": 3722.0181187694025,\n          \"offsetOppositeDirection\": true,\n          \"uptoPoint\": [\n            8271.525836056568,\n            3437.964437299865\n          ],\n          \"uptoPoint3d\": {\n            \"btType\": \"string\",\n            \"x\": 4867.361535473052,\n            \"y\": 256.9599719916849,\n            \"z\": 3598.5534021441745\n          }\n        }\n      },\n      \"brokenOutPointNumbers\": [\n        9556,\n        7412\n      ],\n      \"changeId\": \"string\",\n      \"computeIntersection\": true,\n      \"cutPoint\": [\n        5071.234187626804,\n        3174.1601944747135\n      ],\n      \"depthSectionEndCondition\": {\n        \"btType\": \"string\",\n        \"hasOffset\": false,\n        \"hasUptoPoint\": false,\n        \"offsetDistance\": 7487.779820061462,\n        \"offsetOppositeDirection\": false,\n        \"uptoPoint\": [\n          742.5334501796543,\n          8811.365729393721\n        ],\n        \"uptoPoint3d\": {\n          \"btType\": \"string\",\n          \"x\": 3248.6953094842374,\n          \"y\": 6972.111218243658,\n          \"z\": 8576.76711518388\n        }\n      },\n      \"displayStateId\": \"string\",\n      \"errorCode\": 704,\n      \"errorDescription\": \"string\",\n      \"errorValue\": \"INCONSISTENT_CHANGES\",\n      \"explodedViewId\": \"string\",\n      \"hasSecondaryViewDefinition\": true,\n      \"hiddenLines\": \"string\",\n      \"ignoreFaultyParts\": false,\n      \"includeHiddenInstances\": true,\n      \"includeSurfaces\": false,\n      \"includeWires\": true,\n      \"isAlignedSection\": false,\n      \"isBrokenOutSection\": false,\n      \"isCopiedView\": true,\n      \"isCropView\": true,\n      \"isPartialSection\": true,\n      \"isSectionOfAlignedSection\": true,\n      \"isSectionOfSectionOnBase\": true,\n      \"isSurface\": false,\n      \"modelReferenceId\": \"string\",\n      \"modificationId\": \"string\",\n      \"namedPositionId\": \"string\",\n      \"occurrenceOrQueryToGeometryProperties\": {\n        \"key_0\": {\n          \"btType\": \"string\",\n          \"propertyToValue\": {\n            \"key_0\": \"string\"\n          }\n        },\n        \"key_1\": {\n          \"btType\": \"string\",\n          \"propertyToValue\": {\n            \"key_0\": \"string\"\n          }\n        },\n        \"key_2\": {\n          \"btType\": \"string\",\n          \"propertyToValue\": {\n            \"key_0\": \"string\"\n          }\n        },\n        \"key_3\": {\n          \"btType\": \"string\",\n          \"propertyToValue\": {\n            \"key_0\": \"string\",\n            \"key_1\": \"string\"\n          }\n        }\n      },\n      \"offsetSectionPoints\": [\n        4077.1898778098102,\n        1088.1369036606125\n      ],\n      \"parentChangeId\": \"string\",\n      \"parentViewId\": \"string\",\n      \"perspective\": true,\n      \"projectionAngle\": \"string\",\n      \"qualityOption\": 4437,\n      \"renderSketches\": true,\n      \"sectionId\": \"string\",\n      \"sectionPlanes\": [\n        7008.826421225527,\n        389.8350794084471\n      ],\n      \"showAutoCenterlines\": true,\n      \"showAutoCentermarks\": false,\n      \"showCutGeomOnly\": true,\n      \"showTangentLines\": false,\n      \"showThreads\": false,\n      \"showViewingPlane\": true,\n      \"simplificationOption\": 7719,\n      \"simplificationThreshold\": 5522.022310431787,\n      \"useParentViewSectionData\": true,\n      \"viewDirection\": [\n        8757.38953059031,\n        2029.391547084165\n      ],\n      \"viewId\": \"string\",\n      \"viewMatrix\": [\n        9347.169521634352,\n        2709.4911266564113\n      ],\n      \"viewVersion\": 7350\n    }\n  ],\n  \"parentChangeId\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a10f22e0-8129-4eba-ab2a-222b08d7c532",
+          "name": "Get view geometry of a drawing view in JSON format.",
+          "request": {
+            "name": "Get view geometry of a drawing view in JSON format.",
+            "description": {},
+            "url": {
+              "path": [
+                "drawings",
+                "d",
+                ":did",
+                ":wvm",
+                ":wvmid",
+                "e",
+                ":eid",
+                "views",
+                ":viewid",
+                "jsongeometry"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "linkDocumentId",
+                  "value": "",
+                  "description": "The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both."
+                },
+                {
+                  "disabled": false,
+                  "key": "transactionId",
+                  "value": "",
+                  "description": "The id of the transaction in which this operation should take place. Transaction ids can be generated through the AppElement startTransaction API."
+                },
+                {
+                  "disabled": false,
+                  "key": "changeId",
+                  "value": "",
+                  "description": "The id of the last change made to this application element. This can be retrieved from the response for any app element modification endpoint."
+                },
+                {
+                  "disabled": false,
+                  "key": "scale",
+                  "value": "<double>",
+                  "description": "Scale for measurements."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "did",
+                  "description": "(Required) The id of the document in which to perform the operation."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "wvm",
+                  "description": "(Required) Indicates which of workspace (w), version (v), or document microversion (m) id is specified below."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "wvmid",
+                  "description": "(Required) The id of the workspace, version or document microversion in which the operation should be performed."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "eid",
+                  "description": "(Required) The id of the element in which to perform the operation."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "viewid",
+                  "description": "(Required) The id of the view in which to perform the operation."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json;charset=UTF-8; qs=0.09"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "scope",
+                  "value": "OAuth2Internal OAuth2ReadPII OAuth2Read OAuth2Write OAuth2Delete OAuth2Purchase OAuth2Share document.create document.edit document.delete document.read enterprise.create enterprise.read enterprise.edit enterprise.delete enterprise.member.create enterprise.member.read enterprise.member.edit enterprise.member.delete webhook.create webhook.edit webhook.read webhook.delete PLMIntegration"
+                },
+                {
+                  "key": "redirect_uri",
+                  "value": "/oauth/token"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "/oauth/token"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "/oauth/authorize"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "951f57e6-072c-474a-bb45-338d5480f023",
+              "name": "default response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "drawings",
+                    "d",
+                    ":did",
+                    ":wvm",
+                    ":wvmid",
+                    "e",
+                    ":eid",
+                    "views",
+                    ":viewid",
+                    "jsongeometry"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "linkDocumentId",
+                      "value": ""
+                    },
+                    {
+                      "key": "transactionId",
+                      "value": ""
+                    },
+                    {
+                      "key": "changeId",
+                      "value": ""
+                    },
+                    {
+                      "key": "scale",
+                      "value": "<double>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "did",
+                      "description": "(Required) The id of the document in which to perform the operation."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "wvm",
+                      "description": "(Required) Indicates which of workspace (w), version (v), or document microversion (m) id is specified below."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "wvmid",
+                      "description": "(Required) The id of the workspace, version or document microversion in which the operation should be performed."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "eid",
+                      "description": "(Required) The id of the element in which to perform the operation."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "viewid",
+                      "description": "(Required) The id of the view in which to perform the operation."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json;charset=UTF-8; qs=0.09"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json;charset=UTF-8; qs=0.09"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "f6b21d86-0967-4639-9a2e-b099064702b3",
+          "name": "Translate (export) a drawing to a different format.",
+          "request": {
+            "name": "Translate (export) a drawing to a different format.",
+            "description": {
+              "content": "Export a drawing to a different format within a document. Use `getDrawingTranslatorFormats` for a list of supported translation (i.e., import/export) formats. See [API Guide: Translations](https://onshape-public.github.io/docs/api-adv/translation/#export-a-drawing-as-a-json) for more information.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "drawings",
+                "d",
+                ":did",
+                ":wv",
+                ":wvid",
+                "e",
+                ":eid",
+                "translations"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "did",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "wv",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "wvid",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "eid",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json;charset=UTF-8; qs=0.09"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json;charset=UTF-8; qs=0.09"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "scope",
+                  "value": "OAuth2Internal OAuth2ReadPII OAuth2Read OAuth2Write OAuth2Delete OAuth2Purchase OAuth2Share document.create document.edit document.delete document.read enterprise.create enterprise.read enterprise.edit enterprise.delete enterprise.member.create enterprise.member.read enterprise.member.edit enterprise.member.delete webhook.create webhook.edit webhook.read webhook.delete PLMIntegration"
+                },
+                {
+                  "key": "redirect_uri",
+                  "value": "/oauth/token"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "/oauth/token"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "/oauth/authorize"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"formatName\": \"<string>\",\n  \"allowFaultyParts\": false,\n  \"angularTolerance\": \"<double>\",\n  \"annotationsFontHeightInMillimeters\": \"<double>\",\n  \"blobElementId\": \"<string>\",\n  \"blobMicroversionId\": \"<string>\",\n  \"cloudObjectId\": \"<string>\",\n  \"cloudStorageAccountId\": \"<string>\",\n  \"colorMethod\": \"<string>\",\n  \"configuration\": \"<string>\",\n  \"connectionId\": \"<string>\",\n  \"createComposite\": \"<boolean>\",\n  \"currentSheetOnly\": \"<boolean>\",\n  \"destinationName\": \"<string>\",\n  \"distanceTolerance\": \"<double>\",\n  \"dxfVersion\": \"<string>\",\n  \"elementId\": \"<string>\",\n  \"elementIds\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"emailLink\": \"<boolean>\",\n  \"emailMessage\": \"<string>\",\n  \"emailSubject\": \"<string>\",\n  \"emailTo\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"evaluateExportRule\": false,\n  \"excludeHiddenEntities\": \"<boolean>\",\n  \"excludeOffSheetContent\": \"<boolean>\",\n  \"extractAssemblyHierarchy\": \"<boolean>\",\n  \"flatPatternAsync\": \"<boolean>\",\n  \"flatten\": \"<boolean>\",\n  \"flattenAssemblies\": \"<boolean>\",\n  \"foreignId\": \"<string>\",\n  \"fromUserId\": \"<string>\",\n  \"getyAxisIsUp\": \"<boolean>\",\n  \"grouping\": \"<boolean>\",\n  \"hideInspectionItems\": \"<boolean>\",\n  \"ignoreExportRulesForContents\": \"<boolean>\",\n  \"imageHeight\": \"<integer>\",\n  \"imageWidth\": \"<integer>\",\n  \"importAppearances\": \"<boolean>\",\n  \"importInBackground\": \"<boolean>\",\n  \"importMaterialDensity\": \"<boolean>\",\n  \"importWithinDocument\": \"<boolean>\",\n  \"includeBendCenterlines\": \"<boolean>\",\n  \"includeBendLines\": \"<boolean>\",\n  \"includeCboreCsink\": \"<boolean>\",\n  \"includeDerivedTolerances\": \"<boolean>\",\n  \"includeExportIds\": \"<boolean>\",\n  \"includeFormedCentermarks\": \"<boolean>\",\n  \"includeFormedOutlines\": \"<boolean>\",\n  \"includeSketches\": \"<boolean>\",\n  \"joinAdjacentSurfaces\": \"<boolean>\",\n  \"level\": \"<string>\",\n  \"linkDocumentId\": \"<string>\",\n  \"linkDocumentWorkspaceId\": \"<string>\",\n  \"maximumChordLength\": \"<double>\",\n  \"notifyUser\": \"<boolean>\",\n  \"occurrencesToExport\": \"<string>\",\n  \"onePartPerDoc\": \"<boolean>\",\n  \"originalForeignId\": \"<string>\",\n  \"parasolidMode\": \"TEXT\",\n  \"parentId\": \"<string>\",\n  \"partIds\": \"<string>\",\n  \"partsExportFilter\": {\n    \"btType\": \"<string>\",\n    \"skipAllMesh\": \"<boolean>\",\n    \"skipCurves\": \"<boolean>\",\n    \"skipPartialMesh\": \"<boolean>\"\n  },\n  \"password\": \"<string>\",\n  \"passwordRequired\": \"<boolean>\",\n  \"pdfVersion\": \"<string>\",\n  \"processedForeignId\": \"<string>\",\n  \"projectId\": \"<string>\",\n  \"proxyDocumentId\": \"<string>\",\n  \"proxyElementId\": \"<string>\",\n  \"proxyWorkspaceVersion\": \"<string>\",\n  \"proxyWorkspaceVersionId\": \"<string>\",\n  \"resolution\": \"<string>\",\n  \"rhinoVersion\": \"<string>\",\n  \"selectablePdfText\": \"<boolean>\",\n  \"sendCopyToMe\": \"<boolean>\",\n  \"sheetIndices\": [\n    \"<integer>\",\n    \"<integer>\"\n  ],\n  \"sheetMetalFlat\": \"<boolean>\",\n  \"showOverriddenDimensions\": \"<boolean>\",\n  \"skipBodyshop\": \"<boolean>\",\n  \"sourceName\": \"<string>\",\n  \"specifyMaterialData\": \"<boolean>\",\n  \"specifyUnits\": \"<boolean>\",\n  \"splinesAsPolylines\": \"<boolean>\",\n  \"splitAssembliesIntoMultipleDocuments\": \"<boolean>\",\n  \"stepParasolidPreprocessingOption\": \"<string>\",\n  \"stepVersionString\": \"AP242\",\n  \"stlMode\": \"TEXT\",\n  \"storeInDocument\": \"<boolean>\",\n  \"textAsGeometry\": \"<boolean>\",\n  \"textOption\": \"<string>\",\n  \"triggerAutoDownload\": \"<boolean>\",\n  \"unit\": \"<string>\",\n  \"uploadId\": \"<string>\",\n  \"urdfMeshFormat\": \"<string>\",\n  \"urdfStlEncoding\": \"TEXT\",\n  \"useFileNameToSetSinglePartName\": \"<boolean>\",\n  \"useGlbCompression\": \"<boolean>\",\n  \"useGltfCompression\": \"<boolean>\",\n  \"useIGESImportPostProcessing\": \"<boolean>\",\n  \"useIgesCompatibilityMode\": \"<boolean>\",\n  \"validForDays\": \"<integer>\",\n  \"versionString\": \"0\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "3a0a0850-0f47-455d-ae8f-cd8e90799596",
+              "name": "default response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "drawings",
+                    "d",
+                    ":did",
+                    ":wv",
+                    ":wvid",
+                    "e",
+                    ":eid",
+                    "translations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "did",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "wv",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "wvid",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "eid",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json;charset=UTF-8; qs=0.09"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"formatName\": \"<string>\",\n  \"allowFaultyParts\": false,\n  \"angularTolerance\": 0.001,\n  \"annotationsFontHeightInMillimeters\": 4,\n  \"blobElementId\": \"<string>\",\n  \"blobMicroversionId\": \"<string>\",\n  \"cloudObjectId\": \"<string>\",\n  \"cloudStorageAccountId\": \"<string>\",\n  \"colorMethod\": \"<string>\",\n  \"configuration\": \"<string>\",\n  \"connectionId\": \"<string>\",\n  \"createComposite\": \"<boolean>\",\n  \"currentSheetOnly\": \"<boolean>\",\n  \"destinationName\": \"<string>\",\n  \"distanceTolerance\": 0.001,\n  \"dxfVersion\": \"<string>\",\n  \"elementId\": \"<string>\",\n  \"elementIds\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"emailLink\": \"<boolean>\",\n  \"emailMessage\": \"<string>\",\n  \"emailSubject\": \"<string>\",\n  \"emailTo\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"evaluateExportRule\": false,\n  \"excludeHiddenEntities\": \"<boolean>\",\n  \"excludeOffSheetContent\": \"<boolean>\",\n  \"extractAssemblyHierarchy\": \"<boolean>\",\n  \"flatPatternAsync\": \"<boolean>\",\n  \"flatten\": \"<boolean>\",\n  \"flattenAssemblies\": \"<boolean>\",\n  \"foreignId\": \"<string>\",\n  \"fromUserId\": \"<string>\",\n  \"getyAxisIsUp\": \"<boolean>\",\n  \"grouping\": \"<boolean>\",\n  \"hideInspectionItems\": \"<boolean>\",\n  \"ignoreExportRulesForContents\": \"<boolean>\",\n  \"imageHeight\": \"<integer>\",\n  \"imageWidth\": \"<integer>\",\n  \"importAppearances\": \"<boolean>\",\n  \"importInBackground\": \"<boolean>\",\n  \"importMaterialDensity\": \"<boolean>\",\n  \"importWithinDocument\": \"<boolean>\",\n  \"includeBendCenterlines\": \"<boolean>\",\n  \"includeBendLines\": \"<boolean>\",\n  \"includeCboreCsink\": \"<boolean>\",\n  \"includeDerivedTolerances\": \"<boolean>\",\n  \"includeExportIds\": \"<boolean>\",\n  \"includeFormedCentermarks\": \"<boolean>\",\n  \"includeFormedOutlines\": \"<boolean>\",\n  \"includeSketches\": \"<boolean>\",\n  \"joinAdjacentSurfaces\": \"<boolean>\",\n  \"level\": \"<string>\",\n  \"linkDocumentId\": \"<string>\",\n  \"linkDocumentWorkspaceId\": \"<string>\",\n  \"maximumChordLength\": 0.01,\n  \"notifyUser\": \"<boolean>\",\n  \"occurrencesToExport\": \"<string>\",\n  \"onePartPerDoc\": \"<boolean>\",\n  \"originalForeignId\": \"<string>\",\n  \"parasolidMode\": \"TEXT\",\n  \"parentId\": \"<string>\",\n  \"partIds\": \"<string>\",\n  \"partsExportFilter\": {\n    \"btType\": \"<string>\",\n    \"skipAllMesh\": \"<boolean>\",\n    \"skipCurves\": \"<boolean>\",\n    \"skipPartialMesh\": \"<boolean>\"\n  },\n  \"password\": \"<string>\",\n  \"passwordRequired\": \"<boolean>\",\n  \"pdfVersion\": \"<string>\",\n  \"processedForeignId\": \"<string>\",\n  \"projectId\": \"<string>\",\n  \"proxyDocumentId\": \"<string>\",\n  \"proxyElementId\": \"<string>\",\n  \"proxyWorkspaceVersion\": \"<string>\",\n  \"proxyWorkspaceVersionId\": \"<string>\",\n  \"resolution\": \"fine\",\n  \"rhinoVersion\": \"<string>\",\n  \"selectablePdfText\": \"<boolean>\",\n  \"sendCopyToMe\": \"<boolean>\",\n  \"sheetIndices\": [\n    \"<integer>\",\n    \"<integer>\"\n  ],\n  \"sheetMetalFlat\": \"<boolean>\",\n  \"showOverriddenDimensions\": \"<boolean>\",\n  \"skipBodyshop\": \"<boolean>\",\n  \"sourceName\": \"<string>\",\n  \"specifyMaterialData\": \"<boolean>\",\n  \"specifyUnits\": \"<boolean>\",\n  \"splinesAsPolylines\": \"<boolean>\",\n  \"splitAssembliesIntoMultipleDocuments\": \"<boolean>\",\n  \"stepParasolidPreprocessingOption\": \"<string>\",\n  \"stepVersionString\": \"AP242\",\n  \"stlMode\": \"TEXT\",\n  \"storeInDocument\": \"<boolean>\",\n  \"textAsGeometry\": \"<boolean>\",\n  \"textOption\": \"<string>\",\n  \"triggerAutoDownload\": \"<boolean>\",\n  \"unit\": \"<string>\",\n  \"uploadId\": \"<string>\",\n  \"urdfMeshFormat\": \"<string>\",\n  \"urdfStlEncoding\": \"TEXT\",\n  \"useFileNameToSetSinglePartName\": \"<boolean>\",\n  \"useGlbCompression\": \"<boolean>\",\n  \"useGltfCompression\": \"<boolean>\",\n  \"useIGESImportPostProcessing\": \"<boolean>\",\n  \"useIgesCompatibilityMode\": \"<boolean>\",\n  \"validForDays\": \"<integer>\",\n  \"versionString\": \"0\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json;charset=UTF-8; qs=0.09"
+                }
+              ],
+              "body": "{\n  \"documentId\": \"string\",\n  \"exportRuleFileName\": \"string\",\n  \"failureReason\": \"string\",\n  \"href\": \"http://VNFiluCNhidmqMCIcLfo.axgv4ZnZkeIlrgO230dPRG4MMPe07Q6jIxY8y187q7vq-wvx.trXiWs2\",\n  \"id\": \"string\",\n  \"name\": \"string\",\n  \"requestElementId\": \"string\",\n  \"requestState\": \"FAILED\",\n  \"resultDocumentId\": \"string\",\n  \"resultElementIds\": [\n    \"string\",\n    \"string\"\n  ],\n  \"resultExternalDataIds\": [\n    \"string\",\n    \"string\"\n  ],\n  \"resultWorkspaceId\": \"string\",\n  \"versionId\": \"string\",\n  \"viewRef\": \"http://ARliAzYVBfGmBDhkllbDIHh.ziHv7.P\",\n  \"workspaceId\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "d725fc3a-43dd-49a5-98d7-9b6122455795",
+          "name": "Get the status of a drawing modification operation.",
+          "request": {
+            "name": "Get the status of a drawing modification operation.",
+            "description": {},
+            "url": {
+              "path": [
+                "drawings",
+                "modify",
+                "status",
+                ":mrid"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "mrid",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json;charset=UTF-8; qs=0.09"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "scope",
+                  "value": "OAuth2Internal OAuth2ReadPII OAuth2Read OAuth2Write OAuth2Delete OAuth2Purchase OAuth2Share document.create document.edit document.delete document.read enterprise.create enterprise.read enterprise.edit enterprise.delete enterprise.member.create enterprise.member.read enterprise.member.edit enterprise.member.delete webhook.create webhook.edit webhook.read webhook.delete PLMIntegration"
+                },
+                {
+                  "key": "redirect_uri",
+                  "value": "/oauth/token"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "/oauth/token"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "/oauth/authorize"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "01f8d324-6832-418e-a33a-f63cd54f0dfb",
+              "name": "default response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "drawings",
+                    "modify",
+                    "status",
+                    ":mrid"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "mrid",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json;charset=UTF-8; qs=0.09"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json;charset=UTF-8; qs=0.09"
+                }
+              ],
+              "body": "{\n  \"documentId\": \"string\",\n  \"elementId\": \"string\",\n  \"failureReason\": \"string\",\n  \"href\": \"http://pRMGyE.ipnvPh.y7CRbRnKvMnrQO\",\n  \"id\": \"string\",\n  \"name\": \"string\",\n  \"output\": \"string\",\n  \"outputStatusCode\": 4110,\n  \"parentDocumentMicroversionId\": \"string\",\n  \"parentElementMicroversionId\": \"string\",\n  \"requestState\": \"DONE\",\n  \"resultDocumentMicroversionId\": \"string\",\n  \"resultElementMicroversionId\": \"string\",\n  \"viewRef\": \"http://oDyNPHwMwjsJLzP.pxjwOb1.tGUS70VVlvq8R\",\n  \"workspaceId\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://cad.onshape.com/api/v16",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "basic",
+    "basic": [
+      {
+        "key": "username",
+        "value": "{{basicAuthUsername}}"
+      },
+      {
+        "key": "password",
+        "value": "{{basicAuthPassword}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "b1e04962-db68-41b7-a094-0ffd8d921f5b",
+    "name": "Onshape REST Account Drawing API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "## Welcome to the Onshape REST API Explorer\n\n**See the [API Explorer Guide](https://onshape-public.github.io/docs/api-intro/explorer/) for help navigating this page.**\n\n### Using this page\n1. Sign in to your [Onshape](https://cad.onshape.com) account in another tab.\n2. Click the `Try it out` button below. It toggles to a `Cancel` button when selected.\n\n### Authenticating\nTo authenticate your calls, click the `Authorize` button. See [API Explorer Guide: Authentication](https://onshape-public.github.io/docs/api-intro/explorer/#authentication) for details. Calls made when authenticated via API Keys or OAuth count against your annual [API limits](https://onshape-public.github.io/docs/auth/limits/#annual-api-call-limits).\n* **Tip:** To ensure the current session isn't used when trying other authentication techniques, make sure to [remove the Onshape cookie](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site) as per the instructions for your browser, or use a private or incognito window.\n\n### Additional resources\n\n* [Onshape API Guide](https://onshape-public.github.io/docs/): Our full suite of developer guides, to be used as an accompaniment to this API Explorer.\n* [Onshape Developer Portal](https://cad.onshape.com/appstore/dev-portal): The Onshape portal for managing your API keys, OAuth2 credentials, your Onshape applications, and your Onshape App Store entries.\n* [Authentication Guide](https://onshape-public.github.io/docs/auth/): Our guide to using API keys, request signatures, and OAuth2 in your Onshape applications.\n\nContact Support:\n Email: api-support@onshape.zendesk.com",
+      "type": "text/plain"
+    }
+  }
+}

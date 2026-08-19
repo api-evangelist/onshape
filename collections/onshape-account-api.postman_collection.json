@@ -1,0 +1,550 @@
+{
+  "item": [
+    {
+      "id": "c2ce007e-0176-424f-9303-8f7c0e274bea",
+      "name": "Account",
+      "description": {
+        "content": "Manage user purchases, subscriptions, and consumables.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "fc13fbeb-1517-49d7-b6d5-ba975d0ed3b8",
+          "name": "Get a list of all app purchases made for the specified plan.",
+          "request": {
+            "name": "Get a list of all app purchases made for the specified plan.",
+            "description": {},
+            "url": {
+              "path": [
+                "accounts",
+                "plans",
+                ":planId",
+                "purchases"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "offset",
+                  "value": "0"
+                },
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "20"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "planId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json;charset=UTF-8; qs=0.09"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "5b9a0210-21dd-4266-abd5-4442afcda97c",
+              "name": "default response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "accounts",
+                    "plans",
+                    ":planId",
+                    "purchases"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "offset",
+                      "value": "0"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "20"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "planId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json;charset=UTF-8; qs=0.09"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json;charset=UTF-8; qs=0.09"
+                }
+              ],
+              "body": "{\n  \"href\": \"http://XKBtgRWIAam.shrlJ-f66liHcmZ9JljRT+qfCsZx6\",\n  \"items\": [\n    {\n      \"accountId\": \"string\",\n      \"actualAmountPaidCents\": 8988,\n      \"amountCents\": 3743,\n      \"apiAllocationByPlan\": 7273,\n      \"apiAllocationEndDate\": \"1946-11-14T06:09:21.863Z\",\n      \"apiAllocationOverride\": 1862,\n      \"apiAllocationStartDate\": \"1990-06-20T12:31:41.245Z\",\n      \"application\": {\n        \"applicationOwnerType\": 6488,\n        \"clientId\": \"string\",\n        \"description\": \"string\",\n        \"href\": \"http://JENrgAHUHawQYvNOgs.bunShc.HjjEAXTeH,+ItuYIo9WnRDIQlmK\",\n        \"id\": \"string\",\n        \"name\": \"string\",\n        \"state\": 2627,\n        \"viewRef\": \"https://RHBKJeHWuMdHVp.gfhpTgtFAOUCLee6AfTIfW.aC65nv3oH4-X7ZC2viuKQ,xOuyt7vdtj2YFkKflUxgwb8R9MPYzNGhzgKIiCM\"\n      },\n      \"canceledAt\": \"1974-11-28T08:41:18.900Z\",\n      \"card\": {\n        \"billingAddress\": {\n          \"address\": \"string\",\n          \"city\": \"string\",\n          \"country\": \"string\",\n          \"countryCode\": \"string\",\n          \"id\": \"string\",\n          \"state\": \"string\",\n          \"stateCode\": \"string\",\n          \"zip\": \"string\"\n        },\n        \"expMonth\": 6307,\n        \"expYear\": 8859,\n        \"last4\": \"string\",\n        \"name\": \"string\",\n        \"type\": \"string\"\n      },\n      \"clientId\": \"string\",\n      \"couponAmountOff\": 3839,\n      \"couponPercentOff\": 97,\n      \"createdBy\": \"string\",\n      \"currency\": \"string\",\n      \"duration\": 9665,\n      \"durationMonths\": 4203,\n      \"group\": \"string\",\n      \"href\": \"https://vlVwXieBpo.diyxRbrPJHfwNo+yTW80ORztJGkM3TSzsi8BceegAVK5.BG-FpFtMkogt-rh.aHASt,CBsIw9I1jE,26ve\",\n      \"id\": \"string\",\n      \"lastModified\": \"2001-10-12T20:10:47.667Z\",\n      \"lastModifiedBy\": \"string\",\n      \"lightSeats\": 5834,\n      \"name\": \"string\",\n      \"nextCharge\": {\n        \"amount\": 1357,\n        \"currentPeriodEnd\": \"1963-07-07T17:37:59.368Z\",\n        \"interval\": \"string\",\n        \"total\": 392\n      },\n      \"overageEnabled\": false,\n      \"paymentType\": 1534,\n      \"pendingCancelation\": true,\n      \"plan\": {\n        \"amountCents\": 6191,\n        \"applicationId\": \"string\",\n        \"clientId\": \"string\",\n        \"companyPlan\": true,\n        \"consumableQuantity\": 3087,\n        \"deprecated\": true,\n        \"description\": \"string\",\n        \"discountInfo\": {\n          \"accountBalance\": 5412,\n          \"amountOff\": 8104,\n          \"couponType\": 5798,\n          \"couponValidMonths\": 4430,\n          \"createdAt\": \"1978-05-01T16:29:16.965Z\",\n          \"createdBy\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"expiresAt\": \"1981-03-12T03:49:54.504Z\",\n          \"href\": \"https://mNXqPflFHjLNoRzi.hibeaAlkbPNfTEKTTzPWt.ao,cEo5GIbF\",\n          \"id\": \"string\",\n          \"name\": \"string\",\n          \"ownerId\": \"string\",\n          \"percentOff\": 120,\n          \"planId\": \"string\",\n          \"trialEndDate\": \"string\",\n          \"usedAt\": \"1987-06-27T01:28:35.750Z\",\n          \"viewRef\": \"https://jF.fpmRSm.yPdXYI8oX9O+4a8H.kygvaoQ,Vlgf\"\n        },\n        \"group\": \"string\",\n        \"hidden\": false,\n        \"href\": \"https://XpUGiG.smxgk3Y.B.3fi4ZOXJzZv,GH55r5ucSavKlK2pTyrTUbhCRSzezo+DZCg7bnCO70\",\n        \"id\": \"string\",\n        \"interval\": \"string\",\n        \"name\": \"string\",\n        \"onshapePlan\": false,\n        \"planType\": 2599,\n        \"trialPeriodDays\": 5456,\n        \"viewRef\": \"https://sikYbMJJDlhQtUlsSOekTzVJCsXTXMSXt.zyisictaNYoR0U3nv9folaA4ZAvbWfjXruA0fYqS6z4vykpc.JZJPYWs-M1\"\n      },\n      \"planId\": \"string\",\n      \"planName\": \"string\",\n      \"planType\": 7682,\n      \"preTrialPlanId\": \"string\",\n      \"proratedCharges\": [\n        {\n          \"amount\": 5676,\n          \"date\": \"1948-05-08T20:52:48.924Z\",\n          \"description\": \"string\"\n        },\n        {\n          \"amount\": 4382,\n          \"date\": \"2024-02-08T21:16:57.555Z\",\n          \"description\": \"string\"\n        }\n      ],\n      \"proratedTotal\": 4820,\n      \"purchaseDate\": \"1993-08-29T08:25:57.119Z\",\n      \"resellerName\": \"string\",\n      \"seats\": 2897,\n      \"state\": 4726,\n      \"subscribers\": [\n        {\n          \"email\": \"string\",\n          \"firstName\": \"string\",\n          \"href\": \"https://hyqpidZcyYgqUWBHqalaRvQULwIGMn.ekoP-.J9vEhZj1eq\",\n          \"id\": \"string\",\n          \"image\": \"string\",\n          \"lastName\": \"string\",\n          \"name\": \"string\",\n          \"state\": 6883,\n          \"viewRef\": \"https://hQvPjaAhtkb.xaEBrm\"\n        },\n        {\n          \"email\": \"string\",\n          \"firstName\": \"string\",\n          \"href\": \"http://LlPgiPUXdwbtKRrr.vnaxNhIAzCVwop-\",\n          \"id\": \"string\",\n          \"image\": \"string\",\n          \"lastName\": \"string\",\n          \"name\": \"string\",\n          \"state\": 6310,\n          \"viewRef\": \"https://yvbXlVfkfBzGnRHVIQABDTLBRGcGrv.jronqFTK,plpTV6fzJTRjPbo3YnRHeZOLYO2L7vinaApG0lNt,aDW9Ss\"\n        }\n      ],\n      \"subscriptionBeginAt\": \"1996-03-27T19:20:43.197Z\",\n      \"subscriptionEndAt\": \"1987-09-22T09:06:12.530Z\",\n      \"subscriptionId\": \"string\",\n      \"subscriptionType\": 8425,\n      \"taxAmountCents\": 8271,\n      \"trialEnd\": \"1979-07-22T08:50:44.466Z\",\n      \"trialInitiatedBy\": \"string\",\n      \"viewRef\": \"http://olCfDjzIyxhY.wkE-Dy0fwNq.kSn.GUWV3\"\n    },\n    {\n      \"accountId\": \"string\",\n      \"actualAmountPaidCents\": 7913,\n      \"amountCents\": 4597,\n      \"apiAllocationByPlan\": 3296,\n      \"apiAllocationEndDate\": \"2002-09-11T03:54:18.614Z\",\n      \"apiAllocationOverride\": 3778,\n      \"apiAllocationStartDate\": \"1986-02-11T10:01:09.142Z\",\n      \"application\": {\n        \"applicationOwnerType\": 3746,\n        \"clientId\": \"string\",\n        \"description\": \"string\",\n        \"href\": \"https://ItIMyKajUsyRCugOyuxCNmhLeCRS.vgAooTZyYU,ZQXnsxKy7hK-Hx7GdFrLPsOnOXg,xOmmTeWxWJbK9\",\n        \"id\": \"string\",\n        \"name\": \"string\",\n        \"state\": 7601,\n        \"viewRef\": \"http://bmHghEYTvcMNT.pubPd2AmS+\"\n      },\n      \"canceledAt\": \"2018-05-13T11:35:04.338Z\",\n      \"card\": {\n        \"billingAddress\": {\n          \"address\": \"string\",\n          \"city\": \"string\",\n          \"country\": \"string\",\n          \"countryCode\": \"string\",\n          \"id\": \"string\",\n          \"state\": \"string\",\n          \"stateCode\": \"string\",\n          \"zip\": \"string\"\n        },\n        \"expMonth\": 513,\n        \"expYear\": 9376,\n        \"last4\": \"string\",\n        \"name\": \"string\",\n        \"type\": \"string\"\n      },\n      \"clientId\": \"string\",\n      \"couponAmountOff\": 3790,\n      \"couponPercentOff\": 5611,\n      \"createdBy\": \"string\",\n      \"currency\": \"string\",\n      \"duration\": 9126,\n      \"durationMonths\": 2122,\n      \"group\": \"string\",\n      \"href\": \"http://rtlKLXyXOAfbmZnrsISeIVrhFxlFmfQs.bpwqFpIC67dBaFm5uu,5+xg92cUpkq.1v\",\n      \"id\": \"string\",\n      \"lastModified\": \"1948-06-02T00:59:17.162Z\",\n      \"lastModifiedBy\": \"string\",\n      \"lightSeats\": 4719,\n      \"name\": \"string\",\n      \"nextCharge\": {\n        \"amount\": 2636,\n        \"currentPeriodEnd\": \"1973-10-14T12:21:54.463Z\",\n        \"interval\": \"string\",\n        \"total\": 9817\n      },\n      \"overageEnabled\": true,\n      \"paymentType\": 9940,\n      \"pendingCancelation\": false,\n      \"plan\": {\n        \"amountCents\": 9708,\n        \"applicationId\": \"string\",\n        \"clientId\": \"string\",\n        \"companyPlan\": false,\n        \"consumableQuantity\": 483,\n        \"deprecated\": true,\n        \"description\": \"string\",\n        \"discountInfo\": {\n          \"accountBalance\": 7166,\n          \"amountOff\": 8055,\n          \"couponType\": 5121,\n          \"couponValidMonths\": 2131,\n          \"createdAt\": \"1968-10-06T15:18:05.846Z\",\n          \"createdBy\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"expiresAt\": \"1949-04-14T07:45:38.223Z\",\n          \"href\": \"http://aRZAaLOiNFrbLNxQZpG.fbxDzPyY+opeO4uHv4QxcEyQoZfHg\",\n          \"id\": \"string\",\n          \"name\": \"string\",\n          \"ownerId\": \"string\",\n          \"percentOff\": 4038,\n          \"planId\": \"string\",\n          \"trialEndDate\": \"string\",\n          \"usedAt\": \"1998-03-15T01:53:57.162Z\",\n          \"viewRef\": \"http://N.dlvsjdOa0skFc+DxQYcO\"\n        },\n        \"group\": \"string\",\n        \"hidden\": true,\n        \"href\": \"http://NLcz.pefn\",\n        \"id\": \"string\",\n        \"interval\": \"string\",\n        \"name\": \"string\",\n        \"onshapePlan\": false,\n        \"planType\": 6227,\n        \"trialPeriodDays\": 3211,\n        \"viewRef\": \"http://iWmsXWNu.fzy8IE0,9dG-4tOnzJAzU\"\n      },\n      \"planId\": \"string\",\n      \"planName\": \"string\",\n      \"planType\": 4002,\n      \"preTrialPlanId\": \"string\",\n      \"proratedCharges\": [\n        {\n          \"amount\": 4342,\n          \"date\": \"1991-08-13T20:38:57.521Z\",\n          \"description\": \"string\"\n        },\n        {\n          \"amount\": 5121,\n          \"date\": \"1989-09-15T16:40:15.237Z\",\n          \"description\": \"string\"\n        }\n      ],\n      \"proratedTotal\": 2871,\n      \"purchaseDate\": \"1997-11-28T21:24:55.576Z\",\n      \"resellerName\": \"string\",\n      \"seats\": 8683,\n      \"state\": 7607,\n      \"subscribers\": [\n        {\n          \"email\": \"string\",\n          \"firstName\": \"string\",\n          \"href\": \"https://KWNswUNaaqWzhimqrAQBWzJLxhvNDQ.tfC+k4BozW5AapHrIjahF3FkOSkWz1Wx9BHrox+fvmIvvR\",\n          \"id\": \"string\",\n          \"image\": \"string\",\n          \"lastName\": \"string\",\n          \"name\": \"string\",\n          \"state\": 9619,\n          \"viewRef\": \"http://wWtThecTEradjVN.nntQNuu-YP7b1zf,yDL1j\"\n        },\n        {\n          \"email\": \"string\",\n          \"firstName\": \"string\",\n          \"href\": \"https://lenGBQHvtHKhfXSeUBpCYco.zlUyNg1f0OKUh1\",\n          \"id\": \"string\",\n          \"image\": \"string\",\n          \"lastName\": \"string\",\n          \"name\": \"string\",\n          \"state\": 5337,\n          \"viewRef\": \"http://TMUPrnyXeyohhgjhSVYzszesNWEQzgTY.ykhHZci97bWjH0CGhFrUnE+.Q\"\n        }\n      ],\n      \"subscriptionBeginAt\": \"2011-01-07T23:45:37.610Z\",\n      \"subscriptionEndAt\": \"1993-01-09T02:18:09.093Z\",\n      \"subscriptionId\": \"string\",\n      \"subscriptionType\": 5785,\n      \"taxAmountCents\": 7955,\n      \"trialEnd\": \"2001-11-06T04:43:39.410Z\",\n      \"trialInitiatedBy\": \"string\",\n      \"viewRef\": \"http://IEKFJOpWgqWHXt.lemrlqrwRSiT8mfSeG0Fq9ZVoHGZscVUG4\"\n    }\n  ],\n  \"next\": \"https://mvEtxztaRDKYQTbUyJZkJWarthFgop.mmoweD5l-r,\",\n  \"previous\": \"https://kOZftRHniTbXMDQwTYatt.ueyJF8HE3rdE3oZUpyzjHDrr\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "d05e438b-74ba-4b90-bb17-f4324aa93890",
+          "name": "Get a list of all app purchases made by the current user.",
+          "request": {
+            "name": "Get a list of all app purchases made by the current user.",
+            "description": {
+              "content": "This API should be used within the context of an OAuth-enabled application.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "accounts",
+                "purchases"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "all",
+                  "value": "false"
+                },
+                {
+                  "disabled": false,
+                  "key": "ownPurchaseOnly",
+                  "value": "false"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json;charset=UTF-8; qs=0.09"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "01695e52-e8b1-48c5-b1e6-5f5280fd3014",
+              "name": "default response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "accounts",
+                    "purchases"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "all",
+                      "value": "false"
+                    },
+                    {
+                      "key": "ownPurchaseOnly",
+                      "value": "false"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json;charset=UTF-8; qs=0.09"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json;charset=UTF-8; qs=0.09"
+                }
+              ],
+              "body": "[\n  {\n    \"accountId\": \"string\",\n    \"actualAmountPaidCents\": 5915,\n    \"amountCents\": 2788,\n    \"apiAllocationByPlan\": 7176,\n    \"apiAllocationEndDate\": \"2012-02-20T14:11:27.692Z\",\n    \"apiAllocationOverride\": 6941,\n    \"apiAllocationStartDate\": \"1996-12-13T14:50:45.958Z\",\n    \"application\": {\n      \"applicationOwnerType\": 9137,\n      \"clientId\": \"string\",\n      \"description\": \"string\",\n      \"href\": \"http://dxDxlMJR.saxvhI9GDYUKyfFRy1oCurrJ8HdcgIZwoOrtoXxIHJMHDEaG\",\n      \"id\": \"string\",\n      \"name\": \"string\",\n      \"state\": 1172,\n      \"viewRef\": \"http://dsEzrxqClghFSchlBwktwHrmJ.iczmoAfchqctj1nAfs-1L4,jaDfwJNoTHAhNny-xnOPcY7kQS3ITVghYUSwPy+u\"\n    },\n    \"canceledAt\": \"1948-01-23T10:35:54.451Z\",\n    \"card\": {\n      \"billingAddress\": {\n        \"address\": \"string\",\n        \"city\": \"string\",\n        \"country\": \"string\",\n        \"countryCode\": \"string\",\n        \"id\": \"string\",\n        \"state\": \"string\",\n        \"stateCode\": \"string\",\n        \"zip\": \"string\"\n      },\n      \"expMonth\": 7397,\n      \"expYear\": 9398,\n      \"last4\": \"string\",\n      \"name\": \"string\",\n      \"type\": \"string\"\n    },\n    \"clientId\": \"string\",\n    \"couponAmountOff\": 7171,\n    \"couponPercentOff\": 2845,\n    \"createdBy\": \"string\",\n    \"currency\": \"string\",\n    \"duration\": 9631,\n    \"durationMonths\": 8663,\n    \"group\": \"string\",\n    \"href\": \"http://EcQyGUuzePuEvRpMtWmCQmTWwTqhopmTy.atibExEFi3PrdBKZGx6QXqfrwhHpaf3EdnMYDB2KxQcKO\",\n    \"id\": \"string\",\n    \"lastModified\": \"1975-01-31T15:47:12.591Z\",\n    \"lastModifiedBy\": \"string\",\n    \"lightSeats\": 6121,\n    \"name\": \"string\",\n    \"nextCharge\": {\n      \"amount\": 7558,\n      \"currentPeriodEnd\": \"1966-01-26T11:54:59.372Z\",\n      \"interval\": \"string\",\n      \"total\": 5343\n    },\n    \"overageEnabled\": true,\n    \"paymentType\": 8608,\n    \"pendingCancelation\": false,\n    \"plan\": {\n      \"amountCents\": 9582,\n      \"applicationId\": \"string\",\n      \"clientId\": \"string\",\n      \"companyPlan\": true,\n      \"consumableQuantity\": 2592,\n      \"deprecated\": false,\n      \"description\": \"string\",\n      \"discountInfo\": {\n        \"accountBalance\": 7128,\n        \"amountOff\": 5079,\n        \"couponType\": 3078,\n        \"couponValidMonths\": 57,\n        \"createdAt\": \"1975-09-29T22:31:11.780Z\",\n        \"createdBy\": {\n          \"company\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"companyUserState\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"confirmationRequested\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"documentationNameOverride\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"globalPermissions\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"invitationState\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"isExternal\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"isGuest\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"isLight\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"lastLoginTime\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"personalMessageAllowed\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"source\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"expiresAt\": \"1970-08-16T21:11:06.071Z\",\n        \"href\": \"https://cgmuMdyBbVnTousdbHCXmpHqjWmVcjh.aonzzKFUjHkjDnxPRc34TsZTdIIpRb1rEWfF-imV7czew3X.\",\n        \"id\": \"string\",\n        \"name\": \"string\",\n        \"ownerId\": \"string\",\n        \"percentOff\": 8855,\n        \"planId\": \"string\",\n        \"trialEndDate\": \"string\",\n        \"usedAt\": \"1952-09-09T01:22:27.106Z\",\n        \"viewRef\": \"https://mddyEBwBy.wtcbuERq41ZnOxIrJj\"\n      },\n      \"group\": \"string\",\n      \"hidden\": true,\n      \"href\": \"http://ANIGxSHbJr.lilheCZnMnggUBj5NB8lxdp\",\n      \"id\": \"string\",\n      \"interval\": \"string\",\n      \"name\": \"string\",\n      \"onshapePlan\": true,\n      \"planType\": 5628,\n      \"trialPeriodDays\": 2189,\n      \"viewRef\": \"https://mTwiIwWVVxDBJkffzjKiRXAcfdkVRmeEZ.yuvy6Dz+7vNGISrmsXOfs-oLQLv1rzGf98UE\"\n    },\n    \"planId\": \"string\",\n    \"planName\": \"string\",\n    \"planType\": 7872,\n    \"preTrialPlanId\": \"string\",\n    \"proratedCharges\": [\n      {\n        \"amount\": 435,\n        \"date\": \"1953-03-05T10:03:12.044Z\",\n        \"description\": \"string\"\n      },\n      {\n        \"amount\": 917,\n        \"date\": \"2008-12-25T21:35:42.990Z\",\n        \"description\": \"string\"\n      }\n    ],\n    \"proratedTotal\": 3733,\n    \"purchaseDate\": \"2016-06-11T06:54:37.432Z\",\n    \"resellerName\": \"string\",\n    \"seats\": 9916,\n    \"state\": 5754,\n    \"subscribers\": [\n      {\n        \"email\": \"string\",\n        \"firstName\": \"string\",\n        \"href\": \"https://dxknhytoyAzLDeuj.dbjrHBRN22xVzYl8TySb\",\n        \"id\": \"string\",\n        \"image\": \"string\",\n        \"lastName\": \"string\",\n        \"name\": \"string\",\n        \"state\": 1176,\n        \"viewRef\": \"https://AsSEENRAzfdmhfVzWZKBuMJycE.rzrXoRbRj4IWkmdnLWpUdjM,Or7xZcMVZmIdbhaSPJwwze6YUfe-0X1y7Jbf4hFIXCJN,JWJ6WvY1e5oAEgXlY-\"\n      },\n      {\n        \"email\": \"string\",\n        \"firstName\": \"string\",\n        \"href\": \"https://kugpjExgCKRYODARozmjkqfpc.ovuUjt5A4CPP.SUztz1GaLwbXFfAu7wjjY6mY4\",\n        \"id\": \"string\",\n        \"image\": \"string\",\n        \"lastName\": \"string\",\n        \"name\": \"string\",\n        \"state\": 3293,\n        \"viewRef\": \"http://rG.qkbdE0c9pNGheSv0-Wx0V9-gOA\"\n      }\n    ],\n    \"subscriptionBeginAt\": \"1947-10-13T02:30:11.427Z\",\n    \"subscriptionEndAt\": \"1990-07-22T12:30:44.156Z\",\n    \"subscriptionId\": \"string\",\n    \"subscriptionType\": 2244,\n    \"taxAmountCents\": 9105,\n    \"trialEnd\": \"1979-06-27T06:43:41.081Z\",\n    \"trialInitiatedBy\": \"string\",\n    \"viewRef\": \"http://XGBXTVWJBWtuWQoGpuiBXrXAXJQrUEHJ.hyvvRBpcOCK1Ic8RD8lI7PERy\"\n  },\n  {\n    \"accountId\": \"string\",\n    \"actualAmountPaidCents\": 9293,\n    \"amountCents\": 3118,\n    \"apiAllocationByPlan\": 3393,\n    \"apiAllocationEndDate\": \"2020-04-07T08:05:10.524Z\",\n    \"apiAllocationOverride\": 802,\n    \"apiAllocationStartDate\": \"1984-07-11T12:04:49.853Z\",\n    \"application\": {\n      \"applicationOwnerType\": 5238,\n      \"clientId\": \"string\",\n      \"description\": \"string\",\n      \"href\": \"http://RJKgcVDSHcTlfjNvCtrBcwXZaIn.bggr7Go.BTJm0dIvgExBPK1cPtAzLDMGnQ9tfiBhj0zqWNzhjkmL\",\n      \"id\": \"string\",\n      \"name\": \"string\",\n      \"state\": 6777,\n      \"viewRef\": \"https://AVDpvBJgRKNSrBKSWqyyuGZMtswywiZLh.tvdFMugQKCkQmddX-ZdU97RSCnDY5sqUIdvaNEOmzOGAm\"\n    },\n    \"canceledAt\": \"2026-02-27T06:31:09.394Z\",\n    \"card\": {\n      \"billingAddress\": {\n        \"address\": \"string\",\n        \"city\": \"string\",\n        \"country\": \"string\",\n        \"countryCode\": \"string\",\n        \"id\": \"string\",\n        \"state\": \"string\",\n        \"stateCode\": \"string\",\n        \"zip\": \"string\"\n      },\n      \"expMonth\": 4165,\n      \"expYear\": 3543,\n      \"last4\": \"string\",\n      \"name\": \"string\",\n      \"type\": \"string\"\n    },\n    \"clientId\": \"string\",\n    \"couponAmountOff\": 968,\n    \"couponPercentOff\": 9118,\n    \"createdBy\": \"string\",\n    \"currency\": \"string\",\n    \"duration\": 8536,\n    \"durationMonths\": 7909,\n    \"group\": \"string\",\n    \"href\": \"https://QeMPvyHVWwFmVJGEyniRDvvJmMzSe.vtP+fudW7XktxcV703vQWGatwu9rJ5OPbmIoX9MNVsOK5\",\n    \"id\": \"string\",\n    \"lastModified\": \"2023-05-30T11:02:29.319Z\",\n    \"lastModifiedBy\": \"string\",\n    \"lightSeats\": 5859,\n    \"name\": \"string\",\n    \"nextCharge\": {\n      \"amount\": 2572,\n      \"currentPeriodEnd\": \"1979-04-24T04:52:02.291Z\",\n      \"interval\": \"string\",\n      \"total\": 3877\n    },\n    \"overageEnabled\": true,\n    \"paymentType\": 7599,\n    \"pendingCancelation\": true,\n    \"plan\": {\n      \"amountCents\": 6107,\n      \"applicationId\": \"string\",\n      \"clientId\": \"string\",\n      \"companyPlan\": false,\n      \"consumableQuantity\": 370,\n      \"deprecated\": false,\n      \"description\": \"string\",\n      \"discountInfo\": {\n        \"accountBalance\": 3866,\n        \"amountOff\": 901,\n        \"couponType\": 5973,\n        \"couponValidMonths\": 7218,\n        \"createdAt\": \"2023-01-23T18:06:11.887Z\",\n        \"createdBy\": {\n          \"company\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"companyUserState\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"confirmationRequested\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"documentationNameOverride\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"globalPermissions\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"invitationState\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"isExternal\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"isGuest\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"isLight\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"lastLoginTime\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"personalMessageAllowed\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"source\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"expiresAt\": \"1955-02-08T10:09:08.210Z\",\n        \"href\": \"http://NGTcRGwEWyujqnwIcUXlspx.ghjvQcVi0iERrehZlCF3jnp5UynhZUs3hldWi9AO5i+ifzfl2Y6Gz3iy0\",\n        \"id\": \"string\",\n        \"name\": \"string\",\n        \"ownerId\": \"string\",\n        \"percentOff\": 2464,\n        \"planId\": \"string\",\n        \"trialEndDate\": \"string\",\n        \"usedAt\": \"2018-01-06T07:14:58.067Z\",\n        \"viewRef\": \"http://NVPJSGdLAkJmdhNA.hndl91KZZcanLseeTT5Gj3ik1krNHE6QF8mxXAgVV2\"\n      },\n      \"group\": \"string\",\n      \"hidden\": false,\n      \"href\": \"https://IZFwtybGQVXctJXUKMnsjgwPN.osuzZk0LPZKpIoNd\",\n      \"id\": \"string\",\n      \"interval\": \"string\",\n      \"name\": \"string\",\n      \"onshapePlan\": false,\n      \"planType\": 6389,\n      \"trialPeriodDays\": 49,\n      \"viewRef\": \"http://nVsxG.puvk-lc-w6W2UpLY,2o8A56f2GPHHaRXrx624pKcwBf,WD\"\n    },\n    \"planId\": \"string\",\n    \"planName\": \"string\",\n    \"planType\": 6708,\n    \"preTrialPlanId\": \"string\",\n    \"proratedCharges\": [\n      {\n        \"amount\": 8606,\n        \"date\": \"2013-04-26T23:16:01.209Z\",\n        \"description\": \"string\"\n      },\n      {\n        \"amount\": 3512,\n        \"date\": \"1994-08-09T05:14:49.694Z\",\n        \"description\": \"string\"\n      }\n    ],\n    \"proratedTotal\": 3331,\n    \"purchaseDate\": \"2018-07-31T21:42:20.416Z\",\n    \"resellerName\": \"string\",\n    \"seats\": 7378,\n    \"state\": 5848,\n    \"subscribers\": [\n      {\n        \"email\": \"string\",\n        \"firstName\": \"string\",\n        \"href\": \"http://VoOevqifSZMPuie.vtbnKaYpLuLh0HpcStjAWVjo.Nahw0H+IhfKhMrzDkIswPsd6SSdyyB2Ky\",\n        \"id\": \"string\",\n        \"image\": \"string\",\n        \"lastName\": \"string\",\n        \"name\": \"string\",\n        \"state\": 4318,\n        \"viewRef\": \"https://HfbFiFtr.fuWbG5EuHy5uPL.rYSiFtQ89FHvujVpu4NidCrsLyCT9\"\n      },\n      {\n        \"email\": \"string\",\n        \"firstName\": \"string\",\n        \"href\": \"https://zChkWsZDEHVJOBIUzPzTfrcyvmqvohvhX.wokIz1vS4,GEb79qxFTNwdUBCq1nWgAiRIZb98xR4BGGuMKGKl2lnHViH30Tt\",\n        \"id\": \"string\",\n        \"image\": \"string\",\n        \"lastName\": \"string\",\n        \"name\": \"string\",\n        \"state\": 3962,\n        \"viewRef\": \"https://JqqeDTWTtchlshWpSoGfrHs.zslPpTgVTuKMPJ8VsEs30bGZMRnLui.8\"\n      }\n    ],\n    \"subscriptionBeginAt\": \"1977-11-18T20:37:50.058Z\",\n    \"subscriptionEndAt\": \"1957-05-04T13:25:45.885Z\",\n    \"subscriptionId\": \"string\",\n    \"subscriptionType\": 3694,\n    \"taxAmountCents\": 9525,\n    \"trialEnd\": \"2009-05-26T03:00:51.910Z\",\n    \"trialInitiatedBy\": \"string\",\n    \"viewRef\": \"https://qC.ttnwVeF3bZJCd7dJxYv85cxc2sXPl6Mo9GZQYpBcxBNR1Qw7.Mo-O,7ohTI4\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "113816ef-e157-4f87-a630-59f4b13fd1f2",
+          "name": "Mark a purchase as consumed by the current user.",
+          "request": {
+            "name": "Mark a purchase as consumed by the current user.",
+            "description": {},
+            "url": {
+              "path": [
+                "accounts",
+                "purchases",
+                ":pid",
+                "consume"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "pid",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json;charset=UTF-8; qs=0.09"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json;charset=UTF-8; qs=0.09"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "scope",
+                  "value": "OAuth2Internal OAuth2ReadPII OAuth2Read OAuth2Write OAuth2Delete OAuth2Purchase OAuth2Share document.create document.edit document.delete document.read enterprise.create enterprise.read enterprise.edit enterprise.delete enterprise.member.create enterprise.member.read enterprise.member.edit enterprise.member.delete webhook.create webhook.edit webhook.read webhook.delete PLMIntegration"
+                },
+                {
+                  "key": "redirect_uri",
+                  "value": "/oauth/token"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "/oauth/token"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "/oauth/authorize"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"consumedQuantity\": \"<integer>\",\n  \"identityId\": \"<string>\",\n  \"identityType\": \"<integer>\",\n  \"purchaseId\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "5d5e2d32-1575-42c4-bf92-0689e4eb431d",
+              "name": "default response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "accounts",
+                    "purchases",
+                    ":pid",
+                    "consume"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "pid",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json;charset=UTF-8; qs=0.09"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"consumedQuantity\": \"<integer>\",\n  \"identityId\": \"<string>\",\n  \"identityType\": \"<integer>\",\n  \"purchaseId\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json;charset=UTF-8; qs=0.09"
+                }
+              ],
+              "body": "{\n  \"accountId\": \"string\",\n  \"actualAmountPaidCents\": 1361,\n  \"amountCents\": 9619,\n  \"apiAllocationByPlan\": 6439,\n  \"apiAllocationEndDate\": \"2009-06-02T15:01:48.074Z\",\n  \"apiAllocationOverride\": 6545,\n  \"apiAllocationStartDate\": \"2008-12-28T07:58:12.379Z\",\n  \"application\": {\n    \"applicationOwnerType\": 3936,\n    \"clientId\": \"string\",\n    \"description\": \"string\",\n    \"href\": \"https://RbIzkDMOyeWXGbOm.rliGLZDCp0Pm+Rjd-gsK,ybtO1ZKP0.jKAzysTYGHdx1BqbwG\",\n    \"id\": \"string\",\n    \"name\": \"string\",\n    \"state\": 7949,\n    \"viewRef\": \"https://RzeppvsZckOcWCNaG.tcU7.7lv3ZBCJ+B3You,tfzjDGQVsLGI\"\n  },\n  \"canceledAt\": \"1969-07-18T18:45:04.549Z\",\n  \"card\": {\n    \"billingAddress\": {\n      \"address\": \"string\",\n      \"city\": \"string\",\n      \"country\": \"string\",\n      \"countryCode\": \"string\",\n      \"id\": \"string\",\n      \"state\": \"string\",\n      \"stateCode\": \"string\",\n      \"zip\": \"string\"\n    },\n    \"expMonth\": 3289,\n    \"expYear\": 1611,\n    \"last4\": \"string\",\n    \"name\": \"string\",\n    \"type\": \"string\"\n  },\n  \"clientId\": \"string\",\n  \"couponAmountOff\": 1231,\n  \"couponPercentOff\": 5764,\n  \"createdBy\": \"string\",\n  \"currency\": \"string\",\n  \"duration\": 1016,\n  \"durationMonths\": 8518,\n  \"group\": \"string\",\n  \"href\": \"https://EGMTzQNtRtYBsFqofSoVildEts.dfitjI6rBuW3d\",\n  \"id\": \"string\",\n  \"lastModified\": \"1974-12-20T05:23:38.488Z\",\n  \"lastModifiedBy\": \"string\",\n  \"lightSeats\": 557,\n  \"name\": \"string\",\n  \"nextCharge\": {\n    \"amount\": 4435,\n    \"currentPeriodEnd\": \"2001-11-02T16:15:22.556Z\",\n    \"interval\": \"string\",\n    \"total\": 1401\n  },\n  \"overageEnabled\": false,\n  \"paymentType\": 5960,\n  \"pendingCancelation\": false,\n  \"plan\": {\n    \"amountCents\": 3096,\n    \"applicationId\": \"string\",\n    \"clientId\": \"string\",\n    \"companyPlan\": true,\n    \"consumableQuantity\": 3505,\n    \"deprecated\": false,\n    \"description\": \"string\",\n    \"discountInfo\": {\n      \"accountBalance\": 4845,\n      \"amountOff\": 6908,\n      \"couponType\": 1556,\n      \"couponValidMonths\": 3320,\n      \"createdAt\": \"1954-05-21T05:15:49.171Z\",\n      \"createdBy\": {\n        \"documentationName\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"email\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"firstName\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"lastName\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"company\": {\n          \"admin\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"description\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"domainPrefix\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"enterpriseBaseUrl\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"enterpriseSubtype\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"href\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"id\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"image\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"name\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"noPublicDocuments\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"ownerId\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"secondaryDomainPrefixes\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"state\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"type\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"viewRef\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"companyUserState\": 3829,\n        \"confirmationRequested\": true,\n        \"documentationNameOverride\": \"string\",\n        \"globalPermissions\": {\n          \"accessReports\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"adminEnterprise\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"allowAppStoreAccess\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"allowPublicDocumentsAccess\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"approveReleases\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"branchLockPermissions\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"createDocumentsInRoot\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"createProject\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"createReleases\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"createTasks\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"deletePermanently\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"enableLabs\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"exportFiles\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"importFiles\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"manageGuestUsers\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"manageNonGeometricItems\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"manageRbac\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"manageStandardContentMetadata\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"manageUsers\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"manageWorkflows\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"shareForAnonymousAccess\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"transferDocumentsFromEnterprise\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"useRevisionTools\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"invitationState\": 2235,\n        \"isExternal\": true,\n        \"isGuest\": false,\n        \"isLight\": false,\n        \"lastLoginTime\": \"1952-05-25T21:19:07.777Z\",\n        \"personalMessageAllowed\": false,\n        \"source\": 4883\n      },\n      \"expiresAt\": \"1946-12-08T04:46:20.300Z\",\n      \"href\": \"http://iFpqpftcSlSFJjwMtoSb.gmpd7DAjJN.0-ggElDplEsr,+3RlP4CCiwrl5m7PDwRU5FGXjJsAWxYpkxLBLFA9OnvO1wQppqb-ModI\",\n      \"id\": \"string\",\n      \"name\": \"string\",\n      \"ownerId\": \"string\",\n      \"percentOff\": 7966,\n      \"planId\": \"string\",\n      \"trialEndDate\": \"string\",\n      \"usedAt\": \"2020-09-14T15:54:21.995Z\",\n      \"viewRef\": \"https://Vj.nvquHYT.pIqDDaBJlu7du5fVa1Zb0Wi574moRQKBLgAC\"\n    },\n    \"group\": \"string\",\n    \"hidden\": false,\n    \"href\": \"https://kRMcq.fsxufjWNboIvwqCfp-fqX9Gg98uY+vBx+52FSob5dAHWAyxZgrraSO0ewD.+GJ.FxOq\",\n    \"id\": \"string\",\n    \"interval\": \"string\",\n    \"name\": \"string\",\n    \"onshapePlan\": false,\n    \"planType\": 8852,\n    \"trialPeriodDays\": 1840,\n    \"viewRef\": \"https://RBAMxhdBKmZLwc.iqicawttwXA2e88fONtWDB4kLyMFzuCfU1dc2\"\n  },\n  \"planId\": \"string\",\n  \"planName\": \"string\",\n  \"planType\": 8631,\n  \"preTrialPlanId\": \"string\",\n  \"proratedCharges\": [\n    {\n      \"amount\": 4778,\n      \"date\": \"2001-12-19T04:07:19.383Z\",\n      \"description\": \"string\"\n    },\n    {\n      \"amount\": 4133,\n      \"date\": \"1991-06-19T13:31:28.848Z\",\n      \"description\": \"string\"\n    }\n  ],\n  \"proratedTotal\": 9985,\n  \"purchaseDate\": \"1988-11-07T23:35:01.597Z\",\n  \"resellerName\": \"string\",\n  \"seats\": 6765,\n  \"state\": 4554,\n  \"subscribers\": [\n    {\n      \"email\": \"string\",\n      \"firstName\": \"string\",\n      \"href\": \"https://lzkdiiIkAASNUwfFWQdFGDmeVyUd.pjdmL2XgDhvx42s2Rer\",\n      \"id\": \"string\",\n      \"image\": \"string\",\n      \"lastName\": \"string\",\n      \"name\": \"string\",\n      \"state\": 8767,\n      \"viewRef\": \"http://NJARAWmluJtqDetaDTJVFZjlDLrSHl.tudTfTc40Ha-iA22\"\n    },\n    {\n      \"email\": \"string\",\n      \"firstName\": \"string\",\n      \"href\": \"https://pvtDPlbkCEEgaTatmOrJBI.txqobt-gLZ.p4cBjwkR5r6tiRq9+KpR187whr+oHdX5JOooXB7zcV\",\n      \"id\": \"string\",\n      \"image\": \"string\",\n      \"lastName\": \"string\",\n      \"name\": \"string\",\n      \"state\": 6859,\n      \"viewRef\": \"https://ieYdwsJrDKjkGnnQLVlQSSluagN.uqibGiLhYScWPxVQoKoxAZb-ARCe2VP2RONonTN6Cq.3rEgQtu\"\n    }\n  ],\n  \"subscriptionBeginAt\": \"1973-12-15T21:52:42.694Z\",\n  \"subscriptionEndAt\": \"2019-05-23T19:13:31.095Z\",\n  \"subscriptionId\": \"string\",\n  \"subscriptionType\": 4472,\n  \"taxAmountCents\": 3288,\n  \"trialEnd\": \"2004-07-25T07:13:51.405Z\",\n  \"trialInitiatedBy\": \"string\",\n  \"viewRef\": \"http://EYuzlxaYImEaTCHJaDWqXeBFsNXa.jcKp\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "0d3a2ca2-f21e-4538-ae18-7e8e8d69eecb",
+          "name": "Cancel a recurring subscription for the specified account ID and purchase ID.",
+          "request": {
+            "name": "Cancel a recurring subscription for the specified account ID and purchase ID.",
+            "description": {},
+            "url": {
+              "path": [
+                "accounts",
+                ":aid",
+                "purchases",
+                ":pid"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "cancelImmediately",
+                  "value": "false"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "aid",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "pid",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json;charset=UTF-8; qs=0.09"
+              }
+            ],
+            "method": "DELETE",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "scope",
+                  "value": "OAuth2Internal OAuth2ReadPII OAuth2Read OAuth2Write OAuth2Delete OAuth2Purchase OAuth2Share document.create document.edit document.delete document.read enterprise.create enterprise.read enterprise.edit enterprise.delete enterprise.member.create enterprise.member.read enterprise.member.edit enterprise.member.delete webhook.create webhook.edit webhook.read webhook.delete PLMIntegration"
+                },
+                {
+                  "key": "redirect_uri",
+                  "value": "/oauth/token"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "/oauth/token"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "/oauth/authorize"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "3e961d18-4eae-4403-89e0-29957b420d75",
+              "name": "default response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "accounts",
+                    ":aid",
+                    "purchases",
+                    ":pid"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "cancelImmediately",
+                      "value": "false"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "aid",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "pid",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json;charset=UTF-8; qs=0.09"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json;charset=UTF-8; qs=0.09"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://cad.onshape.com/api/v16",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "basic",
+    "basic": [
+      {
+        "key": "username",
+        "value": "{{basicAuthUsername}}"
+      },
+      {
+        "key": "password",
+        "value": "{{basicAuthPassword}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "7e885aca-be5d-4fea-96ba-d38b10d0597b",
+    "name": "Onshape REST Account API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "## Welcome to the Onshape REST API Explorer\n\n**See the [API Explorer Guide](https://onshape-public.github.io/docs/api-intro/explorer/) for help navigating this page.**\n\n### Using this page\n1. Sign in to your [Onshape](https://cad.onshape.com) account in another tab.\n2. Click the `Try it out` button below. It toggles to a `Cancel` button when selected.\n\n### Authenticating\nTo authenticate your calls, click the `Authorize` button. See [API Explorer Guide: Authentication](https://onshape-public.github.io/docs/api-intro/explorer/#authentication) for details. Calls made when authenticated via API Keys or OAuth count against your annual [API limits](https://onshape-public.github.io/docs/auth/limits/#annual-api-call-limits).\n* **Tip:** To ensure the current session isn't used when trying other authentication techniques, make sure to [remove the Onshape cookie](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site) as per the instructions for your browser, or use a private or incognito window.\n\n### Additional resources\n\n* [Onshape API Guide](https://onshape-public.github.io/docs/): Our full suite of developer guides, to be used as an accompaniment to this API Explorer.\n* [Onshape Developer Portal](https://cad.onshape.com/appstore/dev-portal): The Onshape portal for managing your API keys, OAuth2 credentials, your Onshape applications, and your Onshape App Store entries.\n* [Authentication Guide](https://onshape-public.github.io/docs/auth/): Our guide to using API keys, request signatures, and OAuth2 in your Onshape applications.\n\nContact Support:\n Email: api-support@onshape.zendesk.com",
+      "type": "text/plain"
+    }
+  }
+}

@@ -1,0 +1,387 @@
+{
+  "item": [
+    {
+      "id": "9357c847-c877-431a-9cf5-d434db32529a",
+      "name": "Insertable",
+      "description": {
+        "content": "Access the list of things that can be inserted into a document.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "f47b9d81-8d61-466c-9092-b6c30463e90b",
+          "name": "Get a list of things in this document that can be inserted elsewhere.",
+          "request": {
+            "name": "Get a list of things in this document that can be inserted elsewhere.",
+            "description": {
+              "content": "* Returns only the latest revision of released insertables. \n* Use the document ID (`did`) parameter to specify the source document, not the insertion target. \n* For example, you can insert a custom Feature library into another custom Feature library, insert Parts into an Assembly or a Drawing, etc.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "insertables",
+                "d",
+                ":did",
+                "latest"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "includeParts",
+                  "value": "false"
+                },
+                {
+                  "disabled": false,
+                  "key": "includeSurfaces",
+                  "value": "false"
+                },
+                {
+                  "disabled": false,
+                  "key": "includeSketches",
+                  "value": "false"
+                },
+                {
+                  "disabled": false,
+                  "key": "includeReferenceFeatures",
+                  "value": "false"
+                },
+                {
+                  "disabled": false,
+                  "key": "includeAssemblies",
+                  "value": "false"
+                },
+                {
+                  "disabled": false,
+                  "key": "includeFeatureStudios",
+                  "value": "false"
+                },
+                {
+                  "disabled": false,
+                  "key": "includeBlobs",
+                  "value": "false"
+                },
+                {
+                  "disabled": false,
+                  "key": "allowedBlobMimeTypes",
+                  "value": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "excludeNewerFSVersions",
+                  "value": "false"
+                },
+                {
+                  "disabled": false,
+                  "key": "maxFeatureScriptVersion",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "includePartStudios",
+                  "value": "false"
+                },
+                {
+                  "disabled": false,
+                  "key": "includeFeatures",
+                  "value": "false"
+                },
+                {
+                  "disabled": false,
+                  "key": "includeMeshes",
+                  "value": "false"
+                },
+                {
+                  "disabled": false,
+                  "key": "includeWires",
+                  "value": "false"
+                },
+                {
+                  "disabled": false,
+                  "key": "includeFlattenedBodies",
+                  "value": "false"
+                },
+                {
+                  "disabled": false,
+                  "key": "includeApplications",
+                  "value": "false"
+                },
+                {
+                  "disabled": false,
+                  "key": "allowedApplicationMimeTypes",
+                  "value": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "includeCompositeParts",
+                  "value": "false"
+                },
+                {
+                  "disabled": false,
+                  "key": "includeFSTables",
+                  "value": "false"
+                },
+                {
+                  "disabled": false,
+                  "key": "includeFSComputedPartPropertyFunctions",
+                  "value": "false"
+                },
+                {
+                  "disabled": false,
+                  "key": "includeVariables",
+                  "value": "false"
+                },
+                {
+                  "disabled": false,
+                  "key": "includeVariableStudios",
+                  "value": "false"
+                },
+                {
+                  "disabled": false,
+                  "key": "allowedBlobExtensions",
+                  "value": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "isObsoletion",
+                  "value": "false"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "did",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json;charset=UTF-8; qs=0.09"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "scope",
+                  "value": "OAuth2Internal OAuth2ReadPII OAuth2Read OAuth2Write OAuth2Delete OAuth2Purchase OAuth2Share document.create document.edit document.delete document.read enterprise.create enterprise.read enterprise.edit enterprise.delete enterprise.member.create enterprise.member.read enterprise.member.edit enterprise.member.delete webhook.create webhook.edit webhook.read webhook.delete PLMIntegration"
+                },
+                {
+                  "key": "redirect_uri",
+                  "value": "/oauth/token"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "/oauth/token"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "/oauth/authorize"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "294cbdca-5ae0-4143-8d49-3ad0464ad237",
+              "name": "default response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "insertables",
+                    "d",
+                    ":did",
+                    "latest"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "includeParts",
+                      "value": "false"
+                    },
+                    {
+                      "key": "includeSurfaces",
+                      "value": "false"
+                    },
+                    {
+                      "key": "includeSketches",
+                      "value": "false"
+                    },
+                    {
+                      "key": "includeReferenceFeatures",
+                      "value": "false"
+                    },
+                    {
+                      "key": "includeAssemblies",
+                      "value": "false"
+                    },
+                    {
+                      "key": "includeFeatureStudios",
+                      "value": "false"
+                    },
+                    {
+                      "key": "includeBlobs",
+                      "value": "false"
+                    },
+                    {
+                      "key": "allowedBlobMimeTypes",
+                      "value": ""
+                    },
+                    {
+                      "key": "excludeNewerFSVersions",
+                      "value": "false"
+                    },
+                    {
+                      "key": "maxFeatureScriptVersion",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "includePartStudios",
+                      "value": "false"
+                    },
+                    {
+                      "key": "includeFeatures",
+                      "value": "false"
+                    },
+                    {
+                      "key": "includeMeshes",
+                      "value": "false"
+                    },
+                    {
+                      "key": "includeWires",
+                      "value": "false"
+                    },
+                    {
+                      "key": "includeFlattenedBodies",
+                      "value": "false"
+                    },
+                    {
+                      "key": "includeApplications",
+                      "value": "false"
+                    },
+                    {
+                      "key": "allowedApplicationMimeTypes",
+                      "value": ""
+                    },
+                    {
+                      "key": "includeCompositeParts",
+                      "value": "false"
+                    },
+                    {
+                      "key": "includeFSTables",
+                      "value": "false"
+                    },
+                    {
+                      "key": "includeFSComputedPartPropertyFunctions",
+                      "value": "false"
+                    },
+                    {
+                      "key": "includeVariables",
+                      "value": "false"
+                    },
+                    {
+                      "key": "includeVariableStudios",
+                      "value": "false"
+                    },
+                    {
+                      "key": "allowedBlobExtensions",
+                      "value": ""
+                    },
+                    {
+                      "key": "isObsoletion",
+                      "value": "false"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "did",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json;charset=UTF-8; qs=0.09"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json;charset=UTF-8; qs=0.09"
+                }
+              ],
+              "body": "{\n  \"href\": \"http://QqXyhNSVKlI.yqpwtcpqxSjnIRMU9D\",\n  \"items\": [\n    {\n      \"areFaultsIgnored\": true,\n      \"bodyType\": \"POINT\",\n      \"classType\": 9787,\n      \"configuration\": \"string\",\n      \"configurationParameterValues\": [\n        \"string\",\n        \"string\"\n      ],\n      \"configurationParameters\": [\n        \"string\",\n        \"string\"\n      ],\n      \"dataType\": \"string\",\n      \"deterministicId\": \"string\",\n      \"documentId\": \"string\",\n      \"elementId\": \"string\",\n      \"elementName\": \"string\",\n      \"elementType\": \"APPLICATION\",\n      \"featureId\": \"string\",\n      \"featureName\": \"string\",\n      \"featureSpec\": [\n        \"string\",\n        \"string\"\n      ],\n      \"featureType\": \"string\",\n      \"fsComputedPartPropertySpec\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fsTableSpec\": [\n        \"string\",\n        \"string\"\n      ],\n      \"hasFaults\": true,\n      \"href\": \"http://DQjccvbjzZhZZ.firwK.vwBVe2V3tJa-,QHHNBRWlNQ-QEvbs6kFiOpX8Qam2p95Ia\",\n      \"id\": \"string\",\n      \"insertableQuery\": \"string\",\n      \"isFlattenedBody\": false,\n      \"isMesh\": false,\n      \"meshState\": \"ALL_MESH\",\n      \"microversionId\": \"string\",\n      \"name\": \"string\",\n      \"parentId\": \"string\",\n      \"partIdentity\": \"string\",\n      \"partName\": \"string\",\n      \"predictableThumbnailId\": \"string\",\n      \"sourceFileExtension\": \"string\",\n      \"thumbnailUri\": \"string\",\n      \"unflattenedPartDeterministicId\": \"string\",\n      \"variableName\": \"string\",\n      \"versionId\": \"string\",\n      \"versionName\": \"string\",\n      \"viewRef\": \"https://ybTdPDZbbELORrKjZMOtXeXgNksDyxYf.gxzNAufoWySsIv\",\n      \"workspaceId\": \"string\",\n      \"workspaceName\": \"string\"\n    },\n    {\n      \"areFaultsIgnored\": false,\n      \"bodyType\": \"SOLID\",\n      \"classType\": 730,\n      \"configuration\": \"string\",\n      \"configurationParameterValues\": [\n        \"string\",\n        \"string\"\n      ],\n      \"configurationParameters\": [\n        \"string\",\n        \"string\"\n      ],\n      \"dataType\": \"string\",\n      \"deterministicId\": \"string\",\n      \"documentId\": \"string\",\n      \"elementId\": \"string\",\n      \"elementName\": \"string\",\n      \"elementType\": \"BLOB\",\n      \"featureId\": \"string\",\n      \"featureName\": \"string\",\n      \"featureSpec\": [\n        \"string\",\n        \"string\"\n      ],\n      \"featureType\": \"string\",\n      \"fsComputedPartPropertySpec\": [\n        \"string\",\n        \"string\"\n      ],\n      \"fsTableSpec\": [\n        \"string\",\n        \"string\"\n      ],\n      \"hasFaults\": false,\n      \"href\": \"https://Uyfj.bloJRH5BtxSGHpD3IootCfVtAua1g6IZpMEyIXYTCZZLIfxpmLCF.JZy9ESOdr3\",\n      \"id\": \"string\",\n      \"insertableQuery\": \"string\",\n      \"isFlattenedBody\": false,\n      \"isMesh\": false,\n      \"meshState\": \"UNKNOWN\",\n      \"microversionId\": \"string\",\n      \"name\": \"string\",\n      \"parentId\": \"string\",\n      \"partIdentity\": \"string\",\n      \"partName\": \"string\",\n      \"predictableThumbnailId\": \"string\",\n      \"sourceFileExtension\": \"string\",\n      \"thumbnailUri\": \"string\",\n      \"unflattenedPartDeterministicId\": \"string\",\n      \"variableName\": \"string\",\n      \"versionId\": \"string\",\n      \"versionName\": \"string\",\n      \"viewRef\": \"http://HhBkjetCoOiggqPFB.qralG-idif9mP.sxoZyMY8nnEzYzvx,QGF2WVdz,6WmsWJBJGBxBGYXF1jm,05v\",\n      \"workspaceId\": \"string\",\n      \"workspaceName\": \"string\"\n    }\n  ],\n  \"next\": \"https://TXsccHzrxzOfThgJLozArm.tiVrLw3MoVrqwHoa2OSQ2ofjtD0OPelmOfAFey2sSNaYtkp\",\n  \"previous\": \"http://UU.kopNPDbjoxQwKW\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://cad.onshape.com/api/v16",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "basic",
+    "basic": [
+      {
+        "key": "username",
+        "value": "{{basicAuthUsername}}"
+      },
+      {
+        "key": "password",
+        "value": "{{basicAuthPassword}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "7fbc0de7-913e-4a47-8d92-ef3868295647",
+    "name": "Onshape REST Account Insertable API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "## Welcome to the Onshape REST API Explorer\n\n**See the [API Explorer Guide](https://onshape-public.github.io/docs/api-intro/explorer/) for help navigating this page.**\n\n### Using this page\n1. Sign in to your [Onshape](https://cad.onshape.com) account in another tab.\n2. Click the `Try it out` button below. It toggles to a `Cancel` button when selected.\n\n### Authenticating\nTo authenticate your calls, click the `Authorize` button. See [API Explorer Guide: Authentication](https://onshape-public.github.io/docs/api-intro/explorer/#authentication) for details. Calls made when authenticated via API Keys or OAuth count against your annual [API limits](https://onshape-public.github.io/docs/auth/limits/#annual-api-call-limits).\n* **Tip:** To ensure the current session isn't used when trying other authentication techniques, make sure to [remove the Onshape cookie](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site) as per the instructions for your browser, or use a private or incognito window.\n\n### Additional resources\n\n* [Onshape API Guide](https://onshape-public.github.io/docs/): Our full suite of developer guides, to be used as an accompaniment to this API Explorer.\n* [Onshape Developer Portal](https://cad.onshape.com/appstore/dev-portal): The Onshape portal for managing your API keys, OAuth2 credentials, your Onshape applications, and your Onshape App Store entries.\n* [Authentication Guide](https://onshape-public.github.io/docs/auth/): Our guide to using API keys, request signatures, and OAuth2 in your Onshape applications.\n\nContact Support:\n Email: api-support@onshape.zendesk.com",
+      "type": "text/plain"
+    }
+  }
+}

@@ -1,0 +1,92 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Onshape REST Account User API",
+    "version": "1.218.84032-34acba44be17"
+  },
+  "request": {
+    "auth": {
+      "type": "basic",
+      "username": "{{username}}",
+      "password": "{{password}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "User",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Authenticate a user's Onshape credentials, and create a session.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://cad.onshape.com/api/v16/users/session",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Returned information depends on caller's `OAuth2ReadPll` scope."
+        },
+        {
+          "info": {
+            "name": "Get the session information for an authenticated (signed-in) user.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://cad.onshape.com/api/v16/users/sessioninfo"
+          },
+          "docs": "Returned information depends on caller's `OAuth2ReadPll` scope."
+        },
+        {
+          "info": {
+            "name": "Get the user settings for the signed-in user (i.e., you) for the current session.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://cad.onshape.com/api/v16/users/settings",
+            "params": [
+              {
+                "name": "includematerials",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "* Non-admins can call this API for their own user ID. \n* Mouse button settings are contained in `reverseScrollWheelZoomDirection` and `viewManipulationMouseKeyMapping`. \n* For each action in `viewManipulationMouseKeyMapping`, an array of modifier key/mouse combos is provided that performs that action. \n* Possible modifier keys include `SHIFT` and `CTRL`. \n* Possible mouse buttons include `MMB` (middle mouse button), `RMB` (right mouse button), and `SCROLLWHEEL`. \n* Scrolling forward zooms in, un"
+        },
+        {
+          "info": {
+            "name": "Get the user settings for any user in your organization (admins only).",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://cad.onshape.com/api/v16/users/:uid/settings",
+            "params": [
+              {
+                "name": "uid",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "includematerials",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "* Mouse button settings are contained in `reverseScrollWheelZoomDirection` and `viewManipulationMouseKeyMapping`. \n* For each action in `viewManipulationMouseKeyMapping`, an array of modifier key/mouse combos is provided that performs that action. \n* Possible modifier keys include `SHIFT` and `CTRL`. \n* Possible mouse buttons include `MMB` (middle mouse button), `RMB` (right mouse button), and `SCROLLWHEEL`. \n* Scrolling forward zooms in, unless `reverseScrollWheelZoomDirection` is set to `true`"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

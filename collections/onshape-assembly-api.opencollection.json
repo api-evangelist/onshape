@@ -1,0 +1,1565 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Onshape REST Account Assembly API",
+    "version": "1.218.84032-34acba44be17"
+  },
+  "request": {
+    "auth": {
+      "type": "basic",
+      "username": "{{username}}",
+      "password": "{{password}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Assembly",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get the view data for all named views for the specified element.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://cad.onshape.com/api/v16/assemblies/d/:did/e/:eid/namedViews",
+            "params": [
+              {
+                "name": "did",
+                "value": "",
+                "type": "path",
+                "description": "The id of the document in which to perform the operation."
+              },
+              {
+                "name": "linkDocumentId",
+                "value": "",
+                "type": "query",
+                "description": "The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both."
+              },
+              {
+                "name": "eid",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "skipPerspective",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "includeSectionCutViews",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "/oauth/authorize",
+              "accessTokenUrl": "/oauth/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Get the view data for all named views for the specified element."
+        },
+        {
+          "info": {
+            "name": "Create a new assembly tab in the document.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://cad.onshape.com/api/v16/assemblies/d/:did/w/:wid",
+            "params": [
+              {
+                "name": "did",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "wid",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "/oauth/authorize",
+              "accessTokenUrl": "/oauth/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Create a new assembly tab in the document."
+        },
+        {
+          "info": {
+            "name": "Gets the Bill Of Materials (BOM) for the specified assembly, or creates a BOM if none exist.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://cad.onshape.com/api/v16/assemblies/d/:did/w/:wid/e/:eid/bomelement",
+            "params": [
+              {
+                "name": "did",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "wid",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "eid",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "/oauth/authorize",
+              "accessTokenUrl": "/oauth/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Gets the Bill Of Materials (BOM) for the specified assembly, or creates a BOM if none exist."
+        },
+        {
+          "info": {
+            "name": "Update an existing feature for an Assembly.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://cad.onshape.com/api/v16/assemblies/d/:did/w/:wid/e/:eid/features/featureid/:fid",
+            "params": [
+              {
+                "name": "did",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "wid",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "eid",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "fid",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "/oauth/authorize",
+              "accessTokenUrl": "/oauth/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Update an existing feature for an Assembly."
+        },
+        {
+          "info": {
+            "name": "Delete a feature from an assembly.",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://cad.onshape.com/api/v16/assemblies/d/:did/w/:wid/e/:eid/features/featureid/:fid",
+            "params": [
+              {
+                "name": "did",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "wid",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "eid",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "fid",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "/oauth/authorize",
+              "accessTokenUrl": "/oauth/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Delete a feature from an assembly."
+        },
+        {
+          "info": {
+            "name": "Delete an instance of an assembly.",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://cad.onshape.com/api/v16/assemblies/d/:did/w/:wid/e/:eid/instance/nodeid/:nid",
+            "params": [
+              {
+                "name": "did",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "eid",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "wid",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "nid",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "/oauth/authorize",
+              "accessTokenUrl": "/oauth/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Delete an instance of an assembly."
+        },
+        {
+          "info": {
+            "name": "Insert an instance of a part, sketch, assembly, or Part Studio into an assembly.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://cad.onshape.com/api/v16/assemblies/d/:did/w/:wid/e/:eid/instances",
+            "params": [
+              {
+                "name": "did",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "wid",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "eid",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "/oauth/authorize",
+              "accessTokenUrl": "/oauth/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Part Studio instances may include multiple parts."
+        },
+        {
+          "info": {
+            "name": "Update mate values for the given mates in the specified assembly.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://cad.onshape.com/api/v16/assemblies/d/:did/w/:wid/e/:eid/matevalues",
+            "params": [
+              {
+                "name": "did",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "wid",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "eid",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "/oauth/authorize",
+              "accessTokenUrl": "/oauth/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "* The input mates must support motion along the provided input degrees of freedom; otherwise, the input mate value will be ignored. \n* Values associated with multiple allowed degrees of freedom for a mate can be updated simultaneously. \n* Values associated with multiple mate features can be updated simultaneously."
+        },
+        {
+          "info": {
+            "name": "Modify an assembly.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://cad.onshape.com/api/v16/assemblies/d/:did/w/:wid/e/:eid/modify",
+            "params": [
+              {
+                "name": "did",
+                "value": "",
+                "type": "path",
+                "description": "The id of the document in which to perform the operation."
+              },
+              {
+                "name": "linkDocumentId",
+                "value": "",
+                "type": "query",
+                "description": "The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both."
+              },
+              {
+                "name": "wid",
+                "value": "",
+                "type": "path",
+                "description": "The id of the workspace in which to perform the operation."
+              },
+              {
+                "name": "eid",
+                "value": "",
+                "type": "path",
+                "description": "The id of the element in which to perform the operation."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "/oauth/authorize",
+              "accessTokenUrl": "/oauth/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "This endpoint can include multiple modifications to an assembly with one change. For example, it can delete/suppress/unsuppress/transform multiple instances. It creates one history entry in the document history list."
+        },
+        {
+          "info": {
+            "name": "Transform a list of assembly occurrences.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://cad.onshape.com/api/v16/assemblies/d/:did/w/:wid/e/:eid/occurrencetransforms",
+            "params": [
+              {
+                "name": "did",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "eid",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "wid",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "/oauth/authorize",
+              "accessTokenUrl": "/oauth/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Transform a list of assembly occurrences."
+        },
+        {
+          "info": {
+            "name": "Create new instances with transformation.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://cad.onshape.com/api/v16/assemblies/d/:did/w/:wid/e/:eid/transformedinstances",
+            "params": [
+              {
+                "name": "did",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "eid",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "wid",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "/oauth/authorize",
+              "accessTokenUrl": "/oauth/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Create new instances with transformation."
+        },
+        {
+          "info": {
+            "name": "Get definition information for the specified assembly.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://cad.onshape.com/api/v16/assemblies/d/:did/:wvm/:wvmid/e/:eid",
+            "params": [
+              {
+                "name": "did",
+                "value": "",
+                "type": "path",
+                "description": "The id of the document in which to perform the operation."
+              },
+              {
+                "name": "linkDocumentId",
+                "value": "",
+                "type": "query",
+                "description": "The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both."
+              },
+              {
+                "name": "wvm",
+                "value": "",
+                "type": "path",
+                "description": "Indicates which of workspace (w), version (v), or document microversion (m) id is specified below."
+              },
+              {
+                "name": "wvmid",
+                "value": "",
+                "type": "path",
+                "description": "The id of the workspace, version or document microversion in which the operation should be performed."
+              },
+              {
+                "name": "eid",
+                "value": "",
+                "type": "path",
+                "description": "The id of the element in which to perform the operation."
+              },
+              {
+                "name": "configuration",
+                "value": "",
+                "type": "query",
+                "description": "URL-encoded string of configuration values (separated by `;`). See the [Configurations API Guide](https://onshape-public.github.io/docs/api-adv/configs/) for details."
+              },
+              {
+                "name": "explodedViewId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "includeMateFeatures",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "includeNonSolids",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "includeMateConnectors",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "excludeSuppressed",
+                "value": "",
+                "type": "query",
+                "description": "Whether or not to exclude suppressed instances/mate features in response"
+              }
+            ],
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "/oauth/authorize",
+              "accessTokenUrl": "/oauth/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "All coordinates and translation matrix components are in meters (m)."
+        },
+        {
+          "info": {
+            "name": "Get the Bill Of Materials (BOM) content for the specified assembly.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://cad.onshape.com/api/v16/assemblies/d/:did/:wvm/:wvmid/e/:eid/bom",
+            "params": [
+              {
+                "name": "did",
+                "value": "",
+                "type": "path",
+                "description": "The id of the document in which to perform the operation."
+              },
+              {
+                "name": "linkDocumentId",
+                "value": "",
+                "type": "query",
+                "description": "The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both."
+              },
+              {
+                "name": "wvm",
+                "value": "",
+                "type": "path",
+                "description": "Indicates which of workspace (w), version (v), or document microversion (m) id is specified below."
+              },
+              {
+                "name": "wvmid",
+                "value": "",
+                "type": "path",
+                "description": "The id of the workspace, version or document microversion in which the operation should be performed."
+              },
+              {
+                "name": "eid",
+                "value": "",
+                "type": "path",
+                "description": "The id of the element in which to perform the operation."
+              },
+              {
+                "name": "configuration",
+                "value": "",
+                "type": "query",
+                "description": "URL-encoded string of configuration values (separated by `;`). See the [Configurations API Guide](https://onshape-public.github.io/docs/api-adv/configs/) for details."
+              },
+              {
+                "name": "bomColumnIds",
+                "value": "",
+                "type": "query",
+                "description": "Ids of the columns to include, or all columns if empty. BOM column ids correspond to metadata property ids."
+              },
+              {
+                "name": "indented",
+                "value": "",
+                "type": "query",
+                "description": "Return the Structured BOM table with all rows collapsed, otherwise returns the Flattened BOM."
+              },
+              {
+                "name": "multiLevel",
+                "value": "",
+                "type": "query",
+                "description": "Return the Structured BOM table with all rows expanded. Ignored if indented is false."
+              },
+              {
+                "name": "generateIfAbsent",
+                "value": "",
+                "type": "query",
+                "description": "Return the BOM table data even if the BOM does not exist. If this is false and the BOM does not exist, a 404 status code will be returned. This option is highly recommended."
+              },
+              {
+                "name": "templateId",
+                "value": "",
+                "type": "query",
+                "description": "The id of the BOM table template to use when generating the table."
+              },
+              {
+                "name": "includeExcluded",
+                "value": "",
+                "type": "query",
+                "description": "Include items that have been excluded from the BOM table."
+              },
+              {
+                "name": "onlyVisibleColumns",
+                "value": "",
+                "type": "query",
+                "description": "Only return data for visible columns, instead of all possible columns."
+              },
+              {
+                "name": "ignoreSubassemblyBomBehavior",
+                "value": "",
+                "type": "query",
+                "description": "Ignore the 'Subassembly BOM behavior' property when constructing the BOM table."
+              },
+              {
+                "name": "includeItemMicroversions",
+                "value": "",
+                "type": "query",
+                "description": "Include element microversions and version metadata microversions in the JSON."
+              },
+              {
+                "name": "includeTopLevelAssemblyRow",
+                "value": "",
+                "type": "query",
+                "description": "Include top-level assembly row when constructing the BOM table."
+              },
+              {
+                "name": "thumbnail",
+                "value": "",
+                "type": "query",
+                "description": "Return thumbnail info"
+              },
+              {
+                "name": "respectSubassemblyBomBehavior",
+                "value": "",
+                "type": "query",
+                "description": "Force respect subassembly BOM Behavior Property"
+              }
+            ],
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "/oauth/authorize",
+              "accessTokenUrl": "/oauth/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Returns the BOM in JSON in the Onshape BOM Standard format."
+        },
+        {
+          "info": {
+            "name": "Get bounding box information for the specified assembly.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://cad.onshape.com/api/v16/assemblies/d/:did/:wvm/:wvmid/e/:eid/boundingboxes",
+            "params": [
+              {
+                "name": "did",
+                "value": "",
+                "type": "path",
+                "description": "The id of the document in which to perform the operation."
+              },
+              {
+                "name": "linkDocumentId",
+                "value": "",
+                "type": "query",
+                "description": "The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both."
+              },
+              {
+                "name": "wvm",
+                "value": "",
+                "type": "path",
+                "description": "Indicates which of workspace (w), version (v), or document microversion (m) id is specified below."
+              },
+              {
+                "name": "wvmid",
+                "value": "",
+                "type": "path",
+                "description": "The id of the workspace, version or document microversion in which the operation should be performed."
+              },
+              {
+                "name": "eid",
+                "value": "",
+                "type": "path",
+                "description": "The id of the element in which to perform the operation."
+              },
+              {
+                "name": "configuration",
+                "value": "",
+                "type": "query",
+                "description": "URL-encoded string of configuration values (separated by `;`). See the [Configurations API Guide](https://onshape-public.github.io/docs/api-adv/configs/) for details."
+              },
+              {
+                "name": "explodedViewId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "includeHidden",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "displayStateId",
+                "value": "",
+                "type": "query",
+                "description": "Call the [getDisplayStates](#/Assembly/getDisplayStates) endpoint to get display state ID(s)."
+              },
+              {
+                "name": "namedPositionId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "includeSketches",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "/oauth/authorize",
+              "accessTokenUrl": "/oauth/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Get bounding box information for the specified assembly."
+        },
+        {
+          "info": {
+            "name": "Get a list of display states for the specified assembly.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://cad.onshape.com/api/v16/assemblies/d/:did/:wvm/:wvmid/e/:eid/displaystates",
+            "params": [
+              {
+                "name": "did",
+                "value": "",
+                "type": "path",
+                "description": "The id of the document in which to perform the operation."
+              },
+              {
+                "name": "linkDocumentId",
+                "value": "",
+                "type": "query",
+                "description": "The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both."
+              },
+              {
+                "name": "wvm",
+                "value": "",
+                "type": "path",
+                "description": "Indicates which of workspace (w), version (v), or document microversion (m) id is specified below."
+              },
+              {
+                "name": "wvmid",
+                "value": "",
+                "type": "path",
+                "description": "The id of the workspace, version or document microversion in which the operation should be performed."
+              },
+              {
+                "name": "eid",
+                "value": "",
+                "type": "path",
+                "description": "The id of the element in which to perform the operation."
+              }
+            ],
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "/oauth/authorize",
+              "accessTokenUrl": "/oauth/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Get a list of display states for the specified assembly."
+        },
+        {
+          "info": {
+            "name": "Get a list of exploded views for the specified assembly.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://cad.onshape.com/api/v16/assemblies/d/:did/:wvm/:wvmid/e/:eid/explodedviews",
+            "params": [
+              {
+                "name": "did",
+                "value": "",
+                "type": "path",
+                "description": "The id of the document in which to perform the operation."
+              },
+              {
+                "name": "linkDocumentId",
+                "value": "",
+                "type": "query",
+                "description": "The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both."
+              },
+              {
+                "name": "wvm",
+                "value": "",
+                "type": "path",
+                "description": "Indicates which of workspace (w), version (v), or document microversion (m) id is specified below."
+              },
+              {
+                "name": "wvmid",
+                "value": "",
+                "type": "path",
+                "description": "The id of the workspace, version or document microversion in which the operation should be performed."
+              },
+              {
+                "name": "eid",
+                "value": "",
+                "type": "path",
+                "description": "The id of the element in which to perform the operation."
+              },
+              {
+                "name": "configuration",
+                "value": "",
+                "type": "query",
+                "description": "URL-encoded string of configuration values (separated by `;`). See the [Configurations API Guide](https://onshape-public.github.io/docs/api-adv/configs/) for details."
+              },
+              {
+                "name": "explodedViewId",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "/oauth/authorize",
+              "accessTokenUrl": "/oauth/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Get a list of exploded views for the specified assembly."
+        },
+        {
+          "info": {
+            "name": "Get the definitions of the specified features in an assembly.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://cad.onshape.com/api/v16/assemblies/d/:did/:wvm/:wvmid/e/:eid/features",
+            "params": [
+              {
+                "name": "did",
+                "value": "",
+                "type": "path",
+                "description": "The id of the document in which to perform the operation."
+              },
+              {
+                "name": "linkDocumentId",
+                "value": "",
+                "type": "query",
+                "description": "The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both."
+              },
+              {
+                "name": "wvm",
+                "value": "",
+                "type": "path",
+                "description": "Indicates which of workspace (w), version (v), or document microversion (m) id is specified below."
+              },
+              {
+                "name": "wvmid",
+                "value": "",
+                "type": "path",
+                "description": "The id of the workspace, version or document microversion in which the operation should be performed."
+              },
+              {
+                "name": "eid",
+                "value": "",
+                "type": "path",
+                "description": "The id of the element in which to perform the operation."
+              },
+              {
+                "name": "configuration",
+                "value": "",
+                "type": "query",
+                "description": "URL-encoded string of configuration values (separated by `;`). See the [Configurations API Guide](https://onshape-public.github.io/docs/api-adv/configs/) for details."
+              },
+              {
+                "name": "explodedViewId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "featureId",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "/oauth/authorize",
+              "accessTokenUrl": "/oauth/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Get the definitions of the specified features in an assembly."
+        },
+        {
+          "info": {
+            "name": "Add a feature to the assembly feature list.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://cad.onshape.com/api/v16/assemblies/d/:did/:wvm/:wvmid/e/:eid/features",
+            "params": [
+              {
+                "name": "did",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "wvm",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "wvmid",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "eid",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "/oauth/authorize",
+              "accessTokenUrl": "/oauth/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Add a feature to the assembly feature list."
+        },
+        {
+          "info": {
+            "name": "Get the feature spec definitions for an assembly.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://cad.onshape.com/api/v16/assemblies/d/:did/:wvm/:wvmid/e/:eid/featurespecs",
+            "params": [
+              {
+                "name": "did",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "wvm",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "wvmid",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "eid",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "/oauth/authorize",
+              "accessTokenUrl": "/oauth/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Get the feature spec definitions for an assembly."
+        },
+        {
+          "info": {
+            "name": "Get the mass properties for the assembly.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://cad.onshape.com/api/v16/assemblies/d/:did/:wvm/:wvmid/e/:eid/massproperties",
+            "params": [
+              {
+                "name": "did",
+                "value": "",
+                "type": "path",
+                "description": "The id of the document in which to perform the operation."
+              },
+              {
+                "name": "linkDocumentId",
+                "value": "",
+                "type": "query",
+                "description": "The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both."
+              },
+              {
+                "name": "wvm",
+                "value": "",
+                "type": "path",
+                "description": "Indicates which of workspace (w), version (v), or document microversion (m) id is specified below."
+              },
+              {
+                "name": "wvmid",
+                "value": "",
+                "type": "path",
+                "description": "The id of the workspace, version or document microversion in which the operation should be performed."
+              },
+              {
+                "name": "eid",
+                "value": "",
+                "type": "path",
+                "description": "The id of the element in which to perform the operation."
+              },
+              {
+                "name": "configuration",
+                "value": "",
+                "type": "query",
+                "description": "URL-encoded string of configuration values (separated by `;`). See the [Configurations API Guide](https://onshape-public.github.io/docs/api-adv/configs/) for details."
+              }
+            ],
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "/oauth/authorize",
+              "accessTokenUrl": "/oauth/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "The assembly must contain parts that have density. The returned schema includes the same information as in the Onshape [Mass Properties Tool](https://cad.onshape.com/help/Content/massprops-asmb.htm). \nWhen three values are returned: \n * The first is the calculated value. \n * The second is the minimum possible value, considering tolerance. \n * The third is the maximum possible value, considering tolerance."
+        },
+        {
+          "info": {
+            "name": "Get a list of all named positions for the assembly.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://cad.onshape.com/api/v16/assemblies/d/:did/:wvm/:wvmid/e/:eid/namedpositions",
+            "params": [
+              {
+                "name": "did",
+                "value": "",
+                "type": "path",
+                "description": "The id of the document in which to perform the operation."
+              },
+              {
+                "name": "linkDocumentId",
+                "value": "",
+                "type": "query",
+                "description": "The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both."
+              },
+              {
+                "name": "wvm",
+                "value": "",
+                "type": "path",
+                "description": "Indicates which of workspace (w), version (v), or document microversion (m) id is specified below."
+              },
+              {
+                "name": "wvmid",
+                "value": "",
+                "type": "path",
+                "description": "The id of the workspace, version or document microversion in which the operation should be performed."
+              },
+              {
+                "name": "eid",
+                "value": "",
+                "type": "path",
+                "description": "The id of the element in which to perform the operation."
+              },
+              {
+                "name": "configuration",
+                "value": "",
+                "type": "query",
+                "description": "URL-encoded string of configuration values (separated by `;`). See the [Configurations API Guide](https://onshape-public.github.io/docs/api-adv/configs/) for details."
+              },
+              {
+                "name": "explodedViewId",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "/oauth/authorize",
+              "accessTokenUrl": "/oauth/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Get a list of all named positions for the assembly."
+        },
+        {
+          "info": {
+            "name": "Get an array of shaded view images for the document.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://cad.onshape.com/api/v16/assemblies/d/:did/:wvm/:wvmid/e/:eid/shadedviews",
+            "params": [
+              {
+                "name": "did",
+                "value": "",
+                "type": "path",
+                "description": "The id of the document in which to perform the operation."
+              },
+              {
+                "name": "linkDocumentId",
+                "value": "",
+                "type": "query",
+                "description": "The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both."
+              },
+              {
+                "name": "wvm",
+                "value": "",
+                "type": "path",
+                "description": "Indicates which of workspace (w), version (v), or document microversion (m) id is specified below."
+              },
+              {
+                "name": "wvmid",
+                "value": "",
+                "type": "path",
+                "description": "The id of the workspace, version or document microversion in which the operation should be performed."
+              },
+              {
+                "name": "eid",
+                "value": "",
+                "type": "path",
+                "description": "The id of the element in which to perform the operation."
+              },
+              {
+                "name": "configuration",
+                "value": "",
+                "type": "query",
+                "description": "URL-encoded string of configuration values (separated by `;`). See the [Configurations API Guide](https://onshape-public.github.io/docs/api-adv/configs/) for details."
+              },
+              {
+                "name": "explodedViewId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "viewMatrix",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "outputHeight",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "outputWidth",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "pixelSize",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "edges",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "showAllParts",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "includeSurfaces",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "useAntiAliasing",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "includeWires",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "displayStateId",
+                "value": "",
+                "type": "query",
+                "description": "Call the [getDisplayStates](#/Assembly/getDisplayStates) endpoint to get display state ID(s)."
+              },
+              {
+                "name": "namedPositionId",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "/oauth/authorize",
+              "accessTokenUrl": "/oauth/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Get an array of shaded view images for the document."
+        },
+        {
+          "info": {
+            "name": "Export the assembly to glTF.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://cad.onshape.com/api/v16/assemblies/d/:did/:wv/:wvid/e/:eid/export/gltf",
+            "params": [
+              {
+                "name": "did",
+                "value": "",
+                "type": "path",
+                "description": "Document ID."
+              },
+              {
+                "name": "wv",
+                "value": "",
+                "type": "path",
+                "description": "One of w or v corresponding to whether a workspace or version was specified."
+              },
+              {
+                "name": "wvid",
+                "value": "",
+                "type": "path",
+                "description": "Workspace (w) or Version (v) ID."
+              },
+              {
+                "name": "eid",
+                "value": "",
+                "type": "path",
+                "description": "Element ID."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "/oauth/authorize",
+              "accessTokenUrl": "/oauth/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Creates an asynchronous export of the assembly. See [API Guide: Import & Export](https://onshape-public.github.io/docs/api-adv/translation/#export-an-assembly-to-gltf-obj-solidworks-or-step) for details."
+        },
+        {
+          "info": {
+            "name": "Export the assembly to OBJ.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://cad.onshape.com/api/v16/assemblies/d/:did/:wv/:wvid/e/:eid/export/obj",
+            "params": [
+              {
+                "name": "did",
+                "value": "",
+                "type": "path",
+                "description": "Document ID."
+              },
+              {
+                "name": "wv",
+                "value": "",
+                "type": "path",
+                "description": "One of w or v corresponding to whether a workspace or version was specified."
+              },
+              {
+                "name": "wvid",
+                "value": "",
+                "type": "path",
+                "description": "Workspace (w) or Version (v) ID."
+              },
+              {
+                "name": "eid",
+                "value": "",
+                "type": "path",
+                "description": "Element ID."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "/oauth/authorize",
+              "accessTokenUrl": "/oauth/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Creates an asynchronous export of the assembly. See [API Guide: Import & Export](https://onshape-public.github.io/docs/api-adv/translation/#export-an-assembly-to-gltf-obj-solidworks-or-step) for details."
+        },
+        {
+          "info": {
+            "name": "Export the assembly to STEP.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://cad.onshape.com/api/v16/assemblies/d/:did/:wv/:wvid/e/:eid/export/step",
+            "params": [
+              {
+                "name": "did",
+                "value": "",
+                "type": "path",
+                "description": "Document ID."
+              },
+              {
+                "name": "wv",
+                "value": "",
+                "type": "path",
+                "description": "One of w or v corresponding to whether a workspace or version was specified."
+              },
+              {
+                "name": "wvid",
+                "value": "",
+                "type": "path",
+                "description": "Workspace (w) or Version (v) ID."
+              },
+              {
+                "name": "eid",
+                "value": "",
+                "type": "path",
+                "description": "Element ID."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "/oauth/authorize",
+              "accessTokenUrl": "/oauth/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Creates an asynchronous export of the assembly. See [API Guide: Import & Export](https://onshape-public.github.io/docs/api-adv/translation/#export-an-assembly-to-gltf-obj-solidworks-or-step) for details."
+        },
+        {
+          "info": {
+            "name": "Get a list of mate values in the specified assembly.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://cad.onshape.com/api/v16/assemblies/d/:did/:wv/:wvid/e/:eid/matevalues",
+            "params": [
+              {
+                "name": "did",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "wv",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "wvid",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "eid",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "/oauth/authorize",
+              "accessTokenUrl": "/oauth/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Describes the relative position of the first mate connector with respect to the second along the designated degrees of freedom (DOF) for mates in the specified assembly."
+        },
+        {
+          "info": {
+            "name": "Export the assembly to another format.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://cad.onshape.com/api/v16/assemblies/d/:did/:wv/:wvid/e/:eid/translations",
+            "params": [
+              {
+                "name": "did",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "wv",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "wvid",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "eid",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "/oauth/authorize",
+              "accessTokenUrl": "/oauth/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Creates an asynchronous export. Use format-specific export endpoints where available. \n* Use `formatName` in the JSON request body to specify the export file type. Use [Translations/getAllTranslatorFormats](#/Translation/getAllTranslatorFormats) to get a list of valid export file formats. Confirm that `couldBeAssembly=true.`\n* Set `storeInDocument` to `false` to export to a data file. Set to `true` to export to a blob element in the same document. \n* See [API Guide: Import & Export ](https://ons"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,345 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Onshape REST Account AppAssociativeData API",
+    "version": "1.218.84032-34acba44be17"
+  },
+  "request": {
+    "auth": {
+      "type": "basic",
+      "username": "{{username}}",
+      "password": "{{password}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "AppAssociativeData",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Copy associative data from one view to another.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://cad.onshape.com/api/v16/appelements/d/:did/w/:wid/e/:eid/copyassociativedata",
+            "params": [
+              {
+                "name": "did",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "wid",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "eid",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "/oauth/authorize",
+              "accessTokenUrl": "/oauth/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "You can manage associativity with [translateIds](https://cad.onshape.com/glassworks/explorer/#/PartStudio/translateIds)."
+        },
+        {
+          "info": {
+            "name": "Get the associative data for the specified app element.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://cad.onshape.com/api/v16/appelements/d/:did/:wvm/:wvmid/e/:eid/associativedata",
+            "params": [
+              {
+                "name": "did",
+                "value": "",
+                "type": "path",
+                "description": "The id of the document in which to perform the operation."
+              },
+              {
+                "name": "linkDocumentId",
+                "value": "",
+                "type": "query",
+                "description": "The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both."
+              },
+              {
+                "name": "wvm",
+                "value": "",
+                "type": "path",
+                "description": "Indicates which of workspace (w), version (v), or document microversion (m) id is specified below."
+              },
+              {
+                "name": "wvmid",
+                "value": "",
+                "type": "path",
+                "description": "The id of the workspace, version or document microversion in which the operation should be performed."
+              },
+              {
+                "name": "eid",
+                "value": "",
+                "type": "path",
+                "description": "The id of the element in which to perform the operation."
+              },
+              {
+                "name": "transactionId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "changeId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "associativeDataId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "externalDocumentId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "elementId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "viewId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "microversionId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "documentMicroversion",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "deterministicId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "featureId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "entityId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "occurrenceId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "returnIdTags",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "referenceId",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "/oauth/authorize",
+              "accessTokenUrl": "/oauth/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "You can manage associativity with [translateIds](https://cad.onshape.com/glassworks/explorer/#/PartStudio/translateIds)."
+        },
+        {
+          "info": {
+            "name": "Set the associative data for the specified app element.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://cad.onshape.com/api/v16/appelements/d/:did/:wvm/:wvmid/e/:eid/associativedata",
+            "params": [
+              {
+                "name": "did",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "eid",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "wvm",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "wvmid",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "/oauth/authorize",
+              "accessTokenUrl": "/oauth/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "You can manage associativity with [translateIds](https://cad.onshape.com/glassworks/explorer/#/PartStudio/translateIds)."
+        },
+        {
+          "info": {
+            "name": "Delete the associative data from the specified app element.",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://cad.onshape.com/api/v16/appelements/d/:did/:wvm/:wvmid/e/:eid/associativedata",
+            "params": [
+              {
+                "name": "did",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "eid",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "wvm",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "wvmid",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "transactionId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "parentChangeId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "associativeDataId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "externalDocumentId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "elementId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "viewId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "microversionId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "documentMicroversion",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "deterministicId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "featureId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "entityId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "occurrenceId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "referenceId",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "/oauth/authorize",
+              "accessTokenUrl": "/oauth/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "You can manage associativity with [translateIds](https://cad.onshape.com/glassworks/explorer/#/PartStudio/translateIds)."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

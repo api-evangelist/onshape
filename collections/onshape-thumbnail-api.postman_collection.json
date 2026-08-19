@@ -1,0 +1,1954 @@
+{
+  "item": [
+    {
+      "id": "5fbc9619-1912-40ec-a110-96090b14bfac",
+      "name": "Thumbnail",
+      "description": {
+        "content": "Access, modify, and delete thumbnails.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "91254661-7e40-4745-ba18-c8de35a7419a",
+          "name": "Get the thumbnail info for a document in the default workspace.",
+          "request": {
+            "name": "Get the thumbnail info for a document in the default workspace.",
+            "description": {
+              "content": "* By default, returns thumbnail info for the element with the most-recently generated image. If you pinned an element for the document thumbnail, that element will always be used for the document-level thumbnail, if it exists in the workspace.\n* The default workspace may vary by user; the image served depends on the signed-in user.\n* See also: [Tech tip on how to change a document thumbnail in onshape](https://www.onshape.com/en/resource-center/tech-tips/tech-tip-how-to-change-a-document-thumbnail-in-onshape)",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "thumbnails",
+                "d",
+                ":did"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "did",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json;charset=UTF-8; qs=0.09"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "scope",
+                  "value": "OAuth2Internal OAuth2ReadPII OAuth2Read OAuth2Write OAuth2Delete OAuth2Purchase OAuth2Share document.create document.edit document.delete document.read enterprise.create enterprise.read enterprise.edit enterprise.delete enterprise.member.create enterprise.member.read enterprise.member.edit enterprise.member.delete webhook.create webhook.edit webhook.read webhook.delete PLMIntegration"
+                },
+                {
+                  "key": "redirect_uri",
+                  "value": "/oauth/token"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "/oauth/token"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "/oauth/authorize"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "c1e0841b-1e84-4dc5-85a4-fdc5cc4226ab",
+              "name": "default response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "thumbnails",
+                    "d",
+                    ":did"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "did",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json;charset=UTF-8; qs=0.09"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json;charset=UTF-8; qs=0.09"
+                }
+              ],
+              "body": "{\n  \"href\": \"http://HHf.asyuVxf6Y1,5QlFg7QO.wW3DwFz89rkk7JSgF\",\n  \"id\": \"string\",\n  \"secondarySizes\": [\n    [\n      {\n        \"href\": \"https://FVKdQ.ynw2wCghiCNIF,EDFwLwR,VdsYwrCx81TfqnMZJcVe+Tt2PkGxjIUOG\",\n        \"mediaType\": \"string\",\n        \"renderMode\": \"string\",\n        \"sheetName\": \"string\",\n        \"size\": \"string\",\n        \"uniqueId\": \"string\",\n        \"viewOrientation\": \"string\"\n      },\n      {\n        \"href\": \"http://izGrspuiLdRd.mozX,o4OxsHpYTf2YKqB6gJPmMLDaI3OHWeQYiG-KdqfevLRYh2-t4lxn\",\n        \"mediaType\": \"string\",\n        \"renderMode\": \"string\",\n        \"sheetName\": \"string\",\n        \"size\": \"string\",\n        \"uniqueId\": \"string\",\n        \"viewOrientation\": \"string\"\n      }\n    ],\n    [\n      {\n        \"href\": \"https://WiaKKzDoRKZFRAytmPJOObwrr.qby2mjEiof1CwI8vpsO\",\n        \"mediaType\": \"string\",\n        \"renderMode\": \"string\",\n        \"sheetName\": \"string\",\n        \"size\": \"string\",\n        \"uniqueId\": \"string\",\n        \"viewOrientation\": \"string\"\n      },\n      {\n        \"href\": \"https://ivXvUmBHNlTn.edfeHgonLiw5rVqOzBvxTTRyUuQsNjlkMftKZal\",\n        \"mediaType\": \"string\",\n        \"renderMode\": \"string\",\n        \"sheetName\": \"string\",\n        \"size\": \"string\",\n        \"uniqueId\": \"string\",\n        \"viewOrientation\": \"string\"\n      }\n    ]\n  ],\n  \"sizes\": [\n    {\n      \"href\": \"http://qYJG.vrdvhqTCzaaiEHq.CPEwlWksmxl\",\n      \"mediaType\": \"string\",\n      \"renderMode\": \"string\",\n      \"sheetName\": \"string\",\n      \"size\": \"string\",\n      \"uniqueId\": \"string\",\n      \"viewOrientation\": \"string\"\n    },\n    {\n      \"href\": \"http://PNnrQbA.dlxdrN-G8fAaDATrRNunIJfyLljLwoUzsrmh\",\n      \"mediaType\": \"string\",\n      \"renderMode\": \"string\",\n      \"sheetName\": \"string\",\n      \"size\": \"string\",\n      \"uniqueId\": \"string\",\n      \"viewOrientation\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "9c5192b9-fc10-406a-88ac-e6616d6809da",
+          "name": "Get the thumbnail info for a version of a document.",
+          "request": {
+            "name": "Get the thumbnail info for a version of a document.",
+            "description": {
+              "content": "* By default, returns thumbnail info for the element with the most-recently generated image. If you pinned an element for the document thumbnail, that element will always be used for the document-level thumbnail, if it exists in the workspace.\n* See also: [Tech tip on how to change a document thumbnail in onshape](https://www.onshape.com/en/resource-center/tech-tips/tech-tip-how-to-change-a-document-thumbnail-in-onshape)",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "thumbnails",
+                "d",
+                ":did",
+                "v",
+                ":vid"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "linkDocumentId",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "did",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "vid",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json;charset=UTF-8; qs=0.09"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "scope",
+                  "value": "OAuth2Internal OAuth2ReadPII OAuth2Read OAuth2Write OAuth2Delete OAuth2Purchase OAuth2Share document.create document.edit document.delete document.read enterprise.create enterprise.read enterprise.edit enterprise.delete enterprise.member.create enterprise.member.read enterprise.member.edit enterprise.member.delete webhook.create webhook.edit webhook.read webhook.delete PLMIntegration"
+                },
+                {
+                  "key": "redirect_uri",
+                  "value": "/oauth/token"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "/oauth/token"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "/oauth/authorize"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "59623687-e5d1-493e-b94a-33058ed679bd",
+              "name": "default response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "thumbnails",
+                    "d",
+                    ":did",
+                    "v",
+                    ":vid"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "linkDocumentId",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "did",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "vid",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json;charset=UTF-8; qs=0.09"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json;charset=UTF-8; qs=0.09"
+                }
+              ],
+              "body": "{\n  \"href\": \"http://XhlpimTNWDZiQ.jzoxBbUHfLRZEdjSsvPYZl,8BZDf3Yti9mAGHptA4G06+f+jUP6Y8kOR3O\",\n  \"id\": \"string\",\n  \"secondarySizes\": [\n    [\n      {\n        \"href\": \"http://NxVNKzrCZeHaDKsPtDyYkyoWvkNp.eagff197XMQ2MwJXo,gxc+OS\",\n        \"mediaType\": \"string\",\n        \"renderMode\": \"string\",\n        \"sheetName\": \"string\",\n        \"size\": \"string\",\n        \"uniqueId\": \"string\",\n        \"viewOrientation\": \"string\"\n      },\n      {\n        \"href\": \"https://tYpDZWiLGNDwDwdBWGcxnK.nfD7X4ATW+iiRsNaaQ3q1xVqxJNW16knwtk,I3pl4ma6GwFhKSpGGv566mrg7iBQMm2rsF3ZV\",\n        \"mediaType\": \"string\",\n        \"renderMode\": \"string\",\n        \"sheetName\": \"string\",\n        \"size\": \"string\",\n        \"uniqueId\": \"string\",\n        \"viewOrientation\": \"string\"\n      }\n    ],\n    [\n      {\n        \"href\": \"http://gtmysdcItTVSIQwTPHTaZAhLDK.iqryOVaMNpODA2TYcyFfSH4WUFBM7sj5vSgwG,ZONO+RhTIE9.Bg-Np1NnzA\",\n        \"mediaType\": \"string\",\n        \"renderMode\": \"string\",\n        \"sheetName\": \"string\",\n        \"size\": \"string\",\n        \"uniqueId\": \"string\",\n        \"viewOrientation\": \"string\"\n      },\n      {\n        \"href\": \"http://hCQfTXUGQUeoeb.rfbadT-SXWDikC-Pvh5IDGAROSbQj8fpxJ2kVSfhD6AmGjmszYAUoKWmuCkl2j8SP9pKBJXNsVvv0Av\",\n        \"mediaType\": \"string\",\n        \"renderMode\": \"string\",\n        \"sheetName\": \"string\",\n        \"size\": \"string\",\n        \"uniqueId\": \"string\",\n        \"viewOrientation\": \"string\"\n      }\n    ]\n  ],\n  \"sizes\": [\n    {\n      \"href\": \"https://HqYlQNCYfRdGwyFER.mbvzisJXtNeTVS4t9h\",\n      \"mediaType\": \"string\",\n      \"renderMode\": \"string\",\n      \"sheetName\": \"string\",\n      \"size\": \"string\",\n      \"uniqueId\": \"string\",\n      \"viewOrientation\": \"string\"\n    },\n    {\n      \"href\": \"https://izQmuvege.xinzNL39vVOV9Wa8uikjTOCCobTR4WBQhbIZnsfKWv.e5bR2KeCAko4kaR\",\n      \"mediaType\": \"string\",\n      \"renderMode\": \"string\",\n      \"sheetName\": \"string\",\n      \"size\": \"string\",\n      \"uniqueId\": \"string\",\n      \"viewOrientation\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "3994da10-1cae-43fe-a0bc-89585430d529",
+          "name": "Get the thumbnail info for a workspace.",
+          "request": {
+            "name": "Get the thumbnail info for a workspace.",
+            "description": {
+              "content": "* By default, returns thumbnail info for the element with the most-recently generated image. If you pinned an element for the document thumbnail, that element will always be used for the document-level thumbnail, if it exists in the workspace.\n* See also: [Tech tip on how to change a document thumbnail in onshape](https://www.onshape.com/en/resource-center/tech-tips/tech-tip-how-to-change-a-document-thumbnail-in-onshape)",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "thumbnails",
+                "d",
+                ":did",
+                "w",
+                ":wid"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "did",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "wid",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json;charset=UTF-8; qs=0.09"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "scope",
+                  "value": "OAuth2Internal OAuth2ReadPII OAuth2Read OAuth2Write OAuth2Delete OAuth2Purchase OAuth2Share document.create document.edit document.delete document.read enterprise.create enterprise.read enterprise.edit enterprise.delete enterprise.member.create enterprise.member.read enterprise.member.edit enterprise.member.delete webhook.create webhook.edit webhook.read webhook.delete PLMIntegration"
+                },
+                {
+                  "key": "redirect_uri",
+                  "value": "/oauth/token"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "/oauth/token"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "/oauth/authorize"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "10e17044-fd98-4ad1-ac83-d2d86576a0f3",
+              "name": "default response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "thumbnails",
+                    "d",
+                    ":did",
+                    "w",
+                    ":wid"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "did",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "wid",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json;charset=UTF-8; qs=0.09"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json;charset=UTF-8; qs=0.09"
+                }
+              ],
+              "body": "{\n  \"href\": \"http://XhlpimTNWDZiQ.jzoxBbUHfLRZEdjSsvPYZl,8BZDf3Yti9mAGHptA4G06+f+jUP6Y8kOR3O\",\n  \"id\": \"string\",\n  \"secondarySizes\": [\n    [\n      {\n        \"href\": \"http://NxVNKzrCZeHaDKsPtDyYkyoWvkNp.eagff197XMQ2MwJXo,gxc+OS\",\n        \"mediaType\": \"string\",\n        \"renderMode\": \"string\",\n        \"sheetName\": \"string\",\n        \"size\": \"string\",\n        \"uniqueId\": \"string\",\n        \"viewOrientation\": \"string\"\n      },\n      {\n        \"href\": \"https://tYpDZWiLGNDwDwdBWGcxnK.nfD7X4ATW+iiRsNaaQ3q1xVqxJNW16knwtk,I3pl4ma6GwFhKSpGGv566mrg7iBQMm2rsF3ZV\",\n        \"mediaType\": \"string\",\n        \"renderMode\": \"string\",\n        \"sheetName\": \"string\",\n        \"size\": \"string\",\n        \"uniqueId\": \"string\",\n        \"viewOrientation\": \"string\"\n      }\n    ],\n    [\n      {\n        \"href\": \"http://gtmysdcItTVSIQwTPHTaZAhLDK.iqryOVaMNpODA2TYcyFfSH4WUFBM7sj5vSgwG,ZONO+RhTIE9.Bg-Np1NnzA\",\n        \"mediaType\": \"string\",\n        \"renderMode\": \"string\",\n        \"sheetName\": \"string\",\n        \"size\": \"string\",\n        \"uniqueId\": \"string\",\n        \"viewOrientation\": \"string\"\n      },\n      {\n        \"href\": \"http://hCQfTXUGQUeoeb.rfbadT-SXWDikC-Pvh5IDGAROSbQj8fpxJ2kVSfhD6AmGjmszYAUoKWmuCkl2j8SP9pKBJXNsVvv0Av\",\n        \"mediaType\": \"string\",\n        \"renderMode\": \"string\",\n        \"sheetName\": \"string\",\n        \"size\": \"string\",\n        \"uniqueId\": \"string\",\n        \"viewOrientation\": \"string\"\n      }\n    ]\n  ],\n  \"sizes\": [\n    {\n      \"href\": \"https://HqYlQNCYfRdGwyFER.mbvzisJXtNeTVS4t9h\",\n      \"mediaType\": \"string\",\n      \"renderMode\": \"string\",\n      \"sheetName\": \"string\",\n      \"size\": \"string\",\n      \"uniqueId\": \"string\",\n      \"viewOrientation\": \"string\"\n    },\n    {\n      \"href\": \"https://izQmuvege.xinzNL39vVOV9Wa8uikjTOCCobTR4WBQhbIZnsfKWv.e5bR2KeCAko4kaR\",\n      \"mediaType\": \"string\",\n      \"renderMode\": \"string\",\n      \"sheetName\": \"string\",\n      \"size\": \"string\",\n      \"uniqueId\": \"string\",\n      \"viewOrientation\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "30597b35-e2ae-4e2c-b698-0f0a2904c039",
+          "name": "Get the thumbnail image with the given configuration for an element.",
+          "request": {
+            "name": "Get the thumbnail image with the given configuration for an element.",
+            "description": {
+              "content": "Returns the thumbnail image for an element at a specified version, with the given configuration.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "thumbnails",
+                "d",
+                ":did",
+                "w",
+                ":wid",
+                "e",
+                ":eid",
+                "ac",
+                ":cid",
+                "s",
+                ":sz"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "linkDocumentId",
+                  "value": "",
+                  "description": "The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both."
+                },
+                {
+                  "disabled": false,
+                  "key": "t",
+                  "value": "<string>",
+                  "description": "Cache Control key. If specified, the response header returned will tell the client to use cached thumbnails."
+                },
+                {
+                  "disabled": false,
+                  "key": "skipDefaultImage",
+                  "value": "",
+                  "description": "Controls the return of the default image, if thumbnail is not available"
+                },
+                {
+                  "disabled": false,
+                  "key": "rejectEmpty",
+                  "value": "false"
+                },
+                {
+                  "disabled": false,
+                  "key": "requireConfigMatch",
+                  "value": "false"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "did",
+                  "description": "(Required) The id of the document in which to perform the operation."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "wid",
+                  "description": "(Required) The id of the workspace in which to perform the operation."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "eid",
+                  "description": "(Required) The id of the element in which to perform the operation."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "cid",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "sz",
+                  "description": "(Required) the generated thumbnail size in pixels, widthxheigth"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/octet-stream"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "scope",
+                  "value": "OAuth2Internal OAuth2ReadPII OAuth2Read OAuth2Write OAuth2Delete OAuth2Purchase OAuth2Share document.create document.edit document.delete document.read enterprise.create enterprise.read enterprise.edit enterprise.delete enterprise.member.create enterprise.member.read enterprise.member.edit enterprise.member.delete webhook.create webhook.edit webhook.read webhook.delete PLMIntegration"
+                },
+                {
+                  "key": "redirect_uri",
+                  "value": "/oauth/token"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "/oauth/token"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "/oauth/authorize"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "2da2a023-b12a-46b2-bd8e-438f7f81ed99",
+              "name": "default response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "thumbnails",
+                    "d",
+                    ":did",
+                    "w",
+                    ":wid",
+                    "e",
+                    ":eid",
+                    "ac",
+                    ":cid",
+                    "s",
+                    ":sz"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "linkDocumentId",
+                      "value": ""
+                    },
+                    {
+                      "key": "t",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "skipDefaultImage",
+                      "value": ""
+                    },
+                    {
+                      "key": "rejectEmpty",
+                      "value": "false"
+                    },
+                    {
+                      "key": "requireConfigMatch",
+                      "value": "false"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "did",
+                      "description": "(Required) The id of the document in which to perform the operation."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "wid",
+                      "description": "(Required) The id of the workspace in which to perform the operation."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "eid",
+                      "description": "(Required) The id of the element in which to perform the operation."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "cid",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "sz",
+                      "description": "(Required) the generated thumbnail size in pixels, widthxheigth"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/octet-stream"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/octet-stream"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c63c29ca-9e88-4718-9926-c56da4a0bd13",
+          "name": "Get the thumbnail image with the given size for a document.",
+          "request": {
+            "name": "Get the thumbnail image with the given size for a document.",
+            "description": {
+              "content": "* By default, returns thumbnail image for the element with the most-recently generated image. If you pinned an element for the document thumbnail, that element will always be used for the document-level thumbnail, if it exists in the workspace.\n* See also: [Tech tip on how to change a document thumbnail in onshape](https://www.onshape.com/en/resource-center/tech-tips/tech-tip-how-to-change-a-document-thumbnail-in-onshape)",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "thumbnails",
+                "d",
+                ":did",
+                "w",
+                ":wid",
+                "s",
+                ":sz"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "t",
+                  "value": "<string>",
+                  "description": "Cache Control key. If specified, the response header returned will tell the client to use cached thumbnails."
+                },
+                {
+                  "disabled": false,
+                  "key": "skipDefaultImage",
+                  "value": "",
+                  "description": "Controls the return of the default image, if thumbnail is not available"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "did",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "wid",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "sz",
+                  "description": "(Required) the generated thumbnail size in pixels, widthxheigth"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/octet-stream"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "scope",
+                  "value": "OAuth2Internal OAuth2ReadPII OAuth2Read OAuth2Write OAuth2Delete OAuth2Purchase OAuth2Share document.create document.edit document.delete document.read enterprise.create enterprise.read enterprise.edit enterprise.delete enterprise.member.create enterprise.member.read enterprise.member.edit enterprise.member.delete webhook.create webhook.edit webhook.read webhook.delete PLMIntegration"
+                },
+                {
+                  "key": "redirect_uri",
+                  "value": "/oauth/token"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "/oauth/token"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "/oauth/authorize"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "10e45033-9d73-4eb1-af3b-763b65f3bad9",
+              "name": "default response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "thumbnails",
+                    "d",
+                    ":did",
+                    "w",
+                    ":wid",
+                    "s",
+                    ":sz"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "t",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "skipDefaultImage",
+                      "value": ""
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "did",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "wid",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "sz",
+                      "description": "(Required) the generated thumbnail size in pixels, widthxheigth"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/octet-stream"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/octet-stream"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b6c50b98-d25c-463e-9705-abf994eb40cc",
+          "name": "Get the thumbnail info structure for an element.",
+          "request": {
+            "name": "Get the thumbnail info structure for an element.",
+            "description": {
+              "content": "Returns thumbnail info for the given document, workspace or version, and element.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "thumbnails",
+                "d",
+                ":did",
+                ":wv",
+                ":wvid",
+                "e",
+                ":eid"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "linkDocumentId",
+                  "value": "",
+                  "description": "The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "did",
+                  "description": "(Required) The id of the document in which to perform the operation."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "wv",
+                  "description": "(Required) Indicates which of workspace (w) or version (v) id is specified below."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "wvid",
+                  "description": "(Required) The id of the workspace, version in which the operation should be performed."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "eid",
+                  "description": "(Required) The id of the element in which to perform the operation."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json;charset=UTF-8; qs=0.09"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "scope",
+                  "value": "OAuth2Internal OAuth2ReadPII OAuth2Read OAuth2Write OAuth2Delete OAuth2Purchase OAuth2Share document.create document.edit document.delete document.read enterprise.create enterprise.read enterprise.edit enterprise.delete enterprise.member.create enterprise.member.read enterprise.member.edit enterprise.member.delete webhook.create webhook.edit webhook.read webhook.delete PLMIntegration"
+                },
+                {
+                  "key": "redirect_uri",
+                  "value": "/oauth/token"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "/oauth/token"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "/oauth/authorize"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "7904f3ed-3bbb-4394-8775-15f35d22cb98",
+              "name": "default response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "thumbnails",
+                    "d",
+                    ":did",
+                    ":wv",
+                    ":wvid",
+                    "e",
+                    ":eid"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "linkDocumentId",
+                      "value": ""
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "did",
+                      "description": "(Required) The id of the document in which to perform the operation."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "wv",
+                      "description": "(Required) Indicates which of workspace (w) or version (v) id is specified below."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "wvid",
+                      "description": "(Required) The id of the workspace, version in which the operation should be performed."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "eid",
+                      "description": "(Required) The id of the element in which to perform the operation."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json;charset=UTF-8; qs=0.09"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json;charset=UTF-8; qs=0.09"
+                }
+              ],
+              "body": "{\n  \"href\": \"http://XhlpimTNWDZiQ.jzoxBbUHfLRZEdjSsvPYZl,8BZDf3Yti9mAGHptA4G06+f+jUP6Y8kOR3O\",\n  \"id\": \"string\",\n  \"secondarySizes\": [\n    [\n      {\n        \"href\": \"http://NxVNKzrCZeHaDKsPtDyYkyoWvkNp.eagff197XMQ2MwJXo,gxc+OS\",\n        \"mediaType\": \"string\",\n        \"renderMode\": \"string\",\n        \"sheetName\": \"string\",\n        \"size\": \"string\",\n        \"uniqueId\": \"string\",\n        \"viewOrientation\": \"string\"\n      },\n      {\n        \"href\": \"https://tYpDZWiLGNDwDwdBWGcxnK.nfD7X4ATW+iiRsNaaQ3q1xVqxJNW16knwtk,I3pl4ma6GwFhKSpGGv566mrg7iBQMm2rsF3ZV\",\n        \"mediaType\": \"string\",\n        \"renderMode\": \"string\",\n        \"sheetName\": \"string\",\n        \"size\": \"string\",\n        \"uniqueId\": \"string\",\n        \"viewOrientation\": \"string\"\n      }\n    ],\n    [\n      {\n        \"href\": \"http://gtmysdcItTVSIQwTPHTaZAhLDK.iqryOVaMNpODA2TYcyFfSH4WUFBM7sj5vSgwG,ZONO+RhTIE9.Bg-Np1NnzA\",\n        \"mediaType\": \"string\",\n        \"renderMode\": \"string\",\n        \"sheetName\": \"string\",\n        \"size\": \"string\",\n        \"uniqueId\": \"string\",\n        \"viewOrientation\": \"string\"\n      },\n      {\n        \"href\": \"http://hCQfTXUGQUeoeb.rfbadT-SXWDikC-Pvh5IDGAROSbQj8fpxJ2kVSfhD6AmGjmszYAUoKWmuCkl2j8SP9pKBJXNsVvv0Av\",\n        \"mediaType\": \"string\",\n        \"renderMode\": \"string\",\n        \"sheetName\": \"string\",\n        \"size\": \"string\",\n        \"uniqueId\": \"string\",\n        \"viewOrientation\": \"string\"\n      }\n    ]\n  ],\n  \"sizes\": [\n    {\n      \"href\": \"https://HqYlQNCYfRdGwyFER.mbvzisJXtNeTVS4t9h\",\n      \"mediaType\": \"string\",\n      \"renderMode\": \"string\",\n      \"sheetName\": \"string\",\n      \"size\": \"string\",\n      \"uniqueId\": \"string\",\n      \"viewOrientation\": \"string\"\n    },\n    {\n      \"href\": \"https://izQmuvege.xinzNL39vVOV9Wa8uikjTOCCobTR4WBQhbIZnsfKWv.e5bR2KeCAko4kaR\",\n      \"mediaType\": \"string\",\n      \"renderMode\": \"string\",\n      \"sheetName\": \"string\",\n      \"size\": \"string\",\n      \"uniqueId\": \"string\",\n      \"viewOrientation\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "1005bd22-74e8-473c-8e7c-445a255cedaa",
+          "name": "Set the thumbnail image for an application element.",
+          "request": {
+            "name": "Set the thumbnail image for an application element.",
+            "description": {
+              "content": "* Allows 3rd-party applications to set thumbnails for their elements. \n* Application elements can have both primary and secondary thumbnails. A primary thumbnail represents the top-level of the element. A secondary thumbnail can represent sub-components of the element (e.g., a drawing sheet).\n* To update one or more thumbnails, you must set the overwrite query param to `true` and supply the entire set of thumbnails. All previous thumbnails will be deleted prior to updating the element with the latest images.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "thumbnails",
+                "d",
+                ":did",
+                ":wv",
+                ":wvid",
+                "e",
+                ":eid"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "linkDocumentId",
+                  "value": "",
+                  "description": "The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both."
+                },
+                {
+                  "disabled": false,
+                  "key": "overwrite",
+                  "value": "false"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "did",
+                  "description": "(Required) The id of the document in which to perform the operation."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "wv",
+                  "description": "(Required) Indicates which of workspace (w) or version (v) id is specified below."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "wvid",
+                  "description": "(Required) The id of the workspace, version in which the operation should be performed."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "eid",
+                  "description": "(Required) The id of the element in which to perform the operation."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json;charset=UTF-8; qs=0.09"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json;charset=UTF-8; qs=0.09"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "scope",
+                  "value": "OAuth2Internal OAuth2ReadPII OAuth2Read OAuth2Write OAuth2Delete OAuth2Purchase OAuth2Share document.create document.edit document.delete document.read enterprise.create enterprise.read enterprise.edit enterprise.delete enterprise.member.create enterprise.member.read enterprise.member.edit enterprise.member.delete webhook.create webhook.edit webhook.read webhook.delete PLMIntegration"
+                },
+                {
+                  "key": "redirect_uri",
+                  "value": "/oauth/token"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "/oauth/token"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "/oauth/authorize"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"thumbnails\": [\n    {\n      \"base64EncodedImage\": \"<string>\",\n      \"description\": \"<string>\",\n      \"imageHeight\": \"<integer>\",\n      \"imageWidth\": \"<integer>\",\n      \"isPrimary\": \"<boolean>\",\n      \"uniqueId\": \"<string>\"\n    },\n    {\n      \"base64EncodedImage\": \"<string>\",\n      \"description\": \"<string>\",\n      \"imageHeight\": \"<integer>\",\n      \"imageWidth\": \"<integer>\",\n      \"isPrimary\": \"<boolean>\",\n      \"uniqueId\": \"<string>\"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "2ff29f76-5a22-4882-bb0b-6be63a4251a3",
+              "name": "default response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "thumbnails",
+                    "d",
+                    ":did",
+                    ":wv",
+                    ":wvid",
+                    "e",
+                    ":eid"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "linkDocumentId",
+                      "value": ""
+                    },
+                    {
+                      "key": "overwrite",
+                      "value": "false"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "did",
+                      "description": "(Required) The id of the document in which to perform the operation."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "wv",
+                      "description": "(Required) Indicates which of workspace (w) or version (v) id is specified below."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "wvid",
+                      "description": "(Required) The id of the workspace, version in which the operation should be performed."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "eid",
+                      "description": "(Required) The id of the element in which to perform the operation."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json;charset=UTF-8; qs=0.09"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"thumbnails\": [\n    {\n      \"base64EncodedImage\": \"<string>\",\n      \"description\": \"<string>\",\n      \"imageHeight\": \"<integer>\",\n      \"imageWidth\": \"<integer>\",\n      \"isPrimary\": \"<boolean>\",\n      \"uniqueId\": \"<string>\"\n    },\n    {\n      \"base64EncodedImage\": \"<string>\",\n      \"description\": \"<string>\",\n      \"imageHeight\": \"<integer>\",\n      \"imageWidth\": \"<integer>\",\n      \"isPrimary\": \"<boolean>\",\n      \"uniqueId\": \"<string>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json;charset=UTF-8; qs=0.09"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "93ef93ee-04e4-4ffb-ac69-9bc0ebf48401",
+          "name": "Delete an element's thumbnail.",
+          "request": {
+            "name": "Delete an element's thumbnail.",
+            "description": {
+              "content": "Deletes an application element's thumbnail and images for the given document, workspace or version, and element combination.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "thumbnails",
+                "d",
+                ":did",
+                ":wv",
+                ":wvid",
+                "e",
+                ":eid"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "linkDocumentId",
+                  "value": "",
+                  "description": "The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "did",
+                  "description": "(Required) The id of the document in which to perform the operation."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "wv",
+                  "description": "(Required) Indicates which of workspace (w) or version (v) id is specified below."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "wvid",
+                  "description": "(Required) The id of the workspace, version in which the operation should be performed."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "eid",
+                  "description": "(Required) The id of the element in which to perform the operation."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json;charset=UTF-8; qs=0.09"
+              }
+            ],
+            "method": "DELETE",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "scope",
+                  "value": "OAuth2Internal OAuth2ReadPII OAuth2Read OAuth2Write OAuth2Delete OAuth2Purchase OAuth2Share document.create document.edit document.delete document.read enterprise.create enterprise.read enterprise.edit enterprise.delete enterprise.member.create enterprise.member.read enterprise.member.edit enterprise.member.delete webhook.create webhook.edit webhook.read webhook.delete PLMIntegration"
+                },
+                {
+                  "key": "redirect_uri",
+                  "value": "/oauth/token"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "/oauth/token"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "/oauth/authorize"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "6aa4957e-4356-456d-84bd-b52eb244d006",
+              "name": "default response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "thumbnails",
+                    "d",
+                    ":did",
+                    ":wv",
+                    ":wvid",
+                    "e",
+                    ":eid"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "linkDocumentId",
+                      "value": ""
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "did",
+                      "description": "(Required) The id of the document in which to perform the operation."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "wv",
+                      "description": "(Required) Indicates which of workspace (w) or version (v) id is specified below."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "wvid",
+                      "description": "(Required) The id of the workspace, version in which the operation should be performed."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "eid",
+                      "description": "(Required) The id of the element in which to perform the operation."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json;charset=UTF-8; qs=0.09"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json;charset=UTF-8; qs=0.09"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "167d5724-53ac-47a3-94fd-0f0161033504",
+          "name": "Get the thumbnail image with the given size for an element.",
+          "request": {
+            "name": "Get the thumbnail image with the given size for an element.",
+            "description": {},
+            "url": {
+              "path": [
+                "thumbnails",
+                "d",
+                ":did",
+                ":wv",
+                ":wvid",
+                "e",
+                ":eid",
+                "s",
+                ":sz"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "linkDocumentId",
+                  "value": "",
+                  "description": "The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both."
+                },
+                {
+                  "disabled": false,
+                  "key": "t",
+                  "value": "<string>",
+                  "description": "Cache Control key. If specified, the response header returned will tell the client to use cached thumbnails."
+                },
+                {
+                  "disabled": false,
+                  "key": "skipDefaultImage",
+                  "value": "",
+                  "description": "Controls the return of the default image, if thumbnail is not available"
+                },
+                {
+                  "disabled": false,
+                  "key": "rejectEmpty",
+                  "value": "false"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "did",
+                  "description": "(Required) The id of the document in which to perform the operation."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "wv",
+                  "description": "(Required) Indicates which of workspace (w) or version (v) id is specified below."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "wvid",
+                  "description": "(Required) The id of the workspace, version in which the operation should be performed."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "eid",
+                  "description": "(Required) The id of the element in which to perform the operation."
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "sz",
+                  "description": "(Required) the generated thumbnail size in pixels, widthxheigth"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/octet-stream"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "scope",
+                  "value": "OAuth2Internal OAuth2ReadPII OAuth2Read OAuth2Write OAuth2Delete OAuth2Purchase OAuth2Share document.create document.edit document.delete document.read enterprise.create enterprise.read enterprise.edit enterprise.delete enterprise.member.create enterprise.member.read enterprise.member.edit enterprise.member.delete webhook.create webhook.edit webhook.read webhook.delete PLMIntegration"
+                },
+                {
+                  "key": "redirect_uri",
+                  "value": "/oauth/token"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "/oauth/token"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "/oauth/authorize"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "15a912f6-ed0b-4f8b-ad19-406281493723",
+              "name": "default response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "thumbnails",
+                    "d",
+                    ":did",
+                    ":wv",
+                    ":wvid",
+                    "e",
+                    ":eid",
+                    "s",
+                    ":sz"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "linkDocumentId",
+                      "value": ""
+                    },
+                    {
+                      "key": "t",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "skipDefaultImage",
+                      "value": ""
+                    },
+                    {
+                      "key": "rejectEmpty",
+                      "value": "false"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "did",
+                      "description": "(Required) The id of the document in which to perform the operation."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "wv",
+                      "description": "(Required) Indicates which of workspace (w) or version (v) id is specified below."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "wvid",
+                      "description": "(Required) The id of the workspace, version in which the operation should be performed."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "eid",
+                      "description": "(Required) The id of the element in which to perform the operation."
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "sz",
+                      "description": "(Required) the generated thumbnail size in pixels, widthxheigth"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/octet-stream"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/octet-stream"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "92d1acc9-a642-4895-8d1a-321f2dbebda1",
+          "name": "This endpoint will be deprecated soon. Use `getThumbnailForDocument` instead.",
+          "request": {
+            "name": "This endpoint will be deprecated soon. Use `getThumbnailForDocument` instead.",
+            "description": {
+              "content": "This API exists for historical reasons. It uses `/document/` in the path, rather than the standard `/d/` to specify the document.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "thumbnails",
+                "document",
+                ":did"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "did",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json;charset=UTF-8; qs=0.09"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "scope",
+                  "value": "OAuth2Internal OAuth2ReadPII OAuth2Read OAuth2Write OAuth2Delete OAuth2Purchase OAuth2Share document.create document.edit document.delete document.read enterprise.create enterprise.read enterprise.edit enterprise.delete enterprise.member.create enterprise.member.read enterprise.member.edit enterprise.member.delete webhook.create webhook.edit webhook.read webhook.delete PLMIntegration"
+                },
+                {
+                  "key": "redirect_uri",
+                  "value": "/oauth/token"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "/oauth/token"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "/oauth/authorize"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "62c3097d-296c-4769-8a28-6d2bff97860a",
+              "name": "default response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "thumbnails",
+                    "document",
+                    ":did"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "did",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json;charset=UTF-8; qs=0.09"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json;charset=UTF-8; qs=0.09"
+                }
+              ],
+              "body": "{\n  \"href\": \"http://XhlpimTNWDZiQ.jzoxBbUHfLRZEdjSsvPYZl,8BZDf3Yti9mAGHptA4G06+f+jUP6Y8kOR3O\",\n  \"id\": \"string\",\n  \"secondarySizes\": [\n    [\n      {\n        \"href\": \"http://NxVNKzrCZeHaDKsPtDyYkyoWvkNp.eagff197XMQ2MwJXo,gxc+OS\",\n        \"mediaType\": \"string\",\n        \"renderMode\": \"string\",\n        \"sheetName\": \"string\",\n        \"size\": \"string\",\n        \"uniqueId\": \"string\",\n        \"viewOrientation\": \"string\"\n      },\n      {\n        \"href\": \"https://tYpDZWiLGNDwDwdBWGcxnK.nfD7X4ATW+iiRsNaaQ3q1xVqxJNW16knwtk,I3pl4ma6GwFhKSpGGv566mrg7iBQMm2rsF3ZV\",\n        \"mediaType\": \"string\",\n        \"renderMode\": \"string\",\n        \"sheetName\": \"string\",\n        \"size\": \"string\",\n        \"uniqueId\": \"string\",\n        \"viewOrientation\": \"string\"\n      }\n    ],\n    [\n      {\n        \"href\": \"http://gtmysdcItTVSIQwTPHTaZAhLDK.iqryOVaMNpODA2TYcyFfSH4WUFBM7sj5vSgwG,ZONO+RhTIE9.Bg-Np1NnzA\",\n        \"mediaType\": \"string\",\n        \"renderMode\": \"string\",\n        \"sheetName\": \"string\",\n        \"size\": \"string\",\n        \"uniqueId\": \"string\",\n        \"viewOrientation\": \"string\"\n      },\n      {\n        \"href\": \"http://hCQfTXUGQUeoeb.rfbadT-SXWDikC-Pvh5IDGAROSbQj8fpxJ2kVSfhD6AmGjmszYAUoKWmuCkl2j8SP9pKBJXNsVvv0Av\",\n        \"mediaType\": \"string\",\n        \"renderMode\": \"string\",\n        \"sheetName\": \"string\",\n        \"size\": \"string\",\n        \"uniqueId\": \"string\",\n        \"viewOrientation\": \"string\"\n      }\n    ]\n  ],\n  \"sizes\": [\n    {\n      \"href\": \"https://HqYlQNCYfRdGwyFER.mbvzisJXtNeTVS4t9h\",\n      \"mediaType\": \"string\",\n      \"renderMode\": \"string\",\n      \"sheetName\": \"string\",\n      \"size\": \"string\",\n      \"uniqueId\": \"string\",\n      \"viewOrientation\": \"string\"\n    },\n    {\n      \"href\": \"https://izQmuvege.xinzNL39vVOV9Wa8uikjTOCCobTR4WBQhbIZnsfKWv.e5bR2KeCAko4kaR\",\n      \"mediaType\": \"string\",\n      \"renderMode\": \"string\",\n      \"sheetName\": \"string\",\n      \"size\": \"string\",\n      \"uniqueId\": \"string\",\n      \"viewOrientation\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "86951742-5ee4-4a23-8de0-a0891d5a2d93",
+          "name": "This endpoint will be deprecated soon. Use `getThumbnailForDocumentAndVersion` instead.",
+          "request": {
+            "name": "This endpoint will be deprecated soon. Use `getThumbnailForDocumentAndVersion` instead.",
+            "description": {
+              "content": "This API exists for historical reasons. It uses `/document/` in the path, rather than the standard `/d/` to specify the document.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "thumbnails",
+                "document",
+                ":did",
+                "version",
+                ":vid"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "did",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "vid",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json;charset=UTF-8; qs=0.09"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "scope",
+                  "value": "OAuth2Internal OAuth2ReadPII OAuth2Read OAuth2Write OAuth2Delete OAuth2Purchase OAuth2Share document.create document.edit document.delete document.read enterprise.create enterprise.read enterprise.edit enterprise.delete enterprise.member.create enterprise.member.read enterprise.member.edit enterprise.member.delete webhook.create webhook.edit webhook.read webhook.delete PLMIntegration"
+                },
+                {
+                  "key": "redirect_uri",
+                  "value": "/oauth/token"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "/oauth/token"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "/oauth/authorize"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "237eb160-9fef-4810-84b1-270c1e610f07",
+              "name": "default response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "thumbnails",
+                    "document",
+                    ":did",
+                    "version",
+                    ":vid"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "did",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "vid",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json;charset=UTF-8; qs=0.09"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json;charset=UTF-8; qs=0.09"
+                }
+              ],
+              "body": "{\n  \"href\": \"http://XhlpimTNWDZiQ.jzoxBbUHfLRZEdjSsvPYZl,8BZDf3Yti9mAGHptA4G06+f+jUP6Y8kOR3O\",\n  \"id\": \"string\",\n  \"secondarySizes\": [\n    [\n      {\n        \"href\": \"http://NxVNKzrCZeHaDKsPtDyYkyoWvkNp.eagff197XMQ2MwJXo,gxc+OS\",\n        \"mediaType\": \"string\",\n        \"renderMode\": \"string\",\n        \"sheetName\": \"string\",\n        \"size\": \"string\",\n        \"uniqueId\": \"string\",\n        \"viewOrientation\": \"string\"\n      },\n      {\n        \"href\": \"https://tYpDZWiLGNDwDwdBWGcxnK.nfD7X4ATW+iiRsNaaQ3q1xVqxJNW16knwtk,I3pl4ma6GwFhKSpGGv566mrg7iBQMm2rsF3ZV\",\n        \"mediaType\": \"string\",\n        \"renderMode\": \"string\",\n        \"sheetName\": \"string\",\n        \"size\": \"string\",\n        \"uniqueId\": \"string\",\n        \"viewOrientation\": \"string\"\n      }\n    ],\n    [\n      {\n        \"href\": \"http://gtmysdcItTVSIQwTPHTaZAhLDK.iqryOVaMNpODA2TYcyFfSH4WUFBM7sj5vSgwG,ZONO+RhTIE9.Bg-Np1NnzA\",\n        \"mediaType\": \"string\",\n        \"renderMode\": \"string\",\n        \"sheetName\": \"string\",\n        \"size\": \"string\",\n        \"uniqueId\": \"string\",\n        \"viewOrientation\": \"string\"\n      },\n      {\n        \"href\": \"http://hCQfTXUGQUeoeb.rfbadT-SXWDikC-Pvh5IDGAROSbQj8fpxJ2kVSfhD6AmGjmszYAUoKWmuCkl2j8SP9pKBJXNsVvv0Av\",\n        \"mediaType\": \"string\",\n        \"renderMode\": \"string\",\n        \"sheetName\": \"string\",\n        \"size\": \"string\",\n        \"uniqueId\": \"string\",\n        \"viewOrientation\": \"string\"\n      }\n    ]\n  ],\n  \"sizes\": [\n    {\n      \"href\": \"https://HqYlQNCYfRdGwyFER.mbvzisJXtNeTVS4t9h\",\n      \"mediaType\": \"string\",\n      \"renderMode\": \"string\",\n      \"sheetName\": \"string\",\n      \"size\": \"string\",\n      \"uniqueId\": \"string\",\n      \"viewOrientation\": \"string\"\n    },\n    {\n      \"href\": \"https://izQmuvege.xinzNL39vVOV9Wa8uikjTOCCobTR4WBQhbIZnsfKWv.e5bR2KeCAko4kaR\",\n      \"mediaType\": \"string\",\n      \"renderMode\": \"string\",\n      \"sheetName\": \"string\",\n      \"size\": \"string\",\n      \"uniqueId\": \"string\",\n      \"viewOrientation\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://cad.onshape.com/api/v16",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "basic",
+    "basic": [
+      {
+        "key": "username",
+        "value": "{{basicAuthUsername}}"
+      },
+      {
+        "key": "password",
+        "value": "{{basicAuthPassword}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "136acd19-c354-4121-afff-156b64a3e45e",
+    "name": "Onshape REST Account Thumbnail API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "## Welcome to the Onshape REST API Explorer\n\n**See the [API Explorer Guide](https://onshape-public.github.io/docs/api-intro/explorer/) for help navigating this page.**\n\n### Using this page\n1. Sign in to your [Onshape](https://cad.onshape.com) account in another tab.\n2. Click the `Try it out` button below. It toggles to a `Cancel` button when selected.\n\n### Authenticating\nTo authenticate your calls, click the `Authorize` button. See [API Explorer Guide: Authentication](https://onshape-public.github.io/docs/api-intro/explorer/#authentication) for details. Calls made when authenticated via API Keys or OAuth count against your annual [API limits](https://onshape-public.github.io/docs/auth/limits/#annual-api-call-limits).\n* **Tip:** To ensure the current session isn't used when trying other authentication techniques, make sure to [remove the Onshape cookie](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site) as per the instructions for your browser, or use a private or incognito window.\n\n### Additional resources\n\n* [Onshape API Guide](https://onshape-public.github.io/docs/): Our full suite of developer guides, to be used as an accompaniment to this API Explorer.\n* [Onshape Developer Portal](https://cad.onshape.com/appstore/dev-portal): The Onshape portal for managing your API keys, OAuth2 credentials, your Onshape applications, and your Onshape App Store entries.\n* [Authentication Guide](https://onshape-public.github.io/docs/auth/): Our guide to using API keys, request signatures, and OAuth2 in your Onshape applications.\n\nContact Support:\n Email: api-support@onshape.zendesk.com",
+      "type": "text/plain"
+    }
+  }
+}

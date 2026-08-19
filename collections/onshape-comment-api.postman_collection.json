@@ -1,0 +1,1378 @@
+{
+  "item": [
+    {
+      "id": "e40ac69f-dc24-4639-80b6-8a11b2550570",
+      "name": "Comment",
+      "description": {
+        "content": "Create, read, update, and delete comments.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "549b6d9f-292c-4551-8016-1119b96878eb",
+          "name": "Get a list of comments in a document.",
+          "request": {
+            "name": "Get a list of comments in a document.",
+            "description": {},
+            "url": {
+              "path": [
+                "comments"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "did",
+                  "value": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "objectType",
+                  "value": "6"
+                },
+                {
+                  "disabled": false,
+                  "key": "pid",
+                  "value": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "eid",
+                  "value": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "filter",
+                  "value": "0"
+                },
+                {
+                  "disabled": false,
+                  "key": "resolved",
+                  "value": "true"
+                },
+                {
+                  "disabled": false,
+                  "key": "sortColumn",
+                  "value": "createdAt"
+                },
+                {
+                  "disabled": false,
+                  "key": "sortOrder",
+                  "value": "asc"
+                },
+                {
+                  "disabled": false,
+                  "key": "offset",
+                  "value": "0"
+                },
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "20"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json;charset=UTF-8; qs=0.09"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "scope",
+                  "value": "OAuth2Internal OAuth2ReadPII OAuth2Read OAuth2Write OAuth2Delete OAuth2Purchase OAuth2Share document.create document.edit document.delete document.read enterprise.create enterprise.read enterprise.edit enterprise.delete enterprise.member.create enterprise.member.read enterprise.member.edit enterprise.member.delete webhook.create webhook.edit webhook.read webhook.delete PLMIntegration"
+                },
+                {
+                  "key": "redirect_uri",
+                  "value": "/oauth/token"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "/oauth/token"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "/oauth/authorize"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "99b15c31-3ed9-4313-80b4-ecf8e557ec3e",
+              "name": "default response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "comments"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "did",
+                      "value": ""
+                    },
+                    {
+                      "key": "objectType",
+                      "value": "6"
+                    },
+                    {
+                      "key": "pid",
+                      "value": ""
+                    },
+                    {
+                      "key": "eid",
+                      "value": ""
+                    },
+                    {
+                      "key": "filter",
+                      "value": "0"
+                    },
+                    {
+                      "key": "resolved",
+                      "value": "true"
+                    },
+                    {
+                      "key": "sortColumn",
+                      "value": "createdAt"
+                    },
+                    {
+                      "key": "sortOrder",
+                      "value": "asc"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "0"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "20"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json;charset=UTF-8; qs=0.09"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json;charset=UTF-8; qs=0.09"
+                }
+              ],
+              "body": "{\n  \"href\": \"http://GvlQlhbORPLWkk.qaamTc9m-4Ll49H,blKLx12hCUcSW0bzt4om7svGfIo\",\n  \"items\": [\n    {\n      \"annotationId\": \"string\",\n      \"annotationType\": 8198,\n      \"appEntity\": \"string\",\n      \"assemblyFeatures\": [\n        \"string\",\n        \"string\"\n      ],\n      \"assignedAt\": \"1986-12-24T21:44:08.004Z\",\n      \"assignee\": {\n        \"documentationName\": \"string\",\n        \"email\": \"string\",\n        \"firstName\": \"string\",\n        \"lastName\": \"string\",\n        \"company\": {\n          \"admin\": false,\n          \"description\": \"string\",\n          \"domainPrefix\": \"string\",\n          \"enterpriseBaseUrl\": \"string\",\n          \"enterpriseSubtype\": 5485,\n          \"href\": \"http://vlwvBPbsIlWgUwaEwnglEGuaIAvDgBFnm.oyoN4iPRFeR2hNCx-5ebVHoWDQ.WtkXGRmD8UZ9UqkSlOOXSy\",\n          \"id\": \"string\",\n          \"image\": \"string\",\n          \"name\": \"string\",\n          \"noPublicDocuments\": false,\n          \"ownerId\": \"string\",\n          \"secondaryDomainPrefixes\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ],\n          \"state\": 3251,\n          \"type\": 5669,\n          \"viewRef\": \"http://abDmODAsApYixmdBTpZbB.ziZwjPmxhXfzj,tX3hUr5+1g1oNFlSDhsYFXwGXGO1PNxoobwjr\"\n        },\n        \"companyUserState\": 2714,\n        \"confirmationRequested\": true,\n        \"documentationNameOverride\": \"string\",\n        \"globalPermissions\": {\n          \"accessReports\": true,\n          \"adminEnterprise\": false,\n          \"allowAppStoreAccess\": false,\n          \"allowPublicDocumentsAccess\": false,\n          \"approveReleases\": true,\n          \"branchLockPermissions\": true,\n          \"createDocumentsInRoot\": false,\n          \"createProject\": false,\n          \"createReleases\": true,\n          \"createTasks\": true,\n          \"deletePermanently\": true,\n          \"enableLabs\": true,\n          \"exportFiles\": true,\n          \"importFiles\": true,\n          \"manageGuestUsers\": false,\n          \"manageNonGeometricItems\": false,\n          \"manageRbac\": false,\n          \"manageStandardContentMetadata\": true,\n          \"manageUsers\": true,\n          \"manageWorkflows\": true,\n          \"shareForAnonymousAccess\": false,\n          \"transferDocumentsFromEnterprise\": true,\n          \"useRevisionTools\": false\n        },\n        \"invitationState\": 6164,\n        \"isExternal\": false,\n        \"isGuest\": false,\n        \"isLight\": false,\n        \"lastLoginTime\": \"1967-08-18T11:48:22.138Z\",\n        \"personalMessageAllowed\": false,\n        \"source\": 601\n      },\n      \"attachment\": {\n        \"fileName\": \"string\",\n        \"href\": \"http://LBTsRuNXNtIMUIOuRUtYwtskBLTnexxJ.svoehOqnCbzE6EC5.CPTAFUG5Qs\",\n        \"id\": \"string\",\n        \"mimeType\": \"string\",\n        \"name\": \"string\",\n        \"thumbnailFor\": \"string\",\n        \"viewRef\": \"http://PAbKaSFtSNmfOapOkPWVobjxpMs.rywanx-PDkiNU79vaUseuFfkioRDIysBnwivO7LuwyPCAgg9TYYRRUd9CaPoULwYUGwNUET\"\n      },\n      \"calloutInstanceId\": \"string\",\n      \"canDelete\": false,\n      \"canResolveOrReopen\": true,\n      \"coordinates\": {\n        \"x\": 8999.456939384374,\n        \"y\": 2651.7566128282156,\n        \"z\": 1020.4948556442628\n      },\n      \"createdAt\": \"1979-08-11T08:03:50.808Z\",\n      \"dimensionConstraintId\": \"string\",\n      \"dimensionFeatureId\": \"string\",\n      \"dimensionParameterId\": \"string\",\n      \"dimensionPartQuery\": \"string\",\n      \"documentId\": \"string\",\n      \"elementFeature\": \"string\",\n      \"elementId\": \"string\",\n      \"elementOccurrences\": [\n        \"string\",\n        \"string\"\n      ],\n      \"elementQuery\": \"string\",\n      \"href\": \"http://leMqJrSBhKGpClRWavKDBXPyZ.elfyz8-d+s4FntiwL0ZhddtI-fuOBWtME0LHLbBVrVMwn0UTRR8,dIWMhj\",\n      \"id\": \"string\",\n      \"message\": \"string\",\n      \"name\": \"string\",\n      \"objectId\": \"string\",\n      \"objectType\": 2126,\n      \"parentId\": \"string\",\n      \"releasePackageId\": \"string\",\n      \"reopenedAt\": \"1980-11-18T16:49:21.660Z\",\n      \"reopenedBy\": {\n        \"documentationName\": \"string\",\n        \"email\": \"string\",\n        \"firstName\": \"string\",\n        \"lastName\": \"string\",\n        \"company\": {\n          \"admin\": false,\n          \"description\": \"string\",\n          \"domainPrefix\": \"string\",\n          \"enterpriseBaseUrl\": \"string\",\n          \"enterpriseSubtype\": 6662,\n          \"href\": \"http://xftQQ.oeCD-e\",\n          \"id\": \"string\",\n          \"image\": \"string\",\n          \"name\": \"string\",\n          \"noPublicDocuments\": true,\n          \"ownerId\": \"string\",\n          \"secondaryDomainPrefixes\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ],\n          \"state\": 8030,\n          \"type\": 852,\n          \"viewRef\": \"http://BEuBZegiUaGAvWDheUexfo.zso-yS64WGfJ8LbkWV9ES99kpDQZK7gaYnER,TH7zeuEXiGjzgSXmbihoBDJwu\"\n        },\n        \"companyUserState\": 20,\n        \"confirmationRequested\": false,\n        \"documentationNameOverride\": \"string\",\n        \"globalPermissions\": {\n          \"accessReports\": true,\n          \"adminEnterprise\": true,\n          \"allowAppStoreAccess\": false,\n          \"allowPublicDocumentsAccess\": true,\n          \"approveReleases\": true,\n          \"branchLockPermissions\": true,\n          \"createDocumentsInRoot\": true,\n          \"createProject\": true,\n          \"createReleases\": false,\n          \"createTasks\": true,\n          \"deletePermanently\": false,\n          \"enableLabs\": false,\n          \"exportFiles\": false,\n          \"importFiles\": false,\n          \"manageGuestUsers\": true,\n          \"manageNonGeometricItems\": false,\n          \"manageRbac\": true,\n          \"manageStandardContentMetadata\": true,\n          \"manageUsers\": true,\n          \"manageWorkflows\": true,\n          \"shareForAnonymousAccess\": true,\n          \"transferDocumentsFromEnterprise\": false,\n          \"useRevisionTools\": false\n        },\n        \"invitationState\": 4726,\n        \"isExternal\": true,\n        \"isGuest\": true,\n        \"isLight\": true,\n        \"lastLoginTime\": \"2008-09-07T16:40:05.325Z\",\n        \"personalMessageAllowed\": true,\n        \"source\": 1786\n      },\n      \"replyCount\": 7423,\n      \"resolvedAt\": \"2025-11-19T04:02:58.135Z\",\n      \"resolvedBy\": {\n        \"documentationName\": \"string\",\n        \"email\": \"string\",\n        \"firstName\": \"string\",\n        \"lastName\": \"string\",\n        \"company\": {\n          \"admin\": true,\n          \"description\": \"string\",\n          \"domainPrefix\": \"string\",\n          \"enterpriseBaseUrl\": \"string\",\n          \"enterpriseSubtype\": 1599,\n          \"href\": \"https://hbkgzpWEhWcf.gadxZ.ExrT7gEMTB.YKmahqEMDZOZNUwVzP8t0n87THp\",\n          \"id\": \"string\",\n          \"image\": \"string\",\n          \"name\": \"string\",\n          \"noPublicDocuments\": true,\n          \"ownerId\": \"string\",\n          \"secondaryDomainPrefixes\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ],\n          \"state\": 2620,\n          \"type\": 1367,\n          \"viewRef\": \"http://yUdsMUwoCrsbglaiYtqoTsXeFBIvb.jzwnCoXfAl,ZFcAMiu4uzitcQ9QOBZtBN5qS2IzG.hcBTXAFXRdk2e5jCKI\"\n        },\n        \"companyUserState\": 1772,\n        \"confirmationRequested\": true,\n        \"documentationNameOverride\": \"string\",\n        \"globalPermissions\": {\n          \"accessReports\": true,\n          \"adminEnterprise\": true,\n          \"allowAppStoreAccess\": true,\n          \"allowPublicDocumentsAccess\": false,\n          \"approveReleases\": false,\n          \"branchLockPermissions\": false,\n          \"createDocumentsInRoot\": true,\n          \"createProject\": true,\n          \"createReleases\": false,\n          \"createTasks\": true,\n          \"deletePermanently\": false,\n          \"enableLabs\": true,\n          \"exportFiles\": false,\n          \"importFiles\": false,\n          \"manageGuestUsers\": true,\n          \"manageNonGeometricItems\": true,\n          \"manageRbac\": true,\n          \"manageStandardContentMetadata\": false,\n          \"manageUsers\": false,\n          \"manageWorkflows\": false,\n          \"shareForAnonymousAccess\": false,\n          \"transferDocumentsFromEnterprise\": true,\n          \"useRevisionTools\": false\n        },\n        \"invitationState\": 2421,\n        \"isExternal\": true,\n        \"isGuest\": true,\n        \"isLight\": false,\n        \"lastLoginTime\": \"1993-09-10T22:52:47.107Z\",\n        \"personalMessageAllowed\": true,\n        \"source\": 18\n      },\n      \"state\": 8886,\n      \"thumbnail\": {\n        \"fileName\": \"string\",\n        \"href\": \"https://sFbBhptZ.suyqeQjBIYW,ugDJXEo+tiEmXnjY5CElsrIfiwaPnceT-8B3H9ClzF\",\n        \"id\": \"string\",\n        \"mimeType\": \"string\",\n        \"name\": \"string\",\n        \"thumbnailFor\": \"string\",\n        \"viewRef\": \"https://BQi.hlyFNtwXs9h+gsYmyStxcBZ5VAyfcVZ-Ez0xL\"\n      },\n      \"topLevel\": false,\n      \"user\": {\n        \"documentationName\": \"string\",\n        \"email\": \"string\",\n        \"firstName\": \"string\",\n        \"lastName\": \"string\",\n        \"company\": {\n          \"admin\": false,\n          \"description\": \"string\",\n          \"domainPrefix\": \"string\",\n          \"enterpriseBaseUrl\": \"string\",\n          \"enterpriseSubtype\": 8247,\n          \"href\": \"http://DqiPfXuEzZjVUBWAoyQuIEpEg.bvksfrWNW3gnPqgCZMCZDlSHBzJ+Q6GmB\",\n          \"id\": \"string\",\n          \"image\": \"string\",\n          \"name\": \"string\",\n          \"noPublicDocuments\": true,\n          \"ownerId\": \"string\",\n          \"secondaryDomainPrefixes\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ],\n          \"state\": 15,\n          \"type\": 187,\n          \"viewRef\": \"https://LLfRueJzwuvovR.shvlSECNzGZbs53zENfULtLK46-qYwU3\"\n        },\n        \"companyUserState\": 4295,\n        \"confirmationRequested\": true,\n        \"documentationNameOverride\": \"string\",\n        \"globalPermissions\": {\n          \"accessReports\": true,\n          \"adminEnterprise\": false,\n          \"allowAppStoreAccess\": false,\n          \"allowPublicDocumentsAccess\": false,\n          \"approveReleases\": false,\n          \"branchLockPermissions\": true,\n          \"createDocumentsInRoot\": true,\n          \"createProject\": true,\n          \"createReleases\": true,\n          \"createTasks\": false,\n          \"deletePermanently\": false,\n          \"enableLabs\": true,\n          \"exportFiles\": true,\n          \"importFiles\": false,\n          \"manageGuestUsers\": false,\n          \"manageNonGeometricItems\": true,\n          \"manageRbac\": true,\n          \"manageStandardContentMetadata\": true,\n          \"manageUsers\": false,\n          \"manageWorkflows\": false,\n          \"shareForAnonymousAccess\": true,\n          \"transferDocumentsFromEnterprise\": false,\n          \"useRevisionTools\": true\n        },\n        \"invitationState\": 9397,\n        \"isExternal\": false,\n        \"isGuest\": false,\n        \"isLight\": true,\n        \"lastLoginTime\": \"1994-12-08T04:10:12.051Z\",\n        \"personalMessageAllowed\": false,\n        \"source\": 5661\n      },\n      \"userCompany\": \"string\",\n      \"versionId\": \"string\",\n      \"viewData\": {\n        \"angle\": 1204.706032285977,\n        \"cameraViewport\": [\n          1943.757285458826,\n          291.6493299572953\n        ],\n        \"isPerspective\": false,\n        \"viewMatrix\": [\n          2200.242438500389,\n          3672.8846005934724\n        ]\n      },\n      \"viewRef\": \"https://hLZPltpVCxGTOXjhGXlFzwbOStlOUXEVt.ceyb7wKoG.\",\n      \"workspaceId\": \"string\"\n    },\n    {\n      \"annotationId\": \"string\",\n      \"annotationType\": 8246,\n      \"appEntity\": \"string\",\n      \"assemblyFeatures\": [\n        \"string\",\n        \"string\"\n      ],\n      \"assignedAt\": \"1963-08-25T16:21:01.464Z\",\n      \"assignee\": {\n        \"documentationName\": \"string\",\n        \"email\": \"string\",\n        \"firstName\": \"string\",\n        \"lastName\": \"string\",\n        \"company\": {\n          \"admin\": false,\n          \"description\": \"string\",\n          \"domainPrefix\": \"string\",\n          \"enterpriseBaseUrl\": \"string\",\n          \"enterpriseSubtype\": 6978,\n          \"href\": \"https://uZmO.zdeyAzy1dA97oygbQS\",\n          \"id\": \"string\",\n          \"image\": \"string\",\n          \"name\": \"string\",\n          \"noPublicDocuments\": false,\n          \"ownerId\": \"string\",\n          \"secondaryDomainPrefixes\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ],\n          \"state\": 4585,\n          \"type\": 5487,\n          \"viewRef\": \"https://Gwnn.qucbLus+5qj1S6Gu,NiY3l9FwA.q,k.lF9ssyP9H\"\n        },\n        \"companyUserState\": 806,\n        \"confirmationRequested\": false,\n        \"documentationNameOverride\": \"string\",\n        \"globalPermissions\": {\n          \"accessReports\": true,\n          \"adminEnterprise\": false,\n          \"allowAppStoreAccess\": true,\n          \"allowPublicDocumentsAccess\": true,\n          \"approveReleases\": true,\n          \"branchLockPermissions\": false,\n          \"createDocumentsInRoot\": true,\n          \"createProject\": true,\n          \"createReleases\": false,\n          \"createTasks\": true,\n          \"deletePermanently\": true,\n          \"enableLabs\": true,\n          \"exportFiles\": false,\n          \"importFiles\": false,\n          \"manageGuestUsers\": true,\n          \"manageNonGeometricItems\": true,\n          \"manageRbac\": false,\n          \"manageStandardContentMetadata\": false,\n          \"manageUsers\": false,\n          \"manageWorkflows\": true,\n          \"shareForAnonymousAccess\": false,\n          \"transferDocumentsFromEnterprise\": false,\n          \"useRevisionTools\": true\n        },\n        \"invitationState\": 1154,\n        \"isExternal\": false,\n        \"isGuest\": false,\n        \"isLight\": true,\n        \"lastLoginTime\": \"1967-11-29T09:23:50.231Z\",\n        \"personalMessageAllowed\": false,\n        \"source\": 5866\n      },\n      \"attachment\": {\n        \"fileName\": \"string\",\n        \"href\": \"http://mtSHsCIcNUsAqjIsQswuhfDiFJX.huhdS,yB.zxWrsu7ej0\",\n        \"id\": \"string\",\n        \"mimeType\": \"string\",\n        \"name\": \"string\",\n        \"thumbnailFor\": \"string\",\n        \"viewRef\": \"http://xFQGJdPmUlDLUvBY.pjzL8joudnh2jcKN8E+9rTF8.bx\"\n      },\n      \"calloutInstanceId\": \"string\",\n      \"canDelete\": true,\n      \"canResolveOrReopen\": false,\n      \"coordinates\": {\n        \"x\": 1858.8489506289652,\n        \"y\": 7100.887256744072,\n        \"z\": 5136.381962145304\n      },\n      \"createdAt\": \"1997-07-20T05:48:53.208Z\",\n      \"dimensionConstraintId\": \"string\",\n      \"dimensionFeatureId\": \"string\",\n      \"dimensionParameterId\": \"string\",\n      \"dimensionPartQuery\": \"string\",\n      \"documentId\": \"string\",\n      \"elementFeature\": \"string\",\n      \"elementId\": \"string\",\n      \"elementOccurrences\": [\n        \"string\",\n        \"string\"\n      ],\n      \"elementQuery\": \"string\",\n      \"href\": \"https://EKqkhohIvJsVQLhcasB.sav7FJlUu5sHQ\",\n      \"id\": \"string\",\n      \"message\": \"string\",\n      \"name\": \"string\",\n      \"objectId\": \"string\",\n      \"objectType\": 4562,\n      \"parentId\": \"string\",\n      \"releasePackageId\": \"string\",\n      \"reopenedAt\": \"2024-05-20T02:55:52.257Z\",\n      \"reopenedBy\": {\n        \"documentationName\": \"string\",\n        \"email\": \"string\",\n        \"firstName\": \"string\",\n        \"lastName\": \"string\",\n        \"company\": {\n          \"admin\": true,\n          \"description\": \"string\",\n          \"domainPrefix\": \"string\",\n          \"enterpriseBaseUrl\": \"string\",\n          \"enterpriseSubtype\": 1768,\n          \"href\": \"https://caAfHfQTNRtlZUjRyPnH.vwYG8PDNm3lx3zf9MjJfOKLOt+gFPZGSjhfiges248NuZPehgaNuvvLEssI\",\n          \"id\": \"string\",\n          \"image\": \"string\",\n          \"name\": \"string\",\n          \"noPublicDocuments\": false,\n          \"ownerId\": \"string\",\n          \"secondaryDomainPrefixes\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ],\n          \"state\": 385,\n          \"type\": 7892,\n          \"viewRef\": \"https://fkkLTfMngbTLs.kgiMibeCVTbPPW\"\n        },\n        \"companyUserState\": 2361,\n        \"confirmationRequested\": false,\n        \"documentationNameOverride\": \"string\",\n        \"globalPermissions\": {\n          \"accessReports\": true,\n          \"adminEnterprise\": true,\n          \"allowAppStoreAccess\": true,\n          \"allowPublicDocumentsAccess\": true,\n          \"approveReleases\": true,\n          \"branchLockPermissions\": false,\n          \"createDocumentsInRoot\": false,\n          \"createProject\": false,\n          \"createReleases\": false,\n          \"createTasks\": true,\n          \"deletePermanently\": false,\n          \"enableLabs\": true,\n          \"exportFiles\": true,\n          \"importFiles\": false,\n          \"manageGuestUsers\": false,\n          \"manageNonGeometricItems\": true,\n          \"manageRbac\": true,\n          \"manageStandardContentMetadata\": false,\n          \"manageUsers\": false,\n          \"manageWorkflows\": false,\n          \"shareForAnonymousAccess\": true,\n          \"transferDocumentsFromEnterprise\": false,\n          \"useRevisionTools\": false\n        },\n        \"invitationState\": 3200,\n        \"isExternal\": true,\n        \"isGuest\": false,\n        \"isLight\": true,\n        \"lastLoginTime\": \"2005-10-10T23:56:59.487Z\",\n        \"personalMessageAllowed\": true,\n        \"source\": 8154\n      },\n      \"replyCount\": 4051,\n      \"resolvedAt\": \"1979-05-19T23:56:12.890Z\",\n      \"resolvedBy\": {\n        \"documentationName\": \"string\",\n        \"email\": \"string\",\n        \"firstName\": \"string\",\n        \"lastName\": \"string\",\n        \"company\": {\n          \"admin\": false,\n          \"description\": \"string\",\n          \"domainPrefix\": \"string\",\n          \"enterpriseBaseUrl\": \"string\",\n          \"enterpriseSubtype\": 6190,\n          \"href\": \"http://nhWMzBmibyOFCBuyhpTZtQsxQrRTkOWB.nqjgJ86bz.3sHfLA09v.mpeLnx-tkds1H+qeYjn4jk7W999HpRAq2-WQlj\",\n          \"id\": \"string\",\n          \"image\": \"string\",\n          \"name\": \"string\",\n          \"noPublicDocuments\": false,\n          \"ownerId\": \"string\",\n          \"secondaryDomainPrefixes\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ],\n          \"state\": 8742,\n          \"type\": 6664,\n          \"viewRef\": \"http://gSgzV.wnJhv2,TxJiHrTS7DZgeITmx2lKBxyI+YxE1a+U\"\n        },\n        \"companyUserState\": 1867,\n        \"confirmationRequested\": false,\n        \"documentationNameOverride\": \"string\",\n        \"globalPermissions\": {\n          \"accessReports\": true,\n          \"adminEnterprise\": false,\n          \"allowAppStoreAccess\": false,\n          \"allowPublicDocumentsAccess\": false,\n          \"approveReleases\": false,\n          \"branchLockPermissions\": false,\n          \"createDocumentsInRoot\": true,\n          \"createProject\": true,\n          \"createReleases\": false,\n          \"createTasks\": false,\n          \"deletePermanently\": false,\n          \"enableLabs\": false,\n          \"exportFiles\": false,\n          \"importFiles\": false,\n          \"manageGuestUsers\": false,\n          \"manageNonGeometricItems\": true,\n          \"manageRbac\": false,\n          \"manageStandardContentMetadata\": false,\n          \"manageUsers\": true,\n          \"manageWorkflows\": false,\n          \"shareForAnonymousAccess\": false,\n          \"transferDocumentsFromEnterprise\": true,\n          \"useRevisionTools\": true\n        },\n        \"invitationState\": 4342,\n        \"isExternal\": false,\n        \"isGuest\": false,\n        \"isLight\": true,\n        \"lastLoginTime\": \"1947-04-25T00:38:39.099Z\",\n        \"personalMessageAllowed\": false,\n        \"source\": 9347\n      },\n      \"state\": 9848,\n      \"thumbnail\": {\n        \"fileName\": \"string\",\n        \"href\": \"https://P.snBXS4WS0b+zyLWU-HSb6slN+cgQFNQLatUgAzFOS4LpjnwgggxKomJSZwbFXdnN7Ry.RIfgOtdDpGnSWlVPkk\",\n        \"id\": \"string\",\n        \"mimeType\": \"string\",\n        \"name\": \"string\",\n        \"thumbnailFor\": \"string\",\n        \"viewRef\": \"http://zhzGSWtVmQnvUUuXZcgaKG.gyukbv,nImSIuThPnK0ww1OqolZA1WnX-00tFiAFyrmC207\"\n      },\n      \"topLevel\": true,\n      \"user\": {\n        \"documentationName\": \"string\",\n        \"email\": \"string\",\n        \"firstName\": \"string\",\n        \"lastName\": \"string\",\n        \"company\": {\n          \"admin\": false,\n          \"description\": \"string\",\n          \"domainPrefix\": \"string\",\n          \"enterpriseBaseUrl\": \"string\",\n          \"enterpriseSubtype\": 5091,\n          \"href\": \"https://eNMCqHaPitxqeFWNjBRAqGbCZTJ.vzvEF-zh6BLfYpAIbswL\",\n          \"id\": \"string\",\n          \"image\": \"string\",\n          \"name\": \"string\",\n          \"noPublicDocuments\": false,\n          \"ownerId\": \"string\",\n          \"secondaryDomainPrefixes\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ],\n          \"state\": 3940,\n          \"type\": 6370,\n          \"viewRef\": \"https://AijLs.xamnnhPo\"\n        },\n        \"companyUserState\": 716,\n        \"confirmationRequested\": false,\n        \"documentationNameOverride\": \"string\",\n        \"globalPermissions\": {\n          \"accessReports\": false,\n          \"adminEnterprise\": true,\n          \"allowAppStoreAccess\": true,\n          \"allowPublicDocumentsAccess\": false,\n          \"approveReleases\": true,\n          \"branchLockPermissions\": false,\n          \"createDocumentsInRoot\": false,\n          \"createProject\": false,\n          \"createReleases\": false,\n          \"createTasks\": true,\n          \"deletePermanently\": false,\n          \"enableLabs\": true,\n          \"exportFiles\": false,\n          \"importFiles\": false,\n          \"manageGuestUsers\": true,\n          \"manageNonGeometricItems\": true,\n          \"manageRbac\": true,\n          \"manageStandardContentMetadata\": true,\n          \"manageUsers\": true,\n          \"manageWorkflows\": true,\n          \"shareForAnonymousAccess\": false,\n          \"transferDocumentsFromEnterprise\": true,\n          \"useRevisionTools\": true\n        },\n        \"invitationState\": 8754,\n        \"isExternal\": true,\n        \"isGuest\": true,\n        \"isLight\": false,\n        \"lastLoginTime\": \"1978-01-15T14:08:29.430Z\",\n        \"personalMessageAllowed\": false,\n        \"source\": 3415\n      },\n      \"userCompany\": \"string\",\n      \"versionId\": \"string\",\n      \"viewData\": {\n        \"angle\": 7827.575670923903,\n        \"cameraViewport\": [\n          5660.416009277972,\n          8014.002958108463\n        ],\n        \"isPerspective\": false,\n        \"viewMatrix\": [\n          1263.9928077787165,\n          8554.803495239014\n        ]\n      },\n      \"viewRef\": \"https://lHVGnujnsMjWqTjXZ.hwgvIKy5AKrGNGGK0x2X1qXozHv9zOxOeshVYyV5kIdrpUa4tUvmyRK74blmbWOQJ9dV\",\n      \"workspaceId\": \"string\"\n    }\n  ],\n  \"next\": \"https://sGHBEdMbOZIZxsNKQalmurWVXKa.jkcaYTEatNd0kpgQ2HbHND5rYqOrKs\",\n  \"previous\": \"http://VPIdKUkbOwsVKcWLYKsNvGdIRoKyMn.idydVIdTDqVGItHdcWuPRVDyhbv4lheNM-.bq24kgnBhZIqTs.s5Qpbq\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ec1794a7-331d-4fa2-84d3-f5e522753281",
+          "name": "Update a document with a new comment.",
+          "request": {
+            "name": "Update a document with a new comment.",
+            "description": {},
+            "url": {
+              "path": [
+                "comments"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json;charset=UTF-8; qs=0.09"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json;charset=UTF-8; qs=0.09"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "scope",
+                  "value": "OAuth2Internal OAuth2ReadPII OAuth2Read OAuth2Write OAuth2Delete OAuth2Purchase OAuth2Share document.create document.edit document.delete document.read enterprise.create enterprise.read enterprise.edit enterprise.delete enterprise.member.create enterprise.member.read enterprise.member.edit enterprise.member.delete webhook.create webhook.edit webhook.read webhook.delete PLMIntegration"
+                },
+                {
+                  "key": "redirect_uri",
+                  "value": "/oauth/token"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "/oauth/token"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "/oauth/authorize"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"annotationId\": \"<string>\",\n  \"annotationType\": \"<integer>\",\n  \"appEntity\": \"<string>\",\n  \"assemblyFeature\": \"<string>\",\n  \"assignee\": \"<string>\",\n  \"calloutInstanceId\": \"<string>\",\n  \"coordinates\": {\n    \"x\": \"<float>\",\n    \"y\": \"<float>\",\n    \"z\": \"<float>\"\n  },\n  \"dimensionConstraintId\": \"<string>\",\n  \"dimensionFeatureId\": \"<string>\",\n  \"dimensionParameterId\": \"<string>\",\n  \"dimensionPartQuery\": \"<string>\",\n  \"documentId\": \"<string>\",\n  \"elementFeature\": \"<string>\",\n  \"elementId\": \"<string>\",\n  \"elementOccurrence\": \"<string>\",\n  \"elementQuery\": \"<string>\",\n  \"id\": \"<string>\",\n  \"message\": \"<string>\",\n  \"objectId\": \"<string>\",\n  \"objectType\": \"<integer>\",\n  \"parentId\": \"<string>\",\n  \"versionId\": \"<string>\",\n  \"viewData\": {\n    \"angle\": \"<double>\",\n    \"cameraViewport\": [\n      \"<double>\",\n      \"<double>\"\n    ],\n    \"isPerspective\": \"<boolean>\",\n    \"viewMatrix\": [\n      \"<double>\",\n      \"<double>\"\n    ]\n  },\n  \"workspaceId\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "4b9ff08e-0ad1-45c8-9706-d0e076b49ce9",
+              "name": "default response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "comments"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json;charset=UTF-8; qs=0.09"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"annotationId\": \"<string>\",\n  \"annotationType\": \"<integer>\",\n  \"appEntity\": \"<string>\",\n  \"assemblyFeature\": \"<string>\",\n  \"assignee\": \"<string>\",\n  \"calloutInstanceId\": \"<string>\",\n  \"coordinates\": {\n    \"x\": \"<float>\",\n    \"y\": \"<float>\",\n    \"z\": \"<float>\"\n  },\n  \"dimensionConstraintId\": \"<string>\",\n  \"dimensionFeatureId\": \"<string>\",\n  \"dimensionParameterId\": \"<string>\",\n  \"dimensionPartQuery\": \"<string>\",\n  \"documentId\": \"<string>\",\n  \"elementFeature\": \"<string>\",\n  \"elementId\": \"<string>\",\n  \"elementOccurrence\": \"<string>\",\n  \"elementQuery\": \"<string>\",\n  \"id\": \"<string>\",\n  \"message\": \"<string>\",\n  \"objectId\": \"<string>\",\n  \"objectType\": \"<integer>\",\n  \"parentId\": \"<string>\",\n  \"versionId\": \"<string>\",\n  \"viewData\": {\n    \"angle\": \"<double>\",\n    \"cameraViewport\": [\n      \"<double>\",\n      \"<double>\"\n    ],\n    \"isPerspective\": \"<boolean>\",\n    \"viewMatrix\": [\n      \"<double>\",\n      \"<double>\"\n    ]\n  },\n  \"workspaceId\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json;charset=UTF-8; qs=0.09"
+                }
+              ],
+              "body": "{\n  \"annotationId\": \"string\",\n  \"annotationType\": 3996,\n  \"appEntity\": \"string\",\n  \"assemblyFeatures\": [\n    \"string\",\n    \"string\"\n  ],\n  \"assignedAt\": \"2009-10-05T10:32:57.782Z\",\n  \"assignee\": {\n    \"jsonType\": \"string\",\n    \"href\": \"https://CHzpLFyrw.nkcZcxUDD5VX3,MdWxfTFSVNss5w4.8A5HX\",\n    \"id\": \"string\",\n    \"name\": \"string\",\n    \"viewRef\": \"https://ECciieQsVikGwoyPymwcHgvceHkk.euhbvPqBf.mp3CzifBbJi,f5r0h0-+SxoLYfONk0KpPROrjLqhSmeOA-IaP3IacxR\",\n    \"image\": \"string\",\n    \"isOnshapeSupport\": true,\n    \"state\": 1831,\n    \"documentationName\": \"string\",\n    \"email\": \"string\",\n    \"firstName\": \"string\",\n    \"lastName\": \"string\",\n    \"company\": {\n      \"admin\": true,\n      \"description\": \"string\",\n      \"domainPrefix\": \"string\",\n      \"enterpriseBaseUrl\": \"string\",\n      \"enterpriseSubtype\": 8930,\n      \"href\": \"http://Dir.tnThgGE\",\n      \"id\": \"string\",\n      \"image\": \"string\",\n      \"name\": \"string\",\n      \"noPublicDocuments\": false,\n      \"ownerId\": \"string\",\n      \"secondaryDomainPrefixes\": [\n        \"string\"\n      ],\n      \"state\": 6998,\n      \"type\": 1534,\n      \"viewRef\": \"http://iCVplsA.aalFq3AG2XGQGktJdhI,,dbHtJs6muMYr\"\n    },\n    \"companyUserState\": 335,\n    \"confirmationRequested\": false,\n    \"documentationNameOverride\": \"string\",\n    \"globalPermissions\": {\n      \"accessReports\": false,\n      \"adminEnterprise\": true,\n      \"allowAppStoreAccess\": true,\n      \"allowPublicDocumentsAccess\": false,\n      \"approveReleases\": false,\n      \"branchLockPermissions\": true,\n      \"createDocumentsInRoot\": false,\n      \"createProject\": true,\n      \"createReleases\": false,\n      \"createTasks\": true,\n      \"deletePermanently\": false,\n      \"enableLabs\": false,\n      \"exportFiles\": false,\n      \"importFiles\": true,\n      \"manageGuestUsers\": false,\n      \"manageNonGeometricItems\": false,\n      \"manageRbac\": false,\n      \"manageStandardContentMetadata\": false,\n      \"manageUsers\": true,\n      \"manageWorkflows\": true,\n      \"shareForAnonymousAccess\": false,\n      \"transferDocumentsFromEnterprise\": false,\n      \"useRevisionTools\": false\n    },\n    \"invitationState\": 3230,\n    \"isExternal\": true,\n    \"isGuest\": true,\n    \"isLight\": true,\n    \"lastLoginTime\": \"1968-10-07T02:18:46.967Z\",\n    \"personalMessageAllowed\": false,\n    \"source\": 5617\n  },\n  \"attachment\": {\n    \"fileName\": \"string\",\n    \"href\": \"https://GwgTEZjv.xzlqjZQ1pKwnYd7en9zRFqD-,hew5xJQkg\",\n    \"id\": \"string\",\n    \"mimeType\": \"string\",\n    \"name\": \"string\",\n    \"thumbnailFor\": \"string\",\n    \"viewRef\": \"https://qOa.srKpuWgSpcl5iGthPYBd-gTZUL9e9pxPPIdZ\"\n  },\n  \"calloutInstanceId\": \"string\",\n  \"canDelete\": false,\n  \"canResolveOrReopen\": false,\n  \"coordinates\": {\n    \"x\": 2818.895012374246,\n    \"y\": 3041.7361416502054,\n    \"z\": 2613.1113504701675\n  },\n  \"createdAt\": \"2014-10-08T09:15:06.140Z\",\n  \"dimensionConstraintId\": \"string\",\n  \"dimensionFeatureId\": \"string\",\n  \"dimensionParameterId\": \"string\",\n  \"dimensionPartQuery\": \"string\",\n  \"documentId\": \"string\",\n  \"elementFeature\": \"string\",\n  \"elementId\": \"string\",\n  \"elementOccurrences\": [\n    \"string\",\n    \"string\"\n  ],\n  \"elementQuery\": \"string\",\n  \"href\": \"https://NVspsmUslqoPpwlZCiFsvnRRsYchbLnMI.eoxfXJro9lx,WRbSCzcgfWREV3h\",\n  \"id\": \"string\",\n  \"message\": \"string\",\n  \"name\": \"string\",\n  \"objectId\": \"string\",\n  \"objectType\": 5842,\n  \"parentId\": \"string\",\n  \"releasePackageId\": \"string\",\n  \"reopenedAt\": \"2025-11-25T16:04:41.962Z\",\n  \"reopenedBy\": {\n    \"jsonType\": \"string\",\n    \"href\": \"https://FXJLHQTVobzBQhQONq.oqqrR4aJYOC+hISL4MReUuEqVyPo7bZuFmvIO3exPwNCJgZKb,RwX\",\n    \"id\": \"string\",\n    \"name\": \"string\",\n    \"viewRef\": \"http://wMkRdYzPSzIQieSUmE.enmZpsEmpy8VjJEemfr9\",\n    \"image\": \"string\",\n    \"isOnshapeSupport\": true,\n    \"state\": 1522,\n    \"documentationName\": \"string\",\n    \"email\": \"string\",\n    \"firstName\": \"string\",\n    \"lastName\": \"string\",\n    \"company\": {\n      \"admin\": false,\n      \"description\": \"string\",\n      \"domainPrefix\": \"string\",\n      \"enterpriseBaseUrl\": \"string\",\n      \"enterpriseSubtype\": 613,\n      \"href\": \"http://cfHwVQP.qmxL+iTXqo4ca1UhugAhfsh,X\",\n      \"id\": \"string\",\n      \"image\": \"string\",\n      \"name\": \"string\",\n      \"noPublicDocuments\": true,\n      \"ownerId\": \"string\",\n      \"secondaryDomainPrefixes\": [\n        \"string\"\n      ],\n      \"state\": 8707,\n      \"type\": 7896,\n      \"viewRef\": \"https://yfaMJ.dtmCWrkZiFJ.fWR\"\n    },\n    \"companyUserState\": 4641,\n    \"confirmationRequested\": false,\n    \"documentationNameOverride\": \"string\",\n    \"globalPermissions\": {\n      \"accessReports\": false,\n      \"adminEnterprise\": false,\n      \"allowAppStoreAccess\": false,\n      \"allowPublicDocumentsAccess\": false,\n      \"approveReleases\": true,\n      \"branchLockPermissions\": false,\n      \"createDocumentsInRoot\": true,\n      \"createProject\": false,\n      \"createReleases\": false,\n      \"createTasks\": false,\n      \"deletePermanently\": true,\n      \"enableLabs\": false,\n      \"exportFiles\": true,\n      \"importFiles\": true,\n      \"manageGuestUsers\": false,\n      \"manageNonGeometricItems\": true,\n      \"manageRbac\": true,\n      \"manageStandardContentMetadata\": true,\n      \"manageUsers\": true,\n      \"manageWorkflows\": true,\n      \"shareForAnonymousAccess\": true,\n      \"transferDocumentsFromEnterprise\": false,\n      \"useRevisionTools\": false\n    },\n    \"invitationState\": 6355,\n    \"isExternal\": false,\n    \"isGuest\": false,\n    \"isLight\": true,\n    \"lastLoginTime\": \"2010-06-22T08:12:30.244Z\",\n    \"personalMessageAllowed\": true,\n    \"source\": 3358\n  },\n  \"replyCount\": 9571,\n  \"resolvedAt\": \"1996-06-23T05:05:51.161Z\",\n  \"resolvedBy\": {\n    \"jsonType\": \"string\",\n    \"href\": \"https://zAynFXjQdOySNNjdvlDfQzVDIbzCWVH.ggwNqs6ZF9tQkRsnlTOL9Nrg7M9cT1QXzP.GL9,Oi05wUyaHBBp2BEgAjWQm.wF\",\n    \"id\": \"string\",\n    \"name\": \"string\",\n    \"viewRef\": \"http://GVR.thoNo\",\n    \"image\": \"string\",\n    \"isOnshapeSupport\": true,\n    \"state\": 482,\n    \"documentationName\": \"string\",\n    \"email\": \"string\",\n    \"firstName\": \"string\",\n    \"lastName\": \"string\",\n    \"company\": {\n      \"admin\": true,\n      \"description\": \"string\",\n      \"domainPrefix\": \"string\",\n      \"enterpriseBaseUrl\": \"string\",\n      \"enterpriseSubtype\": 9109,\n      \"href\": \"https://KVwMiSeQKiECRQALRfqVVjGeQB.rksMPolK4wlBuUnbtEB0..SxUZVseCrZ1rxnaXEYpkgTeqArRVA.MK2D\",\n      \"id\": \"string\",\n      \"image\": \"string\",\n      \"name\": \"string\",\n      \"noPublicDocuments\": true,\n      \"ownerId\": \"string\",\n      \"secondaryDomainPrefixes\": [\n        \"string\"\n      ],\n      \"state\": 5287,\n      \"type\": 7305,\n      \"viewRef\": \"https://XCinSGBzZZQAlg.ckzQJkaWJuwRVdqi2KHzhCBLAtN.-E5fhS,DRGCizz.vRnSZ1AcAoEHlfyAZiTF\"\n    },\n    \"companyUserState\": 6094,\n    \"confirmationRequested\": true,\n    \"documentationNameOverride\": \"string\",\n    \"globalPermissions\": {\n      \"accessReports\": true,\n      \"adminEnterprise\": false,\n      \"allowAppStoreAccess\": false,\n      \"allowPublicDocumentsAccess\": true,\n      \"approveReleases\": true,\n      \"branchLockPermissions\": true,\n      \"createDocumentsInRoot\": false,\n      \"createProject\": false,\n      \"createReleases\": true,\n      \"createTasks\": true,\n      \"deletePermanently\": true,\n      \"enableLabs\": false,\n      \"exportFiles\": false,\n      \"importFiles\": true,\n      \"manageGuestUsers\": true,\n      \"manageNonGeometricItems\": false,\n      \"manageRbac\": false,\n      \"manageStandardContentMetadata\": true,\n      \"manageUsers\": false,\n      \"manageWorkflows\": true,\n      \"shareForAnonymousAccess\": false,\n      \"transferDocumentsFromEnterprise\": true,\n      \"useRevisionTools\": true\n    },\n    \"invitationState\": 14,\n    \"isExternal\": true,\n    \"isGuest\": true,\n    \"isLight\": false,\n    \"lastLoginTime\": \"2017-03-17T01:08:25.594Z\",\n    \"personalMessageAllowed\": false,\n    \"source\": 3342\n  },\n  \"state\": 4430,\n  \"thumbnail\": {\n    \"fileName\": \"string\",\n    \"href\": \"https://qJdPRvROACHzf.mukRuafbl9JwVWxeDqybQrIWt2DV\",\n    \"id\": \"string\",\n    \"mimeType\": \"string\",\n    \"name\": \"string\",\n    \"thumbnailFor\": \"string\",\n    \"viewRef\": \"http://UTHplgmGXulqIoo.brafM7emI5k4lQQE\"\n  },\n  \"topLevel\": true,\n  \"user\": {\n    \"jsonType\": \"string\",\n    \"href\": \"https://GAeIfOyqc.dulk\",\n    \"id\": \"string\",\n    \"name\": \"string\",\n    \"viewRef\": \"https://nKl.buxeHT8e7PWaFFkvTklDjf,rJpf9kthKhpZbR2mfHLFGG5n5cYk4FRwxTlrMFZ\",\n    \"image\": \"string\",\n    \"isOnshapeSupport\": true,\n    \"state\": 9874,\n    \"documentationName\": \"string\",\n    \"email\": \"string\",\n    \"firstName\": \"string\",\n    \"lastName\": \"string\",\n    \"company\": {\n      \"admin\": true,\n      \"description\": \"string\",\n      \"domainPrefix\": \"string\",\n      \"enterpriseBaseUrl\": \"string\",\n      \"enterpriseSubtype\": 3401,\n      \"href\": \"http://pkftBVwbSvQBZYSjx.gjyphvZu2VEHD40\",\n      \"id\": \"string\",\n      \"image\": \"string\",\n      \"name\": \"string\",\n      \"noPublicDocuments\": true,\n      \"ownerId\": \"string\",\n      \"secondaryDomainPrefixes\": [\n        \"string\"\n      ],\n      \"state\": 7938,\n      \"type\": 8430,\n      \"viewRef\": \"http://XKteKmLtTQSd.ypqcDAKPxuK9nt5QcqUcx\"\n    },\n    \"companyUserState\": 5784,\n    \"confirmationRequested\": true,\n    \"documentationNameOverride\": \"string\",\n    \"globalPermissions\": {\n      \"accessReports\": true,\n      \"adminEnterprise\": true,\n      \"allowAppStoreAccess\": true,\n      \"allowPublicDocumentsAccess\": false,\n      \"approveReleases\": false,\n      \"branchLockPermissions\": false,\n      \"createDocumentsInRoot\": false,\n      \"createProject\": true,\n      \"createReleases\": true,\n      \"createTasks\": false,\n      \"deletePermanently\": false,\n      \"enableLabs\": true,\n      \"exportFiles\": true,\n      \"importFiles\": true,\n      \"manageGuestUsers\": true,\n      \"manageNonGeometricItems\": false,\n      \"manageRbac\": true,\n      \"manageStandardContentMetadata\": false,\n      \"manageUsers\": true,\n      \"manageWorkflows\": false,\n      \"shareForAnonymousAccess\": false,\n      \"transferDocumentsFromEnterprise\": true,\n      \"useRevisionTools\": true\n    },\n    \"invitationState\": 2568,\n    \"isExternal\": true,\n    \"isGuest\": true,\n    \"isLight\": true,\n    \"lastLoginTime\": \"2001-07-31T02:18:43.518Z\",\n    \"personalMessageAllowed\": true,\n    \"source\": 6534\n  },\n  \"userCompany\": \"string\",\n  \"versionId\": \"string\",\n  \"viewData\": {\n    \"angle\": 1099.6639394585384,\n    \"cameraViewport\": [\n      7336.424425172884,\n      9186.283225369723\n    ],\n    \"isPerspective\": true,\n    \"viewMatrix\": [\n      7842.393631903021,\n      2609.18700272323\n    ]\n  },\n  \"viewRef\": \"http://RNJOZGqfSAWWHtrX.grifwo9Zwg3acqAQLc-g0M.+uPQ2GqW6G9gR+Ea7nE6LO9Dtpys,A1YlRNJ69bdkmR7JFzqUwLb0Qrsh\",\n  \"workspaceId\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "434a5b39-fdf7-4887-ade3-eeee1a73bf6e",
+          "name": "Get details for a comment.",
+          "request": {
+            "name": "Get details for a comment.",
+            "description": {},
+            "url": {
+              "path": [
+                "comments",
+                ":cid"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "cid",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json;charset=UTF-8; qs=0.09"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "scope",
+                  "value": "OAuth2Internal OAuth2ReadPII OAuth2Read OAuth2Write OAuth2Delete OAuth2Purchase OAuth2Share document.create document.edit document.delete document.read enterprise.create enterprise.read enterprise.edit enterprise.delete enterprise.member.create enterprise.member.read enterprise.member.edit enterprise.member.delete webhook.create webhook.edit webhook.read webhook.delete PLMIntegration"
+                },
+                {
+                  "key": "redirect_uri",
+                  "value": "/oauth/token"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "/oauth/token"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "/oauth/authorize"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "9063a871-f6f3-4e79-aac2-b2c9a1d9832b",
+              "name": "default response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "comments",
+                    ":cid"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "cid",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json;charset=UTF-8; qs=0.09"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json;charset=UTF-8; qs=0.09"
+                }
+              ],
+              "body": "{\n  \"annotationId\": \"string\",\n  \"annotationType\": 3996,\n  \"appEntity\": \"string\",\n  \"assemblyFeatures\": [\n    \"string\",\n    \"string\"\n  ],\n  \"assignedAt\": \"2009-10-05T10:32:57.782Z\",\n  \"assignee\": {\n    \"jsonType\": \"string\",\n    \"href\": \"https://CHzpLFyrw.nkcZcxUDD5VX3,MdWxfTFSVNss5w4.8A5HX\",\n    \"id\": \"string\",\n    \"name\": \"string\",\n    \"viewRef\": \"https://ECciieQsVikGwoyPymwcHgvceHkk.euhbvPqBf.mp3CzifBbJi,f5r0h0-+SxoLYfONk0KpPROrjLqhSmeOA-IaP3IacxR\",\n    \"image\": \"string\",\n    \"isOnshapeSupport\": true,\n    \"state\": 1831,\n    \"documentationName\": \"string\",\n    \"email\": \"string\",\n    \"firstName\": \"string\",\n    \"lastName\": \"string\",\n    \"company\": {\n      \"admin\": true,\n      \"description\": \"string\",\n      \"domainPrefix\": \"string\",\n      \"enterpriseBaseUrl\": \"string\",\n      \"enterpriseSubtype\": 8930,\n      \"href\": \"http://Dir.tnThgGE\",\n      \"id\": \"string\",\n      \"image\": \"string\",\n      \"name\": \"string\",\n      \"noPublicDocuments\": false,\n      \"ownerId\": \"string\",\n      \"secondaryDomainPrefixes\": [\n        \"string\"\n      ],\n      \"state\": 6998,\n      \"type\": 1534,\n      \"viewRef\": \"http://iCVplsA.aalFq3AG2XGQGktJdhI,,dbHtJs6muMYr\"\n    },\n    \"companyUserState\": 335,\n    \"confirmationRequested\": false,\n    \"documentationNameOverride\": \"string\",\n    \"globalPermissions\": {\n      \"accessReports\": false,\n      \"adminEnterprise\": true,\n      \"allowAppStoreAccess\": true,\n      \"allowPublicDocumentsAccess\": false,\n      \"approveReleases\": false,\n      \"branchLockPermissions\": true,\n      \"createDocumentsInRoot\": false,\n      \"createProject\": true,\n      \"createReleases\": false,\n      \"createTasks\": true,\n      \"deletePermanently\": false,\n      \"enableLabs\": false,\n      \"exportFiles\": false,\n      \"importFiles\": true,\n      \"manageGuestUsers\": false,\n      \"manageNonGeometricItems\": false,\n      \"manageRbac\": false,\n      \"manageStandardContentMetadata\": false,\n      \"manageUsers\": true,\n      \"manageWorkflows\": true,\n      \"shareForAnonymousAccess\": false,\n      \"transferDocumentsFromEnterprise\": false,\n      \"useRevisionTools\": false\n    },\n    \"invitationState\": 3230,\n    \"isExternal\": true,\n    \"isGuest\": true,\n    \"isLight\": true,\n    \"lastLoginTime\": \"1968-10-07T02:18:46.967Z\",\n    \"personalMessageAllowed\": false,\n    \"source\": 5617\n  },\n  \"attachment\": {\n    \"fileName\": \"string\",\n    \"href\": \"https://GwgTEZjv.xzlqjZQ1pKwnYd7en9zRFqD-,hew5xJQkg\",\n    \"id\": \"string\",\n    \"mimeType\": \"string\",\n    \"name\": \"string\",\n    \"thumbnailFor\": \"string\",\n    \"viewRef\": \"https://qOa.srKpuWgSpcl5iGthPYBd-gTZUL9e9pxPPIdZ\"\n  },\n  \"calloutInstanceId\": \"string\",\n  \"canDelete\": false,\n  \"canResolveOrReopen\": false,\n  \"coordinates\": {\n    \"x\": 2818.895012374246,\n    \"y\": 3041.7361416502054,\n    \"z\": 2613.1113504701675\n  },\n  \"createdAt\": \"2014-10-08T09:15:06.140Z\",\n  \"dimensionConstraintId\": \"string\",\n  \"dimensionFeatureId\": \"string\",\n  \"dimensionParameterId\": \"string\",\n  \"dimensionPartQuery\": \"string\",\n  \"documentId\": \"string\",\n  \"elementFeature\": \"string\",\n  \"elementId\": \"string\",\n  \"elementOccurrences\": [\n    \"string\",\n    \"string\"\n  ],\n  \"elementQuery\": \"string\",\n  \"href\": \"https://NVspsmUslqoPpwlZCiFsvnRRsYchbLnMI.eoxfXJro9lx,WRbSCzcgfWREV3h\",\n  \"id\": \"string\",\n  \"message\": \"string\",\n  \"name\": \"string\",\n  \"objectId\": \"string\",\n  \"objectType\": 5842,\n  \"parentId\": \"string\",\n  \"releasePackageId\": \"string\",\n  \"reopenedAt\": \"2025-11-25T16:04:41.962Z\",\n  \"reopenedBy\": {\n    \"jsonType\": \"string\",\n    \"href\": \"https://FXJLHQTVobzBQhQONq.oqqrR4aJYOC+hISL4MReUuEqVyPo7bZuFmvIO3exPwNCJgZKb,RwX\",\n    \"id\": \"string\",\n    \"name\": \"string\",\n    \"viewRef\": \"http://wMkRdYzPSzIQieSUmE.enmZpsEmpy8VjJEemfr9\",\n    \"image\": \"string\",\n    \"isOnshapeSupport\": true,\n    \"state\": 1522,\n    \"documentationName\": \"string\",\n    \"email\": \"string\",\n    \"firstName\": \"string\",\n    \"lastName\": \"string\",\n    \"company\": {\n      \"admin\": false,\n      \"description\": \"string\",\n      \"domainPrefix\": \"string\",\n      \"enterpriseBaseUrl\": \"string\",\n      \"enterpriseSubtype\": 613,\n      \"href\": \"http://cfHwVQP.qmxL+iTXqo4ca1UhugAhfsh,X\",\n      \"id\": \"string\",\n      \"image\": \"string\",\n      \"name\": \"string\",\n      \"noPublicDocuments\": true,\n      \"ownerId\": \"string\",\n      \"secondaryDomainPrefixes\": [\n        \"string\"\n      ],\n      \"state\": 8707,\n      \"type\": 7896,\n      \"viewRef\": \"https://yfaMJ.dtmCWrkZiFJ.fWR\"\n    },\n    \"companyUserState\": 4641,\n    \"confirmationRequested\": false,\n    \"documentationNameOverride\": \"string\",\n    \"globalPermissions\": {\n      \"accessReports\": false,\n      \"adminEnterprise\": false,\n      \"allowAppStoreAccess\": false,\n      \"allowPublicDocumentsAccess\": false,\n      \"approveReleases\": true,\n      \"branchLockPermissions\": false,\n      \"createDocumentsInRoot\": true,\n      \"createProject\": false,\n      \"createReleases\": false,\n      \"createTasks\": false,\n      \"deletePermanently\": true,\n      \"enableLabs\": false,\n      \"exportFiles\": true,\n      \"importFiles\": true,\n      \"manageGuestUsers\": false,\n      \"manageNonGeometricItems\": true,\n      \"manageRbac\": true,\n      \"manageStandardContentMetadata\": true,\n      \"manageUsers\": true,\n      \"manageWorkflows\": true,\n      \"shareForAnonymousAccess\": true,\n      \"transferDocumentsFromEnterprise\": false,\n      \"useRevisionTools\": false\n    },\n    \"invitationState\": 6355,\n    \"isExternal\": false,\n    \"isGuest\": false,\n    \"isLight\": true,\n    \"lastLoginTime\": \"2010-06-22T08:12:30.244Z\",\n    \"personalMessageAllowed\": true,\n    \"source\": 3358\n  },\n  \"replyCount\": 9571,\n  \"resolvedAt\": \"1996-06-23T05:05:51.161Z\",\n  \"resolvedBy\": {\n    \"jsonType\": \"string\",\n    \"href\": \"https://zAynFXjQdOySNNjdvlDfQzVDIbzCWVH.ggwNqs6ZF9tQkRsnlTOL9Nrg7M9cT1QXzP.GL9,Oi05wUyaHBBp2BEgAjWQm.wF\",\n    \"id\": \"string\",\n    \"name\": \"string\",\n    \"viewRef\": \"http://GVR.thoNo\",\n    \"image\": \"string\",\n    \"isOnshapeSupport\": true,\n    \"state\": 482,\n    \"documentationName\": \"string\",\n    \"email\": \"string\",\n    \"firstName\": \"string\",\n    \"lastName\": \"string\",\n    \"company\": {\n      \"admin\": true,\n      \"description\": \"string\",\n      \"domainPrefix\": \"string\",\n      \"enterpriseBaseUrl\": \"string\",\n      \"enterpriseSubtype\": 9109,\n      \"href\": \"https://KVwMiSeQKiECRQALRfqVVjGeQB.rksMPolK4wlBuUnbtEB0..SxUZVseCrZ1rxnaXEYpkgTeqArRVA.MK2D\",\n      \"id\": \"string\",\n      \"image\": \"string\",\n      \"name\": \"string\",\n      \"noPublicDocuments\": true,\n      \"ownerId\": \"string\",\n      \"secondaryDomainPrefixes\": [\n        \"string\"\n      ],\n      \"state\": 5287,\n      \"type\": 7305,\n      \"viewRef\": \"https://XCinSGBzZZQAlg.ckzQJkaWJuwRVdqi2KHzhCBLAtN.-E5fhS,DRGCizz.vRnSZ1AcAoEHlfyAZiTF\"\n    },\n    \"companyUserState\": 6094,\n    \"confirmationRequested\": true,\n    \"documentationNameOverride\": \"string\",\n    \"globalPermissions\": {\n      \"accessReports\": true,\n      \"adminEnterprise\": false,\n      \"allowAppStoreAccess\": false,\n      \"allowPublicDocumentsAccess\": true,\n      \"approveReleases\": true,\n      \"branchLockPermissions\": true,\n      \"createDocumentsInRoot\": false,\n      \"createProject\": false,\n      \"createReleases\": true,\n      \"createTasks\": true,\n      \"deletePermanently\": true,\n      \"enableLabs\": false,\n      \"exportFiles\": false,\n      \"importFiles\": true,\n      \"manageGuestUsers\": true,\n      \"manageNonGeometricItems\": false,\n      \"manageRbac\": false,\n      \"manageStandardContentMetadata\": true,\n      \"manageUsers\": false,\n      \"manageWorkflows\": true,\n      \"shareForAnonymousAccess\": false,\n      \"transferDocumentsFromEnterprise\": true,\n      \"useRevisionTools\": true\n    },\n    \"invitationState\": 14,\n    \"isExternal\": true,\n    \"isGuest\": true,\n    \"isLight\": false,\n    \"lastLoginTime\": \"2017-03-17T01:08:25.594Z\",\n    \"personalMessageAllowed\": false,\n    \"source\": 3342\n  },\n  \"state\": 4430,\n  \"thumbnail\": {\n    \"fileName\": \"string\",\n    \"href\": \"https://qJdPRvROACHzf.mukRuafbl9JwVWxeDqybQrIWt2DV\",\n    \"id\": \"string\",\n    \"mimeType\": \"string\",\n    \"name\": \"string\",\n    \"thumbnailFor\": \"string\",\n    \"viewRef\": \"http://UTHplgmGXulqIoo.brafM7emI5k4lQQE\"\n  },\n  \"topLevel\": true,\n  \"user\": {\n    \"jsonType\": \"string\",\n    \"href\": \"https://GAeIfOyqc.dulk\",\n    \"id\": \"string\",\n    \"name\": \"string\",\n    \"viewRef\": \"https://nKl.buxeHT8e7PWaFFkvTklDjf,rJpf9kthKhpZbR2mfHLFGG5n5cYk4FRwxTlrMFZ\",\n    \"image\": \"string\",\n    \"isOnshapeSupport\": true,\n    \"state\": 9874,\n    \"documentationName\": \"string\",\n    \"email\": \"string\",\n    \"firstName\": \"string\",\n    \"lastName\": \"string\",\n    \"company\": {\n      \"admin\": true,\n      \"description\": \"string\",\n      \"domainPrefix\": \"string\",\n      \"enterpriseBaseUrl\": \"string\",\n      \"enterpriseSubtype\": 3401,\n      \"href\": \"http://pkftBVwbSvQBZYSjx.gjyphvZu2VEHD40\",\n      \"id\": \"string\",\n      \"image\": \"string\",\n      \"name\": \"string\",\n      \"noPublicDocuments\": true,\n      \"ownerId\": \"string\",\n      \"secondaryDomainPrefixes\": [\n        \"string\"\n      ],\n      \"state\": 7938,\n      \"type\": 8430,\n      \"viewRef\": \"http://XKteKmLtTQSd.ypqcDAKPxuK9nt5QcqUcx\"\n    },\n    \"companyUserState\": 5784,\n    \"confirmationRequested\": true,\n    \"documentationNameOverride\": \"string\",\n    \"globalPermissions\": {\n      \"accessReports\": true,\n      \"adminEnterprise\": true,\n      \"allowAppStoreAccess\": true,\n      \"allowPublicDocumentsAccess\": false,\n      \"approveReleases\": false,\n      \"branchLockPermissions\": false,\n      \"createDocumentsInRoot\": false,\n      \"createProject\": true,\n      \"createReleases\": true,\n      \"createTasks\": false,\n      \"deletePermanently\": false,\n      \"enableLabs\": true,\n      \"exportFiles\": true,\n      \"importFiles\": true,\n      \"manageGuestUsers\": true,\n      \"manageNonGeometricItems\": false,\n      \"manageRbac\": true,\n      \"manageStandardContentMetadata\": false,\n      \"manageUsers\": true,\n      \"manageWorkflows\": false,\n      \"shareForAnonymousAccess\": false,\n      \"transferDocumentsFromEnterprise\": true,\n      \"useRevisionTools\": true\n    },\n    \"invitationState\": 2568,\n    \"isExternal\": true,\n    \"isGuest\": true,\n    \"isLight\": true,\n    \"lastLoginTime\": \"2001-07-31T02:18:43.518Z\",\n    \"personalMessageAllowed\": true,\n    \"source\": 6534\n  },\n  \"userCompany\": \"string\",\n  \"versionId\": \"string\",\n  \"viewData\": {\n    \"angle\": 1099.6639394585384,\n    \"cameraViewport\": [\n      7336.424425172884,\n      9186.283225369723\n    ],\n    \"isPerspective\": true,\n    \"viewMatrix\": [\n      7842.393631903021,\n      2609.18700272323\n    ]\n  },\n  \"viewRef\": \"http://RNJOZGqfSAWWHtrX.grifwo9Zwg3acqAQLc-g0M.+uPQ2GqW6G9gR+Ea7nE6LO9Dtpys,A1YlRNJ69bdkmR7JFzqUwLb0Qrsh\",\n  \"workspaceId\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ffb0f5f5-df72-4521-9ebd-2caf707f4ff8",
+          "name": "Update the content of an existing comment.",
+          "request": {
+            "name": "Update the content of an existing comment.",
+            "description": {},
+            "url": {
+              "path": [
+                "comments",
+                ":cid"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "cid",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json;charset=UTF-8; qs=0.09"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json;charset=UTF-8; qs=0.09"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "scope",
+                  "value": "OAuth2Internal OAuth2ReadPII OAuth2Read OAuth2Write OAuth2Delete OAuth2Purchase OAuth2Share document.create document.edit document.delete document.read enterprise.create enterprise.read enterprise.edit enterprise.delete enterprise.member.create enterprise.member.read enterprise.member.edit enterprise.member.delete webhook.create webhook.edit webhook.read webhook.delete PLMIntegration"
+                },
+                {
+                  "key": "redirect_uri",
+                  "value": "/oauth/token"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "/oauth/token"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "/oauth/authorize"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"annotationId\": \"<string>\",\n  \"annotationType\": \"<integer>\",\n  \"appEntity\": \"<string>\",\n  \"assemblyFeature\": \"<string>\",\n  \"assignee\": \"<string>\",\n  \"calloutInstanceId\": \"<string>\",\n  \"coordinates\": {\n    \"x\": \"<float>\",\n    \"y\": \"<float>\",\n    \"z\": \"<float>\"\n  },\n  \"dimensionConstraintId\": \"<string>\",\n  \"dimensionFeatureId\": \"<string>\",\n  \"dimensionParameterId\": \"<string>\",\n  \"dimensionPartQuery\": \"<string>\",\n  \"documentId\": \"<string>\",\n  \"elementFeature\": \"<string>\",\n  \"elementId\": \"<string>\",\n  \"elementOccurrence\": \"<string>\",\n  \"elementQuery\": \"<string>\",\n  \"id\": \"<string>\",\n  \"message\": \"<string>\",\n  \"objectId\": \"<string>\",\n  \"objectType\": \"<integer>\",\n  \"parentId\": \"<string>\",\n  \"versionId\": \"<string>\",\n  \"viewData\": {\n    \"angle\": \"<double>\",\n    \"cameraViewport\": [\n      \"<double>\",\n      \"<double>\"\n    ],\n    \"isPerspective\": \"<boolean>\",\n    \"viewMatrix\": [\n      \"<double>\",\n      \"<double>\"\n    ]\n  },\n  \"workspaceId\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "c918d30d-c1c8-4a81-8633-bb8530c1c53a",
+              "name": "default response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "comments",
+                    ":cid"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "cid",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json;charset=UTF-8; qs=0.09"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"annotationId\": \"<string>\",\n  \"annotationType\": \"<integer>\",\n  \"appEntity\": \"<string>\",\n  \"assemblyFeature\": \"<string>\",\n  \"assignee\": \"<string>\",\n  \"calloutInstanceId\": \"<string>\",\n  \"coordinates\": {\n    \"x\": \"<float>\",\n    \"y\": \"<float>\",\n    \"z\": \"<float>\"\n  },\n  \"dimensionConstraintId\": \"<string>\",\n  \"dimensionFeatureId\": \"<string>\",\n  \"dimensionParameterId\": \"<string>\",\n  \"dimensionPartQuery\": \"<string>\",\n  \"documentId\": \"<string>\",\n  \"elementFeature\": \"<string>\",\n  \"elementId\": \"<string>\",\n  \"elementOccurrence\": \"<string>\",\n  \"elementQuery\": \"<string>\",\n  \"id\": \"<string>\",\n  \"message\": \"<string>\",\n  \"objectId\": \"<string>\",\n  \"objectType\": \"<integer>\",\n  \"parentId\": \"<string>\",\n  \"versionId\": \"<string>\",\n  \"viewData\": {\n    \"angle\": \"<double>\",\n    \"cameraViewport\": [\n      \"<double>\",\n      \"<double>\"\n    ],\n    \"isPerspective\": \"<boolean>\",\n    \"viewMatrix\": [\n      \"<double>\",\n      \"<double>\"\n    ]\n  },\n  \"workspaceId\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json;charset=UTF-8; qs=0.09"
+                }
+              ],
+              "body": "{\n  \"annotationId\": \"string\",\n  \"annotationType\": 3996,\n  \"appEntity\": \"string\",\n  \"assemblyFeatures\": [\n    \"string\",\n    \"string\"\n  ],\n  \"assignedAt\": \"2009-10-05T10:32:57.782Z\",\n  \"assignee\": {\n    \"jsonType\": \"string\",\n    \"href\": \"https://CHzpLFyrw.nkcZcxUDD5VX3,MdWxfTFSVNss5w4.8A5HX\",\n    \"id\": \"string\",\n    \"name\": \"string\",\n    \"viewRef\": \"https://ECciieQsVikGwoyPymwcHgvceHkk.euhbvPqBf.mp3CzifBbJi,f5r0h0-+SxoLYfONk0KpPROrjLqhSmeOA-IaP3IacxR\",\n    \"image\": \"string\",\n    \"isOnshapeSupport\": true,\n    \"state\": 1831,\n    \"documentationName\": \"string\",\n    \"email\": \"string\",\n    \"firstName\": \"string\",\n    \"lastName\": \"string\",\n    \"company\": {\n      \"admin\": true,\n      \"description\": \"string\",\n      \"domainPrefix\": \"string\",\n      \"enterpriseBaseUrl\": \"string\",\n      \"enterpriseSubtype\": 8930,\n      \"href\": \"http://Dir.tnThgGE\",\n      \"id\": \"string\",\n      \"image\": \"string\",\n      \"name\": \"string\",\n      \"noPublicDocuments\": false,\n      \"ownerId\": \"string\",\n      \"secondaryDomainPrefixes\": [\n        \"string\"\n      ],\n      \"state\": 6998,\n      \"type\": 1534,\n      \"viewRef\": \"http://iCVplsA.aalFq3AG2XGQGktJdhI,,dbHtJs6muMYr\"\n    },\n    \"companyUserState\": 335,\n    \"confirmationRequested\": false,\n    \"documentationNameOverride\": \"string\",\n    \"globalPermissions\": {\n      \"accessReports\": false,\n      \"adminEnterprise\": true,\n      \"allowAppStoreAccess\": true,\n      \"allowPublicDocumentsAccess\": false,\n      \"approveReleases\": false,\n      \"branchLockPermissions\": true,\n      \"createDocumentsInRoot\": false,\n      \"createProject\": true,\n      \"createReleases\": false,\n      \"createTasks\": true,\n      \"deletePermanently\": false,\n      \"enableLabs\": false,\n      \"exportFiles\": false,\n      \"importFiles\": true,\n      \"manageGuestUsers\": false,\n      \"manageNonGeometricItems\": false,\n      \"manageRbac\": false,\n      \"manageStandardContentMetadata\": false,\n      \"manageUsers\": true,\n      \"manageWorkflows\": true,\n      \"shareForAnonymousAccess\": false,\n      \"transferDocumentsFromEnterprise\": false,\n      \"useRevisionTools\": false\n    },\n    \"invitationState\": 3230,\n    \"isExternal\": true,\n    \"isGuest\": true,\n    \"isLight\": true,\n    \"lastLoginTime\": \"1968-10-07T02:18:46.967Z\",\n    \"personalMessageAllowed\": false,\n    \"source\": 5617\n  },\n  \"attachment\": {\n    \"fileName\": \"string\",\n    \"href\": \"https://GwgTEZjv.xzlqjZQ1pKwnYd7en9zRFqD-,hew5xJQkg\",\n    \"id\": \"string\",\n    \"mimeType\": \"string\",\n    \"name\": \"string\",\n    \"thumbnailFor\": \"string\",\n    \"viewRef\": \"https://qOa.srKpuWgSpcl5iGthPYBd-gTZUL9e9pxPPIdZ\"\n  },\n  \"calloutInstanceId\": \"string\",\n  \"canDelete\": false,\n  \"canResolveOrReopen\": false,\n  \"coordinates\": {\n    \"x\": 2818.895012374246,\n    \"y\": 3041.7361416502054,\n    \"z\": 2613.1113504701675\n  },\n  \"createdAt\": \"2014-10-08T09:15:06.140Z\",\n  \"dimensionConstraintId\": \"string\",\n  \"dimensionFeatureId\": \"string\",\n  \"dimensionParameterId\": \"string\",\n  \"dimensionPartQuery\": \"string\",\n  \"documentId\": \"string\",\n  \"elementFeature\": \"string\",\n  \"elementId\": \"string\",\n  \"elementOccurrences\": [\n    \"string\",\n    \"string\"\n  ],\n  \"elementQuery\": \"string\",\n  \"href\": \"https://NVspsmUslqoPpwlZCiFsvnRRsYchbLnMI.eoxfXJro9lx,WRbSCzcgfWREV3h\",\n  \"id\": \"string\",\n  \"message\": \"string\",\n  \"name\": \"string\",\n  \"objectId\": \"string\",\n  \"objectType\": 5842,\n  \"parentId\": \"string\",\n  \"releasePackageId\": \"string\",\n  \"reopenedAt\": \"2025-11-25T16:04:41.962Z\",\n  \"reopenedBy\": {\n    \"jsonType\": \"string\",\n    \"href\": \"https://FXJLHQTVobzBQhQONq.oqqrR4aJYOC+hISL4MReUuEqVyPo7bZuFmvIO3exPwNCJgZKb,RwX\",\n    \"id\": \"string\",\n    \"name\": \"string\",\n    \"viewRef\": \"http://wMkRdYzPSzIQieSUmE.enmZpsEmpy8VjJEemfr9\",\n    \"image\": \"string\",\n    \"isOnshapeSupport\": true,\n    \"state\": 1522,\n    \"documentationName\": \"string\",\n    \"email\": \"string\",\n    \"firstName\": \"string\",\n    \"lastName\": \"string\",\n    \"company\": {\n      \"admin\": false,\n      \"description\": \"string\",\n      \"domainPrefix\": \"string\",\n      \"enterpriseBaseUrl\": \"string\",\n      \"enterpriseSubtype\": 613,\n      \"href\": \"http://cfHwVQP.qmxL+iTXqo4ca1UhugAhfsh,X\",\n      \"id\": \"string\",\n      \"image\": \"string\",\n      \"name\": \"string\",\n      \"noPublicDocuments\": true,\n      \"ownerId\": \"string\",\n      \"secondaryDomainPrefixes\": [\n        \"string\"\n      ],\n      \"state\": 8707,\n      \"type\": 7896,\n      \"viewRef\": \"https://yfaMJ.dtmCWrkZiFJ.fWR\"\n    },\n    \"companyUserState\": 4641,\n    \"confirmationRequested\": false,\n    \"documentationNameOverride\": \"string\",\n    \"globalPermissions\": {\n      \"accessReports\": false,\n      \"adminEnterprise\": false,\n      \"allowAppStoreAccess\": false,\n      \"allowPublicDocumentsAccess\": false,\n      \"approveReleases\": true,\n      \"branchLockPermissions\": false,\n      \"createDocumentsInRoot\": true,\n      \"createProject\": false,\n      \"createReleases\": false,\n      \"createTasks\": false,\n      \"deletePermanently\": true,\n      \"enableLabs\": false,\n      \"exportFiles\": true,\n      \"importFiles\": true,\n      \"manageGuestUsers\": false,\n      \"manageNonGeometricItems\": true,\n      \"manageRbac\": true,\n      \"manageStandardContentMetadata\": true,\n      \"manageUsers\": true,\n      \"manageWorkflows\": true,\n      \"shareForAnonymousAccess\": true,\n      \"transferDocumentsFromEnterprise\": false,\n      \"useRevisionTools\": false\n    },\n    \"invitationState\": 6355,\n    \"isExternal\": false,\n    \"isGuest\": false,\n    \"isLight\": true,\n    \"lastLoginTime\": \"2010-06-22T08:12:30.244Z\",\n    \"personalMessageAllowed\": true,\n    \"source\": 3358\n  },\n  \"replyCount\": 9571,\n  \"resolvedAt\": \"1996-06-23T05:05:51.161Z\",\n  \"resolvedBy\": {\n    \"jsonType\": \"string\",\n    \"href\": \"https://zAynFXjQdOySNNjdvlDfQzVDIbzCWVH.ggwNqs6ZF9tQkRsnlTOL9Nrg7M9cT1QXzP.GL9,Oi05wUyaHBBp2BEgAjWQm.wF\",\n    \"id\": \"string\",\n    \"name\": \"string\",\n    \"viewRef\": \"http://GVR.thoNo\",\n    \"image\": \"string\",\n    \"isOnshapeSupport\": true,\n    \"state\": 482,\n    \"documentationName\": \"string\",\n    \"email\": \"string\",\n    \"firstName\": \"string\",\n    \"lastName\": \"string\",\n    \"company\": {\n      \"admin\": true,\n      \"description\": \"string\",\n      \"domainPrefix\": \"string\",\n      \"enterpriseBaseUrl\": \"string\",\n      \"enterpriseSubtype\": 9109,\n      \"href\": \"https://KVwMiSeQKiECRQALRfqVVjGeQB.rksMPolK4wlBuUnbtEB0..SxUZVseCrZ1rxnaXEYpkgTeqArRVA.MK2D\",\n      \"id\": \"string\",\n      \"image\": \"string\",\n      \"name\": \"string\",\n      \"noPublicDocuments\": true,\n      \"ownerId\": \"string\",\n      \"secondaryDomainPrefixes\": [\n        \"string\"\n      ],\n      \"state\": 5287,\n      \"type\": 7305,\n      \"viewRef\": \"https://XCinSGBzZZQAlg.ckzQJkaWJuwRVdqi2KHzhCBLAtN.-E5fhS,DRGCizz.vRnSZ1AcAoEHlfyAZiTF\"\n    },\n    \"companyUserState\": 6094,\n    \"confirmationRequested\": true,\n    \"documentationNameOverride\": \"string\",\n    \"globalPermissions\": {\n      \"accessReports\": true,\n      \"adminEnterprise\": false,\n      \"allowAppStoreAccess\": false,\n      \"allowPublicDocumentsAccess\": true,\n      \"approveReleases\": true,\n      \"branchLockPermissions\": true,\n      \"createDocumentsInRoot\": false,\n      \"createProject\": false,\n      \"createReleases\": true,\n      \"createTasks\": true,\n      \"deletePermanently\": true,\n      \"enableLabs\": false,\n      \"exportFiles\": false,\n      \"importFiles\": true,\n      \"manageGuestUsers\": true,\n      \"manageNonGeometricItems\": false,\n      \"manageRbac\": false,\n      \"manageStandardContentMetadata\": true,\n      \"manageUsers\": false,\n      \"manageWorkflows\": true,\n      \"shareForAnonymousAccess\": false,\n      \"transferDocumentsFromEnterprise\": true,\n      \"useRevisionTools\": true\n    },\n    \"invitationState\": 14,\n    \"isExternal\": true,\n    \"isGuest\": true,\n    \"isLight\": false,\n    \"lastLoginTime\": \"2017-03-17T01:08:25.594Z\",\n    \"personalMessageAllowed\": false,\n    \"source\": 3342\n  },\n  \"state\": 4430,\n  \"thumbnail\": {\n    \"fileName\": \"string\",\n    \"href\": \"https://qJdPRvROACHzf.mukRuafbl9JwVWxeDqybQrIWt2DV\",\n    \"id\": \"string\",\n    \"mimeType\": \"string\",\n    \"name\": \"string\",\n    \"thumbnailFor\": \"string\",\n    \"viewRef\": \"http://UTHplgmGXulqIoo.brafM7emI5k4lQQE\"\n  },\n  \"topLevel\": true,\n  \"user\": {\n    \"jsonType\": \"string\",\n    \"href\": \"https://GAeIfOyqc.dulk\",\n    \"id\": \"string\",\n    \"name\": \"string\",\n    \"viewRef\": \"https://nKl.buxeHT8e7PWaFFkvTklDjf,rJpf9kthKhpZbR2mfHLFGG5n5cYk4FRwxTlrMFZ\",\n    \"image\": \"string\",\n    \"isOnshapeSupport\": true,\n    \"state\": 9874,\n    \"documentationName\": \"string\",\n    \"email\": \"string\",\n    \"firstName\": \"string\",\n    \"lastName\": \"string\",\n    \"company\": {\n      \"admin\": true,\n      \"description\": \"string\",\n      \"domainPrefix\": \"string\",\n      \"enterpriseBaseUrl\": \"string\",\n      \"enterpriseSubtype\": 3401,\n      \"href\": \"http://pkftBVwbSvQBZYSjx.gjyphvZu2VEHD40\",\n      \"id\": \"string\",\n      \"image\": \"string\",\n      \"name\": \"string\",\n      \"noPublicDocuments\": true,\n      \"ownerId\": \"string\",\n      \"secondaryDomainPrefixes\": [\n        \"string\"\n      ],\n      \"state\": 7938,\n      \"type\": 8430,\n      \"viewRef\": \"http://XKteKmLtTQSd.ypqcDAKPxuK9nt5QcqUcx\"\n    },\n    \"companyUserState\": 5784,\n    \"confirmationRequested\": true,\n    \"documentationNameOverride\": \"string\",\n    \"globalPermissions\": {\n      \"accessReports\": true,\n      \"adminEnterprise\": true,\n      \"allowAppStoreAccess\": true,\n      \"allowPublicDocumentsAccess\": false,\n      \"approveReleases\": false,\n      \"branchLockPermissions\": false,\n      \"createDocumentsInRoot\": false,\n      \"createProject\": true,\n      \"createReleases\": true,\n      \"createTasks\": false,\n      \"deletePermanently\": false,\n      \"enableLabs\": true,\n      \"exportFiles\": true,\n      \"importFiles\": true,\n      \"manageGuestUsers\": true,\n      \"manageNonGeometricItems\": false,\n      \"manageRbac\": true,\n      \"manageStandardContentMetadata\": false,\n      \"manageUsers\": true,\n      \"manageWorkflows\": false,\n      \"shareForAnonymousAccess\": false,\n      \"transferDocumentsFromEnterprise\": true,\n      \"useRevisionTools\": true\n    },\n    \"invitationState\": 2568,\n    \"isExternal\": true,\n    \"isGuest\": true,\n    \"isLight\": true,\n    \"lastLoginTime\": \"2001-07-31T02:18:43.518Z\",\n    \"personalMessageAllowed\": true,\n    \"source\": 6534\n  },\n  \"userCompany\": \"string\",\n  \"versionId\": \"string\",\n  \"viewData\": {\n    \"angle\": 1099.6639394585384,\n    \"cameraViewport\": [\n      7336.424425172884,\n      9186.283225369723\n    ],\n    \"isPerspective\": true,\n    \"viewMatrix\": [\n      7842.393631903021,\n      2609.18700272323\n    ]\n  },\n  \"viewRef\": \"http://RNJOZGqfSAWWHtrX.grifwo9Zwg3acqAQLc-g0M.+uPQ2GqW6G9gR+Ea7nE6LO9Dtpys,A1YlRNJ69bdkmR7JFzqUwLb0Qrsh\",\n  \"workspaceId\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e08c2b00-1c4d-425d-917a-6b8f6053652c",
+          "name": "Delete a comment from a document.",
+          "request": {
+            "name": "Delete a comment from a document.",
+            "description": {},
+            "url": {
+              "path": [
+                "comments",
+                ":cid"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "cid",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json;charset=UTF-8; qs=0.09"
+              }
+            ],
+            "method": "DELETE",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "scope",
+                  "value": "OAuth2Internal OAuth2ReadPII OAuth2Read OAuth2Write OAuth2Delete OAuth2Purchase OAuth2Share document.create document.edit document.delete document.read enterprise.create enterprise.read enterprise.edit enterprise.delete enterprise.member.create enterprise.member.read enterprise.member.edit enterprise.member.delete webhook.create webhook.edit webhook.read webhook.delete PLMIntegration"
+                },
+                {
+                  "key": "redirect_uri",
+                  "value": "/oauth/token"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "/oauth/token"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "/oauth/authorize"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "b2eec905-884c-4033-83d3-6cc483a8c26b",
+              "name": "default response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "comments",
+                    ":cid"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "cid",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json;charset=UTF-8; qs=0.09"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json;charset=UTF-8; qs=0.09"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "79e6ae02-6223-4fca-8b4e-d7bf9039a44f",
+          "name": "Add an attachment to a comment.",
+          "request": {
+            "name": "Add an attachment to a comment.",
+            "description": {
+              "content": "Attach a file to the comment. The file must be in JPEG, PNG, or GIF format",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "comments",
+                ":cid",
+                "attachment"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "cid",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "multipart/form-data"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json;charset=UTF-8; qs=0.09"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "scope",
+                  "value": "OAuth2Internal OAuth2ReadPII OAuth2Read OAuth2Write OAuth2Delete OAuth2Purchase OAuth2Share document.create document.edit document.delete document.read enterprise.create enterprise.read enterprise.edit enterprise.delete enterprise.member.create enterprise.member.read enterprise.member.edit enterprise.member.delete webhook.create webhook.edit webhook.read webhook.delete PLMIntegration"
+                },
+                {
+                  "key": "redirect_uri",
+                  "value": "/oauth/token"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "/oauth/token"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "/oauth/authorize"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code"
+                }
+              ]
+            },
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "file",
+                  "type": "file",
+                  "description": "The file to upload."
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "31fb0ab9-21c0-481c-9d07-37adf81ec6e6",
+              "name": "default response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "comments",
+                    ":cid",
+                    "attachment"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "cid",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json;charset=UTF-8; qs=0.09"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "description": {
+                        "content": "The file to upload.",
+                        "type": "text/plain"
+                      },
+                      "key": "file",
+                      "value": "<binary>",
+                      "type": "text"
+                    }
+                  ]
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json;charset=UTF-8; qs=0.09"
+                }
+              ],
+              "body": "{\n  \"annotationId\": \"string\",\n  \"annotationType\": 3996,\n  \"appEntity\": \"string\",\n  \"assemblyFeatures\": [\n    \"string\",\n    \"string\"\n  ],\n  \"assignedAt\": \"2009-10-05T10:32:57.782Z\",\n  \"assignee\": {\n    \"jsonType\": \"string\",\n    \"href\": \"https://CHzpLFyrw.nkcZcxUDD5VX3,MdWxfTFSVNss5w4.8A5HX\",\n    \"id\": \"string\",\n    \"name\": \"string\",\n    \"viewRef\": \"https://ECciieQsVikGwoyPymwcHgvceHkk.euhbvPqBf.mp3CzifBbJi,f5r0h0-+SxoLYfONk0KpPROrjLqhSmeOA-IaP3IacxR\",\n    \"image\": \"string\",\n    \"isOnshapeSupport\": true,\n    \"state\": 1831,\n    \"documentationName\": \"string\",\n    \"email\": \"string\",\n    \"firstName\": \"string\",\n    \"lastName\": \"string\",\n    \"company\": {\n      \"admin\": true,\n      \"description\": \"string\",\n      \"domainPrefix\": \"string\",\n      \"enterpriseBaseUrl\": \"string\",\n      \"enterpriseSubtype\": 8930,\n      \"href\": \"http://Dir.tnThgGE\",\n      \"id\": \"string\",\n      \"image\": \"string\",\n      \"name\": \"string\",\n      \"noPublicDocuments\": false,\n      \"ownerId\": \"string\",\n      \"secondaryDomainPrefixes\": [\n        \"string\"\n      ],\n      \"state\": 6998,\n      \"type\": 1534,\n      \"viewRef\": \"http://iCVplsA.aalFq3AG2XGQGktJdhI,,dbHtJs6muMYr\"\n    },\n    \"companyUserState\": 335,\n    \"confirmationRequested\": false,\n    \"documentationNameOverride\": \"string\",\n    \"globalPermissions\": {\n      \"accessReports\": false,\n      \"adminEnterprise\": true,\n      \"allowAppStoreAccess\": true,\n      \"allowPublicDocumentsAccess\": false,\n      \"approveReleases\": false,\n      \"branchLockPermissions\": true,\n      \"createDocumentsInRoot\": false,\n      \"createProject\": true,\n      \"createReleases\": false,\n      \"createTasks\": true,\n      \"deletePermanently\": false,\n      \"enableLabs\": false,\n      \"exportFiles\": false,\n      \"importFiles\": true,\n      \"manageGuestUsers\": false,\n      \"manageNonGeometricItems\": false,\n      \"manageRbac\": false,\n      \"manageStandardContentMetadata\": false,\n      \"manageUsers\": true,\n      \"manageWorkflows\": true,\n      \"shareForAnonymousAccess\": false,\n      \"transferDocumentsFromEnterprise\": false,\n      \"useRevisionTools\": false\n    },\n    \"invitationState\": 3230,\n    \"isExternal\": true,\n    \"isGuest\": true,\n    \"isLight\": true,\n    \"lastLoginTime\": \"1968-10-07T02:18:46.967Z\",\n    \"personalMessageAllowed\": false,\n    \"source\": 5617\n  },\n  \"attachment\": {\n    \"fileName\": \"string\",\n    \"href\": \"https://GwgTEZjv.xzlqjZQ1pKwnYd7en9zRFqD-,hew5xJQkg\",\n    \"id\": \"string\",\n    \"mimeType\": \"string\",\n    \"name\": \"string\",\n    \"thumbnailFor\": \"string\",\n    \"viewRef\": \"https://qOa.srKpuWgSpcl5iGthPYBd-gTZUL9e9pxPPIdZ\"\n  },\n  \"calloutInstanceId\": \"string\",\n  \"canDelete\": false,\n  \"canResolveOrReopen\": false,\n  \"coordinates\": {\n    \"x\": 2818.895012374246,\n    \"y\": 3041.7361416502054,\n    \"z\": 2613.1113504701675\n  },\n  \"createdAt\": \"2014-10-08T09:15:06.140Z\",\n  \"dimensionConstraintId\": \"string\",\n  \"dimensionFeatureId\": \"string\",\n  \"dimensionParameterId\": \"string\",\n  \"dimensionPartQuery\": \"string\",\n  \"documentId\": \"string\",\n  \"elementFeature\": \"string\",\n  \"elementId\": \"string\",\n  \"elementOccurrences\": [\n    \"string\",\n    \"string\"\n  ],\n  \"elementQuery\": \"string\",\n  \"href\": \"https://NVspsmUslqoPpwlZCiFsvnRRsYchbLnMI.eoxfXJro9lx,WRbSCzcgfWREV3h\",\n  \"id\": \"string\",\n  \"message\": \"string\",\n  \"name\": \"string\",\n  \"objectId\": \"string\",\n  \"objectType\": 5842,\n  \"parentId\": \"string\",\n  \"releasePackageId\": \"string\",\n  \"reopenedAt\": \"2025-11-25T16:04:41.962Z\",\n  \"reopenedBy\": {\n    \"jsonType\": \"string\",\n    \"href\": \"https://FXJLHQTVobzBQhQONq.oqqrR4aJYOC+hISL4MReUuEqVyPo7bZuFmvIO3exPwNCJgZKb,RwX\",\n    \"id\": \"string\",\n    \"name\": \"string\",\n    \"viewRef\": \"http://wMkRdYzPSzIQieSUmE.enmZpsEmpy8VjJEemfr9\",\n    \"image\": \"string\",\n    \"isOnshapeSupport\": true,\n    \"state\": 1522,\n    \"documentationName\": \"string\",\n    \"email\": \"string\",\n    \"firstName\": \"string\",\n    \"lastName\": \"string\",\n    \"company\": {\n      \"admin\": false,\n      \"description\": \"string\",\n      \"domainPrefix\": \"string\",\n      \"enterpriseBaseUrl\": \"string\",\n      \"enterpriseSubtype\": 613,\n      \"href\": \"http://cfHwVQP.qmxL+iTXqo4ca1UhugAhfsh,X\",\n      \"id\": \"string\",\n      \"image\": \"string\",\n      \"name\": \"string\",\n      \"noPublicDocuments\": true,\n      \"ownerId\": \"string\",\n      \"secondaryDomainPrefixes\": [\n        \"string\"\n      ],\n      \"state\": 8707,\n      \"type\": 7896,\n      \"viewRef\": \"https://yfaMJ.dtmCWrkZiFJ.fWR\"\n    },\n    \"companyUserState\": 4641,\n    \"confirmationRequested\": false,\n    \"documentationNameOverride\": \"string\",\n    \"globalPermissions\": {\n      \"accessReports\": false,\n      \"adminEnterprise\": false,\n      \"allowAppStoreAccess\": false,\n      \"allowPublicDocumentsAccess\": false,\n      \"approveReleases\": true,\n      \"branchLockPermissions\": false,\n      \"createDocumentsInRoot\": true,\n      \"createProject\": false,\n      \"createReleases\": false,\n      \"createTasks\": false,\n      \"deletePermanently\": true,\n      \"enableLabs\": false,\n      \"exportFiles\": true,\n      \"importFiles\": true,\n      \"manageGuestUsers\": false,\n      \"manageNonGeometricItems\": true,\n      \"manageRbac\": true,\n      \"manageStandardContentMetadata\": true,\n      \"manageUsers\": true,\n      \"manageWorkflows\": true,\n      \"shareForAnonymousAccess\": true,\n      \"transferDocumentsFromEnterprise\": false,\n      \"useRevisionTools\": false\n    },\n    \"invitationState\": 6355,\n    \"isExternal\": false,\n    \"isGuest\": false,\n    \"isLight\": true,\n    \"lastLoginTime\": \"2010-06-22T08:12:30.244Z\",\n    \"personalMessageAllowed\": true,\n    \"source\": 3358\n  },\n  \"replyCount\": 9571,\n  \"resolvedAt\": \"1996-06-23T05:05:51.161Z\",\n  \"resolvedBy\": {\n    \"jsonType\": \"string\",\n    \"href\": \"https://zAynFXjQdOySNNjdvlDfQzVDIbzCWVH.ggwNqs6ZF9tQkRsnlTOL9Nrg7M9cT1QXzP.GL9,Oi05wUyaHBBp2BEgAjWQm.wF\",\n    \"id\": \"string\",\n    \"name\": \"string\",\n    \"viewRef\": \"http://GVR.thoNo\",\n    \"image\": \"string\",\n    \"isOnshapeSupport\": true,\n    \"state\": 482,\n    \"documentationName\": \"string\",\n    \"email\": \"string\",\n    \"firstName\": \"string\",\n    \"lastName\": \"string\",\n    \"company\": {\n      \"admin\": true,\n      \"description\": \"string\",\n      \"domainPrefix\": \"string\",\n      \"enterpriseBaseUrl\": \"string\",\n      \"enterpriseSubtype\": 9109,\n      \"href\": \"https://KVwMiSeQKiECRQALRfqVVjGeQB.rksMPolK4wlBuUnbtEB0..SxUZVseCrZ1rxnaXEYpkgTeqArRVA.MK2D\",\n      \"id\": \"string\",\n      \"image\": \"string\",\n      \"name\": \"string\",\n      \"noPublicDocuments\": true,\n      \"ownerId\": \"string\",\n      \"secondaryDomainPrefixes\": [\n        \"string\"\n      ],\n      \"state\": 5287,\n      \"type\": 7305,\n      \"viewRef\": \"https://XCinSGBzZZQAlg.ckzQJkaWJuwRVdqi2KHzhCBLAtN.-E5fhS,DRGCizz.vRnSZ1AcAoEHlfyAZiTF\"\n    },\n    \"companyUserState\": 6094,\n    \"confirmationRequested\": true,\n    \"documentationNameOverride\": \"string\",\n    \"globalPermissions\": {\n      \"accessReports\": true,\n      \"adminEnterprise\": false,\n      \"allowAppStoreAccess\": false,\n      \"allowPublicDocumentsAccess\": true,\n      \"approveReleases\": true,\n      \"branchLockPermissions\": true,\n      \"createDocumentsInRoot\": false,\n      \"createProject\": false,\n      \"createReleases\": true,\n      \"createTasks\": true,\n      \"deletePermanently\": true,\n      \"enableLabs\": false,\n      \"exportFiles\": false,\n      \"importFiles\": true,\n      \"manageGuestUsers\": true,\n      \"manageNonGeometricItems\": false,\n      \"manageRbac\": false,\n      \"manageStandardContentMetadata\": true,\n      \"manageUsers\": false,\n      \"manageWorkflows\": true,\n      \"shareForAnonymousAccess\": false,\n      \"transferDocumentsFromEnterprise\": true,\n      \"useRevisionTools\": true\n    },\n    \"invitationState\": 14,\n    \"isExternal\": true,\n    \"isGuest\": true,\n    \"isLight\": false,\n    \"lastLoginTime\": \"2017-03-17T01:08:25.594Z\",\n    \"personalMessageAllowed\": false,\n    \"source\": 3342\n  },\n  \"state\": 4430,\n  \"thumbnail\": {\n    \"fileName\": \"string\",\n    \"href\": \"https://qJdPRvROACHzf.mukRuafbl9JwVWxeDqybQrIWt2DV\",\n    \"id\": \"string\",\n    \"mimeType\": \"string\",\n    \"name\": \"string\",\n    \"thumbnailFor\": \"string\",\n    \"viewRef\": \"http://UTHplgmGXulqIoo.brafM7emI5k4lQQE\"\n  },\n  \"topLevel\": true,\n  \"user\": {\n    \"jsonType\": \"string\",\n    \"href\": \"https://GAeIfOyqc.dulk\",\n    \"id\": \"string\",\n    \"name\": \"string\",\n    \"viewRef\": \"https://nKl.buxeHT8e7PWaFFkvTklDjf,rJpf9kthKhpZbR2mfHLFGG5n5cYk4FRwxTlrMFZ\",\n    \"image\": \"string\",\n    \"isOnshapeSupport\": true,\n    \"state\": 9874,\n    \"documentationName\": \"string\",\n    \"email\": \"string\",\n    \"firstName\": \"string\",\n    \"lastName\": \"string\",\n    \"company\": {\n      \"admin\": true,\n      \"description\": \"string\",\n      \"domainPrefix\": \"string\",\n      \"enterpriseBaseUrl\": \"string\",\n      \"enterpriseSubtype\": 3401,\n      \"href\": \"http://pkftBVwbSvQBZYSjx.gjyphvZu2VEHD40\",\n      \"id\": \"string\",\n      \"image\": \"string\",\n      \"name\": \"string\",\n      \"noPublicDocuments\": true,\n      \"ownerId\": \"string\",\n      \"secondaryDomainPrefixes\": [\n        \"string\"\n      ],\n      \"state\": 7938,\n      \"type\": 8430,\n      \"viewRef\": \"http://XKteKmLtTQSd.ypqcDAKPxuK9nt5QcqUcx\"\n    },\n    \"companyUserState\": 5784,\n    \"confirmationRequested\": true,\n    \"documentationNameOverride\": \"string\",\n    \"globalPermissions\": {\n      \"accessReports\": true,\n      \"adminEnterprise\": true,\n      \"allowAppStoreAccess\": true,\n      \"allowPublicDocumentsAccess\": false,\n      \"approveReleases\": false,\n      \"branchLockPermissions\": false,\n      \"createDocumentsInRoot\": false,\n      \"createProject\": true,\n      \"createReleases\": true,\n      \"createTasks\": false,\n      \"deletePermanently\": false,\n      \"enableLabs\": true,\n      \"exportFiles\": true,\n      \"importFiles\": true,\n      \"manageGuestUsers\": true,\n      \"manageNonGeometricItems\": false,\n      \"manageRbac\": true,\n      \"manageStandardContentMetadata\": false,\n      \"manageUsers\": true,\n      \"manageWorkflows\": false,\n      \"shareForAnonymousAccess\": false,\n      \"transferDocumentsFromEnterprise\": true,\n      \"useRevisionTools\": true\n    },\n    \"invitationState\": 2568,\n    \"isExternal\": true,\n    \"isGuest\": true,\n    \"isLight\": true,\n    \"lastLoginTime\": \"2001-07-31T02:18:43.518Z\",\n    \"personalMessageAllowed\": true,\n    \"source\": 6534\n  },\n  \"userCompany\": \"string\",\n  \"versionId\": \"string\",\n  \"viewData\": {\n    \"angle\": 1099.6639394585384,\n    \"cameraViewport\": [\n      7336.424425172884,\n      9186.283225369723\n    ],\n    \"isPerspective\": true,\n    \"viewMatrix\": [\n      7842.393631903021,\n      2609.18700272323\n    ]\n  },\n  \"viewRef\": \"http://RNJOZGqfSAWWHtrX.grifwo9Zwg3acqAQLc-g0M.+uPQ2GqW6G9gR+Ea7nE6LO9Dtpys,A1YlRNJ69bdkmR7JFzqUwLb0Qrsh\",\n  \"workspaceId\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "7fd1ecee-8715-4a70-b9d9-668c1a970e71",
+          "name": "Delete all attachments from a comment.",
+          "request": {
+            "name": "Delete all attachments from a comment.",
+            "description": {},
+            "url": {
+              "path": [
+                "comments",
+                ":cid",
+                "attachment"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "cid",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json;charset=UTF-8; qs=0.09"
+              }
+            ],
+            "method": "DELETE",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "scope",
+                  "value": "OAuth2Internal OAuth2ReadPII OAuth2Read OAuth2Write OAuth2Delete OAuth2Purchase OAuth2Share document.create document.edit document.delete document.read enterprise.create enterprise.read enterprise.edit enterprise.delete enterprise.member.create enterprise.member.read enterprise.member.edit enterprise.member.delete webhook.create webhook.edit webhook.read webhook.delete PLMIntegration"
+                },
+                {
+                  "key": "redirect_uri",
+                  "value": "/oauth/token"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "/oauth/token"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "/oauth/authorize"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "46db20c8-ec1b-41be-8dcf-2ce972d7fb7d",
+              "name": "default response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "comments",
+                    ":cid",
+                    "attachment"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "cid",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json;charset=UTF-8; qs=0.09"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json;charset=UTF-8; qs=0.09"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "bad0dbdc-76e3-4b9b-8bf5-2a7504d47fab",
+          "name": "Get the attachment with the specified file extension that is associated with the specified comment.",
+          "request": {
+            "name": "Get the attachment with the specified file extension that is associated with the specified comment.",
+            "description": {
+              "content": "Returns only a single attachment.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "comments",
+                ":cid",
+                "attachment",
+                "{{fdid}}.{{ext}}"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "cid",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/octet-stream"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "scope",
+                  "value": "OAuth2Internal OAuth2ReadPII OAuth2Read OAuth2Write OAuth2Delete OAuth2Purchase OAuth2Share document.create document.edit document.delete document.read enterprise.create enterprise.read enterprise.edit enterprise.delete enterprise.member.create enterprise.member.read enterprise.member.edit enterprise.member.delete webhook.create webhook.edit webhook.read webhook.delete PLMIntegration"
+                },
+                {
+                  "key": "redirect_uri",
+                  "value": "/oauth/token"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "/oauth/token"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "/oauth/authorize"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "6b900a36-a096-4ceb-923b-58b372e522da",
+              "name": "default response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "comments",
+                    ":cid",
+                    "attachment",
+                    "{{fdid}}.{{ext}}"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "cid",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/octet-stream"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/octet-stream"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "69d3e076-ac73-42b1-abf8-7549cd49d895",
+          "name": "Reopen a resolved comment.",
+          "request": {
+            "name": "Reopen a resolved comment.",
+            "description": {},
+            "url": {
+              "path": [
+                "comments",
+                ":cid",
+                "reopen"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "cid",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json;charset=UTF-8; qs=0.09"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "scope",
+                  "value": "OAuth2Internal OAuth2ReadPII OAuth2Read OAuth2Write OAuth2Delete OAuth2Purchase OAuth2Share document.create document.edit document.delete document.read enterprise.create enterprise.read enterprise.edit enterprise.delete enterprise.member.create enterprise.member.read enterprise.member.edit enterprise.member.delete webhook.create webhook.edit webhook.read webhook.delete PLMIntegration"
+                },
+                {
+                  "key": "redirect_uri",
+                  "value": "/oauth/token"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "/oauth/token"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "/oauth/authorize"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "bd5f8b69-1675-47b6-a729-7f0b8654f08f",
+              "name": "default response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "comments",
+                    ":cid",
+                    "reopen"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "cid",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json;charset=UTF-8; qs=0.09"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json;charset=UTF-8; qs=0.09"
+                }
+              ],
+              "body": "{\n  \"annotationId\": \"string\",\n  \"annotationType\": 3996,\n  \"appEntity\": \"string\",\n  \"assemblyFeatures\": [\n    \"string\",\n    \"string\"\n  ],\n  \"assignedAt\": \"2009-10-05T10:32:57.782Z\",\n  \"assignee\": {\n    \"jsonType\": \"string\",\n    \"href\": \"https://CHzpLFyrw.nkcZcxUDD5VX3,MdWxfTFSVNss5w4.8A5HX\",\n    \"id\": \"string\",\n    \"name\": \"string\",\n    \"viewRef\": \"https://ECciieQsVikGwoyPymwcHgvceHkk.euhbvPqBf.mp3CzifBbJi,f5r0h0-+SxoLYfONk0KpPROrjLqhSmeOA-IaP3IacxR\",\n    \"image\": \"string\",\n    \"isOnshapeSupport\": true,\n    \"state\": 1831,\n    \"documentationName\": \"string\",\n    \"email\": \"string\",\n    \"firstName\": \"string\",\n    \"lastName\": \"string\",\n    \"company\": {\n      \"admin\": true,\n      \"description\": \"string\",\n      \"domainPrefix\": \"string\",\n      \"enterpriseBaseUrl\": \"string\",\n      \"enterpriseSubtype\": 8930,\n      \"href\": \"http://Dir.tnThgGE\",\n      \"id\": \"string\",\n      \"image\": \"string\",\n      \"name\": \"string\",\n      \"noPublicDocuments\": false,\n      \"ownerId\": \"string\",\n      \"secondaryDomainPrefixes\": [\n        \"string\"\n      ],\n      \"state\": 6998,\n      \"type\": 1534,\n      \"viewRef\": \"http://iCVplsA.aalFq3AG2XGQGktJdhI,,dbHtJs6muMYr\"\n    },\n    \"companyUserState\": 335,\n    \"confirmationRequested\": false,\n    \"documentationNameOverride\": \"string\",\n    \"globalPermissions\": {\n      \"accessReports\": false,\n      \"adminEnterprise\": true,\n      \"allowAppStoreAccess\": true,\n      \"allowPublicDocumentsAccess\": false,\n      \"approveReleases\": false,\n      \"branchLockPermissions\": true,\n      \"createDocumentsInRoot\": false,\n      \"createProject\": true,\n      \"createReleases\": false,\n      \"createTasks\": true,\n      \"deletePermanently\": false,\n      \"enableLabs\": false,\n      \"exportFiles\": false,\n      \"importFiles\": true,\n      \"manageGuestUsers\": false,\n      \"manageNonGeometricItems\": false,\n      \"manageRbac\": false,\n      \"manageStandardContentMetadata\": false,\n      \"manageUsers\": true,\n      \"manageWorkflows\": true,\n      \"shareForAnonymousAccess\": false,\n      \"transferDocumentsFromEnterprise\": false,\n      \"useRevisionTools\": false\n    },\n    \"invitationState\": 3230,\n    \"isExternal\": true,\n    \"isGuest\": true,\n    \"isLight\": true,\n    \"lastLoginTime\": \"1968-10-07T02:18:46.967Z\",\n    \"personalMessageAllowed\": false,\n    \"source\": 5617\n  },\n  \"attachment\": {\n    \"fileName\": \"string\",\n    \"href\": \"https://GwgTEZjv.xzlqjZQ1pKwnYd7en9zRFqD-,hew5xJQkg\",\n    \"id\": \"string\",\n    \"mimeType\": \"string\",\n    \"name\": \"string\",\n    \"thumbnailFor\": \"string\",\n    \"viewRef\": \"https://qOa.srKpuWgSpcl5iGthPYBd-gTZUL9e9pxPPIdZ\"\n  },\n  \"calloutInstanceId\": \"string\",\n  \"canDelete\": false,\n  \"canResolveOrReopen\": false,\n  \"coordinates\": {\n    \"x\": 2818.895012374246,\n    \"y\": 3041.7361416502054,\n    \"z\": 2613.1113504701675\n  },\n  \"createdAt\": \"2014-10-08T09:15:06.140Z\",\n  \"dimensionConstraintId\": \"string\",\n  \"dimensionFeatureId\": \"string\",\n  \"dimensionParameterId\": \"string\",\n  \"dimensionPartQuery\": \"string\",\n  \"documentId\": \"string\",\n  \"elementFeature\": \"string\",\n  \"elementId\": \"string\",\n  \"elementOccurrences\": [\n    \"string\",\n    \"string\"\n  ],\n  \"elementQuery\": \"string\",\n  \"href\": \"https://NVspsmUslqoPpwlZCiFsvnRRsYchbLnMI.eoxfXJro9lx,WRbSCzcgfWREV3h\",\n  \"id\": \"string\",\n  \"message\": \"string\",\n  \"name\": \"string\",\n  \"objectId\": \"string\",\n  \"objectType\": 5842,\n  \"parentId\": \"string\",\n  \"releasePackageId\": \"string\",\n  \"reopenedAt\": \"2025-11-25T16:04:41.962Z\",\n  \"reopenedBy\": {\n    \"jsonType\": \"string\",\n    \"href\": \"https://FXJLHQTVobzBQhQONq.oqqrR4aJYOC+hISL4MReUuEqVyPo7bZuFmvIO3exPwNCJgZKb,RwX\",\n    \"id\": \"string\",\n    \"name\": \"string\",\n    \"viewRef\": \"http://wMkRdYzPSzIQieSUmE.enmZpsEmpy8VjJEemfr9\",\n    \"image\": \"string\",\n    \"isOnshapeSupport\": true,\n    \"state\": 1522,\n    \"documentationName\": \"string\",\n    \"email\": \"string\",\n    \"firstName\": \"string\",\n    \"lastName\": \"string\",\n    \"company\": {\n      \"admin\": false,\n      \"description\": \"string\",\n      \"domainPrefix\": \"string\",\n      \"enterpriseBaseUrl\": \"string\",\n      \"enterpriseSubtype\": 613,\n      \"href\": \"http://cfHwVQP.qmxL+iTXqo4ca1UhugAhfsh,X\",\n      \"id\": \"string\",\n      \"image\": \"string\",\n      \"name\": \"string\",\n      \"noPublicDocuments\": true,\n      \"ownerId\": \"string\",\n      \"secondaryDomainPrefixes\": [\n        \"string\"\n      ],\n      \"state\": 8707,\n      \"type\": 7896,\n      \"viewRef\": \"https://yfaMJ.dtmCWrkZiFJ.fWR\"\n    },\n    \"companyUserState\": 4641,\n    \"confirmationRequested\": false,\n    \"documentationNameOverride\": \"string\",\n    \"globalPermissions\": {\n      \"accessReports\": false,\n      \"adminEnterprise\": false,\n      \"allowAppStoreAccess\": false,\n      \"allowPublicDocumentsAccess\": false,\n      \"approveReleases\": true,\n      \"branchLockPermissions\": false,\n      \"createDocumentsInRoot\": true,\n      \"createProject\": false,\n      \"createReleases\": false,\n      \"createTasks\": false,\n      \"deletePermanently\": true,\n      \"enableLabs\": false,\n      \"exportFiles\": true,\n      \"importFiles\": true,\n      \"manageGuestUsers\": false,\n      \"manageNonGeometricItems\": true,\n      \"manageRbac\": true,\n      \"manageStandardContentMetadata\": true,\n      \"manageUsers\": true,\n      \"manageWorkflows\": true,\n      \"shareForAnonymousAccess\": true,\n      \"transferDocumentsFromEnterprise\": false,\n      \"useRevisionTools\": false\n    },\n    \"invitationState\": 6355,\n    \"isExternal\": false,\n    \"isGuest\": false,\n    \"isLight\": true,\n    \"lastLoginTime\": \"2010-06-22T08:12:30.244Z\",\n    \"personalMessageAllowed\": true,\n    \"source\": 3358\n  },\n  \"replyCount\": 9571,\n  \"resolvedAt\": \"1996-06-23T05:05:51.161Z\",\n  \"resolvedBy\": {\n    \"jsonType\": \"string\",\n    \"href\": \"https://zAynFXjQdOySNNjdvlDfQzVDIbzCWVH.ggwNqs6ZF9tQkRsnlTOL9Nrg7M9cT1QXzP.GL9,Oi05wUyaHBBp2BEgAjWQm.wF\",\n    \"id\": \"string\",\n    \"name\": \"string\",\n    \"viewRef\": \"http://GVR.thoNo\",\n    \"image\": \"string\",\n    \"isOnshapeSupport\": true,\n    \"state\": 482,\n    \"documentationName\": \"string\",\n    \"email\": \"string\",\n    \"firstName\": \"string\",\n    \"lastName\": \"string\",\n    \"company\": {\n      \"admin\": true,\n      \"description\": \"string\",\n      \"domainPrefix\": \"string\",\n      \"enterpriseBaseUrl\": \"string\",\n      \"enterpriseSubtype\": 9109,\n      \"href\": \"https://KVwMiSeQKiECRQALRfqVVjGeQB.rksMPolK4wlBuUnbtEB0..SxUZVseCrZ1rxnaXEYpkgTeqArRVA.MK2D\",\n      \"id\": \"string\",\n      \"image\": \"string\",\n      \"name\": \"string\",\n      \"noPublicDocuments\": true,\n      \"ownerId\": \"string\",\n      \"secondaryDomainPrefixes\": [\n        \"string\"\n      ],\n      \"state\": 5287,\n      \"type\": 7305,\n      \"viewRef\": \"https://XCinSGBzZZQAlg.ckzQJkaWJuwRVdqi2KHzhCBLAtN.-E5fhS,DRGCizz.vRnSZ1AcAoEHlfyAZiTF\"\n    },\n    \"companyUserState\": 6094,\n    \"confirmationRequested\": true,\n    \"documentationNameOverride\": \"string\",\n    \"globalPermissions\": {\n      \"accessReports\": true,\n      \"adminEnterprise\": false,\n      \"allowAppStoreAccess\": false,\n      \"allowPublicDocumentsAccess\": true,\n      \"approveReleases\": true,\n      \"branchLockPermissions\": true,\n      \"createDocumentsInRoot\": false,\n      \"createProject\": false,\n      \"createReleases\": true,\n      \"createTasks\": true,\n      \"deletePermanently\": true,\n      \"enableLabs\": false,\n      \"exportFiles\": false,\n      \"importFiles\": true,\n      \"manageGuestUsers\": true,\n      \"manageNonGeometricItems\": false,\n      \"manageRbac\": false,\n      \"manageStandardContentMetadata\": true,\n      \"manageUsers\": false,\n      \"manageWorkflows\": true,\n      \"shareForAnonymousAccess\": false,\n      \"transferDocumentsFromEnterprise\": true,\n      \"useRevisionTools\": true\n    },\n    \"invitationState\": 14,\n    \"isExternal\": true,\n    \"isGuest\": true,\n    \"isLight\": false,\n    \"lastLoginTime\": \"2017-03-17T01:08:25.594Z\",\n    \"personalMessageAllowed\": false,\n    \"source\": 3342\n  },\n  \"state\": 4430,\n  \"thumbnail\": {\n    \"fileName\": \"string\",\n    \"href\": \"https://qJdPRvROACHzf.mukRuafbl9JwVWxeDqybQrIWt2DV\",\n    \"id\": \"string\",\n    \"mimeType\": \"string\",\n    \"name\": \"string\",\n    \"thumbnailFor\": \"string\",\n    \"viewRef\": \"http://UTHplgmGXulqIoo.brafM7emI5k4lQQE\"\n  },\n  \"topLevel\": true,\n  \"user\": {\n    \"jsonType\": \"string\",\n    \"href\": \"https://GAeIfOyqc.dulk\",\n    \"id\": \"string\",\n    \"name\": \"string\",\n    \"viewRef\": \"https://nKl.buxeHT8e7PWaFFkvTklDjf,rJpf9kthKhpZbR2mfHLFGG5n5cYk4FRwxTlrMFZ\",\n    \"image\": \"string\",\n    \"isOnshapeSupport\": true,\n    \"state\": 9874,\n    \"documentationName\": \"string\",\n    \"email\": \"string\",\n    \"firstName\": \"string\",\n    \"lastName\": \"string\",\n    \"company\": {\n      \"admin\": true,\n      \"description\": \"string\",\n      \"domainPrefix\": \"string\",\n      \"enterpriseBaseUrl\": \"string\",\n      \"enterpriseSubtype\": 3401,\n      \"href\": \"http://pkftBVwbSvQBZYSjx.gjyphvZu2VEHD40\",\n      \"id\": \"string\",\n      \"image\": \"string\",\n      \"name\": \"string\",\n      \"noPublicDocuments\": true,\n      \"ownerId\": \"string\",\n      \"secondaryDomainPrefixes\": [\n        \"string\"\n      ],\n      \"state\": 7938,\n      \"type\": 8430,\n      \"viewRef\": \"http://XKteKmLtTQSd.ypqcDAKPxuK9nt5QcqUcx\"\n    },\n    \"companyUserState\": 5784,\n    \"confirmationRequested\": true,\n    \"documentationNameOverride\": \"string\",\n    \"globalPermissions\": {\n      \"accessReports\": true,\n      \"adminEnterprise\": true,\n      \"allowAppStoreAccess\": true,\n      \"allowPublicDocumentsAccess\": false,\n      \"approveReleases\": false,\n      \"branchLockPermissions\": false,\n      \"createDocumentsInRoot\": false,\n      \"createProject\": true,\n      \"createReleases\": true,\n      \"createTasks\": false,\n      \"deletePermanently\": false,\n      \"enableLabs\": true,\n      \"exportFiles\": true,\n      \"importFiles\": true,\n      \"manageGuestUsers\": true,\n      \"manageNonGeometricItems\": false,\n      \"manageRbac\": true,\n      \"manageStandardContentMetadata\": false,\n      \"manageUsers\": true,\n      \"manageWorkflows\": false,\n      \"shareForAnonymousAccess\": false,\n      \"transferDocumentsFromEnterprise\": true,\n      \"useRevisionTools\": true\n    },\n    \"invitationState\": 2568,\n    \"isExternal\": true,\n    \"isGuest\": true,\n    \"isLight\": true,\n    \"lastLoginTime\": \"2001-07-31T02:18:43.518Z\",\n    \"personalMessageAllowed\": true,\n    \"source\": 6534\n  },\n  \"userCompany\": \"string\",\n  \"versionId\": \"string\",\n  \"viewData\": {\n    \"angle\": 1099.6639394585384,\n    \"cameraViewport\": [\n      7336.424425172884,\n      9186.283225369723\n    ],\n    \"isPerspective\": true,\n    \"viewMatrix\": [\n      7842.393631903021,\n      2609.18700272323\n    ]\n  },\n  \"viewRef\": \"http://RNJOZGqfSAWWHtrX.grifwo9Zwg3acqAQLc-g0M.+uPQ2GqW6G9gR+Ea7nE6LO9Dtpys,A1YlRNJ69bdkmR7JFzqUwLb0Qrsh\",\n  \"workspaceId\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b0f4d3dc-222c-485c-9f84-8304deee72d6",
+          "name": "Resolve a comment.",
+          "request": {
+            "name": "Resolve a comment.",
+            "description": {},
+            "url": {
+              "path": [
+                "comments",
+                ":cid",
+                "resolve"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "cid",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json;charset=UTF-8; qs=0.09"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "scope",
+                  "value": "OAuth2Internal OAuth2ReadPII OAuth2Read OAuth2Write OAuth2Delete OAuth2Purchase OAuth2Share document.create document.edit document.delete document.read enterprise.create enterprise.read enterprise.edit enterprise.delete enterprise.member.create enterprise.member.read enterprise.member.edit enterprise.member.delete webhook.create webhook.edit webhook.read webhook.delete PLMIntegration"
+                },
+                {
+                  "key": "redirect_uri",
+                  "value": "/oauth/token"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "/oauth/token"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "/oauth/authorize"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "2d37b69b-28f5-46ff-a815-bb1c02dd5dc5",
+              "name": "default response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "comments",
+                    ":cid",
+                    "resolve"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "cid",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json;charset=UTF-8; qs=0.09"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json;charset=UTF-8; qs=0.09"
+                }
+              ],
+              "body": "{\n  \"annotationId\": \"string\",\n  \"annotationType\": 3996,\n  \"appEntity\": \"string\",\n  \"assemblyFeatures\": [\n    \"string\",\n    \"string\"\n  ],\n  \"assignedAt\": \"2009-10-05T10:32:57.782Z\",\n  \"assignee\": {\n    \"jsonType\": \"string\",\n    \"href\": \"https://CHzpLFyrw.nkcZcxUDD5VX3,MdWxfTFSVNss5w4.8A5HX\",\n    \"id\": \"string\",\n    \"name\": \"string\",\n    \"viewRef\": \"https://ECciieQsVikGwoyPymwcHgvceHkk.euhbvPqBf.mp3CzifBbJi,f5r0h0-+SxoLYfONk0KpPROrjLqhSmeOA-IaP3IacxR\",\n    \"image\": \"string\",\n    \"isOnshapeSupport\": true,\n    \"state\": 1831,\n    \"documentationName\": \"string\",\n    \"email\": \"string\",\n    \"firstName\": \"string\",\n    \"lastName\": \"string\",\n    \"company\": {\n      \"admin\": true,\n      \"description\": \"string\",\n      \"domainPrefix\": \"string\",\n      \"enterpriseBaseUrl\": \"string\",\n      \"enterpriseSubtype\": 8930,\n      \"href\": \"http://Dir.tnThgGE\",\n      \"id\": \"string\",\n      \"image\": \"string\",\n      \"name\": \"string\",\n      \"noPublicDocuments\": false,\n      \"ownerId\": \"string\",\n      \"secondaryDomainPrefixes\": [\n        \"string\"\n      ],\n      \"state\": 6998,\n      \"type\": 1534,\n      \"viewRef\": \"http://iCVplsA.aalFq3AG2XGQGktJdhI,,dbHtJs6muMYr\"\n    },\n    \"companyUserState\": 335,\n    \"confirmationRequested\": false,\n    \"documentationNameOverride\": \"string\",\n    \"globalPermissions\": {\n      \"accessReports\": false,\n      \"adminEnterprise\": true,\n      \"allowAppStoreAccess\": true,\n      \"allowPublicDocumentsAccess\": false,\n      \"approveReleases\": false,\n      \"branchLockPermissions\": true,\n      \"createDocumentsInRoot\": false,\n      \"createProject\": true,\n      \"createReleases\": false,\n      \"createTasks\": true,\n      \"deletePermanently\": false,\n      \"enableLabs\": false,\n      \"exportFiles\": false,\n      \"importFiles\": true,\n      \"manageGuestUsers\": false,\n      \"manageNonGeometricItems\": false,\n      \"manageRbac\": false,\n      \"manageStandardContentMetadata\": false,\n      \"manageUsers\": true,\n      \"manageWorkflows\": true,\n      \"shareForAnonymousAccess\": false,\n      \"transferDocumentsFromEnterprise\": false,\n      \"useRevisionTools\": false\n    },\n    \"invitationState\": 3230,\n    \"isExternal\": true,\n    \"isGuest\": true,\n    \"isLight\": true,\n    \"lastLoginTime\": \"1968-10-07T02:18:46.967Z\",\n    \"personalMessageAllowed\": false,\n    \"source\": 5617\n  },\n  \"attachment\": {\n    \"fileName\": \"string\",\n    \"href\": \"https://GwgTEZjv.xzlqjZQ1pKwnYd7en9zRFqD-,hew5xJQkg\",\n    \"id\": \"string\",\n    \"mimeType\": \"string\",\n    \"name\": \"string\",\n    \"thumbnailFor\": \"string\",\n    \"viewRef\": \"https://qOa.srKpuWgSpcl5iGthPYBd-gTZUL9e9pxPPIdZ\"\n  },\n  \"calloutInstanceId\": \"string\",\n  \"canDelete\": false,\n  \"canResolveOrReopen\": false,\n  \"coordinates\": {\n    \"x\": 2818.895012374246,\n    \"y\": 3041.7361416502054,\n    \"z\": 2613.1113504701675\n  },\n  \"createdAt\": \"2014-10-08T09:15:06.140Z\",\n  \"dimensionConstraintId\": \"string\",\n  \"dimensionFeatureId\": \"string\",\n  \"dimensionParameterId\": \"string\",\n  \"dimensionPartQuery\": \"string\",\n  \"documentId\": \"string\",\n  \"elementFeature\": \"string\",\n  \"elementId\": \"string\",\n  \"elementOccurrences\": [\n    \"string\",\n    \"string\"\n  ],\n  \"elementQuery\": \"string\",\n  \"href\": \"https://NVspsmUslqoPpwlZCiFsvnRRsYchbLnMI.eoxfXJro9lx,WRbSCzcgfWREV3h\",\n  \"id\": \"string\",\n  \"message\": \"string\",\n  \"name\": \"string\",\n  \"objectId\": \"string\",\n  \"objectType\": 5842,\n  \"parentId\": \"string\",\n  \"releasePackageId\": \"string\",\n  \"reopenedAt\": \"2025-11-25T16:04:41.962Z\",\n  \"reopenedBy\": {\n    \"jsonType\": \"string\",\n    \"href\": \"https://FXJLHQTVobzBQhQONq.oqqrR4aJYOC+hISL4MReUuEqVyPo7bZuFmvIO3exPwNCJgZKb,RwX\",\n    \"id\": \"string\",\n    \"name\": \"string\",\n    \"viewRef\": \"http://wMkRdYzPSzIQieSUmE.enmZpsEmpy8VjJEemfr9\",\n    \"image\": \"string\",\n    \"isOnshapeSupport\": true,\n    \"state\": 1522,\n    \"documentationName\": \"string\",\n    \"email\": \"string\",\n    \"firstName\": \"string\",\n    \"lastName\": \"string\",\n    \"company\": {\n      \"admin\": false,\n      \"description\": \"string\",\n      \"domainPrefix\": \"string\",\n      \"enterpriseBaseUrl\": \"string\",\n      \"enterpriseSubtype\": 613,\n      \"href\": \"http://cfHwVQP.qmxL+iTXqo4ca1UhugAhfsh,X\",\n      \"id\": \"string\",\n      \"image\": \"string\",\n      \"name\": \"string\",\n      \"noPublicDocuments\": true,\n      \"ownerId\": \"string\",\n      \"secondaryDomainPrefixes\": [\n        \"string\"\n      ],\n      \"state\": 8707,\n      \"type\": 7896,\n      \"viewRef\": \"https://yfaMJ.dtmCWrkZiFJ.fWR\"\n    },\n    \"companyUserState\": 4641,\n    \"confirmationRequested\": false,\n    \"documentationNameOverride\": \"string\",\n    \"globalPermissions\": {\n      \"accessReports\": false,\n      \"adminEnterprise\": false,\n      \"allowAppStoreAccess\": false,\n      \"allowPublicDocumentsAccess\": false,\n      \"approveReleases\": true,\n      \"branchLockPermissions\": false,\n      \"createDocumentsInRoot\": true,\n      \"createProject\": false,\n      \"createReleases\": false,\n      \"createTasks\": false,\n      \"deletePermanently\": true,\n      \"enableLabs\": false,\n      \"exportFiles\": true,\n      \"importFiles\": true,\n      \"manageGuestUsers\": false,\n      \"manageNonGeometricItems\": true,\n      \"manageRbac\": true,\n      \"manageStandardContentMetadata\": true,\n      \"manageUsers\": true,\n      \"manageWorkflows\": true,\n      \"shareForAnonymousAccess\": true,\n      \"transferDocumentsFromEnterprise\": false,\n      \"useRevisionTools\": false\n    },\n    \"invitationState\": 6355,\n    \"isExternal\": false,\n    \"isGuest\": false,\n    \"isLight\": true,\n    \"lastLoginTime\": \"2010-06-22T08:12:30.244Z\",\n    \"personalMessageAllowed\": true,\n    \"source\": 3358\n  },\n  \"replyCount\": 9571,\n  \"resolvedAt\": \"1996-06-23T05:05:51.161Z\",\n  \"resolvedBy\": {\n    \"jsonType\": \"string\",\n    \"href\": \"https://zAynFXjQdOySNNjdvlDfQzVDIbzCWVH.ggwNqs6ZF9tQkRsnlTOL9Nrg7M9cT1QXzP.GL9,Oi05wUyaHBBp2BEgAjWQm.wF\",\n    \"id\": \"string\",\n    \"name\": \"string\",\n    \"viewRef\": \"http://GVR.thoNo\",\n    \"image\": \"string\",\n    \"isOnshapeSupport\": true,\n    \"state\": 482,\n    \"documentationName\": \"string\",\n    \"email\": \"string\",\n    \"firstName\": \"string\",\n    \"lastName\": \"string\",\n    \"company\": {\n      \"admin\": true,\n      \"description\": \"string\",\n      \"domainPrefix\": \"string\",\n      \"enterpriseBaseUrl\": \"string\",\n      \"enterpriseSubtype\": 9109,\n      \"href\": \"https://KVwMiSeQKiECRQALRfqVVjGeQB.rksMPolK4wlBuUnbtEB0..SxUZVseCrZ1rxnaXEYpkgTeqArRVA.MK2D\",\n      \"id\": \"string\",\n      \"image\": \"string\",\n      \"name\": \"string\",\n      \"noPublicDocuments\": true,\n      \"ownerId\": \"string\",\n      \"secondaryDomainPrefixes\": [\n        \"string\"\n      ],\n      \"state\": 5287,\n      \"type\": 7305,\n      \"viewRef\": \"https://XCinSGBzZZQAlg.ckzQJkaWJuwRVdqi2KHzhCBLAtN.-E5fhS,DRGCizz.vRnSZ1AcAoEHlfyAZiTF\"\n    },\n    \"companyUserState\": 6094,\n    \"confirmationRequested\": true,\n    \"documentationNameOverride\": \"string\",\n    \"globalPermissions\": {\n      \"accessReports\": true,\n      \"adminEnterprise\": false,\n      \"allowAppStoreAccess\": false,\n      \"allowPublicDocumentsAccess\": true,\n      \"approveReleases\": true,\n      \"branchLockPermissions\": true,\n      \"createDocumentsInRoot\": false,\n      \"createProject\": false,\n      \"createReleases\": true,\n      \"createTasks\": true,\n      \"deletePermanently\": true,\n      \"enableLabs\": false,\n      \"exportFiles\": false,\n      \"importFiles\": true,\n      \"manageGuestUsers\": true,\n      \"manageNonGeometricItems\": false,\n      \"manageRbac\": false,\n      \"manageStandardContentMetadata\": true,\n      \"manageUsers\": false,\n      \"manageWorkflows\": true,\n      \"shareForAnonymousAccess\": false,\n      \"transferDocumentsFromEnterprise\": true,\n      \"useRevisionTools\": true\n    },\n    \"invitationState\": 14,\n    \"isExternal\": true,\n    \"isGuest\": true,\n    \"isLight\": false,\n    \"lastLoginTime\": \"2017-03-17T01:08:25.594Z\",\n    \"personalMessageAllowed\": false,\n    \"source\": 3342\n  },\n  \"state\": 4430,\n  \"thumbnail\": {\n    \"fileName\": \"string\",\n    \"href\": \"https://qJdPRvROACHzf.mukRuafbl9JwVWxeDqybQrIWt2DV\",\n    \"id\": \"string\",\n    \"mimeType\": \"string\",\n    \"name\": \"string\",\n    \"thumbnailFor\": \"string\",\n    \"viewRef\": \"http://UTHplgmGXulqIoo.brafM7emI5k4lQQE\"\n  },\n  \"topLevel\": true,\n  \"user\": {\n    \"jsonType\": \"string\",\n    \"href\": \"https://GAeIfOyqc.dulk\",\n    \"id\": \"string\",\n    \"name\": \"string\",\n    \"viewRef\": \"https://nKl.buxeHT8e7PWaFFkvTklDjf,rJpf9kthKhpZbR2mfHLFGG5n5cYk4FRwxTlrMFZ\",\n    \"image\": \"string\",\n    \"isOnshapeSupport\": true,\n    \"state\": 9874,\n    \"documentationName\": \"string\",\n    \"email\": \"string\",\n    \"firstName\": \"string\",\n    \"lastName\": \"string\",\n    \"company\": {\n      \"admin\": true,\n      \"description\": \"string\",\n      \"domainPrefix\": \"string\",\n      \"enterpriseBaseUrl\": \"string\",\n      \"enterpriseSubtype\": 3401,\n      \"href\": \"http://pkftBVwbSvQBZYSjx.gjyphvZu2VEHD40\",\n      \"id\": \"string\",\n      \"image\": \"string\",\n      \"name\": \"string\",\n      \"noPublicDocuments\": true,\n      \"ownerId\": \"string\",\n      \"secondaryDomainPrefixes\": [\n        \"string\"\n      ],\n      \"state\": 7938,\n      \"type\": 8430,\n      \"viewRef\": \"http://XKteKmLtTQSd.ypqcDAKPxuK9nt5QcqUcx\"\n    },\n    \"companyUserState\": 5784,\n    \"confirmationRequested\": true,\n    \"documentationNameOverride\": \"string\",\n    \"globalPermissions\": {\n      \"accessReports\": true,\n      \"adminEnterprise\": true,\n      \"allowAppStoreAccess\": true,\n      \"allowPublicDocumentsAccess\": false,\n      \"approveReleases\": false,\n      \"branchLockPermissions\": false,\n      \"createDocumentsInRoot\": false,\n      \"createProject\": true,\n      \"createReleases\": true,\n      \"createTasks\": false,\n      \"deletePermanently\": false,\n      \"enableLabs\": true,\n      \"exportFiles\": true,\n      \"importFiles\": true,\n      \"manageGuestUsers\": true,\n      \"manageNonGeometricItems\": false,\n      \"manageRbac\": true,\n      \"manageStandardContentMetadata\": false,\n      \"manageUsers\": true,\n      \"manageWorkflows\": false,\n      \"shareForAnonymousAccess\": false,\n      \"transferDocumentsFromEnterprise\": true,\n      \"useRevisionTools\": true\n    },\n    \"invitationState\": 2568,\n    \"isExternal\": true,\n    \"isGuest\": true,\n    \"isLight\": true,\n    \"lastLoginTime\": \"2001-07-31T02:18:43.518Z\",\n    \"personalMessageAllowed\": true,\n    \"source\": 6534\n  },\n  \"userCompany\": \"string\",\n  \"versionId\": \"string\",\n  \"viewData\": {\n    \"angle\": 1099.6639394585384,\n    \"cameraViewport\": [\n      7336.424425172884,\n      9186.283225369723\n    ],\n    \"isPerspective\": true,\n    \"viewMatrix\": [\n      7842.393631903021,\n      2609.18700272323\n    ]\n  },\n  \"viewRef\": \"http://RNJOZGqfSAWWHtrX.grifwo9Zwg3acqAQLc-g0M.+uPQ2GqW6G9gR+Ea7nE6LO9Dtpys,A1YlRNJ69bdkmR7JFzqUwLb0Qrsh\",\n  \"workspaceId\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://cad.onshape.com/api/v16",
+      "key": "baseUrl"
+    },
+    {
+      "disabled": false,
+      "description": {
+        "content": "(Required) ",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "<string>",
+      "key": "fdid"
+    },
+    {
+      "disabled": false,
+      "description": {
+        "content": "(Required) ",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "<string>",
+      "key": "ext"
+    }
+  ],
+  "auth": {
+    "type": "basic",
+    "basic": [
+      {
+        "key": "username",
+        "value": "{{basicAuthUsername}}"
+      },
+      {
+        "key": "password",
+        "value": "{{basicAuthPassword}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "086f519d-ea47-4ab8-8875-b6487743d956",
+    "name": "Onshape REST Account Comment API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "## Welcome to the Onshape REST API Explorer\n\n**See the [API Explorer Guide](https://onshape-public.github.io/docs/api-intro/explorer/) for help navigating this page.**\n\n### Using this page\n1. Sign in to your [Onshape](https://cad.onshape.com) account in another tab.\n2. Click the `Try it out` button below. It toggles to a `Cancel` button when selected.\n\n### Authenticating\nTo authenticate your calls, click the `Authorize` button. See [API Explorer Guide: Authentication](https://onshape-public.github.io/docs/api-intro/explorer/#authentication) for details. Calls made when authenticated via API Keys or OAuth count against your annual [API limits](https://onshape-public.github.io/docs/auth/limits/#annual-api-call-limits).\n* **Tip:** To ensure the current session isn't used when trying other authentication techniques, make sure to [remove the Onshape cookie](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site) as per the instructions for your browser, or use a private or incognito window.\n\n### Additional resources\n\n* [Onshape API Guide](https://onshape-public.github.io/docs/): Our full suite of developer guides, to be used as an accompaniment to this API Explorer.\n* [Onshape Developer Portal](https://cad.onshape.com/appstore/dev-portal): The Onshape portal for managing your API keys, OAuth2 credentials, your Onshape applications, and your Onshape App Store entries.\n* [Authentication Guide](https://onshape-public.github.io/docs/auth/): Our guide to using API keys, request signatures, and OAuth2 in your Onshape applications.\n\nContact Support:\n Email: api-support@onshape.zendesk.com",
+      "type": "text/plain"
+    }
+  }
+}

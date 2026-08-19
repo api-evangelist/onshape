@@ -1,0 +1,64 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Onshape REST Account PartNumber API",
+    "version": "1.218.84032-34acba44be17"
+  },
+  "request": {
+    "auth": {
+      "type": "basic",
+      "username": "{{username}}",
+      "password": "{{password}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "PartNumber",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "updateNextNumbers",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://cad.onshape.com/api/v16/partnumber/nextnumbers",
+            "params": [
+              {
+                "name": "cid",
+                "value": "",
+                "type": "query",
+                "description": "The ID of the company or enterprise that owns this resource and/or is making the request to Onshape."
+              },
+              {
+                "name": "did",
+                "value": "",
+                "type": "query",
+                "description": "Document ID."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "/oauth/authorize",
+              "accessTokenUrl": "/oauth/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "See [NumberingScheme.nextNumbers](#/NumberingScheme/nextNumbers)"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

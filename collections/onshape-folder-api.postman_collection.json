@@ -1,0 +1,459 @@
+{
+  "item": [
+    {
+      "id": "9840f0a6-b106-457a-b9a5-6885360dfdec",
+      "name": "Folder",
+      "description": {
+        "content": "Access and modify folder sharing permissions.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "64ead534-10b9-4fcd-b861-9e7f49da5d9c",
+          "name": "Get the Access Control List (ACL) for a folder to view permissions.",
+          "request": {
+            "name": "Get the Access Control List (ACL) for a folder to view permissions.",
+            "description": {
+              "content": "Returns the ACL of permission objects. Each object contains: \n* The type of entity  \n    * 0 (User)  \n    * 1 (Company) \n    * 2 (Team) \n    * 3 (Document) \n    * 4 (Application) \n * The ID of the entity for the specified type. \n* The permissions for that entity. \n    *  OWNER (100): All permissions, including those not listed, such as permission to transfer ownership. \n    * DELETE (90) \n    * RESHARE (80) \n    * WRITE (70) \n    * READ (60) \n    * LINK (50) \n    * COPY (30): Can copy workspace \n    * EXPORT (20): Can export geometry \n    * COMMENT (10) \n    * ANONYMOUS_ACCESS (5): Special, restricted read access",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "folders",
+                ":fid",
+                "acl"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "fid",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json;charset=UTF-8; qs=0.09"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "scope",
+                  "value": "OAuth2Internal OAuth2ReadPII OAuth2Read OAuth2Write OAuth2Delete OAuth2Purchase OAuth2Share document.create document.edit document.delete document.read enterprise.create enterprise.read enterprise.edit enterprise.delete enterprise.member.create enterprise.member.read enterprise.member.edit enterprise.member.delete webhook.create webhook.edit webhook.read webhook.delete PLMIntegration"
+                },
+                {
+                  "key": "redirect_uri",
+                  "value": "/oauth/token"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "/oauth/token"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "/oauth/authorize"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "99ccdb3c-f3b1-4626-b9b8-588d1d77b010",
+              "name": "default response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "folders",
+                    ":fid",
+                    "acl"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "fid",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json;charset=UTF-8; qs=0.09"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json;charset=UTF-8; qs=0.09"
+                }
+              ],
+              "body": "{\n  \"admin\": true,\n  \"entries\": [\n    {\n      \"acceptOwnerTransfer\": false,\n      \"canConnectionUserEdit\": true,\n      \"companyName\": \"string\",\n      \"connectionId\": \"string\",\n      \"connectionName\": \"string\",\n      \"connectionUser\": true,\n      \"email\": \"string\",\n      \"enterpriseMember\": true,\n      \"entryId\": \"string\",\n      \"entryState\": \"APPROVED\",\n      \"entryType\": 3708,\n      \"folderInaccessible\": true,\n      \"folderName\": \"string\",\n      \"image\": \"string\",\n      \"name\": \"string\",\n      \"objectId\": \"string\",\n      \"pendingOwnerTransfer\": true,\n      \"permission\": 7021,\n      \"permissionSet\": [\n        \"string\",\n        \"string\"\n      ],\n      \"proCompanySubtype\": 350,\n      \"teamName\": \"string\"\n    },\n    {\n      \"acceptOwnerTransfer\": false,\n      \"canConnectionUserEdit\": false,\n      \"companyName\": \"string\",\n      \"connectionId\": \"string\",\n      \"connectionName\": \"string\",\n      \"connectionUser\": true,\n      \"email\": \"string\",\n      \"enterpriseMember\": true,\n      \"entryId\": \"string\",\n      \"entryState\": \"MARKED_FOR_DELETION\",\n      \"entryType\": 8882,\n      \"folderInaccessible\": true,\n      \"folderName\": \"string\",\n      \"image\": \"string\",\n      \"name\": \"string\",\n      \"objectId\": \"string\",\n      \"pendingOwnerTransfer\": true,\n      \"permission\": 3577,\n      \"permissionSet\": [\n        \"string\",\n        \"string\"\n      ],\n      \"proCompanySubtype\": 485,\n      \"teamName\": \"string\"\n    }\n  ],\n  \"href\": \"https://mnHomZW.snbpLJtY+.mZ3lFFBPZwCc5OmzK9OPZR3yxAw5s0wUZvejSrC6hyephYQ\",\n  \"id\": \"string\",\n  \"inheritedAcls\": [\n    {\n      \"entries\": [\n        {\n          \"acceptOwnerTransfer\": true,\n          \"canConnectionUserEdit\": false,\n          \"companyName\": \"string\",\n          \"connectionId\": \"string\",\n          \"connectionName\": \"string\",\n          \"connectionUser\": true,\n          \"email\": \"string\",\n          \"enterpriseMember\": true,\n          \"entryId\": \"string\",\n          \"entryState\": \"REQUEST_EXPIRED\",\n          \"entryType\": 9630,\n          \"folderInaccessible\": true,\n          \"folderName\": \"string\",\n          \"image\": \"string\",\n          \"name\": \"string\",\n          \"objectId\": \"string\",\n          \"pendingOwnerTransfer\": true,\n          \"permission\": 1246,\n          \"permissionSet\": [\n            \"string\",\n            \"string\"\n          ],\n          \"proCompanySubtype\": 1010,\n          \"teamName\": \"string\"\n        },\n        {\n          \"acceptOwnerTransfer\": false,\n          \"canConnectionUserEdit\": true,\n          \"companyName\": \"string\",\n          \"connectionId\": \"string\",\n          \"connectionName\": \"string\",\n          \"connectionUser\": false,\n          \"email\": \"string\",\n          \"enterpriseMember\": false,\n          \"entryId\": \"string\",\n          \"entryState\": \"MARKED_FOR_DELETION\",\n          \"entryType\": 2908,\n          \"folderInaccessible\": true,\n          \"folderName\": \"string\",\n          \"image\": \"string\",\n          \"name\": \"string\",\n          \"objectId\": \"string\",\n          \"pendingOwnerTransfer\": false,\n          \"permission\": 1804,\n          \"permissionSet\": [\n            \"string\",\n            \"string\"\n          ],\n          \"proCompanySubtype\": 668,\n          \"teamName\": \"string\"\n        }\n      ],\n      \"href\": \"https://gFaMiotMbDAkscz.etuhgLDk8+xeKGsVbe\",\n      \"id\": \"string\",\n      \"name\": \"string\",\n      \"objectId\": \"string\",\n      \"objectName\": \"string\",\n      \"objectType\": 7257,\n      \"owner\": {\n        \"href\": \"https://yGzQ.gahtcBz8G-aTRu6lfjorKt5qV\",\n        \"id\": \"string\",\n        \"image\": \"string\",\n        \"isEnterpriseOwnedResource\": false,\n        \"name\": \"string\",\n        \"type\": 1356,\n        \"viewRef\": \"https://JnpdHgkJVhrVAjJGgWKRVtqsmyiUz.umv.J4Z1zEvP8H8xb3lUO6l,,bVxy.1AtxfcNQ\"\n      },\n      \"public\": true,\n      \"sharedWithSupport\": true,\n      \"viewRef\": \"https://DLzpeCRtqYiKXcLQCnkhbXzjKWuMA.oelhC3NG+XfJ0tJXIghhc\",\n      \"visibility\": \"string\"\n    },\n    {\n      \"entries\": [\n        {\n          \"acceptOwnerTransfer\": false,\n          \"canConnectionUserEdit\": false,\n          \"companyName\": \"string\",\n          \"connectionId\": \"string\",\n          \"connectionName\": \"string\",\n          \"connectionUser\": false,\n          \"email\": \"string\",\n          \"enterpriseMember\": false,\n          \"entryId\": \"string\",\n          \"entryState\": \"MARKED_FOR_DELETION\",\n          \"entryType\": 8685,\n          \"folderInaccessible\": false,\n          \"folderName\": \"string\",\n          \"image\": \"string\",\n          \"name\": \"string\",\n          \"objectId\": \"string\",\n          \"pendingOwnerTransfer\": false,\n          \"permission\": 91,\n          \"permissionSet\": [\n            \"string\",\n            \"string\"\n          ],\n          \"proCompanySubtype\": 151,\n          \"teamName\": \"string\"\n        },\n        {\n          \"acceptOwnerTransfer\": false,\n          \"canConnectionUserEdit\": true,\n          \"companyName\": \"string\",\n          \"connectionId\": \"string\",\n          \"connectionName\": \"string\",\n          \"connectionUser\": false,\n          \"email\": \"string\",\n          \"enterpriseMember\": false,\n          \"entryId\": \"string\",\n          \"entryState\": \"ACTIVE\",\n          \"entryType\": 3824,\n          \"folderInaccessible\": true,\n          \"folderName\": \"string\",\n          \"image\": \"string\",\n          \"name\": \"string\",\n          \"objectId\": \"string\",\n          \"pendingOwnerTransfer\": true,\n          \"permission\": 2252,\n          \"permissionSet\": [\n            \"string\",\n            \"string\"\n          ],\n          \"proCompanySubtype\": 4464,\n          \"teamName\": \"string\"\n        }\n      ],\n      \"href\": \"http://AKGWBMdNoLnCAVrRloqezuzlMvvGwT.qccAXbH4BQ9TjLWXAUYI3WknDHe6fig5.4JtcnsiQ0H+vlT1oTOr,Oyo3Kap\",\n      \"id\": \"string\",\n      \"name\": \"string\",\n      \"objectId\": \"string\",\n      \"objectName\": \"string\",\n      \"objectType\": 1508,\n      \"owner\": {\n        \"href\": \"https://krQCILRpcirwAOQbRVBmQsjD.szBoV9UALhx2kdFWHOT0F0Z4gL.Vxz86RMdMcHJf+L6vQKDT8mNTQq8rN1S.JcbqiRjdR\",\n        \"id\": \"string\",\n        \"image\": \"string\",\n        \"isEnterpriseOwnedResource\": true,\n        \"name\": \"string\",\n        \"type\": 4314,\n        \"viewRef\": \"https://ppimsahwxswvpO.tey1fArxmwUvQcNmgE0BODHkO.r\"\n      },\n      \"public\": true,\n      \"sharedWithSupport\": true,\n      \"viewRef\": \"http://bQrFgeBgiRrpiJexq.kxI3JvpRIC7rnQ4un0dtvSy4NZeOZA1wTm00MiGI5i5\",\n      \"visibility\": \"string\"\n    }\n  ],\n  \"name\": \"string\",\n  \"objectId\": \"string\",\n  \"objectType\": 5788,\n  \"owner\": {\n    \"href\": \"https://mGuegVweuvfmjsTtzjNHzVTFrxt.toueUGju29a33T1k1jePievWspJ3Wmw8GdHOLmvMNhsxKmbTeqh4FL66cJ\",\n    \"id\": \"string\",\n    \"image\": \"string\",\n    \"isEnterpriseOwnedResource\": false,\n    \"name\": \"string\",\n    \"type\": 5866,\n    \"viewRef\": \"https://dzEyrONSNNnNmNEYcoQiaOoPQoQSGS.baytu7DUkzgI95CK6eA797zWXMuY2cNeQ\"\n  },\n  \"public\": false,\n  \"sharedWithSupport\": true,\n  \"viewRef\": \"http://fM.jsluofYdfajwzFl33l\",\n  \"visibility\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "3cb91105-3ba6-4df1-b978-1fc8a9b724c8",
+          "name": "Share folder with an entity.",
+          "request": {
+            "name": "Share folder with an entity.",
+            "description": {
+              "content": "* Specify the type of entity to share with using `entries.entryType`: \n    * 0 (User)  \n    * 1 (Company) \n    * 2 (Team) \n    * 3 (Document) \n    * 4 (Application) \n* Provide one of the identifiers in the `entries` object in the request body.  \n    * You can share with non-Onshape users with the `email` field when `entryType=0`.  \n * Provide the string for the permission set. Do not include the integer in parentheses: \n    * OWNER (100): Object owner. Implies all permissions including those not listed such as permission to transfer ownership. \n    * DELETE (90) \n    * RESHARE (80) \n    * WRITE (70) \n    * READ (60) \n    * LINK (50) \n    * COPY (30): Can copy workspace \n    * EXPORT (20): Can export geometry \n    * COMMENT (10) \n    * ANONYMOUS_ACCESS (5): Special, restricted read access",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "folders",
+                ":fid",
+                "share"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "fid",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json;charset=UTF-8; qs=0.09"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json;charset=UTF-8; qs=0.09"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "scope",
+                  "value": "OAuth2Internal OAuth2ReadPII OAuth2Read OAuth2Write OAuth2Delete OAuth2Purchase OAuth2Share document.create document.edit document.delete document.read enterprise.create enterprise.read enterprise.edit enterprise.delete enterprise.member.create enterprise.member.read enterprise.member.edit enterprise.member.delete webhook.create webhook.edit webhook.read webhook.delete PLMIntegration"
+                },
+                {
+                  "key": "redirect_uri",
+                  "value": "/oauth/token"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "/oauth/token"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "/oauth/authorize"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"connectionId\": \"<string>\",\n  \"documentId\": \"<string>\",\n  \"elementId\": \"<string>\",\n  \"encodedConfiguration\": \"<string>\",\n  \"entries\": [\n    {\n      \"applicationId\": \"<string>\",\n      \"companyId\": \"<string>\",\n      \"connectionId\": \"<string>\",\n      \"email\": \"<string>\",\n      \"entryType\": \"<integer>\",\n      \"teamId\": \"<string>\",\n      \"userId\": \"<string>\"\n    },\n    {\n      \"applicationId\": \"<string>\",\n      \"companyId\": \"<string>\",\n      \"connectionId\": \"<string>\",\n      \"email\": \"<string>\",\n      \"entryType\": \"<integer>\",\n      \"teamId\": \"<string>\",\n      \"userId\": \"<string>\"\n    }\n  ],\n  \"folderId\": \"<string>\",\n  \"message\": \"<string>\",\n  \"permission\": \"<long>\",\n  \"permissionSet\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"update\": \"<boolean>\",\n  \"workspaceId\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "e7345694-b02b-4c82-9c8e-881fa0c00086",
+              "name": "default response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "folders",
+                    ":fid",
+                    "share"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "fid",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json;charset=UTF-8; qs=0.09"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"connectionId\": \"<string>\",\n  \"documentId\": \"<string>\",\n  \"elementId\": \"<string>\",\n  \"encodedConfiguration\": \"<string>\",\n  \"entries\": [\n    {\n      \"applicationId\": \"<string>\",\n      \"companyId\": \"<string>\",\n      \"connectionId\": \"<string>\",\n      \"email\": \"<string>\",\n      \"entryType\": \"<integer>\",\n      \"teamId\": \"<string>\",\n      \"userId\": \"<string>\"\n    },\n    {\n      \"applicationId\": \"<string>\",\n      \"companyId\": \"<string>\",\n      \"connectionId\": \"<string>\",\n      \"email\": \"<string>\",\n      \"entryType\": \"<integer>\",\n      \"teamId\": \"<string>\",\n      \"userId\": \"<string>\"\n    }\n  ],\n  \"folderId\": \"<string>\",\n  \"message\": \"<string>\",\n  \"permission\": \"<long>\",\n  \"permissionSet\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"update\": \"<boolean>\",\n  \"workspaceId\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json;charset=UTF-8; qs=0.09"
+                }
+              ],
+              "body": "{\n  \"admin\": false,\n  \"entries\": [\n    {\n      \"acceptOwnerTransfer\": true,\n      \"canConnectionUserEdit\": true,\n      \"companyName\": \"string\",\n      \"connectionId\": \"string\",\n      \"connectionName\": \"string\",\n      \"connectionUser\": true,\n      \"email\": \"string\",\n      \"enterpriseMember\": false,\n      \"entryId\": \"string\",\n      \"entryState\": \"APPROVED\",\n      \"entryType\": 7016,\n      \"folderInaccessible\": false,\n      \"folderName\": \"string\",\n      \"image\": \"string\",\n      \"name\": \"string\",\n      \"objectId\": \"string\",\n      \"pendingOwnerTransfer\": true,\n      \"permission\": 2430,\n      \"permissionSet\": [\n        \"string\",\n        \"string\"\n      ],\n      \"proCompanySubtype\": 10,\n      \"teamName\": \"string\"\n    },\n    {\n      \"acceptOwnerTransfer\": true,\n      \"canConnectionUserEdit\": true,\n      \"companyName\": \"string\",\n      \"connectionId\": \"string\",\n      \"connectionName\": \"string\",\n      \"connectionUser\": false,\n      \"email\": \"string\",\n      \"enterpriseMember\": false,\n      \"entryId\": \"string\",\n      \"entryState\": \"INACTIVE\",\n      \"entryType\": 6760,\n      \"folderInaccessible\": true,\n      \"folderName\": \"string\",\n      \"image\": \"string\",\n      \"name\": \"string\",\n      \"objectId\": \"string\",\n      \"pendingOwnerTransfer\": false,\n      \"permission\": 2935,\n      \"permissionSet\": [\n        \"string\",\n        \"string\"\n      ],\n      \"proCompanySubtype\": 7501,\n      \"teamName\": \"string\"\n    }\n  ],\n  \"href\": \"https://LGl.kngAdHC0EItWPpcwnN.6jOU.U.FMFevb+UmlV4ajhEOFAFGBKtmlapTD+EPUxe01lA90NehHORkY-b\",\n  \"id\": \"string\",\n  \"inheritedAcls\": [\n    {\n      \"entries\": [\n        {\n          \"acceptOwnerTransfer\": true,\n          \"canConnectionUserEdit\": true,\n          \"companyName\": \"string\",\n          \"connectionId\": \"string\",\n          \"connectionName\": \"string\",\n          \"connectionUser\": false,\n          \"email\": \"string\",\n          \"enterpriseMember\": true,\n          \"entryId\": \"string\",\n          \"entryState\": \"APPROVED\",\n          \"entryType\": 8711,\n          \"folderInaccessible\": false,\n          \"folderName\": \"string\",\n          \"image\": \"string\",\n          \"name\": \"string\",\n          \"objectId\": \"string\",\n          \"pendingOwnerTransfer\": true,\n          \"permission\": 2653,\n          \"permissionSet\": [\n            \"string\",\n            \"string\"\n          ],\n          \"proCompanySubtype\": 254,\n          \"teamName\": \"string\"\n        },\n        {\n          \"acceptOwnerTransfer\": false,\n          \"canConnectionUserEdit\": true,\n          \"companyName\": \"string\",\n          \"connectionId\": \"string\",\n          \"connectionName\": \"string\",\n          \"connectionUser\": false,\n          \"email\": \"string\",\n          \"enterpriseMember\": true,\n          \"entryId\": \"string\",\n          \"entryState\": \"MARKED_FOR_DELETION\",\n          \"entryType\": 111,\n          \"folderInaccessible\": false,\n          \"folderName\": \"string\",\n          \"image\": \"string\",\n          \"name\": \"string\",\n          \"objectId\": \"string\",\n          \"pendingOwnerTransfer\": false,\n          \"permission\": 7332,\n          \"permissionSet\": [\n            \"string\",\n            \"string\"\n          ],\n          \"proCompanySubtype\": 3809,\n          \"teamName\": \"string\"\n        }\n      ],\n      \"href\": \"http://cyDqfiVJJizAwxGpvK.okoPfGjXcwm,jU\",\n      \"id\": \"string\",\n      \"name\": \"string\",\n      \"objectId\": \"string\",\n      \"objectName\": \"string\",\n      \"objectType\": 9376,\n      \"owner\": {\n        \"href\": \"http://enPkOzoZIScPMQGDxMoCY.xaVVL8pxtvpnCATvyf.DXFOlKsvtyMH,z\",\n        \"id\": \"string\",\n        \"image\": \"string\",\n        \"isEnterpriseOwnedResource\": true,\n        \"name\": \"string\",\n        \"type\": 2006,\n        \"viewRef\": \"https://t.kyCdUDycB2Nz6fvBecIbR0Ply,iLt3WzWxWXkLBzQBp1\"\n      },\n      \"public\": false,\n      \"sharedWithSupport\": false,\n      \"viewRef\": \"https://rYwnxkRmLbfEmzNpGFjIreAXvh.sktLU-a-3O+7BE3FuvfTmkiGmq,DU+2zHArk5Pkn\",\n      \"visibility\": \"string\"\n    },\n    {\n      \"entries\": [\n        {\n          \"acceptOwnerTransfer\": false,\n          \"canConnectionUserEdit\": false,\n          \"companyName\": \"string\",\n          \"connectionId\": \"string\",\n          \"connectionName\": \"string\",\n          \"connectionUser\": false,\n          \"email\": \"string\",\n          \"enterpriseMember\": false,\n          \"entryId\": \"string\",\n          \"entryState\": \"ALL\",\n          \"entryType\": 8362,\n          \"folderInaccessible\": true,\n          \"folderName\": \"string\",\n          \"image\": \"string\",\n          \"name\": \"string\",\n          \"objectId\": \"string\",\n          \"pendingOwnerTransfer\": true,\n          \"permission\": 6562,\n          \"permissionSet\": [\n            \"string\",\n            \"string\"\n          ],\n          \"proCompanySubtype\": 2063,\n          \"teamName\": \"string\"\n        },\n        {\n          \"acceptOwnerTransfer\": false,\n          \"canConnectionUserEdit\": false,\n          \"companyName\": \"string\",\n          \"connectionId\": \"string\",\n          \"connectionName\": \"string\",\n          \"connectionUser\": true,\n          \"email\": \"string\",\n          \"enterpriseMember\": true,\n          \"entryId\": \"string\",\n          \"entryState\": \"DELETED\",\n          \"entryType\": 4156,\n          \"folderInaccessible\": true,\n          \"folderName\": \"string\",\n          \"image\": \"string\",\n          \"name\": \"string\",\n          \"objectId\": \"string\",\n          \"pendingOwnerTransfer\": false,\n          \"permission\": 659,\n          \"permissionSet\": [\n            \"string\",\n            \"string\"\n          ],\n          \"proCompanySubtype\": 9137,\n          \"teamName\": \"string\"\n        }\n      ],\n      \"href\": \"https://zoLbeQLoLevx.dcbfEhoh3AfAbYGjOlAAXcSdbw\",\n      \"id\": \"string\",\n      \"name\": \"string\",\n      \"objectId\": \"string\",\n      \"objectName\": \"string\",\n      \"objectType\": 9371,\n      \"owner\": {\n        \"href\": \"https://uAIDyrcHBkFMKqITDhYHimDymELdMF.hxhoOFhpES1Zup70IWlGtsezioGLvqWpKO,r6ky\",\n        \"id\": \"string\",\n        \"image\": \"string\",\n        \"isEnterpriseOwnedResource\": false,\n        \"name\": \"string\",\n        \"type\": 467,\n        \"viewRef\": \"https://RrmGNnUTn.ykcp-r9wgh7gZ+HMUigIg.EvN-wnfzfcU-XoVPHCjxlJgxoUO4MHqmB0uiJ9wqO1QgxZRMQT\"\n      },\n      \"public\": true,\n      \"sharedWithSupport\": false,\n      \"viewRef\": \"http://zLHTfpWggHwvIe.qeybA-mR,-X-6noMSnJUJH8opYz93gB\",\n      \"visibility\": \"string\"\n    }\n  ],\n  \"name\": \"string\",\n  \"objectId\": \"string\",\n  \"objectType\": 2836,\n  \"owner\": {\n    \"href\": \"https://SNSghBrRzWZoANttLtJAU.zxrrmeGyOQ2I7Xm9Gttp69,.o\",\n    \"id\": \"string\",\n    \"image\": \"string\",\n    \"isEnterpriseOwnedResource\": true,\n    \"name\": \"string\",\n    \"type\": 6118,\n    \"viewRef\": \"http://Tc.oskvoAsK+KheOMBOZf.3QFPOAAjhr9mgR+2Zu7oChT20BECTjfj1eN\"\n  },\n  \"public\": true,\n  \"sharedWithSupport\": true,\n  \"viewRef\": \"https://Io.rvmyI6gdvVSPiip2+Zgocfh-pWy4nRnJNyfptZ-rCgrzfPuZOP+CF\",\n  \"visibility\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "55462e01-f9fc-481f-8b04-4f86451de13c",
+          "name": "Remove permissions from the folder for the specified Access Control List (ACL) entry.",
+          "request": {
+            "name": "Remove permissions from the folder for the specified Access Control List (ACL) entry.",
+            "description": {
+              "content": "* Provide the folder ID for the folder to unshare.  \n * Provide the `entityType` for the type of entity to remove. \n    * 0 (User)  \n    * 1 (Company) \n    * 2 (Team) \n    * 3 (Document) \n    * 4 (Application) \n* Provide the entity ID in the `eid` param.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "folders",
+                ":fid",
+                "share",
+                ":eid"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "entryType",
+                  "value": "0"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "fid",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "eid",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json;charset=UTF-8; qs=0.09"
+              }
+            ],
+            "method": "DELETE",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "scope",
+                  "value": "OAuth2Internal OAuth2ReadPII OAuth2Read OAuth2Write OAuth2Delete OAuth2Purchase OAuth2Share document.create document.edit document.delete document.read enterprise.create enterprise.read enterprise.edit enterprise.delete enterprise.member.create enterprise.member.read enterprise.member.edit enterprise.member.delete webhook.create webhook.edit webhook.read webhook.delete PLMIntegration"
+                },
+                {
+                  "key": "redirect_uri",
+                  "value": "/oauth/token"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "/oauth/token"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "/oauth/authorize"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "6c855cee-8c99-4b3b-987f-5b2524d9b117",
+              "name": "default response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "folders",
+                    ":fid",
+                    "share",
+                    ":eid"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "entryType",
+                      "value": "0"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "fid",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "eid",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json;charset=UTF-8; qs=0.09"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json;charset=UTF-8; qs=0.09"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://cad.onshape.com/api/v16",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "basic",
+    "basic": [
+      {
+        "key": "username",
+        "value": "{{basicAuthUsername}}"
+      },
+      {
+        "key": "password",
+        "value": "{{basicAuthPassword}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "07682723-f023-425f-a647-6bea89b47a2e",
+    "name": "Onshape REST Account Folder API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "## Welcome to the Onshape REST API Explorer\n\n**See the [API Explorer Guide](https://onshape-public.github.io/docs/api-intro/explorer/) for help navigating this page.**\n\n### Using this page\n1. Sign in to your [Onshape](https://cad.onshape.com) account in another tab.\n2. Click the `Try it out` button below. It toggles to a `Cancel` button when selected.\n\n### Authenticating\nTo authenticate your calls, click the `Authorize` button. See [API Explorer Guide: Authentication](https://onshape-public.github.io/docs/api-intro/explorer/#authentication) for details. Calls made when authenticated via API Keys or OAuth count against your annual [API limits](https://onshape-public.github.io/docs/auth/limits/#annual-api-call-limits).\n* **Tip:** To ensure the current session isn't used when trying other authentication techniques, make sure to [remove the Onshape cookie](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site) as per the instructions for your browser, or use a private or incognito window.\n\n### Additional resources\n\n* [Onshape API Guide](https://onshape-public.github.io/docs/): Our full suite of developer guides, to be used as an accompaniment to this API Explorer.\n* [Onshape Developer Portal](https://cad.onshape.com/appstore/dev-portal): The Onshape portal for managing your API keys, OAuth2 credentials, your Onshape applications, and your Onshape App Store entries.\n* [Authentication Guide](https://onshape-public.github.io/docs/auth/): Our guide to using API keys, request signatures, and OAuth2 in your Onshape applications.\n\nContact Support:\n Email: api-support@onshape.zendesk.com",
+      "type": "text/plain"
+    }
+  }
+}

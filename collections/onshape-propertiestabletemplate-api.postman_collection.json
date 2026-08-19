@@ -1,0 +1,708 @@
+{
+  "item": [
+    {
+      "id": "f4d0ccac-f3de-4de2-9b62-e7c6edcc2f5a",
+      "name": "PropertiesTableTemplate",
+      "description": {
+        "content": "Create, access, and delete templates for properties tables.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "8738c72d-30b9-4a80-a11e-142a2f7c2119",
+          "name": "Create a new properties table template.",
+          "request": {
+            "name": "Create a new properties table template.",
+            "description": {},
+            "url": {
+              "path": [
+                "tabletemplates"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "templateGroupId",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json;charset=UTF-8; qs=0.09"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json;charset=UTF-8; qs=0.09"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "scope",
+                  "value": "OAuth2Internal OAuth2ReadPII OAuth2Read OAuth2Write OAuth2Delete OAuth2Purchase OAuth2Share document.create document.edit document.delete document.read enterprise.create enterprise.read enterprise.edit enterprise.delete enterprise.member.create enterprise.member.read enterprise.member.edit enterprise.member.delete webhook.create webhook.edit webhook.read webhook.delete PLMIntegration"
+                },
+                {
+                  "key": "redirect_uri",
+                  "value": "/oauth/token"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "/oauth/token"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "/oauth/authorize"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"companyId\": \"<string>\",\n  \"isAllCaps\": \"<boolean>\",\n  \"isIndented\": \"<boolean>\",\n  \"isShowingTopLevelAssemblyRow\": \"<boolean>\",\n  \"name\": \"<string>\",\n  \"propertyColumns\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"tableType\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "b6ed3579-bf88-4ac7-9c99-05d94da333bc",
+              "name": "default response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "tabletemplates"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "templateGroupId",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json;charset=UTF-8; qs=0.09"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"companyId\": \"<string>\",\n  \"isAllCaps\": \"<boolean>\",\n  \"isIndented\": \"<boolean>\",\n  \"isShowingTopLevelAssemblyRow\": \"<boolean>\",\n  \"name\": \"<string>\",\n  \"propertyColumns\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"tableType\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json;charset=UTF-8; qs=0.09"
+                }
+              ],
+              "body": "{\n  \"companyId\": \"string\",\n  \"href\": \"https://wPDRBhmyZPSbNYRr.jbyoe4JaxbyLqxFBrC4naD,-B\",\n  \"id\": \"string\",\n  \"isActive\": false,\n  \"isAllCaps\": true,\n  \"isIndented\": true,\n  \"isShowingTopLevelAssemblyRow\": false,\n  \"name\": \"string\",\n  \"propertyColumns\": [\n    {\n      \"displayName\": \"string\",\n      \"frozen\": true,\n      \"propertyId\": \"string\",\n      \"publishState\": 420,\n      \"valueType\": \"BOOL\"\n    },\n    {\n      \"displayName\": \"string\",\n      \"frozen\": true,\n      \"propertyId\": \"string\",\n      \"publishState\": 1552,\n      \"valueType\": \"VALUE_WITH_UNITS\"\n    }\n  ],\n  \"tableType\": \"<string>\",\n  \"templateGroupId\": \"string\",\n  \"viewRef\": \"http://GVqotNkoRoeoRidmHmdErvDgxLZt.gecpYol1jlr4FQ8kcKAzvELmAVwtBSQ60jZEF4Kaj\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "0b596e54-9c41-4f54-87cf-d91cda72470c",
+          "name": "Get all properties table templates available for a company.",
+          "request": {
+            "name": "Get all properties table templates available for a company.",
+            "description": {},
+            "url": {
+              "path": [
+                "tabletemplates",
+                "companies",
+                ":cid"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "templateType",
+                  "value": "<string>",
+                  "description": "Indicates filter for table templates: 0 (BOM) or 1 (Revision Table)."
+                },
+                {
+                  "disabled": false,
+                  "key": "onlyActive",
+                  "value": "false"
+                },
+                {
+                  "disabled": false,
+                  "key": "includeDefaults",
+                  "value": "true"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "cid",
+                  "description": "(Required) The id of the company in which to perform the operation."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json;charset=UTF-8; qs=0.09"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "scope",
+                  "value": "OAuth2Internal OAuth2ReadPII OAuth2Read OAuth2Write OAuth2Delete OAuth2Purchase OAuth2Share document.create document.edit document.delete document.read enterprise.create enterprise.read enterprise.edit enterprise.delete enterprise.member.create enterprise.member.read enterprise.member.edit enterprise.member.delete webhook.create webhook.edit webhook.read webhook.delete PLMIntegration"
+                },
+                {
+                  "key": "redirect_uri",
+                  "value": "/oauth/token"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "/oauth/token"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "/oauth/authorize"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "09a6da67-3cf0-4473-b28e-e853a1524975",
+              "name": "default response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "tabletemplates",
+                    "companies",
+                    ":cid"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "templateType",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "onlyActive",
+                      "value": "false"
+                    },
+                    {
+                      "key": "includeDefaults",
+                      "value": "true"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "cid",
+                      "description": "(Required) The id of the company in which to perform the operation."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json;charset=UTF-8; qs=0.09"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json;charset=UTF-8; qs=0.09"
+                }
+              ],
+              "body": "[\n  {\n    \"companyId\": \"string\",\n    \"href\": \"https://Zy.qmjVeKD7Nd4PXwkzcfwe,IVxPmu4o.zF9BwWXP9WyDL.FtP\",\n    \"id\": \"string\",\n    \"isActive\": true,\n    \"isAllCaps\": true,\n    \"isIndented\": true,\n    \"isShowingTopLevelAssemblyRow\": true,\n    \"name\": \"string\",\n    \"propertyColumns\": [\n      {\n        \"displayName\": \"string\",\n        \"frozen\": false,\n        \"propertyId\": \"string\",\n        \"publishState\": 9131,\n        \"valueType\": \"CATEGORY\"\n      },\n      {\n        \"displayName\": \"string\",\n        \"frozen\": true,\n        \"propertyId\": \"string\",\n        \"publishState\": 4267,\n        \"valueType\": \"ENUM\"\n      }\n    ],\n    \"tableType\": \"<string>\",\n    \"templateGroupId\": \"string\",\n    \"viewRef\": \"https://cXZioIkamhVQdVlNxBkJ.venivRDgXTl,HD5qYRO95WJGr.FGdrGudsGsqTjAk7XUsq0do5\"\n  },\n  {\n    \"companyId\": \"string\",\n    \"href\": \"http://J.ombriWSLDSZB8AODxsWXreW-ikEg5LuqDQIRVOC5lcocoZM5MTtRGf\",\n    \"id\": \"string\",\n    \"isActive\": true,\n    \"isAllCaps\": false,\n    \"isIndented\": true,\n    \"isShowingTopLevelAssemblyRow\": false,\n    \"name\": \"string\",\n    \"propertyColumns\": [\n      {\n        \"displayName\": \"string\",\n        \"frozen\": true,\n        \"propertyId\": \"string\",\n        \"publishState\": 601,\n        \"valueType\": \"INT\"\n      },\n      {\n        \"displayName\": \"string\",\n        \"frozen\": true,\n        \"propertyId\": \"string\",\n        \"publishState\": 2491,\n        \"valueType\": \"USER\"\n      }\n    ],\n    \"tableType\": \"<string>\",\n    \"templateGroupId\": \"string\",\n    \"viewRef\": \"http://CNeATmkFlIskbFgrLHnLUPAtw.tzkN6+.Gio2iJELQ4T0aO1B+BfCbJXfBId-7G9\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "2a188fb0-331b-4953-be53-770c0a43de42",
+          "name": "Get all table templates that are available to use on the provided document.",
+          "request": {
+            "name": "Get all table templates that are available to use on the provided document.",
+            "description": {},
+            "url": {
+              "path": [
+                "tabletemplates",
+                "d",
+                ":did"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "templateType",
+                  "value": "<string>",
+                  "description": "Indicates filter for table templates: 0 (BOM) or 1 (Revision Table)."
+                },
+                {
+                  "disabled": false,
+                  "key": "onlyActive",
+                  "value": "true"
+                },
+                {
+                  "disabled": false,
+                  "key": "includeDefaults",
+                  "value": "true"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "did",
+                  "description": "(Required) The id of the document in which to perform the operation."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json;charset=UTF-8; qs=0.09"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "scope",
+                  "value": "OAuth2Internal OAuth2ReadPII OAuth2Read OAuth2Write OAuth2Delete OAuth2Purchase OAuth2Share document.create document.edit document.delete document.read enterprise.create enterprise.read enterprise.edit enterprise.delete enterprise.member.create enterprise.member.read enterprise.member.edit enterprise.member.delete webhook.create webhook.edit webhook.read webhook.delete PLMIntegration"
+                },
+                {
+                  "key": "redirect_uri",
+                  "value": "/oauth/token"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "/oauth/token"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "/oauth/authorize"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "1fea7ba5-e099-403b-a63e-4ed119dd1a1e",
+              "name": "default response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "tabletemplates",
+                    "d",
+                    ":did"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "templateType",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "onlyActive",
+                      "value": "true"
+                    },
+                    {
+                      "key": "includeDefaults",
+                      "value": "true"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "did",
+                      "description": "(Required) The id of the document in which to perform the operation."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json;charset=UTF-8; qs=0.09"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json;charset=UTF-8; qs=0.09"
+                }
+              ],
+              "body": "[\n  {\n    \"companyId\": \"string\",\n    \"href\": \"https://Zy.qmjVeKD7Nd4PXwkzcfwe,IVxPmu4o.zF9BwWXP9WyDL.FtP\",\n    \"id\": \"string\",\n    \"isActive\": true,\n    \"isAllCaps\": true,\n    \"isIndented\": true,\n    \"isShowingTopLevelAssemblyRow\": true,\n    \"name\": \"string\",\n    \"propertyColumns\": [\n      {\n        \"displayName\": \"string\",\n        \"frozen\": false,\n        \"propertyId\": \"string\",\n        \"publishState\": 9131,\n        \"valueType\": \"CATEGORY\"\n      },\n      {\n        \"displayName\": \"string\",\n        \"frozen\": true,\n        \"propertyId\": \"string\",\n        \"publishState\": 4267,\n        \"valueType\": \"ENUM\"\n      }\n    ],\n    \"tableType\": \"<string>\",\n    \"templateGroupId\": \"string\",\n    \"viewRef\": \"https://cXZioIkamhVQdVlNxBkJ.venivRDgXTl,HD5qYRO95WJGr.FGdrGudsGsqTjAk7XUsq0do5\"\n  },\n  {\n    \"companyId\": \"string\",\n    \"href\": \"http://J.ombriWSLDSZB8AODxsWXreW-ikEg5LuqDQIRVOC5lcocoZM5MTtRGf\",\n    \"id\": \"string\",\n    \"isActive\": true,\n    \"isAllCaps\": false,\n    \"isIndented\": true,\n    \"isShowingTopLevelAssemblyRow\": false,\n    \"name\": \"string\",\n    \"propertyColumns\": [\n      {\n        \"displayName\": \"string\",\n        \"frozen\": true,\n        \"propertyId\": \"string\",\n        \"publishState\": 601,\n        \"valueType\": \"INT\"\n      },\n      {\n        \"displayName\": \"string\",\n        \"frozen\": true,\n        \"propertyId\": \"string\",\n        \"publishState\": 2491,\n        \"valueType\": \"USER\"\n      }\n    ],\n    \"tableType\": \"<string>\",\n    \"templateGroupId\": \"string\",\n    \"viewRef\": \"http://CNeATmkFlIskbFgrLHnLUPAtw.tzkN6+.Gio2iJELQ4T0aO1B+BfCbJXfBId-7G9\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a60783a4-ed08-4653-9437-b05f2fb1de13",
+          "name": "Get a properties table template by template ID.",
+          "request": {
+            "name": "Get a properties table template by template ID.",
+            "description": {},
+            "url": {
+              "path": [
+                "tabletemplates",
+                ":tid"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "tid",
+                  "description": "(Required) The id of the template in which to perform the operation."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json;charset=UTF-8; qs=0.09"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "scope",
+                  "value": "OAuth2Internal OAuth2ReadPII OAuth2Read OAuth2Write OAuth2Delete OAuth2Purchase OAuth2Share document.create document.edit document.delete document.read enterprise.create enterprise.read enterprise.edit enterprise.delete enterprise.member.create enterprise.member.read enterprise.member.edit enterprise.member.delete webhook.create webhook.edit webhook.read webhook.delete PLMIntegration"
+                },
+                {
+                  "key": "redirect_uri",
+                  "value": "/oauth/token"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "/oauth/token"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "/oauth/authorize"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "296e7ad5-95ac-48c4-9a98-eab078f9665e",
+              "name": "default response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "tabletemplates",
+                    ":tid"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "tid",
+                      "description": "(Required) The id of the template in which to perform the operation."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json;charset=UTF-8; qs=0.09"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json;charset=UTF-8; qs=0.09"
+                }
+              ],
+              "body": "{\n  \"companyId\": \"string\",\n  \"href\": \"http://cXckkvVT.gfxIqcJdHA.l9j7kI2AFAGR,JTDk+e4ctbxEC8.tJMhrNkkFRU5iptGdrc8LlqOjmGD22c\",\n  \"id\": \"string\",\n  \"isActive\": false,\n  \"isAllCaps\": false,\n  \"isIndented\": true,\n  \"isShowingTopLevelAssemblyRow\": false,\n  \"name\": \"string\",\n  \"propertyColumns\": [\n    {\n      \"displayName\": \"string\",\n      \"frozen\": false,\n      \"propertyId\": \"string\",\n      \"publishState\": 5434,\n      \"valueType\": \"COMPUTED\"\n    },\n    {\n      \"displayName\": \"string\",\n      \"frozen\": false,\n      \"propertyId\": \"string\",\n      \"publishState\": 4121,\n      \"valueType\": \"BOOL\"\n    }\n  ],\n  \"tableType\": \"<string>\",\n  \"templateGroupId\": \"string\",\n  \"viewRef\": \"https://QowEbtjcI.nxfnLb3+OfCiD4Yakn2d\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e07589af-0866-487b-b674-e17b51c0fe67",
+          "name": "Delete a properties table template.",
+          "request": {
+            "name": "Delete a properties table template.",
+            "description": {},
+            "url": {
+              "path": [
+                "tabletemplates",
+                ":tid"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "tid",
+                  "description": "(Required) The id of the template in which to perform the operation."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json;charset=UTF-8; qs=0.09"
+              }
+            ],
+            "method": "DELETE",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "scope",
+                  "value": "OAuth2Internal OAuth2ReadPII OAuth2Read OAuth2Write OAuth2Delete OAuth2Purchase OAuth2Share document.create document.edit document.delete document.read enterprise.create enterprise.read enterprise.edit enterprise.delete enterprise.member.create enterprise.member.read enterprise.member.edit enterprise.member.delete webhook.create webhook.edit webhook.read webhook.delete PLMIntegration"
+                },
+                {
+                  "key": "redirect_uri",
+                  "value": "/oauth/token"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "/oauth/token"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "/oauth/authorize"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "f095dc12-113d-41cd-9cb3-fae3fdc88132",
+              "name": "default response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "tabletemplates",
+                    ":tid"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "tid",
+                      "description": "(Required) The id of the template in which to perform the operation."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json;charset=UTF-8; qs=0.09"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json;charset=UTF-8; qs=0.09"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://cad.onshape.com/api/v16",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "basic",
+    "basic": [
+      {
+        "key": "username",
+        "value": "{{basicAuthUsername}}"
+      },
+      {
+        "key": "password",
+        "value": "{{basicAuthPassword}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "adc94170-9165-4817-ab89-4db0ad6c0510",
+    "name": "Onshape REST Account PropertiesTableTemplate API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "## Welcome to the Onshape REST API Explorer\n\n**See the [API Explorer Guide](https://onshape-public.github.io/docs/api-intro/explorer/) for help navigating this page.**\n\n### Using this page\n1. Sign in to your [Onshape](https://cad.onshape.com) account in another tab.\n2. Click the `Try it out` button below. It toggles to a `Cancel` button when selected.\n\n### Authenticating\nTo authenticate your calls, click the `Authorize` button. See [API Explorer Guide: Authentication](https://onshape-public.github.io/docs/api-intro/explorer/#authentication) for details. Calls made when authenticated via API Keys or OAuth count against your annual [API limits](https://onshape-public.github.io/docs/auth/limits/#annual-api-call-limits).\n* **Tip:** To ensure the current session isn't used when trying other authentication techniques, make sure to [remove the Onshape cookie](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site) as per the instructions for your browser, or use a private or incognito window.\n\n### Additional resources\n\n* [Onshape API Guide](https://onshape-public.github.io/docs/): Our full suite of developer guides, to be used as an accompaniment to this API Explorer.\n* [Onshape Developer Portal](https://cad.onshape.com/appstore/dev-portal): The Onshape portal for managing your API keys, OAuth2 credentials, your Onshape applications, and your Onshape App Store entries.\n* [Authentication Guide](https://onshape-public.github.io/docs/auth/): Our guide to using API keys, request signatures, and OAuth2 in your Onshape applications.\n\nContact Support:\n Email: api-support@onshape.zendesk.com",
+      "type": "text/plain"
+    }
+  }
+}

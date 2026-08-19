@@ -1,0 +1,519 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Onshape REST Account Revision API",
+    "version": "1.218.84032-34acba44be17"
+  },
+  "request": {
+    "auth": {
+      "type": "basic",
+      "username": "{{username}}",
+      "password": "{{password}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Revision",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get details for the specified revision.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://cad.onshape.com/api/v16/revisions/c/:cid/partnumber/:pnum",
+            "params": [
+              {
+                "name": "cid",
+                "value": "",
+                "type": "path",
+                "description": "The company or enterprise ID that owns the resource."
+              },
+              {
+                "name": "pnum",
+                "value": "",
+                "type": "path",
+                "description": "Part number."
+              },
+              {
+                "name": "revision",
+                "value": "",
+                "type": "query",
+                "description": "ID of the revision to get"
+              },
+              {
+                "name": "elementType",
+                "value": "",
+                "type": "query",
+                "description": "Element Type. Must be one of: `-1`: Unknown, `0`: Part Studio, `1`: Assembly, `2`: Drawing. `4` : Blob, `8`: Variable Studio"
+              }
+            ],
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "/oauth/authorize",
+              "accessTokenUrl": "/oauth/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "If the `revision` parameter is left blank, the latest revision information is returned. See [API Guide: Release Management](https://onshape-public.github.io/docs/api-adv/relmgmt/#get-latest-revision-info) for more details."
+        },
+        {
+          "info": {
+            "name": "Get all revisions for a company.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://cad.onshape.com/api/v16/revisions/companies/:cid",
+            "params": [
+              {
+                "name": "cid",
+                "value": "",
+                "type": "path",
+                "description": "The company or enterprise ID that owns the resource."
+              },
+              {
+                "name": "elementType",
+                "value": "",
+                "type": "query",
+                "description": "Element Type. Must be one of: `-1`: Unknown, `0`: Part Studio, `1`: Assembly, `2`: Drawing. `4` : Blob, `8`: Variable Studio"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "The number of list entries to return in a single API call."
+              },
+              {
+                "name": "latestOnly",
+                "value": "",
+                "type": "query",
+                "description": "Whether to limit search to only latest revisions."
+              },
+              {
+                "name": "after",
+                "value": "",
+                "type": "query",
+                "description": "The earliest creation date of the revision to find."
+              }
+            ],
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "/oauth/authorize",
+              "accessTokenUrl": "/oauth/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "See [API Guide: Release Management](https://onshape-public.github.io/docs/api-adv/relmgmt/#get-all-revisions) for more details. \n* Returns a list of `limit` size of all objects per API call. \n* To get the next set of results, use the `next` URL from the response body. \n* Do not change any other query parameters during subsequent enumeration. \n* Persist `after` query param value and use it to begin a fresh enumeration at a later date. \n* This API can only be called by company admins."
+        },
+        {
+          "info": {
+            "name": "Get all revisions for an element (tab).",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://cad.onshape.com/api/v16/revisions/companies/:cid/d/:did/:wv/:wvid/e/:eid",
+            "params": [
+              {
+                "name": "cid",
+                "value": "",
+                "type": "path",
+                "description": "The company or enterprise ID that owns the resource."
+              },
+              {
+                "name": "did",
+                "value": "",
+                "type": "path",
+                "description": "The id of the document in which to perform the operation."
+              },
+              {
+                "name": "linkDocumentId",
+                "value": "",
+                "type": "query",
+                "description": "The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both."
+              },
+              {
+                "name": "wv",
+                "value": "",
+                "type": "path",
+                "description": "Indicates which of workspace (w) or version (v) id is specified below."
+              },
+              {
+                "name": "wvid",
+                "value": "",
+                "type": "path",
+                "description": "The id of the workspace, version in which the operation should be performed."
+              },
+              {
+                "name": "eid",
+                "value": "",
+                "type": "path",
+                "description": "The id of the element in which to perform the operation."
+              },
+              {
+                "name": "configuration",
+                "value": "",
+                "type": "query",
+                "description": "URL-encoded string of configuration values (separated by `;`). See the [Configurations API Guide](https://onshape-public.github.io/docs/api-adv/configs/) for details."
+              },
+              {
+                "name": "elementType",
+                "value": "",
+                "type": "query",
+                "description": "Element Type. Must be one of: `-1`: Unknown, `0`: Part Studio, `1`: Assembly, `2`: Drawing. `4` : Blob, `8`: Variable Studio"
+              },
+              {
+                "name": "fillApprovers",
+                "value": "",
+                "type": "query",
+                "description": "Set to `true` to return a list of approvers. Default is `false` and will return `null`."
+              },
+              {
+                "name": "fillExportPermission",
+                "value": "",
+                "type": "query",
+                "description": "Set to `true` to return a list of export permissions. Default is `false` and will return `null`."
+              },
+              {
+                "name": "supportChangeType",
+                "value": "",
+                "type": "query",
+                "description": "Whether the revision can change object type. Used in reuse part number flow."
+              }
+            ],
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "/oauth/authorize",
+              "accessTokenUrl": "/oauth/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "See [API Guide: Release Management](https://onshape-public.github.io/docs/api-adv/relmgmt/#get-latest-revision-info) for more details."
+        },
+        {
+          "info": {
+            "name": "Get all revisions for a part ID.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://cad.onshape.com/api/v16/revisions/companies/:cid/d/:did/:wv/:wvid/e/:eid/p/:pid",
+            "params": [
+              {
+                "name": "cid",
+                "value": "",
+                "type": "path",
+                "description": "The company or enterprise ID that owns the resource."
+              },
+              {
+                "name": "did",
+                "value": "",
+                "type": "path",
+                "description": "Document ID."
+              },
+              {
+                "name": "wv",
+                "value": "",
+                "type": "path",
+                "description": "One of w or v corresponding to whether a workspace or version was specified."
+              },
+              {
+                "name": "wvid",
+                "value": "",
+                "type": "path",
+                "description": "Workspace (w) or Version (v) ID."
+              },
+              {
+                "name": "eid",
+                "value": "",
+                "type": "path",
+                "description": "Element ID."
+              },
+              {
+                "name": "pid",
+                "value": "",
+                "type": "path",
+                "description": "Part ID."
+              },
+              {
+                "name": "configuration",
+                "value": "",
+                "type": "query",
+                "description": "URL-encoded string of configuration values (separated by `;`). See the [Configurations API Guide](https://onshape-public.github.io/docs/api-adv/configs/) for details."
+              },
+              {
+                "name": "linkDocumentId",
+                "value": "",
+                "type": "query",
+                "description": "Id of document that links to the document being accessed. This may provide additional access rights to the document. Allowed only with version (v) path parameter."
+              },
+              {
+                "name": "fillApprovers",
+                "value": "",
+                "type": "query",
+                "description": "Set to `true` to return a list of approvers. Default is `false` and will return `null`."
+              },
+              {
+                "name": "fillExportPermission",
+                "value": "",
+                "type": "query",
+                "description": "Set to `true` to return a list of export permissions. Default is `false` and will return `null`."
+              },
+              {
+                "name": "supportChangeType",
+                "value": "",
+                "type": "query",
+                "description": "Whether the revision can change object type. Used in reuse part number flow."
+              }
+            ],
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "/oauth/authorize",
+              "accessTokenUrl": "/oauth/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "See [API Guide: Release Management](https://onshape-public.github.io/docs/api-adv/relmgmt/#get-latest-revision-info) for more details. "
+        },
+        {
+          "info": {
+            "name": "Get all revisions for a part number.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://cad.onshape.com/api/v16/revisions/companies/:cid/partnumber/:pnum",
+            "params": [
+              {
+                "name": "cid",
+                "value": "",
+                "type": "path",
+                "description": "The company or enterprise ID that owns the resource."
+              },
+              {
+                "name": "pnum",
+                "value": "",
+                "type": "path",
+                "description": "Part number."
+              },
+              {
+                "name": "elementType",
+                "value": "",
+                "type": "query",
+                "description": "Element Type. Must be one of: `-1`: Unknown, `0`: Part Studio, `1`: Assembly, `2`: Drawing. `4` : Blob, `8`: Variable Studio"
+              },
+              {
+                "name": "fillApprovers",
+                "value": "",
+                "type": "query",
+                "description": "Set to `true` to return a list of approvers. Default is `false` and will return `null`."
+              },
+              {
+                "name": "fillExportPermission",
+                "value": "",
+                "type": "query",
+                "description": "Set to `true` to return a list of export permissions. Default is `false` and will return `null`."
+              },
+              {
+                "name": "supportChangeType",
+                "value": "",
+                "type": "query",
+                "description": "Whether the revision can change object type. Used in reuse part number flow."
+              }
+            ],
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "/oauth/authorize",
+              "accessTokenUrl": "/oauth/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "You can also request `elementType` in addition to `partNumber` since companies may or may not allow drawings to share part numbers with their parts/assemblies. To perform search without `elementType`, use `elementType = -1` (UNKNOWN).  See [API Guide: Release Management](https://onshape-public.github.io/docs/api-adv/relmgmt/#get-all-revisions) for more details."
+        },
+        {
+          "info": {
+            "name": "Delete all revisions for a part number.",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://cad.onshape.com/api/v16/revisions/companies/:cid/partnumber/:pnum/elementType/:et",
+            "params": [
+              {
+                "name": "cid",
+                "value": "",
+                "type": "path",
+                "description": "The company or enterprise ID that owns the resource."
+              },
+              {
+                "name": "pnum",
+                "value": "",
+                "type": "path",
+                "description": "Part number."
+              },
+              {
+                "name": "et",
+                "value": "",
+                "type": "path",
+                "description": "Element Type. Must be one of: `0`: Part Studio, `1`: Assembly, `2`: Drawing. `4` : Blob"
+              },
+              {
+                "name": "ignoreLinkedDocuments",
+                "value": "",
+                "type": "query",
+                "description": "By default, revisions will be deleted for the part number in the specified, and all linked documents. Set to `true` to only delete revisions in the specified document."
+              }
+            ],
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "/oauth/authorize",
+              "accessTokenUrl": "/oauth/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Only company admins can call this API. All documents that contain or use the part number must be deleted first. This operation cannot be undone."
+        },
+        {
+          "info": {
+            "name": "Get all revisions for a document.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://cad.onshape.com/api/v16/revisions/d/:did",
+            "params": [
+              {
+                "name": "did",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "/oauth/authorize",
+              "accessTokenUrl": "/oauth/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Retrieve a list of all revisions that exist in a document and are owned by the document's owning company.  See [API Guide: Release Management](https://onshape-public.github.io/docs/api-adv/relmgmt/#get-all-revisions) for more details."
+        },
+        {
+          "info": {
+            "name": "Get all revisions for a version.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://cad.onshape.com/api/v16/revisions/d/:did/v/:vid",
+            "params": [
+              {
+                "name": "did",
+                "value": "",
+                "type": "path",
+                "description": "Document ID."
+              },
+              {
+                "name": "vid",
+                "value": "",
+                "type": "path",
+                "description": "Version ID."
+              }
+            ],
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "/oauth/authorize",
+              "accessTokenUrl": "/oauth/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Retrieve a list of all revisions that exist in a document version and are owned by the document's owning company.  See [API Guide: Release Management](https://onshape-public.github.io/docs/api-adv/relmgmt/#get-all-revisions) for more details."
+        },
+        {
+          "info": {
+            "name": "Get the latest revision information for a part.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://cad.onshape.com/api/v16/revisions/:cd/:cdid/p/:pnum/latest",
+            "params": [
+              {
+                "name": "cd",
+                "value": "",
+                "type": "path",
+                "description": "Use `c` to specify a company ID or `d` to specify a document ID."
+              },
+              {
+                "name": "cdid",
+                "value": "",
+                "type": "path",
+                "description": "Company ID or document ID"
+              },
+              {
+                "name": "pnum",
+                "value": "",
+                "type": "path",
+                "description": "Part number."
+              },
+              {
+                "name": "et",
+                "value": "",
+                "type": "query",
+                "description": "Element Type. Must be one of: `-1`: Unknown, `0`: Part Studio, `1`: Assembly, `2`: Drawing. `4` : Blob, `8`: Variable Studio"
+              }
+            ],
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "/oauth/authorize",
+              "accessTokenUrl": "/oauth/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "See [API Guide: Release Management](https://onshape-public.github.io/docs/api-adv/relmgmt/#get-latest-revision-info) for more details. Returns 204 if no revisions are found."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

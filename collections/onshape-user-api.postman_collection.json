@@ -1,0 +1,426 @@
+{
+  "item": [
+    {
+      "id": "f6ec92eb-6309-49d3-a4bb-996688aa70e6",
+      "name": "User",
+      "description": {
+        "content": "Access user information.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "6cce94e4-eb2b-4898-871a-fc57e5a43804",
+          "name": "Authenticate a user's Onshape credentials, and create a session.",
+          "request": {
+            "name": "Authenticate a user's Onshape credentials, and create a session.",
+            "description": {
+              "content": "Returned information depends on caller's `OAuth2ReadPll` scope.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "users",
+                "session"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json;charset=UTF-8; qs=0.09"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json;charset=UTF-8; qs=0.09"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"deviceId\": \"<string>\",\n  \"email\": \"<string>\",\n  \"enableTotp\": \"<boolean>\",\n  \"isRecaptchaV3\": \"<boolean>\",\n  \"password\": \"<string>\",\n  \"randomToken\": \"<string>\",\n  \"recaptchaToken\": \"<string>\",\n  \"rememberTotp\": \"<boolean>\",\n  \"rendererPerformanceMeasurement\": {\n    \"linesPerSecond\": \"<float>\",\n    \"renderer\": \"<string>\",\n    \"trianglesPerSecond\": \"<float>\",\n    \"vendor\": \"<string>\"\n  },\n  \"totp\": \"<string>\",\n  \"webClientCapabilities\": {\n    \"angleInstancedArrays\": \"<boolean>\",\n    \"clientBrowserStorageQuota\": \"<double>\",\n    \"clientBrowserStorageUsed\": \"<double>\",\n    \"compressedTextureS3tc\": \"<boolean>\",\n    \"depthTexture\": \"<boolean>\",\n    \"devicePixelRatio\": \"<double>\",\n    \"drawBuffers\": \"<boolean>\",\n    \"extTextureFilterAnisotropic\": \"<boolean>\",\n    \"has3dMouse\": \"<boolean>\",\n    \"oesElementIndexUint\": \"<boolean>\",\n    \"oesStandardDerivatives\": \"<boolean>\",\n    \"oesTextureFloat\": \"<boolean>\",\n    \"oesTextureFloatLinear\": \"<boolean>\",\n    \"oesTextureHalfFloat\": \"<boolean>\",\n    \"oesTextureHalfFloatLinear\": \"<boolean>\",\n    \"oesVertexArrayObject\": \"<boolean>\",\n    \"renderer\": \"<string>\",\n    \"screenHeight\": \"<integer>\",\n    \"screenWidth\": \"<integer>\",\n    \"supportsWebGL2\": \"<boolean>\",\n    \"supportsWebGPU\": \"<boolean>\",\n    \"vendor\": \"<string>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "de936e2e-ada2-4a1f-9b2a-cc16efd4b4e0",
+              "name": "default response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users",
+                    "session"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json;charset=UTF-8; qs=0.09"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"deviceId\": \"<string>\",\n  \"email\": \"<string>\",\n  \"enableTotp\": \"<boolean>\",\n  \"isRecaptchaV3\": \"<boolean>\",\n  \"password\": \"<string>\",\n  \"randomToken\": \"<string>\",\n  \"recaptchaToken\": \"<string>\",\n  \"rememberTotp\": \"<boolean>\",\n  \"rendererPerformanceMeasurement\": {\n    \"linesPerSecond\": \"<float>\",\n    \"renderer\": \"<string>\",\n    \"trianglesPerSecond\": \"<float>\",\n    \"vendor\": \"<string>\"\n  },\n  \"totp\": \"<string>\",\n  \"webClientCapabilities\": {\n    \"angleInstancedArrays\": \"<boolean>\",\n    \"clientBrowserStorageQuota\": \"<double>\",\n    \"clientBrowserStorageUsed\": \"<double>\",\n    \"compressedTextureS3tc\": \"<boolean>\",\n    \"depthTexture\": \"<boolean>\",\n    \"devicePixelRatio\": \"<double>\",\n    \"drawBuffers\": \"<boolean>\",\n    \"extTextureFilterAnisotropic\": \"<boolean>\",\n    \"has3dMouse\": \"<boolean>\",\n    \"oesElementIndexUint\": \"<boolean>\",\n    \"oesStandardDerivatives\": \"<boolean>\",\n    \"oesTextureFloat\": \"<boolean>\",\n    \"oesTextureFloatLinear\": \"<boolean>\",\n    \"oesTextureHalfFloat\": \"<boolean>\",\n    \"oesTextureHalfFloatLinear\": \"<boolean>\",\n    \"oesVertexArrayObject\": \"<boolean>\",\n    \"renderer\": \"<string>\",\n    \"screenHeight\": \"<integer>\",\n    \"screenWidth\": \"<integer>\",\n    \"supportsWebGL2\": \"<boolean>\",\n    \"supportsWebGPU\": \"<boolean>\",\n    \"vendor\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json;charset=UTF-8; qs=0.09"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "d8f0b556-ef1a-4e67-8b35-df328c3474cf",
+          "name": "Get the session information for an authenticated (signed-in) user.",
+          "request": {
+            "name": "Get the session information for an authenticated (signed-in) user.",
+            "description": {
+              "content": "Returned information depends on caller's `OAuth2ReadPll` scope.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "users",
+                "sessioninfo"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json;charset=UTF-8; qs=0.09"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "0a78eee8-75dd-4f57-8ca1-3c02ae25a9b2",
+              "name": "default response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users",
+                    "sessioninfo"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json;charset=UTF-8; qs=0.09"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json;charset=UTF-8; qs=0.09"
+                }
+              ],
+              "body": "{\n  \"jsonType\": \"string\",\n  \"href\": \"http://f.ppnG+nFVYRNBgkHGLXrF8C\",\n  \"id\": \"string\",\n  \"name\": \"string\",\n  \"viewRef\": \"https://uzggVaiVAtASXOeXaq.dalrzS6h+zVmHh4mhXVHdN1dhi9qdGrZG,LO+vvUE+\",\n  \"image\": \"string\",\n  \"isOnshapeSupport\": true,\n  \"state\": 9469,\n  \"documentationName\": \"string\",\n  \"email\": \"string\",\n  \"firstName\": \"string\",\n  \"lastName\": \"string\",\n  \"company\": {\n    \"admin\": true,\n    \"description\": \"string\",\n    \"domainPrefix\": \"string\",\n    \"enterpriseBaseUrl\": \"string\",\n    \"enterpriseSubtype\": 1793,\n    \"href\": \"http://ffQBvTxhJqsqWESrRUVyZ.aunk6TAbfnOYXQ8d.WFJTeFO+dKcDm8UIG5l51xaVugSr5mDq8sq3QCk2U2qAb0\",\n    \"id\": \"string\",\n    \"image\": \"string\",\n    \"name\": \"string\",\n    \"noPublicDocuments\": false,\n    \"ownerId\": \"string\",\n    \"secondaryDomainPrefixes\": [\n      \"string\"\n    ],\n    \"state\": 6406,\n    \"type\": 2161,\n    \"viewRef\": \"https://lApXFJVcDihSCEMuUoDzzqKqGXljpe.vzhqNAFhoidTH8pm75oAu-BBXFcnGwHuhC2UPqDhjG9QofBizW2WUPbRyik\"\n  },\n  \"companyUserState\": 9863,\n  \"confirmationRequested\": false,\n  \"documentationNameOverride\": \"string\",\n  \"globalPermissions\": {\n    \"accessReports\": false,\n    \"adminEnterprise\": false,\n    \"allowAppStoreAccess\": false,\n    \"allowPublicDocumentsAccess\": true,\n    \"approveReleases\": false,\n    \"branchLockPermissions\": false,\n    \"createDocumentsInRoot\": true,\n    \"createProject\": false,\n    \"createReleases\": false,\n    \"createTasks\": false,\n    \"deletePermanently\": false,\n    \"enableLabs\": false,\n    \"exportFiles\": false,\n    \"importFiles\": false,\n    \"manageGuestUsers\": false,\n    \"manageNonGeometricItems\": true,\n    \"manageRbac\": false,\n    \"manageStandardContentMetadata\": false,\n    \"manageUsers\": true,\n    \"manageWorkflows\": true,\n    \"shareForAnonymousAccess\": true,\n    \"transferDocumentsFromEnterprise\": true,\n    \"useRevisionTools\": false\n  },\n  \"invitationState\": 2943,\n  \"isExternal\": false,\n  \"isGuest\": false,\n  \"isLight\": false,\n  \"lastLoginTime\": \"2014-07-27T03:35:57.752Z\",\n  \"personalMessageAllowed\": false,\n  \"source\": 3828,\n  \"clientId\": \"string\",\n  \"companyPlan\": true,\n  \"oauth2Scopes\": 3873,\n  \"planGroup\": \"string\",\n  \"role\": 4328,\n  \"roles\": [\n    \"TOTPPENDINGUSER\",\n    \"ADMIN\"\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "607ba606-73c5-4aee-81d0-fa5e9b0db6fd",
+          "name": "Get the user settings for the signed-in user (i.e., you) for the current session.",
+          "request": {
+            "name": "Get the user settings for the signed-in user (i.e., you) for the current session.",
+            "description": {
+              "content": "* Non-admins can call this API for their own user ID. \n* Mouse button settings are contained in `reverseScrollWheelZoomDirection` and `viewManipulationMouseKeyMapping`. \n* For each action in `viewManipulationMouseKeyMapping`, an array of modifier key/mouse combos is provided that performs that action. \n* Possible modifier keys include `SHIFT` and `CTRL`. \n* Possible mouse buttons include `MMB` (middle mouse button), `RMB` (right mouse button), and `SCROLLWHEEL`. \n* Scrolling forward zooms in, unless `reverseScrollWheelZoomDirection` is set to `true`.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "users",
+                "settings"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "includematerials",
+                  "value": "true"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json;charset=UTF-8; qs=0.09"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "c4beafa6-8194-4450-a865-a7220ccf6831",
+              "name": "default response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users",
+                    "settings"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "includematerials",
+                      "value": "true"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json;charset=UTF-8; qs=0.09"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json;charset=UTF-8; qs=0.09"
+                }
+              ],
+              "body": "{\n  \"axisRotationLock\": true,\n  \"commonUnits\": {\n    \"quantityTypeToBaseUnits\": {\n      \"key_0\": {\n        \"key_0\": 2728\n      }\n    },\n    \"units\": [\n      {\n        \"abbreviation\": \"string\",\n        \"unit\": \"string\",\n        \"unitName\": \"string\",\n        \"unitType\": \"string\",\n        \"valueInBaseUnits\": 5413.177929256619\n      },\n      {\n        \"abbreviation\": \"string\",\n        \"unit\": \"string\",\n        \"unitName\": \"string\",\n        \"unitType\": \"string\",\n        \"valueInBaseUnits\": 5304.600215147013\n      }\n    ]\n  },\n  \"contextTranslucencySliderValue\": 7481.175573778845,\n  \"contextTranslucent\": true,\n  \"customColors\": [\n    \"string\",\n    \"string\"\n  ],\n  \"defaultUnits\": {\n    \"nodeId\": \"string\",\n    \"units\": [\n      {\n        \"key\": \"string\",\n        \"value\": \"string\"\n      },\n      {\n        \"key\": \"string\",\n        \"value\": \"string\"\n      }\n    ]\n  },\n  \"displayAssemblyProperties\": true,\n  \"drawingBackgroundId\": 378,\n  \"enableLabs\": false,\n  \"enabledLabsFeatures\": [\n    9514,\n    8702\n  ],\n  \"enforceApplicationAcl\": true,\n  \"exportDrawingOptions\": \"string\",\n  \"exportSolidOptions\": \"string\",\n  \"graphicsRenderMode\": \"string\",\n  \"graphicsSmoothEdge\": \"string\",\n  \"highlightLaminarEdges\": \"string\",\n  \"id\": \"string\",\n  \"importOptions\": \"string\",\n  \"isolateEnableSelectionDesire\": true,\n  \"isolateHideTransparent\": \"string\",\n  \"isolateOpacitySliderValue\": 8934.709193394532,\n  \"locale\": \"string\",\n  \"makeTransparentEnableSelectionDesire\": true,\n  \"makeTransparentOpacitySliderValue\": 4579.259110771301,\n  \"materialLibrarySettings\": {\n    \"companyLibraries\": [\n      {\n        \"documentId\": \"string\",\n        \"documentName\": \"string\",\n        \"elementId\": \"string\",\n        \"isPublic\": true,\n        \"libraryName\": \"string\",\n        \"ownerName\": \"string\",\n        \"versionId\": \"string\",\n        \"workspaceId\": \"string\"\n      },\n      {\n        \"documentId\": \"string\",\n        \"documentName\": \"string\",\n        \"elementId\": \"string\",\n        \"isPublic\": true,\n        \"libraryName\": \"string\",\n        \"ownerName\": \"string\",\n        \"versionId\": \"string\",\n        \"workspaceId\": \"string\"\n      }\n    ],\n    \"libraries\": [\n      {\n        \"documentId\": \"string\",\n        \"documentName\": \"string\",\n        \"elementId\": \"string\",\n        \"isPublic\": false,\n        \"libraryName\": \"string\",\n        \"ownerName\": \"string\",\n        \"versionId\": \"string\",\n        \"workspaceId\": \"string\"\n      },\n      {\n        \"documentId\": \"string\",\n        \"documentName\": \"string\",\n        \"elementId\": \"string\",\n        \"isPublic\": false,\n        \"libraryName\": \"string\",\n        \"ownerName\": \"string\",\n        \"versionId\": \"string\",\n        \"workspaceId\": \"string\"\n      }\n    ]\n  },\n  \"miniToolbarSettings\": \"string\",\n  \"mouseActions\": \"string\",\n  \"perspectiveModeOn\": \"string\",\n  \"previousSketchFont\": \"string\",\n  \"reverseScrollWheelZoomDirection\": false,\n  \"selectItemViewStateInfos\": [\n    {\n      \"activeSelectorId\": \"string\",\n      \"documentSelectors\": [\n        {\n          \"parameters\": {\n            \"jsonType\": \"string\"\n          },\n          \"selectorId\": \"string\"\n        },\n        {\n          \"parameters\": {\n            \"jsonType\": \"string\"\n          },\n          \"selectorId\": \"string\"\n        }\n      ],\n      \"purpose\": \"string\"\n    },\n    {\n      \"activeSelectorId\": \"string\",\n      \"documentSelectors\": [\n        {\n          \"parameters\": {\n            \"jsonType\": \"string\"\n          },\n          \"selectorId\": \"string\"\n        },\n        {\n          \"parameters\": {\n            \"jsonType\": \"string\"\n          },\n          \"selectorId\": \"string\"\n        }\n      ],\n      \"purpose\": \"string\"\n    }\n  ],\n  \"sketchShowConstraints\": true,\n  \"sketchShowErrors\": false,\n  \"sketchShowExpressions\": false,\n  \"startupPage\": 4778,\n  \"substituteApprovers\": [\n    {\n      \"companyId\": \"string\",\n      \"enabled\": false,\n      \"identity\": {\n        \"company\": {\n          \"admin\": true,\n          \"description\": \"string\",\n          \"domainPrefix\": \"string\",\n          \"enterpriseBaseUrl\": \"string\",\n          \"enterpriseSubtype\": 2712,\n          \"href\": \"http://BFyBSGNIkCFY.bljQfpSosWMUwKUuKbtxVPBz+4UJ7QWn3dRfzxl7WBXnb\",\n          \"id\": \"string\",\n          \"image\": \"string\",\n          \"name\": \"string\",\n          \"noPublicDocuments\": false,\n          \"ownerId\": \"string\",\n          \"secondaryDomainPrefixes\": [\n            \"string\"\n          ],\n          \"state\": 4858,\n          \"type\": 9895,\n          \"viewRef\": \"http://svOObDHLpj.maDvLsiYwN3tdwP7MLMHPNVUnKHDNSepu\"\n        },\n        \"href\": \"https://JiKROs.cmptqgH1RVegi-bM2\",\n        \"id\": \"string\",\n        \"identityType\": 1675,\n        \"team\": {\n          \"active\": false,\n          \"canMove\": true,\n          \"connectionName\": \"string\",\n          \"connectionNames\": [\n            \"string\",\n            \"string\"\n          ],\n          \"createdAt\": \"2025-04-14T07:06:23.739Z\",\n          \"createdBy\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"description\": \"string\",\n          \"href\": \"https://r.zkxygGfeFRTp5m49MpXObc8pFtO-BmOs7siLejZyQk,S+YG49WoCfedDGvtEWb16\",\n          \"id\": \"string\",\n          \"isContainer\": false,\n          \"isEnterpriseOwned\": false,\n          \"isExternalConnectionResource\": true,\n          \"isMutable\": true,\n          \"modifiedAt\": \"2010-08-24T18:37:03.945Z\",\n          \"modifiedBy\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"name\": \"string\",\n          \"owner\": {\n            \"href\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"id\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"image\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"isEnterpriseOwnedResource\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"name\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"type\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"viewRef\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"parentId\": \"string\",\n          \"predefinedTeam\": 1213,\n          \"predefinedTeamMutable\": false,\n          \"projectId\": \"string\",\n          \"resourceType\": \"string\",\n          \"treeHref\": \"string\",\n          \"unparentHref\": \"string\",\n          \"viewRef\": \"https://iDdRrIobtNSQCskXZxIdwWpwGdwPqGL.gsesePcFCgiOFkUEKcbAZjgy4TGaLg7pu3QvIgHH5oceOryeL2l5VVfGe5NkMA8B9Q,jlBtneGvI7\"\n        },\n        \"user\": {\n          \"company\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"companyUserState\": 6736,\n          \"confirmationRequested\": true,\n          \"documentationNameOverride\": \"string\",\n          \"globalPermissions\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"invitationState\": 9965,\n          \"isExternal\": true,\n          \"isGuest\": true,\n          \"isLight\": false,\n          \"lastLoginTime\": \"1966-04-11T06:09:44.462Z\",\n          \"personalMessageAllowed\": true,\n          \"source\": 9970\n        },\n        \"viewRef\": \"http://GUBa.eoucFJAUrb5tre3V5KALAMRLLGaDXcO\"\n      }\n    },\n    {\n      \"companyId\": \"string\",\n      \"enabled\": false,\n      \"identity\": {\n        \"company\": {\n          \"admin\": false,\n          \"description\": \"string\",\n          \"domainPrefix\": \"string\",\n          \"enterpriseBaseUrl\": \"string\",\n          \"enterpriseSubtype\": 6551,\n          \"href\": \"https://BxtzpkDvisYDQQrpGIjexcNkDzrYxig.ixf1\",\n          \"id\": \"string\",\n          \"image\": \"string\",\n          \"name\": \"string\",\n          \"noPublicDocuments\": true,\n          \"ownerId\": \"string\",\n          \"secondaryDomainPrefixes\": [\n            \"string\"\n          ],\n          \"state\": 1279,\n          \"type\": 6410,\n          \"viewRef\": \"http://AcyHWAfChBBAqUMIna.ruuqwYP1NN2.Q5CmrLpbgm61prfZ2\"\n        },\n        \"href\": \"https://Hbqv.byhNDH4j8sznd51ktF9un2hzq7WZEu4ejaoYOJHJGvPn\",\n        \"id\": \"string\",\n        \"identityType\": 1201,\n        \"team\": {\n          \"active\": true,\n          \"canMove\": false,\n          \"connectionName\": \"string\",\n          \"connectionNames\": [\n            \"string\",\n            \"string\"\n          ],\n          \"createdAt\": \"2001-10-14T16:24:15.411Z\",\n          \"createdBy\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"description\": \"string\",\n          \"href\": \"http://lIXJPMMbSGfagMrQRT.znXNtkEok-iWwQUlGG8BLQYTqUrPfBDq0igbZhyKAPkmQ1bXVbew9NlegR+6X,Ruo3\",\n          \"id\": \"string\",\n          \"isContainer\": true,\n          \"isEnterpriseOwned\": true,\n          \"isExternalConnectionResource\": true,\n          \"isMutable\": false,\n          \"modifiedAt\": \"2023-03-29T08:53:16.896Z\",\n          \"modifiedBy\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"name\": \"string\",\n          \"owner\": {\n            \"href\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"id\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"image\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"isEnterpriseOwnedResource\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"name\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"type\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"viewRef\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"parentId\": \"string\",\n          \"predefinedTeam\": 618,\n          \"predefinedTeamMutable\": true,\n          \"projectId\": \"string\",\n          \"resourceType\": \"string\",\n          \"treeHref\": \"string\",\n          \"unparentHref\": \"string\",\n          \"viewRef\": \"https://AZphhmbPZRIPytwWjKbyJQXLgJpF.niA33ao+x,QR+wj2lC.U.z9WL2MTXa-Q2+MpadeV2RcRMG8Ir7Ficl.aGJg6QjA\"\n        },\n        \"user\": {\n          \"company\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"companyUserState\": 4739,\n          \"confirmationRequested\": true,\n          \"documentationNameOverride\": \"string\",\n          \"globalPermissions\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"invitationState\": 4802,\n          \"isExternal\": false,\n          \"isGuest\": false,\n          \"isLight\": false,\n          \"lastLoginTime\": \"2001-05-21T17:14:04.298Z\",\n          \"personalMessageAllowed\": false,\n          \"source\": 453\n        },\n        \"viewRef\": \"http://Ez.hthoKT5sJYBGXAldhirqrSwOe57NNxoqSen,+GWLJPOlFvf,wf\"\n      }\n    }\n  ],\n  \"theme\": 8414,\n  \"unitsDisplayPrecision\": {\n    \"key_0\": 3336,\n    \"key_1\": 4100\n  },\n  \"unitsMaximumDisplayPrecision\": {\n    \"unitsDisplayPrecision\": {\n      \"key_0\": 3412,\n      \"key_1\": 6828\n    }\n  },\n  \"use24HourTime\": true,\n  \"useDecimalComma\": true,\n  \"usePenAsMouse\": false,\n  \"viewManipulationMouseKeyMapping\": {\n    \"axisRotate3DMapping\": [\n      {\n        \"keys\": [\n          \"string\",\n          \"string\"\n        ],\n        \"mouseButtons\": [\n          \"string\",\n          \"string\"\n        ]\n      },\n      {\n        \"keys\": [\n          \"string\",\n          \"string\"\n        ],\n        \"mouseButtons\": [\n          \"string\",\n          \"string\"\n        ]\n      }\n    ],\n    \"pan2DMapping\": [\n      {\n        \"keys\": [\n          \"string\",\n          \"string\"\n        ],\n        \"mouseButtons\": [\n          \"string\",\n          \"string\"\n        ]\n      },\n      {\n        \"keys\": [\n          \"string\",\n          \"string\"\n        ],\n        \"mouseButtons\": [\n          \"string\",\n          \"string\"\n        ]\n      }\n    ],\n    \"pan3DMapping\": [\n      {\n        \"keys\": [\n          \"string\",\n          \"string\"\n        ],\n        \"mouseButtons\": [\n          \"string\",\n          \"string\"\n        ]\n      },\n      {\n        \"keys\": [\n          \"string\",\n          \"string\"\n        ],\n        \"mouseButtons\": [\n          \"string\",\n          \"string\"\n        ]\n      }\n    ],\n    \"rotate3DMapping\": [\n      {\n        \"keys\": [\n          \"string\",\n          \"string\"\n        ],\n        \"mouseButtons\": [\n          \"string\",\n          \"string\"\n        ]\n      },\n      {\n        \"keys\": [\n          \"string\",\n          \"string\"\n        ],\n        \"mouseButtons\": [\n          \"string\",\n          \"string\"\n        ]\n      }\n    ],\n    \"zoom2DMapping\": [\n      {\n        \"keys\": [\n          \"string\",\n          \"string\"\n        ],\n        \"mouseButtons\": [\n          \"string\",\n          \"string\"\n        ]\n      },\n      {\n        \"keys\": [\n          \"string\",\n          \"string\"\n        ],\n        \"mouseButtons\": [\n          \"string\",\n          \"string\"\n        ]\n      }\n    ],\n    \"zoom3DMapping\": [\n      {\n        \"keys\": [\n          \"string\",\n          \"string\"\n        ],\n        \"mouseButtons\": [\n          \"string\",\n          \"string\"\n        ]\n      },\n      {\n        \"keys\": [\n          \"string\",\n          \"string\"\n        ],\n        \"mouseButtons\": [\n          \"string\",\n          \"string\"\n        ]\n      }\n    ]\n  },\n  \"viewMappingId\": 746\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "69628f81-b007-4697-9e72-0351ae0900aa",
+          "name": "Get the user settings for any user in your organization (admins only).",
+          "request": {
+            "name": "Get the user settings for any user in your organization (admins only).",
+            "description": {
+              "content": "* Mouse button settings are contained in `reverseScrollWheelZoomDirection` and `viewManipulationMouseKeyMapping`. \n* For each action in `viewManipulationMouseKeyMapping`, an array of modifier key/mouse combos is provided that performs that action. \n* Possible modifier keys include `SHIFT` and `CTRL`. \n* Possible mouse buttons include `MMB` (middle mouse button), `RMB` (right mouse button), and `SCROLLWHEEL`. \n* Scrolling forward zooms in, unless `reverseScrollWheelZoomDirection` is set to `true`.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "users",
+                ":uid",
+                "settings"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "includematerials",
+                  "value": "true"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "uid",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json;charset=UTF-8; qs=0.09"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "791ea204-306a-4000-9de5-a02efdbd97dc",
+              "name": "default response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users",
+                    ":uid",
+                    "settings"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "includematerials",
+                      "value": "true"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "uid",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json;charset=UTF-8; qs=0.09"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json;charset=UTF-8; qs=0.09"
+                }
+              ],
+              "body": "{\n  \"axisRotationLock\": true,\n  \"commonUnits\": {\n    \"quantityTypeToBaseUnits\": {\n      \"key_0\": {\n        \"key_0\": 4824,\n        \"key_1\": 783\n      },\n      \"key_1\": {\n        \"key_0\": 8250\n      }\n    },\n    \"units\": [\n      {\n        \"abbreviation\": \"string\",\n        \"unit\": \"string\",\n        \"unitName\": \"string\",\n        \"unitType\": \"string\",\n        \"valueInBaseUnits\": 3751.0090962841446\n      },\n      {\n        \"abbreviation\": \"string\",\n        \"unit\": \"string\",\n        \"unitName\": \"string\",\n        \"unitType\": \"string\",\n        \"valueInBaseUnits\": 8481.25264256965\n      }\n    ]\n  },\n  \"contextTranslucencySliderValue\": 4144.985807280449,\n  \"contextTranslucent\": true,\n  \"customColors\": [\n    \"string\",\n    \"string\"\n  ],\n  \"defaultUnits\": {\n    \"nodeId\": \"string\",\n    \"units\": [\n      {\n        \"key\": \"string\",\n        \"value\": \"string\"\n      },\n      {\n        \"key\": \"string\",\n        \"value\": \"string\"\n      }\n    ]\n  },\n  \"displayAssemblyProperties\": false,\n  \"drawingBackgroundId\": 8905,\n  \"enableLabs\": true,\n  \"enabledLabsFeatures\": [\n    1064,\n    6102\n  ],\n  \"enforceApplicationAcl\": false,\n  \"exportDrawingOptions\": \"string\",\n  \"exportSolidOptions\": \"string\",\n  \"graphicsRenderMode\": \"string\",\n  \"graphicsSmoothEdge\": \"string\",\n  \"highlightLaminarEdges\": \"string\",\n  \"id\": \"string\",\n  \"importOptions\": \"string\",\n  \"isolateEnableSelectionDesire\": false,\n  \"isolateHideTransparent\": \"string\",\n  \"isolateOpacitySliderValue\": 8299.432505278359,\n  \"locale\": \"string\",\n  \"makeTransparentEnableSelectionDesire\": true,\n  \"makeTransparentOpacitySliderValue\": 6742.746614190655,\n  \"materialLibrarySettings\": {\n    \"companyLibraries\": [\n      {\n        \"documentId\": \"string\",\n        \"documentName\": \"string\",\n        \"elementId\": \"string\",\n        \"isPublic\": true,\n        \"libraryName\": \"string\",\n        \"ownerName\": \"string\",\n        \"versionId\": \"string\",\n        \"workspaceId\": \"string\"\n      },\n      {\n        \"documentId\": \"string\",\n        \"documentName\": \"string\",\n        \"elementId\": \"string\",\n        \"isPublic\": false,\n        \"libraryName\": \"string\",\n        \"ownerName\": \"string\",\n        \"versionId\": \"string\",\n        \"workspaceId\": \"string\"\n      }\n    ],\n    \"libraries\": [\n      {\n        \"documentId\": \"string\",\n        \"documentName\": \"string\",\n        \"elementId\": \"string\",\n        \"isPublic\": true,\n        \"libraryName\": \"string\",\n        \"ownerName\": \"string\",\n        \"versionId\": \"string\",\n        \"workspaceId\": \"string\"\n      },\n      {\n        \"documentId\": \"string\",\n        \"documentName\": \"string\",\n        \"elementId\": \"string\",\n        \"isPublic\": false,\n        \"libraryName\": \"string\",\n        \"ownerName\": \"string\",\n        \"versionId\": \"string\",\n        \"workspaceId\": \"string\"\n      }\n    ]\n  },\n  \"miniToolbarSettings\": \"string\",\n  \"mouseActions\": \"string\",\n  \"perspectiveModeOn\": \"string\",\n  \"previousSketchFont\": \"string\",\n  \"reverseScrollWheelZoomDirection\": true,\n  \"selectItemViewStateInfos\": [\n    {\n      \"activeSelectorId\": \"string\",\n      \"documentSelectors\": [\n        {\n          \"parameters\": {\n            \"jsonType\": \"string\"\n          },\n          \"selectorId\": \"string\"\n        },\n        {\n          \"parameters\": {\n            \"jsonType\": \"string\"\n          },\n          \"selectorId\": \"string\"\n        }\n      ],\n      \"purpose\": \"string\"\n    },\n    {\n      \"activeSelectorId\": \"string\",\n      \"documentSelectors\": [\n        {\n          \"parameters\": {\n            \"jsonType\": \"string\"\n          },\n          \"selectorId\": \"string\"\n        },\n        {\n          \"parameters\": {\n            \"jsonType\": \"string\"\n          },\n          \"selectorId\": \"string\"\n        }\n      ],\n      \"purpose\": \"string\"\n    }\n  ],\n  \"sketchShowConstraints\": true,\n  \"sketchShowErrors\": false,\n  \"sketchShowExpressions\": true,\n  \"startupPage\": 7094,\n  \"substituteApprovers\": [\n    {\n      \"companyId\": \"string\",\n      \"enabled\": false,\n      \"identity\": {\n        \"company\": {\n          \"admin\": true,\n          \"description\": \"string\",\n          \"domainPrefix\": \"string\",\n          \"enterpriseBaseUrl\": \"string\",\n          \"enterpriseSubtype\": 4286,\n          \"href\": \"http://zssOnibWJgMRoMeKPNCxDeOh.acoxF0uBBeXp0cGe+9PJUprAvnei+BVkiqvnrYUCW\",\n          \"id\": \"string\",\n          \"image\": \"string\",\n          \"name\": \"string\",\n          \"noPublicDocuments\": true,\n          \"ownerId\": \"string\",\n          \"secondaryDomainPrefixes\": [\n            \"string\"\n          ],\n          \"state\": 183,\n          \"type\": 6435,\n          \"viewRef\": \"https://nPTwYPmkEIqMRpauHDF.rzfnTwYMQtpVKnLmt.f8\"\n        },\n        \"href\": \"https://MiMsQVssIOyOHxpoVwJdZySWkVeErveuz.yjad-c5PzVeDjGtOZMoU2TW2TU6hww\",\n        \"id\": \"string\",\n        \"identityType\": 4668,\n        \"team\": {\n          \"active\": false,\n          \"canMove\": true,\n          \"connectionName\": \"string\",\n          \"connectionNames\": [\n            \"string\",\n            \"string\"\n          ],\n          \"createdAt\": \"1958-03-23T21:53:27.173Z\",\n          \"createdBy\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"description\": \"string\",\n          \"href\": \"https://dkEKHoeSLCcqwxqkthoLt.ftrPEWTaBkmamOHGeEcRYGmBjjeA+c9wrE7oadwnjG-VOsesfq13OA5SFTFsDFZT\",\n          \"id\": \"string\",\n          \"isContainer\": true,\n          \"isEnterpriseOwned\": false,\n          \"isExternalConnectionResource\": true,\n          \"isMutable\": true,\n          \"modifiedAt\": \"1975-10-08T12:10:02.479Z\",\n          \"modifiedBy\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"name\": \"string\",\n          \"owner\": {\n            \"href\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"id\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"image\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"isEnterpriseOwnedResource\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"name\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"type\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"viewRef\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"parentId\": \"string\",\n          \"predefinedTeam\": 4510,\n          \"predefinedTeamMutable\": true,\n          \"projectId\": \"string\",\n          \"resourceType\": \"string\",\n          \"treeHref\": \"string\",\n          \"unparentHref\": \"string\",\n          \"viewRef\": \"http://ZfgVNRGrjWMOWqwro.wiFjwwv8a3xqAiLfvb76l,SvrYRWvNLJbC\"\n        },\n        \"user\": {\n          \"company\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"companyUserState\": 1166,\n          \"confirmationRequested\": false,\n          \"documentationNameOverride\": \"string\",\n          \"globalPermissions\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"invitationState\": 6472,\n          \"isExternal\": false,\n          \"isGuest\": true,\n          \"isLight\": true,\n          \"lastLoginTime\": \"1947-11-18T19:42:52.995Z\",\n          \"personalMessageAllowed\": true,\n          \"source\": 8579\n        },\n        \"viewRef\": \"https://rMDlcwONeYgKoZeQFflW.spvoPs+zwXgppf-HWoF46y9o05y1ljPnCKxnPPZiMgXMYftIWs\"\n      }\n    },\n    {\n      \"companyId\": \"string\",\n      \"enabled\": false,\n      \"identity\": {\n        \"company\": {\n          \"admin\": false,\n          \"description\": \"string\",\n          \"domainPrefix\": \"string\",\n          \"enterpriseBaseUrl\": \"string\",\n          \"enterpriseSubtype\": 4171,\n          \"href\": \"http://MaXDDgNxBqnLGUFOwBQ.qgwPODYVMy\",\n          \"id\": \"string\",\n          \"image\": \"string\",\n          \"name\": \"string\",\n          \"noPublicDocuments\": false,\n          \"ownerId\": \"string\",\n          \"secondaryDomainPrefixes\": [\n            \"string\"\n          ],\n          \"state\": 3230,\n          \"type\": 2281,\n          \"viewRef\": \"http://wUOXYNvEbVmEYbnkmXnICXSsPt.pbqcKG8DJyEDz\"\n        },\n        \"href\": \"http://woGVVKlKQlImdXFnTdsJPaS.kaMn3cb8DQYLPGcgCL.KN+7Hps8Erc7JkANC4W\",\n        \"id\": \"string\",\n        \"identityType\": 5361,\n        \"team\": {\n          \"active\": false,\n          \"canMove\": false,\n          \"connectionName\": \"string\",\n          \"connectionNames\": [\n            \"string\",\n            \"string\"\n          ],\n          \"createdAt\": \"2022-10-15T01:12:59.443Z\",\n          \"createdBy\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"description\": \"string\",\n          \"href\": \"http://YMIsJEVgWwYPyzPfTNEDWZNKjeF.vltlu67zq3jXLz+33zIh-jvEWNt92XILwjQ2Jr,Gtn,qrTPMgKr4Jw-qcfL5M5Afs8c8GvSkcN,QtS4tOYlE\",\n          \"id\": \"string\",\n          \"isContainer\": true,\n          \"isEnterpriseOwned\": false,\n          \"isExternalConnectionResource\": true,\n          \"isMutable\": true,\n          \"modifiedAt\": \"1961-10-27T19:35:07.209Z\",\n          \"modifiedBy\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"name\": \"string\",\n          \"owner\": {\n            \"href\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"id\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"image\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"isEnterpriseOwnedResource\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"name\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"type\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"viewRef\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"parentId\": \"string\",\n          \"predefinedTeam\": 5456,\n          \"predefinedTeamMutable\": true,\n          \"projectId\": \"string\",\n          \"resourceType\": \"string\",\n          \"treeHref\": \"string\",\n          \"unparentHref\": \"string\",\n          \"viewRef\": \"http://dSfKScfnKhVAUHgBgc.nhSnUp,FMhRsrkOCcu.spgbTqmizElW\"\n        },\n        \"user\": {\n          \"company\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"companyUserState\": 4808,\n          \"confirmationRequested\": true,\n          \"documentationNameOverride\": \"string\",\n          \"globalPermissions\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"invitationState\": 2509,\n          \"isExternal\": true,\n          \"isGuest\": false,\n          \"isLight\": true,\n          \"lastLoginTime\": \"2024-06-15T14:55:23.388Z\",\n          \"personalMessageAllowed\": true,\n          \"source\": 341\n        },\n        \"viewRef\": \"http://UQnBDZYpjaou.khrbBney3-DFnMMqvOPIPb,81aIulpPyuD6BnlkGMTKYXLu\"\n      }\n    }\n  ],\n  \"theme\": 2894,\n  \"unitsDisplayPrecision\": {\n    \"key_0\": 7653,\n    \"key_1\": 1769\n  },\n  \"unitsMaximumDisplayPrecision\": {\n    \"unitsDisplayPrecision\": {\n      \"key_0\": 4605\n    }\n  },\n  \"use24HourTime\": false,\n  \"useDecimalComma\": false,\n  \"usePenAsMouse\": false,\n  \"viewManipulationMouseKeyMapping\": {\n    \"axisRotate3DMapping\": [\n      {\n        \"keys\": [\n          \"string\",\n          \"string\"\n        ],\n        \"mouseButtons\": [\n          \"string\",\n          \"string\"\n        ]\n      },\n      {\n        \"keys\": [\n          \"string\",\n          \"string\"\n        ],\n        \"mouseButtons\": [\n          \"string\",\n          \"string\"\n        ]\n      }\n    ],\n    \"pan2DMapping\": [\n      {\n        \"keys\": [\n          \"string\",\n          \"string\"\n        ],\n        \"mouseButtons\": [\n          \"string\",\n          \"string\"\n        ]\n      },\n      {\n        \"keys\": [\n          \"string\",\n          \"string\"\n        ],\n        \"mouseButtons\": [\n          \"string\",\n          \"string\"\n        ]\n      }\n    ],\n    \"pan3DMapping\": [\n      {\n        \"keys\": [\n          \"string\",\n          \"string\"\n        ],\n        \"mouseButtons\": [\n          \"string\",\n          \"string\"\n        ]\n      },\n      {\n        \"keys\": [\n          \"string\",\n          \"string\"\n        ],\n        \"mouseButtons\": [\n          \"string\",\n          \"string\"\n        ]\n      }\n    ],\n    \"rotate3DMapping\": [\n      {\n        \"keys\": [\n          \"string\",\n          \"string\"\n        ],\n        \"mouseButtons\": [\n          \"string\",\n          \"string\"\n        ]\n      },\n      {\n        \"keys\": [\n          \"string\",\n          \"string\"\n        ],\n        \"mouseButtons\": [\n          \"string\",\n          \"string\"\n        ]\n      }\n    ],\n    \"zoom2DMapping\": [\n      {\n        \"keys\": [\n          \"string\",\n          \"string\"\n        ],\n        \"mouseButtons\": [\n          \"string\",\n          \"string\"\n        ]\n      },\n      {\n        \"keys\": [\n          \"string\",\n          \"string\"\n        ],\n        \"mouseButtons\": [\n          \"string\",\n          \"string\"\n        ]\n      }\n    ],\n    \"zoom3DMapping\": [\n      {\n        \"keys\": [\n          \"string\",\n          \"string\"\n        ],\n        \"mouseButtons\": [\n          \"string\",\n          \"string\"\n        ]\n      },\n      {\n        \"keys\": [\n          \"string\",\n          \"string\"\n        ],\n        \"mouseButtons\": [\n          \"string\",\n          \"string\"\n        ]\n      }\n    ]\n  },\n  \"viewMappingId\": 806\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://cad.onshape.com/api/v16",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "basic",
+    "basic": [
+      {
+        "key": "username",
+        "value": "{{basicAuthUsername}}"
+      },
+      {
+        "key": "password",
+        "value": "{{basicAuthPassword}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "ce5de2bb-63d4-4ba9-8783-565f06245ada",
+    "name": "Onshape REST Account User API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "## Welcome to the Onshape REST API Explorer\n\n**See the [API Explorer Guide](https://onshape-public.github.io/docs/api-intro/explorer/) for help navigating this page.**\n\n### Using this page\n1. Sign in to your [Onshape](https://cad.onshape.com) account in another tab.\n2. Click the `Try it out` button below. It toggles to a `Cancel` button when selected.\n\n### Authenticating\nTo authenticate your calls, click the `Authorize` button. See [API Explorer Guide: Authentication](https://onshape-public.github.io/docs/api-intro/explorer/#authentication) for details. Calls made when authenticated via API Keys or OAuth count against your annual [API limits](https://onshape-public.github.io/docs/auth/limits/#annual-api-call-limits).\n* **Tip:** To ensure the current session isn't used when trying other authentication techniques, make sure to [remove the Onshape cookie](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site) as per the instructions for your browser, or use a private or incognito window.\n\n### Additional resources\n\n* [Onshape API Guide](https://onshape-public.github.io/docs/): Our full suite of developer guides, to be used as an accompaniment to this API Explorer.\n* [Onshape Developer Portal](https://cad.onshape.com/appstore/dev-portal): The Onshape portal for managing your API keys, OAuth2 credentials, your Onshape applications, and your Onshape App Store entries.\n* [Authentication Guide](https://onshape-public.github.io/docs/auth/): Our guide to using API keys, request signatures, and OAuth2 in your Onshape applications.\n\nContact Support:\n Email: api-support@onshape.zendesk.com",
+      "type": "text/plain"
+    }
+  }
+}

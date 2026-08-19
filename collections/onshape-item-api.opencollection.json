@@ -1,0 +1,218 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Onshape REST Account Item API",
+    "version": "1.218.84032-34acba44be17"
+  },
+  "request": {
+    "auth": {
+      "type": "basic",
+      "username": "{{username}}",
+      "password": "{{password}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Item",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get all items owned by a company/classroom/enterprise.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://cad.onshape.com/api/v16/items",
+            "params": [
+              {
+                "name": "documentId",
+                "value": "",
+                "type": "query",
+                "description": "ID of any document owned by the company/classroom/enterprise."
+              },
+              {
+                "name": "companyId",
+                "value": "",
+                "type": "query",
+                "description": "Company/classroom/enterprise ID."
+              },
+              {
+                "name": "q",
+                "value": "",
+                "type": "query",
+                "description": "Optional search string."
+              },
+              {
+                "name": "publishStates",
+                "value": "",
+                "type": "query",
+                "description": "Refine returned items by publish states: `0: PENDING | 1: ACTIVE | 2: INACTIVE`"
+              },
+              {
+                "name": "classification",
+                "value": "",
+                "type": "query",
+                "description": "Refine returned items by classification. Classifications are managed in company/classroom/enterprise [Properties settings](https://cad.onshape.com/help/Content/Plans/items.htm#item-class)."
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query",
+                "description": "Number of entries to skip in the returned list."
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "The number of list entries to return in a single API call."
+              }
+            ],
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "/oauth/authorize",
+              "accessTokenUrl": "/oauth/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Returns a list of all items owned by the company/classroom/enterprise. \n \nEither `documentId` or `companyId` must be provided."
+        },
+        {
+          "info": {
+            "name": "Create a new item.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://cad.onshape.com/api/v16/items",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "/oauth/authorize",
+              "accessTokenUrl": "/oauth/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Create a new item."
+        },
+        {
+          "info": {
+            "name": "Get item by ID.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://cad.onshape.com/api/v16/items/:iid",
+            "params": [
+              {
+                "name": "iid",
+                "value": "",
+                "type": "path",
+                "description": "Item ID. "
+              },
+              {
+                "name": "documentId",
+                "value": "",
+                "type": "query",
+                "description": "ID of any document owned by the company/classroom/enterprise."
+              },
+              {
+                "name": "companyId",
+                "value": "",
+                "type": "query",
+                "description": "Company/classroom/enterprise ID."
+              }
+            ],
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "/oauth/authorize",
+              "accessTokenUrl": "/oauth/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Either `documentId` or `companyId` must be provided, in addition to the item ID."
+        },
+        {
+          "info": {
+            "name": "Update an item.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://cad.onshape.com/api/v16/items/:iid",
+            "params": [
+              {
+                "name": "iid",
+                "value": "",
+                "type": "path",
+                "description": "ID of the item to update."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "/oauth/authorize",
+              "accessTokenUrl": "/oauth/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Update an item."
+        },
+        {
+          "info": {
+            "name": "Delete an item.",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://cad.onshape.com/api/v16/items/:iid",
+            "params": [
+              {
+                "name": "iid",
+                "value": "",
+                "type": "path",
+                "description": "ID of the item to delete."
+              }
+            ],
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "/oauth/authorize",
+              "accessTokenUrl": "/oauth/token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Items can only be deleted if `publishState = 0` (`PENDING`). [`GET /items/{iid}`](#/Items/getItem) to get the `publishState`."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

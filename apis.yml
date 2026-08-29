@@ -11,6 +11,18 @@ description: >-
   API call limits. Onshape was surfaced as an a16z portfolio company and enriched with
   its real developer surface by the API Evangelist pipeline.
 url: https://raw.githubusercontent.com/api-evangelist/onshape/refs/heads/main/apis.yml
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: true
+  label: Hosted service · you call their endpoint
+  confidence: high
+  source:
+  - openapi
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: unknown
   onboarding: self-serve
@@ -570,6 +582,9 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: CapabilityMap
+  url: capabilities/onshape-capability-edges.yml
+  name: Onshape Business Capability Map
 - type: DomainSecurity
   url: security/onshape-domain-security.yml
 - type: AgenticAccess

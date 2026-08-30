@@ -86,7 +86,7 @@ apis:
   humanURL: https://onshape-public.github.io/docs/
   baseURL: https://cad.onshape.com/api/v16
   tags:
-  - API Application
+  - APIApplication
   tags_raw:
   - APIApplication
   properties:
@@ -332,7 +332,7 @@ apis:
   humanURL: https://onshape-public.github.io/docs/
   baseURL: https://cad.onshape.com/api/v16
   tags:
-  - OpenAPI
+  - OpenApi
   tags_raw:
   - OpenApi
   properties:
@@ -382,7 +382,7 @@ apis:
   humanURL: https://onshape-public.github.io/docs/
   baseURL: https://cad.onshape.com/api/v16
   tags:
-  - Product structure
+  - ProductStructure
   tags_raw:
   - ProductStructure
   properties:

@@ -582,6 +582,8 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: Website
+  url: https://www.onshape.com/
 - type: CapabilityMap
   url: capabilities/onshape-capability-edges.yml
   name: Onshape Business Capability Map

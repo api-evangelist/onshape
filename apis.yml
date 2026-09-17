@@ -80,20 +80,6 @@ apis:
     url: openapi/onshape-alias-api-openapi.yml
   - type: APIReference
     url: https://cad.onshape.com/glassworks/explorer/
-- aid: onshape:onshape-apiapplication-api
-  name: Onshape APIApplication API
-  description: Manage application preferences.
-  humanURL: https://onshape-public.github.io/docs/
-  baseURL: https://cad.onshape.com/api/v16
-  tags:
-  - API Application
-  tags_raw:
-  - APIApplication
-  properties:
-  - type: OpenAPI
-    url: openapi/onshape-apiapplication-api-openapi.yml
-  - type: APIReference
-    url: https://cad.onshape.com/glassworks/explorer/
 - aid: onshape:onshape-appassociativedata-api
   name: Onshape AppAssociativeData API
   description: >-
@@ -326,20 +312,6 @@ apis:
     url: openapi/onshape-numberingscheme-api-openapi.yml
   - type: APIReference
     url: https://cad.onshape.com/glassworks/explorer/
-- aid: onshape:onshape-openapi-api
-  name: Onshape OpenApi API
-  description: Get the OpenAPI specification for the Onshape API.
-  humanURL: https://onshape-public.github.io/docs/
-  baseURL: https://cad.onshape.com/api/v16
-  tags:
-  - OpenAPI
-  tags_raw:
-  - OpenApi
-  properties:
-  - type: OpenAPI
-    url: openapi/onshape-openapi-api-openapi.yml
-  - type: APIReference
-    url: https://cad.onshape.com/glassworks/explorer/
 - aid: onshape:onshape-part-api
   name: Onshape Part API
   description: Export Parts and access Part details.
@@ -374,20 +346,6 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/onshape-partstudio-api-openapi.yml
-  - type: APIReference
-    url: https://cad.onshape.com/glassworks/explorer/
-- aid: onshape:onshape-productstructure-api
-  name: Onshape ProductStructure API
-  description: Access information on how entities are structured within designs and documents.
-  humanURL: https://onshape-public.github.io/docs/
-  baseURL: https://cad.onshape.com/api/v16
-  tags:
-  - Product structure
-  tags_raw:
-  - ProductStructure
-  properties:
-  - type: OpenAPI
-    url: openapi/onshape-productstructure-api-openapi.yml
   - type: APIReference
     url: https://cad.onshape.com/glassworks/explorer/
 - aid: onshape:onshape-propertiestabletemplate-api
@@ -574,6 +532,42 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/onshape-workflow-api-openapi.yml
+  - type: APIReference
+    url: https://cad.onshape.com/glassworks/explorer/
+- aid: onshape:onshape-api-application-api
+  name: Onshape API Application API
+  description: Manage application preferences.
+  humanURL: https://onshape-public.github.io/docs/
+  baseURL: https://cad.onshape.com/api/v16
+  tags:
+  - API Application
+  properties:
+  - type: OpenAPI
+    url: openapi/onshape-api-application-api-openapi.yml
+  - type: APIReference
+    url: https://cad.onshape.com/glassworks/explorer/
+- aid: onshape:onshape-open-api-api
+  name: Onshape Open API
+  description: Get the OpenAPI specification for the Onshape API.
+  humanURL: https://onshape-public.github.io/docs/
+  baseURL: https://cad.onshape.com/api/v16
+  tags:
+  - Open API
+  properties:
+  - type: OpenAPI
+    url: openapi/onshape-open-api-api-openapi.yml
+  - type: APIReference
+    url: https://cad.onshape.com/glassworks/explorer/
+- aid: onshape:onshape-product-structure-api
+  name: Onshape Product structure API
+  description: Access information on how entities are structured within designs and documents.
+  humanURL: https://onshape-public.github.io/docs/
+  baseURL: https://cad.onshape.com/api/v16
+  tags:
+  - Product structure
+  properties:
+  - type: OpenAPI
+    url: openapi/onshape-product-structure-api-openapi.yml
   - type: APIReference
     url: https://cad.onshape.com/glassworks/explorer/
 maintainers:

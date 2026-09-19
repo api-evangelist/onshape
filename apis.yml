@@ -171,6 +171,8 @@ apis:
   humanURL: https://onshape-public.github.io/docs/
   baseURL: https://cad.onshape.com/api/v16
   tags:
+  - Documents
+  tags_raw:
   - Document
   properties:
   - type: OpenAPI
@@ -552,6 +554,8 @@ apis:
   humanURL: https://onshape-public.github.io/docs/
   baseURL: https://cad.onshape.com/api/v16
   tags:
+  - OpenAPI
+  tags_raw:
   - Open API
   properties:
   - type: OpenAPI

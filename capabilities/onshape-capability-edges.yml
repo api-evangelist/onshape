@@ -122,7 +122,8 @@ edges:
   reason: Allocates part numbers for release items — part identification/numbering in the CAD/PDM product
     lifecycle, not a generic technical utility.
 - tag: ProductStructure
-  spec_file: onshape-productstructure-api-openapi.yml
+  spec_file: onshape-product-structure-api-openapi.yml
+  reanchored_from: onshape-productstructure-api-openapi.yml
   capability_id: BC-820.30
   capability_id_l1: BC-820
   capability_name: Product Specification Management

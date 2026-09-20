@@ -1,0 +1,46 @@
+# Pricing transcribed from the provider's own page — see provenance. Numbers are quoted, not derived.
+generated: '2026-09-20'
+method: searched
+source: https://www.onshape.com/en/pricing
+sources:
+- https://www.onshape.com/en/pricing
+provenance:
+  tool: planning/api-economics/harvest_pricing.py
+  run: 20260920T120546
+  grounding: every price_text was found verbatim in the fetched page text
+audience: business-product
+pricing_basis: per-seat
+published: true
+note: CAD software plan pricing page; prices shown in USD with currency switcher. API (Open API Integration)
+  included as a feature, not separately priced.
+plan_count: 4
+currency: USD
+plans:
+- name: Free Plan
+  price_text: $0
+  price: 0
+  currency: USD
+  period: none
+  unit: user
+  included_quota: Unlimited public storage, CAD tools, Real-time collaboration, Version control, Mobile
+    apps, Online training; non-commercial use only
+- name: Standard Plan
+  price_text: $1,500 per user per year
+  price: 1500
+  currency: USD
+  period: year
+  unit: user
+  included_quota: All the features of Free, Unlimited private storage, Direct, In Product Support
+- name: Professional Plan
+  price_text: $2,500 per user per year
+  price: 2500
+  currency: USD
+  period: year
+  unit: user
+  included_quota: All features of Standard, Company-managed data, Release management, Advanced PDM, Simulation,
+    Rendering, ECAD/MCAD exchange, CAM
+- name: Enterprise
+  price_text: Contact us for custom pricing.
+  period: none
+  unit: user
+  included_quota: All the features of Professional, SSO, Analytics, Arena PLM Connection, Priority Support

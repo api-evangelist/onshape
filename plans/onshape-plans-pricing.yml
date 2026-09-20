@@ -10,6 +10,11 @@ provenance:
   grounding: every price_text was found verbatim in the fetched page text
 audience: business-product
 pricing_basis: per-seat
+delivery:
+  delivery: managed
+  method: page
+  read: '2026-09-20'
+  managed_tier: Standard Plan
 published: true
 note: CAD software plan pricing page; prices shown in USD with currency switcher. API (Open API Integration)
   included as a feature, not separately priced.

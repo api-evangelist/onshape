@@ -1,0 +1,144 @@
+slug: onshape
+provider: Onshape
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Software & Technology
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 12
+edges:
+- tag: PartStudio
+  spec_file: onshape-partstudio-api-openapi.yml
+  capability_id: BC-820.20
+  capability_id_l1: BC-820
+  capability_name: Product Design Management
+  confidence: 0.85
+  evidence: POST /partstudios/d/{did}/w/{wid} createPartStudio 'Create a new Part Studio in a document.';
+    POST .../features addPartStudioFeature 'Add a feature to the Part Studio's Feature List.'
+  reason: Creating Part Studios, adding/updating/deleting modelling features and evaluating FeatureScript
+    is core CAD product design and engineering work.
+- tag: Webhook
+  spec_file: onshape-webhook-api-openapi.yml
+  capability_id: BC-4270.80
+  capability_id_l1: BC-4270
+  capability_name: Webhook & Event Subscription Management
+  confidence: 0.85
+  evidence: POST /webhooks createWebhook "Create a new webhook."; DELETE /webhooks/{webhookid} unregisterWebhook;
+    BTWebhookLifecycleMessageBody
+  reason: Full CRUD plus ping over outbound webhook registrations with event message body schemas — this
+    is exactly the lifecycle of outbound webhook/event subscriptions exposed to integrators.
+- tag: Part
+  spec_file: onshape-part-api-openapi.yml
+  capability_id: BC-820.20
+  capability_id_l1: BC-820
+  capability_name: Product Design Management
+  confidence: 0.8
+  evidence: GET .../partid/{partid}/massproperties getMassProperties 'Get a part's mass properties.';
+    GET .../parasolid exportPS 'Synchronously export a part to a Parasolid file.'
+  reason: Operations query CAD geometry (bounding boxes, body details, tessellation, sheet-metal bend
+    tables) and export part models — engineering design data of the product, i.e. product design management.
+- tag: Assembly
+  spec_file: onshape-assembly-api-openapi.yml
+  capability_id: BC-820.20
+  capability_id_l1: BC-820
+  capability_name: Product Design Management
+  confidence: 0.78
+  evidence: POST /assemblies/d/{did}/w/{wid}  createAssembly  Create a new assembly tab in the document;
+    POST .../matevalues  updateMateValues  Update mate values for the given mates in the specified assembly;
+    getOrCreateBillOfMaterialsElement  Gets the Bill Of Materials (BOM) for the specified assembly
+  reason: Operations create and edit CAD assemblies, features, instances and mates and derive a bill of
+    materials — this is product design/engineering authoring. Chose Product Design Management over Product
+    Specification Management since most operations manipulate design geometry rather than specifications,
+    hence 0.78.
+- tag: Revision
+  spec_file: onshape-revision-api-openapi.yml
+  capability_id: BC-820
+  capability_id_l1: BC-820
+  capability_name: Product Lifecycle Management
+  confidence: 0.75
+  evidence: GET /revisions/companies/{cid}/partnumber/{pnum} getRevisionHistoryInCompanyByPartNumber 'Get
+    all revisions for a part number.'; schema BTRevisionApproverInfo
+  reason: Managing released revisions and revision history of parts/elements with approvers is controlled
+    product-data revision management in a PDM/PLM platform. Kept at L1 as it spans specification and release
+    control.
+- tag: Drawing
+  spec_file: onshape-drawing-api-openapi.yml
+  capability_id: BC-820.20
+  capability_id_l1: BC-820
+  capability_name: Product Design Management
+  confidence: 0.72
+  evidence: '''Create a new drawing in a document.'', ''Modify a drawing via JSON payload.'', ''Get details
+    of all drawing views.'', ''Translate (export) a drawing to a different format.'''
+  reason: Engineering drawings and their views are core product design/engineering artefacts of a CAD
+    platform, mapping to Product Design Management within Product Lifecycle Management.
+- tag: Sketch
+  spec_file: onshape-sketch-api-openapi.yml
+  capability_id: BC-820.20
+  capability_id_l1: BC-820
+  capability_name: Product Design Management
+  confidence: 0.72
+  evidence: GET /partstudios/.../sketches getSketchInfo "Get information for all sketches in Part Studio."
+  reason: Sketches are CAD geometry entities inside a Part Studio; reading sketch info, bounding boxes
+    and tessellations serves product/engineering design work, so Product Design Management is the closest
+    honest fit. Confidence moderate because the operations are read-only geometry queries rather than
+    design process management.
+- tag: Account
+  spec_file: onshape-account-api-openapi.yml
+  capability_id: BC-4240
+  capability_id_l1: BC-4240
+  capability_name: Subscription Lifecycle Management
+  confidence: 0.7
+  evidence: DELETE /accounts/{aid}/purchases/{pid}  cancelPurchaseNew  Cancel a recurring subscription
+    for the specified account ID and purchase ID.
+  reason: Operations expose app purchases, purchase consumption and cancellation of recurring subscriptions
+    (schemas BTPurchaseInfo, BTBillingPlanInfo), i.e. the commercial subscription lifecycle for Onshape
+    app purchases. Left at L1 because the surface spans purchase listing, activation and cancellation
+    rather than one sub-capability.
+- tag: Metadata
+  spec_file: onshape-metadata-api-openapi.yml
+  capability_id: BC-820
+  capability_id_l1: BC-820
+  capability_name: Product Lifecycle Management
+  confidence: 0.7
+  evidence: GET /metadata/d/{did}/{wvm}/{wvmid}/e/{eid}/p getWMVEPsMetadata 'Get the metadata for all
+    parts in a document.'; schema BTMetadataPartInfo
+  reason: Onshape is a CAD/PDM platform; this tag reads and writes product data properties on parts, assemblies,
+    elements and versions — product data management within the product lifecycle. Kept at L1 since the
+    properties span specification, identification and release attributes rather than one narrow sub-capability.
+- tag: NumberingScheme
+  spec_file: onshape-numberingscheme-api-openapi.yml
+  capability_id: BC-820
+  capability_id_l1: BC-820
+  capability_name: Product Lifecycle Management
+  confidence: 0.7
+  evidence: POST /numberingscheme/nextnumbers nextNumbers 'Get the next available part number for a release
+    item.'
+  reason: Allocates part numbers for release items — part identification/numbering in the CAD/PDM product
+    lifecycle, not a generic technical utility.
+- tag: ProductStructure
+  spec_file: onshape-productstructure-api-openapi.yml
+  capability_id: BC-820.30
+  capability_id_l1: BC-820
+  capability_name: Product Specification Management
+  confidence: 0.7
+  evidence: GET /productstructure/whereused getWhereUsed 'Find where a part or assembly is used.'; schema
+    BTProductStructureItemInfo
+  reason: Where-used analysis over product structure is BOM/product-structure interrogation in a PDM system,
+    aligning with product specification/BOM definition. Single operation, so moderate confidence.
+- tag: ReleasePackage
+  spec_file: onshape-releasepackage-api-openapi.yml
+  capability_id: BC-820.50
+  capability_id_l1: BC-820
+  capability_name: Product Release & Launch Management
+  confidence: 0.7
+  evidence: POST /releasepackages/release/{wfid} createReleasePackage 'Create a new release candidate
+    for one or more items.'; POST /releasepackages/obsoletion/{wfid} 'Create an obsoletion candidate to
+    make an existing revision obsolete.'
+  reason: Release and obsoletion candidates with approval workflow are the PLM release process for product
+    items; obsoletion also touches end-of-life, hence moderate confidence on the release sub-capability.

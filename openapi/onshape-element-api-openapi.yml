@@ -1,34 +1,15 @@
-openapi: 3.0.1
+openapi: 3.2.0
 info:
-  title: Onshape REST Account Element API
+  title: Onshape REST Element API
   description: '## Welcome to the Onshape REST API Explorer
 
 
-    **See the [API Explorer Guide](https://onshape-public.github.io/docs/api-intro/explorer/) for help navigating this page.**
+    **See the API Explorer Guide for help navigating this page.**
 
 
     ### Using this page
 
-    1. Sign in to your [Onshape](https://cad.onshape.com) account in another tab.
-
-    2. Click the `Try it out` button below. It toggles to a `Cancel` button when selected.
-
-
-    ### Authenticating
-
-    To authenticate your calls, click the `Authorize` button. See [API Explorer Guide: Authentication](https://onshape-public.github.io/docs/api-intro/explorer/#authentication) for details. Calls made when authenticated via API Keys or OAuth count against your annual [API limits](https://onshape-public.github.io/docs/auth/limits/#annual-api-call-limits).
-
-    * **Tip:** To ensure the current session isn''t used when trying other authentication techniques, make sure to [remove the Onshape cookie](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site) as per the instructions for your browser, or use a private or incognito window.
-
-
-    ### Additional resources
-
-
-    * [Onshape API Guide](https://onshape-public.github.io/docs/): Our full suite of developer guides, to be used as an accompaniment to this API Explorer.
-
-    * [Onshape Developer Portal](https://cad.onshape.com/appstore/dev-portal): The Onshape portal for managing your API keys, OAuth2 credentials, your Onshape applications, and your Onshape App Store entries.
-
-    * [Authentication Guide](https://onshape-public.github.io/docs/auth/): Our guide to using API keys, request signatures, and OAuth2 in your Onshape applications.'
+    1.'
   termsOfService: https://www.onshape.com/legal/terms-of-use
   contact:
     email: api-support@onshape.zendesk.com
@@ -65,8 +46,10 @@ paths:
     post:
       tags:
       - Element
-      summary: Copy an element from a source document.
-      description: "Specify the target document and workspace in the URL. Specify the source document, workspace, and element in the request body. \nIf `anchorElementId` is specified, the copied element will be inserted after the anchor element. If not specified, the copied element will be inserted at the end of the tab list. \n"
+      summary: Copy an element from a source document
+      description: 'Specify the target document and workspace in the URL. Specify the source document, workspace, and element in the request body.
+
+        If `anchorElementId` is specified, the copied element will be inserted after the anchor element. If not specified, the copied element will be inserted at the end of the tab list.'
       operationId: copyElementFromSourceDocument
       parameters:
       - name: did
@@ -103,8 +86,12 @@ paths:
     post:
       tags:
       - Element
-      summary: Encode a configuration option for use in other API calls.
-      description: "Returns a configuration string in the following form: \n`configuration=parameterId%3DparameterValue` \nThe configuration string can be used in other Onshape API calls to specify which configuration option to use. See the [Configuration API Guide](https://onshape-public.github.io/docs/api-adv/configs/) for additional details. \n"
+      summary: Encode a configuration option for use in other API calls
+      description: 'Returns a configuration string in the following form:
+
+        `configuration=parameterId%3DparameterValue`
+
+        The configuration string can be used in other Onshape API calls to specify which configuration option to use. See the Configuration API Guide for additional details.'
       operationId: encodeConfigurationMap
       parameters:
       - name: did
@@ -149,7 +136,7 @@ paths:
     delete:
       tags:
       - Element
-      summary: Delete an element from a document.
+      summary: Delete an element from a document
       description: Attempting to delete the last element in a document will result in an error.
       operationId: deleteElement
       parameters:
@@ -186,7 +173,7 @@ paths:
     post:
       tags:
       - Element
-      summary: Update or replace references in an element.
+      summary: Update or replace references in an element
       operationId: updateReferences
       parameters:
       - name: did
@@ -230,8 +217,10 @@ paths:
     get:
       tags:
       - Element
-      summary: Get the configuration definition for a Part Studio, Variable Studio, or Assembly.
-      description: "Use Configurations to create variations of elements. You can configure feature and parameter values, part properties, custom part properties, face and part appearances, and sketch text. Each Part Studio can have only one Configuration, but it can contain multiple Configuration inputs. \nSee the [Configuration API Guide](https://onshape-public.github.io/docs/api-adv/configs/) for additional details. "
+      summary: Get the configuration definition for a Part Studio, Variable Studio, or Assembly
+      description: 'Use Configurations to create variations of elements. You can configure feature and parameter values, part properties, custom part properties, face and part appearances, and sketch text. Each Part Studio can have only one Configuration, but it can contain multiple Configuration inputs.
+
+        See the Configuration API Guide for additional details.'
       operationId: getConfiguration
       parameters:
       - name: did
@@ -285,8 +274,8 @@ paths:
     post:
       tags:
       - Element
-      summary: Update the configuration definition for a Part Studio, Variable Studio, or Assembly.
-      description: See the [Configuration API Guide](https://onshape-public.github.io/docs/api-adv/configs/) for additional details
+      summary: Update the configuration definition for a Part Studio, Variable Studio, or…
+      description: See the Configuration API Guide for additional details
       operationId: updateConfiguration
       parameters:
       - name: did
@@ -332,8 +321,8 @@ paths:
     get:
       tags:
       - Element
-      summary: Decode a configuration string.
-      description: 'Decode a configuration string into its original JSON form to obtain configuration parameter ID and value. See the [Configuration API Guide](https://onshape-public.github.io/docs/api-adv/configs/) for additional details.  '
+      summary: Decode a configuration string
+      description: Decode a configuration string into its original JSON form to obtain configuration parameter ID and value. See the Configuration API Guide for additional details.
       operationId: decodeConfiguration
       parameters:
       - name: did
@@ -393,8 +382,8 @@ paths:
     get:
       tags:
       - Element
-      summary: Gets the list of formats an element can be translated to or from.
-      description: 'See the [Translation API Guide](https://onshape-public.github.io/docs/api-adv/translation/) for additional details. '
+      summary: Gets the list of formats an element can be translated to or from
+      description: See the Translation API Guide for additional details.
       operationId: getElementTranslatorFormatsByVersionOrWorkspace
       parameters:
       - name: did
@@ -453,6 +442,28 @@ paths:
       x-BTVisibility: PRODUCTION
 components:
   schemas:
+    BTConfigurationInfo:
+      type: object
+      properties:
+        isStandardContent:
+          type: boolean
+        parameters:
+          type: array
+          items:
+            $ref: '#/components/schemas/ConfigurationInfoEntry'
+    BTCopyElementParams:
+      type: object
+      properties:
+        anchorElementId:
+          type: string
+        documentIdSource:
+          type: string
+        elementIdSource:
+          type: string
+        isGroupAnchor:
+          type: boolean
+        workspaceIdSource:
+          type: string
     BTThumbnailSizeInfo:
       type: object
       properties:
@@ -471,94 +482,21 @@ components:
           type: string
         viewOrientation:
           type: string
-    BTMConfigurationParameter-819:
+    BTTreeNode-20:
       type: object
       properties:
         btType:
           type: string
           description: Type of JSON object.
-      discriminator:
-        propertyName: btType
-        mapping:
-          BTMConfigurationParameterBoolean-2550: '#/components/schemas/BTMConfigurationParameterBoolean-2550'
-          BTMConfigurationParameterEnum-105: '#/components/schemas/BTMConfigurationParameterEnum-105'
-          BTMConfigurationParameterQuantity-1826: '#/components/schemas/BTMConfigurationParameterQuantity-1826'
-          BTMConfigurationParameterString-872: '#/components/schemas/BTMConfigurationParameterString-872'
-      allOf:
-      - $ref: '#/components/schemas/BTMNode-19'
-      - type: object
-        properties:
-          btType:
-            type: string
-          enumOptionIds:
-            type: array
-            items:
-              type: string
-          generatedParameterId:
-            $ref: '#/components/schemas/BTTreeNode-20'
-          isCosmetic:
-            type: boolean
-          parameterId:
-            type: string
-          parameterName:
-            type: string
-          parameterType:
-            $ref: '#/components/schemas/GBTConfigurationParameterType'
-          valid:
-            type: boolean
-          visibilityCondition:
-            $ref: '#/components/schemas/BTParameterVisibilityCondition-177'
-    BTUniqueDocumentItemParams:
-      type: object
-      properties:
-        apiConfiguration:
+        nodeId:
           type: string
-        documentId:
-          type: string
-        elementId:
-          type: string
-        elementType:
-          type: string
-        partId:
-          type: string
-        partNumber:
-          type: string
-        revision:
-          type: string
-        versionId:
-          type: string
-        workspaceId:
-          type: string
-    BTConfigurationResponse-2019:
-      type: object
-      properties:
-        btType:
-          type: string
-          description: Type of JSON object.
-        configurationParameters:
-          type: array
-          items:
-            $ref: '#/components/schemas/BTMConfigurationParameter-819'
-        currentConfiguration:
-          type: array
-          items:
-            $ref: '#/components/schemas/BTMParameter-1'
-        libraryVersion:
-          type: integer
-          description: FeatureScript version used in the Part Studio. Do not modify.
-          format: int32
-        microversionSkew:
-          type: boolean
-          description: On output, `true` indicates a microversion mismatch was encountered.
-        rejectMicroversionSkew:
-          type: boolean
-          description: If `true`, the call will refuse to make the addition if the current microversion for the document does not match the source microversion. If `false`, a best-effort attempt is made to re-interpret the feature addition in the context of a newer document microversion.
-        serializationVersion:
-          type: string
-          description: Version of the structure serialization rules used to encode the output. This enables incompatibility detection during software updates.
-        sourceMicroversion:
-          type: string
-          description: The state from which the result was extracted. Geometry ID interpretation is dependent on this document microversion.
+    GBTConfigurationParameterType:
+      type: string
+      enum:
+      - ENUM
+      - BOOLEAN
+      - STRING
+      - QUANTITY
     BTConfigurationUpdateCall-2933:
       type: object
       properties:
@@ -589,53 +527,25 @@ components:
         sourceMicroversion:
           type: string
           description: The state from which the result was extracted. Geometry ID interpretation is dependent on this document microversion.
-    BTMParameter-1:
+    GBTParameterLibraryRelationType:
+      type: string
+      enum:
+      - DEFAULT
+      - IGNORE_LIBRARY_VALUES
+      - UNKNOWN
+    UpdateParams:
       type: object
       properties:
-        btType:
-          type: string
-          description: Type of JSON object.
-        importMicroversion:
-          type: string
-          description: Microversion that resulted from the import.
-          writeOnly: true
-        libraryRelationType:
-          $ref: '#/components/schemas/GBTParameterLibraryRelationType'
-        nodeId:
-          type: string
-          description: ID of the parameter's node.
-        parameterId:
-          type: string
-          description: Unique ID of the parameter.
-        parameterName:
-          type: string
-        valueString:
-          type: string
-      description: A list of parameter values for instantiation of the feature spec. Parameters are present for all defined parameters, even if not used in a specific instantiation.
-      discriminator:
-        propertyName: btType
-        mapping:
-          BTMDatabaseParameter-2229: '#/components/schemas/BTMDatabaseParameter-2229'
-          BTMParameterAppearance-627: '#/components/schemas/BTMParameterAppearance-627'
-          BTMParameterArray-2025: '#/components/schemas/BTMParameterArray-2025'
-          BTMParameterBlobReference-1679: '#/components/schemas/BTMParameterBlobReference-1679'
-          BTMParameterBoolean-144: '#/components/schemas/BTMParameterBoolean-144'
-          BTMParameterButton-5169: '#/components/schemas/BTMParameterButton-5169'
-          BTMParameterConfigured-2222: '#/components/schemas/BTMParameterConfigured-2222'
-          BTMParameterDerived-864: '#/components/schemas/BTMParameterDerived-864'
-          BTMParameterEnum-145: '#/components/schemas/BTMParameterEnum-145'
-          BTMParameterFeatureList-1749: '#/components/schemas/BTMParameterFeatureList-1749'
-          BTMParameterForeignId-146: '#/components/schemas/BTMParameterForeignId-146'
-          BTMParameterInvalid-1664: '#/components/schemas/BTMParameterInvalid-1664'
-          BTMParameterLookupTablePath-1419: '#/components/schemas/BTMParameterLookupTablePath-1419'
-          BTMParameterMaterial-1388: '#/components/schemas/BTMParameterMaterial-1388'
-          BTMParameterMultiEnum-3411: '#/components/schemas/BTMParameterMultiEnum-3411'
-          BTMParameterQuantity-147: '#/components/schemas/BTMParameterQuantity-147'
-          BTMParameterQueryList-148: '#/components/schemas/BTMParameterQueryList-148'
-          BTMParameterQueryWithOccurrenceList-67: '#/components/schemas/BTMParameterQueryWithOccurrenceList-67'
-          BTMParameterReference-2434: '#/components/schemas/BTMParameterReference-2434'
-          BTMParameterString-149: '#/components/schemas/BTMParameterString-149'
-          BTMReadOnlyParameter-3800: '#/components/schemas/BTMReadOnlyParameter-3800'
+        fromReference:
+          $ref: '#/components/schemas/BTUniqueDocumentItemParams'
+        idsToUpdate:
+          type: array
+          items:
+            type: string
+        ignoreChildren:
+          type: boolean
+        toReference:
+          $ref: '#/components/schemas/BTUniqueDocumentItemParams'
     BTMNode-19:
       type: object
       properties:
@@ -677,6 +587,27 @@ components:
           BTModelAnnotations-3945: '#/components/schemas/BTModelAnnotations-3945'
           BTSimulationInstance-3093: '#/components/schemas/BTSimulationInstance-3093'
           BTToleranceString-3274: '#/components/schemas/BTToleranceString-3274'
+    BTUniqueDocumentItemParams:
+      type: object
+      properties:
+        apiConfiguration:
+          type: string
+        documentId:
+          type: string
+        elementId:
+          type: string
+        elementType:
+          type: string
+        partId:
+          type: string
+        partNumber:
+          type: string
+        revision:
+          type: string
+        versionId:
+          type: string
+        workspaceId:
+          type: string
     BTConfigurationParams:
       type: object
       properties:
@@ -686,130 +617,6 @@ components:
             $ref: '#/components/schemas/ConfigurationEntry'
         standardContentParametersId:
           type: string
-    ConfigurationInfoEntry:
-      type: object
-      properties:
-        explicit:
-          type: boolean
-        isCosmetic:
-          type: boolean
-        isVisible:
-          type: boolean
-        parameterAbbreviatedDisplayValue:
-          type: string
-        parameterDisplayValue:
-          type: string
-        parameterId:
-          type: string
-        parameterName:
-          type: string
-        parameterType:
-          type: integer
-          format: int32
-        parameterValue:
-          type: string
-    BTZipFileInfo:
-      type: object
-      properties:
-        files:
-          type: array
-          items:
-            type: string
-    GBTParameterLibraryRelationType:
-      type: string
-      enum:
-      - DEFAULT
-      - IGNORE_LIBRARY_VALUES
-      - UNKNOWN
-    BTApplicationTargetInfo:
-      type: object
-      properties:
-        baseHref:
-          type: string
-          format: uri
-        clientId:
-          type: string
-        supportsCollaboration:
-          type: boolean
-        tabIconHref:
-          type: string
-          format: uri
-    GBTConfigurationParameterType:
-      type: string
-      enum:
-      - ENUM
-      - BOOLEAN
-      - STRING
-      - QUANTITY
-    BTThumbnailInfo:
-      type: object
-      properties:
-        href:
-          type: string
-          format: uri
-        id:
-          type: string
-        secondarySizes:
-          type: array
-          items:
-            type: array
-            items:
-              $ref: '#/components/schemas/BTThumbnailSizeInfo'
-        sizes:
-          type: array
-          items:
-            $ref: '#/components/schemas/BTThumbnailSizeInfo'
-    BTTreeNode-20:
-      type: object
-      properties:
-        btType:
-          type: string
-          description: Type of JSON object.
-        nodeId:
-          type: string
-    BTParameterVisibilityCondition-177:
-      type: object
-      properties:
-        btType:
-          type: string
-          description: Type of JSON object.
-        selfOrChildAlwaysVisible:
-          type: boolean
-      discriminator:
-        propertyName: btType
-        mapping:
-          BTParameterVisibilityAlwaysHidden-176: '#/components/schemas/BTParameterVisibilityAlwaysHidden-176'
-          BTParameterVisibilityAlwaysShown-5487: '#/components/schemas/BTParameterVisibilityAlwaysShown-5487'
-          BTParameterVisibilityInRange-2980: '#/components/schemas/BTParameterVisibilityInRange-2980'
-          BTParameterVisibilityLogical-178: '#/components/schemas/BTParameterVisibilityLogical-178'
-          BTParameterVisibilityOnEqual-180: '#/components/schemas/BTParameterVisibilityOnEqual-180'
-    UpdateParams:
-      type: object
-      properties:
-        fromReference:
-          $ref: '#/components/schemas/BTUniqueDocumentItemParams'
-        idsToUpdate:
-          type: array
-          items:
-            type: string
-        ignoreChildren:
-          type: boolean
-        toReference:
-          $ref: '#/components/schemas/BTUniqueDocumentItemParams'
-    GBTElementType:
-      type: string
-      enum:
-      - PARTSTUDIO
-      - ASSEMBLY
-      - DRAWING
-      - FEATURESTUDIO
-      - BLOB
-      - APPLICATION
-      - TABLE
-      - BILLOFMATERIALS
-      - VARIABLESTUDIO
-      - PUBLICATIONITEM
-      - UNKNOWN
     BTDocumentElementInfo:
       type: object
       properties:
@@ -876,6 +683,189 @@ components:
           type: string
         zip:
           $ref: '#/components/schemas/BTZipFileInfo'
+    ConfigurationInfoEntry:
+      type: object
+      properties:
+        explicit:
+          type: boolean
+        isCosmetic:
+          type: boolean
+        isVisible:
+          type: boolean
+        parameterAbbreviatedDisplayValue:
+          type: string
+        parameterDisplayValue:
+          type: string
+        parameterId:
+          type: string
+        parameterName:
+          type: string
+        parameterType:
+          type: integer
+          format: int32
+        parameterValue:
+          type: string
+    GBTElementType:
+      type: string
+      enum:
+      - PARTSTUDIO
+      - ASSEMBLY
+      - DRAWING
+      - FEATURESTUDIO
+      - BLOB
+      - APPLICATION
+      - TABLE
+      - BILLOFMATERIALS
+      - VARIABLESTUDIO
+      - PUBLICATIONITEM
+      - UNKNOWN
+    BTApplicationTargetInfo:
+      type: object
+      properties:
+        baseHref:
+          type: string
+          format: uri
+        clientId:
+          type: string
+        supportsCollaboration:
+          type: boolean
+        tabIconHref:
+          type: string
+          format: uri
+    BTMConfigurationParameter-819:
+      type: object
+      properties:
+        btType:
+          type: string
+          description: Type of JSON object.
+      discriminator:
+        propertyName: btType
+        mapping:
+          BTMConfigurationParameterBoolean-2550: '#/components/schemas/BTMConfigurationParameterBoolean-2550'
+          BTMConfigurationParameterEnum-105: '#/components/schemas/BTMConfigurationParameterEnum-105'
+          BTMConfigurationParameterQuantity-1826: '#/components/schemas/BTMConfigurationParameterQuantity-1826'
+          BTMConfigurationParameterString-872: '#/components/schemas/BTMConfigurationParameterString-872'
+      allOf:
+      - $ref: '#/components/schemas/BTMNode-19'
+      - type: object
+        properties:
+          btType:
+            type: string
+          enumOptionIds:
+            type: array
+            items:
+              type: string
+          generatedParameterId:
+            $ref: '#/components/schemas/BTTreeNode-20'
+          isCosmetic:
+            type: boolean
+          parameterId:
+            type: string
+          parameterName:
+            type: string
+          parameterType:
+            $ref: '#/components/schemas/GBTConfigurationParameterType'
+          valid:
+            type: boolean
+          visibilityCondition:
+            $ref: '#/components/schemas/BTParameterVisibilityCondition-177'
+    BTUpdateReferenceParams:
+      type: object
+      properties:
+        connectionId:
+          type: string
+        editDescription:
+          type: string
+        referenceUpdates:
+          type: array
+          items:
+            $ref: '#/components/schemas/UpdateParams'
+    BTThumbnailInfo:
+      type: object
+      properties:
+        href:
+          type: string
+          format: uri
+        id:
+          type: string
+        secondarySizes:
+          type: array
+          items:
+            type: array
+            items:
+              $ref: '#/components/schemas/BTThumbnailSizeInfo'
+        sizes:
+          type: array
+          items:
+            $ref: '#/components/schemas/BTThumbnailSizeInfo'
+    BTMParameter-1:
+      type: object
+      properties:
+        btType:
+          type: string
+          description: Type of JSON object.
+        importMicroversion:
+          type: string
+          description: Microversion that resulted from the import.
+          writeOnly: true
+        libraryRelationType:
+          $ref: '#/components/schemas/GBTParameterLibraryRelationType'
+        nodeId:
+          type: string
+          description: ID of the parameter's node.
+        parameterId:
+          type: string
+          description: Unique ID of the parameter.
+        parameterName:
+          type: string
+        valueString:
+          type: string
+      description: A list of parameter values for instantiation of the feature spec. Parameters are present for all defined parameters, even if not used in a specific instantiation.
+      discriminator:
+        propertyName: btType
+        mapping:
+          BTMDatabaseParameter-2229: '#/components/schemas/BTMDatabaseParameter-2229'
+          BTMParameterAppearance-627: '#/components/schemas/BTMParameterAppearance-627'
+          BTMParameterArray-2025: '#/components/schemas/BTMParameterArray-2025'
+          BTMParameterBlobReference-1679: '#/components/schemas/BTMParameterBlobReference-1679'
+          BTMParameterBoolean-144: '#/components/schemas/BTMParameterBoolean-144'
+          BTMParameterButton-5169: '#/components/schemas/BTMParameterButton-5169'
+          BTMParameterConfigured-2222: '#/components/schemas/BTMParameterConfigured-2222'
+          BTMParameterDerived-864: '#/components/schemas/BTMParameterDerived-864'
+          BTMParameterEnum-145: '#/components/schemas/BTMParameterEnum-145'
+          BTMParameterFeatureList-1749: '#/components/schemas/BTMParameterFeatureList-1749'
+          BTMParameterForeignId-146: '#/components/schemas/BTMParameterForeignId-146'
+          BTMParameterInvalid-1664: '#/components/schemas/BTMParameterInvalid-1664'
+          BTMParameterLookupTablePath-1419: '#/components/schemas/BTMParameterLookupTablePath-1419'
+          BTMParameterMaterial-1388: '#/components/schemas/BTMParameterMaterial-1388'
+          BTMParameterMultiEnum-3411: '#/components/schemas/BTMParameterMultiEnum-3411'
+          BTMParameterQuantity-147: '#/components/schemas/BTMParameterQuantity-147'
+          BTMParameterQueryList-148: '#/components/schemas/BTMParameterQueryList-148'
+          BTMParameterQueryWithOccurrenceList-67: '#/components/schemas/BTMParameterQueryWithOccurrenceList-67'
+          BTMParameterReference-2434: '#/components/schemas/BTMParameterReference-2434'
+          BTMParameterString-149: '#/components/schemas/BTMParameterString-149'
+          BTMReadOnlyParameter-3800: '#/components/schemas/BTMReadOnlyParameter-3800'
+    ConfigurationEntry:
+      type: object
+      properties:
+        parameterId:
+          type: string
+        parameterValue:
+          type: string
+    BTEncodedConfigurationInfo:
+      type: object
+      properties:
+        encodedId:
+          type: string
+        queryParam:
+          type: string
+    BTZipFileInfo:
+      type: object
+      properties:
+        files:
+          type: array
+          items:
+            type: string
     BTModelFormatInfo:
       type: object
       properties:
@@ -891,53 +881,52 @@ components:
           type: string
           description: The name of the translator for the format.
           example: step
-    BTEncodedConfigurationInfo:
+    BTConfigurationResponse-2019:
       type: object
       properties:
-        encodedId:
+        btType:
           type: string
-        queryParam:
-          type: string
-    ConfigurationEntry:
-      type: object
-      properties:
-        parameterId:
-          type: string
-        parameterValue:
-          type: string
-    BTCopyElementParams:
-      type: object
-      properties:
-        anchorElementId:
-          type: string
-        documentIdSource:
-          type: string
-        elementIdSource:
-          type: string
-        isGroupAnchor:
-          type: boolean
-        workspaceIdSource:
-          type: string
-    BTConfigurationInfo:
-      type: object
-      properties:
-        isStandardContent:
-          type: boolean
-        parameters:
+          description: Type of JSON object.
+        configurationParameters:
           type: array
           items:
-            $ref: '#/components/schemas/ConfigurationInfoEntry'
-    BTUpdateReferenceParams:
-      type: object
-      properties:
-        connectionId:
-          type: string
-        editDescription:
-          type: string
-        referenceUpdates:
+            $ref: '#/components/schemas/BTMConfigurationParameter-819'
+        currentConfiguration:
           type: array
           items:
-            $ref: '#/components/schemas/UpdateParams'
+            $ref: '#/components/schemas/BTMParameter-1'
+        libraryVersion:
+          type: integer
+          description: FeatureScript version used in the Part Studio. Do not modify.
+          format: int32
+        microversionSkew:
+          type: boolean
+          description: On output, `true` indicates a microversion mismatch was encountered.
+        rejectMicroversionSkew:
+          type: boolean
+          description: If `true`, the call will refuse to make the addition if the current microversion for the document does not match the source microversion. If `false`, a best-effort attempt is made to re-interpret the feature addition in the context of a newer document microversion.
+        serializationVersion:
+          type: string
+          description: Version of the structure serialization rules used to encode the output. This enables incompatibility detection during software updates.
+        sourceMicroversion:
+          type: string
+          description: The state from which the result was extracted. Geometry ID interpretation is dependent on this document microversion.
+    BTParameterVisibilityCondition-177:
+      type: object
+      properties:
+        btType:
+          type: string
+          description: Type of JSON object.
+        selfOrChildAlwaysVisible:
+          type: boolean
+      discriminator:
+        propertyName: btType
+        mapping:
+          BTParameterVisibilityAlwaysHidden-176: '#/components/schemas/BTParameterVisibilityAlwaysHidden-176'
+          BTParameterVisibilityAlwaysShown-5487: '#/components/schemas/BTParameterVisibilityAlwaysShown-5487'
+          BTParameterVisibilityInRange-2980: '#/components/schemas/BTParameterVisibilityInRange-2980'
+          BTParameterVisibilityLogical-178: '#/components/schemas/BTParameterVisibilityLogical-178'
+          BTParameterVisibilityOnEqual-180: '#/components/schemas/BTParameterVisibilityOnEqual-180'
   securitySchemes:
     OAuth2:
       type: oauth2

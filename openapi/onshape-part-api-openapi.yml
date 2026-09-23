@@ -1,34 +1,15 @@
-openapi: 3.0.1
+openapi: 3.2.0
 info:
-  title: Onshape REST Account Part API
+  title: Onshape REST Part API
   description: '## Welcome to the Onshape REST API Explorer
 
 
-    **See the [API Explorer Guide](https://onshape-public.github.io/docs/api-intro/explorer/) for help navigating this page.**
+    **See the API Explorer Guide for help navigating this page.**
 
 
     ### Using this page
 
-    1. Sign in to your [Onshape](https://cad.onshape.com) account in another tab.
-
-    2. Click the `Try it out` button below. It toggles to a `Cancel` button when selected.
-
-
-    ### Authenticating
-
-    To authenticate your calls, click the `Authorize` button. See [API Explorer Guide: Authentication](https://onshape-public.github.io/docs/api-intro/explorer/#authentication) for details. Calls made when authenticated via API Keys or OAuth count against your annual [API limits](https://onshape-public.github.io/docs/auth/limits/#annual-api-call-limits).
-
-    * **Tip:** To ensure the current session isn''t used when trying other authentication techniques, make sure to [remove the Onshape cookie](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site) as per the instructions for your browser, or use a private or incognito window.
-
-
-    ### Additional resources
-
-
-    * [Onshape API Guide](https://onshape-public.github.io/docs/): Our full suite of developer guides, to be used as an accompaniment to this API Explorer.
-
-    * [Onshape Developer Portal](https://cad.onshape.com/appstore/dev-portal): The Onshape portal for managing your API keys, OAuth2 credentials, your Onshape applications, and your Onshape App Store entries.
-
-    * [Authentication Guide](https://onshape-public.github.io/docs/auth/): Our guide to using API keys, request signatures, and OAuth2 in your Onshape applications.'
+    1.'
   termsOfService: https://www.onshape.com/legal/terms-of-use
   contact:
     email: api-support@onshape.zendesk.com
@@ -65,7 +46,7 @@ paths:
     get:
       tags:
       - Part
-      summary: Get all parts in a workspace, version, or microversion.
+      summary: Get all parts in a workspace, version, or microversion
       operationId: getPartsWMV
       parameters:
       - name: did
@@ -143,7 +124,7 @@ paths:
     get:
       tags:
       - Part
-      summary: Get all parts in an element.
+      summary: Get all parts in an element
       operationId: getPartsWMVE
       parameters:
       - name: did
@@ -216,7 +197,7 @@ paths:
     get:
       tags:
       - Part
-      summary: Get a part's body details.
+      summary: Get a part's body details
       description: All coordinates are in meters (m).
       operationId: getBodyDetails
       parameters:
@@ -301,7 +282,7 @@ paths:
     get:
       tags:
       - Part
-      summary: Get a part's bounding box details.
+      summary: Get a part's bounding box details
       operationId: getBoundingBoxes
       parameters:
       - name: did
@@ -360,8 +341,17 @@ paths:
     get:
       tags:
       - Part
-      summary: Synchronously export a part to a glTF file.
-      description: "Creates a synchronous export of the part (with limited tessellation settings) to a glTF file. \n* Returns a 307 redirect from which to download the exported file. \n* Export is much faster than asynchronous endpoints at the expense of limited control on tessellation settings. \n* Use the [PartStudio/createPartStudioTranslation](#/PartStudio/createPartStudioTranslation) asynchronous export for greater control. \n \nSee [API Guide: Synchronous Exports](https://onshape-public.github.io/docs/api-adv/translation/#synchronous-exports) for more details."
+      summary: Synchronously export a part to a glTF file
+      description: 'Creates a synchronous export of the part (with limited tessellation settings) to a glTF file.
+
+        * Returns a 307 redirect from which to download the exported file.
+
+        * Export is much faster than asynchronous endpoints at the expense of limited control on tessellation settings.
+
+        * Use the PartStudio/createPartStudioTranslation asynchronous export for greater control.
+
+
+        See API Guide: Synchronous Exports for more details.'
       operationId: exportPartGltf
       parameters:
       - name: did
@@ -480,8 +470,16 @@ paths:
     get:
       tags:
       - Part
-      summary: Get a part's mass properties.
-      description: "Parts must have density. The returned schema includes the same information as in the Onshape [Mass Properties Tool](https://cad.onshape.com/help/Content/massprops-ps.htm). \nWhen three values are returned: \n * The first is the calculated value. \n * The second is the minimum possible value, considering tolerance. \n * The third is the maximum possible value, considering tolerance."
+      summary: Get a part's mass properties
+      description: 'Parts must have density. The returned schema includes the same information as in the Onshape Mass Properties Tool.
+
+        When three values are returned:
+
+        * The first is the calculated value.
+
+        * The second is the minimum possible value, considering tolerance.
+
+        * The third is the maximum possible value, considering tolerance.'
       operationId: getMassProperties
       parameters:
       - name: did
@@ -570,8 +568,17 @@ paths:
     get:
       tags:
       - Part
-      summary: Synchronously export a part to a Parasolid file.
-      description: "Creates a synchronous export of the part (with limited tessellation settings) to a Parasolid file. \n* Returns a 307 redirect from which to download the exported file. \n* Export is much faster than asynchronous endpoints at the expense of limited control on tessellation settings. \n* Use the [PartStudio/createPartStudioTranslation](#/PartStudio/createPartStudioTranslation) asynchronous export for greater control. \n \nSee [API Guide: Synchronous Exports](https://onshape-public.github.io/docs/api-adv/translation/#synchronous-exports) for more details."
+      summary: Synchronously export a part to a Parasolid file
+      description: 'Creates a synchronous export of the part (with limited tessellation settings) to a Parasolid file.
+
+        * Returns a 307 redirect from which to download the exported file.
+
+        * Export is much faster than asynchronous endpoints at the expense of limited control on tessellation settings.
+
+        * Use the PartStudio/createPartStudioTranslation asynchronous export for greater control.
+
+
+        See API Guide: Synchronous Exports for more details.'
       operationId: exportPS
       parameters:
       - name: did
@@ -635,7 +642,7 @@ paths:
     get:
       tags:
       - Part
-      summary: Get a part's shaded views.
+      summary: Get a part's shaded views
       operationId: getPartShadedViews
       parameters:
       - name: did
@@ -722,7 +729,7 @@ paths:
     get:
       tags:
       - Part
-      summary: Get a part's sheet metal bend table.
+      summary: Get a part's sheet metal bend table
       operationId: getBendTable
       parameters:
       - name: did
@@ -772,8 +779,17 @@ paths:
     get:
       tags:
       - Part
-      summary: Synchronously export a part to an STL file.
-      description: "Creates a synchronous export of the part (with limited tessellation settings) to an STL file. \n* Returns a 307 redirect from which to download the exported file. \n* Export is much faster than asynchronous endpoints at the expense of limited control on tessellation settings. \n* Use the [PartStudio/createPartStudioTranslation](#/PartStudio/createPartStudioTranslation) asynchronous export for greater control. \n \nSee [API Guide: Synchronous Exports](https://onshape-public.github.io/docs/api-adv/translation/#synchronous-exports) for more details."
+      summary: Synchronously export a part to an STL file
+      description: 'Creates a synchronous export of the part (with limited tessellation settings) to an STL file.
+
+        * Returns a 307 redirect from which to download the exported file.
+
+        * Export is much faster than asynchronous endpoints at the expense of limited control on tessellation settings.
+
+        * Use the PartStudio/createPartStudioTranslation asynchronous export for greater control.
+
+
+        See API Guide: Synchronous Exports for more details.'
       operationId: exportStl
       parameters:
       - name: did
@@ -871,7 +887,7 @@ paths:
     get:
       tags:
       - Part
-      summary: Get a list of a part's tessellation edges.
+      summary: Get a list of a part's tessellation edges
       description: Returns the coordinates (in meters) of each edge's endpoints.
       operationId: getEdges
       parameters:
@@ -970,7 +986,7 @@ paths:
     get:
       tags:
       - Part
-      summary: Get a list of a part's tessellation faces.
+      summary: Get a list of a part's tessellation faces
       description: Coordinates are in meters (m).
       operationId: getFaces_1
       parameters:
@@ -1107,66 +1123,310 @@ paths:
       x-BTVisibility: PRODUCTION
 components:
   schemas:
-    BTMetadataStateType:
-      type: string
-      description: The current state metadata values if applicable.
-      enum:
-      - IN_PROGRESS
-      - PENDING
-      - RELEASED
-      - OBSOLETE
-      - REJECTED
-      - DISCARDED
-    BTVector2d-1812:
+    BTMassPropertiesBulkInfo:
+      type: object
+      properties:
+        bodies:
+          type: object
+          additionalProperties:
+            $ref: '#/components/schemas/BTMassPropertiesInfo'
+        microversionId:
+          type: string
+    BTSingleReferenceDisplayData-1943:
       type: object
       properties:
         btType:
           type: string
           description: Type of JSON object.
-        x:
-          type: number
-          format: double
-        y:
-          type: number
-          format: double
-    BTFSValue-1888:
-      required:
-      - btType
-      type: object
-      properties:
-        btType:
+        contextWorkspaceId:
           type: string
-          description: Type of JSON object.
-        typeTag:
+        documentId:
           type: string
+        error:
+          $ref: '#/components/schemas/GBTErrorStringEnum'
+        errorMessage:
+          type: string
+        fullElementId:
+          $ref: '#/components/schemas/BTFullElementId-756'
+        isTransient:
+          type: boolean
+        name:
+          type: string
+        referenceName:
+          type: string
+        referenceNodeId:
+          type: string
+        visibility:
+          $ref: '#/components/schemas/GBTBSFeatureVisibility'
       discriminator:
         propertyName: btType
         mapping:
-          BTFSValueArray-1499: '#/components/schemas/BTFSValueArray-1499'
-          BTFSValueBoolean-1195: '#/components/schemas/BTFSValueBoolean-1195'
-          BTFSValueMap-2062: '#/components/schemas/BTFSValueMap-2062'
-          BTFSValueNumber-772: '#/components/schemas/BTFSValueNumber-772'
-          BTFSValueOther-1124: '#/components/schemas/BTFSValueOther-1124'
-          BTFSValueString-1422: '#/components/schemas/BTFSValueString-1422'
-          BTFSValueTooBig-1247: '#/components/schemas/BTFSValueTooBig-1247'
-          BTFSValueUndefined-2003: '#/components/schemas/BTFSValueUndefined-2003'
-          BTFSValueWithUnits-1817: '#/components/schemas/BTFSValueWithUnits-1817'
-    BTExportModelEdge-1782:
+          BTSingleAssemblyReferenceDisplayData-1557: '#/components/schemas/BTSingleAssemblyReferenceDisplayData-1557'
+    BTTableResponse-1546:
       type: object
       properties:
         btType:
           type: string
           description: Type of JSON object.
-        curve:
-          $ref: '#/components/schemas/BTCurveDescription-1583'
-        geometry:
-          $ref: '#/components/schemas/BTExportModelEdgeGeometry-1125'
-        id:
+        sourceMicroversion:
           type: string
-        vertices:
+        table:
+          $ref: '#/components/schemas/BTTable-1825'
+    GBTBSFeatureVisibility:
+      type: string
+      enum:
+      - UNSET
+      - HIDDEN
+      - VISIBLE
+      - UNKNOWN
+    BTAnnotationElementDisplayData-894:
+      type: object
+      properties:
+        annotationIdToDisplayObject:
+          type: object
+          additionalProperties:
+            $ref: '#/components/schemas/BTAnnotationDisplayData-3225'
+        annotationIds:
+          uniqueItems: true
           type: array
           items:
             type: string
+        btType:
+          type: string
+          description: Type of JSON object.
+    Accessor:
+      type: object
+      properties:
+        bufferView:
+          type: integer
+          format: int32
+        byteOffset:
+          type: integer
+          format: int32
+        componentType:
+          type: integer
+          format: int32
+        count:
+          type: integer
+          format: int32
+        extensions:
+          type: object
+          additionalProperties:
+            type: object
+        extras:
+          type: object
+        max:
+          type: array
+          items:
+            type: number
+        min:
+          type: array
+          items:
+            type: number
+        name:
+          type: string
+        normalized:
+          type: boolean
+        sparse:
+          $ref: '#/components/schemas/AccessorSparse'
+        type:
+          type: string
+    GBTMeshState:
+      type: string
+      enum:
+      - NO_MESH
+      - MIXED
+      - ALL_MESH
+      - UNKNOWN
+    BTGraphicsBuffer-2668:
+      type: object
+      properties:
+        btType:
+          type: string
+          description: Type of JSON object.
+        bufferData:
+          $ref: '#/components/schemas/BTImmutableByteArray'
+        groupTypeOffsetAndCount:
+          type: array
+          items:
+            type: integer
+            format: int32
+        mapGraphicsAttributeToComponentCount:
+          type: object
+          additionalProperties:
+            type: integer
+            format: int32
+        primitiveType:
+          $ref: '#/components/schemas/GBTGraphicsPrimitiveType'
+        target:
+          $ref: '#/components/schemas/GBTGraphicsBufferTarget'
+        targetByteOffsetAndCount:
+          type: array
+          items:
+            type: integer
+            format: int32
+        targets:
+          type: array
+          items:
+            $ref: '#/components/schemas/GBTGraphicsBufferTarget'
+    BTDecal-2404:
+      type: object
+      properties:
+        btType:
+          type: string
+          description: Type of JSON object.
+        imageSourceId:
+          type: string
+        mappings:
+          type: array
+          items:
+            $ref: '#/components/schemas/BTImageMapping-3821'
+    Sampler:
+      type: object
+      properties:
+        input:
+          $ref: '#/components/schemas/AccessorModel'
+        interpolation:
+          $ref: '#/components/schemas/Interpolation'
+        output:
+          $ref: '#/components/schemas/AccessorModel'
+    GBTNodeStatusType:
+      type: string
+      enum:
+      - OK
+      - INFO
+      - WARNING
+      - ERROR
+      - UNKNOWN
+    BTExportModelFace-1363:
+      type: object
+      properties:
+        appearancePropertyNodeId:
+          type: string
+          description: Identifies the application of the appearance. Faces that share a value were assigned an appearance together.
+        area:
+          type: number
+          format: double
+        box:
+          $ref: '#/components/schemas/BTBoundingBox-1052'
+        btType:
+          type: string
+          description: Type of JSON object.
+        cosmeticThreadMetadata:
+          $ref: '#/components/schemas/BTCosmeticThreadMetadata-3248'
+        decalIdToDecal:
+          type: object
+          additionalProperties:
+            $ref: '#/components/schemas/BTDecal-2404'
+        faceProperties:
+          $ref: '#/components/schemas/BTExportModelProperties-3216'
+        id:
+          type: string
+        loops:
+          type: array
+          items:
+            $ref: '#/components/schemas/BTExportModelLoop-1182'
+        orientation:
+          type: boolean
+        surface:
+          $ref: '#/components/schemas/BTSurfaceDescription-1564'
+    BTTableCell-1114:
+      type: object
+      properties:
+        btType:
+          type: string
+          description: Type of JSON object.
+        isEverVisible:
+          type: boolean
+        isReadOnly:
+          type: boolean
+        modifiers:
+          type: array
+          items:
+            $ref: '#/components/schemas/BTTableCellModifier-4883'
+      discriminator:
+        propertyName: btType
+        mapping:
+          BTTableCellParameter-2399: '#/components/schemas/BTTableCellParameter-2399'
+          BTTableTestCellDouble-2509: '#/components/schemas/BTTableTestCellDouble-2509'
+          BTTableTestCellString-2112: '#/components/schemas/BTTableTestCellString-2112'
+    BTImmutableByteArray:
+      type: object
+      properties:
+        empty:
+          type: boolean
+    GBTPartVisibility:
+      type: string
+      enum:
+      - HIDDEN
+      - VISIBLE
+      - UNSPECIFIED
+      - UNKNOWN
+    CameraPerspective:
+      type: object
+      properties:
+        aspectRatio:
+          type: number
+          format: float
+        extensions:
+          type: object
+          additionalProperties:
+            type: object
+        extras:
+          type: object
+        yfov:
+          type: number
+          format: float
+        zfar:
+          type: number
+          format: float
+        znear:
+          type: number
+          format: float
+    BTDomainSpecificMetadata-961:
+      type: object
+      properties:
+        btType:
+          type: string
+          description: Type of JSON object.
+      discriminator:
+        propertyName: btType
+        mapping:
+          BTCosmeticThreadMetadata-3248: '#/components/schemas/BTCosmeticThreadMetadata-3248'
+          BTSMSpecificMetadata-1315: '#/components/schemas/BTSMSpecificMetadata-1315'
+    BTBaseEntityData-33:
+      type: object
+      properties:
+        btType:
+          type: string
+          description: Type of JSON object.
+        constructionPlane:
+          type: boolean
+        copyWithoutGeometry:
+          $ref: '#/components/schemas/BTBaseEntityData-33'
+        decompressed:
+          $ref: '#/components/schemas/BTBaseEntityData-33'
+        defaultPane:
+          type: boolean
+        deletion:
+          type: boolean
+        featureIds:
+          type: array
+          items:
+            type: string
+        fromSketch:
+          type: boolean
+        geometries:
+          type: array
+          items:
+            $ref: '#/components/schemas/BTEntityGeometry-35'
+        origin:
+          type: boolean
+      discriminator:
+        propertyName: btType
+        mapping:
+          BTEntityDeletion-24: '#/components/schemas/BTEntityDeletion-24'
+          BTFeatureEntity-34: '#/components/schemas/BTFeatureEntity-34'
     BTPartMetadataInfo:
       type: object
       properties:
@@ -1251,417 +1511,61 @@ components:
           type: string
         vendor:
           type: string
-    BTEntityGeometry-35:
+    GBTGraphicsBufferTarget:
+      type: string
+      enum:
+      - ARRAY_BUFFER
+      - ELEMENT_ARRAY_BUFFER
+      - ENTITY_PART_INDEX_BUFFER
+      - ENTITY_RANGE_BUFFER
+      - SKETCH_ENTITY_PARTID_INDEX_COUNT_ENTITY_COUNT_BUFFER
+      - UNKNOWN
+    BufferView:
       type: object
       properties:
-        btType:
-          type: string
-          description: Type of JSON object.
-        compressed:
-          type: boolean
-        decompressed:
-          $ref: '#/components/schemas/BTEntityGeometry-35'
-        errorCode:
+        buffer:
           type: integer
           format: int32
-        estimatedMemoryUsageInBytes:
+        byteLength:
           type: integer
           format: int32
-        hasTessellationError:
-          type: boolean
-        settingIndex:
+        byteOffset:
           type: integer
           format: int32
-      discriminator:
-        propertyName: btType
-        mapping:
-          BTDebugGeometry-2059: '#/components/schemas/BTDebugGeometry-2059'
-          BTTessellatedGeometry-2576: '#/components/schemas/BTTessellatedGeometry-2576'
-    BTExportModelLoop-1182:
-      type: object
-      properties:
-        btType:
-          type: string
-          description: Type of JSON object.
-        coedges:
-          type: array
-          items:
-            $ref: '#/components/schemas/BTExportModelCoedge-1342'
-        isInner:
-          type: boolean
-        isOuter:
-          type: boolean
-    BTAppearanceOverride-2517:
-      type: object
-      properties:
-        appearance:
-          $ref: '#/components/schemas/BTGraphicsAppearance-1152'
-        appearanceReset:
-          type: boolean
-        btType:
-          type: string
-          description: Type of JSON object.
-        copyWithoutEntities:
-          $ref: '#/components/schemas/BTAppearanceOverride-2517'
-        entityDeterministicIds:
-          type: array
-          items:
-            type: string
-        isDeletion:
-          type: boolean
-    BTExportModelProperties-3216:
-      type: object
-      properties:
-        appearance:
-          $ref: '#/components/schemas/BTGraphicsAppearance-1152'
-        btType:
-          type: string
-          description: Type of JSON object.
+        byteStride:
+          type: integer
+          format: int32
+        extensions:
+          type: object
+          additionalProperties:
+            type: object
+        extras:
+          type: object
         name:
           type: string
-      discriminator:
-        propertyName: btType
-        mapping:
-          BTExportBodyProperties-3559: '#/components/schemas/BTExportBodyProperties-3559'
-    AnimationSampler:
-      type: object
-      properties:
-        extensions:
-          type: object
-          additionalProperties:
-            type: object
-        extras:
-          type: object
-        input:
-          type: integer
-          format: int32
-        interpolation:
-          type: string
-        output:
-          type: integer
-          format: int32
-    GBTTableTextAlignment:
-      type: string
-      enum:
-      - LEFT
-      - CENTER
-      - RIGHT
-      - UNKNOWN
-    BTGraphicsBuffer-2668:
-      type: object
-      properties:
-        btType:
-          type: string
-          description: Type of JSON object.
-        bufferData:
-          $ref: '#/components/schemas/BTImmutableByteArray'
-        groupTypeOffsetAndCount:
-          type: array
-          items:
-            type: integer
-            format: int32
-        mapGraphicsAttributeToComponentCount:
-          type: object
-          additionalProperties:
-            type: integer
-            format: int32
-        primitiveType:
-          $ref: '#/components/schemas/GBTGraphicsPrimitiveType'
         target:
-          $ref: '#/components/schemas/GBTGraphicsBufferTarget'
-        targetByteOffsetAndCount:
-          type: array
-          items:
-            type: integer
-            format: int32
-        targets:
-          type: array
-          items:
-            $ref: '#/components/schemas/GBTGraphicsBufferTarget'
-    BTPartAppearanceInfo:
-      type: object
-      properties:
-        color:
-          $ref: '#/components/schemas/BTColorInfo'
-        isGenerated:
-          type: boolean
-        opacity:
           type: integer
           format: int32
-    CameraPerspective:
-      type: object
-      properties:
-        aspectRatio:
-          type: number
-          format: float
-        extensions:
-          type: object
-          additionalProperties:
-            type: object
-        extras:
-          type: object
-        yfov:
-          type: number
-          format: float
-        zfar:
-          type: number
-          format: float
-        znear:
-          type: number
-          format: float
-    BTBoundingBox-1052:
+    BTPartMaterialProperty-1453:
       type: object
       properties:
         btType:
           type: string
           description: Type of JSON object.
-        maxCorner:
-          $ref: '#/components/schemas/BTVector3d-389'
-        minCorner:
-          $ref: '#/components/schemas/BTVector3d-389'
-        valid:
-          type: boolean
-      description: An axis-aligned bounding box indicated by two opposite corners.
-      discriminator:
-        propertyName: btType
-        mapping:
-          BTNonAlignedBoundingBox-4180: '#/components/schemas/BTNonAlignedBoundingBox-4180'
-    BTDocumentWithVersionAndElementId:
-      type: object
-      properties:
-        documentId:
+        category:
           type: string
-        documentVersionId:
-          type: string
-        elementId:
-          type: string
-        elementLibraryId:
-          $ref: '#/components/schemas/ObjectId'
-        elementLibraryVersion:
-          $ref: '#/components/schemas/ObjectId'
-        partNumber:
-          type: string
-        revision:
-          type: string
-        uniqueVersionId:
-          type: string
-        validElementLibraryReference:
-          type: boolean
-        validRevisionReference:
-          type: boolean
-    Sampler:
-      type: object
-      properties:
-        input:
-          $ref: '#/components/schemas/AccessorModel'
-        interpolation:
-          $ref: '#/components/schemas/Interpolation'
-        output:
-          $ref: '#/components/schemas/AccessorModel'
-    BTMicroversionIdAndConfiguration-2338:
-      type: object
-      properties:
-        btType:
-          type: string
-          description: Type of JSON object.
-        cacheKey:
-          type: string
-        configurationParameterIdToValue:
-          type: object
-          additionalProperties:
-            $ref: '#/components/schemas/BTFSValue-1888'
-        deleted:
-          type: boolean
         description:
           type: string
-        microversion:
-          $ref: '#/components/schemas/BTMicroversionId-366'
-    BTTableColumnSpec-1967:
-      type: object
-      properties:
-        btType:
+        displayName:
           type: string
-          description: Type of JSON object.
-        defaultCellSpec:
-          $ref: '#/components/schemas/BTParameterSpec-6'
-        defaultColumnWidthUnits:
-          $ref: '#/components/schemas/GBTTableColumnWidthUnits'
-        defaultColumnWidthValue:
-          type: integer
-          format: int32
-        defaultHeaderName:
+        name:
           type: string
-        defaultTextAlignment:
-          $ref: '#/components/schemas/GBTTableTextAlignment'
-        isExpandable:
-          type: boolean
-        isRenamable:
-          type: boolean
-        readOnly:
-          type: boolean
-    MaterialNormalTextureInfo:
-      type: object
-      properties:
-        extensions:
-          type: object
-          additionalProperties:
-            type: object
-        extras:
-          type: object
-        index:
-          type: integer
-          format: int32
-        scale:
-          type: number
-          format: float
-        texCoord:
-          type: integer
-          format: int32
-    BTInsertableDisplayData-2405:
-      type: object
-      properties:
-        btType:
+        type:
           type: string
-          description: Type of JSON object.
-        buffers:
-          type: array
-          items:
-            $ref: '#/components/schemas/BTGraphicsBuffer-2668'
-        fullElementId:
-          $ref: '#/components/schemas/BTFullElementId-756'
-        graphicsBuffers:
-          type: object
-          additionalProperties:
-            type: object
-            additionalProperties:
-              $ref: '#/components/schemas/BTGraphicsBuffer-2668'
-        id:
+        units:
           type: string
-        insertableEntityData:
-          $ref: '#/components/schemas/BTImmutableByteArray'
-        part:
-          type: boolean
-        sketchFeature:
-          type: boolean
-        tessellationSettingIndex:
-          type: integer
-          format: int32
-      discriminator:
-        propertyName: btType
-        mapping:
-          BTInsertablePartDisplayData-3103: '#/components/schemas/BTInsertablePartDisplayData-3103'
-          BTInsertableSketchDisplayData-3775: '#/components/schemas/BTInsertableSketchDisplayData-3775'
-    BTTableBaseCrossHighlightData-2609:
-      type: object
-      properties:
-        btType:
+        value:
           type: string
-          description: Type of JSON object.
-      discriminator:
-        propertyName: btType
-        mapping:
-          BTTableAssemblyCrossHighlightData-2675: '#/components/schemas/BTTableAssemblyCrossHighlightData-2675'
-          BTTableCrossHighlightData-1753: '#/components/schemas/BTTableCrossHighlightData-1753'
-    GBTAppearanceType:
-      type: string
-      enum:
-      - UNKNOWN
-      - SKETCH
-    BTExportTessellatedFacesResponse-898:
-      type: object
-      properties:
-        bodies:
-          type: array
-          items:
-            $ref: '#/components/schemas/BTExportTessellatedBody-3398'
-        bodiesInfo:
-          $ref: '#/components/schemas/BTExportModelBodiesResponse-734'
-        btType:
-          type: string
-          description: Type of JSON object.
-        combineCompositePartConstituents:
-          type: boolean
-        displayData:
-          $ref: '#/components/schemas/BTPartStudioDisplayData-346'
-        documentId:
-          type: string
-        elementId:
-          type: string
-        errorEnum:
-          $ref: '#/components/schemas/GBTErrorStringEnum'
-        facetPoints:
-          type: array
-          items:
-            $ref: '#/components/schemas/BTVector3d-389'
-        fullElementId:
-          $ref: '#/components/schemas/BTFullElementId-756'
-        outputFaceAppearances:
-          type: boolean
-        outputSeparateFaceNodes:
-          type: boolean
-    GBTPartVisibility:
-      type: string
-      enum:
-      - HIDDEN
-      - VISIBLE
-      - UNSPECIFIED
-      - UNKNOWN
-    GBTMeshState:
-      type: string
-      enum:
-      - NO_MESH
-      - MIXED
-      - ALL_MESH
-      - UNKNOWN
-    BTTableRow-1054:
-      type: object
-      properties:
-        btType:
-          type: string
-          description: Type of JSON object.
-        columnIdToCell:
-          type: object
-          additionalProperties:
-            $ref: '#/components/schemas/BTTableCell-1114'
-        id:
-          type: string
-        metaData:
-          $ref: '#/components/schemas/BTTreeNode-20'
-        nodeId:
-          type: string
-        rowMetadata:
-          $ref: '#/components/schemas/BTTableBaseRowMetadata-3181'
-      discriminator:
-        propertyName: btType
-        mapping:
-          BTBillOfMaterialsTableRow-1425: '#/components/schemas/BTBillOfMaterialsTableRow-1425'
-    BTVector3d-389:
-      type: object
-      properties:
-        btType:
-          type: string
-          description: Type of JSON object.
-        x:
-          type: number
-          format: double
-        y:
-          type: number
-          format: double
-        z:
-          type: number
-          format: double
-    AccessorData:
-      type: object
-      properties:
-        numComponentsPerElement:
-          type: integer
-          format: int32
-        numElements:
-          type: integer
-          format: int32
-        totalNumComponents:
-          type: integer
-          format: int32
     GBTMetadataSourceType:
       type: string
       enum:
@@ -1677,185 +1581,73 @@ components:
       - IMPORT
       - OVERRIDDEN_PUBLIC
       - UNKNOWN
-    Buffer:
+    BTParameterSpec-6:
       type: object
       properties:
-        byteLength:
+        additionalLocalizedStrings:
           type: integer
           format: int32
-        extensions:
-          type: object
-          additionalProperties:
-            type: object
-        extras:
-          type: object
-        name:
-          type: string
-        uri:
-          type: string
-    AccessorSparseValues:
-      type: object
-      properties:
-        bufferView:
-          type: integer
-          format: int32
-        byteOffset:
-          type: integer
-          format: int32
-        extensions:
-          type: object
-          additionalProperties:
-            type: object
-        extras:
-          type: object
-    Interpolation:
-      type: string
-      enum:
-      - STEP
-      - LINEAR
-      - CATMULLROMSPLINE
-      - CUBICSPLINE
-    BTBasePartColorCycle-2614:
-      type: object
-      properties:
+          writeOnly: true
         btType:
           type: string
           description: Type of JSON object.
-      discriminator:
-        propertyName: btType
-        mapping:
-          BTSystemPartColorCycle-1580: '#/components/schemas/BTSystemPartColorCycle-1580'
-    BTExportModelCoedge-1342:
-      type: object
-      properties:
-        btType:
+        columnName:
           type: string
-          description: Type of JSON object.
-        edgeId:
-          type: string
-        orientation:
-          type: boolean
-    TextureInfo:
-      type: object
-      properties:
-        extensions:
-          type: object
-          additionalProperties:
-            type: object
-        extras:
-          type: object
-        index:
-          type: integer
-          format: int32
-        texCoord:
-          type: integer
-          format: int32
-    BTElementReference-725:
-      type: object
-      properties:
-        btType:
-          type: string
-          description: Type of JSON object.
-        configured:
-          type: boolean
-        documentVersionId:
-          type: string
-        elementId:
-          type: string
-        externalDocumentWithVersion:
-          $ref: '#/components/schemas/BTDocumentWithVersionId'
-        externalDocumentWithVersionAndElementId:
-          $ref: '#/components/schemas/BTDocumentWithVersionAndElementId'
-        externalReference:
-          type: boolean
-        fullElementId:
-          $ref: '#/components/schemas/BTFullElementId-756'
-        microversionIdAndConfiguration:
-          $ref: '#/components/schemas/BTMicroversionIdAndConfiguration-2338'
-        nodeId:
-          type: string
-      discriminator:
-        propertyName: btType
-        mapping:
-          BTExternalReference-1936: '#/components/schemas/BTExternalReference-1936'
-    BTTableSortOrder-4371:
-      type: object
-      properties:
-        btType:
-          type: string
-          description: Type of JSON object.
-        isAscending:
-          type: boolean
-        nodeId:
-          type: string
-        sortingColumnId:
-          type: string
-    ObjectId:
-      type: object
-      properties:
-        date:
-          type: string
-          format: date-time
-        timestamp:
-          type: integer
-          format: int32
-    BTDocumentWithVersionId:
-      type: object
-      properties:
-        documentId:
-          type: string
-        documentVersionId:
-          type: string
-    Camera:
-      type: object
-      properties:
-        extensions:
-          type: object
-          additionalProperties:
-            type: object
-        extras:
-          type: object
-        name:
-          type: string
-        orthographic:
-          $ref: '#/components/schemas/CameraOrthographic'
-        perspective:
-          $ref: '#/components/schemas/CameraPerspective'
-        type:
-          type: string
-    BTMicroversionIdInterval-367:
-      type: object
-      properties:
-        btType:
-          type: string
-          description: Type of JSON object.
-        from:
-          $ref: '#/components/schemas/BTMicroversionId-366'
-        to:
-          $ref: '#/components/schemas/BTMicroversionId-366'
-        trivial:
-          type: boolean
-    BTTableCell-1114:
-      type: object
-      properties:
-        btType:
-          type: string
-          description: Type of JSON object.
-        isEverVisible:
-          type: boolean
-        isReadOnly:
-          type: boolean
-        modifiers:
+        defaultValue:
+          $ref: '#/components/schemas/BTMParameter-1'
+        enumOptions:
           type: array
           items:
-            $ref: '#/components/schemas/BTTableCellModifier-4883'
+            type: string
+        iconUri:
+          type: string
+        localizableName:
+          type: string
+        localizedName:
+          type: string
+          writeOnly: true
+        parameterDescription:
+          type: string
+        parameterId:
+          type: string
+        parameterName:
+          type: string
+        quantityType:
+          $ref: '#/components/schemas/GBTQuantityType'
+        stringsToLocalize:
+          type: array
+          items:
+            type: string
+        uiHint:
+          type: string
+        uiHints:
+          type: array
+          items:
+            $ref: '#/components/schemas/GBTUIHint'
+        visibilityCondition:
+          $ref: '#/components/schemas/BTParameterVisibilityCondition-177'
       discriminator:
         propertyName: btType
         mapping:
-          BTTableCellParameter-2399: '#/components/schemas/BTTableCellParameter-2399'
-          BTTableTestCellDouble-2509: '#/components/schemas/BTTableTestCellDouble-2509'
-          BTTableTestCellString-2112: '#/components/schemas/BTTableTestCellString-2112'
-    Scene:
+          BTParameterSpecAppearance-1740: '#/components/schemas/BTParameterSpecAppearance-1740'
+          BTParameterSpecArray-2600: '#/components/schemas/BTParameterSpecArray-2600'
+          BTParameterSpecBoolean-170: '#/components/schemas/BTParameterSpecBoolean-170'
+          BTParameterSpecButton-4111: '#/components/schemas/BTParameterSpecButton-4111'
+          BTParameterSpecDatabase-1071: '#/components/schemas/BTParameterSpecDatabase-1071'
+          BTParameterSpecDerived-736: '#/components/schemas/BTParameterSpecDerived-736'
+          BTParameterSpecEnum-171: '#/components/schemas/BTParameterSpecEnum-171'
+          BTParameterSpecFeatureList-703: '#/components/schemas/BTParameterSpecFeatureList-703'
+          BTParameterSpecForeignId-172: '#/components/schemas/BTParameterSpecForeignId-172'
+          BTParameterSpecLookupTablePath-761: '#/components/schemas/BTParameterSpecLookupTablePath-761'
+          BTParameterSpecMaterial-2700: '#/components/schemas/BTParameterSpecMaterial-2700'
+          BTParameterSpecMultiEnum-3118: '#/components/schemas/BTParameterSpecMultiEnum-3118'
+          BTParameterSpecNullableQuantity-715: '#/components/schemas/BTParameterSpecNullableQuantity-715'
+          BTParameterSpecQuantity-173: '#/components/schemas/BTParameterSpecQuantity-173'
+          BTParameterSpecQuery-174: '#/components/schemas/BTParameterSpecQuery-174'
+          BTParameterSpecReference-2789: '#/components/schemas/BTParameterSpecReference-2789'
+          BTParameterSpecString-175: '#/components/schemas/BTParameterSpecString-175'
+          BTReadOnlyParameterSpec-1889: '#/components/schemas/BTReadOnlyParameterSpec-1889'
+    Skin:
       type: object
       properties:
         extensions:
@@ -1864,60 +1656,94 @@ components:
             type: object
         extras:
           type: object
-        name:
-          type: string
-        nodes:
+        inverseBindMatrices:
+          type: integer
+          format: int32
+        joints:
           type: array
           items:
             type: integer
             format: int32
-    BTElementDisplayData-326:
+        name:
+          type: string
+        skeleton:
+          type: integer
+          format: int32
+    BTBoundingBoxInfo:
       type: object
       properties:
-        annotationsForElement:
-          $ref: '#/components/schemas/BTAnnotationElementDisplayData-894'
+        highX:
+          type: number
+          format: double
+        highY:
+          type: number
+          format: double
+        highZ:
+          type: number
+          format: double
+        lowX:
+          type: number
+          format: double
+        lowY:
+          type: number
+          format: double
+        lowZ:
+          type: number
+          format: double
+    BTThumbnailInfo:
+      type: object
+      properties:
+        href:
+          type: string
+          format: uri
+        id:
+          type: string
+        secondarySizes:
+          type: array
+          items:
+            type: array
+            items:
+              $ref: '#/components/schemas/BTThumbnailSizeInfo'
+        sizes:
+          type: array
+          items:
+            $ref: '#/components/schemas/BTThumbnailSizeInfo'
+    BTExportModelEdgeGeometry-1125:
+      type: object
+      properties:
         btType:
           type: string
           description: Type of JSON object.
-        elementId:
-          type: string
-        fromFullElementId:
-          $ref: '#/components/schemas/BTFullElementId-756'
-        fullElementId:
-          $ref: '#/components/schemas/BTFullElementId-756'
-        incremental:
-          type: boolean
-        instanceCount:
-          type: integer
-          format: int32
-        keepFromMicroversion:
-          type: boolean
-        microversionId:
-          $ref: '#/components/schemas/BTMicroversionId-366'
-        microversionIdAndConfigurationInterval:
-          $ref: '#/components/schemas/BTMicroversionIdAndConfigurationInterval-2364'
-        microversionInterval:
-          $ref: '#/components/schemas/BTMicroversionIdInterval-367'
-        versionForRasterization:
-          $ref: '#/components/schemas/BTElementDisplayData-326'
+        endPoint:
+          $ref: '#/components/schemas/BTVector3d-389'
+        endVector:
+          $ref: '#/components/schemas/BTVector3d-389'
+        length:
+          type: number
+          format: double
+        midPoint:
+          $ref: '#/components/schemas/BTVector3d-389'
+        quarterPoint:
+          $ref: '#/components/schemas/BTVector3d-389'
+        startPoint:
+          $ref: '#/components/schemas/BTVector3d-389'
+        startVector:
+          $ref: '#/components/schemas/BTVector3d-389'
       discriminator:
         propertyName: btType
         mapping:
-          BTAssemblyReferencesDisplayData-1562: '#/components/schemas/BTAssemblyReferencesDisplayData-1562'
-          BTPartStudioDisplayDataBase-2751: '#/components/schemas/BTPartStudioDisplayDataBase-2751'
-          BTRootAssemblyDisplayData-96: '#/components/schemas/BTRootAssemblyDisplayData-96'
-    BTMicroversionId-366:
+          BTExportModelArcEdgeGeometry-1257: '#/components/schemas/BTExportModelArcEdgeGeometry-1257'
+    BTTableBaseCrossHighlightData-2609:
       type: object
       properties:
-        ambiguous:
-          type: boolean
         btType:
           type: string
           description: Type of JSON object.
-        deleted:
-          type: boolean
-        theId:
-          type: string
+      discriminator:
+        propertyName: btType
+        mapping:
+          BTTableAssemblyCrossHighlightData-2675: '#/components/schemas/BTTableAssemblyCrossHighlightData-2675'
+          BTTableCrossHighlightData-1753: '#/components/schemas/BTTableCrossHighlightData-1753'
     BTPartStudioDisplayData-346:
       type: object
       properties:
@@ -2047,185 +1873,242 @@ components:
           type: boolean
         versionForRasterization:
           $ref: '#/components/schemas/BTElementDisplayData-326'
-    BTPartMaterialProperty-1453:
+    BTExportModelVertex-858:
       type: object
       properties:
         btType:
           type: string
           description: Type of JSON object.
-        category:
+        id:
           type: string
-        description:
-          type: string
-        displayName:
-          type: string
-        name:
-          type: string
-        type:
-          type: string
-        units:
-          type: string
-        value:
-          type: string
-    Image:
-      type: object
-      properties:
-        bufferView:
-          type: integer
-          format: int32
-        extensions:
-          type: object
-          additionalProperties:
-            type: object
-        extras:
-          type: object
-        mimeType:
-          type: string
-        name:
-          type: string
-        uri:
-          type: string
-    BTBaseEntityAppearanceSettings-1391:
+        point:
+          $ref: '#/components/schemas/BTVector3d-389'
+    BTExportBodyProperties-3559:
       type: object
       properties:
         btType:
           type: string
           description: Type of JSON object.
-        colorIdToBaseEntityAppearanceEntry:
-          type: object
-          additionalProperties:
-            $ref: '#/components/schemas/BTBaseEntityAppearanceEntry-3607'
-        isNoop:
+      allOf:
+      - $ref: '#/components/schemas/BTExportModelProperties-3216'
+      - type: object
+        properties:
+          btType:
+            type: string
+          material:
+            $ref: '#/components/schemas/BTPartMaterial-1445'
+          visibility:
+            $ref: '#/components/schemas/GBTPartVisibility'
+    BTMicroversionIdInterval-367:
+      type: object
+      properties:
+        btType:
+          type: string
+          description: Type of JSON object.
+        from:
+          $ref: '#/components/schemas/BTMicroversionId-366'
+        to:
+          $ref: '#/components/schemas/BTMicroversionId-366'
+        trivial:
           type: boolean
-    AccessorSparse:
-      type: object
-      properties:
-        count:
-          type: integer
-          format: int32
-        extensions:
-          type: object
-          additionalProperties:
-            type: object
-        extras:
-          type: object
-        indices:
-          $ref: '#/components/schemas/AccessorSparseIndices'
-        values:
-          $ref: '#/components/schemas/AccessorSparseValues'
-    BTShadedViewsInfo:
-      type: object
-      properties:
-        images:
-          type: array
-          items:
-            type: array
-            items:
-              type: string
-              format: byte
-      description: Images are returned as base64-encoded strings.
-    AccessorModel:
-      type: object
-      properties:
-        accessorData:
-          $ref: '#/components/schemas/AccessorData'
-        bufferViewModel:
-          $ref: '#/components/schemas/BufferViewModel'
-        byteOffset:
-          type: integer
-          format: int32
-        byteStride:
-          type: integer
-          format: int32
-        componentSizeInBytes:
-          type: integer
-          format: int32
-        componentType:
-          type: integer
-          format: int32
-        count:
-          type: integer
-          format: int32
-        elementSizeInBytes:
-          type: integer
-          format: int32
-        elementType:
-          $ref: '#/components/schemas/ElementType'
-        max:
-          type: array
-          items:
-            type: number
-        min:
-          type: array
-          items:
-            type: number
-        name:
-          type: string
-    BTExportTessellatedEdgesResponse-327:
-      type: object
-      properties:
-        bodies:
-          type: array
-          items:
-            $ref: '#/components/schemas/BTExportTessellatedBody-3398'
-        btType:
-          type: string
-          description: Type of JSON object.
-        errorEnum:
-          $ref: '#/components/schemas/GBTErrorStringEnum'
-    BTExportModelBody-1272:
+    GBTDisplayDataUsage:
+      type: string
+      enum:
+      - BASE
+      - PREVIEW_BEFORE
+      - PREVIEW_AFTER
+      - PREVIEW_FINAL
+      - COMPARE_TARGET
+      - REFERENCE_REPAIR
+      - UNKNOWN
+    BTGraphicsAppearance-1152:
       type: object
       properties:
         btType:
           type: string
           description: Type of JSON object.
-        closed:
-          type: boolean
-          description: If type == COMPOSITE, indicates whether it is open or closed.
-        constituentBodyIds:
+        color:
           type: array
           items:
             type: string
-            description: If type == COMPOSITE, this is the id of a constituent that can be found in the 'bodies' array.
-        consumedByComposite:
+            format: byte
+        nonTrivial:
           type: boolean
-          description: Indicates if there is a closed composite that consumes this body.
-        edges:
+        opacity:
+          type: integer
+          format: int32
+        reset:
+          type: boolean
+        rgbaColor:
           type: array
           items:
-            $ref: '#/components/schemas/BTExportModelEdge-1782'
-        faces:
-          type: array
-          items:
-            $ref: '#/components/schemas/BTExportModelFace-1363'
-        id:
-          type: string
-        properties:
-          $ref: '#/components/schemas/BTExportBodyProperties-3559'
+            type: string
+            format: byte
         type:
-          $ref: '#/components/schemas/GBTBodyType'
-        vertices:
-          type: array
-          items:
-            $ref: '#/components/schemas/BTExportModelVertex-858'
-    BTThumbnailInfo:
+          $ref: '#/components/schemas/GBTAppearanceType'
+        usableAppearance:
+          type: boolean
+      discriminator:
+        propertyName: btType
+        mapping:
+          BTGeneratedGraphicsAppearance-4159: '#/components/schemas/BTGeneratedGraphicsAppearance-4159'
+    BTPartData-16:
       type: object
       properties:
-        href:
+        bestAvailableTessellationSetting:
+          $ref: '#/components/schemas/GBTTessellationSettingEnum'
+        boundsDiameter:
+          type: number
+          format: double
+        btType:
           type: string
-          format: uri
-        id:
-          type: string
-        secondarySizes:
+          description: Type of JSON object.
+        closedConstituentPartData:
+          $ref: '#/components/schemas/BTClosedConstituentPartData-2911'
+        coarsePlanarFaceTriangleCount:
+          type: integer
+          format: int32
+        coarseTriangleCount:
+          type: integer
+          format: int32
+        constituentBodyDeterministicIds:
           type: array
           items:
+            type: string
+        copyWithoutEntities:
+          $ref: '#/components/schemas/BTPartData-16'
+        entityDIds:
+          type: array
+          items:
+            type: string
+        entityDeterministicIds:
+          type: array
+          items:
+            type: string
+        flattenedToUnflattenedEntitiesMapping:
+          type: object
+          additionalProperties:
             type: array
             items:
-              $ref: '#/components/schemas/BTThumbnailSizeInfo'
-        sizes:
+              type: string
+        flattenedToUnflattenedMapping:
+          type: object
+          additionalProperties:
+            type: string
+        highBoxCorner:
+          $ref: '#/components/schemas/BTVector3d-389'
+        isACopyForTessellationSettings:
+          type: boolean
+        isAssociatedWithFlat:
+          type: boolean
+        isBendCenterLineBody:
+          type: boolean
+        isClosedComposite:
+          type: boolean
+        isComposite:
+          type: boolean
+        isDeletion:
+          type: boolean
+        isEntitylessPartData:
+          type: boolean
+        isFlattenedSheetMetalBody:
+          type: boolean
+        isOpenComposite:
+          type: boolean
+        lowBoxCorner:
+          $ref: '#/components/schemas/BTVector3d-389'
+        ownerFlattenedBodyId:
+          type: string
+        sheetMetalModelId:
+          type: string
+        sheetMetalOrderId:
+          type: string
+        shouldAlwaysUseHighestQualityTessellation:
+          type: boolean
+        tessellationSettings:
           type: array
           items:
-            $ref: '#/components/schemas/BTThumbnailSizeInfo'
+            type: integer
+            format: int32
+        totalEntityCount:
+          type: integer
+          format: int32
+        userTessellationSetting:
+          $ref: '#/components/schemas/GBTTessellationSettingEnum'
+    BTPartAppearanceInfo:
+      type: object
+      properties:
+        color:
+          $ref: '#/components/schemas/BTColorInfo'
+        isGenerated:
+          type: boolean
+        opacity:
+          type: integer
+          format: int32
+    BTPartMaterialInfo:
+      type: object
+      properties:
+        displayName:
+          type: string
+        id:
+          type: string
+        libraryName:
+          type: string
+        libraryReference:
+          $ref: '#/components/schemas/BTExternalElementReferenceInfo'
+        properties:
+          type: array
+          items:
+            $ref: '#/components/schemas/BTPartMaterialPropertyInfo'
+    BTBoundingBox-1052:
+      type: object
+      properties:
+        btType:
+          type: string
+          description: Type of JSON object.
+        maxCorner:
+          $ref: '#/components/schemas/BTVector3d-389'
+        minCorner:
+          $ref: '#/components/schemas/BTVector3d-389'
+        valid:
+          type: boolean
+      description: An axis-aligned bounding box indicated by two opposite corners.
+      discriminator:
+        propertyName: btType
+        mapping:
+          BTNonAlignedBoundingBox-4180: '#/components/schemas/BTNonAlignedBoundingBox-4180'
+    BTTreeNode-20:
+      type: object
+      properties:
+        btType:
+          type: string
+          description: Type of JSON object.
+        nodeId:
+          type: string
+    AccessorData:
+      type: object
+      properties:
+        numComponentsPerElement:
+          type: integer
+          format: int32
+        numElements:
+          type: integer
+          format: int32
+        totalNumComponents:
+          type: integer
+          format: int32
+    BTTableCellModifier-4883:
+      type: object
+      properties:
+        btType:
+          type: string
+          description: Type of JSON object.
+      discriminator:
+        propertyName: btType
+        mapping:
+          BTTableCellModifierForceShowConfigured-5170: '#/components/schemas/BTTableCellModifierForceShowConfigured-5170'
+          BTTableCellModifierInfo-4585: '#/components/schemas/BTTableCellModifierInfo-4585'
+          BTTableCellModifierOpenFeature-1614: '#/components/schemas/BTTableCellModifierOpenFeature-1614'
     BTSketchEntityDisplayData-354:
       type: object
       properties:
@@ -2249,99 +2132,190 @@ components:
           BTSketchLineDisplayData-357: '#/components/schemas/BTSketchLineDisplayData-357'
           BTSketchPointDisplayData-358: '#/components/schemas/BTSketchPointDisplayData-358'
           BTSketchSplineDisplayData-359: '#/components/schemas/BTSketchSplineDisplayData-359'
-    GBTTessellationSettingEnum:
-      type: string
-      enum:
-      - AUTO
-      - COARSE
-      - MEDIUM
-      - FINE
-      - VERY_FINE
-      - CURVATURE_VISUALIZATION
-      - UNKNOWN
-    BTBoundingBoxInfo:
+    AnimationChannel:
       type: object
       properties:
-        highX:
-          type: number
-          format: double
-        highY:
-          type: number
-          format: double
-        highZ:
-          type: number
-          format: double
-        lowX:
-          type: number
-          format: double
-        lowY:
-          type: number
-          format: double
-        lowZ:
-          type: number
-          format: double
-    BTImmutableByteArray:
-      type: object
-      properties:
-        empty:
-          type: boolean
-    BTBaseEntityAppearanceEntry-3607:
-      type: object
-      properties:
-        affectedDeterministicIds:
-          type: array
-          items:
-            type: string
-        appearance:
-          $ref: '#/components/schemas/BTGraphicsAppearance-1152'
-        btType:
-          type: string
-          description: Type of JSON object.
-        source:
-          $ref: '#/components/schemas/BTPartMetadataSource-2895'
-    BTExportTessellatedBody-3398:
-      type: object
-      properties:
-        btType:
-          type: string
-          description: Type of JSON object.
-        constituents:
-          type: array
-          items:
-            type: string
-        id:
-          type: string
-        name:
-          type: string
-      discriminator:
-        propertyName: btType
-        mapping:
-          BTExportTessellatedEdgesBody-890: '#/components/schemas/BTExportTessellatedEdgesBody-890'
-          BTExportTessellatedFacesBody-1321: '#/components/schemas/BTExportTessellatedFacesBody-1321'
-    MaterialPbrMetallicRoughness:
-      type: object
-      properties:
-        baseColorFactor:
-          type: array
-          items:
-            type: number
-            format: float
-        baseColorTexture:
-          $ref: '#/components/schemas/TextureInfo'
         extensions:
           type: object
           additionalProperties:
             type: object
         extras:
           type: object
-        metallicFactor:
-          type: number
-          format: float
-        metallicRoughnessTexture:
-          $ref: '#/components/schemas/TextureInfo'
-        roughnessFactor:
-          type: number
-          format: float
+        sampler:
+          type: integer
+          format: int32
+        target:
+          $ref: '#/components/schemas/AnimationChannelTarget'
+    BTExportModelLoop-1182:
+      type: object
+      properties:
+        btType:
+          type: string
+          description: Type of JSON object.
+        coedges:
+          type: array
+          items:
+            $ref: '#/components/schemas/BTExportModelCoedge-1342'
+        isInner:
+          type: boolean
+        isOuter:
+          type: boolean
+    BTTableColumnSpec-1967:
+      type: object
+      properties:
+        btType:
+          type: string
+          description: Type of JSON object.
+        defaultCellSpec:
+          $ref: '#/components/schemas/BTParameterSpec-6'
+        defaultColumnWidthUnits:
+          $ref: '#/components/schemas/GBTTableColumnWidthUnits'
+        defaultColumnWidthValue:
+          type: integer
+          format: int32
+        defaultHeaderName:
+          type: string
+        defaultTextAlignment:
+          $ref: '#/components/schemas/GBTTableTextAlignment'
+        isExpandable:
+          type: boolean
+        isRenamable:
+          type: boolean
+        readOnly:
+          type: boolean
+    BTTableSortOrder-4371:
+      type: object
+      properties:
+        btType:
+          type: string
+          description: Type of JSON object.
+        isAscending:
+          type: boolean
+        nodeId:
+          type: string
+        sortingColumnId:
+          type: string
+    BTExportTessellatedEdgesResponse-327:
+      type: object
+      properties:
+        bodies:
+          type: array
+          items:
+            $ref: '#/components/schemas/BTExportTessellatedBody-3398'
+        btType:
+          type: string
+          description: Type of JSON object.
+        errorEnum:
+          $ref: '#/components/schemas/GBTErrorStringEnum'
+    BTPartMaterialPropertyInfo:
+      type: object
+      properties:
+        category:
+          type: string
+        description:
+          type: string
+        displayName:
+          type: string
+        name:
+          type: string
+        type:
+          type: string
+        units:
+          type: string
+        value:
+          type: string
+    BTSurfaceDescription-1564:
+      type: object
+      properties:
+        btType:
+          type: string
+          description: Type of JSON object.
+        direction:
+          $ref: '#/components/schemas/BTVector3d-389'
+        directionOrientedWithFace:
+          $ref: '#/components/schemas/BTVector3d-389'
+        origin:
+          $ref: '#/components/schemas/BTVector3d-389'
+        type:
+          $ref: '#/components/schemas/GBTSurfaceTypeEnum'
+      discriminator:
+        propertyName: btType
+        mapping:
+          BTConeDescription-860: '#/components/schemas/BTConeDescription-860'
+          BTCylinderDescription-686: '#/components/schemas/BTCylinderDescription-686'
+          BTPlaneDescription-692: '#/components/schemas/BTPlaneDescription-692'
+          BTSphereDescription-1263: '#/components/schemas/BTSphereDescription-1263'
+          BTSpunDescription-657: '#/components/schemas/BTSpunDescription-657'
+          BTSweepDescription-1473: '#/components/schemas/BTSweepDescription-1473'
+          BTTorusDescription-1834: '#/components/schemas/BTTorusDescription-1834'
+    GBTBodyType:
+      type: string
+      enum:
+      - SOLID
+      - SHEET
+      - WIRE
+      - POINT
+      - MATE_CONNECTOR
+      - COMPOSITE
+      - UNKNOWN
+    BTSketchImageDisplayData-1379:
+      type: object
+      properties:
+        bottomLeftCorner:
+          $ref: '#/components/schemas/BTVector3d-389'
+        bottomRightCorner:
+          $ref: '#/components/schemas/BTVector3d-389'
+        btType:
+          type: string
+          description: Type of JSON object.
+        entities:
+          type: array
+          items:
+            $ref: '#/components/schemas/BTSketchEntityDisplayData-354'
+        featureId:
+          type: string
+        isElementLibraryReference:
+          type: boolean
+        isOnFlat:
+          type: boolean
+        points:
+          type: array
+          items:
+            type: number
+            format: double
+        sourceId:
+          type: string
+        topLeftCorner:
+          $ref: '#/components/schemas/BTVector3d-389'
+    BTFSValue-1888:
+      required:
+      - btType
+      type: object
+      properties:
+        btType:
+          type: string
+          description: Type of JSON object.
+        typeTag:
+          type: string
+      discriminator:
+        propertyName: btType
+        mapping:
+          BTFSValueArray-1499: '#/components/schemas/BTFSValueArray-1499'
+          BTFSValueBoolean-1195: '#/components/schemas/BTFSValueBoolean-1195'
+          BTFSValueMap-2062: '#/components/schemas/BTFSValueMap-2062'
+          BTFSValueNumber-772: '#/components/schemas/BTFSValueNumber-772'
+          BTFSValueOther-1124: '#/components/schemas/BTFSValueOther-1124'
+          BTFSValueString-1422: '#/components/schemas/BTFSValueString-1422'
+          BTFSValueTooBig-1247: '#/components/schemas/BTFSValueTooBig-1247'
+          BTFSValueUndefined-2003: '#/components/schemas/BTFSValueUndefined-2003'
+          BTFSValueWithUnits-1817: '#/components/schemas/BTFSValueWithUnits-1817'
+    GBTTableTextAlignment:
+      type: string
+      enum:
+      - LEFT
+      - CENTER
+      - RIGHT
+      - UNKNOWN
     BufferModel:
       type: object
       properties:
@@ -2376,173 +2350,12 @@ components:
           type: string
         uri:
           type: string
-    BTSingleReferenceDisplayData-1943:
+    BTMatrix3x3-340:
       type: object
       properties:
         btType:
           type: string
           description: Type of JSON object.
-        contextWorkspaceId:
-          type: string
-        documentId:
-          type: string
-        error:
-          $ref: '#/components/schemas/GBTErrorStringEnum'
-        errorMessage:
-          type: string
-        fullElementId:
-          $ref: '#/components/schemas/BTFullElementId-756'
-        isTransient:
-          type: boolean
-        name:
-          type: string
-        referenceName:
-          type: string
-        referenceNodeId:
-          type: string
-        visibility:
-          $ref: '#/components/schemas/GBTBSFeatureVisibility'
-      discriminator:
-        propertyName: btType
-        mapping:
-          BTSingleAssemblyReferenceDisplayData-1557: '#/components/schemas/BTSingleAssemblyReferenceDisplayData-1557'
-    BTExportModelFace-1363:
-      type: object
-      properties:
-        appearancePropertyNodeId:
-          type: string
-          description: Identifies the application of the appearance. Faces that share a value were assigned an appearance together.
-        area:
-          type: number
-          format: double
-        box:
-          $ref: '#/components/schemas/BTBoundingBox-1052'
-        btType:
-          type: string
-          description: Type of JSON object.
-        cosmeticThreadMetadata:
-          $ref: '#/components/schemas/BTCosmeticThreadMetadata-3248'
-        decalIdToDecal:
-          type: object
-          additionalProperties:
-            $ref: '#/components/schemas/BTDecal-2404'
-        faceProperties:
-          $ref: '#/components/schemas/BTExportModelProperties-3216'
-        id:
-          type: string
-        loops:
-          type: array
-          items:
-            $ref: '#/components/schemas/BTExportModelLoop-1182'
-        orientation:
-          type: boolean
-        surface:
-          $ref: '#/components/schemas/BTSurfaceDescription-1564'
-    BTExportBodyProperties-3559:
-      type: object
-      properties:
-        btType:
-          type: string
-          description: Type of JSON object.
-      allOf:
-      - $ref: '#/components/schemas/BTExportModelProperties-3216'
-      - type: object
-        properties:
-          btType:
-            type: string
-          material:
-            $ref: '#/components/schemas/BTPartMaterial-1445'
-          visibility:
-            $ref: '#/components/schemas/GBTPartVisibility'
-    BTParameterSpec-6:
-      type: object
-      properties:
-        additionalLocalizedStrings:
-          type: integer
-          format: int32
-          writeOnly: true
-        btType:
-          type: string
-          description: Type of JSON object.
-        columnName:
-          type: string
-        defaultValue:
-          $ref: '#/components/schemas/BTMParameter-1'
-        enumOptions:
-          type: array
-          items:
-            type: string
-        iconUri:
-          type: string
-        localizableName:
-          type: string
-        localizedName:
-          type: string
-          writeOnly: true
-        parameterDescription:
-          type: string
-        parameterId:
-          type: string
-        parameterName:
-          type: string
-        quantityType:
-          $ref: '#/components/schemas/GBTQuantityType'
-        stringsToLocalize:
-          type: array
-          items:
-            type: string
-        uiHint:
-          type: string
-        uiHints:
-          type: array
-          items:
-            $ref: '#/components/schemas/GBTUIHint'
-        visibilityCondition:
-          $ref: '#/components/schemas/BTParameterVisibilityCondition-177'
-      discriminator:
-        propertyName: btType
-        mapping:
-          BTParameterSpecAppearance-1740: '#/components/schemas/BTParameterSpecAppearance-1740'
-          BTParameterSpecArray-2600: '#/components/schemas/BTParameterSpecArray-2600'
-          BTParameterSpecBoolean-170: '#/components/schemas/BTParameterSpecBoolean-170'
-          BTParameterSpecButton-4111: '#/components/schemas/BTParameterSpecButton-4111'
-          BTParameterSpecDatabase-1071: '#/components/schemas/BTParameterSpecDatabase-1071'
-          BTParameterSpecDerived-736: '#/components/schemas/BTParameterSpecDerived-736'
-          BTParameterSpecEnum-171: '#/components/schemas/BTParameterSpecEnum-171'
-          BTParameterSpecFeatureList-703: '#/components/schemas/BTParameterSpecFeatureList-703'
-          BTParameterSpecForeignId-172: '#/components/schemas/BTParameterSpecForeignId-172'
-          BTParameterSpecLookupTablePath-761: '#/components/schemas/BTParameterSpecLookupTablePath-761'
-          BTParameterSpecMaterial-2700: '#/components/schemas/BTParameterSpecMaterial-2700'
-          BTParameterSpecMultiEnum-3118: '#/components/schemas/BTParameterSpecMultiEnum-3118'
-          BTParameterSpecNullableQuantity-715: '#/components/schemas/BTParameterSpecNullableQuantity-715'
-          BTParameterSpecQuantity-173: '#/components/schemas/BTParameterSpecQuantity-173'
-          BTParameterSpecQuery-174: '#/components/schemas/BTParameterSpecQuery-174'
-          BTParameterSpecReference-2789: '#/components/schemas/BTParameterSpecReference-2789'
-          BTParameterSpecString-175: '#/components/schemas/BTParameterSpecString-175'
-          BTReadOnlyParameterSpec-1889: '#/components/schemas/BTReadOnlyParameterSpec-1889'
-    BTPartMetadataSource-2895:
-      type: object
-      properties:
-        btType:
-          type: string
-          description: Type of JSON object.
-        sourceId:
-          type: string
-        sourceType:
-          $ref: '#/components/schemas/GBTMetadataSourceType'
-    BTBSMatrix-386:
-      type: object
-      properties:
-        btType:
-          type: string
-          description: Type of JSON object.
-        fullTransformation:
-          type: array
-          items:
-            type: number
-            format: double
-        isNormalized:
-          type: boolean
         m00:
           type: number
           format: double
@@ -2550,9 +2363,6 @@ components:
           type: number
           format: double
         m02:
-          type: number
-          format: double
-        m03:
           type: number
           format: double
         m10:
@@ -2564,9 +2374,6 @@ components:
         m12:
           type: number
           format: double
-        m13:
-          type: number
-          format: double
         m20:
           type: number
           format: double
@@ -2576,64 +2383,206 @@ components:
         m22:
           type: number
           format: double
-        m23:
-          type: number
-          format: double
-        rigid:
+    GBTAnnotationAttachmentLocation:
+      type: string
+      enum:
+      - TOP_MIDDLE
+      - BOTTOM_MIDDLE
+      - OPPOSITE_LEADER_EDGE
+      - LEFT_MIDDLE
+      - RIGHT_MIDDLE
+      - UNKNOWN
+    BTDocumentWithVersionId:
+      type: object
+      properties:
+        documentId:
+          type: string
+        documentVersionId:
+          type: string
+    BTPartDisplayData-17:
+      type: object
+      properties:
+        appearance:
+          $ref: '#/components/schemas/BTGraphicsAppearance-1152'
+        appearanceForNewCell:
+          $ref: '#/components/schemas/BTGraphicsAppearance-1152'
+        btType:
+          type: string
+          description: Type of JSON object.
+        customProperties:
+          $ref: '#/components/schemas/BTPartCustomProperties-1338'
+        defaultColorHash:
+          type: string
+        faultVisibility:
+          $ref: '#/components/schemas/GBTPartFaultVisibility'
+        hasFaults:
           type: boolean
-        rigidWithinTransformTolerance:
+        hidden:
           type: boolean
-        translation:
+        highBoxCorner:
           $ref: '#/components/schemas/BTVector3d-389'
-    BTSurfaceDescription-1564:
+        id:
+          type: string
+        isActiveSheetMetal:
+          type: boolean
+        isMesh:
+          type: boolean
+        isModifiable:
+          type: boolean
+        isSheet:
+          type: boolean
+        isSolid:
+          type: boolean
+        isWire:
+          type: boolean
+        lowBoxCorner:
+          $ref: '#/components/schemas/BTVector3d-389'
+        material:
+          $ref: '#/components/schemas/BTPartMaterial-1445'
+        materialForNewCell:
+          $ref: '#/components/schemas/BTPartMaterial-1445'
+        meshState:
+          $ref: '#/components/schemas/GBTMeshState'
+        name:
+          type: string
+        nameForNewCell:
+          type: string
+        ordinal:
+          type: integer
+          format: int32
+        partId:
+          type: string
+        propertyIdToSource:
+          type: object
+          additionalProperties:
+            $ref: '#/components/schemas/BTPartMetadataSource-2895'
+        referencingConfiguredPartNodeIds:
+          type: array
+          items:
+            $ref: '#/components/schemas/BTObjectId'
+        smApplicationType:
+          $ref: '#/components/schemas/GBTSMApplicationType'
+        visibility:
+          $ref: '#/components/schemas/GBTPartVisibility'
+    BTPartMetadataSource-2895:
       type: object
       properties:
         btType:
           type: string
           description: Type of JSON object.
-        direction:
-          $ref: '#/components/schemas/BTVector3d-389'
-        directionOrientedWithFace:
-          $ref: '#/components/schemas/BTVector3d-389'
-        origin:
-          $ref: '#/components/schemas/BTVector3d-389'
-        type:
-          $ref: '#/components/schemas/GBTSurfaceTypeEnum'
-      discriminator:
-        propertyName: btType
-        mapping:
-          BTConeDescription-860: '#/components/schemas/BTConeDescription-860'
-          BTCylinderDescription-686: '#/components/schemas/BTCylinderDescription-686'
-          BTPlaneDescription-692: '#/components/schemas/BTPlaneDescription-692'
-          BTSphereDescription-1263: '#/components/schemas/BTSphereDescription-1263'
-          BTSpunDescription-657: '#/components/schemas/BTSpunDescription-657'
-          BTSweepDescription-1473: '#/components/schemas/BTSweepDescription-1473'
-          BTTorusDescription-1834: '#/components/schemas/BTTorusDescription-1834'
-    BTThumbnailSizeInfo:
+        sourceId:
+          type: string
+        sourceType:
+          $ref: '#/components/schemas/GBTMetadataSourceType'
+    BTBaseEntityAppearanceEntry-3607:
       type: object
       properties:
-        href:
+        affectedDeterministicIds:
+          type: array
+          items:
+            type: string
+        appearance:
+          $ref: '#/components/schemas/BTGraphicsAppearance-1152'
+        btType:
           type: string
-          format: uri
-        mediaType:
-          type: string
-        renderMode:
-          type: string
-        sheetName:
-          type: string
-        size:
-          type: string
-        uniqueId:
-          type: string
-        viewOrientation:
-          type: string
-    GBTPartStudioDisplayDataVersion:
+          description: Type of JSON object.
+        source:
+          $ref: '#/components/schemas/BTPartMetadataSource-2895'
+    GBTSurfaceTypeEnum:
       type: string
       enum:
-      - V0_ORIGINAL_VERSION
-      - V1_SMOOTH_EDGES_RENDERING_OPTIONS
-      - V2_SMOOTH_EDGES_TOLERANCE_CHANGED
+      - PLANE
+      - CYLINDER
+      - CONE
+      - SPHERE
+      - TORUS
+      - SPUN
+      - SWEEP
+      - OFFSET
+      - BLEND
+      - BSURFACE
+      - OTHER
       - UNKNOWN
+    Node:
+      type: object
+      properties:
+        camera:
+          type: integer
+          format: int32
+        children:
+          type: array
+          items:
+            type: integer
+            format: int32
+        extensions:
+          type: object
+          additionalProperties:
+            type: object
+        extras:
+          type: object
+        matrix:
+          type: array
+          items:
+            type: number
+            format: float
+        mesh:
+          type: integer
+          format: int32
+        name:
+          type: string
+        rotation:
+          type: array
+          items:
+            type: number
+            format: float
+        scale:
+          type: array
+          items:
+            type: number
+            format: float
+        skin:
+          type: integer
+          format: int32
+        translation:
+          type: array
+          items:
+            type: number
+            format: float
+        weights:
+          type: array
+          items:
+            type: number
+            format: float
+    BTPartCustomProperties-1338:
+      type: object
+      properties:
+        btType:
+          type: string
+          description: Type of JSON object.
+        description:
+          type: string
+        partNumber:
+          type: string
+        productLine:
+          type: string
+        project:
+          type: string
+        properties:
+          type: object
+          additionalProperties:
+            type: string
+        revision:
+          type: string
+        tessellationSetting:
+          type: string
+        title1:
+          type: string
+        title2:
+          type: string
+        title3:
+          type: string
+        vendor:
+          type: string
     BTDimensionDisplayData-323:
       type: object
       properties:
@@ -2706,23 +2655,112 @@ components:
           BTRadialDimensionDisplayData-348: '#/components/schemas/BTRadialDimensionDisplayData-348'
           BTRadialDistanceDimensionDisplayData-2644: '#/components/schemas/BTRadialDistanceDimensionDisplayData-2644'
           BTRhoDimensionDisplayData-2892: '#/components/schemas/BTRhoDimensionDisplayData-2892'
-    BTImageMapping-3821:
+    BTShadedViewsInfo:
+      type: object
+      properties:
+        images:
+          type: array
+          items:
+            type: array
+            items:
+              type: string
+              format: byte
+      description: Images are returned as base64-encoded strings.
+    BTThumbnailSizeInfo:
+      type: object
+      properties:
+        href:
+          type: string
+          format: uri
+        mediaType:
+          type: string
+        renderMode:
+          type: string
+        sheetName:
+          type: string
+        size:
+          type: string
+        uniqueId:
+          type: string
+        viewOrientation:
+          type: string
+    Texture:
+      type: object
+      properties:
+        extensions:
+          type: object
+          additionalProperties:
+            type: object
+        extras:
+          type: object
+        name:
+          type: string
+        sampler:
+          type: integer
+          format: int32
+        source:
+          type: integer
+          format: int32
+    GBTAppearanceType:
+      type: string
+      enum:
+      - UNKNOWN
+      - SKETCH
+    BTExportModelBody-1272:
       type: object
       properties:
         btType:
           type: string
           description: Type of JSON object.
-        deterministicIds:
+        closed:
+          type: boolean
+          description: If type == COMPOSITE, indicates whether it is open or closed.
+        constituentBodyIds:
           type: array
           items:
             type: string
-        uvTransform:
-          $ref: '#/components/schemas/BTMatrix3x3-340'
-      discriminator:
-        propertyName: btType
-        mapping:
-          BTCylindricalImageMapping-1640: '#/components/schemas/BTCylindricalImageMapping-1640'
-          BTPlanarImageMapping-4398: '#/components/schemas/BTPlanarImageMapping-4398'
+            description: If type == COMPOSITE, this is the id of a constituent that can be found in the 'bodies' array.
+        consumedByComposite:
+          type: boolean
+          description: Indicates if there is a closed composite that consumes this body.
+        edges:
+          type: array
+          items:
+            $ref: '#/components/schemas/BTExportModelEdge-1782'
+        faces:
+          type: array
+          items:
+            $ref: '#/components/schemas/BTExportModelFace-1363'
+        id:
+          type: string
+        properties:
+          $ref: '#/components/schemas/BTExportBodyProperties-3559'
+        type:
+          $ref: '#/components/schemas/GBTBodyType'
+        vertices:
+          type: array
+          items:
+            $ref: '#/components/schemas/BTExportModelVertex-858'
+    Mesh:
+      type: object
+      properties:
+        extensions:
+          type: object
+          additionalProperties:
+            type: object
+        extras:
+          type: object
+        name:
+          type: string
+        primitives:
+          type: array
+          items:
+            $ref: '#/components/schemas/MeshPrimitive'
+        weights:
+          type: array
+          items:
+            type: number
+            format: float
     BTTableColumnInfo-1222:
       type: object
       properties:
@@ -2743,6 +2781,242 @@ components:
           BTNamedPositionValuesColumnInfo-816: '#/components/schemas/BTNamedPositionValuesColumnInfo-816'
           BTPropertyTableColumnInfo-2161: '#/components/schemas/BTPropertyTableColumnInfo-2161'
           BTSimulationTableColumnInfo-1785: '#/components/schemas/BTSimulationTableColumnInfo-1785'
+    BTVector3d-389:
+      type: object
+      properties:
+        btType:
+          type: string
+          description: Type of JSON object.
+        x:
+          type: number
+          format: double
+        y:
+          type: number
+          format: double
+        z:
+          type: number
+          format: double
+    GBTTolerancePrecision:
+      type: string
+      enum:
+      - DEFAULT
+      - ONES
+      - TENTHS
+      - HUNDREDTHS
+      - THOUSANDTHS
+      - TEN_THOUSANDTHS
+      - HUNDRED_THOUSANDTHS
+      - MILLIONTHS
+      - UNKNOWN
+    GBTParameterLibraryRelationType:
+      type: string
+      enum:
+      - DEFAULT
+      - IGNORE_LIBRARY_VALUES
+      - UNKNOWN
+    BTVector2d-1812:
+      type: object
+      properties:
+        btType:
+          type: string
+          description: Type of JSON object.
+        x:
+          type: number
+          format: double
+        y:
+          type: number
+          format: double
+    GBTUIHint:
+      type: string
+      enum:
+      - OPPOSITE_DIRECTION
+      - ALWAYS_HIDDEN
+      - SHOW_CREATE_SELECTION
+      - CONTROL_VISIBILITY
+      - NO_PREVIEW_PROVIDED
+      - REMEMBER_PREVIOUS_VALUE
+      - DISPLAY_SHORT
+      - ALLOW_FEATURE_SELECTION
+      - MATE_CONNECTOR_AXIS_TYPE
+      - PRIMARY_AXIS
+      - SHOW_EXPRESSION
+      - OPPOSITE_DIRECTION_CIRCULAR
+      - SHOW_LABEL
+      - HORIZONTAL_ENUM
+      - UNCONFIGURABLE
+      - MATCH_LAST_ARRAY_ITEM
+      - COLLAPSE_ARRAY_ITEMS
+      - INITIAL_FOCUS_ON_EDIT
+      - INITIAL_FOCUS
+      - DISPLAY_CURRENT_VALUE_ONLY
+      - READ_ONLY
+      - PREVENT_CREATING_NEW_MATE_CONNECTORS
+      - FIRST_IN_ROW
+      - ALLOW_QUERY_ORDER
+      - PREVENT_ARRAY_REORDER
+      - VARIABLE_NAME
+      - FOCUS_INNER_QUERY
+      - SHOW_TOLERANCE
+      - ALLOW_ARRAY_FOCUS
+      - SHOW_INLINE_CONFIG_INPUTS
+      - FOCUS_ON_VISIBLE
+      - CAN_BE_TOLERANT
+      - CAN_BE_TOLERANT_DIAMETER
+      - PLUS_MINUS
+      - ALWAYS_USE_DEPENDENCIES
+      - NO_QUERY_VARIABLE
+      - ALLOW_FLAT_SKETCH_SELECTION
+      - QUERY_VARIABLE_NAME
+      - HIDE_LABEL
+      - UNKNOWN
+    BTTableRow-1054:
+      type: object
+      properties:
+        btType:
+          type: string
+          description: Type of JSON object.
+        columnIdToCell:
+          type: object
+          additionalProperties:
+            $ref: '#/components/schemas/BTTableCell-1114'
+        id:
+          type: string
+        metaData:
+          $ref: '#/components/schemas/BTTreeNode-20'
+        nodeId:
+          type: string
+        rowMetadata:
+          $ref: '#/components/schemas/BTTableBaseRowMetadata-3181'
+      discriminator:
+        propertyName: btType
+        mapping:
+          BTBillOfMaterialsTableRow-1425: '#/components/schemas/BTBillOfMaterialsTableRow-1425'
+    BTElementReference-725:
+      type: object
+      properties:
+        btType:
+          type: string
+          description: Type of JSON object.
+        configured:
+          type: boolean
+        documentVersionId:
+          type: string
+        elementId:
+          type: string
+        externalDocumentWithVersion:
+          $ref: '#/components/schemas/BTDocumentWithVersionId'
+        externalDocumentWithVersionAndElementId:
+          $ref: '#/components/schemas/BTDocumentWithVersionAndElementId'
+        externalReference:
+          type: boolean
+        fullElementId:
+          $ref: '#/components/schemas/BTFullElementId-756'
+        microversionIdAndConfiguration:
+          $ref: '#/components/schemas/BTMicroversionIdAndConfiguration-2338'
+        nodeId:
+          type: string
+      discriminator:
+        propertyName: btType
+        mapping:
+          BTExternalReference-1936: '#/components/schemas/BTExternalReference-1936'
+    MaterialOcclusionTextureInfo:
+      type: object
+      properties:
+        extensions:
+          type: object
+          additionalProperties:
+            type: object
+        extras:
+          type: object
+        index:
+          type: integer
+          format: int32
+        strength:
+          type: number
+          format: float
+        texCoord:
+          type: integer
+          format: int32
+    GBTToleranceType:
+      type: string
+      enum:
+      - NONE
+      - SYMMETRICAL
+      - DEVIATION
+      - LIMITS
+      - MIN
+      - MAX
+      - FIT
+      - FIT_WITH_TOLERANCE
+      - FIT_TOLERANCE_ONLY
+      - DEFAULT
+      - BASIC
+      - UNKNOWN
+    CameraOrthographic:
+      type: object
+      properties:
+        extensions:
+          type: object
+          additionalProperties:
+            type: object
+        extras:
+          type: object
+        xmag:
+          type: number
+          format: float
+        ymag:
+          type: number
+          format: float
+        zfar:
+          type: number
+          format: float
+        znear:
+          type: number
+          format: float
+    GBTQuantityType:
+      type: string
+      enum:
+      - UNKNOWN
+      - INTEGER
+      - REAL
+      - LENGTH
+      - ANGLE
+      - MASS
+      - TIME
+      - TEMPERATURE
+      - CURRENT
+      - ANYTHING
+      - ANYTHING_WITH_UNITS
+      - FORCE
+      - PRESSURE
+      - MOMENT
+      - ACCELERATION
+      - ANGULAR_VELOCITY
+      - ENERGY
+      - AREA
+      - VOLUME
+      - BOOLEAN
+      - STRING
+      - DENSITY
+      - FREQUENCY
+    BTTableBaseRowMetadata-3181:
+      type: object
+      properties:
+        btType:
+          type: string
+          description: Type of JSON object.
+        crossHighlightDataIfAny:
+          $ref: '#/components/schemas/BTTableBaseCrossHighlightData-2609'
+      discriminator:
+        propertyName: btType
+        mapping:
+          BTBaseSMJointTableRowMetadata-2232: '#/components/schemas/BTBaseSMJointTableRowMetadata-2232'
+          BTBillOfMaterialsTableRowMetadata-1300: '#/components/schemas/BTBillOfMaterialsTableRowMetadata-1300'
+          BTDatumTableRowMetadata-3060: '#/components/schemas/BTDatumTableRowMetadata-3060'
+          BTFSTableRowMetadata-2262: '#/components/schemas/BTFSTableRowMetadata-2262'
+          BTInspectionTableRowMetadata-2485: '#/components/schemas/BTInspectionTableRowMetadata-2485'
+          BTMirrorTableRowMetaData-5463: '#/components/schemas/BTMirrorTableRowMetaData-5463'
+          BTVariableTableRowMetadata-3912: '#/components/schemas/BTVariableTableRowMetadata-3912'
     BTClosedConstituentPartData-2911:
       type: object
       properties:
@@ -2757,6 +3031,236 @@ components:
           type: boolean
         meshState:
           $ref: '#/components/schemas/GBTMeshState'
+    BTCurveDescription-1583:
+      type: object
+      properties:
+        btType:
+          type: string
+          description: Type of JSON object.
+        direction:
+          $ref: '#/components/schemas/BTVector3d-389'
+        directionOrientedWithFace:
+          $ref: '#/components/schemas/BTVector3d-389'
+        origin:
+          $ref: '#/components/schemas/BTVector3d-389'
+        type:
+          $ref: '#/components/schemas/GBTCurveTypeEnum'
+      discriminator:
+        propertyName: btType
+        mapping:
+          BTCircleDescription-1145: '#/components/schemas/BTCircleDescription-1145'
+          BTEllipseDescription-866: '#/components/schemas/BTEllipseDescription-866'
+          BTLineDescription-1559: '#/components/schemas/BTLineDescription-1559'
+          BTSplineDescription-2118: '#/components/schemas/BTSplineDescription-2118'
+    BTTable-1825:
+      type: object
+      properties:
+        allRowValues:
+          type: array
+          items:
+            type: array
+            items:
+              type: string
+        btType:
+          type: string
+          description: Type of JSON object.
+        columnCount:
+          type: integer
+          format: int32
+        frozenColumns:
+          type: integer
+          format: int32
+        isFailed:
+          type: boolean
+        nodeId:
+          type: string
+        readOnly:
+          type: boolean
+        rowCount:
+          type: integer
+          format: int32
+        sortOrder:
+          $ref: '#/components/schemas/BTTableSortOrder-4371'
+        statusMessage:
+          type: string
+        statusType:
+          $ref: '#/components/schemas/GBTNodeStatusType'
+        tableColumns:
+          type: array
+          items:
+            $ref: '#/components/schemas/BTTableColumnInfo-1222'
+        tableId:
+          type: string
+        tableRows:
+          type: array
+          items:
+            $ref: '#/components/schemas/BTTableRow-1054'
+        title:
+          type: string
+      discriminator:
+        propertyName: btType
+        mapping:
+          BTAssemblySimulationHistoryTable-5453: '#/components/schemas/BTAssemblySimulationHistoryTable-5453'
+          BTAssemblySimulationStructuralLoadsTable-3867: '#/components/schemas/BTAssemblySimulationStructuralLoadsTable-3867'
+          BTAssemblySimulationTable-3236: '#/components/schemas/BTAssemblySimulationTable-3236'
+          BTBillOfMaterialsTable-1073: '#/components/schemas/BTBillOfMaterialsTable-1073'
+          BTConfiguredPartPropertiesTable-2740: '#/components/schemas/BTConfiguredPartPropertiesTable-2740'
+          BTFSTable-953: '#/components/schemas/BTFSTable-953'
+    BTMicroversionIdAndConfiguration-2338:
+      type: object
+      properties:
+        btType:
+          type: string
+          description: Type of JSON object.
+        cacheKey:
+          type: string
+        configurationParameterIdToValue:
+          type: object
+          additionalProperties:
+            $ref: '#/components/schemas/BTFSValue-1888'
+        deleted:
+          type: boolean
+        description:
+          type: string
+        microversion:
+          $ref: '#/components/schemas/BTMicroversionId-366'
+    BTExportModelEdge-1782:
+      type: object
+      properties:
+        btType:
+          type: string
+          description: Type of JSON object.
+        curve:
+          $ref: '#/components/schemas/BTCurveDescription-1583'
+        geometry:
+          $ref: '#/components/schemas/BTExportModelEdgeGeometry-1125'
+        id:
+          type: string
+        vertices:
+          type: array
+          items:
+            type: string
+    BTExternalElementReferenceInfo:
+      type: object
+      properties:
+        documentId:
+          type: string
+        elementId:
+          type: string
+        elementMicroversionId:
+          type: string
+        versionId:
+          type: string
+    BTExportModelBodiesResponse-734:
+      type: object
+      properties:
+        bodies:
+          type: array
+          items:
+            $ref: '#/components/schemas/BTExportModelBody-1272'
+        btType:
+          type: string
+          description: Type of JSON object.
+        errorEnum:
+          $ref: '#/components/schemas/GBTErrorStringEnum'
+        microversionId:
+          $ref: '#/components/schemas/BTMicroversionId-366'
+        nodeIdToReferencedProperty:
+          type: object
+          additionalProperties:
+            $ref: '#/components/schemas/BTExportModelProperties-3216'
+    BTAppearanceOverride-2517:
+      type: object
+      properties:
+        appearance:
+          $ref: '#/components/schemas/BTGraphicsAppearance-1152'
+        appearanceReset:
+          type: boolean
+        btType:
+          type: string
+          description: Type of JSON object.
+        copyWithoutEntities:
+          $ref: '#/components/schemas/BTAppearanceOverride-2517'
+        entityDeterministicIds:
+          type: array
+          items:
+            type: string
+        isDeletion:
+          type: boolean
+    AccessorSparseValues:
+      type: object
+      properties:
+        bufferView:
+          type: integer
+          format: int32
+        byteOffset:
+          type: integer
+          format: int32
+        extensions:
+          type: object
+          additionalProperties:
+            type: object
+        extras:
+          type: object
+    Animation:
+      type: object
+      properties:
+        channels:
+          type: array
+          items:
+            $ref: '#/components/schemas/AnimationChannel'
+        extensions:
+          type: object
+          additionalProperties:
+            type: object
+        extras:
+          type: object
+        name:
+          type: string
+        samplers:
+          type: array
+          items:
+            $ref: '#/components/schemas/AnimationSampler'
+    MeshPrimitive:
+      type: object
+      properties:
+        attributes:
+          type: object
+          additionalProperties:
+            type: integer
+            format: int32
+        extensions:
+          type: object
+          additionalProperties:
+            type: object
+        extras:
+          type: object
+        indices:
+          type: integer
+          format: int32
+        material:
+          type: integer
+          format: int32
+        mode:
+          type: integer
+          format: int32
+        targets:
+          type: array
+          items:
+            type: object
+            additionalProperties:
+              type: integer
+              format: int32
+    BTBasePartColorCycle-2614:
+      type: object
+      properties:
+        btType:
+          type: string
+          description: Type of JSON object.
+      discriminator:
+        propertyName: btType
+        mapping:
+          BTSystemPartColorCycle-1580: '#/components/schemas/BTSystemPartColorCycle-1580'
     BTMParameter-1:
       type: object
       properties:
@@ -2804,6 +3308,249 @@ components:
           BTMParameterReference-2434: '#/components/schemas/BTMParameterReference-2434'
           BTMParameterString-149: '#/components/schemas/BTMParameterString-149'
           BTMReadOnlyParameter-3800: '#/components/schemas/BTMReadOnlyParameter-3800'
+    BTBSMatrix-386:
+      type: object
+      properties:
+        btType:
+          type: string
+          description: Type of JSON object.
+        fullTransformation:
+          type: array
+          items:
+            type: number
+            format: double
+        isNormalized:
+          type: boolean
+        m00:
+          type: number
+          format: double
+        m01:
+          type: number
+          format: double
+        m02:
+          type: number
+          format: double
+        m03:
+          type: number
+          format: double
+        m10:
+          type: number
+          format: double
+        m11:
+          type: number
+          format: double
+        m12:
+          type: number
+          format: double
+        m13:
+          type: number
+          format: double
+        m20:
+          type: number
+          format: double
+        m21:
+          type: number
+          format: double
+        m22:
+          type: number
+          format: double
+        m23:
+          type: number
+          format: double
+        rigid:
+          type: boolean
+        rigidWithinTransformTolerance:
+          type: boolean
+        translation:
+          $ref: '#/components/schemas/BTVector3d-389'
+    Material:
+      type: object
+      properties:
+        alphaCutoff:
+          type: number
+          format: float
+        alphaMode:
+          type: string
+        doubleSided:
+          type: boolean
+        emissiveFactor:
+          type: array
+          items:
+            type: number
+            format: float
+        emissiveTexture:
+          $ref: '#/components/schemas/TextureInfo'
+        extensions:
+          type: object
+          additionalProperties:
+            type: object
+        extras:
+          type: object
+        name:
+          type: string
+        normalTexture:
+          $ref: '#/components/schemas/MaterialNormalTextureInfo'
+        occlusionTexture:
+          $ref: '#/components/schemas/MaterialOcclusionTextureInfo'
+        pbrMetallicRoughness:
+          $ref: '#/components/schemas/MaterialPbrMetallicRoughness'
+    BTExportModelCoedge-1342:
+      type: object
+      properties:
+        btType:
+          type: string
+          description: Type of JSON object.
+        edgeId:
+          type: string
+        orientation:
+          type: boolean
+    BTAnnotationDisplayData-3225:
+      type: object
+      properties:
+        allReferences:
+          type: array
+          items:
+            type: string
+        allReferencesPopulated:
+          type: boolean
+        annotationId:
+          type: string
+        annotationPlane:
+          $ref: '#/components/schemas/BTCoordinateSystem-387'
+        attachmentLocation:
+          $ref: '#/components/schemas/GBTAnnotationAttachmentLocation'
+        basePlane:
+          $ref: '#/components/schemas/BTCoordinateSystem-387'
+        btType:
+          type: string
+          description: Type of JSON object.
+        characteristicId:
+          type: string
+        deterministicId:
+          type: string
+        dxdySegments:
+          type: array
+          items:
+            $ref: '#/components/schemas/BTVector2d-1812'
+        isConstrainedToPlane:
+          type: boolean
+        isDeletion:
+          type: boolean
+        isDerived:
+          type: boolean
+        mainAnnotationId:
+          type: string
+        mainConstraintId:
+          type: string
+        mainFeatureId:
+          type: string
+        mainParameterId:
+          type: string
+        mainPartId:
+          type: string
+        parentCharacteristicId:
+          type: string
+      discriminator:
+        propertyName: btType
+        mapping:
+          BTAnnotationDeleteDisplayData-1815: '#/components/schemas/BTAnnotationDeleteDisplayData-1815'
+          BTAnnotationGTolDisplayData-4887: '#/components/schemas/BTAnnotationGTolDisplayData-4887'
+          BTAnnotationWeldDisplayData-4919: '#/components/schemas/BTAnnotationWeldDisplayData-4919'
+          BTChamferCalloutDisplayData-4471: '#/components/schemas/BTChamferCalloutDisplayData-4471'
+          BTDatumDisplayData-3408: '#/components/schemas/BTDatumDisplayData-3408'
+          BTHoleCalloutDisplayData-3452: '#/components/schemas/BTHoleCalloutDisplayData-3452'
+    TextureInfo:
+      type: object
+      properties:
+        extensions:
+          type: object
+          additionalProperties:
+            type: object
+        extras:
+          type: object
+        index:
+          type: integer
+          format: int32
+        texCoord:
+          type: integer
+          format: int32
+    GBTTessellationSettingEnum:
+      type: string
+      enum:
+      - AUTO
+      - COARSE
+      - MEDIUM
+      - FINE
+      - VERY_FINE
+      - CURVATURE_VISUALIZATION
+      - UNKNOWN
+    BTMassPropertiesInfo:
+      type: object
+      properties:
+        centroid:
+          type: array
+          description: Centroid, center of gravity, center of mass
+          items:
+            type: number
+            description: Centroid, center of gravity, center of mass
+            format: double
+        hasMass:
+          type: boolean
+          description: '`true` if the part has mass.'
+        inertia:
+          type: array
+          description: Mass moments of inertia
+          items:
+            type: number
+            description: Mass moments of inertia
+            format: double
+        mass:
+          type: array
+          description: Mass
+          items:
+            type: number
+            description: Mass
+            format: double
+        massMissingCount:
+          type: integer
+          description: Number of parts without mass.
+          format: int32
+        periphery:
+          type: array
+          description: Surface area
+          items:
+            type: number
+            description: Surface area
+            format: double
+        principalAxes:
+          type: array
+          description: Vector coordinates of the principal axes. Use `BTVector3d-389` as the `btType`.
+          items:
+            $ref: '#/components/schemas/BTVector3d-389'
+        principalInertia:
+          type: array
+          description: Principal moments of inertia
+          items:
+            type: number
+            description: Principal moments of inertia
+            format: double
+        volume:
+          type: array
+          description: Volume
+          items:
+            type: number
+            description: Volume
+            format: double
+      description: Mass properties information.
+    ObjectId:
+      type: object
+      properties:
+        date:
+          type: string
+          format: date-time
+        timestamp:
+          type: integer
+          format: int32
     BTCoordinateSystem-387:
       type: object
       properties:
@@ -2820,22 +3567,227 @@ components:
           $ref: '#/components/schemas/BTVector3d-389'
         zAxis:
           $ref: '#/components/schemas/BTVector3d-389'
-    GBTSurfaceTypeEnum:
+    BTEntityGeometry-35:
+      type: object
+      properties:
+        btType:
+          type: string
+          description: Type of JSON object.
+        compressed:
+          type: boolean
+        decompressed:
+          $ref: '#/components/schemas/BTEntityGeometry-35'
+        errorCode:
+          type: integer
+          format: int32
+        estimatedMemoryUsageInBytes:
+          type: integer
+          format: int32
+        hasTessellationError:
+          type: boolean
+        settingIndex:
+          type: integer
+          format: int32
+      discriminator:
+        propertyName: btType
+        mapping:
+          BTDebugGeometry-2059: '#/components/schemas/BTDebugGeometry-2059'
+          BTTessellatedGeometry-2576: '#/components/schemas/BTTessellatedGeometry-2576'
+    GBTGraphicsPrimitiveType:
       type: string
       enum:
-      - PLANE
-      - CYLINDER
-      - CONE
-      - SPHERE
-      - TORUS
-      - SPUN
-      - SWEEP
-      - OFFSET
-      - BLEND
-      - BSURFACE
-      - OTHER
+      - POINTS
+      - LINES
+      - INFINITE_LINES
+      - TRIANGLES
+      - TRIANGLE_STRIP
+      - SILHOUETTES
+      - PRIMITIVE_LINE
       - UNKNOWN
-    Mesh:
+    BTParameterVisibilityCondition-177:
+      type: object
+      properties:
+        btType:
+          type: string
+          description: Type of JSON object.
+        selfOrChildAlwaysVisible:
+          type: boolean
+      discriminator:
+        propertyName: btType
+        mapping:
+          BTParameterVisibilityAlwaysHidden-176: '#/components/schemas/BTParameterVisibilityAlwaysHidden-176'
+          BTParameterVisibilityAlwaysShown-5487: '#/components/schemas/BTParameterVisibilityAlwaysShown-5487'
+          BTParameterVisibilityInRange-2980: '#/components/schemas/BTParameterVisibilityInRange-2980'
+          BTParameterVisibilityLogical-178: '#/components/schemas/BTParameterVisibilityLogical-178'
+          BTParameterVisibilityOnEqual-180: '#/components/schemas/BTParameterVisibilityOnEqual-180'
+    GBTPartFaultVisibility:
+      type: string
+      enum:
+      - UNSPECIFIED
+      - HIDDEN
+      - VISIBLE
+      - UNKNOWN
+    AnimationSampler:
+      type: object
+      properties:
+        extensions:
+          type: object
+          additionalProperties:
+            type: object
+        extras:
+          type: object
+        input:
+          type: integer
+          format: int32
+        interpolation:
+          type: string
+        output:
+          type: integer
+          format: int32
+    BTColorInfo:
+      type: object
+      properties:
+        blue:
+          type: integer
+          format: int32
+        green:
+          type: integer
+          format: int32
+        red:
+          type: integer
+          format: int32
+    GBTTableColumnWidthUnits:
+      type: string
+      enum:
+      - PERCENT
+      - CHARS
+      - PIXELS
+      - UNKNOWN
+    BTMetadataStateType:
+      type: string
+      description: The current state metadata values if applicable.
+      enum:
+      - IN_PROGRESS
+      - PENDING
+      - RELEASED
+      - OBSOLETE
+      - REJECTED
+      - DISCARDED
+    BTAssemblyReferencesDisplayData-1562:
+      type: object
+      properties:
+        annotationsForElement:
+          $ref: '#/components/schemas/BTAnnotationElementDisplayData-894'
+        assemblyReferences:
+          type: array
+          items:
+            $ref: '#/components/schemas/BTSingleReferenceDisplayData-1943'
+        btType:
+          type: string
+          description: Type of JSON object.
+        elementId:
+          type: string
+        fromFullElementId:
+          $ref: '#/components/schemas/BTFullElementId-756'
+        fullElementId:
+          $ref: '#/components/schemas/BTFullElementId-756'
+        incremental:
+          type: boolean
+        instanceCount:
+          type: integer
+          format: int32
+        keepFromMicroversion:
+          type: boolean
+        microversionId:
+          $ref: '#/components/schemas/BTMicroversionId-366'
+        microversionIdAndConfigurationInterval:
+          $ref: '#/components/schemas/BTMicroversionIdAndConfigurationInterval-2364'
+        microversionInterval:
+          $ref: '#/components/schemas/BTMicroversionIdInterval-367'
+        versionForRasterization:
+          $ref: '#/components/schemas/BTElementDisplayData-326'
+    Interpolation:
+      type: string
+      enum:
+      - STEP
+      - LINEAR
+      - CATMULLROMSPLINE
+      - CUBICSPLINE
+    BTExportTessellatedBody-3398:
+      type: object
+      properties:
+        btType:
+          type: string
+          description: Type of JSON object.
+        constituents:
+          type: array
+          items:
+            type: string
+        id:
+          type: string
+        name:
+          type: string
+      discriminator:
+        propertyName: btType
+        mapping:
+          BTExportTessellatedEdgesBody-890: '#/components/schemas/BTExportTessellatedEdgesBody-890'
+          BTExportTessellatedFacesBody-1321: '#/components/schemas/BTExportTessellatedFacesBody-1321'
+    MaterialNormalTextureInfo:
+      type: object
+      properties:
+        extensions:
+          type: object
+          additionalProperties:
+            type: object
+        extras:
+          type: object
+        index:
+          type: integer
+          format: int32
+        scale:
+          type: number
+          format: float
+        texCoord:
+          type: integer
+          format: int32
+    BTDocumentWithVersionAndElementId:
+      type: object
+      properties:
+        documentId:
+          type: string
+        documentVersionId:
+          type: string
+        elementId:
+          type: string
+        elementLibraryId:
+          $ref: '#/components/schemas/ObjectId'
+        elementLibraryVersion:
+          $ref: '#/components/schemas/ObjectId'
+        partNumber:
+          type: string
+        revision:
+          type: string
+        uniqueVersionId:
+          type: string
+        validElementLibraryReference:
+          type: boolean
+        validRevisionReference:
+          type: boolean
+    AnimationChannelTarget:
+      type: object
+      properties:
+        extensions:
+          type: object
+          additionalProperties:
+            type: object
+        extras:
+          type: object
+        node:
+          type: integer
+          format: int32
+        path:
+          type: string
+    Camera:
       type: object
       properties:
         extensions:
@@ -2846,62 +3798,304 @@ components:
           type: object
         name:
           type: string
-        primitives:
-          type: array
-          items:
-            $ref: '#/components/schemas/MeshPrimitive'
-        weights:
-          type: array
-          items:
-            type: number
-            format: float
-    GBTDisplayDataUsage:
-      type: string
-      enum:
-      - BASE
-      - PREVIEW_BEFORE
-      - PREVIEW_AFTER
-      - PREVIEW_FINAL
-      - COMPARE_TARGET
-      - REFERENCE_REPAIR
-      - UNKNOWN
-    BTExternalElementReferenceInfo:
-      type: object
-      properties:
-        documentId:
+        orthographic:
+          $ref: '#/components/schemas/CameraOrthographic'
+        perspective:
+          $ref: '#/components/schemas/CameraPerspective'
+        type:
           type: string
-        elementId:
-          type: string
-        elementMicroversionId:
-          type: string
-        versionId:
-          type: string
-    BTTableResponse-1546:
+    BTInsertableDisplayData-2405:
       type: object
       properties:
         btType:
           type: string
           description: Type of JSON object.
-        sourceMicroversion:
+        buffers:
+          type: array
+          items:
+            $ref: '#/components/schemas/BTGraphicsBuffer-2668'
+        fullElementId:
+          $ref: '#/components/schemas/BTFullElementId-756'
+        graphicsBuffers:
+          type: object
+          additionalProperties:
+            type: object
+            additionalProperties:
+              $ref: '#/components/schemas/BTGraphicsBuffer-2668'
+        id:
           type: string
-        table:
-          $ref: '#/components/schemas/BTTable-1825'
-    BTPartMaterialPropertyInfo:
+        insertableEntityData:
+          $ref: '#/components/schemas/BTImmutableByteArray'
+        part:
+          type: boolean
+        sketchFeature:
+          type: boolean
+        tessellationSettingIndex:
+          type: integer
+          format: int32
+      discriminator:
+        propertyName: btType
+        mapping:
+          BTInsertablePartDisplayData-3103: '#/components/schemas/BTInsertablePartDisplayData-3103'
+          BTInsertableSketchDisplayData-3775: '#/components/schemas/BTInsertableSketchDisplayData-3775'
+    BTFullElementId-756:
       type: object
       properties:
-        category:
+        btType:
           type: string
-        description:
+          description: Type of JSON object.
+        configured:
+          type: boolean
+        elementId:
           type: string
-        displayName:
+        microversionId:
+          $ref: '#/components/schemas/BTMicroversionId-366'
+        microversionIdAndConfiguration:
+          $ref: '#/components/schemas/BTMicroversionIdAndConfiguration-2338'
+        target:
+          $ref: '#/components/schemas/BTMicroversionIdAndConfiguration-2338'
+      discriminator:
+        propertyName: btType
+        mapping:
+          BTFullElementIdWithDocument-1729: '#/components/schemas/BTFullElementIdWithDocument-1729'
+    Scene:
+      type: object
+      properties:
+        extensions:
+          type: object
+          additionalProperties:
+            type: object
+        extras:
+          type: object
+        name:
+          type: string
+        nodes:
+          type: array
+          items:
+            type: integer
+            format: int32
+    BufferViewModel:
+      type: object
+      properties:
+        bufferModel:
+          $ref: '#/components/schemas/BufferModel'
+        bufferViewData:
+          type: object
+          properties:
+            short:
+              type: integer
+              format: int32
+            char:
+              type: string
+            int:
+              type: integer
+              format: int32
+            long:
+              type: integer
+              format: int64
+            float:
+              type: number
+              format: float
+            double:
+              type: number
+              format: double
+            direct:
+              type: boolean
+            readOnly:
+              type: boolean
+        byteLength:
+          type: integer
+          format: int32
+        byteOffset:
+          type: integer
+          format: int32
+        byteStride:
+          type: integer
+          format: int32
+        name:
+          type: string
+        target:
+          type: integer
+          format: int32
+    BTImageMapping-3821:
+      type: object
+      properties:
+        btType:
+          type: string
+          description: Type of JSON object.
+        deterministicIds:
+          type: array
+          items:
+            type: string
+        uvTransform:
+          $ref: '#/components/schemas/BTMatrix3x3-340'
+      discriminator:
+        propertyName: btType
+        mapping:
+          BTCylindricalImageMapping-1640: '#/components/schemas/BTCylindricalImageMapping-1640'
+          BTPlanarImageMapping-4398: '#/components/schemas/BTPlanarImageMapping-4398'
+    Image:
+      type: object
+      properties:
+        bufferView:
+          type: integer
+          format: int32
+        extensions:
+          type: object
+          additionalProperties:
+            type: object
+        extras:
+          type: object
+        mimeType:
           type: string
         name:
           type: string
-        type:
+        uri:
           type: string
-        units:
+    BTMicroversionId-366:
+      type: object
+      properties:
+        ambiguous:
+          type: boolean
+        btType:
           type: string
-        value:
+          description: Type of JSON object.
+        deleted:
+          type: boolean
+        theId:
+          type: string
+    ElementType:
+      type: string
+      enum:
+      - SCALAR
+      - VEC2
+      - VEC3
+      - VEC4
+      - MAT2
+      - MAT3
+      - MAT4
+    GBTSMApplicationType:
+      type: string
+      enum:
+      - SHEET_METAL
+      - FLEXIBLE_PCB
+      - NONE
+      - UNKNOWN
+    GBTPartStudioDisplayDataVersion:
+      type: string
+      enum:
+      - V0_ORIGINAL_VERSION
+      - V1_SMOOTH_EDGES_RENDERING_OPTIONS
+      - V2_SMOOTH_EDGES_TOLERANCE_CHANGED
+      - UNKNOWN
+    BTExportModelProperties-3216:
+      type: object
+      properties:
+        appearance:
+          $ref: '#/components/schemas/BTGraphicsAppearance-1152'
+        btType:
+          type: string
+          description: Type of JSON object.
+        name:
+          type: string
+      discriminator:
+        propertyName: btType
+        mapping:
+          BTExportBodyProperties-3559: '#/components/schemas/BTExportBodyProperties-3559'
+    BTObjectId:
+      type: object
+      properties:
+        empty:
+          type: boolean
+    GlTF:
+      type: object
+      properties:
+        accessors:
+          type: array
+          items:
+            $ref: '#/components/schemas/Accessor'
+        animations:
+          type: array
+          items:
+            $ref: '#/components/schemas/Animation'
+        asset:
+          $ref: '#/components/schemas/Asset'
+        bufferViews:
+          type: array
+          items:
+            $ref: '#/components/schemas/BufferView'
+        buffers:
+          type: array
+          items:
+            $ref: '#/components/schemas/Buffer'
+        cameras:
+          type: array
+          items:
+            $ref: '#/components/schemas/Camera'
+        extensions:
+          type: object
+          additionalProperties:
+            type: object
+        extensionsRequired:
+          type: array
+          items:
+            type: string
+        extensionsUsed:
+          type: array
+          items:
+            type: string
+        extras:
+          type: object
+        images:
+          type: array
+          items:
+            $ref: '#/components/schemas/Image'
+        materials:
+          type: array
+          items:
+            $ref: '#/components/schemas/Material'
+        meshes:
+          type: array
+          items:
+            $ref: '#/components/schemas/Mesh'
+        nodes:
+          type: array
+          items:
+            $ref: '#/components/schemas/Node'
+        samplers:
+          type: array
+          items:
+            $ref: '#/components/schemas/Sampler'
+        scene:
+          type: integer
+          format: int32
+        scenes:
+          type: array
+          items:
+            $ref: '#/components/schemas/Scene'
+        skins:
+          type: array
+          items:
+            $ref: '#/components/schemas/Skin'
+        textures:
+          type: array
+          items:
+            $ref: '#/components/schemas/Texture'
+    Buffer:
+      type: object
+      properties:
+        byteLength:
+          type: integer
+          format: int32
+        extensions:
+          type: object
+          additionalProperties:
+            type: object
+        extras:
+          type: object
+        name:
+          type: string
+        uri:
           type: string
     GBTErrorStringEnum:
       type: string
@@ -4707,1179 +5901,18 @@ components:
       - ASYNC_SIMULATION_ALREADY_COMPLETE
       - MATECONNECTOR_ATTACH_TO_NOT_RESOLVED
       - UNKNOWN
-    BTDomainSpecificMetadata-961:
+    BTBaseEntityAppearanceSettings-1391:
       type: object
       properties:
         btType:
           type: string
           description: Type of JSON object.
-      discriminator:
-        propertyName: btType
-        mapping:
-          BTCosmeticThreadMetadata-3248: '#/components/schemas/BTCosmeticThreadMetadata-3248'
-          BTSMSpecificMetadata-1315: '#/components/schemas/BTSMSpecificMetadata-1315'
-    GBTUIHint:
-      type: string
-      enum:
-      - OPPOSITE_DIRECTION
-      - ALWAYS_HIDDEN
-      - SHOW_CREATE_SELECTION
-      - CONTROL_VISIBILITY
-      - NO_PREVIEW_PROVIDED
-      - REMEMBER_PREVIOUS_VALUE
-      - DISPLAY_SHORT
-      - ALLOW_FEATURE_SELECTION
-      - MATE_CONNECTOR_AXIS_TYPE
-      - PRIMARY_AXIS
-      - SHOW_EXPRESSION
-      - OPPOSITE_DIRECTION_CIRCULAR
-      - SHOW_LABEL
-      - HORIZONTAL_ENUM
-      - UNCONFIGURABLE
-      - MATCH_LAST_ARRAY_ITEM
-      - COLLAPSE_ARRAY_ITEMS
-      - INITIAL_FOCUS_ON_EDIT
-      - INITIAL_FOCUS
-      - DISPLAY_CURRENT_VALUE_ONLY
-      - READ_ONLY
-      - PREVENT_CREATING_NEW_MATE_CONNECTORS
-      - FIRST_IN_ROW
-      - ALLOW_QUERY_ORDER
-      - PREVENT_ARRAY_REORDER
-      - VARIABLE_NAME
-      - FOCUS_INNER_QUERY
-      - SHOW_TOLERANCE
-      - ALLOW_ARRAY_FOCUS
-      - SHOW_INLINE_CONFIG_INPUTS
-      - FOCUS_ON_VISIBLE
-      - CAN_BE_TOLERANT
-      - CAN_BE_TOLERANT_DIAMETER
-      - PLUS_MINUS
-      - ALWAYS_USE_DEPENDENCIES
-      - NO_QUERY_VARIABLE
-      - ALLOW_FLAT_SKETCH_SELECTION
-      - QUERY_VARIABLE_NAME
-      - HIDE_LABEL
-      - UNKNOWN
-    MaterialOcclusionTextureInfo:
-      type: object
-      properties:
-        extensions:
+        colorIdToBaseEntityAppearanceEntry:
           type: object
           additionalProperties:
-            type: object
-        extras:
-          type: object
-        index:
-          type: integer
-          format: int32
-        strength:
-          type: number
-          format: float
-        texCoord:
-          type: integer
-          format: int32
-    GBTQuantityType:
-      type: string
-      enum:
-      - UNKNOWN
-      - INTEGER
-      - REAL
-      - LENGTH
-      - ANGLE
-      - MASS
-      - TIME
-      - TEMPERATURE
-      - CURRENT
-      - ANYTHING
-      - ANYTHING_WITH_UNITS
-      - FORCE
-      - PRESSURE
-      - MOMENT
-      - ACCELERATION
-      - ANGULAR_VELOCITY
-      - ENERGY
-      - AREA
-      - VOLUME
-      - BOOLEAN
-      - STRING
-      - DENSITY
-      - FREQUENCY
-    BTMatrix3x3-340:
-      type: object
-      properties:
-        btType:
-          type: string
-          description: Type of JSON object.
-        m00:
-          type: number
-          format: double
-        m01:
-          type: number
-          format: double
-        m02:
-          type: number
-          format: double
-        m10:
-          type: number
-          format: double
-        m11:
-          type: number
-          format: double
-        m12:
-          type: number
-          format: double
-        m20:
-          type: number
-          format: double
-        m21:
-          type: number
-          format: double
-        m22:
-          type: number
-          format: double
-    AccessorSparseIndices:
-      type: object
-      properties:
-        bufferView:
-          type: integer
-          format: int32
-        byteOffset:
-          type: integer
-          format: int32
-        componentType:
-          type: integer
-          format: int32
-        extensions:
-          type: object
-          additionalProperties:
-            type: object
-        extras:
-          type: object
-    Animation:
-      type: object
-      properties:
-        channels:
-          type: array
-          items:
-            $ref: '#/components/schemas/AnimationChannel'
-        extensions:
-          type: object
-          additionalProperties:
-            type: object
-        extras:
-          type: object
-        name:
-          type: string
-        samplers:
-          type: array
-          items:
-            $ref: '#/components/schemas/AnimationSampler'
-    GBTNodeStatusType:
-      type: string
-      enum:
-      - OK
-      - INFO
-      - WARNING
-      - ERROR
-      - UNKNOWN
-    BTAnnotationElementDisplayData-894:
-      type: object
-      properties:
-        annotationIdToDisplayObject:
-          type: object
-          additionalProperties:
-            $ref: '#/components/schemas/BTAnnotationDisplayData-3225'
-        annotationIds:
-          uniqueItems: true
-          type: array
-          items:
-            type: string
-        btType:
-          type: string
-          description: Type of JSON object.
-    MeshPrimitive:
-      type: object
-      properties:
-        attributes:
-          type: object
-          additionalProperties:
-            type: integer
-            format: int32
-        extensions:
-          type: object
-          additionalProperties:
-            type: object
-        extras:
-          type: object
-        indices:
-          type: integer
-          format: int32
-        material:
-          type: integer
-          format: int32
-        mode:
-          type: integer
-          format: int32
-        targets:
-          type: array
-          items:
-            type: object
-            additionalProperties:
-              type: integer
-              format: int32
-    BTMassPropertiesInfo:
-      type: object
-      properties:
-        centroid:
-          type: array
-          description: Centroid, center of gravity, center of mass
-          items:
-            type: number
-            description: Centroid, center of gravity, center of mass
-            format: double
-        hasMass:
+            $ref: '#/components/schemas/BTBaseEntityAppearanceEntry-3607'
+        isNoop:
           type: boolean
-          description: '`true` if the part has mass.'
-        inertia:
-          type: array
-          description: Mass moments of inertia
-          items:
-            type: number
-            description: Mass moments of inertia
-            format: double
-        mass:
-          type: array
-          description: Mass
-          items:
-            type: number
-            description: Mass
-            format: double
-        massMissingCount:
-          type: integer
-          description: Number of parts without mass.
-          format: int32
-        periphery:
-          type: array
-          description: Surface area
-          items:
-            type: number
-            description: Surface area
-            format: double
-        principalAxes:
-          type: array
-          description: Vector coordinates of the principal axes. Use `BTVector3d-389` as the `btType`.
-          items:
-            $ref: '#/components/schemas/BTVector3d-389'
-        principalInertia:
-          type: array
-          description: Principal moments of inertia
-          items:
-            type: number
-            description: Principal moments of inertia
-            format: double
-        volume:
-          type: array
-          description: Volume
-          items:
-            type: number
-            description: Volume
-            format: double
-      description: Mass properties information.
-    Texture:
-      type: object
-      properties:
-        extensions:
-          type: object
-          additionalProperties:
-            type: object
-        extras:
-          type: object
-        name:
-          type: string
-        sampler:
-          type: integer
-          format: int32
-        source:
-          type: integer
-          format: int32
-    GBTGraphicsPrimitiveType:
-      type: string
-      enum:
-      - POINTS
-      - LINES
-      - INFINITE_LINES
-      - TRIANGLES
-      - TRIANGLE_STRIP
-      - SILHOUETTES
-      - PRIMITIVE_LINE
-      - UNKNOWN
-    GBTTolerancePrecision:
-      type: string
-      enum:
-      - DEFAULT
-      - ONES
-      - TENTHS
-      - HUNDREDTHS
-      - THOUSANDTHS
-      - TEN_THOUSANDTHS
-      - HUNDRED_THOUSANDTHS
-      - MILLIONTHS
-      - UNKNOWN
-    GBTTableColumnWidthUnits:
-      type: string
-      enum:
-      - PERCENT
-      - CHARS
-      - PIXELS
-      - UNKNOWN
-    BTFullElementId-756:
-      type: object
-      properties:
-        btType:
-          type: string
-          description: Type of JSON object.
-        configured:
-          type: boolean
-        elementId:
-          type: string
-        microversionId:
-          $ref: '#/components/schemas/BTMicroversionId-366'
-        microversionIdAndConfiguration:
-          $ref: '#/components/schemas/BTMicroversionIdAndConfiguration-2338'
-        target:
-          $ref: '#/components/schemas/BTMicroversionIdAndConfiguration-2338'
-      discriminator:
-        propertyName: btType
-        mapping:
-          BTFullElementIdWithDocument-1729: '#/components/schemas/BTFullElementIdWithDocument-1729'
-    BTObjectId:
-      type: object
-      properties:
-        empty:
-          type: boolean
-    GBTToleranceType:
-      type: string
-      enum:
-      - NONE
-      - SYMMETRICAL
-      - DEVIATION
-      - LIMITS
-      - MIN
-      - MAX
-      - FIT
-      - FIT_WITH_TOLERANCE
-      - FIT_TOLERANCE_ONLY
-      - DEFAULT
-      - BASIC
-      - UNKNOWN
-    GBTCurveTypeEnum:
-      type: string
-      enum:
-      - OTHER
-      - LINE
-      - CIRCLE
-      - ELLIPSE
-      - BCURVE
-      - ICURVE
-      - UNKNOWN
-    BTBaseEntityData-33:
-      type: object
-      properties:
-        btType:
-          type: string
-          description: Type of JSON object.
-        constructionPlane:
-          type: boolean
-        copyWithoutGeometry:
-          $ref: '#/components/schemas/BTBaseEntityData-33'
-        decompressed:
-          $ref: '#/components/schemas/BTBaseEntityData-33'
-        defaultPane:
-          type: boolean
-        deletion:
-          type: boolean
-        featureIds:
-          type: array
-          items:
-            type: string
-        fromSketch:
-          type: boolean
-        geometries:
-          type: array
-          items:
-            $ref: '#/components/schemas/BTEntityGeometry-35'
-        origin:
-          type: boolean
-      discriminator:
-        propertyName: btType
-        mapping:
-          BTEntityDeletion-24: '#/components/schemas/BTEntityDeletion-24'
-          BTFeatureEntity-34: '#/components/schemas/BTFeatureEntity-34'
-    GBTAnnotationAttachmentLocation:
-      type: string
-      enum:
-      - TOP_MIDDLE
-      - BOTTOM_MIDDLE
-      - OPPOSITE_LEADER_EDGE
-      - LEFT_MIDDLE
-      - RIGHT_MIDDLE
-      - UNKNOWN
-    BTCurveDescription-1583:
-      type: object
-      properties:
-        btType:
-          type: string
-          description: Type of JSON object.
-        direction:
-          $ref: '#/components/schemas/BTVector3d-389'
-        directionOrientedWithFace:
-          $ref: '#/components/schemas/BTVector3d-389'
-        origin:
-          $ref: '#/components/schemas/BTVector3d-389'
-        type:
-          $ref: '#/components/schemas/GBTCurveTypeEnum'
-      discriminator:
-        propertyName: btType
-        mapping:
-          BTCircleDescription-1145: '#/components/schemas/BTCircleDescription-1145'
-          BTEllipseDescription-866: '#/components/schemas/BTEllipseDescription-866'
-          BTLineDescription-1559: '#/components/schemas/BTLineDescription-1559'
-          BTSplineDescription-2118: '#/components/schemas/BTSplineDescription-2118'
-    GBTGraphicsBufferTarget:
-      type: string
-      enum:
-      - ARRAY_BUFFER
-      - ELEMENT_ARRAY_BUFFER
-      - ENTITY_PART_INDEX_BUFFER
-      - ENTITY_RANGE_BUFFER
-      - SKETCH_ENTITY_PARTID_INDEX_COUNT_ENTITY_COUNT_BUFFER
-      - UNKNOWN
-    BufferView:
-      type: object
-      properties:
-        buffer:
-          type: integer
-          format: int32
-        byteLength:
-          type: integer
-          format: int32
-        byteOffset:
-          type: integer
-          format: int32
-        byteStride:
-          type: integer
-          format: int32
-        extensions:
-          type: object
-          additionalProperties:
-            type: object
-        extras:
-          type: object
-        name:
-          type: string
-        target:
-          type: integer
-          format: int32
-    AnimationChannelTarget:
-      type: object
-      properties:
-        extensions:
-          type: object
-          additionalProperties:
-            type: object
-        extras:
-          type: object
-        node:
-          type: integer
-          format: int32
-        path:
-          type: string
-    CameraOrthographic:
-      type: object
-      properties:
-        extensions:
-          type: object
-          additionalProperties:
-            type: object
-        extras:
-          type: object
-        xmag:
-          type: number
-          format: float
-        ymag:
-          type: number
-          format: float
-        zfar:
-          type: number
-          format: float
-        znear:
-          type: number
-          format: float
-    GBTBodyType:
-      type: string
-      enum:
-      - SOLID
-      - SHEET
-      - WIRE
-      - POINT
-      - MATE_CONNECTOR
-      - COMPOSITE
-      - UNKNOWN
-    BTDecal-2404:
-      type: object
-      properties:
-        btType:
-          type: string
-          description: Type of JSON object.
-        imageSourceId:
-          type: string
-        mappings:
-          type: array
-          items:
-            $ref: '#/components/schemas/BTImageMapping-3821'
-    GBTSMApplicationType:
-      type: string
-      enum:
-      - SHEET_METAL
-      - FLEXIBLE_PCB
-      - NONE
-      - UNKNOWN
-    Skin:
-      type: object
-      properties:
-        extensions:
-          type: object
-          additionalProperties:
-            type: object
-        extras:
-          type: object
-        inverseBindMatrices:
-          type: integer
-          format: int32
-        joints:
-          type: array
-          items:
-            type: integer
-            format: int32
-        name:
-          type: string
-        skeleton:
-          type: integer
-          format: int32
-    BTPartMaterial-1445:
-      type: object
-      properties:
-        btType:
-          type: string
-          description: Type of JSON object.
-        id:
-          type: string
-        libraryName:
-          type: string
-        libraryReference:
-          $ref: '#/components/schemas/BTElementReference-725'
-        name:
-          type: string
-        properties:
-          type: object
-          additionalProperties:
-            $ref: '#/components/schemas/BTPartMaterialProperty-1453'
-        version:
-          type: integer
-          format: int32
-    BTPartData-16:
-      type: object
-      properties:
-        bestAvailableTessellationSetting:
-          $ref: '#/components/schemas/GBTTessellationSettingEnum'
-        boundsDiameter:
-          type: number
-          format: double
-        btType:
-          type: string
-          description: Type of JSON object.
-        closedConstituentPartData:
-          $ref: '#/components/schemas/BTClosedConstituentPartData-2911'
-        coarsePlanarFaceTriangleCount:
-          type: integer
-          format: int32
-        coarseTriangleCount:
-          type: integer
-          format: int32
-        constituentBodyDeterministicIds:
-          type: array
-          items:
-            type: string
-        copyWithoutEntities:
-          $ref: '#/components/schemas/BTPartData-16'
-        entityDIds:
-          type: array
-          items:
-            type: string
-        entityDeterministicIds:
-          type: array
-          items:
-            type: string
-        flattenedToUnflattenedEntitiesMapping:
-          type: object
-          additionalProperties:
-            type: array
-            items:
-              type: string
-        flattenedToUnflattenedMapping:
-          type: object
-          additionalProperties:
-            type: string
-        highBoxCorner:
-          $ref: '#/components/schemas/BTVector3d-389'
-        isACopyForTessellationSettings:
-          type: boolean
-        isAssociatedWithFlat:
-          type: boolean
-        isBendCenterLineBody:
-          type: boolean
-        isClosedComposite:
-          type: boolean
-        isComposite:
-          type: boolean
-        isDeletion:
-          type: boolean
-        isEntitylessPartData:
-          type: boolean
-        isFlattenedSheetMetalBody:
-          type: boolean
-        isOpenComposite:
-          type: boolean
-        lowBoxCorner:
-          $ref: '#/components/schemas/BTVector3d-389'
-        ownerFlattenedBodyId:
-          type: string
-        sheetMetalModelId:
-          type: string
-        sheetMetalOrderId:
-          type: string
-        shouldAlwaysUseHighestQualityTessellation:
-          type: boolean
-        tessellationSettings:
-          type: array
-          items:
-            type: integer
-            format: int32
-        totalEntityCount:
-          type: integer
-          format: int32
-        userTessellationSetting:
-          $ref: '#/components/schemas/GBTTessellationSettingEnum'
-    BTSketchImageDisplayData-1379:
-      type: object
-      properties:
-        bottomLeftCorner:
-          $ref: '#/components/schemas/BTVector3d-389'
-        bottomRightCorner:
-          $ref: '#/components/schemas/BTVector3d-389'
-        btType:
-          type: string
-          description: Type of JSON object.
-        entities:
-          type: array
-          items:
-            $ref: '#/components/schemas/BTSketchEntityDisplayData-354'
-        featureId:
-          type: string
-        isElementLibraryReference:
-          type: boolean
-        isOnFlat:
-          type: boolean
-        points:
-          type: array
-          items:
-            type: number
-            format: double
-        sourceId:
-          type: string
-        topLeftCorner:
-          $ref: '#/components/schemas/BTVector3d-389'
-    GlTF:
-      type: object
-      properties:
-        accessors:
-          type: array
-          items:
-            $ref: '#/components/schemas/Accessor'
-        animations:
-          type: array
-          items:
-            $ref: '#/components/schemas/Animation'
-        asset:
-          $ref: '#/components/schemas/Asset'
-        bufferViews:
-          type: array
-          items:
-            $ref: '#/components/schemas/BufferView'
-        buffers:
-          type: array
-          items:
-            $ref: '#/components/schemas/Buffer'
-        cameras:
-          type: array
-          items:
-            $ref: '#/components/schemas/Camera'
-        extensions:
-          type: object
-          additionalProperties:
-            type: object
-        extensionsRequired:
-          type: array
-          items:
-            type: string
-        extensionsUsed:
-          type: array
-          items:
-            type: string
-        extras:
-          type: object
-        images:
-          type: array
-          items:
-            $ref: '#/components/schemas/Image'
-        materials:
-          type: array
-          items:
-            $ref: '#/components/schemas/Material'
-        meshes:
-          type: array
-          items:
-            $ref: '#/components/schemas/Mesh'
-        nodes:
-          type: array
-          items:
-            $ref: '#/components/schemas/Node'
-        samplers:
-          type: array
-          items:
-            $ref: '#/components/schemas/Sampler'
-        scene:
-          type: integer
-          format: int32
-        scenes:
-          type: array
-          items:
-            $ref: '#/components/schemas/Scene'
-        skins:
-          type: array
-          items:
-            $ref: '#/components/schemas/Skin'
-        textures:
-          type: array
-          items:
-            $ref: '#/components/schemas/Texture'
-    AnimationChannel:
-      type: object
-      properties:
-        extensions:
-          type: object
-          additionalProperties:
-            type: object
-        extras:
-          type: object
-        sampler:
-          type: integer
-          format: int32
-        target:
-          $ref: '#/components/schemas/AnimationChannelTarget'
-    BTMassPropertiesBulkInfo:
-      type: object
-      properties:
-        bodies:
-          type: object
-          additionalProperties:
-            $ref: '#/components/schemas/BTMassPropertiesInfo'
-        microversionId:
-          type: string
-    BTAnnotationDisplayData-3225:
-      type: object
-      properties:
-        allReferences:
-          type: array
-          items:
-            type: string
-        allReferencesPopulated:
-          type: boolean
-        annotationId:
-          type: string
-        annotationPlane:
-          $ref: '#/components/schemas/BTCoordinateSystem-387'
-        attachmentLocation:
-          $ref: '#/components/schemas/GBTAnnotationAttachmentLocation'
-        basePlane:
-          $ref: '#/components/schemas/BTCoordinateSystem-387'
-        btType:
-          type: string
-          description: Type of JSON object.
-        characteristicId:
-          type: string
-        deterministicId:
-          type: string
-        dxdySegments:
-          type: array
-          items:
-            $ref: '#/components/schemas/BTVector2d-1812'
-        isConstrainedToPlane:
-          type: boolean
-        isDeletion:
-          type: boolean
-        isDerived:
-          type: boolean
-        mainAnnotationId:
-          type: string
-        mainConstraintId:
-          type: string
-        mainFeatureId:
-          type: string
-        mainParameterId:
-          type: string
-        mainPartId:
-          type: string
-        parentCharacteristicId:
-          type: string
-      discriminator:
-        propertyName: btType
-        mapping:
-          BTAnnotationDeleteDisplayData-1815: '#/components/schemas/BTAnnotationDeleteDisplayData-1815'
-          BTAnnotationGTolDisplayData-4887: '#/components/schemas/BTAnnotationGTolDisplayData-4887'
-          BTAnnotationWeldDisplayData-4919: '#/components/schemas/BTAnnotationWeldDisplayData-4919'
-          BTChamferCalloutDisplayData-4471: '#/components/schemas/BTChamferCalloutDisplayData-4471'
-          BTDatumDisplayData-3408: '#/components/schemas/BTDatumDisplayData-3408'
-          BTHoleCalloutDisplayData-3452: '#/components/schemas/BTHoleCalloutDisplayData-3452'
-    BTTable-1825:
-      type: object
-      properties:
-        allRowValues:
-          type: array
-          items:
-            type: array
-            items:
-              type: string
-        btType:
-          type: string
-          description: Type of JSON object.
-        columnCount:
-          type: integer
-          format: int32
-        frozenColumns:
-          type: integer
-          format: int32
-        isFailed:
-          type: boolean
-        nodeId:
-          type: string
-        readOnly:
-          type: boolean
-        rowCount:
-          type: integer
-          format: int32
-        sortOrder:
-          $ref: '#/components/schemas/BTTableSortOrder-4371'
-        statusMessage:
-          type: string
-        statusType:
-          $ref: '#/components/schemas/GBTNodeStatusType'
-        tableColumns:
-          type: array
-          items:
-            $ref: '#/components/schemas/BTTableColumnInfo-1222'
-        tableId:
-          type: string
-        tableRows:
-          type: array
-          items:
-            $ref: '#/components/schemas/BTTableRow-1054'
-        title:
-          type: string
-      discriminator:
-        propertyName: btType
-        mapping:
-          BTAssemblySimulationHistoryTable-5453: '#/components/schemas/BTAssemblySimulationHistoryTable-5453'
-          BTAssemblySimulationStructuralLoadsTable-3867: '#/components/schemas/BTAssemblySimulationStructuralLoadsTable-3867'
-          BTAssemblySimulationTable-3236: '#/components/schemas/BTAssemblySimulationTable-3236'
-          BTBillOfMaterialsTable-1073: '#/components/schemas/BTBillOfMaterialsTable-1073'
-          BTConfiguredPartPropertiesTable-2740: '#/components/schemas/BTConfiguredPartPropertiesTable-2740'
-          BTFSTable-953: '#/components/schemas/BTFSTable-953'
-    BTExportModelBodiesResponse-734:
-      type: object
-      properties:
-        bodies:
-          type: array
-          items:
-            $ref: '#/components/schemas/BTExportModelBody-1272'
-        btType:
-          type: string
-          description: Type of JSON object.
-        errorEnum:
-          $ref: '#/components/schemas/GBTErrorStringEnum'
-        microversionId:
-          $ref: '#/components/schemas/BTMicroversionId-366'
-        nodeIdToReferencedProperty:
-          type: object
-          additionalProperties:
-            $ref: '#/components/schemas/BTExportModelProperties-3216'
-    BTColorInfo:
-      type: object
-      properties:
-        blue:
-          type: integer
-          format: int32
-        green:
-          type: integer
-          format: int32
-        red:
-          type: integer
-          format: int32
-    GBTParameterLibraryRelationType:
-      type: string
-      enum:
-      - DEFAULT
-      - IGNORE_LIBRARY_VALUES
-      - UNKNOWN
-    BTExportModelEdgeGeometry-1125:
-      type: object
-      properties:
-        btType:
-          type: string
-          description: Type of JSON object.
-        endPoint:
-          $ref: '#/components/schemas/BTVector3d-389'
-        endVector:
-          $ref: '#/components/schemas/BTVector3d-389'
-        length:
-          type: number
-          format: double
-        midPoint:
-          $ref: '#/components/schemas/BTVector3d-389'
-        quarterPoint:
-          $ref: '#/components/schemas/BTVector3d-389'
-        startPoint:
-          $ref: '#/components/schemas/BTVector3d-389'
-        startVector:
-          $ref: '#/components/schemas/BTVector3d-389'
-      discriminator:
-        propertyName: btType
-        mapping:
-          BTExportModelArcEdgeGeometry-1257: '#/components/schemas/BTExportModelArcEdgeGeometry-1257'
-    BTPartMaterialInfo:
-      type: object
-      properties:
-        displayName:
-          type: string
-        id:
-          type: string
-        libraryName:
-          type: string
-        libraryReference:
-          $ref: '#/components/schemas/BTExternalElementReferenceInfo'
-        properties:
-          type: array
-          items:
-            $ref: '#/components/schemas/BTPartMaterialPropertyInfo'
-    Material:
-      type: object
-      properties:
-        alphaCutoff:
-          type: number
-          format: float
-        alphaMode:
-          type: string
-        doubleSided:
-          type: boolean
-        emissiveFactor:
-          type: array
-          items:
-            type: number
-            format: float
-        emissiveTexture:
-          $ref: '#/components/schemas/TextureInfo'
-        extensions:
-          type: object
-          additionalProperties:
-            type: object
-        extras:
-          type: object
-        name:
-          type: string
-        normalTexture:
-          $ref: '#/components/schemas/MaterialNormalTextureInfo'
-        occlusionTexture:
-          $ref: '#/components/schemas/MaterialOcclusionTextureInfo'
-        pbrMetallicRoughness:
-          $ref: '#/components/schemas/MaterialPbrMetallicRoughness'
-    BufferViewModel:
-      type: object
-      properties:
-        bufferModel:
-          $ref: '#/components/schemas/BufferModel'
-        bufferViewData:
-          type: object
-          properties:
-            short:
-              type: integer
-              format: int32
-            char:
-              type: string
-            int:
-              type: integer
-              format: int32
-            long:
-              type: integer
-              format: int64
-            float:
-              type: number
-              format: float
-            double:
-              type: number
-              format: double
-            direct:
-              type: boolean
-            readOnly:
-              type: boolean
-        byteLength:
-          type: integer
-          format: int32
-        byteOffset:
-          type: integer
-          format: int32
-        byteStride:
-          type: integer
-          format: int32
-        name:
-          type: string
-        target:
-          type: integer
-          format: int32
-    BTPartDisplayData-17:
-      type: object
-      properties:
-        appearance:
-          $ref: '#/components/schemas/BTGraphicsAppearance-1152'
-        appearanceForNewCell:
-          $ref: '#/components/schemas/BTGraphicsAppearance-1152'
-        btType:
-          type: string
-          description: Type of JSON object.
-        customProperties:
-          $ref: '#/components/schemas/BTPartCustomProperties-1338'
-        defaultColorHash:
-          type: string
-        faultVisibility:
-          $ref: '#/components/schemas/GBTPartFaultVisibility'
-        hasFaults:
-          type: boolean
-        hidden:
-          type: boolean
-        highBoxCorner:
-          $ref: '#/components/schemas/BTVector3d-389'
-        id:
-          type: string
-        isActiveSheetMetal:
-          type: boolean
-        isMesh:
-          type: boolean
-        isModifiable:
-          type: boolean
-        isSheet:
-          type: boolean
-        isSolid:
-          type: boolean
-        isWire:
-          type: boolean
-        lowBoxCorner:
-          $ref: '#/components/schemas/BTVector3d-389'
-        material:
-          $ref: '#/components/schemas/BTPartMaterial-1445'
-        materialForNewCell:
-          $ref: '#/components/schemas/BTPartMaterial-1445'
-        meshState:
-          $ref: '#/components/schemas/GBTMeshState'
-        name:
-          type: string
-        nameForNewCell:
-          type: string
-        ordinal:
-          type: integer
-          format: int32
-        partId:
-          type: string
-        propertyIdToSource:
-          type: object
-          additionalProperties:
-            $ref: '#/components/schemas/BTPartMetadataSource-2895'
-        referencingConfiguredPartNodeIds:
-          type: array
-          items:
-            $ref: '#/components/schemas/BTObjectId'
-        smApplicationType:
-          $ref: '#/components/schemas/GBTSMApplicationType'
-        visibility:
-          $ref: '#/components/schemas/GBTPartVisibility'
-    BTTreeNode-20:
-      type: object
-      properties:
-        btType:
-          type: string
-          description: Type of JSON object.
-        nodeId:
-          type: string
-    BTParameterVisibilityCondition-177:
-      type: object
-      properties:
-        btType:
-          type: string
-          description: Type of JSON object.
-        selfOrChildAlwaysVisible:
-          type: boolean
-      discriminator:
-        propertyName: btType
-        mapping:
-          BTParameterVisibilityAlwaysHidden-176: '#/components/schemas/BTParameterVisibilityAlwaysHidden-176'
-          BTParameterVisibilityAlwaysShown-5487: '#/components/schemas/BTParameterVisibilityAlwaysShown-5487'
-          BTParameterVisibilityInRange-2980: '#/components/schemas/BTParameterVisibilityInRange-2980'
-          BTParameterVisibilityLogical-178: '#/components/schemas/BTParameterVisibilityLogical-178'
-          BTParameterVisibilityOnEqual-180: '#/components/schemas/BTParameterVisibilityOnEqual-180'
-    ElementType:
-      type: string
-      enum:
-      - SCALAR
-      - VEC2
-      - VEC3
-      - VEC4
-      - MAT2
-      - MAT3
-      - MAT4
-    BTTableBaseRowMetadata-3181:
-      type: object
-      properties:
-        btType:
-          type: string
-          description: Type of JSON object.
-        crossHighlightDataIfAny:
-          $ref: '#/components/schemas/BTTableBaseCrossHighlightData-2609'
-      discriminator:
-        propertyName: btType
-        mapping:
-          BTBaseSMJointTableRowMetadata-2232: '#/components/schemas/BTBaseSMJointTableRowMetadata-2232'
-          BTBillOfMaterialsTableRowMetadata-1300: '#/components/schemas/BTBillOfMaterialsTableRowMetadata-1300'
-          BTDatumTableRowMetadata-3060: '#/components/schemas/BTDatumTableRowMetadata-3060'
-          BTFSTableRowMetadata-2262: '#/components/schemas/BTFSTableRowMetadata-2262'
-          BTInspectionTableRowMetadata-2485: '#/components/schemas/BTInspectionTableRowMetadata-2485'
-          BTMirrorTableRowMetaData-5463: '#/components/schemas/BTMirrorTableRowMetaData-5463'
-          BTVariableTableRowMetadata-3912: '#/components/schemas/BTVariableTableRowMetadata-3912'
-    GBTPartFaultVisibility:
-      type: string
-      enum:
-      - UNSPECIFIED
-      - HIDDEN
-      - VISIBLE
-      - UNKNOWN
     Asset:
       type: object
       properties:
@@ -5897,85 +5930,100 @@ components:
           type: string
         version:
           type: string
-    BTPartCustomProperties-1338:
+    AccessorModel:
       type: object
       properties:
-        btType:
-          type: string
-          description: Type of JSON object.
-        description:
-          type: string
-        partNumber:
-          type: string
-        productLine:
-          type: string
-        project:
-          type: string
-        properties:
-          type: object
-          additionalProperties:
-            type: string
-        revision:
-          type: string
-        tessellationSetting:
-          type: string
-        title1:
-          type: string
-        title2:
-          type: string
-        title3:
-          type: string
-        vendor:
-          type: string
-    BTGraphicsAppearance-1152:
-      type: object
-      properties:
-        btType:
-          type: string
-          description: Type of JSON object.
-        color:
-          type: array
-          items:
-            type: string
-            format: byte
-        nonTrivial:
-          type: boolean
-        opacity:
+        accessorData:
+          $ref: '#/components/schemas/AccessorData'
+        bufferViewModel:
+          $ref: '#/components/schemas/BufferViewModel'
+        byteOffset:
           type: integer
           format: int32
-        reset:
-          type: boolean
-        rgbaColor:
+        byteStride:
+          type: integer
+          format: int32
+        componentSizeInBytes:
+          type: integer
+          format: int32
+        componentType:
+          type: integer
+          format: int32
+        count:
+          type: integer
+          format: int32
+        elementSizeInBytes:
+          type: integer
+          format: int32
+        elementType:
+          $ref: '#/components/schemas/ElementType'
+        max:
           type: array
           items:
-            type: string
-            format: byte
-        type:
-          $ref: '#/components/schemas/GBTAppearanceType'
-        usableAppearance:
-          type: boolean
-      discriminator:
-        propertyName: btType
-        mapping:
-          BTGeneratedGraphicsAppearance-4159: '#/components/schemas/BTGeneratedGraphicsAppearance-4159'
-    BTTableCellModifier-4883:
+            type: number
+        min:
+          type: array
+          items:
+            type: number
+        name:
+          type: string
+    BTExportTessellatedFacesResponse-898:
       type: object
       properties:
+        bodies:
+          type: array
+          items:
+            $ref: '#/components/schemas/BTExportTessellatedBody-3398'
+        bodiesInfo:
+          $ref: '#/components/schemas/BTExportModelBodiesResponse-734'
         btType:
           type: string
           description: Type of JSON object.
-      discriminator:
-        propertyName: btType
-        mapping:
-          BTTableCellModifierForceShowConfigured-5170: '#/components/schemas/BTTableCellModifierForceShowConfigured-5170'
-          BTTableCellModifierInfo-4585: '#/components/schemas/BTTableCellModifierInfo-4585'
-          BTTableCellModifierOpenFeature-1614: '#/components/schemas/BTTableCellModifierOpenFeature-1614'
-    GBTBSFeatureVisibility:
+        combineCompositePartConstituents:
+          type: boolean
+        displayData:
+          $ref: '#/components/schemas/BTPartStudioDisplayData-346'
+        documentId:
+          type: string
+        elementId:
+          type: string
+        errorEnum:
+          $ref: '#/components/schemas/GBTErrorStringEnum'
+        facetPoints:
+          type: array
+          items:
+            $ref: '#/components/schemas/BTVector3d-389'
+        fullElementId:
+          $ref: '#/components/schemas/BTFullElementId-756'
+        outputFaceAppearances:
+          type: boolean
+        outputSeparateFaceNodes:
+          type: boolean
+    AccessorSparse:
+      type: object
+      properties:
+        count:
+          type: integer
+          format: int32
+        extensions:
+          type: object
+          additionalProperties:
+            type: object
+        extras:
+          type: object
+        indices:
+          $ref: '#/components/schemas/AccessorSparseIndices'
+        values:
+          $ref: '#/components/schemas/AccessorSparseValues'
+    GBTCurveTypeEnum:
       type: string
       enum:
-      - UNSET
-      - HIDDEN
-      - VISIBLE
+      - OTHER
+      - LINE
+      - CIRCLE
+      - ELLIPSE
+      - BCURVE
+      - ICURVE
       - UNKNOWN
     BTMicroversionIdAndConfigurationInterval-2364:
       type: object
@@ -5991,48 +6039,11 @@ components:
           $ref: '#/components/schemas/BTMicroversionIdInterval-367'
         to:
           $ref: '#/components/schemas/BTMicroversionIdAndConfiguration-2338'
-    BTCosmeticThreadMetadata-3248:
-      type: object
-      properties:
-        btType:
-          type: string
-          description: Type of JSON object.
-      allOf:
-      - $ref: '#/components/schemas/BTDomainSpecificMetadata-961'
-      - type: object
-        properties:
-          btType:
-            type: string
-          cylinderRadius:
-            type: number
-            format: double
-          cylinderSystem:
-            $ref: '#/components/schemas/BTCoordinateSystem-387'
-          pitch:
-            type: number
-            format: double
-          threadLength:
-            type: number
-            format: double
-    BTExportModelVertex-858:
-      type: object
-      properties:
-        btType:
-          type: string
-          description: Type of JSON object.
-        id:
-          type: string
-        point:
-          $ref: '#/components/schemas/BTVector3d-389'
-    BTAssemblyReferencesDisplayData-1562:
+    BTElementDisplayData-326:
       type: object
       properties:
         annotationsForElement:
           $ref: '#/components/schemas/BTAnnotationElementDisplayData-894'
-        assemblyReferences:
-          type: array
-          items:
-            $ref: '#/components/schemas/BTSingleReferenceDisplayData-1943'
         btType:
           type: string
           description: Type of JSON object.
@@ -6057,57 +6068,13 @@ components:
           $ref: '#/components/schemas/BTMicroversionIdInterval-367'
         versionForRasterization:
           $ref: '#/components/schemas/BTElementDisplayData-326'
-    Node:
-      type: object
-      properties:
-        camera:
-          type: integer
-          format: int32
-        children:
-          type: array
-          items:
-            type: integer
-            format: int32
-        extensions:
-          type: object
-          additionalProperties:
-            type: object
-        extras:
-          type: object
-        matrix:
-          type: array
-          items:
-            type: number
-            format: float
-        mesh:
-          type: integer
-          format: int32
-        name:
-          type: string
-        rotation:
-          type: array
-          items:
-            type: number
-            format: float
-        scale:
-          type: array
-          items:
-            type: number
-            format: float
-        skin:
-          type: integer
-          format: int32
-        translation:
-          type: array
-          items:
-            type: number
-            format: float
-        weights:
-          type: array
-          items:
-            type: number
-            format: float
-    Accessor:
+      discriminator:
+        propertyName: btType
+        mapping:
+          BTAssemblyReferencesDisplayData-1562: '#/components/schemas/BTAssemblyReferencesDisplayData-1562'
+          BTPartStudioDisplayDataBase-2751: '#/components/schemas/BTPartStudioDisplayDataBase-2751'
+          BTRootAssemblyDisplayData-96: '#/components/schemas/BTRootAssemblyDisplayData-96'
+    AccessorSparseIndices:
       type: object
       properties:
         bufferView:
@@ -6119,31 +6086,80 @@ components:
         componentType:
           type: integer
           format: int32
-        count:
-          type: integer
-          format: int32
         extensions:
           type: object
           additionalProperties:
             type: object
         extras:
           type: object
-        max:
+    MaterialPbrMetallicRoughness:
+      type: object
+      properties:
+        baseColorFactor:
           type: array
           items:
             type: number
-        min:
-          type: array
-          items:
-            type: number
+            format: float
+        baseColorTexture:
+          $ref: '#/components/schemas/TextureInfo'
+        extensions:
+          type: object
+          additionalProperties:
+            type: object
+        extras:
+          type: object
+        metallicFactor:
+          type: number
+          format: float
+        metallicRoughnessTexture:
+          $ref: '#/components/schemas/TextureInfo'
+        roughnessFactor:
+          type: number
+          format: float
+    BTPartMaterial-1445:
+      type: object
+      properties:
+        btType:
+          type: string
+          description: Type of JSON object.
+        id:
+          type: string
+        libraryName:
+          type: string
+        libraryReference:
+          $ref: '#/components/schemas/BTElementReference-725'
         name:
           type: string
-        normalized:
-          type: boolean
-        sparse:
-          $ref: '#/components/schemas/AccessorSparse'
-        type:
+        properties:
+          type: object
+          additionalProperties:
+            $ref: '#/components/schemas/BTPartMaterialProperty-1453'
+        version:
+          type: integer
+          format: int32
+    BTCosmeticThreadMetadata-3248:
+      type: object
+      properties:
+        btType:
           type: string
+          description: Type of JSON object.
+      allOf:
+      - $ref: '#/components/schemas/BTDomainSpecificMetadata-961'
+      - type: object
+        properties:
+          btType:
+            type: string
+          cylinderRadius:
+            type: number
+            format: double
+          cylinderSystem:
+            $ref: '#/components/schemas/BTCoordinateSystem-387'
+          pitch:
+            type: number
+            format: double
+          threadLength:
+            type: number
+            format: double
   securitySchemes:
     OAuth2:
       type: oauth2

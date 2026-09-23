@@ -1,34 +1,15 @@
-openapi: 3.0.1
+openapi: 3.2.0
 info:
-  title: Onshape REST Account MetadataCategory API
+  title: Onshape REST Metadata Category API
   description: '## Welcome to the Onshape REST API Explorer
 
 
-    **See the [API Explorer Guide](https://onshape-public.github.io/docs/api-intro/explorer/) for help navigating this page.**
+    **See the API Explorer Guide for help navigating this page.**
 
 
     ### Using this page
 
-    1. Sign in to your [Onshape](https://cad.onshape.com) account in another tab.
-
-    2. Click the `Try it out` button below. It toggles to a `Cancel` button when selected.
-
-
-    ### Authenticating
-
-    To authenticate your calls, click the `Authorize` button. See [API Explorer Guide: Authentication](https://onshape-public.github.io/docs/api-intro/explorer/#authentication) for details. Calls made when authenticated via API Keys or OAuth count against your annual [API limits](https://onshape-public.github.io/docs/auth/limits/#annual-api-call-limits).
-
-    * **Tip:** To ensure the current session isn''t used when trying other authentication techniques, make sure to [remove the Onshape cookie](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site) as per the instructions for your browser, or use a private or incognito window.
-
-
-    ### Additional resources
-
-
-    * [Onshape API Guide](https://onshape-public.github.io/docs/): Our full suite of developer guides, to be used as an accompaniment to this API Explorer.
-
-    * [Onshape Developer Portal](https://cad.onshape.com/appstore/dev-portal): The Onshape portal for managing your API keys, OAuth2 credentials, your Onshape applications, and your Onshape App Store entries.
-
-    * [Authentication Guide](https://onshape-public.github.io/docs/auth/): Our guide to using API keys, request signatures, and OAuth2 in your Onshape applications.'
+    1.'
   termsOfService: https://www.onshape.com/legal/terms-of-use
   contact:
     email: api-support@onshape.zendesk.com
@@ -65,7 +46,7 @@ paths:
     get:
       tags:
       - MetadataCategory
-      summary: Get properties associated with the specified metadata categories.
+      summary: Get properties associated with the specified metadata categories
       description: 'An object''s category specifies its type: Part, Assembly, Drawing, etc. Available properties depend on the object''s category.'
       operationId: getCategoryProperties
       parameters:
@@ -140,76 +121,6 @@ paths:
       x-BTVisibility: PRODUCTION
 components:
   schemas:
-    BTComputedAssemblyPropertyErrorPolicy:
-      type: string
-      enum:
-      - ExcludeFromComputation
-      - TreatAsZero
-      - TreatAsTrue
-      - TreatAsFalse
-      - PropagateError
-    BTComputedAssemblyPropertyConfig:
-      type: object
-      properties:
-        aggregatedPropertyId:
-          type: string
-        aggregationOperator:
-          $ref: '#/components/schemas/BTComputedAssemblyPropertyAggregationOperator'
-        errorValuePolicy:
-          $ref: '#/components/schemas/BTComputedAssemblyPropertyErrorPolicy'
-        filterPropertyId:
-          type: string
-        isFilterPropertyInverted:
-          type: boolean
-        missingValuePolicy:
-          $ref: '#/components/schemas/BTComputedAssemblyPropertyErrorPolicy'
-        secondaryPropertyId:
-          type: string
-    BTMetadataEnumValue:
-      type: object
-      properties:
-        label:
-          type: string
-        state:
-          type: integer
-          format: int32
-        value:
-          type: string
-    BTMetadataCategorySummaryInfo:
-      type: object
-      properties:
-        defaultObjectType:
-          type: integer
-          format: int32
-        description:
-          type: string
-        href:
-          type: string
-          description: URI to fetch complete information of the resource.
-          format: uri
-        id:
-          type: string
-          description: Id of the resource.
-        name:
-          type: string
-          description: Name of the resource.
-        objectTypes:
-          type: array
-          items:
-            type: integer
-            format: int32
-        ownerId:
-          type: string
-        ownerType:
-          type: integer
-          format: int32
-        publishState:
-          type: integer
-          format: int32
-        viewRef:
-          type: string
-          description: URI to visualize the resource in a webclient if applicable.
-          format: uri
     BTComputedAssemblyPropertyAggregationOperator:
       type: string
       enum:
@@ -223,88 +134,6 @@ components:
       - ALL
       - NOT_ANY
       - NOT_ALL
-    BTCategoryPropertyInfo:
-      type: object
-      properties:
-        array:
-          type: boolean
-        assignable:
-          type: boolean
-        blobMimeType:
-          type: string
-        categoryPropertyConfigInfo:
-          $ref: '#/components/schemas/BTCategoryPropertyConfigInfo'
-        categorySummaryInfoList:
-          type: array
-          items:
-            $ref: '#/components/schemas/BTMetadataCategorySummaryInfo'
-        description:
-          type: string
-        editableInMicroversion:
-          type: boolean
-        editableInVersion:
-          type: boolean
-        href:
-          type: string
-          description: URI to fetch complete information of the resource.
-          format: uri
-        id:
-          type: string
-          description: Id of the resource.
-        name:
-          type: string
-          description: Name of the resource.
-        objectDefName:
-          type: string
-        ownerId:
-          type: string
-        ownerType:
-          type: integer
-          format: int32
-        uiReadonlyInMicroversion:
-          type: boolean
-        uiReadonlyInVersion:
-          type: boolean
-        valueType:
-          type: integer
-          format: int32
-        viewRef:
-          type: string
-          description: URI to visualize the resource in a webclient if applicable.
-          format: uri
-    BTListResponseBTCategoryPropertyInfo:
-      type: object
-      properties:
-        href:
-          type: string
-          description: URI for current page of resources.
-          format: uri
-        items:
-          type: array
-          description: Array of items in the current page.
-          items:
-            $ref: '#/components/schemas/BTCategoryPropertyInfo'
-        next:
-          type: string
-          description: URI for next page of the resources if more are available.
-          format: uri
-        previous:
-          type: string
-          description: URI for previous page of the resources.
-          format: uri
-      description: A list of resources that typically supports paging.
-    BTComputedPartPropertyConfig:
-      type: object
-      properties:
-        computedPartPropertySpecFunction:
-          type: string
-        computedPartPropertySpecNamespace:
-          type: string
-        computedPropertyFunctionReturnType:
-          type: integer
-          format: int32
-        propertyFunctionDocumentId:
-          type: string
     BTCategoryPropertyConfigInfo:
       type: object
       properties:
@@ -381,6 +210,158 @@ components:
           format: int32
         required:
           type: boolean
+    BTComputedPartPropertyConfig:
+      type: object
+      properties:
+        computedPartPropertySpecFunction:
+          type: string
+        computedPartPropertySpecNamespace:
+          type: string
+        computedPropertyFunctionReturnType:
+          type: integer
+          format: int32
+        propertyFunctionDocumentId:
+          type: string
+    BTMetadataEnumValue:
+      type: object
+      properties:
+        label:
+          type: string
+        state:
+          type: integer
+          format: int32
+        value:
+          type: string
+    BTMetadataCategorySummaryInfo:
+      type: object
+      properties:
+        defaultObjectType:
+          type: integer
+          format: int32
+        description:
+          type: string
+        href:
+          type: string
+          description: URI to fetch complete information of the resource.
+          format: uri
+        id:
+          type: string
+          description: Id of the resource.
+        name:
+          type: string
+          description: Name of the resource.
+        objectTypes:
+          type: array
+          items:
+            type: integer
+            format: int32
+        ownerId:
+          type: string
+        ownerType:
+          type: integer
+          format: int32
+        publishState:
+          type: integer
+          format: int32
+        viewRef:
+          type: string
+          description: URI to visualize the resource in a webclient if applicable.
+          format: uri
+    BTCategoryPropertyInfo:
+      type: object
+      properties:
+        array:
+          type: boolean
+        assignable:
+          type: boolean
+        blobMimeType:
+          type: string
+        categoryPropertyConfigInfo:
+          $ref: '#/components/schemas/BTCategoryPropertyConfigInfo'
+        categorySummaryInfoList:
+          type: array
+          items:
+            $ref: '#/components/schemas/BTMetadataCategorySummaryInfo'
+        description:
+          type: string
+        editableInMicroversion:
+          type: boolean
+        editableInVersion:
+          type: boolean
+        href:
+          type: string
+          description: URI to fetch complete information of the resource.
+          format: uri
+        id:
+          type: string
+          description: Id of the resource.
+        name:
+          type: string
+          description: Name of the resource.
+        objectDefName:
+          type: string
+        ownerId:
+          type: string
+        ownerType:
+          type: integer
+          format: int32
+        uiReadonlyInMicroversion:
+          type: boolean
+        uiReadonlyInVersion:
+          type: boolean
+        valueType:
+          type: integer
+          format: int32
+        viewRef:
+          type: string
+          description: URI to visualize the resource in a webclient if applicable.
+          format: uri
+    BTListResponseBTCategoryPropertyInfo:
+      type: object
+      properties:
+        href:
+          type: string
+          description: URI for current page of resources.
+          format: uri
+        items:
+          type: array
+          description: Array of items in the current page.
+          items:
+            $ref: '#/components/schemas/BTCategoryPropertyInfo'
+        next:
+          type: string
+          description: URI for next page of the resources if more are available.
+          format: uri
+        previous:
+          type: string
+          description: URI for previous page of the resources.
+          format: uri
+      description: A list of resources that typically supports paging.
+    BTComputedAssemblyPropertyConfig:
+      type: object
+      properties:
+        aggregatedPropertyId:
+          type: string
+        aggregationOperator:
+          $ref: '#/components/schemas/BTComputedAssemblyPropertyAggregationOperator'
+        errorValuePolicy:
+          $ref: '#/components/schemas/BTComputedAssemblyPropertyErrorPolicy'
+        filterPropertyId:
+          type: string
+        isFilterPropertyInverted:
+          type: boolean
+        missingValuePolicy:
+          $ref: '#/components/schemas/BTComputedAssemblyPropertyErrorPolicy'
+        secondaryPropertyId:
+          type: string
+    BTComputedAssemblyPropertyErrorPolicy:
+      type: string
+      enum:
+      - ExcludeFromComputation
+      - TreatAsZero
+      - TreatAsTrue
+      - TreatAsFalse
+      - PropagateError
   securitySchemes:
     OAuth2:
       type: oauth2

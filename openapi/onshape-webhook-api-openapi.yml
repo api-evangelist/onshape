@@ -1,34 +1,15 @@
-openapi: 3.0.1
+openapi: 3.2.0
 info:
-  title: Onshape REST Account Webhook API
+  title: Onshape REST Webhook API
   description: '## Welcome to the Onshape REST API Explorer
 
 
-    **See the [API Explorer Guide](https://onshape-public.github.io/docs/api-intro/explorer/) for help navigating this page.**
+    **See the API Explorer Guide for help navigating this page.**
 
 
     ### Using this page
 
-    1. Sign in to your [Onshape](https://cad.onshape.com) account in another tab.
-
-    2. Click the `Try it out` button below. It toggles to a `Cancel` button when selected.
-
-
-    ### Authenticating
-
-    To authenticate your calls, click the `Authorize` button. See [API Explorer Guide: Authentication](https://onshape-public.github.io/docs/api-intro/explorer/#authentication) for details. Calls made when authenticated via API Keys or OAuth count against your annual [API limits](https://onshape-public.github.io/docs/auth/limits/#annual-api-call-limits).
-
-    * **Tip:** To ensure the current session isn''t used when trying other authentication techniques, make sure to [remove the Onshape cookie](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site) as per the instructions for your browser, or use a private or incognito window.
-
-
-    ### Additional resources
-
-
-    * [Onshape API Guide](https://onshape-public.github.io/docs/): Our full suite of developer guides, to be used as an accompaniment to this API Explorer.
-
-    * [Onshape Developer Portal](https://cad.onshape.com/appstore/dev-portal): The Onshape portal for managing your API keys, OAuth2 credentials, your Onshape applications, and your Onshape App Store entries.
-
-    * [Authentication Guide](https://onshape-public.github.io/docs/auth/): Our guide to using API keys, request signatures, and OAuth2 in your Onshape applications.'
+    1.'
   termsOfService: https://www.onshape.com/legal/terms-of-use
   contact:
     email: api-support@onshape.zendesk.com
@@ -59,14 +40,14 @@ security:
 - BasicAuth: []
 tags:
 - name: Webhook
-  description: Create and manage [webhooks](https://onshape-public.github.io/docs/app-dev/webhook/).
+  description: Create and manage webhooks.
 paths:
   /webhooks:
     get:
       tags:
       - Webhook
-      summary: Get a list of all webhooks registered by a user or company.
-      description: 'See [API Guide: Webhooks](https://onshape-public.github.io/docs/app-dev/webhook/) for implementation details.'
+      summary: Get a list of all webhooks registered by a user or company
+      description: 'See API Guide: Webhooks for implementation details.'
       operationId: getWebhooks
       parameters:
       - name: company
@@ -110,8 +91,8 @@ paths:
     post:
       tags:
       - Webhook
-      summary: Create a new webhook.
-      description: 'Click **Callbacks** below for a list of events your app can subscribe to. See [API Guide: Webhooks](https://onshape-public.github.io/docs/app-dev/webhook/) for implementation details.'
+      summary: Create a new webhook
+      description: 'Click **Callbacks** below for a list of events your app can subscribe to. See API Guide: Webhooks for implementation details.'
       operationId: createWebhook
       requestBody:
         content:
@@ -461,8 +442,8 @@ paths:
     get:
       tags:
       - Webhook
-      summary: Get webhook info by webhook ID.
-      description: 'See [API Guide: Webhooks](https://onshape-public.github.io/docs/app-dev/webhook/) for implementation details.'
+      summary: Get webhook info by webhook ID
+      description: 'See API Guide: Webhooks for implementation details.'
       operationId: getWebhook
       parameters:
       - name: webhookid
@@ -487,8 +468,8 @@ paths:
     post:
       tags:
       - Webhook
-      summary: Update a webhook.
-      description: 'See [API Guide: Webhooks](https://onshape-public.github.io/docs/app-dev/webhook/) for implementation details.'
+      summary: Update a webhook
+      description: 'See API Guide: Webhooks for implementation details.'
       operationId: updateWebhook
       parameters:
       - name: webhookid
@@ -518,8 +499,8 @@ paths:
     delete:
       tags:
       - Webhook
-      summary: Unregister a webhook.
-      description: 'See [API Guide: Webhooks](https://onshape-public.github.io/docs/app-dev/webhook/) for implementation details.'
+      summary: Unregister a webhook
+      description: 'See API Guide: Webhooks for implementation details.'
       operationId: unregisterWebhook
       parameters:
       - name: webhookid
@@ -550,8 +531,8 @@ paths:
     post:
       tags:
       - Webhook
-      summary: Ping a webhook.
-      description: 'See [API Guide: Webhooks](https://onshape-public.github.io/docs/app-dev/webhook/) for implementation details.'
+      summary: Ping a webhook
+      description: 'See API Guide: Webhooks for implementation details.'
       operationId: pingWebhook
       parameters:
       - name: webhookid
@@ -575,20 +556,70 @@ paths:
       x-BTVisibility: PRODUCTION
 components:
   schemas:
-    BTCompanySummaryInfo:
+    BTReleaseItemMessageBody:
+      type: object
+      allOf:
+      - $ref: '#/components/schemas/BTDocumentMessageBody'
+      - type: object
+        properties:
+          elementType:
+            type: integer
+            format: int32
+          isFromInitialState:
+            type: boolean
+          isToTerminalState:
+            type: boolean
+          releaseId:
+            type: string
+          status:
+            type: string
+          transitionName:
+            type: string
+    BTUserSummaryInfo:
+      type: object
+      discriminator:
+        propertyName: jsonType
+        mapping:
+          user-summary: '#/components/schemas/BTUserSummaryInfo'
+          companyuser: '#/components/schemas/BTCompanyUserSummaryInfo'
+          BTUserAdminSummaryInfo: '#/components/schemas/BTUserAdminSummaryInfo'
+          userinfo: '#/components/schemas/BTUserInfo'
+          BTUserOAuth2SummaryInfo: '#/components/schemas/BTUserOAuth2SummaryInfo'
+      allOf:
+      - $ref: '#/components/schemas/BTUserDetailSummaryInfo'
+      - type: object
+        properties:
+          company:
+            $ref: '#/components/schemas/BTCompanySummaryInfo'
+          companyUserState:
+            type: integer
+            format: int32
+          confirmationRequested:
+            type: boolean
+          documentationNameOverride:
+            type: string
+          globalPermissions:
+            $ref: '#/components/schemas/GlobalPermissionInfo'
+          invitationState:
+            type: integer
+            format: int32
+          isExternal:
+            type: boolean
+          isGuest:
+            type: boolean
+          isLight:
+            type: boolean
+          lastLoginTime:
+            type: string
+            format: date-time
+          personalMessageAllowed:
+            type: boolean
+          source:
+            type: integer
+            format: int32
+    BTBaseInfo:
       type: object
       properties:
-        admin:
-          type: boolean
-        description:
-          type: string
-        domainPrefix:
-          type: string
-        enterpriseBaseUrl:
-          type: string
-        enterpriseSubtype:
-          type: integer
-          format: int32
         href:
           type: string
           description: URI to fetch complete information of the resource.
@@ -596,53 +627,34 @@ components:
         id:
           type: string
           description: Id of the resource.
-        image:
-          type: string
         name:
           type: string
           description: Name of the resource.
-        noPublicDocuments:
-          type: boolean
-        ownerId:
-          type: string
-        secondaryDomainPrefixes:
-          uniqueItems: true
-          type: array
-          items:
-            type: string
-        state:
-          type: integer
-          format: int32
-        type:
-          type: integer
-          format: int32
         viewRef:
           type: string
           description: URI to visualize the resource in a webclient if applicable.
           format: uri
-    BTWorkflowMessageBody:
+    BTUserAppMessageBody:
       type: object
       properties:
         appElementSessionId:
+          type: string
+        clientId:
           type: string
         data:
           type: string
         event:
           type: string
+        identityId:
+          type: string
         messageId:
           type: string
-        objectId:
-          type: string
-        objectType:
-          type: string
+        settingType:
+          $ref: '#/components/schemas/BTApplicationSettingsType'
         timestamp:
           type: string
           format: date-time
-        transitionName:
-          type: string
         webhookId:
-          type: string
-        workflowId:
           type: string
     BTPLMMessageBody:
       type: object
@@ -675,11 +687,6 @@ components:
         webhookId:
           type: string
       description: Webhook notification payload for all PLM related notifications.
-    BTWebhookOptions:
-      type: object
-      properties:
-        collapseEvents:
-          type: boolean
     BTUserDetailSummaryInfo:
       type: object
       discriminator:
@@ -699,33 +706,55 @@ components:
             type: string
           lastName:
             type: string
-    BTReleaseItemMessageBody:
+    GlobalPermissionInfo:
       type: object
-      allOf:
-      - $ref: '#/components/schemas/BTDocumentMessageBody'
-      - type: object
-        properties:
-          elementType:
-            type: integer
-            format: int32
-          isFromInitialState:
-            type: boolean
-          isToTerminalState:
-            type: boolean
-          releaseId:
-            type: string
-          status:
-            type: string
-          transitionName:
-            type: string
-    BTRevisionMessageBody:
-      type: object
-      allOf:
-      - $ref: '#/components/schemas/BTReleaseItemMessageBody'
-      - type: object
-        properties:
-          revisionId:
-            type: string
+      properties:
+        accessReports:
+          type: boolean
+        adminEnterprise:
+          type: boolean
+        allowAppStoreAccess:
+          type: boolean
+        allowPublicDocumentsAccess:
+          type: boolean
+        approveReleases:
+          type: boolean
+        branchLockPermissions:
+          type: boolean
+        createDocumentsInRoot:
+          type: boolean
+        createProject:
+          type: boolean
+        createReleases:
+          type: boolean
+        createTasks:
+          type: boolean
+        deletePermanently:
+          type: boolean
+        enableLabs:
+          type: boolean
+        exportFiles:
+          type: boolean
+        importFiles:
+          type: boolean
+        manageGuestUsers:
+          type: boolean
+        manageNonGeometricItems:
+          type: boolean
+        manageRbac:
+          type: boolean
+        manageStandardContentMetadata:
+          type: boolean
+        manageUsers:
+          type: boolean
+        manageWorkflows:
+          type: boolean
+        shareForAnonymousAccess:
+          type: boolean
+        transferDocumentsFromEnterprise:
+          type: boolean
+        useRevisionTools:
+          type: boolean
     BTWebhookInfo:
       type: object
       properties:
@@ -784,184 +813,12 @@ components:
           type: string
           description: URI to visualize the resource in a webclient if applicable.
           format: uri
-    BTUserAppMessageBody:
-      type: object
-      properties:
-        appElementSessionId:
-          type: string
-        clientId:
-          type: string
-        data:
-          type: string
-        event:
-          type: string
-        identityId:
-          type: string
-        messageId:
-          type: string
-        settingType:
-          $ref: '#/components/schemas/BTApplicationSettingsType'
-        timestamp:
-          type: string
-          format: date-time
-        webhookId:
-          type: string
-    BTUserSummaryInfo:
-      type: object
-      discriminator:
-        propertyName: jsonType
-        mapping:
-          user-summary: '#/components/schemas/BTUserSummaryInfo'
-          companyuser: '#/components/schemas/BTCompanyUserSummaryInfo'
-          BTUserAdminSummaryInfo: '#/components/schemas/BTUserAdminSummaryInfo'
-          userinfo: '#/components/schemas/BTUserInfo'
-          BTUserOAuth2SummaryInfo: '#/components/schemas/BTUserOAuth2SummaryInfo'
-      allOf:
-      - $ref: '#/components/schemas/BTUserDetailSummaryInfo'
-      - type: object
-        properties:
-          company:
-            $ref: '#/components/schemas/BTCompanySummaryInfo'
-          companyUserState:
-            type: integer
-            format: int32
-          confirmationRequested:
-            type: boolean
-          documentationNameOverride:
-            type: string
-          globalPermissions:
-            $ref: '#/components/schemas/GlobalPermissionInfo'
-          invitationState:
-            type: integer
-            format: int32
-          isExternal:
-            type: boolean
-          isGuest:
-            type: boolean
-          isLight:
-            type: boolean
-          lastLoginTime:
-            type: string
-            format: date-time
-          personalMessageAllowed:
-            type: boolean
-          source:
-            type: integer
-            format: int32
-    BTDocumentMessageBody:
-      type: object
-      properties:
-        appElementSessionId:
-          type: string
-        commentId:
-          type: string
-        data:
-          type: string
-        documentId:
-          type: string
-        documentState:
-          type: string
-        documentType:
-          type: integer
-          format: int32
-        elementId:
-          type: string
-        entryId:
-          type: string
-        entryType:
-          type: string
-        event:
-          type: string
-        messageId:
-          type: string
-        metadataObjectType:
-          type: string
-        newPermissionSet:
-          type: array
-          items:
-            type: string
-        oldPermissionSet:
-          type: array
-          items:
-            type: string
-        partId:
-          type: string
-        partIdentity:
-          type: string
-        partNumber:
-          type: string
-        resourceType:
-          type: string
-        shareAction:
-          type: string
-        timestamp:
-          type: string
-          format: date-time
-        translationId:
-          type: string
-        userId:
-          type: string
-        versionId:
-          type: string
-        webhookId:
-          type: string
-        workspaceId:
-          type: string
-    BTWebhookLifecycleMessageBody:
-      type: object
-      properties:
-        appElementSessionId:
-          type: string
-        data:
-          type: string
-        event:
-          type: string
-        messageId:
-          type: string
-        timestamp:
-          type: string
-          format: date-time
-        webhookId:
-          type: string
-    BTBaseInfo:
-      type: object
-      properties:
-        href:
-          type: string
-          description: URI to fetch complete information of the resource.
-          format: uri
-        id:
-          type: string
-          description: Id of the resource.
-        name:
-          type: string
-          description: Name of the resource.
-        viewRef:
-          type: string
-          description: URI to visualize the resource in a webclient if applicable.
-          format: uri
     BTApplicationSettingsType:
       type: string
       enum:
       - USER
       - COMPANY
       - TEAM
-    JobType:
-      type: string
-      description: All types of PLM background jobs
-      enum:
-      - SYNC_ITEM
-      - SYNC_BOM
-      - SYNC_RELEASE_CANDIDATE
-    BTWorkspaceMessageBody:
-      type: object
-      allOf:
-      - $ref: '#/components/schemas/BTDocumentMessageBody'
-      - type: object
-        properties:
-          documentMicroversionId:
-            type: string
-            description: The resultant document microverion if applicable created due to workspace modification.
     BTListResponseBTWebhookInfo:
       type: object
       properties:
@@ -983,55 +840,14 @@ components:
           description: URI for previous page of the resources.
           format: uri
       description: A list of resources that typically supports paging.
-    GlobalPermissionInfo:
+    BTRevisionMessageBody:
       type: object
-      properties:
-        accessReports:
-          type: boolean
-        adminEnterprise:
-          type: boolean
-        allowAppStoreAccess:
-          type: boolean
-        allowPublicDocumentsAccess:
-          type: boolean
-        approveReleases:
-          type: boolean
-        branchLockPermissions:
-          type: boolean
-        createDocumentsInRoot:
-          type: boolean
-        createProject:
-          type: boolean
-        createReleases:
-          type: boolean
-        createTasks:
-          type: boolean
-        deletePermanently:
-          type: boolean
-        enableLabs:
-          type: boolean
-        exportFiles:
-          type: boolean
-        importFiles:
-          type: boolean
-        manageGuestUsers:
-          type: boolean
-        manageNonGeometricItems:
-          type: boolean
-        manageRbac:
-          type: boolean
-        manageStandardContentMetadata:
-          type: boolean
-        manageUsers:
-          type: boolean
-        manageWorkflows:
-          type: boolean
-        shareForAnonymousAccess:
-          type: boolean
-        transferDocumentsFromEnterprise:
-          type: boolean
-        useRevisionTools:
-          type: boolean
+      allOf:
+      - $ref: '#/components/schemas/BTReleaseItemMessageBody'
+      - type: object
+        properties:
+          revisionId:
+            type: string
     BTUserBasicSummaryInfo:
       required:
       - jsonType
@@ -1121,6 +937,171 @@ components:
         userId:
           type: string
         versionId:
+          type: string
+        workspaceId:
+          type: string
+    BTWorkflowMessageBody:
+      type: object
+      properties:
+        appElementSessionId:
+          type: string
+        data:
+          type: string
+        event:
+          type: string
+        messageId:
+          type: string
+        objectId:
+          type: string
+        objectType:
+          type: string
+        timestamp:
+          type: string
+          format: date-time
+        transitionName:
+          type: string
+        webhookId:
+          type: string
+        workflowId:
+          type: string
+    BTCompanySummaryInfo:
+      type: object
+      properties:
+        admin:
+          type: boolean
+        description:
+          type: string
+        domainPrefix:
+          type: string
+        enterpriseBaseUrl:
+          type: string
+        enterpriseSubtype:
+          type: integer
+          format: int32
+        href:
+          type: string
+          description: URI to fetch complete information of the resource.
+          format: uri
+        id:
+          type: string
+          description: Id of the resource.
+        image:
+          type: string
+        name:
+          type: string
+          description: Name of the resource.
+        noPublicDocuments:
+          type: boolean
+        ownerId:
+          type: string
+        secondaryDomainPrefixes:
+          uniqueItems: true
+          type: array
+          items:
+            type: string
+        state:
+          type: integer
+          format: int32
+        type:
+          type: integer
+          format: int32
+        viewRef:
+          type: string
+          description: URI to visualize the resource in a webclient if applicable.
+          format: uri
+    BTWebhookLifecycleMessageBody:
+      type: object
+      properties:
+        appElementSessionId:
+          type: string
+        data:
+          type: string
+        event:
+          type: string
+        messageId:
+          type: string
+        timestamp:
+          type: string
+          format: date-time
+        webhookId:
+          type: string
+    BTWebhookOptions:
+      type: object
+      properties:
+        collapseEvents:
+          type: boolean
+    JobType:
+      type: string
+      description: All types of PLM background jobs
+      enum:
+      - SYNC_ITEM
+      - SYNC_BOM
+      - SYNC_RELEASE_CANDIDATE
+    BTWorkspaceMessageBody:
+      type: object
+      allOf:
+      - $ref: '#/components/schemas/BTDocumentMessageBody'
+      - type: object
+        properties:
+          documentMicroversionId:
+            type: string
+            description: The resultant document microverion if applicable created due to workspace modification.
+    BTDocumentMessageBody:
+      type: object
+      properties:
+        appElementSessionId:
+          type: string
+        commentId:
+          type: string
+        data:
+          type: string
+        documentId:
+          type: string
+        documentState:
+          type: string
+        documentType:
+          type: integer
+          format: int32
+        elementId:
+          type: string
+        entryId:
+          type: string
+        entryType:
+          type: string
+        event:
+          type: string
+        messageId:
+          type: string
+        metadataObjectType:
+          type: string
+        newPermissionSet:
+          type: array
+          items:
+            type: string
+        oldPermissionSet:
+          type: array
+          items:
+            type: string
+        partId:
+          type: string
+        partIdentity:
+          type: string
+        partNumber:
+          type: string
+        resourceType:
+          type: string
+        shareAction:
+          type: string
+        timestamp:
+          type: string
+          format: date-time
+        translationId:
+          type: string
+        userId:
+          type: string
+        versionId:
+          type: string
+        webhookId:
           type: string
         workspaceId:
           type: string

@@ -1,34 +1,15 @@
-openapi: 3.0.1
+openapi: 3.2.0
 info:
-  title: Onshape REST Account BlobElement API
+  title: Onshape REST Blob Element API
   description: '## Welcome to the Onshape REST API Explorer
 
 
-    **See the [API Explorer Guide](https://onshape-public.github.io/docs/api-intro/explorer/) for help navigating this page.**
+    **See the API Explorer Guide for help navigating this page.**
 
 
     ### Using this page
 
-    1. Sign in to your [Onshape](https://cad.onshape.com) account in another tab.
-
-    2. Click the `Try it out` button below. It toggles to a `Cancel` button when selected.
-
-
-    ### Authenticating
-
-    To authenticate your calls, click the `Authorize` button. See [API Explorer Guide: Authentication](https://onshape-public.github.io/docs/api-intro/explorer/#authentication) for details. Calls made when authenticated via API Keys or OAuth count against your annual [API limits](https://onshape-public.github.io/docs/auth/limits/#annual-api-call-limits).
-
-    * **Tip:** To ensure the current session isn''t used when trying other authentication techniques, make sure to [remove the Onshape cookie](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site) as per the instructions for your browser, or use a private or incognito window.
-
-
-    ### Additional resources
-
-
-    * [Onshape API Guide](https://onshape-public.github.io/docs/): Our full suite of developer guides, to be used as an accompaniment to this API Explorer.
-
-    * [Onshape Developer Portal](https://cad.onshape.com/appstore/dev-portal): The Onshape portal for managing your API keys, OAuth2 credentials, your Onshape applications, and your Onshape App Store entries.
-
-    * [Authentication Guide](https://onshape-public.github.io/docs/auth/): Our guide to using API keys, request signatures, and OAuth2 in your Onshape applications.'
+    1.'
   termsOfService: https://www.onshape.com/legal/terms-of-use
   contact:
     email: api-support@onshape.zendesk.com
@@ -65,7 +46,7 @@ paths:
     post:
       tags:
       - BlobElement
-      summary: Upload a file and create a blob element from it.
+      summary: Upload a file and create a blob element from it
       description: Request body parameters are multipart fields, so you must use `"Content-Type":"multipart/form-data"` in the request header.
       operationId: uploadFileCreateElement
       parameters:
@@ -110,8 +91,8 @@ paths:
     get:
       tags:
       - BlobElement
-      summary: Download a file from a blob element for the specified workspace/version/microversion.
-      description: 'See [API Guide: Model Translation](https://onshape-public.github.io/docs/api-adv/translation/) for more details.'
+      summary: Download a file from a blob element for the specified…
+      description: 'See API Guide: Model Translation for more details.'
       operationId: downloadFileWorkspace
       parameters:
       - name: did
@@ -170,7 +151,7 @@ paths:
     post:
       tags:
       - BlobElement
-      summary: Update a blob element by uploading a file.
+      summary: Update a blob element by uploading a file
       description: Request body parameters are multipart fields, so you must use `"Content-Type":"multipart/form-data"` in the request header.
       operationId: uploadFileUpdateElement
       parameters:
@@ -226,7 +207,7 @@ paths:
     post:
       tags:
       - BlobElement
-      summary: Change the measurement units for the blob element.
+      summary: Change the measurement units for the blob element
       operationId: updateUnits
       parameters:
       - name: did
@@ -277,8 +258,12 @@ paths:
     post:
       tags:
       - BlobElement
-      summary: Export a blob element to another format.
-      description: "* Use `formatName` in the JSON request body to specify the export file type. Use [Translations/getAllTranslatorFormats]#/Translation/getAllTranslatorFormats) to get a list of valid export file formats. \n* Set `storeInDocument` to `false` to export to a data file. Set to `true` to export to a blob element in the same document. \n* See [API Guide: Model Translation](https://onshape-public.github.io/docs/api-adv/translation/) for more details."
+      summary: Export a blob element to another format
+      description: '* Use `formatName` in the JSON request body to specify the export file type. Use [Translations/getAllTranslatorFormats]#/Translation/getAllTranslatorFormats) to get a list of valid export file formats.
+
+        * Set `storeInDocument` to `false` to export to a data file. Set to `true` to export to a blob element in the same document.
+
+        * See API Guide: Model Translation for more details.'
       operationId: createBlobTranslation
       parameters:
       - name: did
@@ -336,48 +321,6 @@ paths:
       x-BTVisibility: PRODUCTION
 components:
   schemas:
-    BTThumbnailInfo:
-      type: object
-      properties:
-        href:
-          type: string
-          format: uri
-        id:
-          type: string
-        secondarySizes:
-          type: array
-          items:
-            type: array
-            items:
-              $ref: '#/components/schemas/BTThumbnailSizeInfo'
-        sizes:
-          type: array
-          items:
-            $ref: '#/components/schemas/BTThumbnailSizeInfo'
-    BTTranslationRequestState:
-      type: string
-      enum:
-      - ACTIVE
-      - DONE
-      - FAILED
-    BTThumbnailSizeInfo:
-      type: object
-      properties:
-        href:
-          type: string
-          format: uri
-        mediaType:
-          type: string
-        renderMode:
-          type: string
-        sheetName:
-          type: string
-        size:
-          type: string
-        uniqueId:
-          type: string
-        viewOrientation:
-          type: string
     BTTranslationRequestInfo:
       type: object
       properties:
@@ -422,6 +365,291 @@ components:
           format: uri
         workspaceId:
           type: string
+    GBTElementType:
+      type: string
+      enum:
+      - PARTSTUDIO
+      - ASSEMBLY
+      - DRAWING
+      - FEATURESTUDIO
+      - BLOB
+      - APPLICATION
+      - TABLE
+      - BILLOFMATERIALS
+      - VARIABLESTUDIO
+      - PUBLICATIONITEM
+      - UNKNOWN
+    BTDocumentElementProcessingInfo:
+      type: object
+      properties:
+        accelerationUnits:
+          type: string
+        angleUnits:
+          type: string
+        angularVelocityUnits:
+          type: string
+        applicationTarget:
+          $ref: '#/components/schemas/BTApplicationTargetInfo'
+        areaUnits:
+          type: string
+        dataType:
+          type: string
+        deleted:
+          type: boolean
+        densityUnits:
+          type: string
+        elementType:
+          $ref: '#/components/schemas/GBTElementType'
+        energyUnits:
+          type: string
+        filename:
+          type: string
+        forceUnits:
+          type: string
+        foreignDataId:
+          type: string
+        frequencyUnits:
+          type: string
+        id:
+          type: string
+        lengthUnits:
+          type: string
+        massUnits:
+          type: string
+        microversionId:
+          type: string
+        momentUnits:
+          type: string
+        name:
+          type: string
+        pressureUnits:
+          type: string
+        prettyType:
+          type: string
+        safeToShow:
+          type: boolean
+        specifiedUnit:
+          type: string
+        thumbnailInfo:
+          $ref: '#/components/schemas/BTThumbnailInfo'
+        thumbnails:
+          type: string
+          format: uri
+        timeUnits:
+          type: string
+        translationEventKey:
+          type: string
+        translationId:
+          type: string
+        type:
+          type: string
+        unupdatable:
+          type: boolean
+        volumeUnits:
+          type: string
+        zip:
+          $ref: '#/components/schemas/BTZipFileInfo'
+    BTBTranslationRequestParams:
+      type: object
+      properties:
+        allowFaultyParts:
+          type: boolean
+        createComposite:
+          type: boolean
+        createDrawingIfPossible:
+          type: boolean
+        encodedFilename:
+          type: string
+        extractAssemblyHierarchy:
+          type: boolean
+        file:
+          type: string
+          description: The file to upload.
+          format: binary
+        flattenAssemblies:
+          type: boolean
+        formatName:
+          type: string
+        importAppearances:
+          type: boolean
+        importMaterialDensity:
+          type: boolean
+        importWithinDocument:
+          type: boolean
+        joinAdjacentSurfaces:
+          type: boolean
+        locationElementId:
+          type: string
+        locationGroupId:
+          type: string
+        locationPosition:
+          type: integer
+          format: int32
+        makePublic:
+          type: boolean
+        notifyUser:
+          type: boolean
+        onePartPerDoc:
+          type: boolean
+        ownerId:
+          type: string
+        parentId:
+          type: string
+        projectId:
+          type: string
+        repointAppElementVersionRefs:
+          type: boolean
+        splitAssembliesIntoMultipleDocuments:
+          type: boolean
+        storeInDocument:
+          type: boolean
+        translate:
+          type: boolean
+        unit:
+          type: string
+        uploadId:
+          type: string
+        useIGESImportPostProcessing:
+          type: boolean
+        versionString:
+          type: string
+        yAxisIsUp:
+          type: boolean
+      x-BTVisibility-properties:
+        versionDescription: INTERNAL
+        versionId: INTERNAL
+        upgradeFeatureScriptVersion: INTERNAL
+        documentId: INTERNAL
+        versionName: INTERNAL
+        preserveSourceIds: INTERNAL
+    BTApplicationTargetInfo:
+      type: object
+      properties:
+        baseHref:
+          type: string
+          format: uri
+        clientId:
+          type: string
+        supportsCollaboration:
+          type: boolean
+        tabIconHref:
+          type: string
+          format: uri
+    GBTParasolidEncodingType:
+      type: string
+      description: Export Parasolid in `BINARY` (.x_b) or `TEXT` (.x_t) mode.
+      default: TEXT
+      enum:
+      - TEXT
+      - BINARY
+      - UNKNOWN
+    BTPartsExportFilter-4308:
+      type: object
+      properties:
+        btType:
+          type: string
+          description: Type of JSON object.
+        skipAllMesh:
+          type: boolean
+        skipCurves:
+          type: boolean
+        skipPartialMesh:
+          type: boolean
+      description: Skip mesh/curve foreign data creation in individual parts export
+      discriminator:
+        propertyName: btType
+        mapping:
+          BTPartsExportFilter-4308: '#/components/schemas/BTPartsExportFilter-4308'
+    BTThumbnailSizeInfo:
+      type: object
+      properties:
+        href:
+          type: string
+          format: uri
+        mediaType:
+          type: string
+        renderMode:
+          type: string
+        sheetName:
+          type: string
+        size:
+          type: string
+        uniqueId:
+          type: string
+        viewOrientation:
+          type: string
+    BTZipFileInfo:
+      type: object
+      properties:
+        files:
+          type: array
+          items:
+            type: string
+    BTTranslationRequestState:
+      type: string
+      enum:
+      - ACTIVE
+      - DONE
+      - FAILED
+    GBTPreProcessParasolidOption:
+      type: string
+      description: Original geometry processing mode to improve results of translation to STEP.
+      enum:
+      - NO_PRE_PROCESSING
+      - USE_BODYSHOP_PRE_PROCESSING_ADVANCED
+      - USE_TRANSLATOR_PRE_PROCESSING
+      - USE_BODYSHOP_PRE_PROCESSING
+      - USE_BODYSHOP_PRE_PROCESSING_ADVANCED_WITH_SURFS_TO_BSURFS_CONVERTING
+      - UNKNOWN
+    GBTStlEncodingType:
+      type: string
+      description: STL encoding type, `TEXT | BINARY`
+      default: TEXT
+      enum:
+      - TEXT
+      - BINARY
+      - UNKNOWN
+    BTUpdateMeshUnitsParams:
+      type: object
+      properties:
+        units:
+          type: string
+    GBTUrdfMeshFormat:
+      type: string
+      enum:
+      - STL
+      - GLTF
+      - OBJ
+      - UNKNOWN
+    BTThumbnailInfo:
+      type: object
+      properties:
+        href:
+          type: string
+          format: uri
+        id:
+          type: string
+        secondarySizes:
+          type: array
+          items:
+            type: array
+            items:
+              $ref: '#/components/schemas/BTThumbnailSizeInfo'
+        sizes:
+          type: array
+          items:
+            $ref: '#/components/schemas/BTThumbnailSizeInfo'
+    GBTRhinoVersions:
+      type: string
+      enum:
+      - V2
+      - V3
+      - V4
+      - V5
+      - V6
+      - V7
+      - V8
+      - UNKNOWN
     BTTranslateFormatParams:
       required:
       - formatName
@@ -702,249 +930,6 @@ components:
         documentId: INTERNAL
         preserveSourceIds: INTERNAL
         documentVersion: INTERNAL
-    BTDocumentElementProcessingInfo:
-      type: object
-      properties:
-        accelerationUnits:
-          type: string
-        angleUnits:
-          type: string
-        angularVelocityUnits:
-          type: string
-        applicationTarget:
-          $ref: '#/components/schemas/BTApplicationTargetInfo'
-        areaUnits:
-          type: string
-        dataType:
-          type: string
-        deleted:
-          type: boolean
-        densityUnits:
-          type: string
-        elementType:
-          $ref: '#/components/schemas/GBTElementType'
-        energyUnits:
-          type: string
-        filename:
-          type: string
-        forceUnits:
-          type: string
-        foreignDataId:
-          type: string
-        frequencyUnits:
-          type: string
-        id:
-          type: string
-        lengthUnits:
-          type: string
-        massUnits:
-          type: string
-        microversionId:
-          type: string
-        momentUnits:
-          type: string
-        name:
-          type: string
-        pressureUnits:
-          type: string
-        prettyType:
-          type: string
-        safeToShow:
-          type: boolean
-        specifiedUnit:
-          type: string
-        thumbnailInfo:
-          $ref: '#/components/schemas/BTThumbnailInfo'
-        thumbnails:
-          type: string
-          format: uri
-        timeUnits:
-          type: string
-        translationEventKey:
-          type: string
-        translationId:
-          type: string
-        type:
-          type: string
-        unupdatable:
-          type: boolean
-        volumeUnits:
-          type: string
-        zip:
-          $ref: '#/components/schemas/BTZipFileInfo'
-    GBTParasolidEncodingType:
-      type: string
-      description: Export Parasolid in `BINARY` (.x_b) or `TEXT` (.x_t) mode.
-      default: TEXT
-      enum:
-      - TEXT
-      - BINARY
-      - UNKNOWN
-    BTZipFileInfo:
-      type: object
-      properties:
-        files:
-          type: array
-          items:
-            type: string
-    BTBTranslationRequestParams:
-      type: object
-      properties:
-        allowFaultyParts:
-          type: boolean
-        createComposite:
-          type: boolean
-        createDrawingIfPossible:
-          type: boolean
-        encodedFilename:
-          type: string
-        extractAssemblyHierarchy:
-          type: boolean
-        file:
-          type: string
-          description: The file to upload.
-          format: binary
-        flattenAssemblies:
-          type: boolean
-        formatName:
-          type: string
-        importAppearances:
-          type: boolean
-        importMaterialDensity:
-          type: boolean
-        importWithinDocument:
-          type: boolean
-        joinAdjacentSurfaces:
-          type: boolean
-        locationElementId:
-          type: string
-        locationGroupId:
-          type: string
-        locationPosition:
-          type: integer
-          format: int32
-        makePublic:
-          type: boolean
-        notifyUser:
-          type: boolean
-        onePartPerDoc:
-          type: boolean
-        ownerId:
-          type: string
-        parentId:
-          type: string
-        projectId:
-          type: string
-        repointAppElementVersionRefs:
-          type: boolean
-        splitAssembliesIntoMultipleDocuments:
-          type: boolean
-        storeInDocument:
-          type: boolean
-        translate:
-          type: boolean
-        unit:
-          type: string
-        uploadId:
-          type: string
-        useIGESImportPostProcessing:
-          type: boolean
-        versionString:
-          type: string
-        yAxisIsUp:
-          type: boolean
-      x-BTVisibility-properties:
-        versionDescription: INTERNAL
-        versionId: INTERNAL
-        upgradeFeatureScriptVersion: INTERNAL
-        documentId: INTERNAL
-        versionName: INTERNAL
-        preserveSourceIds: INTERNAL
-    BTUpdateMeshUnitsParams:
-      type: object
-      properties:
-        units:
-          type: string
-    BTPartsExportFilter-4308:
-      type: object
-      properties:
-        btType:
-          type: string
-          description: Type of JSON object.
-        skipAllMesh:
-          type: boolean
-        skipCurves:
-          type: boolean
-        skipPartialMesh:
-          type: boolean
-      description: Skip mesh/curve foreign data creation in individual parts export
-      discriminator:
-        propertyName: btType
-        mapping:
-          BTPartsExportFilter-4308: '#/components/schemas/BTPartsExportFilter-4308'
-    GBTRhinoVersions:
-      type: string
-      enum:
-      - V2
-      - V3
-      - V4
-      - V5
-      - V6
-      - V7
-      - V8
-      - UNKNOWN
-    GBTStlEncodingType:
-      type: string
-      description: STL encoding type, `TEXT | BINARY`
-      default: TEXT
-      enum:
-      - TEXT
-      - BINARY
-      - UNKNOWN
-    GBTElementType:
-      type: string
-      enum:
-      - PARTSTUDIO
-      - ASSEMBLY
-      - DRAWING
-      - FEATURESTUDIO
-      - BLOB
-      - APPLICATION
-      - TABLE
-      - BILLOFMATERIALS
-      - VARIABLESTUDIO
-      - PUBLICATIONITEM
-      - UNKNOWN
-    GBTUrdfMeshFormat:
-      type: string
-      enum:
-      - STL
-      - GLTF
-      - OBJ
-      - UNKNOWN
-    BTApplicationTargetInfo:
-      type: object
-      properties:
-        baseHref:
-          type: string
-          format: uri
-        clientId:
-          type: string
-        supportsCollaboration:
-          type: boolean
-        tabIconHref:
-          type: string
-          format: uri
-    GBTPreProcessParasolidOption:
-      type: string
-      description: Original geometry processing mode to improve results of translation to STEP.
-      enum:
-      - NO_PRE_PROCESSING
-      - USE_BODYSHOP_PRE_PROCESSING_ADVANCED
-      - USE_TRANSLATOR_PRE_PROCESSING
-      - USE_BODYSHOP_PRE_PROCESSING
-      - USE_BODYSHOP_PRE_PROCESSING_ADVANCED_WITH_SURFS_TO_BSURFS_CONVERTING
-      - UNKNOWN
   securitySchemes:
     OAuth2:
       type: oauth2

@@ -1,34 +1,15 @@
-openapi: 3.0.1
+openapi: 3.2.0
 info:
-  title: Onshape REST Account StandardContent API
+  title: Onshape REST Standard Content API
   description: '## Welcome to the Onshape REST API Explorer
 
 
-    **See the [API Explorer Guide](https://onshape-public.github.io/docs/api-intro/explorer/) for help navigating this page.**
+    **See the API Explorer Guide for help navigating this page.**
 
 
     ### Using this page
 
-    1. Sign in to your [Onshape](https://cad.onshape.com) account in another tab.
-
-    2. Click the `Try it out` button below. It toggles to a `Cancel` button when selected.
-
-
-    ### Authenticating
-
-    To authenticate your calls, click the `Authorize` button. See [API Explorer Guide: Authentication](https://onshape-public.github.io/docs/api-intro/explorer/#authentication) for details. Calls made when authenticated via API Keys or OAuth count against your annual [API limits](https://onshape-public.github.io/docs/auth/limits/#annual-api-call-limits).
-
-    * **Tip:** To ensure the current session isn''t used when trying other authentication techniques, make sure to [remove the Onshape cookie](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site) as per the instructions for your browser, or use a private or incognito window.
-
-
-    ### Additional resources
-
-
-    * [Onshape API Guide](https://onshape-public.github.io/docs/): Our full suite of developer guides, to be used as an accompaniment to this API Explorer.
-
-    * [Onshape Developer Portal](https://cad.onshape.com/appstore/dev-portal): The Onshape portal for managing your API keys, OAuth2 credentials, your Onshape applications, and your Onshape App Store entries.
-
-    * [Authentication Guide](https://onshape-public.github.io/docs/auth/): Our guide to using API keys, request signatures, and OAuth2 in your Onshape applications.'
+    1.'
   termsOfService: https://www.onshape.com/legal/terms-of-use
   contact:
     email: api-support@onshape.zendesk.com
@@ -65,7 +46,7 @@ paths:
     post:
       tags:
       - StandardContent
-      summary: Sets the part number and description for a standard content component.
+      summary: Sets the part number and description for a standard content component
       operationId: setCustomParameters
       parameters:
       - name: did
@@ -103,7 +84,7 @@ paths:
     get:
       tags:
       - StandardContent
-      summary: Gets all possible values for each of the standard content parameters.
+      summary: Gets all possible values for each of the standard content parameters
       operationId: getParameterValuesForId
       parameters:
       - name: did
@@ -132,7 +113,7 @@ paths:
     get:
       tags:
       - StandardContent
-      summary: List all standard content.
+      summary: List all standard content
       operationId: getStandardContentList
       parameters:
       - name: standard
@@ -159,17 +140,6 @@ paths:
       x-BTVisibility: PRODUCTION
 components:
   schemas:
-    BTStandardContentParameterDescriptor:
-      type: object
-      properties:
-        displayName:
-          type: string
-        parameterId:
-          type: string
-        parameterValues:
-          type: array
-          items:
-            type: string
     BTStandardContentSetCustomParameterSpecifier:
       type: object
       properties:
@@ -192,13 +162,32 @@ components:
       - INVALID_PARAMETER_VALUE
       - FAILED_TO_SPECIFY_REQUIRED_PARAMETER
       - INVALID_PARAMETER_ID
-    BTStandardContentSetCustomParametersBatchRequest:
+    BTStandardContentParameterDescriptor:
       type: object
       properties:
-        specifiers:
+        displayName:
+          type: string
+        parameterId:
+          type: string
+        parameterValues:
           type: array
           items:
-            $ref: '#/components/schemas/BTStandardContentSetCustomParameterSpecifier'
+            type: string
+    BTStandardContentPropertyIdAndValue:
+      type: object
+      properties:
+        propertyId:
+          type: string
+        value:
+          type: string
+      description: Non-driving custom parameters whose values are to be set.
+    BTStandardContentSetCustomParametersBatchResponse:
+      type: object
+      properties:
+        responses:
+          type: array
+          items:
+            $ref: '#/components/schemas/BTStandardContentSetCustomParametersResponse'
     BTStandardContentHierarchyItem:
       type: object
       properties:
@@ -218,13 +207,6 @@ components:
           type: string
           description: Standard for the corresponding standard content.
       description: Describes a single instance of standard content.
-    BTStandardContentSetCustomParametersBatchResponse:
-      type: object
-      properties:
-        responses:
-          type: array
-          items:
-            $ref: '#/components/schemas/BTStandardContentSetCustomParametersResponse'
     BTStandardContentParameterIdAndValue:
       type: object
       properties:
@@ -242,14 +224,13 @@ components:
           type: string
           description: If there was an error, this provides a more detailed description of the problem.
       description: Reports the status of an individual request to set custom parameter values.
-    BTStandardContentPropertyIdAndValue:
+    BTStandardContentSetCustomParametersBatchRequest:
       type: object
       properties:
-        propertyId:
-          type: string
-        value:
-          type: string
-      description: Non-driving custom parameters whose values are to be set.
+        specifiers:
+          type: array
+          items:
+            $ref: '#/components/schemas/BTStandardContentSetCustomParameterSpecifier'
   securitySchemes:
     OAuth2:
       type: oauth2

@@ -1,34 +1,15 @@
-openapi: 3.0.1
+openapi: 3.2.0
 info:
-  title: Onshape REST Account Alias API
+  title: Onshape REST Alias API
   description: '## Welcome to the Onshape REST API Explorer
 
 
-    **See the [API Explorer Guide](https://onshape-public.github.io/docs/api-intro/explorer/) for help navigating this page.**
+    **See the API Explorer Guide for help navigating this page.**
 
 
     ### Using this page
 
-    1. Sign in to your [Onshape](https://cad.onshape.com) account in another tab.
-
-    2. Click the `Try it out` button below. It toggles to a `Cancel` button when selected.
-
-
-    ### Authenticating
-
-    To authenticate your calls, click the `Authorize` button. See [API Explorer Guide: Authentication](https://onshape-public.github.io/docs/api-intro/explorer/#authentication) for details. Calls made when authenticated via API Keys or OAuth count against your annual [API limits](https://onshape-public.github.io/docs/auth/limits/#annual-api-call-limits).
-
-    * **Tip:** To ensure the current session isn''t used when trying other authentication techniques, make sure to [remove the Onshape cookie](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site) as per the instructions for your browser, or use a private or incognito window.
-
-
-    ### Additional resources
-
-
-    * [Onshape API Guide](https://onshape-public.github.io/docs/): Our full suite of developer guides, to be used as an accompaniment to this API Explorer.
-
-    * [Onshape Developer Portal](https://cad.onshape.com/appstore/dev-portal): The Onshape portal for managing your API keys, OAuth2 credentials, your Onshape applications, and your Onshape App Store entries.
-
-    * [Authentication Guide](https://onshape-public.github.io/docs/auth/): Our guide to using API keys, request signatures, and OAuth2 in your Onshape applications.'
+    1.'
   termsOfService: https://www.onshape.com/legal/terms-of-use
   contact:
     email: api-support@onshape.zendesk.com
@@ -65,7 +46,7 @@ paths:
     get:
       tags:
       - Alias
-      summary: Get a list of all aliases that exist for your enterprise.
+      summary: Get a list of all aliases that exist for your enterprise
       operationId: getAliasesInCompany
       parameters:
       - name: prefix
@@ -115,7 +96,7 @@ paths:
     post:
       tags:
       - Alias
-      summary: Create an alias in your enterprise.
+      summary: Create an alias in your enterprise
       description: '`Manage users and teams` global permission is required to call this API.'
       operationId: createAlias
       requestBody:
@@ -142,7 +123,7 @@ paths:
     get:
       tags:
       - Alias
-      summary: Get an alias by ID.
+      summary: Get an alias by ID
       description: Get the information for an alias ID.
       operationId: getAlias
       parameters:
@@ -168,8 +149,24 @@ paths:
     post:
       tags:
       - Alias
-      summary: Add, remove, replace, or rename entries in an alias list.
-      description: "`Manage users and teams` global permission is required to call this API. \n* Add new users in the `additions` array. \n* Remove existing users in the `removals` array. Attempts to remove a user that does not exist in the Alias list will have no effect.\n* Replace the entire Alias list with the `entries` array. \n* You can also update the alias' `name` and `description`. \nFor example, given an Alias with members userA and userB: \n* `additions: [userC]` results in [userA, userB, userC] \n* `removals: [userB]` results in [userA] \n* `entries: [userC, user D]` results in [userC, userD]"
+      summary: Add, remove, replace, or rename entries in an alias list
+      description: '`Manage users and teams` global permission is required to call this API.
+
+        * Add new users in the `additions` array.
+
+        * Remove existing users in the `removals` array. Attempts to remove a user that does not exist in the Alias list will have no effect.
+
+        * Replace the entire Alias list with the `entries` array.
+
+        * You can also update the alias'' `name` and `description`.
+
+        For example, given an Alias with members userA and userB:
+
+        * `additions: [userC]` results in [userA, userB, userC]
+
+        * `removals: [userB]` results in [userA]
+
+        * `entries: [userC, user D]` results in [userC, userD]'
       operationId: updateAlias
       parameters:
       - name: aid
@@ -200,7 +197,7 @@ paths:
     delete:
       tags:
       - Alias
-      summary: Delete an alias from your enterprise.
+      summary: Delete an alias from your enterprise
       description: '`Manage users and teams` global permission is required to call this API.'
       operationId: deleteAlias
       parameters:
@@ -227,7 +224,7 @@ paths:
     get:
       tags:
       - Alias
-      summary: Get all users and teams assigned to an alias.
+      summary: Get all users and teams assigned to an alias
       description: This is a search-like endpoint that returns a subset of the member list. Use `getAlias` to return all members every time it's called.
       operationId: getAliasMembers
       parameters:
@@ -282,49 +279,11 @@ paths:
       x-BTVisibility: PRODUCTION
 components:
   schemas:
-    BTUserBasicSummaryInfo:
-      required:
-      - jsonType
+    BTIdentityInfo:
       type: object
       properties:
-        jsonType:
-          type: string
-      discriminator:
-        propertyName: jsonType
-        mapping:
-          user-summary: '#/components/schemas/BTUserBasicSummaryInfo'
-          user-detail-summary: '#/components/schemas/BTUserDetailSummaryInfo'
-      allOf:
-      - $ref: '#/components/schemas/BTBaseInfo'
-      - type: object
-        properties:
-          href:
-            type: string
-            description: URI to fetch complete information of the resource.
-            format: uri
-          id:
-            type: string
-            description: Id of the resource.
-          image:
-            type: string
-          isOnshapeSupport:
-            type: boolean
-          name:
-            type: string
-            description: Name of the resource.
-          state:
-            type: integer
-            format: int32
-          viewRef:
-            type: string
-            description: URI to visualize the resource in a webclient if applicable.
-            format: uri
-    BTAliasEntryInfo:
-      type: object
-      properties:
-        createdAt:
-          type: string
-          format: date-time
+        company:
+          $ref: '#/components/schemas/BTCompanySummaryInfo'
         href:
           type: string
           description: URI to fetch complete information of the resource.
@@ -332,93 +291,17 @@ components:
         id:
           type: string
           description: Id of the resource.
-        identity:
-          $ref: '#/components/schemas/BTIdentityInfo'
-        name:
-          type: string
-          description: Name of the resource.
+        identityType:
+          type: integer
+          format: int32
+        team:
+          $ref: '#/components/schemas/BTTeamSummaryInfo'
+        user:
+          $ref: '#/components/schemas/BTUserSummaryInfo'
         viewRef:
           type: string
           description: URI to visualize the resource in a webclient if applicable.
           format: uri
-    BTOwnerInfo:
-      type: object
-      properties:
-        href:
-          type: string
-          description: URI to fetch complete information of the resource.
-          format: uri
-        id:
-          type: string
-          description: Id of the resource.
-        image:
-          type: string
-        isEnterpriseOwnedResource:
-          type: boolean
-        name:
-          type: string
-          description: Name of the resource.
-        type:
-          type: integer
-          format: int32
-        viewRef:
-          type: string
-          description: URI to visualize the resource in a webclient if applicable.
-          format: uri
-    BTCompanySummaryInfo:
-      type: object
-      properties:
-        admin:
-          type: boolean
-        description:
-          type: string
-        domainPrefix:
-          type: string
-        enterpriseBaseUrl:
-          type: string
-        enterpriseSubtype:
-          type: integer
-          format: int32
-        href:
-          type: string
-          description: URI to fetch complete information of the resource.
-          format: uri
-        id:
-          type: string
-          description: Id of the resource.
-        image:
-          type: string
-        name:
-          type: string
-          description: Name of the resource.
-        noPublicDocuments:
-          type: boolean
-        ownerId:
-          type: string
-        secondaryDomainPrefixes:
-          uniqueItems: true
-          type: array
-          items:
-            type: string
-        state:
-          type: integer
-          format: int32
-        type:
-          type: integer
-          format: int32
-        viewRef:
-          type: string
-          description: URI to visualize the resource in a webclient if applicable.
-          format: uri
-    BTAliasEntryParams:
-      type: object
-      properties:
-        email:
-          type: string
-        teamId:
-          type: string
-        userId:
-          type: string
     BTUserSummaryInfo:
       type: object
       discriminator:
@@ -461,23 +344,6 @@ components:
           source:
             type: integer
             format: int32
-    BTBaseInfo:
-      type: object
-      properties:
-        href:
-          type: string
-          description: URI to fetch complete information of the resource.
-          format: uri
-        id:
-          type: string
-          description: Id of the resource.
-        name:
-          type: string
-          description: Name of the resource.
-        viewRef:
-          type: string
-          description: URI to visualize the resource in a webclient if applicable.
-          format: uri
     BTTeamSummaryInfo:
       type: object
       properties:
@@ -546,7 +412,94 @@ components:
         propertyName: jsonType
         mapping:
           team: '#/components/schemas/BTTeamInfo'
-    BTListResponseBTAliasEntryInfo:
+    BTAliasEntryParams:
+      type: object
+      properties:
+        email:
+          type: string
+        teamId:
+          type: string
+        userId:
+          type: string
+    BTUserBasicSummaryInfo:
+      required:
+      - jsonType
+      type: object
+      properties:
+        jsonType:
+          type: string
+      discriminator:
+        propertyName: jsonType
+        mapping:
+          user-summary: '#/components/schemas/BTUserBasicSummaryInfo'
+          user-detail-summary: '#/components/schemas/BTUserDetailSummaryInfo'
+      allOf:
+      - $ref: '#/components/schemas/BTBaseInfo'
+      - type: object
+        properties:
+          href:
+            type: string
+            description: URI to fetch complete information of the resource.
+            format: uri
+          id:
+            type: string
+            description: Id of the resource.
+          image:
+            type: string
+          isOnshapeSupport:
+            type: boolean
+          name:
+            type: string
+            description: Name of the resource.
+          state:
+            type: integer
+            format: int32
+          viewRef:
+            type: string
+            description: URI to visualize the resource in a webclient if applicable.
+            format: uri
+    BTAliasEntryInfo:
+      type: object
+      properties:
+        createdAt:
+          type: string
+          format: date-time
+        href:
+          type: string
+          description: URI to fetch complete information of the resource.
+          format: uri
+        id:
+          type: string
+          description: Id of the resource.
+        identity:
+          $ref: '#/components/schemas/BTIdentityInfo'
+        name:
+          type: string
+          description: Name of the resource.
+        viewRef:
+          type: string
+          description: URI to visualize the resource in a webclient if applicable.
+          format: uri
+    BTAliasParams:
+      type: object
+      properties:
+        additions:
+          type: array
+          items:
+            $ref: '#/components/schemas/BTAliasEntryParams'
+        description:
+          type: string
+        entries:
+          type: array
+          items:
+            $ref: '#/components/schemas/BTAliasEntryParams'
+        name:
+          type: string
+        removals:
+          type: array
+          items:
+            $ref: '#/components/schemas/BTAliasEntryParams'
+    BTListResponseBTAliasInfo:
       type: object
       properties:
         href:
@@ -557,7 +510,7 @@ components:
           type: array
           description: Array of items in the current page.
           items:
-            $ref: '#/components/schemas/BTAliasEntryInfo'
+            $ref: '#/components/schemas/BTAliasInfo'
         next:
           type: string
           description: URI for next page of the resources if more are available.
@@ -567,6 +520,47 @@ components:
           description: URI for previous page of the resources.
           format: uri
       description: A list of resources that typically supports paging.
+    BTBaseInfo:
+      type: object
+      properties:
+        href:
+          type: string
+          description: URI to fetch complete information of the resource.
+          format: uri
+        id:
+          type: string
+          description: Id of the resource.
+        name:
+          type: string
+          description: Name of the resource.
+        viewRef:
+          type: string
+          description: URI to visualize the resource in a webclient if applicable.
+          format: uri
+    BTOwnerInfo:
+      type: object
+      properties:
+        href:
+          type: string
+          description: URI to fetch complete information of the resource.
+          format: uri
+        id:
+          type: string
+          description: Id of the resource.
+        image:
+          type: string
+        isEnterpriseOwnedResource:
+          type: boolean
+        name:
+          type: string
+          description: Name of the resource.
+        type:
+          type: integer
+          format: int32
+        viewRef:
+          type: string
+          description: URI to visualize the resource in a webclient if applicable.
+          format: uri
     BTAliasInfo:
       type: object
       properties:
@@ -599,27 +593,6 @@ components:
           type: string
           description: URI to visualize the resource in a webclient if applicable.
           format: uri
-    BTListResponseBTAliasInfo:
-      type: object
-      properties:
-        href:
-          type: string
-          description: URI for current page of resources.
-          format: uri
-        items:
-          type: array
-          description: Array of items in the current page.
-          items:
-            $ref: '#/components/schemas/BTAliasInfo'
-        next:
-          type: string
-          description: URI for next page of the resources if more are available.
-          format: uri
-        previous:
-          type: string
-          description: URI for previous page of the resources.
-          format: uri
-      description: A list of resources that typically supports paging.
     BTUserDetailSummaryInfo:
       type: object
       discriminator:
@@ -639,6 +612,27 @@ components:
             type: string
           lastName:
             type: string
+    BTListResponseBTAliasEntryInfo:
+      type: object
+      properties:
+        href:
+          type: string
+          description: URI for current page of resources.
+          format: uri
+        items:
+          type: array
+          description: Array of items in the current page.
+          items:
+            $ref: '#/components/schemas/BTAliasEntryInfo'
+        next:
+          type: string
+          description: URI for next page of the resources if more are available.
+          format: uri
+        previous:
+          type: string
+          description: URI for previous page of the resources.
+          format: uri
+      description: A list of resources that typically supports paging.
     GlobalPermissionInfo:
       type: object
       properties:
@@ -688,11 +682,20 @@ components:
           type: boolean
         useRevisionTools:
           type: boolean
-    BTIdentityInfo:
+    BTCompanySummaryInfo:
       type: object
       properties:
-        company:
-          $ref: '#/components/schemas/BTCompanySummaryInfo'
+        admin:
+          type: boolean
+        description:
+          type: string
+        domainPrefix:
+          type: string
+        enterpriseBaseUrl:
+          type: string
+        enterpriseSubtype:
+          type: integer
+          format: int32
         href:
           type: string
           description: URI to fetch complete information of the resource.
@@ -700,36 +703,30 @@ components:
         id:
           type: string
           description: Id of the resource.
-        identityType:
+        image:
+          type: string
+        name:
+          type: string
+          description: Name of the resource.
+        noPublicDocuments:
+          type: boolean
+        ownerId:
+          type: string
+        secondaryDomainPrefixes:
+          uniqueItems: true
+          type: array
+          items:
+            type: string
+        state:
           type: integer
           format: int32
-        team:
-          $ref: '#/components/schemas/BTTeamSummaryInfo'
-        user:
-          $ref: '#/components/schemas/BTUserSummaryInfo'
+        type:
+          type: integer
+          format: int32
         viewRef:
           type: string
           description: URI to visualize the resource in a webclient if applicable.
           format: uri
-    BTAliasParams:
-      type: object
-      properties:
-        additions:
-          type: array
-          items:
-            $ref: '#/components/schemas/BTAliasEntryParams'
-        description:
-          type: string
-        entries:
-          type: array
-          items:
-            $ref: '#/components/schemas/BTAliasEntryParams'
-        name:
-          type: string
-        removals:
-          type: array
-          items:
-            $ref: '#/components/schemas/BTAliasEntryParams'
   securitySchemes:
     OAuth2:
       type: oauth2

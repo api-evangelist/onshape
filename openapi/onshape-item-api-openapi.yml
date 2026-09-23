@@ -1,34 +1,15 @@
-openapi: 3.0.1
+openapi: 3.2.0
 info:
-  title: Onshape REST Account Item API
+  title: Onshape REST Item API
   description: '## Welcome to the Onshape REST API Explorer
 
 
-    **See the [API Explorer Guide](https://onshape-public.github.io/docs/api-intro/explorer/) for help navigating this page.**
+    **See the API Explorer Guide for help navigating this page.**
 
 
     ### Using this page
 
-    1. Sign in to your [Onshape](https://cad.onshape.com) account in another tab.
-
-    2. Click the `Try it out` button below. It toggles to a `Cancel` button when selected.
-
-
-    ### Authenticating
-
-    To authenticate your calls, click the `Authorize` button. See [API Explorer Guide: Authentication](https://onshape-public.github.io/docs/api-intro/explorer/#authentication) for details. Calls made when authenticated via API Keys or OAuth count against your annual [API limits](https://onshape-public.github.io/docs/auth/limits/#annual-api-call-limits).
-
-    * **Tip:** To ensure the current session isn''t used when trying other authentication techniques, make sure to [remove the Onshape cookie](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site) as per the instructions for your browser, or use a private or incognito window.
-
-
-    ### Additional resources
-
-
-    * [Onshape API Guide](https://onshape-public.github.io/docs/): Our full suite of developer guides, to be used as an accompaniment to this API Explorer.
-
-    * [Onshape Developer Portal](https://cad.onshape.com/appstore/dev-portal): The Onshape portal for managing your API keys, OAuth2 credentials, your Onshape applications, and your Onshape App Store entries.
-
-    * [Authentication Guide](https://onshape-public.github.io/docs/auth/): Our guide to using API keys, request signatures, and OAuth2 in your Onshape applications.'
+    1.'
   termsOfService: https://www.onshape.com/legal/terms-of-use
   contact:
     email: api-support@onshape.zendesk.com
@@ -59,14 +40,17 @@ security:
 - BasicAuth: []
 tags:
 - name: Item
-  description: Manage non-geometric [items](https://cad.onshape.com/help/Content/Plans/items.htm). (Professional, Educator, and Enterprise accounts only.)
+  description: Manage non-geometric items. (Professional, Educator, and Enterprise accounts only.)
 paths:
   /items:
     get:
       tags:
       - Item
-      summary: Get all items owned by a company/classroom/enterprise.
-      description: "Returns a list of all items owned by the company/classroom/enterprise. \n \nEither `documentId` or `companyId` must be provided."
+      summary: Get all items owned by a company/classroom/enterprise
+      description: 'Returns a list of all items owned by the company/classroom/enterprise.
+
+
+        Either `documentId` or `companyId` must be provided.'
       operationId: getItems
       parameters:
       - name: documentId
@@ -131,7 +115,7 @@ paths:
     post:
       tags:
       - Item
-      summary: Create a new item.
+      summary: Create a new item
       operationId: createItem
       requestBody:
         content:
@@ -157,7 +141,7 @@ paths:
     get:
       tags:
       - Item
-      summary: Get item by ID.
+      summary: Get item by ID
       description: Either `documentId` or `companyId` must be provided, in addition to the item ID.
       operationId: getItem
       parameters:
@@ -194,7 +178,7 @@ paths:
     post:
       tags:
       - Item
-      summary: Update an item.
+      summary: Update an item
       operationId: updateItem
       parameters:
       - name: iid
@@ -228,8 +212,8 @@ paths:
     delete:
       tags:
       - Item
-      summary: Delete an item.
-      description: Items can only be deleted if `publishState = 0` (`PENDING`). [`GET /items/{iid}`](#/Items/getItem) to get the `publishState`.
+      summary: Delete an item
+      description: Items can only be deleted if `publishState = 0` (`PENDING`). `GET /items/{iid}` to get the `publishState`.
       operationId: deleteItem
       parameters:
       - name: iid
@@ -285,19 +269,6 @@ components:
           description: URI to visualize the resource in a webclient if applicable.
           format: uri
       description: Information for non-geometric items.
-    BTItemParams:
-      type: object
-      properties:
-        companyId:
-          type: string
-          description: ID of the company, classroom, or enterprise that owns this item.
-        name:
-          type: string
-          description: Item name.
-        publishState:
-          type: integer
-          description: '`0: PENDING | 1: ACTIVE | 2: INACTIVE`'
-          format: int32
     BTListResponseBTItemInfo:
       type: object
       properties:
@@ -319,6 +290,19 @@ components:
           description: URI for previous page of the resources.
           format: uri
       description: A list of resources that typically supports paging.
+    BTItemParams:
+      type: object
+      properties:
+        companyId:
+          type: string
+          description: ID of the company, classroom, or enterprise that owns this item.
+        name:
+          type: string
+          description: Item name.
+        publishState:
+          type: integer
+          description: '`0: PENDING | 1: ACTIVE | 2: INACTIVE`'
+          format: int32
   securitySchemes:
     OAuth2:
       type: oauth2

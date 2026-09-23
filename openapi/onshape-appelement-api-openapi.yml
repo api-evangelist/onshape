@@ -1,34 +1,15 @@
-openapi: 3.0.1
+openapi: 3.2.0
 info:
-  title: Onshape REST Account AppElement API
+  title: Onshape REST App Element API
   description: '## Welcome to the Onshape REST API Explorer
 
 
-    **See the [API Explorer Guide](https://onshape-public.github.io/docs/api-intro/explorer/) for help navigating this page.**
+    **See the API Explorer Guide for help navigating this page.**
 
 
     ### Using this page
 
-    1. Sign in to your [Onshape](https://cad.onshape.com) account in another tab.
-
-    2. Click the `Try it out` button below. It toggles to a `Cancel` button when selected.
-
-
-    ### Authenticating
-
-    To authenticate your calls, click the `Authorize` button. See [API Explorer Guide: Authentication](https://onshape-public.github.io/docs/api-intro/explorer/#authentication) for details. Calls made when authenticated via API Keys or OAuth count against your annual [API limits](https://onshape-public.github.io/docs/auth/limits/#annual-api-call-limits).
-
-    * **Tip:** To ensure the current session isn''t used when trying other authentication techniques, make sure to [remove the Onshape cookie](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site) as per the instructions for your browser, or use a private or incognito window.
-
-
-    ### Additional resources
-
-
-    * [Onshape API Guide](https://onshape-public.github.io/docs/): Our full suite of developer guides, to be used as an accompaniment to this API Explorer.
-
-    * [Onshape Developer Portal](https://cad.onshape.com/appstore/dev-portal): The Onshape portal for managing your API keys, OAuth2 credentials, your Onshape applications, and your Onshape App Store entries.
-
-    * [Authentication Guide](https://onshape-public.github.io/docs/auth/): Our guide to using API keys, request signatures, and OAuth2 in your Onshape applications.'
+    1.'
   termsOfService: https://www.onshape.com/legal/terms-of-use
   contact:
     email: api-support@onshape.zendesk.com
@@ -65,8 +46,8 @@ paths:
     post:
       tags:
       - AppElement
-      summary: Create a new application element.
-      description: 'See [API Guide: Structured Storage](https://onshape-public.github.io/docs/app-dev/structuredstorage/) for more information.'
+      summary: Create a new application element
+      description: 'See API Guide: Structured Storage for more information.'
       operationId: createElement
       parameters:
       - name: did
@@ -111,7 +92,7 @@ paths:
     post:
       tags:
       - AppElement
-      summary: Create multiple empty application elements at once.
+      summary: Create multiple empty application elements at once
       description: Call this faster API instead of creating multiple app elements one at a time or in parallel.
       operationId: bulkCreateElement
       parameters:
@@ -157,7 +138,7 @@ paths:
     get:
       tags:
       - AppElement
-      summary: Download the blob element (i.e., a file) stored in an app element in a document's workspace.
+      summary: Download the blob element (i.e., a file) stored in an app element in a…
       description: The downloaded file can be used to retrieve stored subelements.
       operationId: downloadBlobSubelementWorkspace
       parameters:
@@ -219,7 +200,7 @@ paths:
     post:
       tags:
       - AppElement
-      summary: Create a new blob subelement from an uploaded file.
+      summary: Create a new blob subelement from an uploaded file
       description: Request body parameters are multipart fields, so you must use `"Content-Type":"multipart/form-data"` in the request header.
       operationId: uploadBlobSubelement
       parameters:
@@ -265,7 +246,7 @@ paths:
     delete:
       tags:
       - AppElement
-      summary: Delete a blob subelement from an app element.
+      summary: Delete a blob subelement from an app element
       operationId: deleteBlobSubelement
       parameters:
       - name: did
@@ -314,7 +295,7 @@ paths:
     get:
       tags:
       - AppElement
-      summary: Get a list of all transactions performed on an element.
+      summary: Get a list of all transactions performed on an element
       operationId: getElementTransactions
       parameters:
       - name: did
@@ -392,7 +373,7 @@ paths:
     delete:
       tags:
       - AppElement
-      summary: Abort a transaction.
+      summary: Abort a transaction
       description: Deletes a microbranch (i.e., the branch with the microversion for the transaction).
       operationId: abortTransaction
       parameters:
@@ -439,7 +420,7 @@ paths:
     post:
       tags:
       - AppElement
-      summary: Merge multiple transactions into one microversion.
+      summary: Merge multiple transactions into one microversion
       description: If successful, all transactions will be committed to a single microversion. If the call raises an error, nothing will be committed.
       operationId: commitTransactions
       parameters:
@@ -485,7 +466,7 @@ paths:
     get:
       tags:
       - AppElement
-      summary: Download a blob subelement from the specified app element.
+      summary: Download a blob subelement from the specified app element
       description: Download a blob subelement as a file.
       operationId: downloadBlobSubelement
       parameters:
@@ -557,7 +538,7 @@ paths:
     get:
       tags:
       - AppElement
-      summary: Get a list of all blob subelement IDs for the specified workspace, version, or microversion.
+      summary: Get a list of all blob subelement IDs for the specified workspace, version, or…
       operationId: getBlobSubelementIds
       parameters:
       - name: did
@@ -606,7 +587,7 @@ paths:
     get:
       tags:
       - AppElement
-      summary: Compare app element JSON trees between workspaces/versions/microversions in a document.
+      summary: Compare app element JSON trees between workspaces/versions/microversions in a…
       description: Specify the source workspace/version/microversion in the URL and specify the target workspace/version/microversion in the query parameters.
       operationId: compareAppElementJson
       parameters:
@@ -668,7 +649,7 @@ paths:
     get:
       tags:
       - AppElement
-      summary: Get a list of all subelement IDs in a specified workspace/version/microversion.
+      summary: Get a list of all subelement IDs in a specified workspace/version/microversion
       operationId: getSubElementContent
       parameters:
       - name: did
@@ -738,8 +719,8 @@ paths:
     post:
       tags:
       - AppElement
-      summary: Update the content for the specified app element.
-      description: 'See [API Guide: Structured Storage](https://onshape-public.github.io/docs/app-dev/structuredstorage/) for more information.'
+      summary: Update the content for the specified app element
+      description: 'See API Guide: Structured Storage for more information.'
       operationId: updateAppElement
       parameters:
       - name: did
@@ -787,7 +768,7 @@ paths:
     get:
       tags:
       - AppElement
-      summary: Get the history of the specified all element.
+      summary: Get the history of the specified all element
       operationId: getAppElementHistory
       parameters:
       - name: did
@@ -828,7 +809,7 @@ paths:
     get:
       tags:
       - AppElement
-      summary: Get a list of all subelement IDs in a specified workspace/version/microversion.
+      summary: Get a list of all subelement IDs in a specified workspace/version/microversion
       operationId: getSubelementIds
       parameters:
       - name: did
@@ -877,7 +858,7 @@ paths:
     get:
       tags:
       - AppElement
-      summary: Get the full JSON tree for the specified workspace/version/microversion.
+      summary: Get the full JSON tree for the specified workspace/version/microversion
       operationId: getJson
       parameters:
       - name: did
@@ -942,7 +923,7 @@ paths:
     post:
       tags:
       - AppElement
-      summary: Get the JSON at specified paths for an element.
+      summary: Get the JSON at specified paths for an element
       description: Use this endpoint to return the JSON at the specified path instead of returning the entire JSON for the element. This POST endpoint does not write any information.
       operationId: getJsonPaths
       parameters:
@@ -1011,7 +992,7 @@ paths:
     get:
       tags:
       - AppElement
-      summary: Get a list of multiple subelements by document ID, workspace or version or microversion ID, tab ID, and subelement IDs.
+      summary: Get a list of multiple subelements by document ID, workspace or version or…
       operationId: getSubElementContentBatch
       parameters:
       - name: did
@@ -1087,7 +1068,7 @@ paths:
     delete:
       tags:
       - AppElement
-      summary: Delete multiple subelements array by document ID, workspace or version or microversion ID, tab ID, and subelement IDs.
+      summary: Delete multiple subelements array by document ID, workspace or version or…
       operationId: deleteAppElementContentBatch
       parameters:
       - name: did
@@ -1146,7 +1127,7 @@ paths:
     delete:
       tags:
       - AppElement
-      summary: Deletes the content from the specified app element.
+      summary: Deletes the content from the specified app element
       operationId: deleteAppElementContent
       parameters:
       - name: did
@@ -1204,7 +1185,7 @@ paths:
     post:
       tags:
       - AppElement
-      summary: Creates a reference to an app element.
+      summary: Creates a reference to an app element
       operationId: createReference
       parameters:
       - name: did
@@ -1251,7 +1232,7 @@ paths:
     get:
       tags:
       - AppElement
-      summary: Resolves a single reference to an app element.
+      summary: Resolves a single reference to an app element
       description: For single operations only. Use `resolveReferences` for bulk operations.
       operationId: resolveReference
       parameters:
@@ -1314,7 +1295,7 @@ paths:
     post:
       tags:
       - AppElement
-      summary: Update an app element reference.
+      summary: Update an app element reference
       operationId: updateReference
       parameters:
       - name: did
@@ -1365,7 +1346,7 @@ paths:
     delete:
       tags:
       - AppElement
-      summary: Delete an app element reference.
+      summary: Delete an app element reference
       operationId: deleteReference
       parameters:
       - name: did
@@ -1423,7 +1404,7 @@ paths:
     get:
       tags:
       - AppElement
-      summary: Resolves bulk app element references.
+      summary: Resolves bulk app element references
       description: For bulk operations only. Use `resolveReference` for a single operation.
       operationId: resolveReferences
       parameters:
@@ -1497,8 +1478,8 @@ paths:
     get:
       tags:
       - AppElement
-      summary: Resolves bulk app element references.
-      description: Resolve all references for all workspace elements. For bulk operations  only. Use `resolveReferences` for a single element.
+      summary: Resolves bulk app element references
+      description: Resolve all references for all workspace elements. For bulk operations only. Use `resolveReferences` for a single element.
       operationId: resolveAllElementReferences
       parameters:
       - name: did
@@ -1598,6 +1579,70 @@ components:
           BTJEditInsert-2523: '#/components/schemas/BTJEditInsert-2523'
           BTJEditList-2707: '#/components/schemas/BTJEditList-2707'
           BTJEditMove-3245: '#/components/schemas/BTJEditMove-3245'
+    BTAppElementHistoryInfo:
+      type: object
+      properties:
+        changes:
+          type: array
+          items:
+            $ref: '#/components/schemas/BTAppElementHistoryEntryInfo'
+        errorCode:
+          type: integer
+          description: '`0: OK (healthy) | 1: INFO | 2: WARNING | 3: ERROR (dangling or view generation call failed) | 4: UNKNOWN`'
+          format: int32
+        errorDescription:
+          type: string
+          description: A human-readable value for the error that occurred, if one occurred.
+        errorValue:
+          $ref: '#/components/schemas/BTAppElementErrorCode'
+    BTGetJsonPathsResponse-1544:
+      type: object
+      properties:
+        btType:
+          type: string
+          description: Type of JSON object.
+        changeId:
+          type: string
+        results:
+          type: array
+          items:
+            type: array
+            items:
+              $ref: '#/components/schemas/BTJsonMatch-2290'
+    BTAppElementBulkCreateParams:
+      required:
+      - formatId
+      type: object
+      properties:
+        description:
+          type: string
+          description: The label that will appear in the document's edit history for this operation. If blank, a value will be auto-generated.
+        formatId:
+          type: string
+          description: The data type of the application. This string allows an application to distinguish their elements from elements of another application.
+        location:
+          $ref: '#/components/schemas/BTElementLocationParams'
+        names:
+          type: array
+          description: The name of the element being created. If blank, a name will be auto-generated.
+          items:
+            type: string
+            description: The name of the element being created. If blank, a name will be auto-generated.
+    BTAppElementHistoryEntryInfo:
+      type: object
+      properties:
+        changeId:
+          type: string
+        createdAt:
+          type: string
+          format: date-time
+        description:
+          type: string
+    BTAppElementContentDeltaInfo:
+      type: object
+      properties:
+        delta:
+          type: string
     BTElementTransaction:
       type: object
       properties:
@@ -1613,6 +1658,69 @@ components:
           type: string
         workspaceId:
           type: string
+    BTAppElementUpdateParams:
+      type: object
+      properties:
+        description:
+          type: string
+          description: The label that will appear in the document's edit history for this operation. If blank, a value will be auto-generated.
+        jsonPatch:
+          type: string
+          description: A json patch that will be applied to the application element's json data. The JSON patch format is as specified in RFC 6902 from the IETF.
+        jsonTreeEdit:
+          $ref: '#/components/schemas/BTJEdit-3734'
+        parentChangeId:
+          type: string
+          description: The id of the last change made to this application element. This can be retrieved from the response for any app element modification endpoint.
+        propertyUpdates:
+          type: array
+          description: Edits to be applied to the element's metadata.
+          items:
+            $ref: '#/components/schemas/BTMetadataPropertyUpdateParams'
+        returnError:
+          type: boolean
+          description: If true, errors in request processing will be returned in a 200 response with a meaningful description. Otherwise, errors will result in a relevant HTTP error response.
+        returnJsonDifferenceFormat:
+          type: string
+          description: If specified, and jsonTreeEdit is non-empty, the json difference will be returned in this format, otherwise no json difference will be returned.
+          enum:
+          - default
+          - full_path
+          - json_patch
+        transactionId:
+          type: string
+          description: The id of the transaction in which this operation should take place. Transaction ids can be generated through the AppElement startTransaction API.
+      x-BTVisibility-properties:
+        changes: INTERNAL
+    BTAppElementErrorCode:
+      type: string
+      enum:
+      - OK
+      - TRANSACTION_CONFLICT
+      - NOT_FOUND
+      - INCONSISTENT_CHANGES
+    BTAppElementContentEntryInfo:
+      type: object
+      properties:
+        baseContent:
+          type: string
+        deltas:
+          type: array
+          items:
+            $ref: '#/components/schemas/BTAppElementContentDeltaInfo'
+        subelementId:
+          type: string
+    BTAppElementReferencesResolveInfo:
+      type: object
+      properties:
+        resolvedReferences:
+          type: array
+          items:
+            $ref: '#/components/schemas/BTAppElementReferenceResolveInfo'
+        unresolvedReferenceIds:
+          type: array
+          items:
+            type: string
     BTAppElementReferenceParams:
       type: object
       properties:
@@ -1661,14 +1769,119 @@ components:
           type: string
         updateSketchInfo:
           type: boolean
-    BTAppElementReferenceInfo:
+    BTAppElementBulkCreateInfo:
       required:
-      - changeId
+      - documentMicroversionId
+      type: object
+      properties:
+        documentMicroversionId:
+          type: string
+          description: The latest document microversion, after the edit was committed.
+        elementIds:
+          type: array
+          description: The ids of the created elements.
+          items:
+            type: string
+            description: The ids of the created elements.
+        elementMicroversions:
+          type: array
+          description: The microversion ids of the created elements, at creation time.
+          items:
+            type: string
+            description: The microversion ids of the created elements, at creation time.
+        errorCode:
+          type: integer
+          description: '`0: OK (healthy) | 1: INFO | 2: WARNING | 3: ERROR (dangling or view generation call failed) | 4: UNKNOWN`'
+          format: int32
+        errorDescription:
+          type: string
+          description: A human-readable value for the error that occurred, if one occurred.
+        errorValue:
+          $ref: '#/components/schemas/BTAppElementErrorCode'
+    BTDiffJsonResponse-2725:
+      type: object
+      properties:
+        btType:
+          type: string
+          description: Type of JSON object.
+        change:
+          $ref: '#/components/schemas/BTJEdit-3734'
+        patch:
+          type: object
+          properties:
+            btType:
+              type: string
+        sourceChangeId:
+          type: string
+        targetChangeId:
+          type: string
+    BTGetJsonPaths-1697:
+      type: object
+      properties:
+        btType:
+          type: string
+          description: Type of JSON object.
+        paths:
+          type: array
+          items:
+            type: string
+    BTAppElementContentInfo:
       type: object
       properties:
         changeId:
           type: string
-          description: The latest change id for the element, after the edit was committed.
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/BTAppElementContentEntryInfo'
+        errorCode:
+          type: integer
+          description: '`0: OK (healthy) | 1: INFO | 2: WARNING | 3: ERROR (dangling or view generation call failed) | 4: UNKNOWN`'
+          format: int32
+        errorDescription:
+          type: string
+          description: A human-readable value for the error that occurred, if one occurred.
+        errorValue:
+          $ref: '#/components/schemas/BTAppElementErrorCode'
+    BTAppElementCommitTransactionParams:
+      type: object
+      properties:
+        allowMerge:
+          type: boolean
+        description:
+          type: string
+          description: The label that will appear in the document's edit history for this operation. If blank, a value will be auto-generated.
+        returnError:
+          type: boolean
+        transactionIds:
+          type: array
+          items:
+            type: string
+    BTAppElementBulkModifyInfo:
+      type: object
+      properties:
+        changeId:
+          type: string
+          description: The latest change id for the element, after the edit was committed. Deprecated in favor of elementChangeResults.
+          deprecated: true
+        documentMicroversionId:
+          type: string
+          description: The latest change id for the document, after the edit was committed.
+        elementChangeResults:
+          type: array
+          description: The results of editing each element affected by the edit.
+          items:
+            $ref: '#/components/schemas/BTAppElementModifyInfo'
+        elementId:
+          type: string
+          description: The id of the edited element, if a single element was edited. Deprecated in favor of elementChangeResults.
+          deprecated: true
+        elementIds:
+          type: array
+          description: The ids of the edited elements. Deprecated in favor of elementChangeResults.
+          deprecated: true
+          items:
+            type: string
         errorCode:
           type: integer
           description: '`0: OK (healthy) | 1: INFO | 2: WARNING | 3: ERROR (dangling or view generation call failed) | 4: UNKNOWN`'
@@ -1680,22 +1893,80 @@ components:
           $ref: '#/components/schemas/BTAppElementErrorCode'
         parentChangeId:
           type: string
-          description: The latest change id for the element, before the edit was made.
-        referenceId:
+          description: The latest change id for the element, before the edit was made. Deprecated in favor of elementChangeResults.
+          deprecated: true
+        parentDocumentMicroversionId:
           type: string
+          description: The latest change id for the document, before the edit was made.
+        propertyEditsMerged:
+          type: boolean
+          description: Whether the properties of any edited application element were changed after the transaction was created. Deprecated in favor of elementChangeResults.
+          deprecated: true
+        transactionId:
+          type: string
+          description: The id of the transaction in which the edit was applied. Deprecated in favor of elementChangeResults.
+          deprecated: true
+    BTAppElementModifyInfo:
+      required:
+      - changeId
+      type: object
+      properties:
+        changeId:
+          type: string
+          description: The latest change id for the element, after the edit was committed.
+        elementId:
+          type: string
+          description: The id of the edited element.
+        elementIds:
+          type: array
+          description: The ids of the edited elements, if multiple elements were edited.
+          items:
+            type: string
+        errorCode:
+          type: integer
+          description: '`0: OK (healthy) | 1: INFO | 2: WARNING | 3: ERROR (dangling or view generation call failed) | 4: UNKNOWN`'
+          format: int32
+        errorDescription:
+          type: string
+          description: A human-readable value for the error that occurred, if one occurred.
+        errorValue:
+          $ref: '#/components/schemas/BTAppElementErrorCode'
+        jsonDifference:
+          $ref: '#/components/schemas/BTDiffJsonResponse-2725'
+        parentChangeId:
+          type: string
+          description: The latest change id for the element, before the edit was made.
+        propertyEditsMerged:
+          type: boolean
+          description: When committing a transaction, this field indicates if the properties of the application element were changed after the transaction was created.
         transactionId:
           type: string
           description: The id of the transaction in which the edit was applied.
-    BTAppElementStartTransactionParams:
+    BTMetadataPropertyUpdateParams:
+      type: object
+      properties:
+        propertyId:
+          type: string
+          description: The id of the property that should be edited. This can be retrieved from MetadataCategory:getCategoryProperties.
+        value:
+          type: object
+          description: The new value for the property.
+    BTBAppElementBlobUploadParams:
       type: object
       properties:
         description:
           type: string
-          description: The label that will appear in the document's edit history for this operation. If blank, a value will be auto-generated.
+        file:
+          type: string
+          description: File to upload.
+          format: binary
+        fileContentLength:
+          type: integer
+          format: int64
         parentChangeId:
           type: string
-        returnError:
-          type: boolean
+        transactionId:
+          type: string
     BTAppElementReferenceResolveInfo:
       type: object
       properties:
@@ -1764,265 +2035,6 @@ components:
           description: Reference to a part or assembly in a version; `NULL` when reference is in a workspace.
         trackNewVersions:
           type: boolean
-    BTAppElementErrorCode:
-      type: string
-      enum:
-      - OK
-      - TRANSACTION_CONFLICT
-      - NOT_FOUND
-      - INCONSISTENT_CHANGES
-    BTAppElementContentEntryInfo:
-      type: object
-      properties:
-        baseContent:
-          type: string
-        deltas:
-          type: array
-          items:
-            $ref: '#/components/schemas/BTAppElementContentDeltaInfo'
-        subelementId:
-          type: string
-    BTGetJsonPaths-1697:
-      type: object
-      properties:
-        btType:
-          type: string
-          description: Type of JSON object.
-        paths:
-          type: array
-          items:
-            type: string
-    BTElementLocationParams:
-      type: object
-      properties:
-        elementId:
-          type: string
-          description: The id of an element which provides context for the position value specified.
-        position:
-          type: integer
-          description: An indicator for the relative placement of the new element. If elementId is specified, a negative number indicates insertion prior to the element and a non-negative number indicates insertion following the element. If no elementId is specified, a negative value indicates insertion at the end of the element list and a non-negative number indicates insertion at the start of the element list.
-          format: int32
-      description: The location at which the new element should be inserted.
-    BTAppElementTransactionsInfo:
-      type: object
-      properties:
-        elementTransactions:
-          type: array
-          items:
-            $ref: '#/components/schemas/BTElementTransaction'
-        errorCode:
-          type: integer
-          description: '`0: OK (healthy) | 1: INFO | 2: WARNING | 3: ERROR (dangling or view generation call failed) | 4: UNKNOWN`'
-          format: int32
-        errorDescription:
-          type: string
-          description: A human-readable value for the error that occurred, if one occurred.
-        errorValue:
-          $ref: '#/components/schemas/BTAppElementErrorCode'
-    BTGetJsonResponse-2137:
-      type: object
-      properties:
-        btType:
-          type: string
-          description: Type of JSON object.
-        changeId:
-          type: string
-        tree:
-          type: object
-          properties:
-            btType:
-              type: string
-          additionalProperties:
-            type: object
-            properties:
-              btType:
-                type: string
-    BTAppElementUpdateParams:
-      type: object
-      properties:
-        description:
-          type: string
-          description: The label that will appear in the document's edit history for this operation. If blank, a value will be auto-generated.
-        jsonPatch:
-          type: string
-          description: A json patch that will be applied to the application element's json data. The JSON patch format is as specified in RFC 6902 from the IETF.
-        jsonTreeEdit:
-          $ref: '#/components/schemas/BTJEdit-3734'
-        parentChangeId:
-          type: string
-          description: The id of the last change made to this application element. This can be retrieved from the response for any app element modification endpoint.
-        propertyUpdates:
-          type: array
-          description: Edits to be applied to the element's metadata.
-          items:
-            $ref: '#/components/schemas/BTMetadataPropertyUpdateParams'
-        returnError:
-          type: boolean
-          description: If true, errors in request processing will be returned in a 200 response with a meaningful description. Otherwise, errors will result in a relevant HTTP error response.
-        returnJsonDifferenceFormat:
-          type: string
-          description: If specified, and jsonTreeEdit is non-empty, the json difference will be returned in this format, otherwise no json difference will be returned.
-          enum:
-          - default
-          - full_path
-          - json_patch
-        transactionId:
-          type: string
-          description: The id of the transaction in which this operation should take place. Transaction ids can be generated through the AppElement startTransaction API.
-      x-BTVisibility-properties:
-        changes: INTERNAL
-    BTAppElementContentDeltaInfo:
-      type: object
-      properties:
-        delta:
-          type: string
-    BTAppElementBulkCreateParams:
-      required:
-      - formatId
-      type: object
-      properties:
-        description:
-          type: string
-          description: The label that will appear in the document's edit history for this operation. If blank, a value will be auto-generated.
-        formatId:
-          type: string
-          description: The data type of the application. This string allows an application to distinguish their elements from elements of another application.
-        location:
-          $ref: '#/components/schemas/BTElementLocationParams'
-        names:
-          type: array
-          description: The name of the element being created. If blank, a name will be auto-generated.
-          items:
-            type: string
-            description: The name of the element being created. If blank, a name will be auto-generated.
-    BTAppElementHistoryInfo:
-      type: object
-      properties:
-        changes:
-          type: array
-          items:
-            $ref: '#/components/schemas/BTAppElementHistoryEntryInfo'
-        errorCode:
-          type: integer
-          description: '`0: OK (healthy) | 1: INFO | 2: WARNING | 3: ERROR (dangling or view generation call failed) | 4: UNKNOWN`'
-          format: int32
-        errorDescription:
-          type: string
-          description: A human-readable value for the error that occurred, if one occurred.
-        errorValue:
-          $ref: '#/components/schemas/BTAppElementErrorCode'
-    BTDiffJsonResponse-2725:
-      type: object
-      properties:
-        btType:
-          type: string
-          description: Type of JSON object.
-        change:
-          $ref: '#/components/schemas/BTJEdit-3734'
-        patch:
-          type: object
-          properties:
-            btType:
-              type: string
-        sourceChangeId:
-          type: string
-        targetChangeId:
-          type: string
-    BTAppElementHistoryEntryInfo:
-      type: object
-      properties:
-        changeId:
-          type: string
-        createdAt:
-          type: string
-          format: date-time
-        description:
-          type: string
-    BTAppElementChangeParams:
-      required:
-      - subelementId
-      type: object
-      properties:
-        baseContent:
-          type: string
-          description: This base64-encoded data is treated as a full representation of the sub-element's data and all deltas previously added will no longer be returned.
-          format: byte
-        delta:
-          type: string
-          description: This base64-encoded data is a delta which the application can apply to the last added baseContent data.
-          format: byte
-        subelementId:
-          type: string
-          description: The id of the subelement to edit. The value is determined by the application.
-    BTBAppElementBlobUploadParams:
-      type: object
-      properties:
-        description:
-          type: string
-        file:
-          type: string
-          description: File to upload.
-          format: binary
-        fileContentLength:
-          type: integer
-          format: int64
-        parentChangeId:
-          type: string
-        transactionId:
-          type: string
-    BTJsonMatch-2290:
-      type: object
-      properties:
-        btType:
-          type: string
-          description: Type of JSON object.
-        definiteJsonPath:
-          type: string
-        node:
-          type: object
-          properties:
-            btType:
-              type: string
-    BTAppElementBulkCreateInfo:
-      required:
-      - documentMicroversionId
-      type: object
-      properties:
-        documentMicroversionId:
-          type: string
-          description: The latest document microversion, after the edit was committed.
-        elementIds:
-          type: array
-          description: The ids of the created elements.
-          items:
-            type: string
-            description: The ids of the created elements.
-        elementMicroversions:
-          type: array
-          description: The microversion ids of the created elements, at creation time.
-          items:
-            type: string
-            description: The microversion ids of the created elements, at creation time.
-        errorCode:
-          type: integer
-          description: '`0: OK (healthy) | 1: INFO | 2: WARNING | 3: ERROR (dangling or view generation call failed) | 4: UNKNOWN`'
-          format: int32
-        errorDescription:
-          type: string
-          description: A human-readable value for the error that occurred, if one occurred.
-        errorValue:
-          $ref: '#/components/schemas/BTAppElementErrorCode'
-    BTAppElementReferencesResolveInfo:
-      type: object
-      properties:
-        resolvedReferences:
-          type: array
-          items:
-            $ref: '#/components/schemas/BTAppElementReferenceResolveInfo'
-        unresolvedReferenceIds:
-          type: array
-          items:
-            type: string
     BTAppElementIdsInfo:
       type: object
       properties:
@@ -2041,42 +2053,6 @@ components:
           type: array
           items:
             type: string
-    BTAppElementModifyInfo:
-      required:
-      - changeId
-      type: object
-      properties:
-        changeId:
-          type: string
-          description: The latest change id for the element, after the edit was committed.
-        elementId:
-          type: string
-          description: The id of the edited element.
-        elementIds:
-          type: array
-          description: The ids of the edited elements, if multiple elements were edited.
-          items:
-            type: string
-        errorCode:
-          type: integer
-          description: '`0: OK (healthy) | 1: INFO | 2: WARNING | 3: ERROR (dangling or view generation call failed) | 4: UNKNOWN`'
-          format: int32
-        errorDescription:
-          type: string
-          description: A human-readable value for the error that occurred, if one occurred.
-        errorValue:
-          $ref: '#/components/schemas/BTAppElementErrorCode'
-        jsonDifference:
-          $ref: '#/components/schemas/BTDiffJsonResponse-2725'
-        parentChangeId:
-          type: string
-          description: The latest change id for the element, before the edit was made.
-        propertyEditsMerged:
-          type: boolean
-          description: When committing a transaction, this field indicates if the properties of the application element were changed after the transaction was created.
-        transactionId:
-          type: string
-          description: The id of the transaction in which the edit was applied.
     BTAppElementParams:
       required:
       - formatId
@@ -2102,31 +2078,25 @@ components:
           description: Initialization data for the new element's subelements.
           items:
             $ref: '#/components/schemas/BTAppElementChangeParams'
-    BTAppElementBulkModifyInfo:
+    BTElementLocationParams:
+      type: object
+      properties:
+        elementId:
+          type: string
+          description: The id of an element which provides context for the position value specified.
+        position:
+          type: integer
+          description: An indicator for the relative placement of the new element. If elementId is specified, a negative number indicates insertion prior to the element and a non-negative number indicates insertion following the element. If no elementId is specified, a negative value indicates insertion at the end of the element list and a non-negative number indicates insertion at the start of the element list.
+          format: int32
+      description: The location at which the new element should be inserted.
+    BTAppElementReferenceInfo:
+      required:
+      - changeId
       type: object
       properties:
         changeId:
           type: string
-          description: The latest change id for the element, after the edit was committed. Deprecated in favor of elementChangeResults.
-          deprecated: true
-        documentMicroversionId:
-          type: string
-          description: The latest change id for the document, after the edit was committed.
-        elementChangeResults:
-          type: array
-          description: The results of editing each element affected by the edit.
-          items:
-            $ref: '#/components/schemas/BTAppElementModifyInfo'
-        elementId:
-          type: string
-          description: The id of the edited element, if a single element was edited. Deprecated in favor of elementChangeResults.
-          deprecated: true
-        elementIds:
-          type: array
-          description: The ids of the edited elements. Deprecated in favor of elementChangeResults.
-          deprecated: true
-          items:
-            type: string
+          description: The latest change id for the element, after the edit was committed.
         errorCode:
           type: integer
           description: '`0: OK (healthy) | 1: INFO | 2: WARNING | 3: ERROR (dangling or view generation call failed) | 4: UNKNOWN`'
@@ -2138,43 +2108,13 @@ components:
           $ref: '#/components/schemas/BTAppElementErrorCode'
         parentChangeId:
           type: string
-          description: The latest change id for the element, before the edit was made. Deprecated in favor of elementChangeResults.
-          deprecated: true
-        parentDocumentMicroversionId:
+          description: The latest change id for the element, before the edit was made.
+        referenceId:
           type: string
-          description: The latest change id for the document, before the edit was made.
-        propertyEditsMerged:
-          type: boolean
-          description: Whether the properties of any edited application element were changed after the transaction was created. Deprecated in favor of elementChangeResults.
-          deprecated: true
         transactionId:
           type: string
-          description: The id of the transaction in which the edit was applied. Deprecated in favor of elementChangeResults.
-          deprecated: true
-    BTMetadataPropertyUpdateParams:
-      type: object
-      properties:
-        propertyId:
-          type: string
-          description: The id of the property that should be edited. This can be retrieved from MetadataCategory:getCategoryProperties.
-        value:
-          type: object
-          description: The new value for the property.
-    BTAppElementCommitTransactionParams:
-      type: object
-      properties:
-        allowMerge:
-          type: boolean
-        description:
-          type: string
-          description: The label that will appear in the document's edit history for this operation. If blank, a value will be auto-generated.
-        returnError:
-          type: boolean
-        transactionIds:
-          type: array
-          items:
-            type: string
-    BTGetJsonPathsResponse-1544:
+          description: The id of the transaction in which the edit was applied.
+    BTGetJsonResponse-2137:
       type: object
       properties:
         btType:
@@ -2182,21 +2122,36 @@ components:
           description: Type of JSON object.
         changeId:
           type: string
-        results:
-          type: array
-          items:
-            type: array
-            items:
-              $ref: '#/components/schemas/BTJsonMatch-2290'
-    BTAppElementContentInfo:
+        tree:
+          type: object
+          properties:
+            btType:
+              type: string
+          additionalProperties:
+            type: object
+            properties:
+              btType:
+                type: string
+    BTJsonMatch-2290:
       type: object
       properties:
-        changeId:
+        btType:
           type: string
-        data:
+          description: Type of JSON object.
+        definiteJsonPath:
+          type: string
+        node:
+          type: object
+          properties:
+            btType:
+              type: string
+    BTAppElementTransactionsInfo:
+      type: object
+      properties:
+        elementTransactions:
           type: array
           items:
-            $ref: '#/components/schemas/BTAppElementContentEntryInfo'
+            $ref: '#/components/schemas/BTElementTransaction'
         errorCode:
           type: integer
           description: '`0: OK (healthy) | 1: INFO | 2: WARNING | 3: ERROR (dangling or view generation call failed) | 4: UNKNOWN`'
@@ -2206,6 +2161,32 @@ components:
           description: A human-readable value for the error that occurred, if one occurred.
         errorValue:
           $ref: '#/components/schemas/BTAppElementErrorCode'
+    BTAppElementChangeParams:
+      required:
+      - subelementId
+      type: object
+      properties:
+        baseContent:
+          type: string
+          description: This base64-encoded data is treated as a full representation of the sub-element's data and all deltas previously added will no longer be returned.
+          format: byte
+        delta:
+          type: string
+          description: This base64-encoded data is a delta which the application can apply to the last added baseContent data.
+          format: byte
+        subelementId:
+          type: string
+          description: The id of the subelement to edit. The value is determined by the application.
+    BTAppElementStartTransactionParams:
+      type: object
+      properties:
+        description:
+          type: string
+          description: The label that will appear in the document's edit history for this operation. If blank, a value will be auto-generated.
+        parentChangeId:
+          type: string
+        returnError:
+          type: boolean
   securitySchemes:
     OAuth2:
       type: oauth2

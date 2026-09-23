@@ -1,34 +1,15 @@
-openapi: 3.0.1
+openapi: 3.2.0
 info:
-  title: Onshape REST Account Revision API
+  title: Onshape REST Revision API
   description: '## Welcome to the Onshape REST API Explorer
 
 
-    **See the [API Explorer Guide](https://onshape-public.github.io/docs/api-intro/explorer/) for help navigating this page.**
+    **See the API Explorer Guide for help navigating this page.**
 
 
     ### Using this page
 
-    1. Sign in to your [Onshape](https://cad.onshape.com) account in another tab.
-
-    2. Click the `Try it out` button below. It toggles to a `Cancel` button when selected.
-
-
-    ### Authenticating
-
-    To authenticate your calls, click the `Authorize` button. See [API Explorer Guide: Authentication](https://onshape-public.github.io/docs/api-intro/explorer/#authentication) for details. Calls made when authenticated via API Keys or OAuth count against your annual [API limits](https://onshape-public.github.io/docs/auth/limits/#annual-api-call-limits).
-
-    * **Tip:** To ensure the current session isn''t used when trying other authentication techniques, make sure to [remove the Onshape cookie](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site) as per the instructions for your browser, or use a private or incognito window.
-
-
-    ### Additional resources
-
-
-    * [Onshape API Guide](https://onshape-public.github.io/docs/): Our full suite of developer guides, to be used as an accompaniment to this API Explorer.
-
-    * [Onshape Developer Portal](https://cad.onshape.com/appstore/dev-portal): The Onshape portal for managing your API keys, OAuth2 credentials, your Onshape applications, and your Onshape App Store entries.
-
-    * [Authentication Guide](https://onshape-public.github.io/docs/auth/): Our guide to using API keys, request signatures, and OAuth2 in your Onshape applications.'
+    1.'
   termsOfService: https://www.onshape.com/legal/terms-of-use
   contact:
     email: api-support@onshape.zendesk.com
@@ -59,14 +40,14 @@ security:
 - BasicAuth: []
 tags:
 - name: Revision
-  description: 'Get revision information. See [API Guide: Release Management](https://onshape-public.github.io/docs/api-adv/relmgmt/)'
+  description: 'Get revision information. See API Guide: Release Management'
 paths:
   /revisions/c/{cid}/partnumber/{pnum}:
     get:
       tags:
       - Revision
-      summary: Get details for the specified revision.
-      description: 'If the `revision` parameter is left blank, the latest revision information is returned. See [API Guide: Release Management](https://onshape-public.github.io/docs/api-adv/relmgmt/#get-latest-revision-info) for more details.'
+      summary: Get details for the specified revision
+      description: 'If the `revision` parameter is left blank, the latest revision information is returned. See API Guide: Release Management for more details.'
       operationId: getRevisionByPartNumber
       parameters:
       - name: cid
@@ -110,8 +91,18 @@ paths:
     get:
       tags:
       - Revision
-      summary: Get all revisions for a company.
-      description: "See [API Guide: Release Management](https://onshape-public.github.io/docs/api-adv/relmgmt/#get-all-revisions) for more details. \n* Returns a list of `limit` size of all objects per API call. \n* To get the next set of results, use the `next` URL from the response body. \n* Do not change any other query parameters during subsequent enumeration. \n* Persist `after` query param value and use it to begin a fresh enumeration at a later date. \n* This API can only be called by company admins."
+      summary: Get all revisions for a company
+      description: 'See API Guide: Release Management for more details.
+
+        * Returns a list of `limit` size of all objects per API call.
+
+        * To get the next set of results, use the `next` URL from the response body.
+
+        * Do not change any other query parameters during subsequent enumeration.
+
+        * Persist `after` query param value and use it to begin a fresh enumeration at a later date.
+
+        * This API can only be called by company admins.'
       operationId: enumerateRevisions
       parameters:
       - name: cid
@@ -166,8 +157,8 @@ paths:
     get:
       tags:
       - Revision
-      summary: Get all revisions for an element (tab).
-      description: 'See [API Guide: Release Management](https://onshape-public.github.io/docs/api-adv/relmgmt/#get-latest-revision-info) for more details.'
+      summary: Get all revisions for an element (tab)
+      description: 'See API Guide: Release Management for more details.'
       operationId: getRevisionHistoryInCompanyByElementId
       parameters:
       - name: cid
@@ -257,8 +248,8 @@ paths:
     get:
       tags:
       - Revision
-      summary: Get all revisions for a part ID.
-      description: 'See [API Guide: Release Management](https://onshape-public.github.io/docs/api-adv/relmgmt/#get-latest-revision-info) for more details. '
+      summary: Get all revisions for a part ID
+      description: 'See API Guide: Release Management for more details.'
       operationId: getRevisionHistoryInCompanyByPartId
       parameters:
       - name: cid
@@ -343,8 +334,8 @@ paths:
     get:
       tags:
       - Revision
-      summary: Get all revisions for a part number.
-      description: 'You can also request `elementType` in addition to `partNumber` since companies may or may not allow drawings to share part numbers with their parts/assemblies. To perform search without `elementType`, use `elementType = -1` (UNKNOWN).  See [API Guide: Release Management](https://onshape-public.github.io/docs/api-adv/relmgmt/#get-all-revisions) for more details.'
+      summary: Get all revisions for a part number
+      description: 'You can also request `elementType` in addition to `partNumber` since companies may or may not allow drawings to share part numbers with their parts/assemblies. To perform search without `elementType`, use `elementType = -1` (UNKNOWN). See API Guide: Release Management for more details.'
       operationId: getRevisionHistoryInCompanyByPartNumber
       parameters:
       - name: cid
@@ -401,7 +392,7 @@ paths:
     delete:
       tags:
       - Revision
-      summary: Delete all revisions for a part number.
+      summary: Delete all revisions for a part number
       description: Only company admins can call this API. All documents that contain or use the part number must be deleted first. This operation cannot be undone.
       operationId: deleteRevisionHistory
       parameters:
@@ -447,8 +438,8 @@ paths:
     get:
       tags:
       - Revision
-      summary: Get all revisions for a document.
-      description: 'Retrieve a list of all revisions that exist in a document and are owned by the document''s owning company.  See [API Guide: Release Management](https://onshape-public.github.io/docs/api-adv/relmgmt/#get-all-revisions) for more details.'
+      summary: Get all revisions for a document
+      description: 'Retrieve a list of all revisions that exist in a document and are owned by the document''s owning company. See API Guide: Release Management for more details.'
       operationId: getAllInDocument
       parameters:
       - name: did
@@ -474,8 +465,8 @@ paths:
     get:
       tags:
       - Revision
-      summary: Get all revisions for a version.
-      description: 'Retrieve a list of all revisions that exist in a document version and are owned by the document''s owning company.  See [API Guide: Release Management](https://onshape-public.github.io/docs/api-adv/relmgmt/#get-all-revisions) for more details.'
+      summary: Get all revisions for a version
+      description: 'Retrieve a list of all revisions that exist in a document version and are owned by the document''s owning company. See API Guide: Release Management for more details.'
       operationId: getAllInDocumentVersion
       parameters:
       - name: did
@@ -508,8 +499,8 @@ paths:
     get:
       tags:
       - Revision
-      summary: Get the latest revision information for a part.
-      description: 'See [API Guide: Release Management](https://onshape-public.github.io/docs/api-adv/relmgmt/#get-latest-revision-info) for more details. Returns 204 if no revisions are found.'
+      summary: Get the latest revision information for a part
+      description: 'See API Guide: Release Management for more details. Returns 204 if no revisions are found.'
       operationId: getLatestInDocumentOrCompany
       parameters:
       - name: cd
@@ -552,6 +543,69 @@ paths:
       x-BTVisibility: PRODUCTION
 components:
   schemas:
+    BTUserSummaryInfo:
+      type: object
+      discriminator:
+        propertyName: jsonType
+        mapping:
+          user-summary: '#/components/schemas/BTUserSummaryInfo'
+          companyuser: '#/components/schemas/BTCompanyUserSummaryInfo'
+          BTUserAdminSummaryInfo: '#/components/schemas/BTUserAdminSummaryInfo'
+          userinfo: '#/components/schemas/BTUserInfo'
+          BTUserOAuth2SummaryInfo: '#/components/schemas/BTUserOAuth2SummaryInfo'
+      allOf:
+      - $ref: '#/components/schemas/BTUserDetailSummaryInfo'
+      - type: object
+        properties:
+          company:
+            $ref: '#/components/schemas/BTCompanySummaryInfo'
+          companyUserState:
+            type: integer
+            format: int32
+          confirmationRequested:
+            type: boolean
+          documentationNameOverride:
+            type: string
+          globalPermissions:
+            $ref: '#/components/schemas/GlobalPermissionInfo'
+          invitationState:
+            type: integer
+            format: int32
+          isExternal:
+            type: boolean
+          isGuest:
+            type: boolean
+          isLight:
+            type: boolean
+          lastLoginTime:
+            type: string
+            format: date-time
+          personalMessageAllowed:
+            type: boolean
+          source:
+            type: integer
+            format: int32
+    BTListResponseBTRevisionInfo:
+      type: object
+      properties:
+        href:
+          type: string
+          description: URI for current page of resources.
+          format: uri
+        items:
+          type: array
+          description: Array of items in the current page.
+          items:
+            $ref: '#/components/schemas/BTRevisionInfo'
+        next:
+          type: string
+          description: URI for next page of the resources if more are available.
+          format: uri
+        previous:
+          type: string
+          description: URI for previous page of the resources.
+          format: uri
+      description: A list of resources that typically supports paging.
     BTUserBasicSummaryInfo:
       required:
       - jsonType
@@ -589,67 +643,27 @@ components:
             type: string
             description: URI to visualize the resource in a webclient if applicable.
             format: uri
-    BTCompanySummaryInfo:
+    BTRevisionListResponse:
       type: object
       properties:
-        admin:
-          type: boolean
-        description:
-          type: string
-        domainPrefix:
-          type: string
-        enterpriseBaseUrl:
-          type: string
-        enterpriseSubtype:
-          type: integer
-          format: int32
         href:
           type: string
-          description: URI to fetch complete information of the resource.
+          description: URI for current page of resources.
           format: uri
-        id:
-          type: string
-          description: Id of the resource.
-        image:
-          type: string
-        name:
-          type: string
-          description: Name of the resource.
-        noPublicDocuments:
-          type: boolean
-        ownerId:
-          type: string
-        secondaryDomainPrefixes:
-          uniqueItems: true
+        items:
           type: array
+          description: Array of items in the current page.
           items:
-            type: string
-        state:
-          type: integer
-          format: int32
-        type:
-          type: integer
-          format: int32
-        viewRef:
+            $ref: '#/components/schemas/BTRevisionInfo'
+        next:
           type: string
-          description: URI to visualize the resource in a webclient if applicable.
+          description: URI for next page of the resources if more are available.
           format: uri
-    BTBaseInfo:
-      type: object
-      properties:
-        href:
+        partNumber:
           type: string
-          description: URI to fetch complete information of the resource.
-          format: uri
-        id:
+        previous:
           type: string
-          description: Id of the resource.
-        name:
-          type: string
-          description: Name of the resource.
-        viewRef:
-          type: string
-          description: URI to visualize the resource in a webclient if applicable.
+          description: URI for previous page of the resources.
           format: uri
     BTRevisionInfo:
       type: object
@@ -766,6 +780,23 @@ components:
           description: URI to visualize the resource in a webclient if applicable.
           format: uri
       description: Revision details.
+    BTBaseInfo:
+      type: object
+      properties:
+        href:
+          type: string
+          description: URI to fetch complete information of the resource.
+          format: uri
+        id:
+          type: string
+          description: Id of the resource.
+        name:
+          type: string
+          description: Name of the resource.
+        viewRef:
+          type: string
+          description: URI to visualize the resource in a webclient if applicable.
+          format: uri
     BTRevisionApproverInfo:
       type: object
       properties:
@@ -848,91 +879,51 @@ components:
           type: boolean
         useRevisionTools:
           type: boolean
-    BTListResponseBTRevisionInfo:
+    BTCompanySummaryInfo:
       type: object
       properties:
+        admin:
+          type: boolean
+        description:
+          type: string
+        domainPrefix:
+          type: string
+        enterpriseBaseUrl:
+          type: string
+        enterpriseSubtype:
+          type: integer
+          format: int32
         href:
           type: string
-          description: URI for current page of resources.
+          description: URI to fetch complete information of the resource.
           format: uri
-        items:
+        id:
+          type: string
+          description: Id of the resource.
+        image:
+          type: string
+        name:
+          type: string
+          description: Name of the resource.
+        noPublicDocuments:
+          type: boolean
+        ownerId:
+          type: string
+        secondaryDomainPrefixes:
+          uniqueItems: true
           type: array
-          description: Array of items in the current page.
           items:
-            $ref: '#/components/schemas/BTRevisionInfo'
-        next:
-          type: string
-          description: URI for next page of the resources if more are available.
-          format: uri
-        previous:
-          type: string
-          description: URI for previous page of the resources.
-          format: uri
-      description: A list of resources that typically supports paging.
-    BTRevisionListResponse:
-      type: object
-      properties:
-        href:
-          type: string
-          description: URI for current page of resources.
-          format: uri
-        items:
-          type: array
-          description: Array of items in the current page.
-          items:
-            $ref: '#/components/schemas/BTRevisionInfo'
-        next:
-          type: string
-          description: URI for next page of the resources if more are available.
-          format: uri
-        partNumber:
-          type: string
-        previous:
-          type: string
-          description: URI for previous page of the resources.
-          format: uri
-    BTUserSummaryInfo:
-      type: object
-      discriminator:
-        propertyName: jsonType
-        mapping:
-          user-summary: '#/components/schemas/BTUserSummaryInfo'
-          companyuser: '#/components/schemas/BTCompanyUserSummaryInfo'
-          BTUserAdminSummaryInfo: '#/components/schemas/BTUserAdminSummaryInfo'
-          userinfo: '#/components/schemas/BTUserInfo'
-          BTUserOAuth2SummaryInfo: '#/components/schemas/BTUserOAuth2SummaryInfo'
-      allOf:
-      - $ref: '#/components/schemas/BTUserDetailSummaryInfo'
-      - type: object
-        properties:
-          company:
-            $ref: '#/components/schemas/BTCompanySummaryInfo'
-          companyUserState:
-            type: integer
-            format: int32
-          confirmationRequested:
-            type: boolean
-          documentationNameOverride:
             type: string
-          globalPermissions:
-            $ref: '#/components/schemas/GlobalPermissionInfo'
-          invitationState:
-            type: integer
-            format: int32
-          isExternal:
-            type: boolean
-          isGuest:
-            type: boolean
-          isLight:
-            type: boolean
-          lastLoginTime:
-            type: string
-            format: date-time
-          personalMessageAllowed:
-            type: boolean
-          source:
-            type: integer
-            format: int32
+        state:
+          type: integer
+          format: int32
+        type:
+          type: integer
+          format: int32
+        viewRef:
+          type: string
+          description: URI to visualize the resource in a webclient if applicable.
+          format: uri
   securitySchemes:
     OAuth2:
       type: oauth2

@@ -1,34 +1,15 @@
-openapi: 3.0.1
+openapi: 3.2.0
 info:
-  title: Onshape REST Account Document API
+  title: Onshape REST Document API
   description: '## Welcome to the Onshape REST API Explorer
 
 
-    **See the [API Explorer Guide](https://onshape-public.github.io/docs/api-intro/explorer/) for help navigating this page.**
+    **See the API Explorer Guide for help navigating this page.**
 
 
     ### Using this page
 
-    1. Sign in to your [Onshape](https://cad.onshape.com) account in another tab.
-
-    2. Click the `Try it out` button below. It toggles to a `Cancel` button when selected.
-
-
-    ### Authenticating
-
-    To authenticate your calls, click the `Authorize` button. See [API Explorer Guide: Authentication](https://onshape-public.github.io/docs/api-intro/explorer/#authentication) for details. Calls made when authenticated via API Keys or OAuth count against your annual [API limits](https://onshape-public.github.io/docs/auth/limits/#annual-api-call-limits).
-
-    * **Tip:** To ensure the current session isn''t used when trying other authentication techniques, make sure to [remove the Onshape cookie](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site) as per the instructions for your browser, or use a private or incognito window.
-
-
-    ### Additional resources
-
-
-    * [Onshape API Guide](https://onshape-public.github.io/docs/): Our full suite of developer guides, to be used as an accompaniment to this API Explorer.
-
-    * [Onshape Developer Portal](https://cad.onshape.com/appstore/dev-portal): The Onshape portal for managing your API keys, OAuth2 credentials, your Onshape applications, and your Onshape App Store entries.
-
-    * [Authentication Guide](https://onshape-public.github.io/docs/auth/): Our guide to using API keys, request signatures, and OAuth2 in your Onshape applications.'
+    1.'
   termsOfService: https://www.onshape.com/legal/terms-of-use
   contact:
     email: api-support@onshape.zendesk.com
@@ -65,7 +46,7 @@ paths:
     get:
       tags:
       - Document
-      summary: Get a list of documents that meet the criteria you specify.
+      summary: Get a list of documents that meet the criteria you specify
       operationId: getDocuments
       parameters:
       - name: q
@@ -154,7 +135,7 @@ paths:
     post:
       tags:
       - Document
-      summary: Create and upload a document.
+      summary: Create and upload a document
       description: The `name` field is required in the `BTDocumentParams` schema when creating a new document.
       operationId: createDocument
       requestBody:
@@ -181,8 +162,12 @@ paths:
     get:
       tags:
       - Document
-      summary: Download external data file(s) associated with the document.
-      description: "* See [API Guide: Model Translation](https://onshape-public.github.io/docs/api-adv/translation/) for more details.\n* If downloading an exported file, poll the `requestState` in the translation response and wait for a result of `DONE` before attempting to download the file. \n* Use the `resultExternalDataIds` from the translation response as the foreign id (`{fid}`) in this API."
+      summary: Download external data file(s) associated with the document
+      description: '* See API Guide: Model Translation for more details.
+
+        * If downloading an exported file, poll the `requestState` in the translation response and wait for a result of `DONE` before attempting to download the file.
+
+        * Use the `resultExternalDataIds` from the translation response as the foreign id (`{fid}`) in this API.'
       operationId: downloadExternalData
       parameters:
       - name: did
@@ -222,7 +207,7 @@ paths:
     get:
       tags:
       - Document
-      summary: Retrieve versions by document ID.
+      summary: Retrieve versions by document ID
       operationId: getDocumentVersions
       parameters:
       - name: did
@@ -263,7 +248,7 @@ paths:
     post:
       tags:
       - Document
-      summary: Create version by document ID.
+      summary: Create version by document ID
       operationId: createVersion
       parameters:
       - name: did
@@ -295,7 +280,7 @@ paths:
     get:
       tags:
       - Document
-      summary: Retrieve version by document ID and version ID.
+      summary: Retrieve version by document ID and version ID
       operationId: getVersion
       parameters:
       - name: did
@@ -335,7 +320,7 @@ paths:
     post:
       tags:
       - Document
-      summary: Update external references to latest by document ID, workspace ID, and tab ID.
+      summary: Update external references to latest by document ID, workspace ID, and tab ID
       operationId: updateExternalReferencesToLatestDocuments
       parameters:
       - name: did
@@ -376,7 +361,7 @@ paths:
     post:
       tags:
       - Document
-      summary: Move tab by document ID and workspace ID.
+      summary: Move tab by document ID and workspace ID
       operationId: moveElementsToDocument
       parameters:
       - name: did
@@ -446,6 +431,8 @@ paths:
         BasicAuth:
         - OAuth2Write
       x-BTVisibility: PRODUCTION
+      summary: Revert unchanged to revisions
+      x-summary-source: derived
   /documents/d/{did}/w/{wid}/syncAppElements:
     post:
       tags:
@@ -482,11 +469,13 @@ paths:
         BasicAuth:
         - OAuth2Write
       x-BTVisibility: PRODUCTION
+      summary: Sync app elements
+      x-summary-source: derived
   /documents/d/{did}/workspaces:
     get:
       tags:
       - Document
-      summary: Retrieve workspaces by document ID.
+      summary: Retrieve workspaces by document ID
       operationId: getDocumentWorkspaces
       parameters:
       - name: did
@@ -513,7 +502,7 @@ paths:
     post:
       tags:
       - Document
-      summary: Create workspace by document ID.
+      summary: Create workspace by document ID
       operationId: createWorkspace
       parameters:
       - name: did
@@ -544,7 +533,7 @@ paths:
     delete:
       tags:
       - Document
-      summary: Delete workspace by document ID and workspace ID.
+      summary: Delete workspace by document ID and workspace ID
       operationId: deleteWorkspace
       parameters:
       - name: did
@@ -575,7 +564,7 @@ paths:
     get:
       tags:
       - Document
-      summary: Retrieve document history by document ID and workspace or microversion ID.
+      summary: Retrieve document history by document ID and workspace or microversion ID
       operationId: getDocumentHistory
       parameters:
       - name: did
@@ -613,7 +602,7 @@ paths:
     get:
       tags:
       - Document
-      summary: Retrieve tabs and folders by document ID and workspace or version or microversion ID.
+      summary: Retrieve tabs and folders by document ID and workspace or version or…
       description: Returns information on tabs and folders in the document.
       operationId: getDocumentContents
       parameters:
@@ -679,8 +668,8 @@ paths:
     get:
       tags:
       - Document
-      summary: Retrieve tabs by document ID and workspace or version or microversion ID.
-      description: This endpoint only returns the tabs and not folders in the document. Use the [getDocumentContents](#/Document/getDocumentContents) endpoint to get information about folders and tabs.
+      summary: Retrieve tabs by document ID and workspace or version or microversion ID
+      description: This endpoint only returns the tabs and not folders in the document. Use the getDocumentContents endpoint to get information about folders and tabs.
       operationId: getElementsInDocument
       parameters:
       - name: did
@@ -752,7 +741,7 @@ paths:
     get:
       tags:
       - Document
-      summary: Get the selected units and precision by document ID and workspace or version or microversion ID.
+      summary: Get the selected units and precision by document ID and workspace or version or…
       operationId: getUnitInfo
       parameters:
       - name: did
@@ -796,7 +785,7 @@ paths:
     get:
       tags:
       - Document
-      summary: Retrieve current microversion by document ID and workspace or version ID.
+      summary: Retrieve current microversion by document ID and workspace or version ID
       operationId: getCurrentMicroversion
       parameters:
       - name: did
@@ -832,7 +821,7 @@ paths:
     post:
       tags:
       - Document
-      summary: Export document by document ID, workspace or version ID, and tab ID.
+      summary: Export document by document ID, workspace or version ID, and tab ID
       operationId: export2Json
       parameters:
       - name: did
@@ -894,7 +883,7 @@ paths:
     get:
       tags:
       - Document
-      summary: Retrieve insertables by document ID and workspace or version ID.
+      summary: Retrieve insertables by document ID and workspace or version ID
       operationId: getInsertables
       parameters:
       - name: did
@@ -1063,7 +1052,7 @@ paths:
     post:
       tags:
       - Document
-      summary: Search document.
+      summary: Search document
       description: This returns list of documents based on search parameters.
       operationId: search
       requestBody:
@@ -1090,7 +1079,7 @@ paths:
     get:
       tags:
       - Document
-      summary: Retrieve document by document ID.
+      summary: Retrieve document by document ID
       operationId: getDocument
       parameters:
       - name: did
@@ -1115,8 +1104,8 @@ paths:
     post:
       tags:
       - Document
-      summary: Update document attributes by document ID.
-      description: Use [updateDocumentNotes](#/Document/updateDocumentNotes) to update document notes.
+      summary: Update document attributes by document ID
+      description: Use updateDocumentNotes to update document notes.
       operationId: updateDocumentAttributes
       parameters:
       - name: did
@@ -1147,7 +1136,7 @@ paths:
     delete:
       tags:
       - Document
-      summary: Delete document by document ID.
+      summary: Delete document by document ID
       operationId: deleteDocument
       parameters:
       - name: did
@@ -1178,7 +1167,7 @@ paths:
     get:
       tags:
       - Document
-      summary: Retrieve access control list by document ID.
+      summary: Retrieve access control list by document ID
       operationId: getDocumentAcl
       parameters:
       - name: did
@@ -1204,7 +1193,7 @@ paths:
     post:
       tags:
       - Document
-      summary: Allow or deny anonymous access to a document or publication.
+      summary: Allow or deny anonymous access to a document or publication
       description: If anonymous access is allowed, you can allow or deny anonymous users the ability to export the document or publication. If `anonymousAccessAllowed=false` and `anonymousAllowsExport=true`, the call will throw an error.
       operationId: updateAnonymousAccess
       parameters:
@@ -1239,8 +1228,10 @@ paths:
     post:
       tags:
       - Document
-      summary: Make a document public or private.
-      description: " * Set `public=true` in the request body to make the document public. Set to `false` to make it private. Free users cannot make documents private. \n * The `documentId` provided in the URL must match the one provided in the request body exactly. "
+      summary: Make a document public or private
+      description: '* Set `public=true` in the request body to make the document public. Set to `false` to make it private. Free users cannot make documents private.
+
+        * The `documentId` provided in the URL must match the one provided in the request body exactly.'
       operationId: updatePublicAccess
       parameters:
       - name: did
@@ -1273,8 +1264,8 @@ paths:
     post:
       tags:
       - Document
-      summary: Update document notes by document ID.
-      description: Use this endpoint to update documents notes. Use [updateDocumentAttributes](#/Document/updateDocumentAttributes) to update other document attributes.
+      summary: Update document notes by document ID
+      description: Use this endpoint to update documents notes. Use updateDocumentAttributes to update other document attributes.
       operationId: updateDocumentNotes
       parameters:
       - name: did
@@ -1307,7 +1298,7 @@ paths:
     get:
       tags:
       - Document
-      summary: Retrieve Document permissions by document ID.
+      summary: Retrieve Document permissions by document ID
       operationId: getDocumentPermissionSet
       parameters:
       - name: did
@@ -1335,7 +1326,7 @@ paths:
     post:
       tags:
       - Document
-      summary: Share document by document ID.
+      summary: Share document by document ID
       operationId: shareDocument
       parameters:
       - name: did
@@ -1369,7 +1360,7 @@ paths:
     delete:
       tags:
       - Document
-      summary: Remove document View permissions from a user or other entity.
+      summary: Remove document View permissions from a user or other entity
       description: Specify the ID of the entity to unshare with in the `eid` field, and specify the type of entity being identified in the `entryType` field. For example, to unshare a document with a company, you would use `1` as the `entryType` value and the `companyId` as the `entityId`.
       operationId: unShareDocument
       parameters:
@@ -1414,7 +1405,7 @@ paths:
     post:
       tags:
       - Document
-      summary: Share document by document ID with Onshape support.
+      summary: Share document by document ID with Onshape support
       operationId: shareWithSupport
       parameters:
       - name: did
@@ -1435,7 +1426,7 @@ paths:
     delete:
       tags:
       - Document
-      summary: Unshare document with support.
+      summary: Unshare document with support
       operationId: unshareFromSupport
       parameters:
       - name: did
@@ -1457,7 +1448,7 @@ paths:
     get:
       tags:
       - Document
-      summary: Merge preview of changes that will occur based on document ID, workspace ID and source workspace/version ID
+      summary: Merge preview of changes that will occur based on document ID, workspace ID and…
       operationId: mergePreview
       parameters:
       - name: did
@@ -1508,7 +1499,7 @@ paths:
     post:
       tags:
       - Document
-      summary: Restore version or microversion to workspace by document ID, workspace ID, and version or microversion ID.
+      summary: Restore version or microversion to workspace by document ID, workspace ID, and…
       operationId: restoreFromHistory
       parameters:
       - name: did
@@ -1562,7 +1553,7 @@ paths:
     post:
       tags:
       - Document
-      summary: Copy workspace by document ID and workspace ID.
+      summary: Copy workspace by document ID and workspace ID
       operationId: copyWorkspace
       parameters:
       - name: did
@@ -1601,7 +1592,7 @@ paths:
     post:
       tags:
       - Document
-      summary: Merge into workspace by document ID and workspace ID.
+      summary: Merge into workspace by document ID and workspace ID
       operationId: mergeIntoWorkspace
       parameters:
       - name: did
@@ -1636,492 +1627,48 @@ paths:
       x-BTVisibility: PRODUCTION
 components:
   schemas:
-    BTElementGroup-1458:
+    BTUserSummaryInfo:
       type: object
-      properties:
-        btType:
-          type: string
-          description: Type of JSON object.
-        groupName:
-          type: string
-          description: The name of the group (folder).
-        groups:
-          type: array
-          description: List of folders or elements in this group (folder).
-          items:
-            $ref: '#/components/schemas/BTGroupOrElementReference-2205'
-        nodeId:
-          type: string
-          description: A unique identifier for this folder.
-    BTCompanySummaryInfo:
-      type: object
-      properties:
-        admin:
-          type: boolean
-        description:
-          type: string
-        domainPrefix:
-          type: string
-        enterpriseBaseUrl:
-          type: string
-        enterpriseSubtype:
-          type: integer
-          format: int32
-        href:
-          type: string
-          description: URI to fetch complete information of the resource.
-          format: uri
-        id:
-          type: string
-          description: Id of the resource.
-        image:
-          type: string
-        name:
-          type: string
-          description: Name of the resource.
-        noPublicDocuments:
-          type: boolean
-        ownerId:
-          type: string
-        secondaryDomainPrefixes:
-          uniqueItems: true
-          type: array
-          items:
-            type: string
-        state:
-          type: integer
-          format: int32
-        type:
-          type: integer
-          format: int32
-        viewRef:
-          type: string
-          description: URI to visualize the resource in a webclient if applicable.
-          format: uri
-    BTFSValue-1888:
-      required:
-      - btType
-      type: object
-      properties:
-        btType:
-          type: string
-          description: Type of JSON object.
-        typeTag:
-          type: string
-      discriminator:
-        propertyName: btType
-        mapping:
-          BTFSValueArray-1499: '#/components/schemas/BTFSValueArray-1499'
-          BTFSValueBoolean-1195: '#/components/schemas/BTFSValueBoolean-1195'
-          BTFSValueMap-2062: '#/components/schemas/BTFSValueMap-2062'
-          BTFSValueNumber-772: '#/components/schemas/BTFSValueNumber-772'
-          BTFSValueOther-1124: '#/components/schemas/BTFSValueOther-1124'
-          BTFSValueString-1422: '#/components/schemas/BTFSValueString-1422'
-          BTFSValueTooBig-1247: '#/components/schemas/BTFSValueTooBig-1247'
-          BTFSValueUndefined-2003: '#/components/schemas/BTFSValueUndefined-2003'
-          BTFSValueWithUnits-1817: '#/components/schemas/BTFSValueWithUnits-1817'
-    BTAclInfo:
-      type: object
-      properties:
-        admin:
-          type: boolean
-        entries:
-          type: array
-          items:
-            $ref: '#/components/schemas/BTAclEntryInfo'
-        href:
-          type: string
-          description: URI to fetch complete information of the resource.
-          format: uri
-        id:
-          type: string
-          description: Id of the resource.
-        inheritedAcls:
-          type: array
-          items:
-            $ref: '#/components/schemas/BTInheritedAclInfo'
-        name:
-          type: string
-          description: Name of the resource.
-        objectId:
-          type: string
-        objectType:
-          type: integer
-          format: int64
-        owner:
-          $ref: '#/components/schemas/BTOwnerInfo'
-        public:
-          type: boolean
-        sharedWithSupport:
-          type: boolean
-        viewRef:
-          type: string
-          description: URI to visualize the resource in a webclient if applicable.
-          format: uri
-        visibility:
-          type: string
-    BTRestoreStrategy:
-      type: string
-      enum:
-      - KEEP
-      - REPLACE
-    BTMergeUpgradeType:
-      type: string
-      enum:
-      - SOURCE
-      - TARGET
-      - SOURCE_AND_TARGET
-    BTMoveElementParams:
-      type: object
-      properties:
-        anchorElementId:
-          type: string
-        description:
-          type: string
-        elementOriginalToNewMap:
-          type: object
-          additionalProperties:
-            type: string
-        elements:
-          type: array
-          items:
-            type: string
-        generateUnknownMessages:
-          type: boolean
-        importData:
-          type: array
-          items:
-            type: string
-            format: byte
-        isCopy:
-          type: boolean
-        isDeepCopy:
-          type: boolean
-        isGroupAnchor:
-          type: boolean
-        isNewDocument:
-          type: boolean
-        isPublic:
-          type: boolean
-        isSelectivePartOut:
-          type: boolean
-        name:
-          type: string
-        needNewVersion:
-          type: boolean
-        ownerEmail:
-          type: string
-        ownerId:
-          type: string
-        ownerType:
-          type: integer
-          format: int32
-        parentId:
-          type: string
-        projectId:
-          type: string
-        selectedGroupIds:
-          type: array
-          items:
-            type: string
-        sourceDocumentId:
-          type: string
-        sourceVersionId:
-          type: string
-        sourceVersionName:
-          type: string
-          description: Name of version to move elements from (source).
-        sourceWorkspaceId:
-          type: string
-        tags:
-          type: array
-          items:
-            type: string
-        targetDocumentId:
-          type: string
-        targetVersionName:
-          type: string
-          description: Name of version to move elements to (target).
-        targetWorkspaceId:
-          type: string
-        versionName:
-          type: string
-    BTMergePreviewInfo:
-      type: object
-      properties:
-        branchPointMicroversionId:
-          type: string
-        branchPointVersionId:
-          type: string
-        branchPointWorkspaceId:
-          type: string
-        changes:
-          type: array
-          items:
-            $ref: '#/components/schemas/BTElementMergeInfo'
-        isBranchPointAtStart:
-          type: boolean
-        sourceMicroversionId:
-          type: string
-        targetMicroversionId:
-          type: string
-        upgradeInfo:
-          $ref: '#/components/schemas/BTMergeUpgradeInfo'
-    BTWorkspaceInfo:
-      type: object
-      properties:
-        canDelete:
-          type: boolean
-        createdAt:
-          type: string
-          format: date-time
-        creator:
-          $ref: '#/components/schemas/BTUserBasicSummaryInfo'
-        description:
-          type: string
-        documentId:
-          type: string
-        href:
-          type: string
-          description: URI to fetch complete information of the resource.
-          format: uri
-        id:
-          type: string
-          description: Id of the resource.
-        isReadOnly:
-          type: boolean
-        lastModifier:
-          $ref: '#/components/schemas/BTUserBasicSummaryInfo'
-        microversion:
-          type: string
-        modifiedAt:
-          type: string
-          format: date-time
-        name:
-          type: string
-          description: Name of the resource.
-        overrideDate:
-          type: string
-          format: date-time
-        parent:
-          type: string
-        parents:
-          type: array
-          items:
-            $ref: '#/components/schemas/BTVersionInfo'
-        protectionRule:
-          $ref: '#/components/schemas/BTWorkspaceProtectionRuleOptions'
-        state:
-          $ref: '#/components/schemas/BTObjectState'
-        thumbnail:
-          $ref: '#/components/schemas/BTThumbnailInfo'
-        type:
-          type: string
-        viewRef:
-          type: string
-          description: URI to visualize the resource in a webclient if applicable.
-          format: uri
-    BTDocumentSearchParams:
-      type: object
-      properties:
-        documentFilter:
-          type: integer
-          description: 'Type of documents to search: `0: My Documents | 1: Created | 2: Shared | 3: Trash | 4: Public | 5: Recent | 6: By Owner | 7: By Company | 9: By Team`'
-          format: int32
-        foundIn:
-          $ref: '#/components/schemas/BTESVersionWorkspaceChoice'
-        limit:
-          maximum: 20
-          type: integer
-          description: Number of results to return per page. Default value is 20 (also the maximum).
-          format: int32
-          example: 1
-          default: 20
-        offset:
-          type: integer
-          description: Offset. Determines where search results begin. Default value is 0.
-          format: int32
-          default: 0
-        ownerId:
-          type: string
-          description: Owner ID. Can be a user ID, company ID, or team ID, depending on `ownerType`.
-        parentId:
-          type: string
-          description: 'Search document parent Id '
-          example: ALL
-        rawQuery:
-          type: string
-          description: Search for documents that contain the given string in the name. Search is not case-sensitive.
-        sortColumn:
-          type: string
-          description: Column by which to sort search results. `name | modifiedAt | createdAt (default) | email | modifiedBy | promotedAt`
-          default: createdAt
-        sortOrder:
-          type: string
-          description: 'Type of documents to search: `0: My Documents | 1: Created | 2: Shared | 3: Trash | 4: Public | 5: Recent | 6: By Owner | 7: By Company | 9: By Team`'
-          default: desc
-        type:
-          type: string
-          description: 'Type of owner. `0: User | 1: Company | 2: Onshape`. If the owner is a teamId, leave this unspecified.'
-        when:
-          $ref: '#/components/schemas/BTESResultsFilter'
-      x-BTVisibility-properties:
-        luceneSyntax: INTERNAL
-        dochitsOnly: INTERNAL
-    BTDefaultUnitsInfo:
-      type: object
-      properties:
-        nodeId:
-          type: string
-        units:
-          type: array
-          items:
-            $ref: '#/components/schemas/BTDefaultUnitInfo'
-    BTVersionOrWorkspaceParams:
-      type: object
-      properties:
-        clientInteractionMode:
-          type: string
-        description:
-          type: string
-        documentId:
-          type: string
-        fromHistory:
-          type: boolean
-        isRelease:
-          type: boolean
-        microversionId:
-          type: string
-        missingBomTableTemplateId:
-          type: string
-        name:
-          type: string
-        publishVersion:
-          type: boolean
-          description: Publish FeatureScript at this version.
-          default: false
-        purpose:
-          type: integer
-          format: int32
-        readOnly:
-          type: boolean
-        versionId:
-          type: string
-        workspaceId:
-          type: string
-    GBTElementType:
-      type: string
-      enum:
-      - PARTSTUDIO
-      - ASSEMBLY
-      - DRAWING
-      - FEATURESTUDIO
-      - BLOB
-      - APPLICATION
-      - TABLE
-      - BILLOFMATERIALS
-      - VARIABLESTUDIO
-      - PUBLICATIONITEM
-      - UNKNOWN
-    BTOldPermission:
-      type: string
-      enum:
-      - NOACCESS
-      - ANONYMOUS_ACCESS
-      - READ
-      - READ_COPY_EXPORT
-      - COMMENT
-      - WRITE
-      - RESHARE
-      - FULL
-      - OWNER
-    BTAclEntryInfo:
-      type: object
-      properties:
-        acceptOwnerTransfer:
-          type: boolean
-        canConnectionUserEdit:
-          type: boolean
-        companyName:
-          type: string
-        connectionId:
-          type: string
-        connectionName:
-          type: string
-        connectionUser:
-          type: boolean
-        email:
-          type: string
-        enterpriseMember:
-          type: boolean
-        entryId:
-          type: string
-        entryState:
-          $ref: '#/components/schemas/BTUserState'
-        entryType:
-          type: integer
-          format: int32
-        folderInaccessible:
-          type: boolean
-        folderName:
-          type: string
-        image:
-          type: string
-        name:
-          type: string
-        objectId:
-          type: string
-        pendingOwnerTransfer:
-          type: boolean
-        permission:
-          type: integer
-          format: int64
-        permissionSet:
-          type: array
-          items:
-            type: string
-        proCompanySubtype:
-          type: integer
-          format: int32
-        teamName:
-          type: string
-    BTUserBasicSummaryInfo:
-      required:
-      - jsonType
-      type: object
-      properties:
-        jsonType:
-          type: string
       discriminator:
         propertyName: jsonType
         mapping:
-          user-summary: '#/components/schemas/BTUserBasicSummaryInfo'
-          user-detail-summary: '#/components/schemas/BTUserDetailSummaryInfo'
+          user-summary: '#/components/schemas/BTUserSummaryInfo'
+          companyuser: '#/components/schemas/BTCompanyUserSummaryInfo'
+          BTUserAdminSummaryInfo: '#/components/schemas/BTUserAdminSummaryInfo'
+          userinfo: '#/components/schemas/BTUserInfo'
+          BTUserOAuth2SummaryInfo: '#/components/schemas/BTUserOAuth2SummaryInfo'
       allOf:
-      - $ref: '#/components/schemas/BTBaseInfo'
+      - $ref: '#/components/schemas/BTUserDetailSummaryInfo'
       - type: object
         properties:
-          href:
-            type: string
-            description: URI to fetch complete information of the resource.
-            format: uri
-          id:
-            type: string
-            description: Id of the resource.
-          image:
-            type: string
-          isOnshapeSupport:
-            type: boolean
-          name:
-            type: string
-            description: Name of the resource.
-          state:
+          company:
+            $ref: '#/components/schemas/BTCompanySummaryInfo'
+          companyUserState:
             type: integer
             format: int32
-          viewRef:
+          confirmationRequested:
+            type: boolean
+          documentationNameOverride:
             type: string
-            description: URI to visualize the resource in a webclient if applicable.
-            format: uri
+          globalPermissions:
+            $ref: '#/components/schemas/GlobalPermissionInfo'
+          invitationState:
+            type: integer
+            format: int32
+          isExternal:
+            type: boolean
+          isGuest:
+            type: boolean
+          isLight:
+            type: boolean
+          lastLoginTime:
+            type: string
+            format: date-time
+          personalMessageAllowed:
+            type: boolean
+          source:
+            type: integer
+            format: int32
     GBTMeshState:
       type: string
       enum:
@@ -2129,243 +1676,6 @@ components:
       - MIXED
       - ALL_MESH
       - UNKNOWN
-    BTRestoreFromHistoryInfo:
-      type: object
-      properties:
-        newMicroversion:
-          type: string
-    BTESResultsFilter:
-      type: string
-      description: Search result when
-      example: ALL
-      enum:
-      - ALL
-      - LATEST
-      - LATEST_PER_HIT
-    BTGroupOrElementReference-2205:
-      type: object
-      properties:
-        btType:
-          type: string
-          description: Type of JSON object.
-        nodeId:
-          type: string
-      description: List of folders or elements in this group (folder).
-      discriminator:
-        propertyName: btType
-        mapping:
-          BTDocumentElementReference-2484: '#/components/schemas/BTDocumentElementReference-2484'
-          BTElementGroup-1458: '#/components/schemas/BTElementGroup-1458'
-    BTRevisionApproverInfo:
-      type: object
-      properties:
-        date:
-          type: string
-          description: Date the revision was created.
-          format: date-time
-        id:
-          type: string
-          description: User ID of the user who approved the revision.
-        name:
-          type: string
-          description: Name of the user who approved the revision.
-      description: The users who approved the release package that created this revision.
-    BTWorkspaceProtectionRuleOptions:
-      type: string
-      enum:
-      - OPEN
-      - MERGE
-      - FAST_FORWARD_MERGE
-    BTUserState:
-      type: string
-      enum:
-      - DELETED
-      - ACTIVE
-      - INACTIVE
-      - REQUESTED
-      - APPROVED
-      - REQUEST_EXPIRED
-      - ALL
-      - MARKED_FOR_DELETION
-    BTDocumentContentsInfo:
-      type: object
-      properties:
-        elements:
-          type: array
-          description: The elements (tabs) in the document. This does not include folders.
-          items:
-            $ref: '#/components/schemas/BTDocumentElementInfo'
-        folders:
-          $ref: '#/components/schemas/BTElementGroup-1458'
-    BTCopyDocumentParams:
-      type: object
-      properties:
-        isPublic:
-          type: boolean
-          description: '`true` to make the new document public.'
-        newName:
-          type: string
-          description: Name for the new document.
-        ownerId:
-          type: string
-          description: Owner of the new document. Can be a [user ID](#/User/sessionInfo) or [company ID](#/Company/findCompany), depending on `ownerTypeIndex`.
-        ownerTypeIndex:
-          type: integer
-          description: 'Type of owner. `0: User, 1: Company`'
-          format: int32
-        parentId:
-          type: string
-          description: Optionally add the new document to the specified folder. Provide the folder ID as the parent ID.
-        projectId:
-          type: string
-          description: Optionally add the new document to the specified project.
-        repointAppElementVersionRefs:
-          type: boolean
-          description: '`true` to re-point version references in application elements to the initial version in the new document.'
-      description: Options for the new copied document.
-    BTDocumentElementCreationDescriptor:
-      type: object
-      properties:
-        elementParams:
-          $ref: '#/components/schemas/BTAppElementParams'
-        elementType:
-          type: integer
-          format: int32
-      description: List of element IDs to include in the document.
-    BTPendingUpgradeInfo:
-      type: object
-      properties:
-        scheduledTime:
-          type: string
-          format: date-time
-        version:
-          type: integer
-          format: int32
-    BTInsertableInfo:
-      type: object
-      properties:
-        areFaultsIgnored:
-          type: boolean
-        bodyType:
-          $ref: '#/components/schemas/GBTBodyType'
-        classType:
-          type: integer
-          format: int32
-        configuration:
-          type: string
-        configurationParameterValues:
-          type: array
-          items:
-            type: string
-            format: byte
-        configurationParameters:
-          type: array
-          items:
-            type: string
-            format: byte
-        dataType:
-          type: string
-        deterministicId:
-          type: string
-        documentId:
-          type: string
-        elementId:
-          type: string
-        elementName:
-          type: string
-        elementType:
-          $ref: '#/components/schemas/GBTElementType'
-        featureId:
-          type: string
-        featureName:
-          type: string
-        featureSpec:
-          type: array
-          items:
-            type: string
-            format: byte
-        featureType:
-          type: string
-        fsComputedPartPropertySpec:
-          type: array
-          items:
-            type: string
-            format: byte
-        fsTableSpec:
-          type: array
-          items:
-            type: string
-            format: byte
-        hasFaults:
-          type: boolean
-        href:
-          type: string
-          description: URI to fetch complete information of the resource.
-          format: uri
-        id:
-          type: string
-          description: Id of the resource.
-        insertableQuery:
-          type: string
-        isFlattenedBody:
-          type: boolean
-        isMesh:
-          type: boolean
-        meshState:
-          $ref: '#/components/schemas/GBTMeshState'
-        microversionId:
-          type: string
-        name:
-          type: string
-          description: Name of the resource.
-        parentId:
-          type: string
-        partIdentity:
-          type: string
-        partName:
-          type: string
-        predictableThumbnailId:
-          type: string
-        sourceFileExtension:
-          type: string
-        thumbnailUri:
-          type: string
-        unflattenedPartDeterministicId:
-          type: string
-        variableName:
-          type: string
-        versionId:
-          type: string
-        versionName:
-          type: string
-        viewRef:
-          type: string
-          description: URI to visualize the resource in a webclient if applicable.
-          format: uri
-        workspaceId:
-          type: string
-        workspaceName:
-          type: string
-      description: Array of items in the current page.
-    BTAclParams:
-      type: object
-      properties:
-        anonymousAccessAllowed:
-          type: boolean
-        anonymousAllowsExport:
-          type: boolean
-        docStateParams:
-          type: object
-          additionalProperties:
-            type: string
-        documentId:
-          type: string
-        elementId:
-          type: string
-        public:
-          type: boolean
-        workspaceId:
-          type: string
     BTUserDetailSummaryInfo:
       type: object
       discriminator:
@@ -2385,539 +1695,80 @@ components:
             type: string
           lastName:
             type: string
-    BTInheritedAclInfo:
+    BTRevisionApproverInfo:
       type: object
       properties:
-        entries:
-          type: array
-          items:
-            $ref: '#/components/schemas/BTAclEntryInfo'
-        href:
+        date:
           type: string
-          description: URI to fetch complete information of the resource.
-          format: uri
+          description: Date the revision was created.
+          format: date-time
         id:
           type: string
-          description: Id of the resource.
+          description: User ID of the user who approved the revision.
         name:
           type: string
-          description: Name of the resource.
-        objectId:
-          type: string
-        objectName:
-          type: string
-        objectType:
-          type: integer
-          format: int64
-        owner:
-          $ref: '#/components/schemas/BTOwnerInfo'
-        public:
-          type: boolean
-        sharedWithSupport:
-          type: boolean
-        viewRef:
-          type: string
-          description: URI to visualize the resource in a webclient if applicable.
-          format: uri
-        visibility:
-          type: string
-    BTInsertablesListResponse:
-      type: object
-      properties:
-        canSaveVersion:
-          type: boolean
-        changesSinceVersionSave:
-          type: integer
-          format: int32
-        configuration:
-          type: object
-          additionalProperties:
-            $ref: '#/components/schemas/BTFSValue-1888'
-        configurationKey:
-          type: string
-        hasMultipleVersions:
-          type: boolean
-        href:
-          type: string
-          description: URI for current page of resources.
-          format: uri
-        items:
-          type: array
-          description: Array of items in the current page.
-          items:
-            $ref: '#/components/schemas/BTInsertableInfo'
-        next:
-          type: string
-          description: URI for next page of the resources if more are available.
-          format: uri
-        previous:
-          type: string
-          description: URI for previous page of the resources.
-          format: uri
-        updatedThumbnailUri:
-          type: string
-    BTElementLocationParams:
-      type: object
-      properties:
-        elementId:
-          type: string
-          description: The id of an element which provides context for the position value specified.
-        position:
-          type: integer
-          description: An indicator for the relative placement of the new element. If elementId is specified, a negative number indicates insertion prior to the element and a non-negative number indicates insertion following the element. If no elementId is specified, a negative value indicates insertion at the end of the element list and a non-negative number indicates insertion at the start of the element list.
-          format: int32
-      description: The location at which the new element should be inserted.
-    BTESVersionWorkspaceChoice:
+          description: Name of the user who approved the revision.
+      description: The users who approved the release package that created this revision.
+    BTESResultsFilter:
       type: string
-      description: Search result found in
+      description: Search result when
       example: ALL
       enum:
       - ALL
-      - WORKSPACES
-      - VERSIONS
-    BTGlobalTreeNodeListResponse:
+      - LATEST
+      - LATEST_PER_HIT
+    BTRevertUnchangedElementParams:
       type: object
       properties:
-        href:
-          type: string
-          description: Requested Document URL
-          format: uri
-        items:
-          type: array
-          properties:
-            empty:
-              type: boolean
-            first:
-              $ref: '#/components/schemas/BTGlobalTreeNodeInfo'
-            last:
-              $ref: '#/components/schemas/BTGlobalTreeNodeInfo'
-          description: Document Items array. Array entries are the same as that returned from "/api/documents/{did}".
-          items:
-            $ref: '#/components/schemas/BTGlobalTreeNodeInfo'
-        next:
-          type: string
-          description: The URL for the next page of items. Responses are limited to 20 items per page.
-          format: uri
-        previous:
-          type: string
-          description: The URL for the previous page of items. Responses are limited to 20 items per page.
-          format: uri
-    BTBExportModelParams:
-      required:
-      - documentId
-      - format
-      type: object
-      properties:
-        angleTolerance:
-          type: number
-          format: double
-        batchAllFlatPatterns:
-          type: boolean
-        batchFlatPatterns:
-          type: boolean
-        chordTolerance:
-          type: number
-          format: double
-        cloudObjectId:
-          type: string
-        cloudStorageAccountId:
-          type: string
         configuration:
           type: string
-        destinationName:
-          type: string
-        documentId:
-          type: string
-        documentVersionId:
-          type: string
         elementId:
           type: string
-        elementIds:
+        referenceIds:
+          uniqueItems: true
+          type: array
+          items:
+            type: string
+    GBTElementType:
+      type: string
+      enum:
+      - PARTSTUDIO
+      - ASSEMBLY
+      - DRAWING
+      - FEATURESTUDIO
+      - BLOB
+      - APPLICATION
+      - TABLE
+      - BILLOFMATERIALS
+      - VARIABLESTUDIO
+      - PUBLICATIONITEM
+      - UNKNOWN
+    BTUnchangedReferenceInfo:
+      type: object
+      properties:
+        metadataUnchanged:
+          type: boolean
+        nodeIds:
+          type: array
+          items:
+            type: string
+        toRevision:
+          $ref: '#/components/schemas/BTRevisionInfo'
+    BTMergeUpgradeType:
+      type: string
+      enum:
+      - SOURCE
+      - TARGET
+      - SOURCE_AND_TARGET
+    BTDefaultUnitsInfo:
+      type: object
+      properties:
+        nodeId:
           type: string
-        emailLink:
-          type: boolean
-        emailMessage:
-          type: string
-        emailSubject:
-          type: string
-        emailTo:
-          type: string
-          description: Base64-encoded email address. When sending an email, the `fromUserId` parameter is also required.
-        excludeHiddenEntities:
-          type: boolean
-          description: If `true`, the exported file won't have any parts and assemblies marked as hidden
-        featureIds:
-          type: string
-        flatPatternAsync:
-          type: boolean
-          description: If `true`, flat pattern export being called via async
-        flatten:
-          type: boolean
-        format:
-          type: string
-        fromUserId:
-          type: string
-          description: Your user ID. Required when providing the `emailTo` parameter.
-        grouping:
-          type: string
-        ignoreExportRulesForContents:
-          type: boolean
-        includeBendCenterlines:
-          type: boolean
-        includeBendLines:
-          type: boolean
-        includeCboreCsink:
-          type: boolean
-        includeExportIds:
-          type: boolean
-        includeFormedCentermarks:
-          type: boolean
-        includeFormedOutlines:
-          type: boolean
-        includeSketches:
-          type: boolean
-        isPartingOut:
-          type: boolean
-        linkDocumentId:
-          type: string
-        linkDocumentWorkspaceId:
-          type: string
-        maxFacetWidth:
-          type: number
-          format: double
-        microversion:
-          type: string
-        minFacetWidth:
-          type: number
-          format: double
-        mode:
-          type: string
-        occurrencesToExport:
-          type: string
-        partIds:
-          type: string
-        partQuery:
-          type: string
-        password:
-          type: string
-        passwordRequired:
-          type: boolean
-        resolution:
-          type: string
-        scale:
-          type: number
-          format: double
-        sendCopyToMe:
-          type: boolean
-        sheetMetalFlat:
-          type: boolean
-        splinesAsPolylines:
-          type: boolean
-        storeInDocument:
-          type: boolean
-        triggerAutoDownload:
-          type: boolean
         units:
-          type: string
-        useYAxisAsUp:
-          type: boolean
-          description: If `true`, the exported file will have all the parts and assemblies reoriented such that the Z-axis within Onshape becomes the Y-axis in the exported file.
-        userId:
-          type: string
-        validForDays:
-          type: integer
-          format: int32
-        version:
-          type: string
-        view:
-          type: string
-        workspaceId:
-          type: string
-        zipSingleFileOutput:
-          type: boolean
-      description: Onshape document export schema
-    BTLinkToLatestDocumentParams:
-      type: object
-      properties:
-        elements:
           type: array
           items:
-            type: string
-    BTDefaultUnitInfo:
-      type: object
-      properties:
-        key:
-          type: string
-          description: The quantity type.
-        value:
-          type: string
-          description: The unit that should be used.
-      description: Specifies which unit should be used for each supported quantity type.
-    BTDocumentHistoryInfo:
-      type: object
-      properties:
-        canBeRestored:
-          type: boolean
-        date:
-          type: string
-          format: date-time
-        description:
-          type: string
-        microversionId:
-          type: string
-        nextMicroversionId:
-          type: string
-        restoreId:
-          type: string
-          description: If this microversion is the result of a restore from another microversion, the restoreId will be the microversion Id of the original microversion that was restored. Otherwise this id will not be included within the response.
-        userId:
-          type: string
-        username:
-          type: string
-    BTThumbnailInfo:
-      type: object
-      properties:
-        href:
-          type: string
-          format: uri
-        id:
-          type: string
-        secondarySizes:
-          type: array
-          items:
-            type: array
-            items:
-              $ref: '#/components/schemas/BTThumbnailSizeInfo'
-        sizes:
-          type: array
-          items:
-            $ref: '#/components/schemas/BTThumbnailSizeInfo'
-    BTCopyDocumentInfo:
-      type: object
-      properties:
-        newDocumentId:
-          type: string
-        newDocumentName:
-          type: string
-        newOwner:
-          $ref: '#/components/schemas/BTOwnerInfo'
-        newParentId:
-          type: string
-        newProjectId:
-          type: string
-        newWorkspaceId:
-          type: string
-    BTSyncAppElementParams:
-      type: object
-      properties:
-        description:
-          type: string
-        elements:
-          type: array
-          items:
-            type: string
-    BTGlobalTreeNodeInfo:
-      required:
-      - jsonType
-      type: object
-      properties:
-        canMove:
-          type: boolean
-        connectionName:
-          type: string
-        connectionNames:
-          type: array
-          items:
-            type: string
-        createdAt:
-          type: string
-          format: date-time
-        createdBy:
-          $ref: '#/components/schemas/BTUserBasicSummaryInfo'
-        description:
-          type: string
-        href:
-          type: string
-          description: URI to fetch complete information of the resource.
-          format: uri
-        id:
-          type: string
-          description: Id of the resource.
-        isContainer:
-          type: boolean
-        isEnterpriseOwned:
-          type: boolean
-        isExternalConnectionResource:
-          type: boolean
-        isMutable:
-          type: boolean
-        jsonType:
-          type: string
-        modifiedAt:
-          type: string
-          format: date-time
-        modifiedBy:
-          $ref: '#/components/schemas/BTUserBasicSummaryInfo'
-        name:
-          type: string
-          description: Name of the resource.
-        owner:
-          $ref: '#/components/schemas/BTOwnerInfo'
-        parentId:
-          type: string
-        projectId:
-          type: string
-        resourceType:
-          type: string
-        treeHref:
-          type: string
-        unparentHref:
-          type: string
-        viewRef:
-          type: string
-          description: URI to visualize the resource in a webclient if applicable.
-          format: uri
-      discriminator:
-        propertyName: jsonType
-        mapping:
-          document-summary: '#/components/schemas/BTGlobalTreeNodeSummaryInfo'
-          folder: '#/components/schemas/BTFolderInfo'
-          magic: '#/components/schemas/BTGlobalTreeMagicNodeInfo'
-          project: '#/components/schemas/BTProjectInfo'
-          label: '#/components/schemas/BTDocumentLabelInfo'
-          team-summary: '#/components/schemas/BTTeamSummaryInfo'
-          cloudstorageaccount: '#/components/schemas/BTCloudStorageAccountInfo'
-          classroom: '#/components/schemas/BTClassroomInfo'
-          resource-owner: '#/components/schemas/BTResourceOwnerInfo'
-          external-connection: '#/components/schemas/BTExternalConnectionInfo'
-          smartfolder: '#/components/schemas/BTSmartFolderInfo'
-    BTDocumentParams:
-      type: object
-      properties:
-        description:
-          type: string
-          description: Document description.
-        elements:
-          type: array
-          description: List of element IDs to include in the document.
-          items:
-            $ref: '#/components/schemas/BTDocumentElementCreationDescriptor'
-        forceExportRules:
-          type: boolean
-          description: '`true` if the current user can toggle the Force Export Rule flag on a document.'
-        generateUnknownMessages:
-          type: boolean
-          description: Set to `true` for debugging.
-        isEmptyContent:
-          type: boolean
-          description: Set to `true` to generate an empty document.
-        isPublic:
-          type: boolean
-          description: Set to `true` to make the document public.
-        name:
-          type: string
-          description: Document name.
-        notRevisionManaged:
-          type: boolean
-          description: Set to `true` to indicate that revisions are not managed for this document.
-        notes:
-          type: string
-          description: Deprecated. Use the /documents/{did}/notes endpoint instead.
-          deprecated: true
-        oldClientNotes:
-          type: string
-          description: Deprecated. Use the /documents/{did}/notes endpoint instead.
-          deprecated: true
-        ownerEmail:
-          type: string
-          description: The document owner's email address.
-        ownerId:
-          type: string
-          description: If `ownerType=USER`, this is the user ID. If `ownerType=COMPANY`, this is the company ID.
-        ownerType:
-          type: integer
-          description: The document's owner type. `USER=0` | `COMPANY=1` | `ONSHAPE=2`
-          format: int32
-          default: 0
-        parentId:
-          type: string
-          description: Document ID of this document's parent.
-        projectId:
-          type: string
-          description: ID of the project this document belongs to.
-        tags:
-          type: array
-          description: Array of strings to set as tags for the document.
-          items:
-            type: string
-            description: Array of strings to set as tags for the document.
-      description: Parameters for creating and updating documents.
-    BTShareEntryParams:
-      type: object
-      properties:
-        applicationId:
-          type: string
-        companyId:
-          type: string
-        connectionId:
-          type: string
-        email:
-          type: string
-        entryType:
-          type: integer
-          format: int32
-        teamId:
-          type: string
-        userId:
-          type: string
-    BTShareParams:
-      type: object
-      properties:
-        connectionId:
-          type: string
-        documentId:
-          type: string
-        elementId:
-          type: string
-        encodedConfiguration:
-          type: string
-        entries:
-          type: array
-          items:
-            $ref: '#/components/schemas/BTShareEntryParams'
-        folderId:
-          type: string
-        message:
-          type: string
-        permission:
-          type: integer
-          format: int64
-        permissionSet:
-          type: array
-          items:
-            type: string
-        update:
-          type: boolean
-        workspaceId:
-          type: string
-    BTThumbnailSizeInfo:
-      type: object
-      properties:
-        href:
-          type: string
-          format: uri
-        mediaType:
-          type: string
-        renderMode:
-          type: string
-        sheetName:
-          type: string
-        size:
-          type: string
-        uniqueId:
-          type: string
-        viewOrientation:
-          type: string
+            $ref: '#/components/schemas/BTDefaultUnitInfo'
     BTDocumentInfo:
       type: object
       discriminator:
@@ -3074,49 +1925,56 @@ components:
         canExportViaConnectionGlobalPermisison: INTERNAL
         tracingEnabled: INTERNAL
         elementLibrarySummaryInfo: INTERNAL
-    BTMergeUpgradeInfo:
+    BTThumbnailInfo:
       type: object
       properties:
-        pendingSourceUpgrade:
-          $ref: '#/components/schemas/BTPendingUpgradeInfo'
-        pendingTargetUpgrade:
-          $ref: '#/components/schemas/BTPendingUpgradeInfo'
-        recommendedVersion:
-          type: integer
-          format: int32
-        type:
-          $ref: '#/components/schemas/BTMergeUpgradeType'
-    BTZipFileInfo:
-      type: object
-      properties:
-        files:
+        href:
+          type: string
+          format: uri
+        id:
+          type: string
+        secondarySizes:
           type: array
           items:
-            type: string
-    BTUnitInfo:
+            type: array
+            items:
+              $ref: '#/components/schemas/BTThumbnailSizeInfo'
+        sizes:
+          type: array
+          items:
+            $ref: '#/components/schemas/BTThumbnailSizeInfo'
+    BTElementGroup-1458:
       type: object
       properties:
-        defaultUnits:
-          $ref: '#/components/schemas/BTDefaultUnitsInfo'
-        unitsDisplayPrecision:
-          type: object
-          additionalProperties:
-            type: integer
-            description: Specifies the display precision for every supported unit.
-            format: int32
-          description: Specifies the display precision for every supported unit.
-    BTVersionInfo:
+        btType:
+          type: string
+          description: Type of JSON object.
+        groupName:
+          type: string
+          description: The name of the group (folder).
+        groups:
+          type: array
+          description: List of folders or elements in this group (folder).
+          items:
+            $ref: '#/components/schemas/BTGroupOrElementReference-2205'
+        nodeId:
+          type: string
+          description: A unique identifier for this folder.
+    BTMergeStrategy:
+      type: string
+      enum:
+      - MERGE
+      - KEEP
+      - REPLACE
+    BTAclInfo:
       type: object
       properties:
-        createdAt:
-          type: string
-          format: date-time
-        creator:
-          $ref: '#/components/schemas/BTUserBasicSummaryInfo'
-        description:
-          type: string
-        documentId:
-          type: string
+        admin:
+          type: boolean
+        entries:
+          type: array
+          items:
+            $ref: '#/components/schemas/BTAclEntryInfo'
         href:
           type: string
           description: URI to fetch complete information of the resource.
@@ -3124,34 +1982,30 @@ components:
         id:
           type: string
           description: Id of the resource.
-        lastModifier:
-          $ref: '#/components/schemas/BTUserBasicSummaryInfo'
-        metadataWorkspaceId:
-          type: string
-        microversion:
-          type: string
-        modifiedAt:
-          type: string
-          format: date-time
+        inheritedAcls:
+          type: array
+          items:
+            $ref: '#/components/schemas/BTInheritedAclInfo'
         name:
           type: string
           description: Name of the resource.
-        overrideDate:
+        objectId:
           type: string
-          format: date-time
-        parent:
-          type: string
-        purpose:
+        objectType:
           type: integer
-          format: int32
-        thumbnail:
-          $ref: '#/components/schemas/BTThumbnailInfo'
-        type:
-          type: string
+          format: int64
+        owner:
+          $ref: '#/components/schemas/BTOwnerInfo'
+        public:
+          type: boolean
+        sharedWithSupport:
+          type: boolean
         viewRef:
           type: string
           description: URI to visualize the resource in a webclient if applicable.
           format: uri
+        visibility:
+          type: string
     BTVersionOrWorkspaceMergeInfo:
       type: object
       properties:
@@ -3165,334 +2019,30 @@ components:
             $ref: '#/components/schemas/BTMergeStrategy'
         type:
           type: string
-    BTApplicationTargetInfo:
+    BTMoveElementInfo:
       type: object
       properties:
-        baseHref:
+        elementOriginalToNewMap:
+          type: object
+          additionalProperties:
+            type: string
+        errorMessage:
           type: string
-          format: uri
-        clientId:
-          type: string
-        supportsCollaboration:
+        isNewDocument:
           type: boolean
-        tabIconHref:
+        newDocumentId:
           type: string
-          format: uri
-    BTUserSummaryInfo:
-      type: object
-      discriminator:
-        propertyName: jsonType
-        mapping:
-          user-summary: '#/components/schemas/BTUserSummaryInfo'
-          companyuser: '#/components/schemas/BTCompanyUserSummaryInfo'
-          BTUserAdminSummaryInfo: '#/components/schemas/BTUserAdminSummaryInfo'
-          userinfo: '#/components/schemas/BTUserInfo'
-          BTUserOAuth2SummaryInfo: '#/components/schemas/BTUserOAuth2SummaryInfo'
-      allOf:
-      - $ref: '#/components/schemas/BTUserDetailSummaryInfo'
-      - type: object
-        properties:
-          company:
-            $ref: '#/components/schemas/BTCompanySummaryInfo'
-          companyUserState:
-            type: integer
-            format: int32
-          confirmationRequested:
-            type: boolean
-          documentationNameOverride:
-            type: string
-          globalPermissions:
-            $ref: '#/components/schemas/GlobalPermissionInfo'
-          invitationState:
-            type: integer
-            format: int32
-          isExternal:
-            type: boolean
-          isGuest:
-            type: boolean
-          isLight:
-            type: boolean
-          lastLoginTime:
-            type: string
-            format: date-time
-          personalMessageAllowed:
-            type: boolean
-          source:
-            type: integer
-            format: int32
-    BTUnchangedElementInfo:
+        newDocumentName:
+          type: string
+        newDocumentVersionId:
+          type: string
+        newWorkspaceId:
+          type: string
+    BTMicroversionInfo:
       type: object
       properties:
-        connectionId:
+        microversion:
           type: string
-        elementId:
-          type: string
-        unchangedReferences:
-          type: array
-          items:
-            $ref: '#/components/schemas/BTUnchangedReferenceInfo'
-    BTRevertUnchangedElementParams:
-      type: object
-      properties:
-        configuration:
-          type: string
-        elementId:
-          type: string
-        referenceIds:
-          uniqueItems: true
-          type: array
-          items:
-            type: string
-    BTAppElementChangeParams:
-      required:
-      - subelementId
-      type: object
-      properties:
-        baseContent:
-          type: string
-          description: This base64-encoded data is treated as a full representation of the sub-element's data and all deltas previously added will no longer be returned.
-          format: byte
-        delta:
-          type: string
-          description: This base64-encoded data is a delta which the application can apply to the last added baseContent data.
-          format: byte
-        subelementId:
-          type: string
-          description: The id of the subelement to edit. The value is determined by the application.
-    BTDocumentMergeInfo:
-      type: object
-      properties:
-        libraryVersionMismatch:
-          type: boolean
-        overwrittenElements:
-          type: array
-          items:
-            $ref: '#/components/schemas/BTDocumentElementInfo'
-        parentDocumentMicroversionId:
-          type: string
-        resultDocumentMicroversionId:
-          type: string
-        sourceDocumentMicroversionId:
-          type: string
-    GlobalPermissionInfo:
-      type: object
-      properties:
-        accessReports:
-          type: boolean
-        adminEnterprise:
-          type: boolean
-        allowAppStoreAccess:
-          type: boolean
-        allowPublicDocumentsAccess:
-          type: boolean
-        approveReleases:
-          type: boolean
-        branchLockPermissions:
-          type: boolean
-        createDocumentsInRoot:
-          type: boolean
-        createProject:
-          type: boolean
-        createReleases:
-          type: boolean
-        createTasks:
-          type: boolean
-        deletePermanently:
-          type: boolean
-        enableLabs:
-          type: boolean
-        exportFiles:
-          type: boolean
-        importFiles:
-          type: boolean
-        manageGuestUsers:
-          type: boolean
-        manageNonGeometricItems:
-          type: boolean
-        manageRbac:
-          type: boolean
-        manageStandardContentMetadata:
-          type: boolean
-        manageUsers:
-          type: boolean
-        manageWorkflows:
-          type: boolean
-        shareForAnonymousAccess:
-          type: boolean
-        transferDocumentsFromEnterprise:
-          type: boolean
-        useRevisionTools:
-          type: boolean
-    BTDocumentElementInfo:
-      type: object
-      properties:
-        accelerationUnits:
-          type: string
-        angleUnits:
-          type: string
-        angularVelocityUnits:
-          type: string
-        applicationTarget:
-          $ref: '#/components/schemas/BTApplicationTargetInfo'
-        areaUnits:
-          type: string
-        dataType:
-          type: string
-        deleted:
-          type: boolean
-        densityUnits:
-          type: string
-        elementType:
-          $ref: '#/components/schemas/GBTElementType'
-        energyUnits:
-          type: string
-        filename:
-          type: string
-        forceUnits:
-          type: string
-        foreignDataId:
-          type: string
-        frequencyUnits:
-          type: string
-        id:
-          type: string
-        lengthUnits:
-          type: string
-        massUnits:
-          type: string
-        microversionId:
-          type: string
-        momentUnits:
-          type: string
-        name:
-          type: string
-        pressureUnits:
-          type: string
-        prettyType:
-          type: string
-        safeToShow:
-          type: boolean
-        specifiedUnit:
-          type: string
-        thumbnailInfo:
-          $ref: '#/components/schemas/BTThumbnailInfo'
-        thumbnails:
-          type: string
-          format: uri
-        timeUnits:
-          type: string
-        type:
-          type: string
-        unupdatable:
-          type: boolean
-        volumeUnits:
-          type: string
-        zip:
-          $ref: '#/components/schemas/BTZipFileInfo'
-    BTGlobalTreeNodeSummaryInfo:
-      type: object
-      discriminator:
-        propertyName: jsonType
-        mapping:
-          document: '#/components/schemas/BTDocumentInfo'
-          document-summary: '#/components/schemas/BTGlobalTreeNodeSummaryInfo'
-          document-summary-search: '#/components/schemas/BTDocumentSummarySearchInfo'
-      allOf:
-      - $ref: '#/components/schemas/BTGlobalTreeNodeInfo'
-      - type: object
-        properties:
-          anonymousAccessAllowed:
-            type: boolean
-          anonymousAllowsExport:
-            type: boolean
-          canUnshare:
-            type: boolean
-          createdWithEducationPlan:
-            type: boolean
-          defaultElementId:
-            type: string
-          defaultWorkspace:
-            $ref: '#/components/schemas/BTWorkspaceInfo'
-          documentLabels:
-            type: array
-            items:
-              $ref: '#/components/schemas/BTDocumentLabelInfo'
-          documentType:
-            type: integer
-            format: int32
-          forceExportRules:
-            type: boolean
-          hasReleaseRevisionableObjects:
-            type: boolean
-          hasRelevantInsertables:
-            type: boolean
-          isUsingManagedWorkflow:
-            type: boolean
-          likedByCurrentUser:
-            type: boolean
-          likes:
-            type: integer
-            format: int64
-          notRevisionManaged:
-            type: boolean
-          notes:
-            type: string
-          numberOfTimesCopied:
-            type: integer
-            format: int64
-          numberOfTimesReferenced:
-            type: integer
-            format: int64
-          permission:
-            $ref: '#/components/schemas/BTOldPermission'
-          permissionSet:
-            type: array
-            items:
-              type: string
-          public:
-            type: boolean
-          publishedVersionId:
-            type: string
-          recentVersion:
-            $ref: '#/components/schemas/BTBaseInfo'
-          sequence:
-            type: string
-          supportTeamUserAndShared:
-            type: boolean
-          tags:
-            type: array
-            items:
-              type: string
-          thumbnail:
-            $ref: '#/components/schemas/BTThumbnailInfo'
-          trash:
-            type: boolean
-          trashedAt:
-            type: string
-            format: date-time
-          userAccountLimitsBreached:
-            type: boolean
-      x-BTVisibility-properties:
-        totalWorkspacesUpdating: INTERNAL
-        defaultVersionGraphMode: INTERNAL
-        totalWorkspacesScheduledForUpdate: INTERNAL
-        isOrphaned: INTERNAL
-        defaultVersionGraphShowAutoVersions: INTERNAL
-        defaultVersionGraphShowMerges: INTERNAL
-        elementLibrarySummaryInfo: INTERNAL
-    BTRevertUnchangedParams:
-      type: object
-      properties:
-        companyId:
-          type: string
-        connectionId:
-          type: string
-        doUpdate:
-          type: boolean
-        elements:
-          type: array
-          items:
-            $ref: '#/components/schemas/BTRevertUnchangedElementParams'
     BTElementMergeInfo:
       type: object
       properties:
@@ -3550,6 +2100,261 @@ components:
           type: boolean
         versionCompatible:
           type: boolean
+    BTRestoreStrategy:
+      type: string
+      enum:
+      - KEEP
+      - REPLACE
+    BTDocumentParams:
+      type: object
+      properties:
+        description:
+          type: string
+          description: Document description.
+        elements:
+          type: array
+          description: List of element IDs to include in the document.
+          items:
+            $ref: '#/components/schemas/BTDocumentElementCreationDescriptor'
+        forceExportRules:
+          type: boolean
+          description: '`true` if the current user can toggle the Force Export Rule flag on a document.'
+        generateUnknownMessages:
+          type: boolean
+          description: Set to `true` for debugging.
+        isEmptyContent:
+          type: boolean
+          description: Set to `true` to generate an empty document.
+        isPublic:
+          type: boolean
+          description: Set to `true` to make the document public.
+        name:
+          type: string
+          description: Document name.
+        notRevisionManaged:
+          type: boolean
+          description: Set to `true` to indicate that revisions are not managed for this document.
+        notes:
+          type: string
+          description: Deprecated. Use the /documents/{did}/notes endpoint instead.
+          deprecated: true
+        oldClientNotes:
+          type: string
+          description: Deprecated. Use the /documents/{did}/notes endpoint instead.
+          deprecated: true
+        ownerEmail:
+          type: string
+          description: The document owner's email address.
+        ownerId:
+          type: string
+          description: If `ownerType=USER`, this is the user ID. If `ownerType=COMPANY`, this is the company ID.
+        ownerType:
+          type: integer
+          description: The document's owner type. `USER=0` | `COMPANY=1` | `ONSHAPE=2`
+          format: int32
+          default: 0
+        parentId:
+          type: string
+          description: Document ID of this document's parent.
+        projectId:
+          type: string
+          description: ID of the project this document belongs to.
+        tags:
+          type: array
+          description: Array of strings to set as tags for the document.
+          items:
+            type: string
+            description: Array of strings to set as tags for the document.
+      description: Parameters for creating and updating documents.
+    BTAclParams:
+      type: object
+      properties:
+        anonymousAccessAllowed:
+          type: boolean
+        anonymousAllowsExport:
+          type: boolean
+        docStateParams:
+          type: object
+          additionalProperties:
+            type: string
+        documentId:
+          type: string
+        elementId:
+          type: string
+        public:
+          type: boolean
+        workspaceId:
+          type: string
+    BTRestoreFromHistoryInfo:
+      type: object
+      properties:
+        newMicroversion:
+          type: string
+    GBTBodyType:
+      type: string
+      enum:
+      - SOLID
+      - SHEET
+      - WIRE
+      - POINT
+      - MATE_CONNECTOR
+      - COMPOSITE
+      - UNKNOWN
+    BTFSValue-1888:
+      required:
+      - btType
+      type: object
+      properties:
+        btType:
+          type: string
+          description: Type of JSON object.
+        typeTag:
+          type: string
+      discriminator:
+        propertyName: btType
+        mapping:
+          BTFSValueArray-1499: '#/components/schemas/BTFSValueArray-1499'
+          BTFSValueBoolean-1195: '#/components/schemas/BTFSValueBoolean-1195'
+          BTFSValueMap-2062: '#/components/schemas/BTFSValueMap-2062'
+          BTFSValueNumber-772: '#/components/schemas/BTFSValueNumber-772'
+          BTFSValueOther-1124: '#/components/schemas/BTFSValueOther-1124'
+          BTFSValueString-1422: '#/components/schemas/BTFSValueString-1422'
+          BTFSValueTooBig-1247: '#/components/schemas/BTFSValueTooBig-1247'
+          BTFSValueUndefined-2003: '#/components/schemas/BTFSValueUndefined-2003'
+          BTFSValueWithUnits-1817: '#/components/schemas/BTFSValueWithUnits-1817'
+    BTOldPermission:
+      type: string
+      enum:
+      - NOACCESS
+      - ANONYMOUS_ACCESS
+      - READ
+      - READ_COPY_EXPORT
+      - COMMENT
+      - WRITE
+      - RESHARE
+      - FULL
+      - OWNER
+    BTDocumentMergeInfo:
+      type: object
+      properties:
+        libraryVersionMismatch:
+          type: boolean
+        overwrittenElements:
+          type: array
+          items:
+            $ref: '#/components/schemas/BTDocumentElementInfo'
+        parentDocumentMicroversionId:
+          type: string
+        resultDocumentMicroversionId:
+          type: string
+        sourceDocumentMicroversionId:
+          type: string
+    BTInsertableInfo:
+      type: object
+      properties:
+        areFaultsIgnored:
+          type: boolean
+        bodyType:
+          $ref: '#/components/schemas/GBTBodyType'
+        classType:
+          type: integer
+          format: int32
+        configuration:
+          type: string
+        configurationParameterValues:
+          type: array
+          items:
+            type: string
+            format: byte
+        configurationParameters:
+          type: array
+          items:
+            type: string
+            format: byte
+        dataType:
+          type: string
+        deterministicId:
+          type: string
+        documentId:
+          type: string
+        elementId:
+          type: string
+        elementName:
+          type: string
+        elementType:
+          $ref: '#/components/schemas/GBTElementType'
+        featureId:
+          type: string
+        featureName:
+          type: string
+        featureSpec:
+          type: array
+          items:
+            type: string
+            format: byte
+        featureType:
+          type: string
+        fsComputedPartPropertySpec:
+          type: array
+          items:
+            type: string
+            format: byte
+        fsTableSpec:
+          type: array
+          items:
+            type: string
+            format: byte
+        hasFaults:
+          type: boolean
+        href:
+          type: string
+          description: URI to fetch complete information of the resource.
+          format: uri
+        id:
+          type: string
+          description: Id of the resource.
+        insertableQuery:
+          type: string
+        isFlattenedBody:
+          type: boolean
+        isMesh:
+          type: boolean
+        meshState:
+          $ref: '#/components/schemas/GBTMeshState'
+        microversionId:
+          type: string
+        name:
+          type: string
+          description: Name of the resource.
+        parentId:
+          type: string
+        partIdentity:
+          type: string
+        partName:
+          type: string
+        predictableThumbnailId:
+          type: string
+        sourceFileExtension:
+          type: string
+        thumbnailUri:
+          type: string
+        unflattenedPartDeterministicId:
+          type: string
+        variableName:
+          type: string
+        versionId:
+          type: string
+        versionName:
+          type: string
+        viewRef:
+          type: string
+          description: URI to visualize the resource in a webclient if applicable.
+          format: uri
+        workspaceId:
+          type: string
+        workspaceName:
+          type: string
+      description: Array of items in the current page.
     GBTElementBranchStatus:
       type: string
       enum:
@@ -3559,46 +2364,564 @@ components:
       - NOT_ON_THIS_BRANCH
       - NO_CHANGES
       - UNKNOWN
-    BTDocumentLabelInfo:
-      type: object
-      allOf:
-      - $ref: '#/components/schemas/BTGlobalTreeNodeInfo'
-      - type: object
-        properties:
-          parentLabelId:
-            type: string
-          path:
-            type: string
-    BTUnchangedReferenceInfo:
+    BTShareEntryParams:
       type: object
       properties:
-        metadataUnchanged:
+        applicationId:
+          type: string
+        companyId:
+          type: string
+        connectionId:
+          type: string
+        email:
+          type: string
+        entryType:
+          type: integer
+          format: int32
+        teamId:
+          type: string
+        userId:
+          type: string
+    BTCopyDocumentParams:
+      type: object
+      properties:
+        isPublic:
           type: boolean
-        nodeIds:
+          description: '`true` to make the new document public.'
+        newName:
+          type: string
+          description: Name for the new document.
+        ownerId:
+          type: string
+          description: Owner of the new document. Can be a [user ID](#/User/sessionInfo) or [company ID](#/Company/findCompany), depending on `ownerTypeIndex`.
+        ownerTypeIndex:
+          type: integer
+          description: 'Type of owner. `0: User, 1: Company`'
+          format: int32
+        parentId:
+          type: string
+          description: Optionally add the new document to the specified folder. Provide the folder ID as the parent ID.
+        projectId:
+          type: string
+          description: Optionally add the new document to the specified project.
+        repointAppElementVersionRefs:
+          type: boolean
+          description: '`true` to re-point version references in application elements to the initial version in the new document.'
+      description: Options for the new copied document.
+    BTThumbnailSizeInfo:
+      type: object
+      properties:
+        href:
+          type: string
+          format: uri
+        mediaType:
+          type: string
+        renderMode:
+          type: string
+        sheetName:
+          type: string
+        size:
+          type: string
+        uniqueId:
+          type: string
+        viewOrientation:
+          type: string
+    BTObjectState:
+      type: string
+      enum:
+      - DELETED
+      - TRASH
+      - ACTIVE
+      - INACTIVE
+    BTBaseInfo:
+      type: object
+      properties:
+        href:
+          type: string
+          description: URI to fetch complete information of the resource.
+          format: uri
+        id:
+          type: string
+          description: Id of the resource.
+        name:
+          type: string
+          description: Name of the resource.
+        viewRef:
+          type: string
+          description: URI to visualize the resource in a webclient if applicable.
+          format: uri
+    BTGlobalTreeNodeInfo:
+      required:
+      - jsonType
+      type: object
+      properties:
+        canMove:
+          type: boolean
+        connectionName:
+          type: string
+        connectionNames:
           type: array
           items:
             type: string
-        toRevision:
-          $ref: '#/components/schemas/BTRevisionInfo'
-    BTMoveElementInfo:
+        createdAt:
+          type: string
+          format: date-time
+        createdBy:
+          $ref: '#/components/schemas/BTUserBasicSummaryInfo'
+        description:
+          type: string
+        href:
+          type: string
+          description: URI to fetch complete information of the resource.
+          format: uri
+        id:
+          type: string
+          description: Id of the resource.
+        isContainer:
+          type: boolean
+        isEnterpriseOwned:
+          type: boolean
+        isExternalConnectionResource:
+          type: boolean
+        isMutable:
+          type: boolean
+        jsonType:
+          type: string
+        modifiedAt:
+          type: string
+          format: date-time
+        modifiedBy:
+          $ref: '#/components/schemas/BTUserBasicSummaryInfo'
+        name:
+          type: string
+          description: Name of the resource.
+        owner:
+          $ref: '#/components/schemas/BTOwnerInfo'
+        parentId:
+          type: string
+        projectId:
+          type: string
+        resourceType:
+          type: string
+        treeHref:
+          type: string
+        unparentHref:
+          type: string
+        viewRef:
+          type: string
+          description: URI to visualize the resource in a webclient if applicable.
+          format: uri
+      discriminator:
+        propertyName: jsonType
+        mapping:
+          document-summary: '#/components/schemas/BTGlobalTreeNodeSummaryInfo'
+          folder: '#/components/schemas/BTFolderInfo'
+          magic: '#/components/schemas/BTGlobalTreeMagicNodeInfo'
+          project: '#/components/schemas/BTProjectInfo'
+          label: '#/components/schemas/BTDocumentLabelInfo'
+          team-summary: '#/components/schemas/BTTeamSummaryInfo'
+          cloudstorageaccount: '#/components/schemas/BTCloudStorageAccountInfo'
+          classroom: '#/components/schemas/BTClassroomInfo'
+          resource-owner: '#/components/schemas/BTResourceOwnerInfo'
+          external-connection: '#/components/schemas/BTExternalConnectionInfo'
+          smartfolder: '#/components/schemas/BTSmartFolderInfo'
+    BTLinkToLatestDocumentInfo:
       type: object
       properties:
-        elementOriginalToNewMap:
-          type: object
-          additionalProperties:
+        changedElements:
+          type: array
+          items:
             type: string
-        errorMessage:
-          type: string
-        isNewDocument:
+    GlobalPermissionInfo:
+      type: object
+      properties:
+        accessReports:
           type: boolean
+        adminEnterprise:
+          type: boolean
+        allowAppStoreAccess:
+          type: boolean
+        allowPublicDocumentsAccess:
+          type: boolean
+        approveReleases:
+          type: boolean
+        branchLockPermissions:
+          type: boolean
+        createDocumentsInRoot:
+          type: boolean
+        createProject:
+          type: boolean
+        createReleases:
+          type: boolean
+        createTasks:
+          type: boolean
+        deletePermanently:
+          type: boolean
+        enableLabs:
+          type: boolean
+        exportFiles:
+          type: boolean
+        importFiles:
+          type: boolean
+        manageGuestUsers:
+          type: boolean
+        manageNonGeometricItems:
+          type: boolean
+        manageRbac:
+          type: boolean
+        manageStandardContentMetadata:
+          type: boolean
+        manageUsers:
+          type: boolean
+        manageWorkflows:
+          type: boolean
+        shareForAnonymousAccess:
+          type: boolean
+        transferDocumentsFromEnterprise:
+          type: boolean
+        useRevisionTools:
+          type: boolean
+    BTLinkToLatestDocumentParams:
+      type: object
+      properties:
+        elements:
+          type: array
+          items:
+            type: string
+    BTESVersionWorkspaceChoice:
+      type: string
+      description: Search result found in
+      example: ALL
+      enum:
+      - ALL
+      - WORKSPACES
+      - VERSIONS
+    BTVersionOrWorkspaceParams:
+      type: object
+      properties:
+        clientInteractionMode:
+          type: string
+        description:
+          type: string
+        documentId:
+          type: string
+        fromHistory:
+          type: boolean
+        isRelease:
+          type: boolean
+        microversionId:
+          type: string
+        missingBomTableTemplateId:
+          type: string
+        name:
+          type: string
+        publishVersion:
+          type: boolean
+          description: Publish FeatureScript at this version.
+          default: false
+        purpose:
+          type: integer
+          format: int32
+        readOnly:
+          type: boolean
+        versionId:
+          type: string
+        workspaceId:
+          type: string
+    BTDocumentSearchParams:
+      type: object
+      properties:
+        documentFilter:
+          type: integer
+          description: 'Type of documents to search: `0: My Documents | 1: Created | 2: Shared | 3: Trash | 4: Public | 5: Recent | 6: By Owner | 7: By Company | 9: By Team`'
+          format: int32
+        foundIn:
+          $ref: '#/components/schemas/BTESVersionWorkspaceChoice'
+        limit:
+          maximum: 20
+          type: integer
+          description: Number of results to return per page. Default value is 20 (also the maximum).
+          format: int32
+          example: 1
+          default: 20
+        offset:
+          type: integer
+          description: Offset. Determines where search results begin. Default value is 0.
+          format: int32
+          default: 0
+        ownerId:
+          type: string
+          description: Owner ID. Can be a user ID, company ID, or team ID, depending on `ownerType`.
+        parentId:
+          type: string
+          description: 'Search document parent Id '
+          example: ALL
+        rawQuery:
+          type: string
+          description: Search for documents that contain the given string in the name. Search is not case-sensitive.
+        sortColumn:
+          type: string
+          description: Column by which to sort search results. `name | modifiedAt | createdAt (default) | email | modifiedBy | promotedAt`
+          default: createdAt
+        sortOrder:
+          type: string
+          description: 'Type of documents to search: `0: My Documents | 1: Created | 2: Shared | 3: Trash | 4: Public | 5: Recent | 6: By Owner | 7: By Company | 9: By Team`'
+          default: desc
+        type:
+          type: string
+          description: 'Type of owner. `0: User | 1: Company | 2: Onshape`. If the owner is a teamId, leave this unspecified.'
+        when:
+          $ref: '#/components/schemas/BTESResultsFilter'
+      x-BTVisibility-properties:
+        luceneSyntax: INTERNAL
+        dochitsOnly: INTERNAL
+    BTWorkspaceInfo:
+      type: object
+      properties:
+        canDelete:
+          type: boolean
+        createdAt:
+          type: string
+          format: date-time
+        creator:
+          $ref: '#/components/schemas/BTUserBasicSummaryInfo'
+        description:
+          type: string
+        documentId:
+          type: string
+        href:
+          type: string
+          description: URI to fetch complete information of the resource.
+          format: uri
+        id:
+          type: string
+          description: Id of the resource.
+        isReadOnly:
+          type: boolean
+        lastModifier:
+          $ref: '#/components/schemas/BTUserBasicSummaryInfo'
+        microversion:
+          type: string
+        modifiedAt:
+          type: string
+          format: date-time
+        name:
+          type: string
+          description: Name of the resource.
+        overrideDate:
+          type: string
+          format: date-time
+        parent:
+          type: string
+        parents:
+          type: array
+          items:
+            $ref: '#/components/schemas/BTVersionInfo'
+        protectionRule:
+          $ref: '#/components/schemas/BTWorkspaceProtectionRuleOptions'
+        state:
+          $ref: '#/components/schemas/BTObjectState'
+        thumbnail:
+          $ref: '#/components/schemas/BTThumbnailInfo'
+        type:
+          type: string
+        viewRef:
+          type: string
+          description: URI to visualize the resource in a webclient if applicable.
+          format: uri
+    BTUserBasicSummaryInfo:
+      required:
+      - jsonType
+      type: object
+      properties:
+        jsonType:
+          type: string
+      discriminator:
+        propertyName: jsonType
+        mapping:
+          user-summary: '#/components/schemas/BTUserBasicSummaryInfo'
+          user-detail-summary: '#/components/schemas/BTUserDetailSummaryInfo'
+      allOf:
+      - $ref: '#/components/schemas/BTBaseInfo'
+      - type: object
+        properties:
+          href:
+            type: string
+            description: URI to fetch complete information of the resource.
+            format: uri
+          id:
+            type: string
+            description: Id of the resource.
+          image:
+            type: string
+          isOnshapeSupport:
+            type: boolean
+          name:
+            type: string
+            description: Name of the resource.
+          state:
+            type: integer
+            format: int32
+          viewRef:
+            type: string
+            description: URI to visualize the resource in a webclient if applicable.
+            format: uri
+    BTPendingUpgradeInfo:
+      type: object
+      properties:
+        scheduledTime:
+          type: string
+          format: date-time
+        version:
+          type: integer
+          format: int32
+    BTOwnerInfo:
+      type: object
+      properties:
+        href:
+          type: string
+          description: URI to fetch complete information of the resource.
+          format: uri
+        id:
+          type: string
+          description: Id of the resource.
+        image:
+          type: string
+        isEnterpriseOwnedResource:
+          type: boolean
+        name:
+          type: string
+          description: Name of the resource.
+        type:
+          type: integer
+          format: int32
+        viewRef:
+          type: string
+          description: URI to visualize the resource in a webclient if applicable.
+          format: uri
+    BTGlobalTreeNodeListResponse:
+      type: object
+      properties:
+        href:
+          type: string
+          description: Requested Document URL
+          format: uri
+        items:
+          type: array
+          properties:
+            empty:
+              type: boolean
+            first:
+              $ref: '#/components/schemas/BTGlobalTreeNodeInfo'
+            last:
+              $ref: '#/components/schemas/BTGlobalTreeNodeInfo'
+          description: Document Items array. Array entries are the same as that returned from "/api/documents/{did}".
+          items:
+            $ref: '#/components/schemas/BTGlobalTreeNodeInfo'
+        next:
+          type: string
+          description: The URL for the next page of items. Responses are limited to 20 items per page.
+          format: uri
+        previous:
+          type: string
+          description: The URL for the previous page of items. Responses are limited to 20 items per page.
+          format: uri
+    BTCopyDocumentInfo:
+      type: object
+      properties:
         newDocumentId:
           type: string
         newDocumentName:
           type: string
-        newDocumentVersionId:
+        newOwner:
+          $ref: '#/components/schemas/BTOwnerInfo'
+        newParentId:
+          type: string
+        newProjectId:
           type: string
         newWorkspaceId:
           type: string
+    BTAppElementParams:
+      required:
+      - formatId
+      type: object
+      properties:
+        description:
+          type: string
+          description: The label that will appear in the document's edit history for this operation. If blank, a value will be auto-generated.
+        formatId:
+          type: string
+          description: The data type of the application. This string allows an application to distinguish their elements from elements of another application.
+        jsonTree:
+          type: object
+          description: Initialization data for the new element's json tree.
+          example: '{ ''stringKey'': ''bar'', ''arrayKey'': [ 1, 2, 3 ], ''objectKey'': { ''subKey'': false } }'
+        location:
+          $ref: '#/components/schemas/BTElementLocationParams'
+        name:
+          type: string
+          description: The name of the element being created. If blank, a name will be auto-generated.
+        subelements:
+          type: array
+          description: Initialization data for the new element's subelements.
+          items:
+            $ref: '#/components/schemas/BTAppElementChangeParams'
+    BTElementLocationParams:
+      type: object
+      properties:
+        elementId:
+          type: string
+          description: The id of an element which provides context for the position value specified.
+        position:
+          type: integer
+          description: An indicator for the relative placement of the new element. If elementId is specified, a negative number indicates insertion prior to the element and a non-negative number indicates insertion following the element. If no elementId is specified, a negative value indicates insertion at the end of the element list and a non-negative number indicates insertion at the start of the element list.
+          format: int32
+      description: The location at which the new element should be inserted.
+    BTCompanySummaryInfo:
+      type: object
+      properties:
+        admin:
+          type: boolean
+        description:
+          type: string
+        domainPrefix:
+          type: string
+        enterpriseBaseUrl:
+          type: string
+        enterpriseSubtype:
+          type: integer
+          format: int32
+        href:
+          type: string
+          description: URI to fetch complete information of the resource.
+          format: uri
+        id:
+          type: string
+          description: Id of the resource.
+        image:
+          type: string
+        name:
+          type: string
+          description: Name of the resource.
+        noPublicDocuments:
+          type: boolean
+        ownerId:
+          type: string
+        secondaryDomainPrefixes:
+          uniqueItems: true
+          type: array
+          items:
+            type: string
+        state:
+          type: integer
+          format: int32
+        type:
+          type: integer
+          format: int32
+        viewRef:
+          type: string
+          description: URI to visualize the resource in a webclient if applicable.
+          format: uri
     BTRevisionInfo:
       type: object
       properties:
@@ -3714,28 +3037,576 @@ components:
           description: URI to visualize the resource in a webclient if applicable.
           format: uri
       description: Revision details.
-    GBTBodyType:
+    BTSyncAppElementParams:
+      type: object
+      properties:
+        description:
+          type: string
+        elements:
+          type: array
+          items:
+            type: string
+    BTAppElementChangeParams:
+      required:
+      - subelementId
+      type: object
+      properties:
+        baseContent:
+          type: string
+          description: This base64-encoded data is treated as a full representation of the sub-element's data and all deltas previously added will no longer be returned.
+          format: byte
+        delta:
+          type: string
+          description: This base64-encoded data is a delta which the application can apply to the last added baseContent data.
+          format: byte
+        subelementId:
+          type: string
+          description: The id of the subelement to edit. The value is determined by the application.
+    BTGlobalTreeNodeSummaryInfo:
+      type: object
+      discriminator:
+        propertyName: jsonType
+        mapping:
+          document: '#/components/schemas/BTDocumentInfo'
+          document-summary: '#/components/schemas/BTGlobalTreeNodeSummaryInfo'
+          document-summary-search: '#/components/schemas/BTDocumentSummarySearchInfo'
+      allOf:
+      - $ref: '#/components/schemas/BTGlobalTreeNodeInfo'
+      - type: object
+        properties:
+          anonymousAccessAllowed:
+            type: boolean
+          anonymousAllowsExport:
+            type: boolean
+          canUnshare:
+            type: boolean
+          createdWithEducationPlan:
+            type: boolean
+          defaultElementId:
+            type: string
+          defaultWorkspace:
+            $ref: '#/components/schemas/BTWorkspaceInfo'
+          documentLabels:
+            type: array
+            items:
+              $ref: '#/components/schemas/BTDocumentLabelInfo'
+          documentType:
+            type: integer
+            format: int32
+          forceExportRules:
+            type: boolean
+          hasReleaseRevisionableObjects:
+            type: boolean
+          hasRelevantInsertables:
+            type: boolean
+          isUsingManagedWorkflow:
+            type: boolean
+          likedByCurrentUser:
+            type: boolean
+          likes:
+            type: integer
+            format: int64
+          notRevisionManaged:
+            type: boolean
+          notes:
+            type: string
+          numberOfTimesCopied:
+            type: integer
+            format: int64
+          numberOfTimesReferenced:
+            type: integer
+            format: int64
+          permission:
+            $ref: '#/components/schemas/BTOldPermission'
+          permissionSet:
+            type: array
+            items:
+              type: string
+          public:
+            type: boolean
+          publishedVersionId:
+            type: string
+          recentVersion:
+            $ref: '#/components/schemas/BTBaseInfo'
+          sequence:
+            type: string
+          supportTeamUserAndShared:
+            type: boolean
+          tags:
+            type: array
+            items:
+              type: string
+          thumbnail:
+            $ref: '#/components/schemas/BTThumbnailInfo'
+          trash:
+            type: boolean
+          trashedAt:
+            type: string
+            format: date-time
+          userAccountLimitsBreached:
+            type: boolean
+      x-BTVisibility-properties:
+        totalWorkspacesUpdating: INTERNAL
+        defaultVersionGraphMode: INTERNAL
+        totalWorkspacesScheduledForUpdate: INTERNAL
+        isOrphaned: INTERNAL
+        defaultVersionGraphShowAutoVersions: INTERNAL
+        defaultVersionGraphShowMerges: INTERNAL
+        elementLibrarySummaryInfo: INTERNAL
+    BTShareParams:
+      type: object
+      properties:
+        connectionId:
+          type: string
+        documentId:
+          type: string
+        elementId:
+          type: string
+        encodedConfiguration:
+          type: string
+        entries:
+          type: array
+          items:
+            $ref: '#/components/schemas/BTShareEntryParams'
+        folderId:
+          type: string
+        message:
+          type: string
+        permission:
+          type: integer
+          format: int64
+        permissionSet:
+          type: array
+          items:
+            type: string
+        update:
+          type: boolean
+        workspaceId:
+          type: string
+    BTDocumentElementCreationDescriptor:
+      type: object
+      properties:
+        elementParams:
+          $ref: '#/components/schemas/BTAppElementParams'
+        elementType:
+          type: integer
+          format: int32
+      description: List of element IDs to include in the document.
+    BTWorkspaceProtectionRuleOptions:
       type: string
       enum:
-      - SOLID
-      - SHEET
-      - WIRE
-      - POINT
-      - MATE_CONNECTOR
-      - COMPOSITE
-      - UNKNOWN
-    BTObjectState:
+      - OPEN
+      - MERGE
+      - FAST_FORWARD_MERGE
+    BTBExportModelParams:
+      required:
+      - documentId
+      - format
+      type: object
+      properties:
+        angleTolerance:
+          type: number
+          format: double
+        batchAllFlatPatterns:
+          type: boolean
+        batchFlatPatterns:
+          type: boolean
+        chordTolerance:
+          type: number
+          format: double
+        cloudObjectId:
+          type: string
+        cloudStorageAccountId:
+          type: string
+        configuration:
+          type: string
+        destinationName:
+          type: string
+        documentId:
+          type: string
+        documentVersionId:
+          type: string
+        elementId:
+          type: string
+        elementIds:
+          type: string
+        emailLink:
+          type: boolean
+        emailMessage:
+          type: string
+        emailSubject:
+          type: string
+        emailTo:
+          type: string
+          description: Base64-encoded email address. When sending an email, the `fromUserId` parameter is also required.
+        excludeHiddenEntities:
+          type: boolean
+          description: If `true`, the exported file won't have any parts and assemblies marked as hidden
+        featureIds:
+          type: string
+        flatPatternAsync:
+          type: boolean
+          description: If `true`, flat pattern export being called via async
+        flatten:
+          type: boolean
+        format:
+          type: string
+        fromUserId:
+          type: string
+          description: Your user ID. Required when providing the `emailTo` parameter.
+        grouping:
+          type: string
+        ignoreExportRulesForContents:
+          type: boolean
+        includeBendCenterlines:
+          type: boolean
+        includeBendLines:
+          type: boolean
+        includeCboreCsink:
+          type: boolean
+        includeExportIds:
+          type: boolean
+        includeFormedCentermarks:
+          type: boolean
+        includeFormedOutlines:
+          type: boolean
+        includeSketches:
+          type: boolean
+        isPartingOut:
+          type: boolean
+        linkDocumentId:
+          type: string
+        linkDocumentWorkspaceId:
+          type: string
+        maxFacetWidth:
+          type: number
+          format: double
+        microversion:
+          type: string
+        minFacetWidth:
+          type: number
+          format: double
+        mode:
+          type: string
+        occurrencesToExport:
+          type: string
+        partIds:
+          type: string
+        partQuery:
+          type: string
+        password:
+          type: string
+        passwordRequired:
+          type: boolean
+        resolution:
+          type: string
+        scale:
+          type: number
+          format: double
+        sendCopyToMe:
+          type: boolean
+        sheetMetalFlat:
+          type: boolean
+        splinesAsPolylines:
+          type: boolean
+        storeInDocument:
+          type: boolean
+        triggerAutoDownload:
+          type: boolean
+        units:
+          type: string
+        useYAxisAsUp:
+          type: boolean
+          description: If `true`, the exported file will have all the parts and assemblies reoriented such that the Z-axis within Onshape becomes the Y-axis in the exported file.
+        userId:
+          type: string
+        validForDays:
+          type: integer
+          format: int32
+        version:
+          type: string
+        view:
+          type: string
+        workspaceId:
+          type: string
+        zipSingleFileOutput:
+          type: boolean
+      description: Onshape document export schema
+    BTDefaultUnitInfo:
+      type: object
+      properties:
+        key:
+          type: string
+          description: The quantity type.
+        value:
+          type: string
+          description: The unit that should be used.
+      description: Specifies which unit should be used for each supported quantity type.
+    BTMergePreviewInfo:
+      type: object
+      properties:
+        branchPointMicroversionId:
+          type: string
+        branchPointVersionId:
+          type: string
+        branchPointWorkspaceId:
+          type: string
+        changes:
+          type: array
+          items:
+            $ref: '#/components/schemas/BTElementMergeInfo'
+        isBranchPointAtStart:
+          type: boolean
+        sourceMicroversionId:
+          type: string
+        targetMicroversionId:
+          type: string
+        upgradeInfo:
+          $ref: '#/components/schemas/BTMergeUpgradeInfo'
+    BTInheritedAclInfo:
+      type: object
+      properties:
+        entries:
+          type: array
+          items:
+            $ref: '#/components/schemas/BTAclEntryInfo'
+        href:
+          type: string
+          description: URI to fetch complete information of the resource.
+          format: uri
+        id:
+          type: string
+          description: Id of the resource.
+        name:
+          type: string
+          description: Name of the resource.
+        objectId:
+          type: string
+        objectName:
+          type: string
+        objectType:
+          type: integer
+          format: int64
+        owner:
+          $ref: '#/components/schemas/BTOwnerInfo'
+        public:
+          type: boolean
+        sharedWithSupport:
+          type: boolean
+        viewRef:
+          type: string
+          description: URI to visualize the resource in a webclient if applicable.
+          format: uri
+        visibility:
+          type: string
+    BTInsertablesListResponse:
+      type: object
+      properties:
+        canSaveVersion:
+          type: boolean
+        changesSinceVersionSave:
+          type: integer
+          format: int32
+        configuration:
+          type: object
+          additionalProperties:
+            $ref: '#/components/schemas/BTFSValue-1888'
+        configurationKey:
+          type: string
+        hasMultipleVersions:
+          type: boolean
+        href:
+          type: string
+          description: URI for current page of resources.
+          format: uri
+        items:
+          type: array
+          description: Array of items in the current page.
+          items:
+            $ref: '#/components/schemas/BTInsertableInfo'
+        next:
+          type: string
+          description: URI for next page of the resources if more are available.
+          format: uri
+        previous:
+          type: string
+          description: URI for previous page of the resources.
+          format: uri
+        updatedThumbnailUri:
+          type: string
+    BTMoveElementParams:
+      type: object
+      properties:
+        anchorElementId:
+          type: string
+        description:
+          type: string
+        elementOriginalToNewMap:
+          type: object
+          additionalProperties:
+            type: string
+        elements:
+          type: array
+          items:
+            type: string
+        generateUnknownMessages:
+          type: boolean
+        importData:
+          type: array
+          items:
+            type: string
+            format: byte
+        isCopy:
+          type: boolean
+        isDeepCopy:
+          type: boolean
+        isGroupAnchor:
+          type: boolean
+        isNewDocument:
+          type: boolean
+        isPublic:
+          type: boolean
+        isSelectivePartOut:
+          type: boolean
+        name:
+          type: string
+        needNewVersion:
+          type: boolean
+        ownerEmail:
+          type: string
+        ownerId:
+          type: string
+        ownerType:
+          type: integer
+          format: int32
+        parentId:
+          type: string
+        projectId:
+          type: string
+        selectedGroupIds:
+          type: array
+          items:
+            type: string
+        sourceDocumentId:
+          type: string
+        sourceVersionId:
+          type: string
+        sourceVersionName:
+          type: string
+          description: Name of version to move elements from (source).
+        sourceWorkspaceId:
+          type: string
+        tags:
+          type: array
+          items:
+            type: string
+        targetDocumentId:
+          type: string
+        targetVersionName:
+          type: string
+          description: Name of version to move elements to (target).
+        targetWorkspaceId:
+          type: string
+        versionName:
+          type: string
+    BTDocumentElementInfo:
+      type: object
+      properties:
+        accelerationUnits:
+          type: string
+        angleUnits:
+          type: string
+        angularVelocityUnits:
+          type: string
+        applicationTarget:
+          $ref: '#/components/schemas/BTApplicationTargetInfo'
+        areaUnits:
+          type: string
+        dataType:
+          type: string
+        deleted:
+          type: boolean
+        densityUnits:
+          type: string
+        elementType:
+          $ref: '#/components/schemas/GBTElementType'
+        energyUnits:
+          type: string
+        filename:
+          type: string
+        forceUnits:
+          type: string
+        foreignDataId:
+          type: string
+        frequencyUnits:
+          type: string
+        id:
+          type: string
+        lengthUnits:
+          type: string
+        massUnits:
+          type: string
+        microversionId:
+          type: string
+        momentUnits:
+          type: string
+        name:
+          type: string
+        pressureUnits:
+          type: string
+        prettyType:
+          type: string
+        safeToShow:
+          type: boolean
+        specifiedUnit:
+          type: string
+        thumbnailInfo:
+          $ref: '#/components/schemas/BTThumbnailInfo'
+        thumbnails:
+          type: string
+          format: uri
+        timeUnits:
+          type: string
+        type:
+          type: string
+        unupdatable:
+          type: boolean
+        volumeUnits:
+          type: string
+        zip:
+          $ref: '#/components/schemas/BTZipFileInfo'
+    BTDocumentHistoryInfo:
+      type: object
+      properties:
+        canBeRestored:
+          type: boolean
+        date:
+          type: string
+          format: date-time
+        description:
+          type: string
+        microversionId:
+          type: string
+        nextMicroversionId:
+          type: string
+        restoreId:
+          type: string
+          description: If this microversion is the result of a restore from another microversion, the restoreId will be the microversion Id of the original microversion that was restored. Otherwise this id will not be included within the response.
+        userId:
+          type: string
+        username:
+          type: string
+    BTUserState:
       type: string
       enum:
       - DELETED
-      - TRASH
       - ACTIVE
       - INACTIVE
-    BTMicroversionInfo:
-      type: object
-      properties:
-        microversion:
-          type: string
+      - REQUESTED
+      - APPROVED
+      - REQUEST_EXPIRED
+      - ALL
+      - MARKED_FOR_DELETION
     BTDocumentNotesParams:
       type: object
       properties:
@@ -3746,60 +3617,138 @@ components:
           type: string
           description: Historical document notes.
       description: Parameters for updating document notes.
-    BTBaseInfo:
+    BTApplicationTargetInfo:
       type: object
       properties:
-        href:
+        baseHref:
           type: string
-          description: URI to fetch complete information of the resource.
           format: uri
-        id:
+        clientId:
           type: string
-          description: Id of the resource.
-        name:
-          type: string
-          description: Name of the resource.
-        viewRef:
-          type: string
-          description: URI to visualize the resource in a webclient if applicable.
-          format: uri
-    BTLinkToLatestDocumentInfo:
-      type: object
-      properties:
-        changedElements:
-          type: array
-          items:
-            type: string
-    BTMergeStrategy:
-      type: string
-      enum:
-      - MERGE
-      - KEEP
-      - REPLACE
-    BTOwnerInfo:
-      type: object
-      properties:
-        href:
-          type: string
-          description: URI to fetch complete information of the resource.
-          format: uri
-        id:
-          type: string
-          description: Id of the resource.
-        image:
-          type: string
-        isEnterpriseOwnedResource:
+        supportsCollaboration:
           type: boolean
+        tabIconHref:
+          type: string
+          format: uri
+    BTVersionInfo:
+      type: object
+      properties:
+        createdAt:
+          type: string
+          format: date-time
+        creator:
+          $ref: '#/components/schemas/BTUserBasicSummaryInfo'
+        description:
+          type: string
+        documentId:
+          type: string
+        href:
+          type: string
+          description: URI to fetch complete information of the resource.
+          format: uri
+        id:
+          type: string
+          description: Id of the resource.
+        lastModifier:
+          $ref: '#/components/schemas/BTUserBasicSummaryInfo'
+        metadataWorkspaceId:
+          type: string
+        microversion:
+          type: string
+        modifiedAt:
+          type: string
+          format: date-time
         name:
           type: string
           description: Name of the resource.
-        type:
+        overrideDate:
+          type: string
+          format: date-time
+        parent:
+          type: string
+        purpose:
           type: integer
           format: int32
+        thumbnail:
+          $ref: '#/components/schemas/BTThumbnailInfo'
+        type:
+          type: string
         viewRef:
           type: string
           description: URI to visualize the resource in a webclient if applicable.
           format: uri
+    BTUnchangedElementInfo:
+      type: object
+      properties:
+        connectionId:
+          type: string
+        elementId:
+          type: string
+        unchangedReferences:
+          type: array
+          items:
+            $ref: '#/components/schemas/BTUnchangedReferenceInfo'
+    BTMergeUpgradeInfo:
+      type: object
+      properties:
+        pendingSourceUpgrade:
+          $ref: '#/components/schemas/BTPendingUpgradeInfo'
+        pendingTargetUpgrade:
+          $ref: '#/components/schemas/BTPendingUpgradeInfo'
+        recommendedVersion:
+          type: integer
+          format: int32
+        type:
+          $ref: '#/components/schemas/BTMergeUpgradeType'
+    BTDocumentLabelInfo:
+      type: object
+      allOf:
+      - $ref: '#/components/schemas/BTGlobalTreeNodeInfo'
+      - type: object
+        properties:
+          parentLabelId:
+            type: string
+          path:
+            type: string
+    BTGroupOrElementReference-2205:
+      type: object
+      properties:
+        btType:
+          type: string
+          description: Type of JSON object.
+        nodeId:
+          type: string
+      description: List of folders or elements in this group (folder).
+      discriminator:
+        propertyName: btType
+        mapping:
+          BTDocumentElementReference-2484: '#/components/schemas/BTDocumentElementReference-2484'
+          BTElementGroup-1458: '#/components/schemas/BTElementGroup-1458'
+    BTRevertUnchangedParams:
+      type: object
+      properties:
+        companyId:
+          type: string
+        connectionId:
+          type: string
+        doUpdate:
+          type: boolean
+        elements:
+          type: array
+          items:
+            $ref: '#/components/schemas/BTRevertUnchangedElementParams'
+    BTUnitInfo:
+      type: object
+      properties:
+        defaultUnits:
+          $ref: '#/components/schemas/BTDefaultUnitsInfo'
+        unitsDisplayPrecision:
+          type: object
+          additionalProperties:
+            type: integer
+            description: Specifies the display precision for every supported unit.
+            format: int32
+          description: Specifies the display precision for every supported unit.
     BTRestoreInfo:
       type: object
       properties:
@@ -3809,31 +3758,73 @@ components:
           type: object
           additionalProperties:
             $ref: '#/components/schemas/BTRestoreStrategy'
-    BTAppElementParams:
-      required:
-      - formatId
+    BTZipFileInfo:
       type: object
       properties:
-        description:
+        files:
+          type: array
+          items:
+            type: string
+    BTDocumentContentsInfo:
+      type: object
+      properties:
+        elements:
+          type: array
+          description: The elements (tabs) in the document. This does not include folders.
+          items:
+            $ref: '#/components/schemas/BTDocumentElementInfo'
+        folders:
+          $ref: '#/components/schemas/BTElementGroup-1458'
+    BTAclEntryInfo:
+      type: object
+      properties:
+        acceptOwnerTransfer:
+          type: boolean
+        canConnectionUserEdit:
+          type: boolean
+        companyName:
           type: string
-          description: The label that will appear in the document's edit history for this operation. If blank, a value will be auto-generated.
-        formatId:
+        connectionId:
           type: string
-          description: The data type of the application. This string allows an application to distinguish their elements from elements of another application.
-        jsonTree:
-          type: object
-          description: Initialization data for the new element's json tree.
-          example: '{ ''stringKey'': ''bar'', ''arrayKey'': [ 1, 2, 3 ], ''objectKey'': { ''subKey'': false } }'
-        location:
-          $ref: '#/components/schemas/BTElementLocationParams'
+        connectionName:
+          type: string
+        connectionUser:
+          type: boolean
+        email:
+          type: string
+        enterpriseMember:
+          type: boolean
+        entryId:
+          type: string
+        entryState:
+          $ref: '#/components/schemas/BTUserState'
+        entryType:
+          type: integer
+          format: int32
+        folderInaccessible:
+          type: boolean
+        folderName:
+          type: string
+        image:
+          type: string
         name:
           type: string
-          description: The name of the element being created. If blank, a name will be auto-generated.
-        subelements:
+        objectId:
+          type: string
+        pendingOwnerTransfer:
+          type: boolean
+        permission:
+          type: integer
+          format: int64
+        permissionSet:
           type: array
-          description: Initialization data for the new element's subelements.
           items:
-            $ref: '#/components/schemas/BTAppElementChangeParams'
+            type: string
+        proCompanySubtype:
+          type: integer
+          format: int32
+        teamName:
+          type: string
   securitySchemes:
     OAuth2:
       type: oauth2

@@ -1,34 +1,15 @@
-openapi: 3.0.1
+openapi: 3.2.0
 info:
-  title: Onshape REST Account Publication API
+  title: Onshape REST Publication API
   description: '## Welcome to the Onshape REST API Explorer
 
 
-    **See the [API Explorer Guide](https://onshape-public.github.io/docs/api-intro/explorer/) for help navigating this page.**
+    **See the API Explorer Guide for help navigating this page.**
 
 
     ### Using this page
 
-    1. Sign in to your [Onshape](https://cad.onshape.com) account in another tab.
-
-    2. Click the `Try it out` button below. It toggles to a `Cancel` button when selected.
-
-
-    ### Authenticating
-
-    To authenticate your calls, click the `Authorize` button. See [API Explorer Guide: Authentication](https://onshape-public.github.io/docs/api-intro/explorer/#authentication) for details. Calls made when authenticated via API Keys or OAuth count against your annual [API limits](https://onshape-public.github.io/docs/auth/limits/#annual-api-call-limits).
-
-    * **Tip:** To ensure the current session isn''t used when trying other authentication techniques, make sure to [remove the Onshape cookie](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site) as per the instructions for your browser, or use a private or incognito window.
-
-
-    ### Additional resources
-
-
-    * [Onshape API Guide](https://onshape-public.github.io/docs/): Our full suite of developer guides, to be used as an accompaniment to this API Explorer.
-
-    * [Onshape Developer Portal](https://cad.onshape.com/appstore/dev-portal): The Onshape portal for managing your API keys, OAuth2 credentials, your Onshape applications, and your Onshape App Store entries.
-
-    * [Authentication Guide](https://onshape-public.github.io/docs/auth/): Our guide to using API keys, request signatures, and OAuth2 in your Onshape applications.'
+    1.'
   termsOfService: https://www.onshape.com/legal/terms-of-use
   contact:
     email: api-support@onshape.zendesk.com
@@ -65,7 +46,7 @@ paths:
     post:
       tags:
       - Publication
-      summary: Create a new publication.
+      summary: Create a new publication
       operationId: createPublication
       requestBody:
         content:
@@ -91,7 +72,7 @@ paths:
     post:
       tags:
       - Publication
-      summary: Update publication's attributes name, description, and notes.
+      summary: Update publication's attributes name, description, and notes
       operationId: updatePublicationAttributes
       parameters:
       - name: pid
@@ -123,7 +104,7 @@ paths:
     delete:
       tags:
       - Publication
-      summary: Delete a publication.
+      summary: Delete a publication
       operationId: deletePublication
       parameters:
       - name: pid
@@ -156,7 +137,7 @@ paths:
     post:
       tags:
       - Publication
-      summary: Add an item in a publication.
+      summary: Add an item in a publication
       operationId: addItemToPublication
       parameters:
       - name: pid
@@ -189,7 +170,7 @@ paths:
     delete:
       tags:
       - Publication
-      summary: Remove an item from a publication.
+      summary: Remove an item from a publication
       operationId: deletePublicationItem
       parameters:
       - name: pid
@@ -222,7 +203,7 @@ paths:
     get:
       tags:
       - Publication
-      summary: Get all items in a publication.
+      summary: Get all items in a publication
       operationId: getPublicationItems
       parameters:
       - name: pid
@@ -248,7 +229,7 @@ paths:
     post:
       tags:
       - Publication
-      summary: Add publication items in bulk.
+      summary: Add publication items in bulk
       operationId: addItemsToPublication
       parameters:
       - name: pid
@@ -279,6 +260,20 @@ paths:
       x-BTVisibility: PRODUCTION
 components:
   schemas:
+    GBTElementType:
+      type: string
+      enum:
+      - PARTSTUDIO
+      - ASSEMBLY
+      - DRAWING
+      - FEATURESTUDIO
+      - BLOB
+      - APPLICATION
+      - TABLE
+      - BILLOFMATERIALS
+      - VARIABLESTUDIO
+      - PUBLICATIONITEM
+      - UNKNOWN
     BTPublicationParams:
       type: object
       properties:
@@ -307,6 +302,19 @@ components:
           type: string
         projectId:
           type: string
+    BTApplicationTargetInfo:
+      type: object
+      properties:
+        baseHref:
+          type: string
+          format: uri
+        clientId:
+          type: string
+        supportsCollaboration:
+          type: boolean
+        tabIconHref:
+          type: string
+          format: uri
     BTUserBasicSummaryInfo:
       required:
       - jsonType
@@ -344,70 +352,6 @@ components:
             type: string
             description: URI to visualize the resource in a webclient if applicable.
             format: uri
-    BTOwnerInfo:
-      type: object
-      properties:
-        href:
-          type: string
-          description: URI to fetch complete information of the resource.
-          format: uri
-        id:
-          type: string
-          description: Id of the resource.
-        image:
-          type: string
-        isEnterpriseOwnedResource:
-          type: boolean
-        name:
-          type: string
-          description: Name of the resource.
-        type:
-          type: integer
-          format: int32
-        viewRef:
-          type: string
-          description: URI to visualize the resource in a webclient if applicable.
-          format: uri
-    BTPublicationBulkItemParams:
-      type: object
-      properties:
-        items:
-          type: array
-          items:
-            $ref: '#/components/schemas/BTPublicationItemParams'
-    BTPublicationInfo:
-      type: object
-      allOf:
-      - $ref: '#/components/schemas/BTGlobalTreeNodeInfo'
-      - type: object
-        properties:
-          defaultWorkspaceId:
-            type: string
-          items:
-            type: array
-            items:
-              $ref: '#/components/schemas/BTPublicationInfoItem'
-          notes:
-            type: string
-          sequence:
-            type: string
-    BTBaseInfo:
-      type: object
-      properties:
-        href:
-          type: string
-          description: URI to fetch complete information of the resource.
-          format: uri
-        id:
-          type: string
-          description: Id of the resource.
-        name:
-          type: string
-          description: Name of the resource.
-        viewRef:
-          type: string
-          description: URI to visualize the resource in a webclient if applicable.
-          format: uri
     BTGlobalTreeNodeInfo:
       required:
       - jsonType
@@ -483,6 +427,103 @@ components:
           resource-owner: '#/components/schemas/BTResourceOwnerInfo'
           external-connection: '#/components/schemas/BTExternalConnectionInfo'
           smartfolder: '#/components/schemas/BTSmartFolderInfo'
+    BTOwnerInfo:
+      type: object
+      properties:
+        href:
+          type: string
+          description: URI to fetch complete information of the resource.
+          format: uri
+        id:
+          type: string
+          description: Id of the resource.
+        image:
+          type: string
+        isEnterpriseOwnedResource:
+          type: boolean
+        name:
+          type: string
+          description: Name of the resource.
+        type:
+          type: integer
+          format: int32
+        viewRef:
+          type: string
+          description: URI to visualize the resource in a webclient if applicable.
+          format: uri
+    BTBaseInfo:
+      type: object
+      properties:
+        href:
+          type: string
+          description: URI to fetch complete information of the resource.
+          format: uri
+        id:
+          type: string
+          description: Id of the resource.
+        name:
+          type: string
+          description: Name of the resource.
+        viewRef:
+          type: string
+          description: URI to visualize the resource in a webclient if applicable.
+          format: uri
+    BTPublicationBulkItemParams:
+      type: object
+      properties:
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/BTPublicationItemParams'
+    BTPublicationItemParams:
+      type: object
+      properties:
+        dataType:
+          type: string
+        documentId:
+          type: string
+        elementId:
+          type: string
+        encodedConfiguration:
+          type: string
+        isApplication:
+          type: boolean
+        isAssembly:
+          type: boolean
+        isBlob:
+          type: boolean
+        isWholePartStudio:
+          type: boolean
+        mimeType:
+          type: string
+        partId:
+          type: string
+        partName:
+          type: string
+        partNumber:
+          type: string
+        revision:
+          type: string
+        revisionId:
+          type: string
+        versionId:
+          type: string
+    BTPublicationInfo:
+      type: object
+      allOf:
+      - $ref: '#/components/schemas/BTGlobalTreeNodeInfo'
+      - type: object
+        properties:
+          defaultWorkspaceId:
+            type: string
+          items:
+            type: array
+            items:
+              $ref: '#/components/schemas/BTPublicationInfoItem'
+          notes:
+            type: string
+          sequence:
+            type: string
     BTPublicationInfoItem:
       required:
       - jsonType
@@ -525,66 +566,6 @@ components:
         propertyName: jsonType
         mapping:
           publication-blob-item: '#/components/schemas/BlobItem'
-    BTPublicationItemParams:
-      type: object
-      properties:
-        dataType:
-          type: string
-        documentId:
-          type: string
-        elementId:
-          type: string
-        encodedConfiguration:
-          type: string
-        isApplication:
-          type: boolean
-        isAssembly:
-          type: boolean
-        isBlob:
-          type: boolean
-        isWholePartStudio:
-          type: boolean
-        mimeType:
-          type: string
-        partId:
-          type: string
-        partName:
-          type: string
-        partNumber:
-          type: string
-        revision:
-          type: string
-        revisionId:
-          type: string
-        versionId:
-          type: string
-    GBTElementType:
-      type: string
-      enum:
-      - PARTSTUDIO
-      - ASSEMBLY
-      - DRAWING
-      - FEATURESTUDIO
-      - BLOB
-      - APPLICATION
-      - TABLE
-      - BILLOFMATERIALS
-      - VARIABLESTUDIO
-      - PUBLICATIONITEM
-      - UNKNOWN
-    BTApplicationTargetInfo:
-      type: object
-      properties:
-        baseHref:
-          type: string
-          format: uri
-        clientId:
-          type: string
-        supportsCollaboration:
-          type: boolean
-        tabIconHref:
-          type: string
-          format: uri
   securitySchemes:
     OAuth2:
       type: oauth2

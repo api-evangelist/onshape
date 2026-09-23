@@ -1,34 +1,15 @@
-openapi: 3.0.1
+openapi: 3.2.0
 info:
-  title: Onshape REST Account Thumbnail API
+  title: Onshape REST Thumbnail API
   description: '## Welcome to the Onshape REST API Explorer
 
 
-    **See the [API Explorer Guide](https://onshape-public.github.io/docs/api-intro/explorer/) for help navigating this page.**
+    **See the API Explorer Guide for help navigating this page.**
 
 
     ### Using this page
 
-    1. Sign in to your [Onshape](https://cad.onshape.com) account in another tab.
-
-    2. Click the `Try it out` button below. It toggles to a `Cancel` button when selected.
-
-
-    ### Authenticating
-
-    To authenticate your calls, click the `Authorize` button. See [API Explorer Guide: Authentication](https://onshape-public.github.io/docs/api-intro/explorer/#authentication) for details. Calls made when authenticated via API Keys or OAuth count against your annual [API limits](https://onshape-public.github.io/docs/auth/limits/#annual-api-call-limits).
-
-    * **Tip:** To ensure the current session isn''t used when trying other authentication techniques, make sure to [remove the Onshape cookie](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site) as per the instructions for your browser, or use a private or incognito window.
-
-
-    ### Additional resources
-
-
-    * [Onshape API Guide](https://onshape-public.github.io/docs/): Our full suite of developer guides, to be used as an accompaniment to this API Explorer.
-
-    * [Onshape Developer Portal](https://cad.onshape.com/appstore/dev-portal): The Onshape portal for managing your API keys, OAuth2 credentials, your Onshape applications, and your Onshape App Store entries.
-
-    * [Authentication Guide](https://onshape-public.github.io/docs/auth/): Our guide to using API keys, request signatures, and OAuth2 in your Onshape applications.'
+    1.'
   termsOfService: https://www.onshape.com/legal/terms-of-use
   contact:
     email: api-support@onshape.zendesk.com
@@ -65,12 +46,12 @@ paths:
     get:
       tags:
       - Thumbnail
-      summary: Get the thumbnail info for a document in the default workspace.
+      summary: Get the thumbnail info for a document in the default workspace
       description: '* By default, returns thumbnail info for the element with the most-recently generated image. If you pinned an element for the document thumbnail, that element will always be used for the document-level thumbnail, if it exists in the workspace.
 
         * The default workspace may vary by user; the image served depends on the signed-in user.
 
-        * See also: [Tech tip on how to change a document thumbnail in onshape](https://www.onshape.com/en/resource-center/tech-tips/tech-tip-how-to-change-a-document-thumbnail-in-onshape)'
+        * See also: Tech tip on how to change a document thumbnail in onshape'
       operationId: getThumbnailForDocument
       parameters:
       - name: did
@@ -96,10 +77,10 @@ paths:
     get:
       tags:
       - Thumbnail
-      summary: Get the thumbnail info for a version of a document.
+      summary: Get the thumbnail info for a version of a document
       description: '* By default, returns thumbnail info for the element with the most-recently generated image. If you pinned an element for the document thumbnail, that element will always be used for the document-level thumbnail, if it exists in the workspace.
 
-        * See also: [Tech tip on how to change a document thumbnail in onshape](https://www.onshape.com/en/resource-center/tech-tips/tech-tip-how-to-change-a-document-thumbnail-in-onshape)'
+        * See also: Tech tip on how to change a document thumbnail in onshape'
       operationId: getThumbnailForDocumentAndVersion
       parameters:
       - name: did
@@ -134,10 +115,10 @@ paths:
     get:
       tags:
       - Thumbnail
-      summary: Get the thumbnail info for a workspace.
+      summary: Get the thumbnail info for a workspace
       description: '* By default, returns thumbnail info for the element with the most-recently generated image. If you pinned an element for the document thumbnail, that element will always be used for the document-level thumbnail, if it exists in the workspace.
 
-        * See also: [Tech tip on how to change a document thumbnail in onshape](https://www.onshape.com/en/resource-center/tech-tips/tech-tip-how-to-change-a-document-thumbnail-in-onshape)'
+        * See also: Tech tip on how to change a document thumbnail in onshape'
       operationId: getDocumentThumbnail
       parameters:
       - name: did
@@ -168,7 +149,7 @@ paths:
     get:
       tags:
       - Thumbnail
-      summary: Get the thumbnail image with the given configuration for an element.
+      summary: Get the thumbnail image with the given configuration for an element
       description: Returns the thumbnail image for an element at a specified version, with the given configuration.
       operationId: getElementThumbnailWithApiConfiguration
       parameters:
@@ -258,10 +239,10 @@ paths:
     get:
       tags:
       - Thumbnail
-      summary: Get the thumbnail image with the given size for a document.
+      summary: Get the thumbnail image with the given size for a document
       description: '* By default, returns thumbnail image for the element with the most-recently generated image. If you pinned an element for the document thumbnail, that element will always be used for the document-level thumbnail, if it exists in the workspace.
 
-        * See also: [Tech tip on how to change a document thumbnail in onshape](https://www.onshape.com/en/resource-center/tech-tips/tech-tip-how-to-change-a-document-thumbnail-in-onshape)'
+        * See also: Tech tip on how to change a document thumbnail in onshape'
       operationId: getDocumentThumbnailWithSize
       parameters:
       - name: did
@@ -321,7 +302,7 @@ paths:
     get:
       tags:
       - Thumbnail
-      summary: Get the thumbnail info structure for an element.
+      summary: Get the thumbnail info structure for an element
       description: Returns thumbnail info for the given document, workspace or version, and element.
       operationId: getElementThumbnail
       parameters:
@@ -375,8 +356,12 @@ paths:
     post:
       tags:
       - Thumbnail
-      summary: Set the thumbnail image for an application element.
-      description: "* Allows 3rd-party applications to set thumbnails for their elements. \n* Application elements can have both primary and secondary thumbnails. A primary thumbnail represents the top-level of the element. A secondary thumbnail can represent sub-components of the element (e.g., a drawing sheet).\n* To update one or more thumbnails, you must set the overwrite query param to `true` and supply the entire set of thumbnails. All previous thumbnails will be deleted prior to updating the element with the latest images."
+      summary: Set the thumbnail image for an application element
+      description: '* Allows 3rd-party applications to set thumbnails for their elements.
+
+        * Application elements can have both primary and secondary thumbnails. A primary thumbnail represents the top-level of the element. A secondary thumbnail can represent sub-components of the element (e.g., a drawing sheet).
+
+        * To update one or more thumbnails, you must set the overwrite query param to `true` and supply the entire set of thumbnails. All previous thumbnails will be deleted prior to updating the element with the latest images.'
       operationId: setApplicationElementThumbnail
       parameters:
       - name: did
@@ -440,7 +425,7 @@ paths:
     delete:
       tags:
       - Thumbnail
-      summary: Delete an element's thumbnail.
+      summary: Delete an element's thumbnail
       description: Deletes an application element's thumbnail and images for the given document, workspace or version, and element combination.
       operationId: deleteApplicationThumbnails
       parameters:
@@ -495,7 +480,7 @@ paths:
     get:
       tags:
       - Thumbnail
-      summary: Get the thumbnail image with the given size for an element.
+      summary: Get the thumbnail image with the given size for an element
       operationId: getElementThumbnailWithSize
       parameters:
       - name: did
@@ -583,7 +568,7 @@ paths:
     get:
       tags:
       - Thumbnail
-      summary: This endpoint will be deprecated soon. Use `getThumbnailForDocument` instead.
+      summary: This endpoint will be deprecated soon. Use `getThumbnailForDocument` instead
       description: This API exists for historical reasons. It uses `/document/` in the path, rather than the standard `/d/` to specify the document.
       operationId: getThumbnailForDocumentOld
       parameters:
@@ -610,7 +595,7 @@ paths:
     get:
       tags:
       - Thumbnail
-      summary: This endpoint will be deprecated soon. Use `getThumbnailForDocumentAndVersion` instead.
+      summary: This endpoint will be deprecated soon.
       description: This API exists for historical reasons. It uses `/document/` in the path, rather than the standard `/d/` to specify the document.
       operationId: getThumbnailForDocumentAndVersionOld
       parameters:
@@ -640,24 +625,6 @@ paths:
       x-BTVisibility: PRODUCTION
 components:
   schemas:
-    BTThumbnailInfo:
-      type: object
-      properties:
-        href:
-          type: string
-          format: uri
-        id:
-          type: string
-        secondarySizes:
-          type: array
-          items:
-            type: array
-            items:
-              $ref: '#/components/schemas/BTThumbnailSizeInfo'
-        sizes:
-          type: array
-          items:
-            $ref: '#/components/schemas/BTThumbnailSizeInfo'
     BTThumbnailSizeInfo:
       type: object
       properties:
@@ -676,6 +643,31 @@ components:
           type: string
         viewOrientation:
           type: string
+    BTThumbnailInfo:
+      type: object
+      properties:
+        href:
+          type: string
+          format: uri
+        id:
+          type: string
+        secondarySizes:
+          type: array
+          items:
+            type: array
+            items:
+              $ref: '#/components/schemas/BTThumbnailSizeInfo'
+        sizes:
+          type: array
+          items:
+            $ref: '#/components/schemas/BTThumbnailSizeInfo'
+    BTApplicationElementThumbnailParamsArray:
+      type: object
+      properties:
+        thumbnails:
+          type: array
+          items:
+            $ref: '#/components/schemas/BTApplicationElementThumbnailParams'
     BTApplicationElementThumbnailParams:
       type: object
       properties:
@@ -693,13 +685,6 @@ components:
           type: boolean
         uniqueId:
           type: string
-    BTApplicationElementThumbnailParamsArray:
-      type: object
-      properties:
-        thumbnails:
-          type: array
-          items:
-            $ref: '#/components/schemas/BTApplicationElementThumbnailParams'
   securitySchemes:
     OAuth2:
       type: oauth2

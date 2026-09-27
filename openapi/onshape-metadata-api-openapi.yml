@@ -897,70 +897,29 @@ paths:
       x-BTVisibility: PRODUCTION
 components:
   schemas:
-    BTMetadataPartInfo:
-      type: object
-      allOf:
-      - $ref: '#/components/schemas/BTMetadataObjectInfo'
-      - type: object
-        properties:
-          isFlattenedBody:
-            type: boolean
-          isPublicPartOverridable:
-            type: boolean
-          meshState:
-            type: integer
-            format: int32
-          partId:
-            type: string
-          partIdentity:
-            type: string
-          partType:
-            type: string
-          unflattenedPartId:
-            type: string
-    BTMetadataPropertyValidatorInfo:
+    BTMetadataPropertyUiHintsInfo:
       type: object
       properties:
-        max:
-          type: number
-        maxCount:
-          type: integer
-          format: int32
-        maxDate:
-          type: string
-          format: date-time
-        maxLength:
-          type: integer
-          format: int32
-        min:
-          type: number
-        minCount:
-          type: integer
-          format: int32
-        minDate:
-          type: string
-          format: date-time
-        minLength:
-          type: integer
-          format: int32
-        pattern:
-          type: string
-        quantityType:
-          type: integer
-          format: int32
-    BTMetadataObjectListInfoBTMetadataElementInfo:
+        multiline:
+          type: boolean
+    BTThumbnailInfo:
       type: object
       properties:
         href:
           type: string
-        items:
+          format: uri
+        id:
+          type: string
+        secondarySizes:
           type: array
           items:
-            $ref: '#/components/schemas/BTMetadataElementInfo'
-        next:
-          type: string
-        prev:
-          type: string
+            type: array
+            items:
+              $ref: '#/components/schemas/BTThumbnailSizeInfo'
+        sizes:
+          type: array
+          items:
+            $ref: '#/components/schemas/BTThumbnailSizeInfo'
     BTMetadataPropertyInfo:
       type: object
       properties:
@@ -1017,60 +976,6 @@ components:
           type: object
         valueType:
           type: string
-    BTMetadataObjectInfo:
-      required:
-      - jsonType
-      type: object
-      properties:
-        href:
-          type: string
-        jsonType:
-          type: string
-        properties:
-          type: array
-          description: Properties associated with this metadata object
-          items:
-            $ref: '#/components/schemas/BTMetadataPropertyInfo'
-        thumbnail:
-          $ref: '#/components/schemas/BTThumbnailInfo'
-      discriminator:
-        propertyName: jsonType
-    BTMetadataObjectListInfoBTMetadataPartInfo:
-      type: object
-      properties:
-        href:
-          type: string
-        items:
-          type: array
-          items:
-            $ref: '#/components/schemas/BTMetadataPartInfo'
-        next:
-          type: string
-        prev:
-          type: string
-    BTMetadataPropertyUiHintsInfo:
-      type: object
-      properties:
-        multiline:
-          type: boolean
-    BTThumbnailSizeInfo:
-      type: object
-      properties:
-        href:
-          type: string
-          format: uri
-        mediaType:
-          type: string
-        renderMode:
-          type: string
-        sheetName:
-          type: string
-        size:
-          type: string
-        uniqueId:
-          type: string
-        viewOrientation:
-          type: string
     BTAssemblyItemMetadataInfo:
       type: object
       properties:
@@ -1100,6 +1005,131 @@ components:
             type: string
         requestInfo:
           $ref: '#/components/schemas/BTAssemblyItemMetadataRequestInfo'
+    BTMetadataPartInfo:
+      type: object
+      allOf:
+      - $ref: '#/components/schemas/BTMetadataObjectInfo'
+      - type: object
+        properties:
+          isFlattenedBody:
+            type: boolean
+          isPublicPartOverridable:
+            type: boolean
+          meshState:
+            type: integer
+            format: int32
+          partId:
+            type: string
+          partIdentity:
+            type: string
+          partType:
+            type: string
+          unflattenedPartId:
+            type: string
+    BTMetadataObjectListInfoBTMetadataElementInfo:
+      type: object
+      properties:
+        href:
+          type: string
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/BTMetadataElementInfo'
+        next:
+          type: string
+        prev:
+          type: string
+    BTMetadataObjectInfo:
+      required:
+      - jsonType
+      type: object
+      properties:
+        href:
+          type: string
+        jsonType:
+          type: string
+        properties:
+          type: array
+          description: Properties associated with this metadata object
+          items:
+            $ref: '#/components/schemas/BTMetadataPropertyInfo'
+        thumbnail:
+          $ref: '#/components/schemas/BTThumbnailInfo'
+      discriminator:
+        propertyName: jsonType
+    BTMetadataPropertyValidatorInfo:
+      type: object
+      properties:
+        max:
+          type: number
+        maxCount:
+          type: integer
+          format: int32
+        maxDate:
+          type: string
+          format: date-time
+        maxLength:
+          type: integer
+          format: int32
+        min:
+          type: number
+        minCount:
+          type: integer
+          format: int32
+        minDate:
+          type: string
+          format: date-time
+        minLength:
+          type: integer
+          format: int32
+        pattern:
+          type: string
+        quantityType:
+          type: integer
+          format: int32
+    BTMetadataElementInfo:
+      type: object
+      allOf:
+      - $ref: '#/components/schemas/BTMetadataObjectInfo'
+      - type: object
+        properties:
+          elementId:
+            type: string
+          elementType:
+            type: integer
+            format: int32
+          mimeType:
+            type: string
+          parts:
+            $ref: '#/components/schemas/BTMetadataObjectListInfoBTMetadataPartInfo'
+    BTThumbnailSizeInfo:
+      type: object
+      properties:
+        href:
+          type: string
+          format: uri
+        mediaType:
+          type: string
+        renderMode:
+          type: string
+        sheetName:
+          type: string
+        size:
+          type: string
+        uniqueId:
+          type: string
+        viewOrientation:
+          type: string
+    BTMetadataEnumValueInfo:
+      type: object
+      properties:
+        label:
+          type: string
+        state:
+          type: integer
+          format: int32
+        value:
+          type: string
     BTAssemblyItemMetadataRequestInfo:
       type: object
       properties:
@@ -1119,49 +1149,19 @@ components:
           type: string
         wvmType:
           type: string
-    BTMetadataElementInfo:
-      type: object
-      allOf:
-      - $ref: '#/components/schemas/BTMetadataObjectInfo'
-      - type: object
-        properties:
-          elementId:
-            type: string
-          elementType:
-            type: integer
-            format: int32
-          mimeType:
-            type: string
-          parts:
-            $ref: '#/components/schemas/BTMetadataObjectListInfoBTMetadataPartInfo'
-    BTMetadataEnumValueInfo:
-      type: object
-      properties:
-        label:
-          type: string
-        state:
-          type: integer
-          format: int32
-        value:
-          type: string
-    BTThumbnailInfo:
+    BTMetadataObjectListInfoBTMetadataPartInfo:
       type: object
       properties:
         href:
           type: string
-          format: uri
-        id:
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/BTMetadataPartInfo'
+        next:
           type: string
-        secondarySizes:
-          type: array
-          items:
-            type: array
-            items:
-              $ref: '#/components/schemas/BTThumbnailSizeInfo'
-        sizes:
-          type: array
-          items:
-            $ref: '#/components/schemas/BTThumbnailSizeInfo'
+        prev:
+          type: string
   securitySchemes:
     OAuth2:
       type: oauth2

@@ -135,17 +135,13 @@ paths:
       x-BTVisibility: PRODUCTION
 components:
   schemas:
-    BTExternalElementReferenceInfo:
+    BTBFileUpload:
       type: object
       properties:
-        documentId:
+        file:
           type: string
-        elementId:
-          type: string
-        elementMicroversionId:
-          type: string
-        versionId:
-          type: string
+          description: The file to upload.
+          format: binary
     BTMaterialLibraryInfo:
       type: object
       properties:
@@ -189,13 +185,6 @@ components:
           type: array
           items:
             type: string
-    BTBFileUpload:
-      type: object
-      properties:
-        file:
-          type: string
-          description: The file to upload.
-          format: binary
     BTLibraryMaterialInfo:
       type: object
       properties:
@@ -209,6 +198,17 @@ components:
           type: object
           additionalProperties:
             type: string
+    BTExternalElementReferenceInfo:
+      type: object
+      properties:
+        documentId:
+          type: string
+        elementId:
+          type: string
+        elementMicroversionId:
+          type: string
+        versionId:
+          type: string
   securitySchemes:
     OAuth2:
       type: oauth2

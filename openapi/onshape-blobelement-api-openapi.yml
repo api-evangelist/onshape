@@ -321,64 +321,48 @@ paths:
       x-BTVisibility: PRODUCTION
 components:
   schemas:
-    BTTranslationRequestInfo:
+    BTThumbnailInfo:
       type: object
       properties:
-        documentId:
-          type: string
-        exportRuleFileName:
-          type: string
-          description: The file name after evaluating a rule for the given `formatName`. `NULL` if `evaluateExportRule=false` or if the export rule is not found.
-        failureReason:
-          type: string
         href:
           type: string
-          description: URI to fetch complete information of the resource.
           format: uri
         id:
           type: string
-          description: Id of the resource.
-        name:
-          type: string
-          description: Name of the resource.
-        requestElementId:
-          type: string
-        requestState:
-          $ref: '#/components/schemas/BTTranslationRequestState'
-        resultDocumentId:
-          type: string
-        resultElementIds:
+        secondarySizes:
           type: array
           items:
-            type: string
-        resultExternalDataIds:
+            type: array
+            items:
+              $ref: '#/components/schemas/BTThumbnailSizeInfo'
+        sizes:
           type: array
           items:
-            type: string
-        resultWorkspaceId:
+            $ref: '#/components/schemas/BTThumbnailSizeInfo'
+    BTUpdateMeshUnitsParams:
+      type: object
+      properties:
+        units:
           type: string
-        versionId:
-          type: string
-        viewRef:
-          type: string
-          description: URI to visualize the resource in a webclient if applicable.
-          format: uri
-        workspaceId:
-          type: string
-    GBTElementType:
+    BTTranslationRequestState:
       type: string
       enum:
-      - PARTSTUDIO
-      - ASSEMBLY
-      - DRAWING
-      - FEATURESTUDIO
-      - BLOB
-      - APPLICATION
-      - TABLE
-      - BILLOFMATERIALS
-      - VARIABLESTUDIO
-      - PUBLICATIONITEM
-      - UNKNOWN
+      - ACTIVE
+      - DONE
+      - FAILED
+    BTApplicationTargetInfo:
+      type: object
+      properties:
+        baseHref:
+          type: string
+          format: uri
+        clientId:
+          type: string
+        supportsCollaboration:
+          type: boolean
+        tabIconHref:
+          type: string
+          format: uri
     BTDocumentElementProcessingInfo:
       type: object
       properties:
@@ -449,100 +433,6 @@ components:
           type: string
         zip:
           $ref: '#/components/schemas/BTZipFileInfo'
-    BTBTranslationRequestParams:
-      type: object
-      properties:
-        allowFaultyParts:
-          type: boolean
-        createComposite:
-          type: boolean
-        createDrawingIfPossible:
-          type: boolean
-        encodedFilename:
-          type: string
-        extractAssemblyHierarchy:
-          type: boolean
-        file:
-          type: string
-          description: The file to upload.
-          format: binary
-        flattenAssemblies:
-          type: boolean
-        formatName:
-          type: string
-        importAppearances:
-          type: boolean
-        importMaterialDensity:
-          type: boolean
-        importWithinDocument:
-          type: boolean
-        joinAdjacentSurfaces:
-          type: boolean
-        locationElementId:
-          type: string
-        locationGroupId:
-          type: string
-        locationPosition:
-          type: integer
-          format: int32
-        makePublic:
-          type: boolean
-        notifyUser:
-          type: boolean
-        onePartPerDoc:
-          type: boolean
-        ownerId:
-          type: string
-        parentId:
-          type: string
-        projectId:
-          type: string
-        repointAppElementVersionRefs:
-          type: boolean
-        splitAssembliesIntoMultipleDocuments:
-          type: boolean
-        storeInDocument:
-          type: boolean
-        translate:
-          type: boolean
-        unit:
-          type: string
-        uploadId:
-          type: string
-        useIGESImportPostProcessing:
-          type: boolean
-        versionString:
-          type: string
-        yAxisIsUp:
-          type: boolean
-      x-BTVisibility-properties:
-        versionDescription: INTERNAL
-        versionId: INTERNAL
-        upgradeFeatureScriptVersion: INTERNAL
-        documentId: INTERNAL
-        versionName: INTERNAL
-        preserveSourceIds: INTERNAL
-    BTApplicationTargetInfo:
-      type: object
-      properties:
-        baseHref:
-          type: string
-          format: uri
-        clientId:
-          type: string
-        supportsCollaboration:
-          type: boolean
-        tabIconHref:
-          type: string
-          format: uri
-    GBTParasolidEncodingType:
-      type: string
-      description: Export Parasolid in `BINARY` (.x_b) or `TEXT` (.x_t) mode.
-      default: TEXT
-      enum:
-      - TEXT
-      - BINARY
-      - UNKNOWN
     BTPartsExportFilter-4308:
       type: object
       properties:
@@ -560,37 +450,20 @@ components:
         propertyName: btType
         mapping:
           BTPartsExportFilter-4308: '#/components/schemas/BTPartsExportFilter-4308'
-    BTThumbnailSizeInfo:
-      type: object
-      properties:
-        href:
-          type: string
-          format: uri
-        mediaType:
-          type: string
-        renderMode:
-          type: string
-        sheetName:
-          type: string
-        size:
-          type: string
-        uniqueId:
-          type: string
-        viewOrientation:
-          type: string
-    BTZipFileInfo:
-      type: object
-      properties:
-        files:
-          type: array
-          items:
-            type: string
-    BTTranslationRequestState:
+    GBTElementType:
       type: string
       enum:
-      - ACTIVE
-      - DONE
-      - FAILED
+      - PARTSTUDIO
+      - ASSEMBLY
+      - DRAWING
+      - FEATURESTUDIO
+      - BLOB
+      - APPLICATION
+      - TABLE
+      - BILLOFMATERIALS
+      - VARIABLESTUDIO
+      - PUBLICATIONITEM
+      - UNKNOWN
     GBTPreProcessParasolidOption:
       type: string
       description: Original geometry processing mode to improve results of translation to STEP.
@@ -601,19 +474,6 @@ components:
       - USE_BODYSHOP_PRE_PROCESSING
       - USE_BODYSHOP_PRE_PROCESSING_ADVANCED_WITH_SURFS_TO_BSURFS_CONVERTING
       - UNKNOWN
-    GBTStlEncodingType:
-      type: string
-      description: STL encoding type, `TEXT | BINARY`
-      default: TEXT
-      enum:
-      - TEXT
-      - BINARY
-      - UNKNOWN
-    BTUpdateMeshUnitsParams:
-      type: object
-      properties:
-        units:
-          type: string
     GBTUrdfMeshFormat:
       type: string
       enum:
@@ -621,24 +481,50 @@ components:
       - GLTF
       - OBJ
       - UNKNOWN
-    BTThumbnailInfo:
+    BTTranslationRequestInfo:
       type: object
       properties:
+        documentId:
+          type: string
+        exportRuleFileName:
+          type: string
+          description: The file name after evaluating a rule for the given `formatName`. `NULL` if `evaluateExportRule=false` or if the export rule is not found.
+        failureReason:
+          type: string
         href:
           type: string
+          description: URI to fetch complete information of the resource.
           format: uri
         id:
           type: string
-        secondarySizes:
+          description: Id of the resource.
+        name:
+          type: string
+          description: Name of the resource.
+        requestElementId:
+          type: string
+        requestState:
+          $ref: '#/components/schemas/BTTranslationRequestState'
+        resultDocumentId:
+          type: string
+        resultElementIds:
           type: array
           items:
-            type: array
-            items:
-              $ref: '#/components/schemas/BTThumbnailSizeInfo'
-        sizes:
+            type: string
+        resultExternalDataIds:
           type: array
           items:
-            $ref: '#/components/schemas/BTThumbnailSizeInfo'
+            type: string
+        resultWorkspaceId:
+          type: string
+        versionId:
+          type: string
+        viewRef:
+          type: string
+          description: URI to visualize the resource in a webclient if applicable.
+          format: uri
+        workspaceId:
+          type: string
     GBTRhinoVersions:
       type: string
       enum:
@@ -650,6 +536,13 @@ components:
       - V7
       - V8
       - UNKNOWN
+    BTZipFileInfo:
+      type: object
+      properties:
+        files:
+          type: array
+          items:
+            type: string
     BTTranslateFormatParams:
       required:
       - formatName
@@ -930,6 +823,113 @@ components:
         documentId: INTERNAL
         preserveSourceIds: INTERNAL
         documentVersion: INTERNAL
+    GBTStlEncodingType:
+      type: string
+      description: STL encoding type, `TEXT | BINARY`
+      default: TEXT
+      enum:
+      - TEXT
+      - BINARY
+      - UNKNOWN
+    BTThumbnailSizeInfo:
+      type: object
+      properties:
+        href:
+          type: string
+          format: uri
+        mediaType:
+          type: string
+        renderMode:
+          type: string
+        sheetName:
+          type: string
+        size:
+          type: string
+        uniqueId:
+          type: string
+        viewOrientation:
+          type: string
+    GBTParasolidEncodingType:
+      type: string
+      description: Export Parasolid in `BINARY` (.x_b) or `TEXT` (.x_t) mode.
+      default: TEXT
+      enum:
+      - TEXT
+      - BINARY
+      - UNKNOWN
+    BTBTranslationRequestParams:
+      type: object
+      properties:
+        allowFaultyParts:
+          type: boolean
+        createComposite:
+          type: boolean
+        createDrawingIfPossible:
+          type: boolean
+        encodedFilename:
+          type: string
+        extractAssemblyHierarchy:
+          type: boolean
+        file:
+          type: string
+          description: The file to upload.
+          format: binary
+        flattenAssemblies:
+          type: boolean
+        formatName:
+          type: string
+        importAppearances:
+          type: boolean
+        importMaterialDensity:
+          type: boolean
+        importWithinDocument:
+          type: boolean
+        joinAdjacentSurfaces:
+          type: boolean
+        locationElementId:
+          type: string
+        locationGroupId:
+          type: string
+        locationPosition:
+          type: integer
+          format: int32
+        makePublic:
+          type: boolean
+        notifyUser:
+          type: boolean
+        onePartPerDoc:
+          type: boolean
+        ownerId:
+          type: string
+        parentId:
+          type: string
+        projectId:
+          type: string
+        repointAppElementVersionRefs:
+          type: boolean
+        splitAssembliesIntoMultipleDocuments:
+          type: boolean
+        storeInDocument:
+          type: boolean
+        translate:
+          type: boolean
+        unit:
+          type: string
+        uploadId:
+          type: string
+        useIGESImportPostProcessing:
+          type: boolean
+        versionString:
+          type: string
+        yAxisIsUp:
+          type: boolean
+      x-BTVisibility-properties:
+        versionDescription: INTERNAL
+        versionId: INTERNAL
+        upgradeFeatureScriptVersion: INTERNAL
+        documentId: INTERNAL
+        versionName: INTERNAL
+        preserveSourceIds: INTERNAL
   securitySchemes:
     OAuth2:
       type: oauth2

@@ -121,6 +121,53 @@ paths:
       x-BTVisibility: PRODUCTION
 components:
   schemas:
+    BTComputedAssemblyPropertyErrorPolicy:
+      type: string
+      enum:
+      - ExcludeFromComputation
+      - TreatAsZero
+      - TreatAsTrue
+      - TreatAsFalse
+      - PropagateError
+    BTComputedPartPropertyConfig:
+      type: object
+      properties:
+        computedPartPropertySpecFunction:
+          type: string
+        computedPartPropertySpecNamespace:
+          type: string
+        computedPropertyFunctionReturnType:
+          type: integer
+          format: int32
+        propertyFunctionDocumentId:
+          type: string
+    BTMetadataEnumValue:
+      type: object
+      properties:
+        label:
+          type: string
+        state:
+          type: integer
+          format: int32
+        value:
+          type: string
+    BTComputedAssemblyPropertyConfig:
+      type: object
+      properties:
+        aggregatedPropertyId:
+          type: string
+        aggregationOperator:
+          $ref: '#/components/schemas/BTComputedAssemblyPropertyAggregationOperator'
+        errorValuePolicy:
+          $ref: '#/components/schemas/BTComputedAssemblyPropertyErrorPolicy'
+        filterPropertyId:
+          type: string
+        isFilterPropertyInverted:
+          type: boolean
+        missingValuePolicy:
+          $ref: '#/components/schemas/BTComputedAssemblyPropertyErrorPolicy'
+        secondaryPropertyId:
+          type: string
     BTComputedAssemblyPropertyAggregationOperator:
       type: string
       enum:
@@ -210,63 +257,6 @@ components:
           format: int32
         required:
           type: boolean
-    BTComputedPartPropertyConfig:
-      type: object
-      properties:
-        computedPartPropertySpecFunction:
-          type: string
-        computedPartPropertySpecNamespace:
-          type: string
-        computedPropertyFunctionReturnType:
-          type: integer
-          format: int32
-        propertyFunctionDocumentId:
-          type: string
-    BTMetadataEnumValue:
-      type: object
-      properties:
-        label:
-          type: string
-        state:
-          type: integer
-          format: int32
-        value:
-          type: string
-    BTMetadataCategorySummaryInfo:
-      type: object
-      properties:
-        defaultObjectType:
-          type: integer
-          format: int32
-        description:
-          type: string
-        href:
-          type: string
-          description: URI to fetch complete information of the resource.
-          format: uri
-        id:
-          type: string
-          description: Id of the resource.
-        name:
-          type: string
-          description: Name of the resource.
-        objectTypes:
-          type: array
-          items:
-            type: integer
-            format: int32
-        ownerId:
-          type: string
-        ownerType:
-          type: integer
-          format: int32
-        publishState:
-          type: integer
-          format: int32
-        viewRef:
-          type: string
-          description: URI to visualize the resource in a webclient if applicable.
-          format: uri
     BTCategoryPropertyInfo:
       type: object
       properties:
@@ -337,31 +327,41 @@ components:
           description: URI for previous page of the resources.
           format: uri
       description: A list of resources that typically supports paging.
-    BTComputedAssemblyPropertyConfig:
+    BTMetadataCategorySummaryInfo:
       type: object
       properties:
-        aggregatedPropertyId:
+        defaultObjectType:
+          type: integer
+          format: int32
+        description:
           type: string
-        aggregationOperator:
-          $ref: '#/components/schemas/BTComputedAssemblyPropertyAggregationOperator'
-        errorValuePolicy:
-          $ref: '#/components/schemas/BTComputedAssemblyPropertyErrorPolicy'
-        filterPropertyId:
+        href:
           type: string
-        isFilterPropertyInverted:
-          type: boolean
-        missingValuePolicy:
-          $ref: '#/components/schemas/BTComputedAssemblyPropertyErrorPolicy'
-        secondaryPropertyId:
+          description: URI to fetch complete information of the resource.
+          format: uri
+        id:
           type: string
-    BTComputedAssemblyPropertyErrorPolicy:
-      type: string
-      enum:
-      - ExcludeFromComputation
-      - TreatAsZero
-      - TreatAsTrue
-      - TreatAsFalse
-      - PropagateError
+          description: Id of the resource.
+        name:
+          type: string
+          description: Name of the resource.
+        objectTypes:
+          type: array
+          items:
+            type: integer
+            format: int32
+        ownerId:
+          type: string
+        ownerType:
+          type: integer
+          format: int32
+        publishState:
+          type: integer
+          format: int32
+        viewRef:
+          type: string
+          description: URI to visualize the resource in a webclient if applicable.
+          format: uri
   securitySchemes:
     OAuth2:
       type: oauth2

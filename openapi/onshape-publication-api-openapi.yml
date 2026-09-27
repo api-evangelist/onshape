@@ -260,48 +260,48 @@ paths:
       x-BTVisibility: PRODUCTION
 components:
   schemas:
-    GBTElementType:
-      type: string
-      enum:
-      - PARTSTUDIO
-      - ASSEMBLY
-      - DRAWING
-      - FEATURESTUDIO
-      - BLOB
-      - APPLICATION
-      - TABLE
-      - BILLOFMATERIALS
-      - VARIABLESTUDIO
-      - PUBLICATIONITEM
-      - UNKNOWN
-    BTPublicationParams:
+    BTPublicationInfoItem:
+      required:
+      - jsonType
       type: object
       properties:
-        description:
+        applicationTarget:
+          $ref: '#/components/schemas/BTApplicationTargetInfo'
+        dataType:
           type: string
-        items:
-          type: array
-          items:
-            $ref: '#/components/schemas/BTPublicationItemParams'
-        name:
+        documentId:
           type: string
-        notes:
+        elementId:
           type: string
-          description: Deprecated. Use the /documents/{did}/notes endpoint instead.
-          deprecated: true
-        oldClientNotes:
+        elementType:
+          $ref: '#/components/schemas/GBTElementType'
+        encodedConfiguration:
           type: string
-          description: Deprecated. Use the /documents/{did}/notes endpoint instead.
-          deprecated: true
-        ownerId:
+        id:
           type: string
-        ownerType:
+        jsonType:
+          type: string
+        partId:
+          type: string
+        partName:
+          type: string
+        partNumber:
+          type: string
+        revision:
+          type: string
+        revisionId:
+          type: string
+        state:
           type: integer
           format: int32
-        parentId:
+        versionId:
           type: string
-        projectId:
+        versionName:
           type: string
+      discriminator:
+        propertyName: jsonType
+        mapping:
+          publication-blob-item: '#/components/schemas/BlobItem'
     BTApplicationTargetInfo:
       type: object
       properties:
@@ -315,43 +315,47 @@ components:
         tabIconHref:
           type: string
           format: uri
-    BTUserBasicSummaryInfo:
-      required:
-      - jsonType
+    BTOwnerInfo:
       type: object
       properties:
-        jsonType:
+        href:
           type: string
-      discriminator:
-        propertyName: jsonType
-        mapping:
-          user-summary: '#/components/schemas/BTUserBasicSummaryInfo'
-          user-detail-summary: '#/components/schemas/BTUserDetailSummaryInfo'
-      allOf:
-      - $ref: '#/components/schemas/BTBaseInfo'
-      - type: object
-        properties:
-          href:
-            type: string
-            description: URI to fetch complete information of the resource.
-            format: uri
-          id:
-            type: string
-            description: Id of the resource.
-          image:
-            type: string
-          isOnshapeSupport:
-            type: boolean
-          name:
-            type: string
-            description: Name of the resource.
-          state:
-            type: integer
-            format: int32
-          viewRef:
-            type: string
-            description: URI to visualize the resource in a webclient if applicable.
-            format: uri
+          description: URI to fetch complete information of the resource.
+          format: uri
+        id:
+          type: string
+          description: Id of the resource.
+        image:
+          type: string
+        isEnterpriseOwnedResource:
+          type: boolean
+        name:
+          type: string
+          description: Name of the resource.
+        type:
+          type: integer
+          format: int32
+        viewRef:
+          type: string
+          description: URI to visualize the resource in a webclient if applicable.
+          format: uri
+    BTBaseInfo:
+      type: object
+      properties:
+        href:
+          type: string
+          description: URI to fetch complete information of the resource.
+          format: uri
+        id:
+          type: string
+          description: Id of the resource.
+        name:
+          type: string
+          description: Name of the resource.
+        viewRef:
+          type: string
+          description: URI to visualize the resource in a webclient if applicable.
+          format: uri
     BTGlobalTreeNodeInfo:
       required:
       - jsonType
@@ -427,47 +431,73 @@ components:
           resource-owner: '#/components/schemas/BTResourceOwnerInfo'
           external-connection: '#/components/schemas/BTExternalConnectionInfo'
           smartfolder: '#/components/schemas/BTSmartFolderInfo'
-    BTOwnerInfo:
+    BTPublicationInfo:
+      type: object
+      allOf:
+      - $ref: '#/components/schemas/BTGlobalTreeNodeInfo'
+      - type: object
+        properties:
+          defaultWorkspaceId:
+            type: string
+          items:
+            type: array
+            items:
+              $ref: '#/components/schemas/BTPublicationInfoItem'
+          notes:
+            type: string
+          sequence:
+            type: string
+    GBTElementType:
+      type: string
+      enum:
+      - PARTSTUDIO
+      - ASSEMBLY
+      - DRAWING
+      - FEATURESTUDIO
+      - BLOB
+      - APPLICATION
+      - TABLE
+      - BILLOFMATERIALS
+      - VARIABLESTUDIO
+      - PUBLICATIONITEM
+      - UNKNOWN
+    BTUserBasicSummaryInfo:
+      required:
+      - jsonType
       type: object
       properties:
-        href:
+        jsonType:
           type: string
-          description: URI to fetch complete information of the resource.
-          format: uri
-        id:
-          type: string
-          description: Id of the resource.
-        image:
-          type: string
-        isEnterpriseOwnedResource:
-          type: boolean
-        name:
-          type: string
-          description: Name of the resource.
-        type:
-          type: integer
-          format: int32
-        viewRef:
-          type: string
-          description: URI to visualize the resource in a webclient if applicable.
-          format: uri
-    BTBaseInfo:
-      type: object
-      properties:
-        href:
-          type: string
-          description: URI to fetch complete information of the resource.
-          format: uri
-        id:
-          type: string
-          description: Id of the resource.
-        name:
-          type: string
-          description: Name of the resource.
-        viewRef:
-          type: string
-          description: URI to visualize the resource in a webclient if applicable.
-          format: uri
+      discriminator:
+        propertyName: jsonType
+        mapping:
+          user-summary: '#/components/schemas/BTUserBasicSummaryInfo'
+          user-detail-summary: '#/components/schemas/BTUserDetailSummaryInfo'
+      allOf:
+      - $ref: '#/components/schemas/BTBaseInfo'
+      - type: object
+        properties:
+          href:
+            type: string
+            description: URI to fetch complete information of the resource.
+            format: uri
+          id:
+            type: string
+            description: Id of the resource.
+          image:
+            type: string
+          isOnshapeSupport:
+            type: boolean
+          name:
+            type: string
+            description: Name of the resource.
+          state:
+            type: integer
+            format: int32
+          viewRef:
+            type: string
+            description: URI to visualize the resource in a webclient if applicable.
+            format: uri
     BTPublicationBulkItemParams:
       type: object
       properties:
@@ -475,6 +505,34 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/BTPublicationItemParams'
+    BTPublicationParams:
+      type: object
+      properties:
+        description:
+          type: string
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/BTPublicationItemParams'
+        name:
+          type: string
+        notes:
+          type: string
+          description: Deprecated. Use the /documents/{did}/notes endpoint instead.
+          deprecated: true
+        oldClientNotes:
+          type: string
+          description: Deprecated. Use the /documents/{did}/notes endpoint instead.
+          deprecated: true
+        ownerId:
+          type: string
+        ownerType:
+          type: integer
+          format: int32
+        parentId:
+          type: string
+        projectId:
+          type: string
     BTPublicationItemParams:
       type: object
       properties:
@@ -508,64 +566,6 @@ components:
           type: string
         versionId:
           type: string
-    BTPublicationInfo:
-      type: object
-      allOf:
-      - $ref: '#/components/schemas/BTGlobalTreeNodeInfo'
-      - type: object
-        properties:
-          defaultWorkspaceId:
-            type: string
-          items:
-            type: array
-            items:
-              $ref: '#/components/schemas/BTPublicationInfoItem'
-          notes:
-            type: string
-          sequence:
-            type: string
-    BTPublicationInfoItem:
-      required:
-      - jsonType
-      type: object
-      properties:
-        applicationTarget:
-          $ref: '#/components/schemas/BTApplicationTargetInfo'
-        dataType:
-          type: string
-        documentId:
-          type: string
-        elementId:
-          type: string
-        elementType:
-          $ref: '#/components/schemas/GBTElementType'
-        encodedConfiguration:
-          type: string
-        id:
-          type: string
-        jsonType:
-          type: string
-        partId:
-          type: string
-        partName:
-          type: string
-        partNumber:
-          type: string
-        revision:
-          type: string
-        revisionId:
-          type: string
-        state:
-          type: integer
-          format: int32
-        versionId:
-          type: string
-        versionName:
-          type: string
-      discriminator:
-        propertyName: jsonType
-        mapping:
-          publication-blob-item: '#/components/schemas/BlobItem'
   securitySchemes:
     OAuth2:
       type: oauth2

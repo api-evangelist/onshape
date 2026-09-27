@@ -305,13 +305,6 @@ paths:
       x-BTVisibility: PRODUCTION
 components:
   schemas:
-    BTUserAppSettingsParams:
-      type: object
-      properties:
-        settings:
-          type: array
-          items:
-            $ref: '#/components/schemas/BTSettingParam'
     BTSettingParam:
       type: object
       properties:
@@ -321,13 +314,6 @@ components:
           type: string
         operation:
           $ref: '#/components/schemas/BTUserAppSettingOperationType'
-        value:
-          type: object
-    BTSettingInfo:
-      type: object
-      properties:
-        key:
-          type: string
         value:
           type: object
     BTUserAppSettingsInfo:
@@ -395,6 +381,20 @@ components:
           format: uri
         visibilityRule:
           type: string
+    BTSettingInfo:
+      type: object
+      properties:
+        key:
+          type: string
+        value:
+          type: object
+    BTUserAppSettingsParams:
+      type: object
+      properties:
+        settings:
+          type: array
+          items:
+            $ref: '#/components/schemas/BTSettingParam'
     BTUserAppSettingOperationType:
       type: string
       enum:

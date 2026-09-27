@@ -442,28 +442,103 @@ paths:
       x-BTVisibility: PRODUCTION
 components:
   schemas:
-    BTConfigurationInfo:
+    BTApplicationTargetInfo:
       type: object
       properties:
-        isStandardContent:
+        baseHref:
+          type: string
+          format: uri
+        clientId:
+          type: string
+        supportsCollaboration:
           type: boolean
-        parameters:
-          type: array
-          items:
-            $ref: '#/components/schemas/ConfigurationInfoEntry'
-    BTCopyElementParams:
+        tabIconHref:
+          type: string
+          format: uri
+    BTMConfigurationParameter-819:
       type: object
       properties:
-        anchorElementId:
+        btType:
           type: string
-        documentIdSource:
+          description: Type of JSON object.
+      discriminator:
+        propertyName: btType
+        mapping:
+          BTMConfigurationParameterBoolean-2550: '#/components/schemas/BTMConfigurationParameterBoolean-2550'
+          BTMConfigurationParameterEnum-105: '#/components/schemas/BTMConfigurationParameterEnum-105'
+          BTMConfigurationParameterQuantity-1826: '#/components/schemas/BTMConfigurationParameterQuantity-1826'
+          BTMConfigurationParameterString-872: '#/components/schemas/BTMConfigurationParameterString-872'
+      allOf:
+      - $ref: '#/components/schemas/BTMNode-19'
+      - type: object
+        properties:
+          btType:
+            type: string
+          enumOptionIds:
+            type: array
+            items:
+              type: string
+          generatedParameterId:
+            $ref: '#/components/schemas/BTTreeNode-20'
+          isCosmetic:
+            type: boolean
+          parameterId:
+            type: string
+          parameterName:
+            type: string
+          parameterType:
+            $ref: '#/components/schemas/GBTConfigurationParameterType'
+          valid:
+            type: boolean
+          visibilityCondition:
+            $ref: '#/components/schemas/BTParameterVisibilityCondition-177'
+    BTMParameter-1:
+      type: object
+      properties:
+        btType:
           type: string
-        elementIdSource:
+          description: Type of JSON object.
+        importMicroversion:
           type: string
-        isGroupAnchor:
-          type: boolean
-        workspaceIdSource:
+          description: Microversion that resulted from the import.
+          writeOnly: true
+        libraryRelationType:
+          $ref: '#/components/schemas/GBTParameterLibraryRelationType'
+        nodeId:
           type: string
+          description: ID of the parameter's node.
+        parameterId:
+          type: string
+          description: Unique ID of the parameter.
+        parameterName:
+          type: string
+        valueString:
+          type: string
+      description: A list of parameter values for instantiation of the feature spec. Parameters are present for all defined parameters, even if not used in a specific instantiation.
+      discriminator:
+        propertyName: btType
+        mapping:
+          BTMDatabaseParameter-2229: '#/components/schemas/BTMDatabaseParameter-2229'
+          BTMParameterAppearance-627: '#/components/schemas/BTMParameterAppearance-627'
+          BTMParameterArray-2025: '#/components/schemas/BTMParameterArray-2025'
+          BTMParameterBlobReference-1679: '#/components/schemas/BTMParameterBlobReference-1679'
+          BTMParameterBoolean-144: '#/components/schemas/BTMParameterBoolean-144'
+          BTMParameterButton-5169: '#/components/schemas/BTMParameterButton-5169'
+          BTMParameterConfigured-2222: '#/components/schemas/BTMParameterConfigured-2222'
+          BTMParameterDerived-864: '#/components/schemas/BTMParameterDerived-864'
+          BTMParameterEnum-145: '#/components/schemas/BTMParameterEnum-145'
+          BTMParameterFeatureList-1749: '#/components/schemas/BTMParameterFeatureList-1749'
+          BTMParameterForeignId-146: '#/components/schemas/BTMParameterForeignId-146'
+          BTMParameterInvalid-1664: '#/components/schemas/BTMParameterInvalid-1664'
+          BTMParameterLookupTablePath-1419: '#/components/schemas/BTMParameterLookupTablePath-1419'
+          BTMParameterMaterial-1388: '#/components/schemas/BTMParameterMaterial-1388'
+          BTMParameterMultiEnum-3411: '#/components/schemas/BTMParameterMultiEnum-3411'
+          BTMParameterQuantity-147: '#/components/schemas/BTMParameterQuantity-147'
+          BTMParameterQueryList-148: '#/components/schemas/BTMParameterQueryList-148'
+          BTMParameterQueryWithOccurrenceList-67: '#/components/schemas/BTMParameterQueryWithOccurrenceList-67'
+          BTMParameterReference-2434: '#/components/schemas/BTMParameterReference-2434'
+          BTMParameterString-149: '#/components/schemas/BTMParameterString-149'
+          BTMReadOnlyParameter-3800: '#/components/schemas/BTMReadOnlyParameter-3800'
     BTThumbnailSizeInfo:
       type: object
       properties:
@@ -482,22 +557,7 @@ components:
           type: string
         viewOrientation:
           type: string
-    BTTreeNode-20:
-      type: object
-      properties:
-        btType:
-          type: string
-          description: Type of JSON object.
-        nodeId:
-          type: string
-    GBTConfigurationParameterType:
-      type: string
-      enum:
-      - ENUM
-      - BOOLEAN
-      - STRING
-      - QUANTITY
-    BTConfigurationUpdateCall-2933:
+    BTConfigurationResponse-2019:
       type: object
       properties:
         btType:
@@ -527,25 +587,93 @@ components:
         sourceMicroversion:
           type: string
           description: The state from which the result was extracted. Geometry ID interpretation is dependent on this document microversion.
-    GBTParameterLibraryRelationType:
+    GBTElementType:
       type: string
       enum:
-      - DEFAULT
-      - IGNORE_LIBRARY_VALUES
+      - PARTSTUDIO
+      - ASSEMBLY
+      - DRAWING
+      - FEATURESTUDIO
+      - BLOB
+      - APPLICATION
+      - TABLE
+      - BILLOFMATERIALS
+      - VARIABLESTUDIO
+      - PUBLICATIONITEM
       - UNKNOWN
-    UpdateParams:
+    BTThumbnailInfo:
       type: object
       properties:
-        fromReference:
-          $ref: '#/components/schemas/BTUniqueDocumentItemParams'
-        idsToUpdate:
+        href:
+          type: string
+          format: uri
+        id:
+          type: string
+        secondarySizes:
           type: array
           items:
-            type: string
-        ignoreChildren:
+            type: array
+            items:
+              $ref: '#/components/schemas/BTThumbnailSizeInfo'
+        sizes:
+          type: array
+          items:
+            $ref: '#/components/schemas/BTThumbnailSizeInfo'
+    BTUpdateReferenceParams:
+      type: object
+      properties:
+        connectionId:
+          type: string
+        editDescription:
+          type: string
+        referenceUpdates:
+          type: array
+          items:
+            $ref: '#/components/schemas/UpdateParams'
+    BTUniqueDocumentItemParams:
+      type: object
+      properties:
+        apiConfiguration:
+          type: string
+        documentId:
+          type: string
+        elementId:
+          type: string
+        elementType:
+          type: string
+        partId:
+          type: string
+        partNumber:
+          type: string
+        revision:
+          type: string
+        versionId:
+          type: string
+        workspaceId:
+          type: string
+    BTModelFormatInfo:
+      type: object
+      properties:
+        couldBeAssembly:
           type: boolean
-        toReference:
-          $ref: '#/components/schemas/BTUniqueDocumentItemParams'
+          description: Indicates if this format could be an assembly.
+          example: true
+        name:
+          type: string
+          description: Name of the format.
+          example: STEP
+        translatorName:
+          type: string
+          description: The name of the translator for the format.
+          example: step
+    BTTreeNode-20:
+      type: object
+      properties:
+        btType:
+          type: string
+          description: Type of JSON object.
+        nodeId:
+          type: string
     BTMNode-19:
       type: object
       properties:
@@ -587,36 +715,100 @@ components:
           BTModelAnnotations-3945: '#/components/schemas/BTModelAnnotations-3945'
           BTSimulationInstance-3093: '#/components/schemas/BTSimulationInstance-3093'
           BTToleranceString-3274: '#/components/schemas/BTToleranceString-3274'
-    BTUniqueDocumentItemParams:
+    GBTConfigurationParameterType:
+      type: string
+      enum:
+      - ENUM
+      - BOOLEAN
+      - STRING
+      - QUANTITY
+    ConfigurationInfoEntry:
       type: object
       properties:
-        apiConfiguration:
+        explicit:
+          type: boolean
+        isCosmetic:
+          type: boolean
+        isVisible:
+          type: boolean
+        parameterAbbreviatedDisplayValue:
           type: string
-        documentId:
+        parameterDisplayValue:
           type: string
-        elementId:
+        parameterId:
           type: string
-        elementType:
+        parameterName:
           type: string
-        partId:
+        parameterType:
+          type: integer
+          format: int32
+        parameterValue:
           type: string
-        partNumber:
-          type: string
-        revision:
-          type: string
-        versionId:
-          type: string
-        workspaceId:
-          type: string
-    BTConfigurationParams:
+    ConfigurationEntry:
       type: object
       properties:
+        parameterId:
+          type: string
+        parameterValue:
+          type: string
+    BTZipFileInfo:
+      type: object
+      properties:
+        files:
+          type: array
+          items:
+            type: string
+    GBTParameterLibraryRelationType:
+      type: string
+      enum:
+      - DEFAULT
+      - IGNORE_LIBRARY_VALUES
+      - UNKNOWN
+    UpdateParams:
+      type: object
+      properties:
+        fromReference:
+          $ref: '#/components/schemas/BTUniqueDocumentItemParams'
+        idsToUpdate:
+          type: array
+          items:
+            type: string
+        ignoreChildren:
+          type: boolean
+        toReference:
+          $ref: '#/components/schemas/BTUniqueDocumentItemParams'
+    BTConfigurationInfo:
+      type: object
+      properties:
+        isStandardContent:
+          type: boolean
         parameters:
           type: array
           items:
-            $ref: '#/components/schemas/ConfigurationEntry'
-        standardContentParametersId:
+            $ref: '#/components/schemas/ConfigurationInfoEntry'
+    BTEncodedConfigurationInfo:
+      type: object
+      properties:
+        encodedId:
           type: string
+        queryParam:
+          type: string
+    BTParameterVisibilityCondition-177:
+      type: object
+      properties:
+        btType:
+          type: string
+          description: Type of JSON object.
+        selfOrChildAlwaysVisible:
+          type: boolean
+      discriminator:
+        propertyName: btType
+        mapping:
+          BTParameterVisibilityAlwaysHidden-176: '#/components/schemas/BTParameterVisibilityAlwaysHidden-176'
+          BTParameterVisibilityAlwaysShown-5487: '#/components/schemas/BTParameterVisibilityAlwaysShown-5487'
+          BTParameterVisibilityInRange-2980: '#/components/schemas/BTParameterVisibilityInRange-2980'
+          BTParameterVisibilityLogical-178: '#/components/schemas/BTParameterVisibilityLogical-178'
+          BTParameterVisibilityOnEqual-180: '#/components/schemas/BTParameterVisibilityOnEqual-180'
     BTDocumentElementInfo:
       type: object
       properties:
@@ -683,205 +875,20 @@ components:
           type: string
         zip:
           $ref: '#/components/schemas/BTZipFileInfo'
-    ConfigurationInfoEntry:
+    BTCopyElementParams:
       type: object
       properties:
-        explicit:
+        anchorElementId:
+          type: string
+        documentIdSource:
+          type: string
+        elementIdSource:
+          type: string
+        isGroupAnchor:
           type: boolean
-        isCosmetic:
-          type: boolean
-        isVisible:
-          type: boolean
-        parameterAbbreviatedDisplayValue:
+        workspaceIdSource:
           type: string
-        parameterDisplayValue:
-          type: string
-        parameterId:
-          type: string
-        parameterName:
-          type: string
-        parameterType:
-          type: integer
-          format: int32
-        parameterValue:
-          type: string
-    GBTElementType:
-      type: string
-      enum:
-      - PARTSTUDIO
-      - ASSEMBLY
-      - DRAWING
-      - FEATURESTUDIO
-      - BLOB
-      - APPLICATION
-      - TABLE
-      - BILLOFMATERIALS
-      - VARIABLESTUDIO
-      - PUBLICATIONITEM
-      - UNKNOWN
-    BTApplicationTargetInfo:
-      type: object
-      properties:
-        baseHref:
-          type: string
-          format: uri
-        clientId:
-          type: string
-        supportsCollaboration:
-          type: boolean
-        tabIconHref:
-          type: string
-          format: uri
-    BTMConfigurationParameter-819:
-      type: object
-      properties:
-        btType:
-          type: string
-          description: Type of JSON object.
-      discriminator:
-        propertyName: btType
-        mapping:
-          BTMConfigurationParameterBoolean-2550: '#/components/schemas/BTMConfigurationParameterBoolean-2550'
-          BTMConfigurationParameterEnum-105: '#/components/schemas/BTMConfigurationParameterEnum-105'
-          BTMConfigurationParameterQuantity-1826: '#/components/schemas/BTMConfigurationParameterQuantity-1826'
-          BTMConfigurationParameterString-872: '#/components/schemas/BTMConfigurationParameterString-872'
-      allOf:
-      - $ref: '#/components/schemas/BTMNode-19'
-      - type: object
-        properties:
-          btType:
-            type: string
-          enumOptionIds:
-            type: array
-            items:
-              type: string
-          generatedParameterId:
-            $ref: '#/components/schemas/BTTreeNode-20'
-          isCosmetic:
-            type: boolean
-          parameterId:
-            type: string
-          parameterName:
-            type: string
-          parameterType:
-            $ref: '#/components/schemas/GBTConfigurationParameterType'
-          valid:
-            type: boolean
-          visibilityCondition:
-            $ref: '#/components/schemas/BTParameterVisibilityCondition-177'
-    BTUpdateReferenceParams:
-      type: object
-      properties:
-        connectionId:
-          type: string
-        editDescription:
-          type: string
-        referenceUpdates:
-          type: array
-          items:
-            $ref: '#/components/schemas/UpdateParams'
-    BTThumbnailInfo:
-      type: object
-      properties:
-        href:
-          type: string
-          format: uri
-        id:
-          type: string
-        secondarySizes:
-          type: array
-          items:
-            type: array
-            items:
-              $ref: '#/components/schemas/BTThumbnailSizeInfo'
-        sizes:
-          type: array
-          items:
-            $ref: '#/components/schemas/BTThumbnailSizeInfo'
-    BTMParameter-1:
-      type: object
-      properties:
-        btType:
-          type: string
-          description: Type of JSON object.
-        importMicroversion:
-          type: string
-          description: Microversion that resulted from the import.
-          writeOnly: true
-        libraryRelationType:
-          $ref: '#/components/schemas/GBTParameterLibraryRelationType'
-        nodeId:
-          type: string
-          description: ID of the parameter's node.
-        parameterId:
-          type: string
-          description: Unique ID of the parameter.
-        parameterName:
-          type: string
-        valueString:
-          type: string
-      description: A list of parameter values for instantiation of the feature spec. Parameters are present for all defined parameters, even if not used in a specific instantiation.
-      discriminator:
-        propertyName: btType
-        mapping:
-          BTMDatabaseParameter-2229: '#/components/schemas/BTMDatabaseParameter-2229'
-          BTMParameterAppearance-627: '#/components/schemas/BTMParameterAppearance-627'
-          BTMParameterArray-2025: '#/components/schemas/BTMParameterArray-2025'
-          BTMParameterBlobReference-1679: '#/components/schemas/BTMParameterBlobReference-1679'
-          BTMParameterBoolean-144: '#/components/schemas/BTMParameterBoolean-144'
-          BTMParameterButton-5169: '#/components/schemas/BTMParameterButton-5169'
-          BTMParameterConfigured-2222: '#/components/schemas/BTMParameterConfigured-2222'
-          BTMParameterDerived-864: '#/components/schemas/BTMParameterDerived-864'
-          BTMParameterEnum-145: '#/components/schemas/BTMParameterEnum-145'
-          BTMParameterFeatureList-1749: '#/components/schemas/BTMParameterFeatureList-1749'
-          BTMParameterForeignId-146: '#/components/schemas/BTMParameterForeignId-146'
-          BTMParameterInvalid-1664: '#/components/schemas/BTMParameterInvalid-1664'
-          BTMParameterLookupTablePath-1419: '#/components/schemas/BTMParameterLookupTablePath-1419'
-          BTMParameterMaterial-1388: '#/components/schemas/BTMParameterMaterial-1388'
-          BTMParameterMultiEnum-3411: '#/components/schemas/BTMParameterMultiEnum-3411'
-          BTMParameterQuantity-147: '#/components/schemas/BTMParameterQuantity-147'
-          BTMParameterQueryList-148: '#/components/schemas/BTMParameterQueryList-148'
-          BTMParameterQueryWithOccurrenceList-67: '#/components/schemas/BTMParameterQueryWithOccurrenceList-67'
-          BTMParameterReference-2434: '#/components/schemas/BTMParameterReference-2434'
-          BTMParameterString-149: '#/components/schemas/BTMParameterString-149'
-          BTMReadOnlyParameter-3800: '#/components/schemas/BTMReadOnlyParameter-3800'
-    ConfigurationEntry:
-      type: object
-      properties:
-        parameterId:
-          type: string
-        parameterValue:
-          type: string
-    BTEncodedConfigurationInfo:
-      type: object
-      properties:
-        encodedId:
-          type: string
-        queryParam:
-          type: string
-    BTZipFileInfo:
-      type: object
-      properties:
-        files:
-          type: array
-          items:
-            type: string
-    BTModelFormatInfo:
-      type: object
-      properties:
-        couldBeAssembly:
-          type: boolean
-          description: Indicates if this format could be an assembly.
-          example: true
-        name:
-          type: string
-          description: Name of the format.
-          example: STEP
-        translatorName:
-          type: string
-          description: The name of the translator for the format.
-          example: step
-    BTConfigurationResponse-2019:
+    BTConfigurationUpdateCall-2933:
       type: object
       properties:
         btType:
@@ -911,22 +918,15 @@ components:
         sourceMicroversion:
           type: string
           description: The state from which the result was extracted. Geometry ID interpretation is dependent on this document microversion.
-    BTParameterVisibilityCondition-177:
+    BTConfigurationParams:
       type: object
       properties:
-        btType:
+        parameters:
+          type: array
+          items:
+            $ref: '#/components/schemas/ConfigurationEntry'
+        standardContentParametersId:
           type: string
-          description: Type of JSON object.
-        selfOrChildAlwaysVisible:
-          type: boolean
-      discriminator:
-        propertyName: btType
-        mapping:
-          BTParameterVisibilityAlwaysHidden-176: '#/components/schemas/BTParameterVisibilityAlwaysHidden-176'
-          BTParameterVisibilityAlwaysShown-5487: '#/components/schemas/BTParameterVisibilityAlwaysShown-5487'
-          BTParameterVisibilityInRange-2980: '#/components/schemas/BTParameterVisibilityInRange-2980'
-          BTParameterVisibilityLogical-178: '#/components/schemas/BTParameterVisibilityLogical-178'
-          BTParameterVisibilityOnEqual-180: '#/components/schemas/BTParameterVisibilityOnEqual-180'
   securitySchemes:
     OAuth2:
       type: oauth2

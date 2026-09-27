@@ -126,142 +126,24 @@ paths:
       x-BTVisibility: PRODUCTION
 components:
   schemas:
-    BTDocumentBaseSummaryInfo:
+    BTThumbnailInfo:
       type: object
       properties:
-        createdBy:
-          $ref: '#/components/schemas/BTUserBasicSummaryInfo'
         href:
           type: string
-          description: URI to fetch complete information of the resource.
           format: uri
         id:
           type: string
-          description: Id of the resource.
-        modifiedBy:
-          $ref: '#/components/schemas/BTUserBasicSummaryInfo'
-        name:
-          type: string
-          description: Name of the resource.
-        state:
-          type: integer
-          format: int32
-        storageSize:
-          type: integer
-          format: int64
-        viewRef:
-          type: string
-          description: URI to visualize the resource in a webclient if applicable.
-          format: uri
-      description: Summary information about the document containing the reference.
-    BTMetadataValueInfo:
-      required:
-      - jsonType
-      type: object
-      properties:
-        jsonType:
-          type: string
-        propertyId:
-          type: string
-        value:
-          type: string
-      description: Custom metadata properties of the item. Only populated when includeProperties is true.
-      discriminator:
-        propertyName: jsonType
-    BTUserBasicSummaryInfo:
-      required:
-      - jsonType
-      type: object
-      properties:
-        jsonType:
-          type: string
-      discriminator:
-        propertyName: jsonType
-        mapping:
-          user-summary: '#/components/schemas/BTUserBasicSummaryInfo'
-          user-detail-summary: '#/components/schemas/BTUserDetailSummaryInfo'
-      allOf:
-      - $ref: '#/components/schemas/BTBaseInfo'
-      - type: object
-        properties:
-          href:
-            type: string
-            description: URI to fetch complete information of the resource.
-            format: uri
-          id:
-            type: string
-            description: Id of the resource.
-          image:
-            type: string
-          isOnshapeSupport:
-            type: boolean
-          name:
-            type: string
-            description: Name of the resource.
-          state:
-            type: integer
-            format: int32
-          viewRef:
-            type: string
-            description: URI to visualize the resource in a webclient if applicable.
-            format: uri
-    BTThumbnailSizeInfo:
-      type: object
-      properties:
-        href:
-          type: string
-          format: uri
-        mediaType:
-          type: string
-        renderMode:
-          type: string
-        sheetName:
-          type: string
-        size:
-          type: string
-        uniqueId:
-          type: string
-        viewOrientation:
-          type: string
-    BTWhereUsedVersionReferencedInfo:
-      type: object
-      properties:
-        configuration:
+        secondarySizes:
           type: array
-          description: The configuration parameters of the referenced item in this version.
           items:
-            $ref: '#/components/schemas/ConfigInfo'
-        createdAt:
-          type: string
-          description: The timestamp when this version was created.
-          format: date-time
-        document:
-          $ref: '#/components/schemas/BTDocumentBaseSummaryInfo'
-        elementId:
-          type: string
-          description: The element ID of the referring element in this version.
-        elementType:
-          type: integer
-          description: The element type ordinal of the referring element.
-          format: int32
-        partId:
-          type: string
-          description: The part ID of the referenced item.
-        partName:
-          type: string
-          description: The part name of the referenced item.
-        partNumber:
-          type: string
-          description: The part number of the referenced item.
-        revision:
-          type: string
-          description: The revision id of the referenced item.
-        revisionObsolete:
-          type: boolean
-          description: Whether the revision of this item is obsolete.
-        version:
-          $ref: '#/components/schemas/BTBaseInfo'
-      description: List of document versions in which the queried item is referenced. Each entry contains the version info, referring document and element details, configuration, revision, and part identifiers. Only populated when includeVersionInfo is true.
+            type: array
+            items:
+              $ref: '#/components/schemas/BTThumbnailSizeInfo'
+        sizes:
+          type: array
+          items:
+            $ref: '#/components/schemas/BTThumbnailSizeInfo'
     BTProductStructureItemInfo:
       required:
       - jsonType
@@ -388,67 +270,6 @@ components:
         peerDocumentId: INTERNAL
         peerPartId: INTERNAL
         workspaceId: INTERNAL
-    BTBaseInfo:
-      type: object
-      properties:
-        href:
-          type: string
-          description: URI to fetch complete information of the resource.
-          format: uri
-        id:
-          type: string
-          description: Id of the resource.
-        name:
-          type: string
-          description: Name of the resource.
-        viewRef:
-          type: string
-          description: URI to visualize the resource in a webclient if applicable.
-          format: uri
-    Property:
-      type: object
-      properties:
-        id:
-          type: string
-          description: The property ID.
-        name:
-          type: string
-          description: The property name.
-        type:
-          type: string
-          description: The data type of the property.
-        value:
-          type: string
-          description: The property value.
-      description: Standard metadata properties of the item.
-      x-BTVisibility-properties:
-        sortable: INTERNAL
-    ConfigInfo:
-      type: object
-      properties:
-        displayValue:
-          type: string
-          description: The formatted display value of the configuration parameter.
-        displayValueAbbrUnit:
-          type: string
-          description: The abbreviated display value with unit for the configuration parameter.
-        id:
-          type: string
-          description: The configuration parameter ID.
-        name:
-          type: string
-          description: The configuration parameter name.
-        type:
-          type: integer
-          description: 'The configuration parameter type. `0: ENUM | 1: BOOLEAN | 2: STRING | 3: QUANTITY`'
-          format: int32
-        value:
-          type: string
-          description: The raw value of the configuration parameter.
-      description: The configuration parameters of the referring element.
-      x-BTVisibility-properties:
-        isCosmetic: INTERNAL
-        isVisible: INTERNAL
     BTWhereUsedItemInfoList:
       type: object
       properties:
@@ -486,24 +307,203 @@ components:
         failedCaptureDocs: INTERNAL
         pathToRoot: INTERNAL
         status: INTERNAL
-    BTThumbnailInfo:
+    Property:
+      type: object
+      properties:
+        id:
+          type: string
+          description: The property ID.
+        name:
+          type: string
+          description: The property name.
+        type:
+          type: string
+          description: The data type of the property.
+        value:
+          type: string
+          description: The property value.
+      description: Standard metadata properties of the item.
+      x-BTVisibility-properties:
+        sortable: INTERNAL
+    BTUserBasicSummaryInfo:
+      required:
+      - jsonType
+      type: object
+      properties:
+        jsonType:
+          type: string
+      discriminator:
+        propertyName: jsonType
+        mapping:
+          user-summary: '#/components/schemas/BTUserBasicSummaryInfo'
+          user-detail-summary: '#/components/schemas/BTUserDetailSummaryInfo'
+      allOf:
+      - $ref: '#/components/schemas/BTBaseInfo'
+      - type: object
+        properties:
+          href:
+            type: string
+            description: URI to fetch complete information of the resource.
+            format: uri
+          id:
+            type: string
+            description: Id of the resource.
+          image:
+            type: string
+          isOnshapeSupport:
+            type: boolean
+          name:
+            type: string
+            description: Name of the resource.
+          state:
+            type: integer
+            format: int32
+          viewRef:
+            type: string
+            description: URI to visualize the resource in a webclient if applicable.
+            format: uri
+    ConfigInfo:
+      type: object
+      properties:
+        displayValue:
+          type: string
+          description: The formatted display value of the configuration parameter.
+        displayValueAbbrUnit:
+          type: string
+          description: The abbreviated display value with unit for the configuration parameter.
+        id:
+          type: string
+          description: The configuration parameter ID.
+        name:
+          type: string
+          description: The configuration parameter name.
+        type:
+          type: integer
+          description: 'The configuration parameter type. `0: ENUM | 1: BOOLEAN | 2: STRING | 3: QUANTITY`'
+          format: int32
+        value:
+          type: string
+          description: The raw value of the configuration parameter.
+      description: The configuration parameters of the referring element.
+      x-BTVisibility-properties:
+        isCosmetic: INTERNAL
+        isVisible: INTERNAL
+    BTThumbnailSizeInfo:
       type: object
       properties:
         href:
           type: string
           format: uri
+        mediaType:
+          type: string
+        renderMode:
+          type: string
+        sheetName:
+          type: string
+        size:
+          type: string
+        uniqueId:
+          type: string
+        viewOrientation:
+          type: string
+    BTWhereUsedVersionReferencedInfo:
+      type: object
+      properties:
+        configuration:
+          type: array
+          description: The configuration parameters of the referenced item in this version.
+          items:
+            $ref: '#/components/schemas/ConfigInfo'
+        createdAt:
+          type: string
+          description: The timestamp when this version was created.
+          format: date-time
+        document:
+          $ref: '#/components/schemas/BTDocumentBaseSummaryInfo'
+        elementId:
+          type: string
+          description: The element ID of the referring element in this version.
+        elementType:
+          type: integer
+          description: The element type ordinal of the referring element.
+          format: int32
+        partId:
+          type: string
+          description: The part ID of the referenced item.
+        partName:
+          type: string
+          description: The part name of the referenced item.
+        partNumber:
+          type: string
+          description: The part number of the referenced item.
+        revision:
+          type: string
+          description: The revision id of the referenced item.
+        revisionObsolete:
+          type: boolean
+          description: Whether the revision of this item is obsolete.
+        version:
+          $ref: '#/components/schemas/BTBaseInfo'
+      description: List of document versions in which the queried item is referenced. Each entry contains the version info, referring document and element details, configuration, revision, and part identifiers. Only populated when includeVersionInfo is true.
+    BTDocumentBaseSummaryInfo:
+      type: object
+      properties:
+        createdBy:
+          $ref: '#/components/schemas/BTUserBasicSummaryInfo'
+        href:
+          type: string
+          description: URI to fetch complete information of the resource.
+          format: uri
         id:
           type: string
-        secondarySizes:
-          type: array
-          items:
-            type: array
-            items:
-              $ref: '#/components/schemas/BTThumbnailSizeInfo'
-        sizes:
-          type: array
-          items:
-            $ref: '#/components/schemas/BTThumbnailSizeInfo'
+          description: Id of the resource.
+        modifiedBy:
+          $ref: '#/components/schemas/BTUserBasicSummaryInfo'
+        name:
+          type: string
+          description: Name of the resource.
+        state:
+          type: integer
+          format: int32
+        storageSize:
+          type: integer
+          format: int64
+        viewRef:
+          type: string
+          description: URI to visualize the resource in a webclient if applicable.
+          format: uri
+      description: Summary information about the document containing the reference.
+    BTMetadataValueInfo:
+      required:
+      - jsonType
+      type: object
+      properties:
+        jsonType:
+          type: string
+        propertyId:
+          type: string
+        value:
+          type: string
+      description: Custom metadata properties of the item. Only populated when includeProperties is true.
+      discriminator:
+        propertyName: jsonType
+    BTBaseInfo:
+      type: object
+      properties:
+        href:
+          type: string
+          description: URI to fetch complete information of the resource.
+          format: uri
+        id:
+          type: string
+          description: Id of the resource.
+        name:
+          type: string
+          description: Name of the resource.
+        viewRef:
+          type: string
+          description: URI to visualize the resource in a webclient if applicable.
+          format: uri
   securitySchemes:
     OAuth2:
       type: oauth2

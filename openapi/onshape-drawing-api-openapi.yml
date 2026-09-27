@@ -390,6 +390,148 @@ paths:
       x-BTVisibility: PRODUCTION
 components:
   schemas:
+    BTVector3d-389:
+      type: object
+      properties:
+        btType:
+          type: string
+          description: Type of JSON object.
+        x:
+          type: number
+          format: double
+        y:
+          type: number
+          format: double
+        z:
+          type: number
+          format: double
+    BTApplicationTargetInfo:
+      type: object
+      properties:
+        baseHref:
+          type: string
+          format: uri
+        clientId:
+          type: string
+        supportsCollaboration:
+          type: boolean
+        tabIconHref:
+          type: string
+          format: uri
+    BTAppModificationRequestInfo:
+      type: object
+      properties:
+        documentId:
+          type: string
+        elementId:
+          type: string
+        failureReason:
+          type: string
+        href:
+          type: string
+          description: URI to fetch complete information of the resource.
+          format: uri
+        id:
+          type: string
+          description: Id of the resource.
+        name:
+          type: string
+          description: Name of the resource.
+        output:
+          type: string
+        outputStatusCode:
+          type: integer
+          format: int32
+        parentDocumentMicroversionId:
+          type: string
+        parentElementMicroversionId:
+          type: string
+        requestState:
+          $ref: '#/components/schemas/BTAppModificationRequestState'
+        resultDocumentMicroversionId:
+          type: string
+        resultElementMicroversionId:
+          type: string
+        viewRef:
+          type: string
+          description: URI to visualize the resource in a webclient if applicable.
+          format: uri
+        workspaceId:
+          type: string
+    BTBoundingBox-1052:
+      type: object
+      properties:
+        btType:
+          type: string
+          description: Type of JSON object.
+        maxCorner:
+          $ref: '#/components/schemas/BTVector3d-389'
+        minCorner:
+          $ref: '#/components/schemas/BTVector3d-389'
+        valid:
+          type: boolean
+      description: An axis-aligned bounding box indicated by two opposite corners.
+      discriminator:
+        propertyName: btType
+        mapping:
+          BTNonAlignedBoundingBox-4180: '#/components/schemas/BTNonAlignedBoundingBox-4180'
+    BTTranslationRequestInfo:
+      type: object
+      properties:
+        documentId:
+          type: string
+        exportRuleFileName:
+          type: string
+          description: The file name after evaluating a rule for the given `formatName`. `NULL` if `evaluateExportRule=false` or if the export rule is not found.
+        failureReason:
+          type: string
+        href:
+          type: string
+          description: URI to fetch complete information of the resource.
+          format: uri
+        id:
+          type: string
+          description: Id of the resource.
+        name:
+          type: string
+          description: Name of the resource.
+        requestElementId:
+          type: string
+        requestState:
+          $ref: '#/components/schemas/BTTranslationRequestState'
+        resultDocumentId:
+          type: string
+        resultElementIds:
+          type: array
+          items:
+            type: string
+        resultExternalDataIds:
+          type: array
+          items:
+            type: string
+        resultWorkspaceId:
+          type: string
+        versionId:
+          type: string
+        viewRef:
+          type: string
+          description: URI to visualize the resource in a webclient if applicable.
+          format: uri
+        workspaceId:
+          type: string
+    GBTUrdfMeshFormat:
+      type: string
+      enum:
+      - STL
+      - GLTF
+      - OBJ
+      - UNKNOWN
+    BTDrawingHiddenLineOption:
+      type: string
+      enum:
+      - drafting
+      - excluded
+      - marked
     BTThumbnailSizeInfo:
       type: object
       properties:
@@ -408,84 +550,6 @@ components:
           type: string
         viewOrientation:
           type: string
-    BTBDrawingOperationParams:
-      required:
-      - formatVersion
-      - messageName
-      type: object
-      properties:
-        description:
-          type: string
-          description: Operation description
-          example: Replicate annotations
-        formatVersion:
-          type: string
-          description: Version of drawing entity format.
-          example: '2021-01-01'
-        messageName:
-          type: string
-          description: 'Type of drawing modification operation: `onshapeCreateAnnotations` | `onshapeEditAnnotations`'
-          example: onshapeCreateAnnotations
-        otherFields:
-          type: object
-          additionalProperties:
-            type: object
-            description: Other entity creation or modification parameters.
-          description: Other entity creation or modification parameters.
-      description: A single drawing entity creation or modification definition
-    GBTPreProcessParasolidOption:
-      type: string
-      description: Original geometry processing mode to improve results of translation to STEP.
-      enum:
-      - NO_PRE_PROCESSING
-      - USE_BODYSHOP_PRE_PROCESSING_ADVANCED
-      - USE_TRANSLATOR_PRE_PROCESSING
-      - USE_BODYSHOP_PRE_PROCESSING
-      - USE_BODYSHOP_PRE_PROCESSING_ADVANCED_WITH_SURFS_TO_BSURFS_CONVERTING
-      - UNKNOWN
-    BTAppArrayInfoBTAppDrawingViewInfo:
-      type: object
-      properties:
-        changeId:
-          type: string
-        errorCode:
-          type: integer
-          description: '`0: OK (healthy) | 1: INFO | 2: WARNING | 3: ERROR (dangling or view generation call failed) | 4: UNKNOWN`'
-          format: int32
-        errorDescription:
-          type: string
-          description: A human-readable value for the error that occurred, if one occurred.
-        errorValue:
-          $ref: '#/components/schemas/BTAppElementErrorCode'
-        items:
-          type: array
-          items:
-            $ref: '#/components/schemas/BTAppDrawingViewInfo'
-        parentChangeId:
-          type: string
-    GBTStlEncodingType:
-      type: string
-      description: STL encoding type, `TEXT | BINARY`
-      default: TEXT
-      enum:
-      - TEXT
-      - BINARY
-      - UNKNOWN
-    BTVector3d-389:
-      type: object
-      properties:
-        btType:
-          type: string
-          description: Type of JSON object.
-        x:
-          type: number
-          format: double
-        y:
-          type: number
-          format: double
-        z:
-          type: number
-          format: double
     BTTranslateFormatParams:
       required:
       - formatName
@@ -766,80 +830,20 @@ components:
         documentId: INTERNAL
         preserveSourceIds: INTERNAL
         documentVersion: INTERNAL
-    BTAppElementErrorCode:
+    GBTElementType:
       type: string
       enum:
-      - OK
-      - TRANSACTION_CONFLICT
-      - NOT_FOUND
-      - INCONSISTENT_CHANGES
-    BTTranslationRequestInfo:
-      type: object
-      properties:
-        documentId:
-          type: string
-        exportRuleFileName:
-          type: string
-          description: The file name after evaluating a rule for the given `formatName`. `NULL` if `evaluateExportRule=false` or if the export rule is not found.
-        failureReason:
-          type: string
-        href:
-          type: string
-          description: URI to fetch complete information of the resource.
-          format: uri
-        id:
-          type: string
-          description: Id of the resource.
-        name:
-          type: string
-          description: Name of the resource.
-        requestElementId:
-          type: string
-        requestState:
-          $ref: '#/components/schemas/BTTranslationRequestState'
-        resultDocumentId:
-          type: string
-        resultElementIds:
-          type: array
-          items:
-            type: string
-        resultExternalDataIds:
-          type: array
-          items:
-            type: string
-        resultWorkspaceId:
-          type: string
-        versionId:
-          type: string
-        viewRef:
-          type: string
-          description: URI to visualize the resource in a webclient if applicable.
-          format: uri
-        workspaceId:
-          type: string
-    BTPartsExportFilter-4308:
-      type: object
-      properties:
-        btType:
-          type: string
-          description: Type of JSON object.
-        skipAllMesh:
-          type: boolean
-        skipCurves:
-          type: boolean
-        skipPartialMesh:
-          type: boolean
-      description: Skip mesh/curve foreign data creation in individual parts export
-      discriminator:
-        propertyName: btType
-        mapping:
-          BTPartsExportFilter-4308: '#/components/schemas/BTPartsExportFilter-4308'
-    BTDrawingHiddenLineOption:
-      type: string
-      enum:
-      - drafting
-      - excluded
-      - marked
+      - PARTSTUDIO
+      - ASSEMBLY
+      - DRAWING
+      - FEATURESTUDIO
+      - BLOB
+      - APPLICATION
+      - TABLE
+      - BILLOFMATERIALS
+      - VARIABLESTUDIO
+      - PUBLICATIONITEM
+      - UNKNOWN
     BTDrawingParams:
       type: object
       properties:
@@ -1026,112 +1030,88 @@ components:
           type: string
           description: Create a drawing of a part or assembly from this workspace.
       description: JSON schema for creating or updating a drawing.
-    BTAppModificationRequestInfo:
+    BTAppElementViewGeometryProperties-1100:
       type: object
       properties:
-        documentId:
+        btType:
           type: string
-        elementId:
-          type: string
-        failureReason:
-          type: string
+          description: Type of JSON object.
+        propertyToValue:
+          type: object
+          additionalProperties:
+            type: string
+    BTThumbnailInfo:
+      type: object
+      properties:
         href:
           type: string
-          description: URI to fetch complete information of the resource.
           format: uri
         id:
           type: string
-          description: Id of the resource.
-        name:
-          type: string
-          description: Name of the resource.
-        output:
-          type: string
-        outputStatusCode:
-          type: integer
-          format: int32
-        parentDocumentMicroversionId:
-          type: string
-        parentElementMicroversionId:
-          type: string
-        requestState:
-          $ref: '#/components/schemas/BTAppModificationRequestState'
-        resultDocumentMicroversionId:
-          type: string
-        resultElementMicroversionId:
-          type: string
-        viewRef:
-          type: string
-          description: URI to visualize the resource in a webclient if applicable.
-          format: uri
-        workspaceId:
-          type: string
-    BTDocumentElementInfo:
+        secondarySizes:
+          type: array
+          items:
+            type: array
+            items:
+              $ref: '#/components/schemas/BTThumbnailSizeInfo'
+        sizes:
+          type: array
+          items:
+            $ref: '#/components/schemas/BTThumbnailSizeInfo'
+    BTAppModificationRequestState:
+      type: string
+      enum:
+      - ACTIVE
+      - DONE
+      - FAILED
+    BTBrokenOutEndCondition-1107:
       type: object
       properties:
-        accelerationUnits:
+        btType:
           type: string
-        angleUnits:
-          type: string
-        angularVelocityUnits:
-          type: string
-        applicationTarget:
-          $ref: '#/components/schemas/BTApplicationTargetInfo'
-        areaUnits:
-          type: string
-        dataType:
-          type: string
-        deleted:
+          description: Type of JSON object.
+        hasOffset:
           type: boolean
-        densityUnits:
-          type: string
-        elementType:
-          $ref: '#/components/schemas/GBTElementType'
-        energyUnits:
-          type: string
-        filename:
-          type: string
-        forceUnits:
-          type: string
-        foreignDataId:
-          type: string
-        frequencyUnits:
-          type: string
-        id:
-          type: string
-        lengthUnits:
-          type: string
-        massUnits:
-          type: string
-        microversionId:
-          type: string
-        momentUnits:
-          type: string
+        hasUptoPoint:
+          type: boolean
+        offsetDistance:
+          type: number
+          format: double
+        offsetOppositeDirection:
+          type: boolean
+        uptoPoint:
+          type: array
+          items:
+            type: number
+            format: double
+        uptoPoint3d:
+          $ref: '#/components/schemas/BTVector3d-389'
+    BTModelFormatInfo:
+      type: object
+      properties:
+        couldBeAssembly:
+          type: boolean
+          description: Indicates if this format could be an assembly.
+          example: true
         name:
           type: string
-        pressureUnits:
+          description: Name of the format.
+          example: STEP
+        translatorName:
           type: string
-        prettyType:
+          description: The name of the translator for the format.
+          example: step
+    BTDrawingModificationParams:
+      type: object
+      properties:
+        description:
           type: string
-        safeToShow:
-          type: boolean
-        specifiedUnit:
-          type: string
-        thumbnailInfo:
-          $ref: '#/components/schemas/BTThumbnailInfo'
-        thumbnails:
-          type: string
-          format: uri
-        timeUnits:
-          type: string
-        type:
-          type: string
-        unupdatable:
-          type: boolean
-        volumeUnits:
-          type: string
-        zip:
-          $ref: '#/components/schemas/BTZipFileInfo'
+          description: The label that will appear in the document's edit history for this operation. If blank, a value will be auto-generated.
+        jsonRequests:
+          type: array
+          description: Array of drawing modification operations.
+          items:
+            $ref: '#/components/schemas/BTBDrawingOperationParams'
     GBTRhinoVersions:
       type: string
       enum:
@@ -1143,33 +1123,6 @@ components:
       - V7
       - V8
       - UNKNOWN
-    GBTElementType:
-      type: string
-      enum:
-      - PARTSTUDIO
-      - ASSEMBLY
-      - DRAWING
-      - FEATURESTUDIO
-      - BLOB
-      - APPLICATION
-      - TABLE
-      - BILLOFMATERIALS
-      - VARIABLESTUDIO
-      - PUBLICATIONITEM
-      - UNKNOWN
-    BTApplicationTargetInfo:
-      type: object
-      properties:
-        baseHref:
-          type: string
-          format: uri
-        clientId:
-          type: string
-        supportsCollaboration:
-          type: boolean
-        tabIconHref:
-          type: string
-          format: uri
     BTAppDrawingViewInfo:
       type: object
       properties:
@@ -1312,122 +1265,37 @@ components:
         viewVersion:
           type: integer
           format: int32
-    BTDrawingModificationParams:
+    BTBDrawingOperationParams:
+      required:
+      - formatVersion
+      - messageName
       type: object
       properties:
         description:
           type: string
-          description: The label that will appear in the document's edit history for this operation. If blank, a value will be auto-generated.
-        jsonRequests:
-          type: array
-          description: Array of drawing modification operations.
-          items:
-            $ref: '#/components/schemas/BTBDrawingOperationParams'
-    BTAppElementViewGeometryProperties-1100:
-      type: object
-      properties:
-        btType:
+          description: Operation description
+          example: Replicate annotations
+        formatVersion:
           type: string
-          description: Type of JSON object.
-        propertyToValue:
+          description: Version of drawing entity format.
+          example: '2021-01-01'
+        messageName:
+          type: string
+          description: 'Type of drawing modification operation: `onshapeCreateAnnotations` | `onshapeEditAnnotations`'
+          example: onshapeCreateAnnotations
+        otherFields:
           type: object
           additionalProperties:
-            type: string
-    GBTUrdfMeshFormat:
-      type: string
-      enum:
-      - STL
-      - GLTF
-      - OBJ
-      - UNKNOWN
-    BTElementLocationParams:
-      type: object
-      properties:
-        elementId:
-          type: string
-          description: The id of an element which provides context for the position value specified.
-        position:
-          type: integer
-          description: An indicator for the relative placement of the new element. If elementId is specified, a negative number indicates insertion prior to the element and a non-negative number indicates insertion following the element. If no elementId is specified, a negative value indicates insertion at the end of the element list and a non-negative number indicates insertion at the start of the element list.
-          format: int32
-      description: The location at which the new element should be inserted.
-    BTThumbnailInfo:
-      type: object
-      properties:
-        href:
-          type: string
-          format: uri
-        id:
-          type: string
-        secondarySizes:
-          type: array
-          items:
-            type: array
-            items:
-              $ref: '#/components/schemas/BTThumbnailSizeInfo'
-        sizes:
-          type: array
-          items:
-            $ref: '#/components/schemas/BTThumbnailSizeInfo'
-    GBTParasolidEncodingType:
-      type: string
-      description: Export Parasolid in `BINARY` (.x_b) or `TEXT` (.x_t) mode.
-      default: TEXT
-      enum:
-      - TEXT
-      - BINARY
-      - UNKNOWN
-    BTZipFileInfo:
-      type: object
-      properties:
-        files:
-          type: array
-          items:
-            type: string
-    BTModelFormatInfo:
-      type: object
-      properties:
-        couldBeAssembly:
-          type: boolean
-          description: Indicates if this format could be an assembly.
-          example: true
-        name:
-          type: string
-          description: Name of the format.
-          example: STEP
-        translatorName:
-          type: string
-          description: The name of the translator for the format.
-          example: step
+            type: object
+            description: Other entity creation or modification parameters.
+          description: Other entity creation or modification parameters.
+      description: A single drawing entity creation or modification definition
     BTTranslationRequestState:
       type: string
       enum:
       - ACTIVE
       - DONE
       - FAILED
-    BTAppModificationRequestState:
-      type: string
-      enum:
-      - ACTIVE
-      - DONE
-      - FAILED
-    BTBoundingBox-1052:
-      type: object
-      properties:
-        btType:
-          type: string
-          description: Type of JSON object.
-        maxCorner:
-          $ref: '#/components/schemas/BTVector3d-389'
-        minCorner:
-          $ref: '#/components/schemas/BTVector3d-389'
-        valid:
-          type: boolean
-      description: An axis-aligned bounding box indicated by two opposite corners.
-      discriminator:
-        propertyName: btType
-        mapping:
-          BTNonAlignedBoundingBox-4180: '#/components/schemas/BTNonAlignedBoundingBox-4180'
     GBTAppElementReferenceType:
       type: string
       enum:
@@ -1442,28 +1310,160 @@ components:
       - SKETCH
       - CURVE
       - BILLOFMATERIALS
-    BTBrokenOutEndCondition-1107:
+    GBTParasolidEncodingType:
+      type: string
+      description: Export Parasolid in `BINARY` (.x_b) or `TEXT` (.x_t) mode.
+      default: TEXT
+      enum:
+      - TEXT
+      - BINARY
+      - UNKNOWN
+    BTAppElementErrorCode:
+      type: string
+      enum:
+      - OK
+      - TRANSACTION_CONFLICT
+      - NOT_FOUND
+      - INCONSISTENT_CHANGES
+    GBTPreProcessParasolidOption:
+      type: string
+      description: Original geometry processing mode to improve results of translation to STEP.
+      enum:
+      - NO_PRE_PROCESSING
+      - USE_BODYSHOP_PRE_PROCESSING_ADVANCED
+      - USE_TRANSLATOR_PRE_PROCESSING
+      - USE_BODYSHOP_PRE_PROCESSING
+      - USE_BODYSHOP_PRE_PROCESSING_ADVANCED_WITH_SURFS_TO_BSURFS_CONVERTING
+      - UNKNOWN
+    BTZipFileInfo:
+      type: object
+      properties:
+        files:
+          type: array
+          items:
+            type: string
+    BTElementLocationParams:
+      type: object
+      properties:
+        elementId:
+          type: string
+          description: The id of an element which provides context for the position value specified.
+        position:
+          type: integer
+          description: An indicator for the relative placement of the new element. If elementId is specified, a negative number indicates insertion prior to the element and a non-negative number indicates insertion following the element. If no elementId is specified, a negative value indicates insertion at the end of the element list and a non-negative number indicates insertion at the start of the element list.
+          format: int32
+      description: The location at which the new element should be inserted.
+    BTAppArrayInfoBTAppDrawingViewInfo:
+      type: object
+      properties:
+        changeId:
+          type: string
+        errorCode:
+          type: integer
+          description: '`0: OK (healthy) | 1: INFO | 2: WARNING | 3: ERROR (dangling or view generation call failed) | 4: UNKNOWN`'
+          format: int32
+        errorDescription:
+          type: string
+          description: A human-readable value for the error that occurred, if one occurred.
+        errorValue:
+          $ref: '#/components/schemas/BTAppElementErrorCode'
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/BTAppDrawingViewInfo'
+        parentChangeId:
+          type: string
+    BTDocumentElementInfo:
+      type: object
+      properties:
+        accelerationUnits:
+          type: string
+        angleUnits:
+          type: string
+        angularVelocityUnits:
+          type: string
+        applicationTarget:
+          $ref: '#/components/schemas/BTApplicationTargetInfo'
+        areaUnits:
+          type: string
+        dataType:
+          type: string
+        deleted:
+          type: boolean
+        densityUnits:
+          type: string
+        elementType:
+          $ref: '#/components/schemas/GBTElementType'
+        energyUnits:
+          type: string
+        filename:
+          type: string
+        forceUnits:
+          type: string
+        foreignDataId:
+          type: string
+        frequencyUnits:
+          type: string
+        id:
+          type: string
+        lengthUnits:
+          type: string
+        massUnits:
+          type: string
+        microversionId:
+          type: string
+        momentUnits:
+          type: string
+        name:
+          type: string
+        pressureUnits:
+          type: string
+        prettyType:
+          type: string
+        safeToShow:
+          type: boolean
+        specifiedUnit:
+          type: string
+        thumbnailInfo:
+          $ref: '#/components/schemas/BTThumbnailInfo'
+        thumbnails:
+          type: string
+          format: uri
+        timeUnits:
+          type: string
+        type:
+          type: string
+        unupdatable:
+          type: boolean
+        volumeUnits:
+          type: string
+        zip:
+          $ref: '#/components/schemas/BTZipFileInfo'
+    BTPartsExportFilter-4308:
       type: object
       properties:
         btType:
           type: string
           description: Type of JSON object.
-        hasOffset:
+        skipAllMesh:
           type: boolean
-        hasUptoPoint:
+        skipCurves:
           type: boolean
-        offsetDistance:
-          type: number
-          format: double
-        offsetOppositeDirection:
+        skipPartialMesh:
           type: boolean
-        uptoPoint:
-          type: array
-          items:
-            type: number
-            format: double
-        uptoPoint3d:
-          $ref: '#/components/schemas/BTVector3d-389'
+      description: Skip mesh/curve foreign data creation in individual parts export
+      discriminator:
+        propertyName: btType
+        mapping:
+          BTPartsExportFilter-4308: '#/components/schemas/BTPartsExportFilter-4308'
+    GBTStlEncodingType:
+      type: string
+      description: STL encoding type, `TEXT | BINARY`
+      default: TEXT
+      enum:
+      - TEXT
+      - BINARY
+      - UNKNOWN
   securitySchemes:
     OAuth2:
       type: oauth2

@@ -216,6 +216,62 @@ paths:
       x-BTVisibility: PRODUCTION
 components:
   schemas:
+    BTPropertiesTableTemplateType:
+      type: string
+      enum:
+      - BOM
+      - REVISION_TABLE
+      - INSPECTION_TABLE
+    BTPropertiesTableTemplateParams:
+      type: object
+      properties:
+        companyId:
+          type: string
+        isAllCaps:
+          type: boolean
+        isIndented:
+          type: boolean
+        isShowingTopLevelAssemblyRow:
+          type: boolean
+        name:
+          type: string
+        propertyColumns:
+          type: array
+          items:
+            type: string
+        tableType:
+          $ref: '#/components/schemas/BTPropertiesTableTemplateType'
+    BTMetadataValueType:
+      type: string
+      enum:
+      - STRING
+      - BOOL
+      - INT
+      - DOUBLE
+      - DATE
+      - ENUM
+      - OBJECT
+      - BLOB
+      - USER
+      - LIST
+      - FOREIGN
+      - CATEGORY
+      - COMPUTED
+      - VALUE_WITH_UNITS
+    BTSimplePropertyInfo:
+      type: object
+      properties:
+        displayName:
+          type: string
+        frozen:
+          type: boolean
+        propertyId:
+          type: string
+        publishState:
+          type: integer
+          format: int32
+        valueType:
+          $ref: '#/components/schemas/BTMetadataValueType'
     BTPropertiesTableTemplateInfo:
       type: object
       properties:
@@ -251,62 +307,6 @@ components:
           type: string
           description: URI to visualize the resource in a webclient if applicable.
           format: uri
-    BTMetadataValueType:
-      type: string
-      enum:
-      - STRING
-      - BOOL
-      - INT
-      - DOUBLE
-      - DATE
-      - ENUM
-      - OBJECT
-      - BLOB
-      - USER
-      - LIST
-      - FOREIGN
-      - CATEGORY
-      - COMPUTED
-      - VALUE_WITH_UNITS
-    BTPropertiesTableTemplateType:
-      type: string
-      enum:
-      - BOM
-      - REVISION_TABLE
-      - INSPECTION_TABLE
-    BTPropertiesTableTemplateParams:
-      type: object
-      properties:
-        companyId:
-          type: string
-        isAllCaps:
-          type: boolean
-        isIndented:
-          type: boolean
-        isShowingTopLevelAssemblyRow:
-          type: boolean
-        name:
-          type: string
-        propertyColumns:
-          type: array
-          items:
-            type: string
-        tableType:
-          $ref: '#/components/schemas/BTPropertiesTableTemplateType'
-    BTSimplePropertyInfo:
-      type: object
-      properties:
-        displayName:
-          type: string
-        frozen:
-          type: boolean
-        propertyId:
-          type: string
-        publishState:
-          type: integer
-          format: int32
-        valueType:
-          $ref: '#/components/schemas/BTMetadataValueType'
   securitySchemes:
     OAuth2:
       type: oauth2

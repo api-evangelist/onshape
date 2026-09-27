@@ -149,70 +149,54 @@ paths:
       x-BTVisibility: PRODUCTION
 components:
   schemas:
-    BTKeyMouseValuesInfo:
+    BTDocumentSelectorParametersInfo:
+      required:
+      - jsonType
       type: object
       properties:
-        keys:
-          type: array
-          items:
-            type: string
-        mouseButtons:
-          type: array
-          items:
-            type: string
-    BTSelectItemViewStateInfo:
-      type: object
-      properties:
-        activeSelectorId:
+        jsonType:
           type: string
-        documentSelectors:
-          type: array
-          items:
-            $ref: '#/components/schemas/BTDocumentSelectorInfo'
-        purpose:
-          type: string
-    BTUserSummaryInfo:
-      type: object
       discriminator:
         propertyName: jsonType
         mapping:
-          user-summary: '#/components/schemas/BTUserSummaryInfo'
-          companyuser: '#/components/schemas/BTCompanyUserSummaryInfo'
-          BTUserAdminSummaryInfo: '#/components/schemas/BTUserAdminSummaryInfo'
-          userinfo: '#/components/schemas/BTUserInfo'
-          BTUserOAuth2SummaryInfo: '#/components/schemas/BTUserOAuth2SummaryInfo'
+          other-documents: '#/components/schemas/BTOtherDocumentSelectorParametersInfo'
+    BTUserBasicSummaryInfo:
+      required:
+      - jsonType
+      type: object
+      properties:
+        jsonType:
+          type: string
+      discriminator:
+        propertyName: jsonType
+        mapping:
+          user-summary: '#/components/schemas/BTUserBasicSummaryInfo'
+          user-detail-summary: '#/components/schemas/BTUserDetailSummaryInfo'
       allOf:
-      - $ref: '#/components/schemas/BTUserDetailSummaryInfo'
+      - $ref: '#/components/schemas/BTBaseInfo'
       - type: object
         properties:
-          company:
-            $ref: '#/components/schemas/BTCompanySummaryInfo'
-          companyUserState:
-            type: integer
-            format: int32
-          confirmationRequested:
-            type: boolean
-          documentationNameOverride:
+          href:
             type: string
-          globalPermissions:
-            $ref: '#/components/schemas/GlobalPermissionInfo'
-          invitationState:
-            type: integer
-            format: int32
-          isExternal:
-            type: boolean
-          isGuest:
-            type: boolean
-          isLight:
-            type: boolean
-          lastLoginTime:
+            description: URI to fetch complete information of the resource.
+            format: uri
+          id:
             type: string
-            format: date-time
-          personalMessageAllowed:
+            description: Id of the resource.
+          image:
+            type: string
+          isOnshapeSupport:
             type: boolean
-          source:
+          name:
+            type: string
+            description: Name of the resource.
+          state:
             type: integer
             format: int32
+          viewRef:
+            type: string
+            description: URI to visualize the resource in a webclient if applicable.
+            format: uri
     BTWebRendererPerformanceMeasurementParams:
       type: object
       properties:
@@ -226,21 +210,18 @@ components:
           format: float
         vendor:
           type: string
-    BTCommonUnitInfo:
+    BTSelectItemViewStateInfo:
       type: object
       properties:
-        abbreviation:
+        activeSelectorId:
           type: string
-        unit:
+        documentSelectors:
+          type: array
+          items:
+            $ref: '#/components/schemas/BTDocumentSelectorInfo'
+        purpose:
           type: string
-        unitName:
-          type: string
-        unitType:
-          type: string
-        valueInBaseUnits:
-          type: number
-          format: double
-    BTBaseInfo:
+    BTOwnerInfo:
       type: object
       properties:
         href:
@@ -250,13 +231,28 @@ components:
         id:
           type: string
           description: Id of the resource.
+        image:
+          type: string
+        isEnterpriseOwnedResource:
+          type: boolean
         name:
           type: string
           description: Name of the resource.
+        type:
+          type: integer
+          format: int32
         viewRef:
           type: string
           description: URI to visualize the resource in a webclient if applicable.
           format: uri
+    BTUnitsMaximumDisplayPrecisionInfo:
+      type: object
+      properties:
+        unitsDisplayPrecision:
+          type: object
+          additionalProperties:
+            type: integer
+            format: int32
     BTUserSettingsInfo:
       type: object
       properties:
@@ -369,16 +365,110 @@ components:
           format: int32
       x-BTVisibility-properties:
         hideAhaAppOnboarding: INTERNAL
-    BTDefaultUnitInfo:
+    BTLoginParams:
       type: object
       properties:
-        key:
+        deviceId:
           type: string
-          description: The quantity type.
-        value:
+        email:
           type: string
-          description: The unit that should be used.
-      description: Specifies which unit should be used for each supported quantity type.
+        enableTotp:
+          type: boolean
+        isRecaptchaV3:
+          type: boolean
+        password:
+          type: string
+        randomToken:
+          type: string
+        recaptchaToken:
+          type: string
+        rememberTotp:
+          type: boolean
+        rendererPerformanceMeasurement:
+          $ref: '#/components/schemas/BTWebRendererPerformanceMeasurementParams'
+        totp:
+          type: string
+        webClientCapabilities:
+          $ref: '#/components/schemas/BTWebClientCapabilitiesParams'
+    BTIdentityInfo:
+      type: object
+      properties:
+        company:
+          $ref: '#/components/schemas/BTCompanySummaryInfo'
+        href:
+          type: string
+          description: URI to fetch complete information of the resource.
+          format: uri
+        id:
+          type: string
+          description: Id of the resource.
+        identityType:
+          type: integer
+          format: int32
+        team:
+          $ref: '#/components/schemas/BTTeamSummaryInfo'
+        user:
+          $ref: '#/components/schemas/BTUserSummaryInfo'
+        viewRef:
+          type: string
+          description: URI to visualize the resource in a webclient if applicable.
+          format: uri
+    BTMaterialLibrarySettingsInfo:
+      type: object
+      properties:
+        companyLibraries:
+          type: array
+          items:
+            $ref: '#/components/schemas/BTMaterialLibraryMetadataInfo'
+        libraries:
+          type: array
+          items:
+            $ref: '#/components/schemas/BTMaterialLibraryMetadataInfo'
+    BTCompanySummaryInfo:
+      type: object
+      properties:
+        admin:
+          type: boolean
+        description:
+          type: string
+        domainPrefix:
+          type: string
+        enterpriseBaseUrl:
+          type: string
+        enterpriseSubtype:
+          type: integer
+          format: int32
+        href:
+          type: string
+          description: URI to fetch complete information of the resource.
+          format: uri
+        id:
+          type: string
+          description: Id of the resource.
+        image:
+          type: string
+        name:
+          type: string
+          description: Name of the resource.
+        noPublicDocuments:
+          type: boolean
+        ownerId:
+          type: string
+        secondaryDomainPrefixes:
+          uniqueItems: true
+          type: array
+          items:
+            type: string
+        state:
+          type: integer
+          format: int32
+        type:
+          type: integer
+          format: int32
+        viewRef:
+          type: string
+          description: URI to visualize the resource in a webclient if applicable.
+          format: uri
     BTUserDetailSummaryInfo:
       type: object
       discriminator:
@@ -398,6 +488,126 @@ components:
             type: string
           lastName:
             type: string
+    BTUserOAuth2SummaryInfo:
+      type: object
+      allOf:
+      - $ref: '#/components/schemas/BTUserSummaryInfo'
+      - type: object
+        properties:
+          clientId:
+            type: string
+          companyPlan:
+            type: boolean
+          oauth2Scopes:
+            type: integer
+            format: int64
+          planGroup:
+            type: string
+          role:
+            type: integer
+            format: int32
+          roles:
+            uniqueItems: true
+            type: array
+            items:
+              $ref: '#/components/schemas/BTRole'
+    BTRole:
+      type: string
+      enum:
+      - ANONYMOUS
+      - TOTPPENDINGUSER
+      - USER
+      - DEVELOPER
+      - PARTNER
+      - ONSHAPECOMPANYUSER
+      - ADMIN
+      - SERVICE
+    BTSubstituteApproverInfo:
+      type: object
+      properties:
+        companyId:
+          type: string
+        enabled:
+          type: boolean
+        identity:
+          $ref: '#/components/schemas/BTIdentityInfo'
+    BTDocumentSelectorInfo:
+      type: object
+      properties:
+        parameters:
+          $ref: '#/components/schemas/BTDocumentSelectorParametersInfo'
+        selectorId:
+          type: string
+    BTDefaultUnitsInfo:
+      type: object
+      properties:
+        nodeId:
+          type: string
+        units:
+          type: array
+          items:
+            $ref: '#/components/schemas/BTDefaultUnitInfo'
+    BTMaterialLibraryMetadataInfo:
+      type: object
+      properties:
+        documentId:
+          type: string
+        documentName:
+          type: string
+        elementId:
+          type: string
+        isPublic:
+          type: boolean
+        libraryName:
+          type: string
+        ownerName:
+          type: string
+        versionId:
+          type: string
+        workspaceId:
+          type: string
+    BTUserSummaryInfo:
+      type: object
+      discriminator:
+        propertyName: jsonType
+        mapping:
+          user-summary: '#/components/schemas/BTUserSummaryInfo'
+          companyuser: '#/components/schemas/BTCompanyUserSummaryInfo'
+          BTUserAdminSummaryInfo: '#/components/schemas/BTUserAdminSummaryInfo'
+          userinfo: '#/components/schemas/BTUserInfo'
+          BTUserOAuth2SummaryInfo: '#/components/schemas/BTUserOAuth2SummaryInfo'
+      allOf:
+      - $ref: '#/components/schemas/BTUserDetailSummaryInfo'
+      - type: object
+        properties:
+          company:
+            $ref: '#/components/schemas/BTCompanySummaryInfo'
+          companyUserState:
+            type: integer
+            format: int32
+          confirmationRequested:
+            type: boolean
+          documentationNameOverride:
+            type: string
+          globalPermissions:
+            $ref: '#/components/schemas/GlobalPermissionInfo'
+          invitationState:
+            type: integer
+            format: int32
+          isExternal:
+            type: boolean
+          isGuest:
+            type: boolean
+          isLight:
+            type: boolean
+          lastLoginTime:
+            type: string
+            format: date-time
+          personalMessageAllowed:
+            type: boolean
+          source:
+            type: integer
+            format: int32
     GlobalPermissionInfo:
       type: object
       properties:
@@ -447,43 +657,6 @@ components:
           type: boolean
         useRevisionTools:
           type: boolean
-    BTMaterialLibrarySettingsInfo:
-      type: object
-      properties:
-        companyLibraries:
-          type: array
-          items:
-            $ref: '#/components/schemas/BTMaterialLibraryMetadataInfo'
-        libraries:
-          type: array
-          items:
-            $ref: '#/components/schemas/BTMaterialLibraryMetadataInfo'
-    BTRole:
-      type: string
-      enum:
-      - ANONYMOUS
-      - TOTPPENDINGUSER
-      - USER
-      - DEVELOPER
-      - PARTNER
-      - ONSHAPECOMPANYUSER
-      - ADMIN
-      - SERVICE
-    BTDocumentSelectorInfo:
-      type: object
-      properties:
-        parameters:
-          $ref: '#/components/schemas/BTDocumentSelectorParametersInfo'
-        selectorId:
-          type: string
-    BTUnitsMaximumDisplayPrecisionInfo:
-      type: object
-      properties:
-        unitsDisplayPrecision:
-          type: object
-          additionalProperties:
-            type: integer
-            format: int32
     BTTeamSummaryInfo:
       type: object
       properties:
@@ -552,217 +725,68 @@ components:
         propertyName: jsonType
         mapping:
           team: '#/components/schemas/BTTeamInfo'
-    BTDefaultUnitsInfo:
+    BTViewManipulationMouseKeyMappingInfo:
       type: object
       properties:
-        nodeId:
-          type: string
-        units:
+        axisRotate3DMapping:
           type: array
           items:
-            $ref: '#/components/schemas/BTDefaultUnitInfo'
-    BTUserBasicSummaryInfo:
-      required:
-      - jsonType
+            $ref: '#/components/schemas/BTKeyMouseValuesInfo'
+        pan2DMapping:
+          type: array
+          items:
+            $ref: '#/components/schemas/BTKeyMouseValuesInfo'
+        pan3DMapping:
+          type: array
+          items:
+            $ref: '#/components/schemas/BTKeyMouseValuesInfo'
+        rotate3DMapping:
+          type: array
+          items:
+            $ref: '#/components/schemas/BTKeyMouseValuesInfo'
+        zoom2DMapping:
+          type: array
+          items:
+            $ref: '#/components/schemas/BTKeyMouseValuesInfo'
+        zoom3DMapping:
+          type: array
+          items:
+            $ref: '#/components/schemas/BTKeyMouseValuesInfo'
+    BTCommonUnitInfo:
       type: object
       properties:
-        jsonType:
+        abbreviation:
           type: string
-      discriminator:
-        propertyName: jsonType
-        mapping:
-          user-summary: '#/components/schemas/BTUserBasicSummaryInfo'
-          user-detail-summary: '#/components/schemas/BTUserDetailSummaryInfo'
-      allOf:
-      - $ref: '#/components/schemas/BTBaseInfo'
-      - type: object
-        properties:
-          href:
-            type: string
-            description: URI to fetch complete information of the resource.
-            format: uri
-          id:
-            type: string
-            description: Id of the resource.
-          image:
-            type: string
-          isOnshapeSupport:
-            type: boolean
-          name:
-            type: string
-            description: Name of the resource.
-          state:
-            type: integer
-            format: int32
-          viewRef:
-            type: string
-            description: URI to visualize the resource in a webclient if applicable.
-            format: uri
-    BTLoginParams:
+        unit:
+          type: string
+        unitName:
+          type: string
+        unitType:
+          type: string
+        valueInBaseUnits:
+          type: number
+          format: double
+    BTDefaultUnitInfo:
       type: object
       properties:
-        deviceId:
+        key:
           type: string
-        email:
+          description: The quantity type.
+        value:
           type: string
-        enableTotp:
-          type: boolean
-        isRecaptchaV3:
-          type: boolean
-        password:
-          type: string
-        randomToken:
-          type: string
-        recaptchaToken:
-          type: string
-        rememberTotp:
-          type: boolean
-        rendererPerformanceMeasurement:
-          $ref: '#/components/schemas/BTWebRendererPerformanceMeasurementParams'
-        totp:
-          type: string
-        webClientCapabilities:
-          $ref: '#/components/schemas/BTWebClientCapabilitiesParams'
-    BTUserOAuth2SummaryInfo:
-      type: object
-      allOf:
-      - $ref: '#/components/schemas/BTUserSummaryInfo'
-      - type: object
-        properties:
-          clientId:
-            type: string
-          companyPlan:
-            type: boolean
-          oauth2Scopes:
-            type: integer
-            format: int64
-          planGroup:
-            type: string
-          role:
-            type: integer
-            format: int32
-          roles:
-            uniqueItems: true
-            type: array
-            items:
-              $ref: '#/components/schemas/BTRole'
-    BTOwnerInfo:
+          description: The unit that should be used.
+      description: Specifies which unit should be used for each supported quantity type.
+    BTKeyMouseValuesInfo:
       type: object
       properties:
-        href:
-          type: string
-          description: URI to fetch complete information of the resource.
-          format: uri
-        id:
-          type: string
-          description: Id of the resource.
-        image:
-          type: string
-        isEnterpriseOwnedResource:
-          type: boolean
-        name:
-          type: string
-          description: Name of the resource.
-        type:
-          type: integer
-          format: int32
-        viewRef:
-          type: string
-          description: URI to visualize the resource in a webclient if applicable.
-          format: uri
-    BTDocumentSelectorParametersInfo:
-      required:
-      - jsonType
-      type: object
-      properties:
-        jsonType:
-          type: string
-      discriminator:
-        propertyName: jsonType
-        mapping:
-          other-documents: '#/components/schemas/BTOtherDocumentSelectorParametersInfo'
-    BTCompanySummaryInfo:
-      type: object
-      properties:
-        admin:
-          type: boolean
-        description:
-          type: string
-        domainPrefix:
-          type: string
-        enterpriseBaseUrl:
-          type: string
-        enterpriseSubtype:
-          type: integer
-          format: int32
-        href:
-          type: string
-          description: URI to fetch complete information of the resource.
-          format: uri
-        id:
-          type: string
-          description: Id of the resource.
-        image:
-          type: string
-        name:
-          type: string
-          description: Name of the resource.
-        noPublicDocuments:
-          type: boolean
-        ownerId:
-          type: string
-        secondaryDomainPrefixes:
-          uniqueItems: true
+        keys:
           type: array
           items:
             type: string
-        state:
-          type: integer
-          format: int32
-        type:
-          type: integer
-          format: int32
-        viewRef:
-          type: string
-          description: URI to visualize the resource in a webclient if applicable.
-          format: uri
-    BTCommonUnitsInfo:
-      type: object
-      properties:
-        quantityTypeToBaseUnits:
-          type: object
-          additionalProperties:
-            type: object
-            additionalProperties:
-              type: integer
-              format: int32
-        units:
+        mouseButtons:
           type: array
           items:
-            $ref: '#/components/schemas/BTCommonUnitInfo'
-    BTIdentityInfo:
-      type: object
-      properties:
-        company:
-          $ref: '#/components/schemas/BTCompanySummaryInfo'
-        href:
-          type: string
-          description: URI to fetch complete information of the resource.
-          format: uri
-        id:
-          type: string
-          description: Id of the resource.
-        identityType:
-          type: integer
-          format: int32
-        team:
-          $ref: '#/components/schemas/BTTeamSummaryInfo'
-        user:
-          $ref: '#/components/schemas/BTUserSummaryInfo'
-        viewRef:
-          type: string
-          description: URI to visualize the resource in a webclient if applicable.
-          format: uri
+            type: string
     BTWebClientCapabilitiesParams:
       type: object
       properties:
@@ -815,61 +839,37 @@ components:
           type: boolean
         vendor:
           type: string
-    BTViewManipulationMouseKeyMappingInfo:
+    BTCommonUnitsInfo:
       type: object
       properties:
-        axisRotate3DMapping:
+        quantityTypeToBaseUnits:
+          type: object
+          additionalProperties:
+            type: object
+            additionalProperties:
+              type: integer
+              format: int32
+        units:
           type: array
           items:
-            $ref: '#/components/schemas/BTKeyMouseValuesInfo'
-        pan2DMapping:
-          type: array
-          items:
-            $ref: '#/components/schemas/BTKeyMouseValuesInfo'
-        pan3DMapping:
-          type: array
-          items:
-            $ref: '#/components/schemas/BTKeyMouseValuesInfo'
-        rotate3DMapping:
-          type: array
-          items:
-            $ref: '#/components/schemas/BTKeyMouseValuesInfo'
-        zoom2DMapping:
-          type: array
-          items:
-            $ref: '#/components/schemas/BTKeyMouseValuesInfo'
-        zoom3DMapping:
-          type: array
-          items:
-            $ref: '#/components/schemas/BTKeyMouseValuesInfo'
-    BTMaterialLibraryMetadataInfo:
+            $ref: '#/components/schemas/BTCommonUnitInfo'
+    BTBaseInfo:
       type: object
       properties:
-        documentId:
+        href:
           type: string
-        documentName:
+          description: URI to fetch complete information of the resource.
+          format: uri
+        id:
           type: string
-        elementId:
+          description: Id of the resource.
+        name:
           type: string
-        isPublic:
-          type: boolean
-        libraryName:
+          description: Name of the resource.
+        viewRef:
           type: string
-        ownerName:
-          type: string
-        versionId:
-          type: string
-        workspaceId:
-          type: string
-    BTSubstituteApproverInfo:
-      type: object
-      properties:
-        companyId:
-          type: string
-        enabled:
-          type: boolean
-        identity:
-          $ref: '#/components/schemas/BTIdentityInfo'
+          description: URI to visualize the resource in a webclient if applicable.
+          format: uri
   securitySchemes:
     OAuth2:
       type: oauth2

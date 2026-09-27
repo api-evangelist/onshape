@@ -81,21 +81,6 @@ paths:
       x-BTVisibility: PRODUCTION
 components:
   schemas:
-    BTExportRuleHardcodedPropertyInfo:
-      type: object
-      properties:
-        context:
-          type: integer
-          format: int32
-        id:
-          type: string
-        name:
-          type: string
-        objectTypes:
-          type: array
-          items:
-            type: integer
-            format: int32
     BTExportRuleValidOptionsInfo:
       type: object
       properties:
@@ -110,6 +95,21 @@ components:
           additionalProperties:
             type: string
         validObjectTypes:
+          type: array
+          items:
+            type: integer
+            format: int32
+    BTExportRuleHardcodedPropertyInfo:
+      type: object
+      properties:
+        context:
+          type: integer
+          format: int32
+        id:
+          type: string
+        name:
+          type: string
+        objectTypes:
           type: array
           items:
             type: integer

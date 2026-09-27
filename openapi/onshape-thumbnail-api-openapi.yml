@@ -625,24 +625,6 @@ paths:
       x-BTVisibility: PRODUCTION
 components:
   schemas:
-    BTThumbnailSizeInfo:
-      type: object
-      properties:
-        href:
-          type: string
-          format: uri
-        mediaType:
-          type: string
-        renderMode:
-          type: string
-        sheetName:
-          type: string
-        size:
-          type: string
-        uniqueId:
-          type: string
-        viewOrientation:
-          type: string
     BTThumbnailInfo:
       type: object
       properties:
@@ -661,13 +643,24 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/BTThumbnailSizeInfo'
-    BTApplicationElementThumbnailParamsArray:
+    BTThumbnailSizeInfo:
       type: object
       properties:
-        thumbnails:
-          type: array
-          items:
-            $ref: '#/components/schemas/BTApplicationElementThumbnailParams'
+        href:
+          type: string
+          format: uri
+        mediaType:
+          type: string
+        renderMode:
+          type: string
+        sheetName:
+          type: string
+        size:
+          type: string
+        uniqueId:
+          type: string
+        viewOrientation:
+          type: string
     BTApplicationElementThumbnailParams:
       type: object
       properties:
@@ -685,6 +678,13 @@ components:
           type: boolean
         uniqueId:
           type: string
+    BTApplicationElementThumbnailParamsArray:
+      type: object
+      properties:
+        thumbnails:
+          type: array
+          items:
+            $ref: '#/components/schemas/BTApplicationElementThumbnailParams'
   securitySchemes:
     OAuth2:
       type: oauth2

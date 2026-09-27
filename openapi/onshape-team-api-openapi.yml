@@ -195,6 +195,51 @@ paths:
       x-BTVisibility: PRODUCTION
 components:
   schemas:
+    BTCompanySummaryInfo:
+      type: object
+      properties:
+        admin:
+          type: boolean
+        description:
+          type: string
+        domainPrefix:
+          type: string
+        enterpriseBaseUrl:
+          type: string
+        enterpriseSubtype:
+          type: integer
+          format: int32
+        href:
+          type: string
+          description: URI to fetch complete information of the resource.
+          format: uri
+        id:
+          type: string
+          description: Id of the resource.
+        image:
+          type: string
+        name:
+          type: string
+          description: Name of the resource.
+        noPublicDocuments:
+          type: boolean
+        ownerId:
+          type: string
+        secondaryDomainPrefixes:
+          uniqueItems: true
+          type: array
+          items:
+            type: string
+        state:
+          type: integer
+          format: int32
+        type:
+          type: integer
+          format: int32
+        viewRef:
+          type: string
+          description: URI to visualize the resource in a webclient if applicable.
+          format: uri
     BTTeamSummaryInfo:
       type: object
       properties:
@@ -263,6 +308,143 @@ components:
         propertyName: jsonType
         mapping:
           team: '#/components/schemas/BTTeamInfo'
+    BTTeamInfo:
+      type: object
+      allOf:
+      - $ref: '#/components/schemas/BTTeamSummaryInfo'
+      - type: object
+        properties:
+          admin:
+            type: boolean
+          member:
+            type: boolean
+          size:
+            type: integer
+            format: int32
+    BTListResponseBTTeamMemberInfo:
+      type: object
+      properties:
+        href:
+          type: string
+          description: URI for current page of resources.
+          format: uri
+        items:
+          type: array
+          description: Array of items in the current page.
+          items:
+            $ref: '#/components/schemas/BTTeamMemberInfo'
+        next:
+          type: string
+          description: URI for next page of the resources if more are available.
+          format: uri
+        previous:
+          type: string
+          description: URI for previous page of the resources.
+          format: uri
+      description: A list of resources that typically supports paging.
+    BTUserDetailSummaryInfo:
+      type: object
+      discriminator:
+        propertyName: jsonType
+        mapping:
+          user-detail-summary: '#/components/schemas/BTUserDetailSummaryInfo'
+          user-summary: '#/components/schemas/BTUserSummaryInfo'
+      allOf:
+      - $ref: '#/components/schemas/BTUserBasicSummaryInfo'
+      - type: object
+        properties:
+          documentationName:
+            type: string
+          email:
+            type: string
+          firstName:
+            type: string
+          lastName:
+            type: string
+    BTOwnerInfo:
+      type: object
+      properties:
+        href:
+          type: string
+          description: URI to fetch complete information of the resource.
+          format: uri
+        id:
+          type: string
+          description: Id of the resource.
+        image:
+          type: string
+        isEnterpriseOwnedResource:
+          type: boolean
+        name:
+          type: string
+          description: Name of the resource.
+        type:
+          type: integer
+          format: int32
+        viewRef:
+          type: string
+          description: URI to visualize the resource in a webclient if applicable.
+          format: uri
+    BTUserBasicSummaryInfo:
+      required:
+      - jsonType
+      type: object
+      properties:
+        jsonType:
+          type: string
+      discriminator:
+        propertyName: jsonType
+        mapping:
+          user-summary: '#/components/schemas/BTUserBasicSummaryInfo'
+          user-detail-summary: '#/components/schemas/BTUserDetailSummaryInfo'
+      allOf:
+      - $ref: '#/components/schemas/BTBaseInfo'
+      - type: object
+        properties:
+          href:
+            type: string
+            description: URI to fetch complete information of the resource.
+            format: uri
+          id:
+            type: string
+            description: Id of the resource.
+          image:
+            type: string
+          isOnshapeSupport:
+            type: boolean
+          name:
+            type: string
+            description: Name of the resource.
+          state:
+            type: integer
+            format: int32
+          viewRef:
+            type: string
+            description: URI to visualize the resource in a webclient if applicable.
+            format: uri
+    BTTeamMemberInfo:
+      type: object
+      properties:
+        admin:
+          type: boolean
+        href:
+          type: string
+          description: URI to fetch complete information of the resource.
+          format: uri
+        id:
+          type: string
+          description: Id of the resource.
+        member:
+          $ref: '#/components/schemas/BTUserSummaryInfo'
+        name:
+          type: string
+          description: Name of the resource.
+        team:
+          $ref: '#/components/schemas/BTTeamSummaryInfo'
+        viewRef:
+          type: string
+          description: URI to visualize the resource in a webclient if applicable.
+          format: uri
     BTUserSummaryInfo:
       type: object
       discriminator:
@@ -303,187 +485,6 @@ components:
           personalMessageAllowed:
             type: boolean
           source:
-            type: integer
-            format: int32
-    BTUserBasicSummaryInfo:
-      required:
-      - jsonType
-      type: object
-      properties:
-        jsonType:
-          type: string
-      discriminator:
-        propertyName: jsonType
-        mapping:
-          user-summary: '#/components/schemas/BTUserBasicSummaryInfo'
-          user-detail-summary: '#/components/schemas/BTUserDetailSummaryInfo'
-      allOf:
-      - $ref: '#/components/schemas/BTBaseInfo'
-      - type: object
-        properties:
-          href:
-            type: string
-            description: URI to fetch complete information of the resource.
-            format: uri
-          id:
-            type: string
-            description: Id of the resource.
-          image:
-            type: string
-          isOnshapeSupport:
-            type: boolean
-          name:
-            type: string
-            description: Name of the resource.
-          state:
-            type: integer
-            format: int32
-          viewRef:
-            type: string
-            description: URI to visualize the resource in a webclient if applicable.
-            format: uri
-    BTGlobalTreeNodeListResponseBTTeamInfo:
-      type: object
-      properties:
-        href:
-          type: string
-          description: Requested Document URL
-          format: uri
-        items:
-          type: array
-          properties:
-            empty:
-              type: boolean
-            first:
-              $ref: '#/components/schemas/BTTeamInfo'
-            last:
-              $ref: '#/components/schemas/BTTeamInfo'
-          description: Document Items array. Array entries are the same as that returned from "/api/documents/{did}".
-          items:
-            $ref: '#/components/schemas/BTTeamInfo'
-        next:
-          type: string
-          description: The URL for the next page of items. Responses are limited to 20 items per page.
-          format: uri
-        previous:
-          type: string
-          description: The URL for the previous page of items. Responses are limited to 20 items per page.
-          format: uri
-    BTOwnerInfo:
-      type: object
-      properties:
-        href:
-          type: string
-          description: URI to fetch complete information of the resource.
-          format: uri
-        id:
-          type: string
-          description: Id of the resource.
-        image:
-          type: string
-        isEnterpriseOwnedResource:
-          type: boolean
-        name:
-          type: string
-          description: Name of the resource.
-        type:
-          type: integer
-          format: int32
-        viewRef:
-          type: string
-          description: URI to visualize the resource in a webclient if applicable.
-          format: uri
-    BTBaseInfo:
-      type: object
-      properties:
-        href:
-          type: string
-          description: URI to fetch complete information of the resource.
-          format: uri
-        id:
-          type: string
-          description: Id of the resource.
-        name:
-          type: string
-          description: Name of the resource.
-        viewRef:
-          type: string
-          description: URI to visualize the resource in a webclient if applicable.
-          format: uri
-    BTListResponseBTTeamMemberInfo:
-      type: object
-      properties:
-        href:
-          type: string
-          description: URI for current page of resources.
-          format: uri
-        items:
-          type: array
-          description: Array of items in the current page.
-          items:
-            $ref: '#/components/schemas/BTTeamMemberInfo'
-        next:
-          type: string
-          description: URI for next page of the resources if more are available.
-          format: uri
-        previous:
-          type: string
-          description: URI for previous page of the resources.
-          format: uri
-      description: A list of resources that typically supports paging.
-    BTTeamMemberInfo:
-      type: object
-      properties:
-        admin:
-          type: boolean
-        href:
-          type: string
-          description: URI to fetch complete information of the resource.
-          format: uri
-        id:
-          type: string
-          description: Id of the resource.
-        member:
-          $ref: '#/components/schemas/BTUserSummaryInfo'
-        name:
-          type: string
-          description: Name of the resource.
-        team:
-          $ref: '#/components/schemas/BTTeamSummaryInfo'
-        viewRef:
-          type: string
-          description: URI to visualize the resource in a webclient if applicable.
-          format: uri
-    BTUserDetailSummaryInfo:
-      type: object
-      discriminator:
-        propertyName: jsonType
-        mapping:
-          user-detail-summary: '#/components/schemas/BTUserDetailSummaryInfo'
-          user-summary: '#/components/schemas/BTUserSummaryInfo'
-      allOf:
-      - $ref: '#/components/schemas/BTUserBasicSummaryInfo'
-      - type: object
-        properties:
-          documentationName:
-            type: string
-          email:
-            type: string
-          firstName:
-            type: string
-          lastName:
-            type: string
-    BTTeamInfo:
-      type: object
-      allOf:
-      - $ref: '#/components/schemas/BTTeamSummaryInfo'
-      - type: object
-        properties:
-          admin:
-            type: boolean
-          member:
-            type: boolean
-          size:
             type: integer
             format: int32
     GlobalPermissionInfo:
@@ -535,20 +536,36 @@ components:
           type: boolean
         useRevisionTools:
           type: boolean
-    BTCompanySummaryInfo:
+    BTGlobalTreeNodeListResponseBTTeamInfo:
       type: object
       properties:
-        admin:
-          type: boolean
-        description:
+        href:
           type: string
-        domainPrefix:
+          description: Requested Document URL
+          format: uri
+        items:
+          type: array
+          properties:
+            empty:
+              type: boolean
+            first:
+              $ref: '#/components/schemas/BTTeamInfo'
+            last:
+              $ref: '#/components/schemas/BTTeamInfo'
+          description: Document Items array. Array entries are the same as that returned from "/api/documents/{did}".
+          items:
+            $ref: '#/components/schemas/BTTeamInfo'
+        next:
           type: string
-        enterpriseBaseUrl:
+          description: The URL for the next page of items. Responses are limited to 20 items per page.
+          format: uri
+        previous:
           type: string
-        enterpriseSubtype:
-          type: integer
-          format: int32
+          description: The URL for the previous page of items. Responses are limited to 20 items per page.
+          format: uri
+    BTBaseInfo:
+      type: object
+      properties:
         href:
           type: string
           description: URI to fetch complete information of the resource.
@@ -556,26 +573,9 @@ components:
         id:
           type: string
           description: Id of the resource.
-        image:
-          type: string
         name:
           type: string
           description: Name of the resource.
-        noPublicDocuments:
-          type: boolean
-        ownerId:
-          type: string
-        secondaryDomainPrefixes:
-          uniqueItems: true
-          type: array
-          items:
-            type: string
-        state:
-          type: integer
-          format: int32
-        type:
-          type: integer
-          format: int32
         viewRef:
           type: string
           description: URI to visualize the resource in a webclient if applicable.

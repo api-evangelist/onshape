@@ -234,6 +234,35 @@ paths:
       x-BTVisibility: PRODUCTION
 components:
   schemas:
+    BTShareEntryParams:
+      type: object
+      properties:
+        applicationId:
+          type: string
+        companyId:
+          type: string
+        connectionId:
+          type: string
+        email:
+          type: string
+        entryType:
+          type: integer
+          format: int32
+        teamId:
+          type: string
+        userId:
+          type: string
+    BTUserState:
+      type: string
+      enum:
+      - DELETED
+      - ACTIVE
+      - INACTIVE
+      - REQUESTED
+      - APPROVED
+      - REQUEST_EXPIRED
+      - ALL
+      - MARKED_FOR_DELETION
     BTInheritedAclInfo:
       type: object
       properties:
@@ -254,46 +283,6 @@ components:
         objectId:
           type: string
         objectName:
-          type: string
-        objectType:
-          type: integer
-          format: int64
-        owner:
-          $ref: '#/components/schemas/BTOwnerInfo'
-        public:
-          type: boolean
-        sharedWithSupport:
-          type: boolean
-        viewRef:
-          type: string
-          description: URI to visualize the resource in a webclient if applicable.
-          format: uri
-        visibility:
-          type: string
-    BTAclInfo:
-      type: object
-      properties:
-        admin:
-          type: boolean
-        entries:
-          type: array
-          items:
-            $ref: '#/components/schemas/BTAclEntryInfo'
-        href:
-          type: string
-          description: URI to fetch complete information of the resource.
-          format: uri
-        id:
-          type: string
-          description: Id of the resource.
-        inheritedAcls:
-          type: array
-          items:
-            $ref: '#/components/schemas/BTInheritedAclInfo'
-        name:
-          type: string
-          description: Name of the resource.
-        objectId:
           type: string
         objectType:
           type: integer
@@ -384,35 +373,46 @@ components:
           format: int32
         teamName:
           type: string
-    BTShareEntryParams:
+    BTAclInfo:
       type: object
       properties:
-        applicationId:
+        admin:
+          type: boolean
+        entries:
+          type: array
+          items:
+            $ref: '#/components/schemas/BTAclEntryInfo'
+        href:
           type: string
-        companyId:
+          description: URI to fetch complete information of the resource.
+          format: uri
+        id:
           type: string
-        connectionId:
+          description: Id of the resource.
+        inheritedAcls:
+          type: array
+          items:
+            $ref: '#/components/schemas/BTInheritedAclInfo'
+        name:
           type: string
-        email:
+          description: Name of the resource.
+        objectId:
           type: string
-        entryType:
+        objectType:
           type: integer
-          format: int32
-        teamId:
+          format: int64
+        owner:
+          $ref: '#/components/schemas/BTOwnerInfo'
+        public:
+          type: boolean
+        sharedWithSupport:
+          type: boolean
+        viewRef:
           type: string
-        userId:
+          description: URI to visualize the resource in a webclient if applicable.
+          format: uri
+        visibility:
           type: string
-    BTUserState:
-      type: string
-      enum:
-      - DELETED
-      - ACTIVE
-      - INACTIVE
-      - REQUESTED
-      - APPROVED
-      - REQUEST_EXPIRED
-      - ALL
-      - MARKED_FOR_DELETION
     BTShareParams:
       type: object
       properties:

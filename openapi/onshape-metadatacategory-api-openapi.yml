@@ -121,53 +121,41 @@ paths:
       x-BTVisibility: PRODUCTION
 components:
   schemas:
-    BTComputedAssemblyPropertyErrorPolicy:
-      type: string
-      enum:
-      - ExcludeFromComputation
-      - TreatAsZero
-      - TreatAsTrue
-      - TreatAsFalse
-      - PropagateError
-    BTComputedPartPropertyConfig:
+    BTMetadataCategorySummaryInfo:
       type: object
       properties:
-        computedPartPropertySpecFunction:
-          type: string
-        computedPartPropertySpecNamespace:
-          type: string
-        computedPropertyFunctionReturnType:
+        defaultObjectType:
           type: integer
           format: int32
-        propertyFunctionDocumentId:
+        description:
           type: string
-    BTMetadataEnumValue:
-      type: object
-      properties:
-        label:
+        href:
           type: string
-        state:
+          description: URI to fetch complete information of the resource.
+          format: uri
+        id:
+          type: string
+          description: Id of the resource.
+        name:
+          type: string
+          description: Name of the resource.
+        objectTypes:
+          type: array
+          items:
+            type: integer
+            format: int32
+        ownerId:
+          type: string
+        ownerType:
           type: integer
           format: int32
-        value:
+        publishState:
+          type: integer
+          format: int32
+        viewRef:
           type: string
-    BTComputedAssemblyPropertyConfig:
-      type: object
-      properties:
-        aggregatedPropertyId:
-          type: string
-        aggregationOperator:
-          $ref: '#/components/schemas/BTComputedAssemblyPropertyAggregationOperator'
-        errorValuePolicy:
-          $ref: '#/components/schemas/BTComputedAssemblyPropertyErrorPolicy'
-        filterPropertyId:
-          type: string
-        isFilterPropertyInverted:
-          type: boolean
-        missingValuePolicy:
-          $ref: '#/components/schemas/BTComputedAssemblyPropertyErrorPolicy'
-        secondaryPropertyId:
-          type: string
+          description: URI to visualize the resource in a webclient if applicable.
+          format: uri
     BTComputedAssemblyPropertyAggregationOperator:
       type: string
       enum:
@@ -257,6 +245,16 @@ components:
           format: int32
         required:
           type: boolean
+    BTMetadataEnumValue:
+      type: object
+      properties:
+        label:
+          type: string
+        state:
+          type: integer
+          format: int32
+        value:
+          type: string
     BTCategoryPropertyInfo:
       type: object
       properties:
@@ -306,6 +304,23 @@ components:
           type: string
           description: URI to visualize the resource in a webclient if applicable.
           format: uri
+    BTComputedAssemblyPropertyConfig:
+      type: object
+      properties:
+        aggregatedPropertyId:
+          type: string
+        aggregationOperator:
+          $ref: '#/components/schemas/BTComputedAssemblyPropertyAggregationOperator'
+        errorValuePolicy:
+          $ref: '#/components/schemas/BTComputedAssemblyPropertyErrorPolicy'
+        filterPropertyId:
+          type: string
+        isFilterPropertyInverted:
+          type: boolean
+        missingValuePolicy:
+          $ref: '#/components/schemas/BTComputedAssemblyPropertyErrorPolicy'
+        secondaryPropertyId:
+          type: string
     BTListResponseBTCategoryPropertyInfo:
       type: object
       properties:
@@ -327,41 +342,26 @@ components:
           description: URI for previous page of the resources.
           format: uri
       description: A list of resources that typically supports paging.
-    BTMetadataCategorySummaryInfo:
+    BTComputedAssemblyPropertyErrorPolicy:
+      type: string
+      enum:
+      - ExcludeFromComputation
+      - TreatAsZero
+      - TreatAsTrue
+      - TreatAsFalse
+      - PropagateError
+    BTComputedPartPropertyConfig:
       type: object
       properties:
-        defaultObjectType:
+        computedPartPropertySpecFunction:
+          type: string
+        computedPartPropertySpecNamespace:
+          type: string
+        computedPropertyFunctionReturnType:
           type: integer
           format: int32
-        description:
+        propertyFunctionDocumentId:
           type: string
-        href:
-          type: string
-          description: URI to fetch complete information of the resource.
-          format: uri
-        id:
-          type: string
-          description: Id of the resource.
-        name:
-          type: string
-          description: Name of the resource.
-        objectTypes:
-          type: array
-          items:
-            type: integer
-            format: int32
-        ownerId:
-          type: string
-        ownerType:
-          type: integer
-          format: int32
-        publishState:
-          type: integer
-          format: int32
-        viewRef:
-          type: string
-          description: URI to visualize the resource in a webclient if applicable.
-          format: uri
   securitySchemes:
     OAuth2:
       type: oauth2

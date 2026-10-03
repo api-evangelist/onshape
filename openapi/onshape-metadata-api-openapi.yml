@@ -897,11 +897,53 @@ paths:
       x-BTVisibility: PRODUCTION
 components:
   schemas:
-    BTMetadataPropertyUiHintsInfo:
+    BTAssemblyItemMetadataInfo:
       type: object
       properties:
-        multiline:
-          type: boolean
+        children:
+          type: array
+          items:
+            $ref: '#/components/schemas/BTAssemblyItemMetadataInfo'
+        propertyIdToError:
+          type: object
+          additionalProperties:
+            type: string
+        propertyIdToEvalInfo:
+          type: object
+          additionalProperties:
+            type: string
+        propertyIdToOverrideStatus:
+          type: object
+          additionalProperties:
+            type: string
+        propertyIdToSourceType:
+          type: object
+          additionalProperties:
+            type: string
+        propertyIdToValue:
+          type: object
+          additionalProperties:
+            type: string
+        requestInfo:
+          $ref: '#/components/schemas/BTAssemblyItemMetadataRequestInfo'
+    BTThumbnailSizeInfo:
+      type: object
+      properties:
+        href:
+          type: string
+          format: uri
+        mediaType:
+          type: string
+        renderMode:
+          type: string
+        sheetName:
+          type: string
+        size:
+          type: string
+        uniqueId:
+          type: string
+        viewOrientation:
+          type: string
     BTThumbnailInfo:
       type: object
       properties:
@@ -920,6 +962,19 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/BTThumbnailSizeInfo'
+    BTMetadataObjectListInfoBTMetadataElementInfo:
+      type: object
+      properties:
+        href:
+          type: string
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/BTMetadataElementInfo'
+        next:
+          type: string
+        prev:
+          type: string
     BTMetadataPropertyInfo:
       type: object
       properties:
@@ -976,35 +1031,34 @@ components:
           type: object
         valueType:
           type: string
-    BTAssemblyItemMetadataInfo:
+    BTMetadataEnumValueInfo:
       type: object
       properties:
-        children:
+        label:
+          type: string
+        state:
+          type: integer
+          format: int32
+        value:
+          type: string
+    BTMetadataPropertyUiHintsInfo:
+      type: object
+      properties:
+        multiline:
+          type: boolean
+    BTMetadataObjectListInfoBTMetadataPartInfo:
+      type: object
+      properties:
+        href:
+          type: string
+        items:
           type: array
           items:
-            $ref: '#/components/schemas/BTAssemblyItemMetadataInfo'
-        propertyIdToError:
-          type: object
-          additionalProperties:
-            type: string
-        propertyIdToEvalInfo:
-          type: object
-          additionalProperties:
-            type: string
-        propertyIdToOverrideStatus:
-          type: object
-          additionalProperties:
-            type: string
-        propertyIdToSourceType:
-          type: object
-          additionalProperties:
-            type: string
-        propertyIdToValue:
-          type: object
-          additionalProperties:
-            type: string
-        requestInfo:
-          $ref: '#/components/schemas/BTAssemblyItemMetadataRequestInfo'
+            $ref: '#/components/schemas/BTMetadataPartInfo'
+        next:
+          type: string
+        prev:
+          type: string
     BTMetadataPartInfo:
       type: object
       allOf:
@@ -1026,37 +1080,21 @@ components:
             type: string
           unflattenedPartId:
             type: string
-    BTMetadataObjectListInfoBTMetadataElementInfo:
+    BTMetadataElementInfo:
       type: object
-      properties:
-        href:
-          type: string
-        items:
-          type: array
-          items:
-            $ref: '#/components/schemas/BTMetadataElementInfo'
-        next:
-          type: string
-        prev:
-          type: string
-    BTMetadataObjectInfo:
-      required:
-      - jsonType
-      type: object
-      properties:
-        href:
-          type: string
-        jsonType:
-          type: string
+      allOf:
+      - $ref: '#/components/schemas/BTMetadataObjectInfo'
+      - type: object
         properties:
-          type: array
-          description: Properties associated with this metadata object
-          items:
-            $ref: '#/components/schemas/BTMetadataPropertyInfo'
-        thumbnail:
-          $ref: '#/components/schemas/BTThumbnailInfo'
-      discriminator:
-        propertyName: jsonType
+          elementId:
+            type: string
+          elementType:
+            type: integer
+            format: int32
+          mimeType:
+            type: string
+          parts:
+            $ref: '#/components/schemas/BTMetadataObjectListInfoBTMetadataPartInfo'
     BTMetadataPropertyValidatorInfo:
       type: object
       properties:
@@ -1087,49 +1125,24 @@ components:
         quantityType:
           type: integer
           format: int32
-    BTMetadataElementInfo:
-      type: object
-      allOf:
-      - $ref: '#/components/schemas/BTMetadataObjectInfo'
-      - type: object
-        properties:
-          elementId:
-            type: string
-          elementType:
-            type: integer
-            format: int32
-          mimeType:
-            type: string
-          parts:
-            $ref: '#/components/schemas/BTMetadataObjectListInfoBTMetadataPartInfo'
-    BTThumbnailSizeInfo:
+    BTMetadataObjectInfo:
+      required:
+      - jsonType
       type: object
       properties:
         href:
           type: string
-          format: uri
-        mediaType:
+        jsonType:
           type: string
-        renderMode:
-          type: string
-        sheetName:
-          type: string
-        size:
-          type: string
-        uniqueId:
-          type: string
-        viewOrientation:
-          type: string
-    BTMetadataEnumValueInfo:
-      type: object
-      properties:
-        label:
-          type: string
-        state:
-          type: integer
-          format: int32
-        value:
-          type: string
+        properties:
+          type: array
+          description: Properties associated with this metadata object
+          items:
+            $ref: '#/components/schemas/BTMetadataPropertyInfo'
+        thumbnail:
+          $ref: '#/components/schemas/BTThumbnailInfo'
+      discriminator:
+        propertyName: jsonType
     BTAssemblyItemMetadataRequestInfo:
       type: object
       properties:
@@ -1148,19 +1161,6 @@ components:
         wvmId:
           type: string
         wvmType:
-          type: string
-    BTMetadataObjectListInfoBTMetadataPartInfo:
-      type: object
-      properties:
-        href:
-          type: string
-        items:
-          type: array
-          items:
-            $ref: '#/components/schemas/BTMetadataPartInfo'
-        next:
-          type: string
-        prev:
           type: string
   securitySchemes:
     OAuth2:

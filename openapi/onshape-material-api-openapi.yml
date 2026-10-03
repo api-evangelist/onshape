@@ -142,27 +142,6 @@ components:
           type: string
           description: The file to upload.
           format: binary
-    BTMaterialLibraryInfo:
-      type: object
-      properties:
-        description:
-          type: string
-        displayName:
-          type: string
-        externalElementReference:
-          $ref: '#/components/schemas/BTExternalElementReferenceInfo'
-        materials:
-          type: array
-          items:
-            $ref: '#/components/schemas/BTLibraryMaterialInfo'
-        name:
-          type: string
-        propertyDefinitions:
-          type: array
-          items:
-            $ref: '#/components/schemas/BTMaterialPropertyDefinitionInfo'
-        versioned:
-          type: boolean
     BTMaterialPropertyDefinitionInfo:
       type: object
       properties:
@@ -185,6 +164,17 @@ components:
           type: array
           items:
             type: string
+    BTExternalElementReferenceInfo:
+      type: object
+      properties:
+        documentId:
+          type: string
+        elementId:
+          type: string
+        elementMicroversionId:
+          type: string
+        versionId:
+          type: string
     BTLibraryMaterialInfo:
       type: object
       properties:
@@ -198,17 +188,27 @@ components:
           type: object
           additionalProperties:
             type: string
-    BTExternalElementReferenceInfo:
+    BTMaterialLibraryInfo:
       type: object
       properties:
-        documentId:
+        description:
           type: string
-        elementId:
+        displayName:
           type: string
-        elementMicroversionId:
+        externalElementReference:
+          $ref: '#/components/schemas/BTExternalElementReferenceInfo'
+        materials:
+          type: array
+          items:
+            $ref: '#/components/schemas/BTLibraryMaterialInfo'
+        name:
           type: string
-        versionId:
-          type: string
+        propertyDefinitions:
+          type: array
+          items:
+            $ref: '#/components/schemas/BTMaterialPropertyDefinitionInfo'
+        versioned:
+          type: boolean
   securitySchemes:
     OAuth2:
       type: oauth2

@@ -216,6 +216,27 @@ components:
           description: URI for previous page of the resources.
           format: uri
       description: A list of resources that typically supports paging.
+    GBTMeshState:
+      type: string
+      enum:
+      - NO_MESH
+      - MIXED
+      - ALL_MESH
+      - UNKNOWN
+    GBTElementType:
+      type: string
+      enum:
+      - PARTSTUDIO
+      - ASSEMBLY
+      - DRAWING
+      - FEATURESTUDIO
+      - BLOB
+      - APPLICATION
+      - TABLE
+      - BILLOFMATERIALS
+      - VARIABLESTUDIO
+      - PUBLICATIONITEM
+      - UNKNOWN
     BTInsertableInfo:
       type: object
       properties:
@@ -322,27 +343,6 @@ components:
         workspaceName:
           type: string
       description: Array of items in the current page.
-    GBTMeshState:
-      type: string
-      enum:
-      - NO_MESH
-      - MIXED
-      - ALL_MESH
-      - UNKNOWN
-    GBTElementType:
-      type: string
-      enum:
-      - PARTSTUDIO
-      - ASSEMBLY
-      - DRAWING
-      - FEATURESTUDIO
-      - BLOB
-      - APPLICATION
-      - TABLE
-      - BILLOFMATERIALS
-      - VARIABLESTUDIO
-      - PUBLICATIONITEM
-      - UNKNOWN
     GBTBodyType:
       type: string
       enum:

@@ -378,60 +378,63 @@ paths:
       x-BTVisibility: PRODUCTION
 components:
   schemas:
-    BTCommentParams:
+    CoordinatesInfo:
       type: object
       properties:
-        annotationId:
+        x:
+          type: number
+          format: float
+        y:
+          type: number
+          format: float
+        z:
+          type: number
+          format: float
+    BTCompanySummaryInfo:
+      type: object
+      properties:
+        admin:
+          type: boolean
+        description:
           type: string
-        annotationType:
+        domainPrefix:
+          type: string
+        enterpriseBaseUrl:
+          type: string
+        enterpriseSubtype:
           type: integer
           format: int32
-        appEntity:
+        href:
           type: string
-        assemblyFeature:
-          type: string
-        assignee:
-          type: string
-          description: Assign the comment during creation. Comments cannot be reassigned during an update at this time.
-        calloutInstanceId:
-          type: string
-        coordinates:
-          $ref: '#/components/schemas/CoordinatesParams'
-        dimensionConstraintId:
-          type: string
-        dimensionFeatureId:
-          type: string
-        dimensionParameterId:
-          type: string
-        dimensionPartQuery:
-          type: string
-        documentId:
-          type: string
-        elementFeature:
-          type: string
-        elementId:
-          type: string
-        elementOccurrence:
-          type: string
-        elementQuery:
-          type: string
+          description: URI to fetch complete information of the resource.
+          format: uri
         id:
           type: string
-        message:
+          description: Id of the resource.
+        image:
           type: string
-        objectId:
+        name:
           type: string
-        objectType:
+          description: Name of the resource.
+        noPublicDocuments:
+          type: boolean
+        ownerId:
+          type: string
+        secondaryDomainPrefixes:
+          uniqueItems: true
+          type: array
+          items:
+            type: string
+        state:
           type: integer
           format: int32
-        parentId:
+        type:
+          type: integer
+          format: int32
+        viewRef:
           type: string
-        versionId:
-          type: string
-        viewData:
-          $ref: '#/components/schemas/BTViewDataParams'
-        workspaceId:
-          type: string
+          description: URI to visualize the resource in a webclient if applicable.
+          format: uri
     BTUserDetailSummaryInfo:
       type: object
       discriminator:
@@ -451,88 +454,56 @@ components:
             type: string
           lastName:
             type: string
-    BTBFileUpload:
+    GlobalPermissionInfo:
       type: object
       properties:
-        file:
-          type: string
-          description: The file to upload.
-          format: binary
-    BTListResponseBTCommentInfo:
-      type: object
-      properties:
-        href:
-          type: string
-          description: URI for current page of resources.
-          format: uri
-        items:
-          type: array
-          description: Array of items in the current page.
-          items:
-            $ref: '#/components/schemas/BTCommentInfo'
-        next:
-          type: string
-          description: URI for next page of the resources if more are available.
-          format: uri
-        previous:
-          type: string
-          description: URI for previous page of the resources.
-          format: uri
-      description: A list of resources that typically supports paging.
-    BTViewDataParams:
-      type: object
-      properties:
-        angle:
-          type: number
-          format: double
-        cameraViewport:
-          type: array
-          items:
-            type: number
-            format: double
-        isPerspective:
+        accessReports:
           type: boolean
-        viewMatrix:
-          type: array
-          items:
-            type: number
-            format: double
-    BTBaseInfo:
-      type: object
-      properties:
-        href:
-          type: string
-          description: URI to fetch complete information of the resource.
-          format: uri
-        id:
-          type: string
-          description: Id of the resource.
-        name:
-          type: string
-          description: Name of the resource.
-        viewRef:
-          type: string
-          description: URI to visualize the resource in a webclient if applicable.
-          format: uri
-    BTViewDataInfo:
-      type: object
-      properties:
-        angle:
-          type: number
-          format: double
-        cameraViewport:
-          type: array
-          items:
-            type: number
-            format: double
-        isPerspective:
+        adminEnterprise:
           type: boolean
-        viewMatrix:
-          type: array
-          items:
-            type: number
-            format: double
-    CoordinatesInfo:
+        allowAppStoreAccess:
+          type: boolean
+        allowPublicDocumentsAccess:
+          type: boolean
+        approveReleases:
+          type: boolean
+        branchLockPermissions:
+          type: boolean
+        createDocumentsInRoot:
+          type: boolean
+        createProject:
+          type: boolean
+        createReleases:
+          type: boolean
+        createTasks:
+          type: boolean
+        deletePermanently:
+          type: boolean
+        enableLabs:
+          type: boolean
+        exportFiles:
+          type: boolean
+        importFiles:
+          type: boolean
+        manageGuestUsers:
+          type: boolean
+        manageNonGeometricItems:
+          type: boolean
+        manageRbac:
+          type: boolean
+        manageStandardContentMetadata:
+          type: boolean
+        manageUsers:
+          type: boolean
+        manageWorkflows:
+          type: boolean
+        shareForAnonymousAccess:
+          type: boolean
+        transferDocumentsFromEnterprise:
+          type: boolean
+        useRevisionTools:
+          type: boolean
+    CoordinatesParams:
       type: object
       properties:
         x:
@@ -544,6 +515,29 @@ components:
         z:
           type: number
           format: float
+    BTCommentAttachmentInfo:
+      type: object
+      properties:
+        fileName:
+          type: string
+        href:
+          type: string
+          description: URI to fetch complete information of the resource.
+          format: uri
+        id:
+          type: string
+          description: Id of the resource.
+        mimeType:
+          type: string
+        name:
+          type: string
+          description: Name of the resource.
+        thumbnailFor:
+          type: string
+        viewRef:
+          type: string
+          description: URI to visualize the resource in a webclient if applicable.
+          format: uri
     BTCommentInfo:
       type: object
       properties:
@@ -688,11 +682,9 @@ components:
             type: string
             description: URI to visualize the resource in a webclient if applicable.
             format: uri
-    BTCommentAttachmentInfo:
+    BTBaseInfo:
       type: object
       properties:
-        fileName:
-          type: string
         href:
           type: string
           description: URI to fetch complete information of the resource.
@@ -700,29 +692,38 @@ components:
         id:
           type: string
           description: Id of the resource.
-        mimeType:
-          type: string
         name:
           type: string
           description: Name of the resource.
-        thumbnailFor:
-          type: string
         viewRef:
           type: string
           description: URI to visualize the resource in a webclient if applicable.
           format: uri
-    CoordinatesParams:
+    BTViewDataParams:
       type: object
       properties:
-        x:
+        angle:
           type: number
-          format: float
-        y:
-          type: number
-          format: float
-        z:
-          type: number
-          format: float
+          format: double
+        cameraViewport:
+          type: array
+          items:
+            type: number
+            format: double
+        isPerspective:
+          type: boolean
+        viewMatrix:
+          type: array
+          items:
+            type: number
+            format: double
+    BTBFileUpload:
+      type: object
+      properties:
+        file:
+          type: string
+          description: The file to upload.
+          format: binary
     BTUserSummaryInfo:
       type: object
       discriminator:
@@ -765,100 +766,99 @@ components:
           source:
             type: integer
             format: int32
-    GlobalPermissionInfo:
+    BTViewDataInfo:
       type: object
       properties:
-        accessReports:
-          type: boolean
-        adminEnterprise:
-          type: boolean
-        allowAppStoreAccess:
-          type: boolean
-        allowPublicDocumentsAccess:
-          type: boolean
-        approveReleases:
-          type: boolean
-        branchLockPermissions:
-          type: boolean
-        createDocumentsInRoot:
-          type: boolean
-        createProject:
-          type: boolean
-        createReleases:
-          type: boolean
-        createTasks:
-          type: boolean
-        deletePermanently:
-          type: boolean
-        enableLabs:
-          type: boolean
-        exportFiles:
-          type: boolean
-        importFiles:
-          type: boolean
-        manageGuestUsers:
-          type: boolean
-        manageNonGeometricItems:
-          type: boolean
-        manageRbac:
-          type: boolean
-        manageStandardContentMetadata:
-          type: boolean
-        manageUsers:
-          type: boolean
-        manageWorkflows:
-          type: boolean
-        shareForAnonymousAccess:
-          type: boolean
-        transferDocumentsFromEnterprise:
-          type: boolean
-        useRevisionTools:
-          type: boolean
-    BTCompanySummaryInfo:
-      type: object
-      properties:
-        admin:
-          type: boolean
-        description:
-          type: string
-        domainPrefix:
-          type: string
-        enterpriseBaseUrl:
-          type: string
-        enterpriseSubtype:
-          type: integer
-          format: int32
-        href:
-          type: string
-          description: URI to fetch complete information of the resource.
-          format: uri
-        id:
-          type: string
-          description: Id of the resource.
-        image:
-          type: string
-        name:
-          type: string
-          description: Name of the resource.
-        noPublicDocuments:
-          type: boolean
-        ownerId:
-          type: string
-        secondaryDomainPrefixes:
-          uniqueItems: true
+        angle:
+          type: number
+          format: double
+        cameraViewport:
           type: array
           items:
-            type: string
-        state:
-          type: integer
-          format: int32
-        type:
-          type: integer
-          format: int32
-        viewRef:
+            type: number
+            format: double
+        isPerspective:
+          type: boolean
+        viewMatrix:
+          type: array
+          items:
+            type: number
+            format: double
+    BTCommentParams:
+      type: object
+      properties:
+        annotationId:
           type: string
-          description: URI to visualize the resource in a webclient if applicable.
+        annotationType:
+          type: integer
+          format: int32
+        appEntity:
+          type: string
+        assemblyFeature:
+          type: string
+        assignee:
+          type: string
+          description: Assign the comment during creation. Comments cannot be reassigned during an update at this time.
+        calloutInstanceId:
+          type: string
+        coordinates:
+          $ref: '#/components/schemas/CoordinatesParams'
+        dimensionConstraintId:
+          type: string
+        dimensionFeatureId:
+          type: string
+        dimensionParameterId:
+          type: string
+        dimensionPartQuery:
+          type: string
+        documentId:
+          type: string
+        elementFeature:
+          type: string
+        elementId:
+          type: string
+        elementOccurrence:
+          type: string
+        elementQuery:
+          type: string
+        id:
+          type: string
+        message:
+          type: string
+        objectId:
+          type: string
+        objectType:
+          type: integer
+          format: int32
+        parentId:
+          type: string
+        versionId:
+          type: string
+        viewData:
+          $ref: '#/components/schemas/BTViewDataParams'
+        workspaceId:
+          type: string
+    BTListResponseBTCommentInfo:
+      type: object
+      properties:
+        href:
+          type: string
+          description: URI for current page of resources.
           format: uri
+        items:
+          type: array
+          description: Array of items in the current page.
+          items:
+            $ref: '#/components/schemas/BTCommentInfo'
+        next:
+          type: string
+          description: URI for next page of the resources if more are available.
+          format: uri
+        previous:
+          type: string
+          description: URI for previous page of the resources.
+          format: uri
+      description: A list of resources that typically supports paging.
   securitySchemes:
     OAuth2:
       type: oauth2

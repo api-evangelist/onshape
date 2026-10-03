@@ -198,12 +198,6 @@ paths:
       x-BTVisibility: PRODUCTION
 components:
   schemas:
-    BTTranslationRequestState:
-      type: string
-      enum:
-      - ACTIVE
-      - DONE
-      - FAILED
     BTListResponseBTTranslationRequestInfo:
       type: object
       properties:
@@ -225,6 +219,45 @@ components:
           description: URI for previous page of the resources.
           format: uri
       description: A list of resources that typically supports paging.
+    BTModelFormatFullInfo:
+      type: object
+      properties:
+        contentType:
+          type: string
+          description: Content-Type for this file format.
+          example: text/csv
+        couldBeAssembly:
+          type: boolean
+          description: Indicates if this format could be an assembly.
+          example: true
+        fileExtensions:
+          type: array
+          description: Supported file extensions for this format.
+          example:
+          - x_t
+          - x_b
+          - xmt_txt
+          - xmt_bin
+          items:
+            type: string
+            description: Supported file extensions for this format.
+            example: '["x_t","x_b","xmt_txt","xmt_bin"]'
+        name:
+          type: string
+          description: Name of the format.
+          example: STEP
+        translatorName:
+          type: string
+          description: The name of the translator for the format.
+          example: step
+        validDestinationFormat:
+          type: boolean
+          description: Indicates if this format is a valid destination format for translation.
+          example: true
+        validSourceFormat:
+          type: boolean
+          description: Indicates if this format is a valid source format for translation.
+          example: true
     BTTranslationRequestImportInfo:
       type: object
       properties:
@@ -266,6 +299,12 @@ components:
           format: uri
         workspaceId:
           type: string
+    BTTranslationRequestState:
+      type: string
+      enum:
+      - ACTIVE
+      - DONE
+      - FAILED
     BTTranslationRequestInfo:
       type: object
       properties:
@@ -310,45 +349,6 @@ components:
           format: uri
         workspaceId:
           type: string
-    BTModelFormatFullInfo:
-      type: object
-      properties:
-        contentType:
-          type: string
-          description: Content-Type for this file format.
-          example: text/csv
-        couldBeAssembly:
-          type: boolean
-          description: Indicates if this format could be an assembly.
-          example: true
-        fileExtensions:
-          type: array
-          description: Supported file extensions for this format.
-          example:
-          - x_t
-          - x_b
-          - xmt_txt
-          - xmt_bin
-          items:
-            type: string
-            description: Supported file extensions for this format.
-            example: '["x_t","x_b","xmt_txt","xmt_bin"]'
-        name:
-          type: string
-          description: Name of the format.
-          example: STEP
-        translatorName:
-          type: string
-          description: The name of the translator for the format.
-          example: step
-        validDestinationFormat:
-          type: boolean
-          description: Indicates if this format is a valid destination format for translation.
-          example: true
-        validSourceFormat:
-          type: boolean
-          description: Indicates if this format is a valid source format for translation.
-          example: true
     BTBTranslationRequestParams:
       type: object
       properties:

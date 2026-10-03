@@ -241,6 +241,20 @@ components:
             type: string
         tableType:
           $ref: '#/components/schemas/BTPropertiesTableTemplateType'
+    BTSimplePropertyInfo:
+      type: object
+      properties:
+        displayName:
+          type: string
+        frozen:
+          type: boolean
+        propertyId:
+          type: string
+        publishState:
+          type: integer
+          format: int32
+        valueType:
+          $ref: '#/components/schemas/BTMetadataValueType'
     BTMetadataValueType:
       type: string
       enum:
@@ -258,20 +272,6 @@ components:
       - CATEGORY
       - COMPUTED
       - VALUE_WITH_UNITS
-    BTSimplePropertyInfo:
-      type: object
-      properties:
-        displayName:
-          type: string
-        frozen:
-          type: boolean
-        propertyId:
-          type: string
-        publishState:
-          type: integer
-          format: int32
-        valueType:
-          $ref: '#/components/schemas/BTMetadataValueType'
     BTPropertiesTableTemplateInfo:
       type: object
       properties:

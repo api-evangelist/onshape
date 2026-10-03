@@ -140,14 +140,6 @@ paths:
       x-BTVisibility: PRODUCTION
 components:
   schemas:
-    BTStandardContentSetCustomParametersError:
-      type: string
-      description: Indicates whether or not the individual request had an error.
-      enum:
-      - NONE
-      - INVALID_PARAMETER_VALUE
-      - FAILED_TO_SPECIFY_REQUIRED_PARAMETER
-      - INVALID_PARAMETER_ID
     BTStandardContentHierarchyItem:
       type: object
       properties:
@@ -167,6 +159,48 @@ components:
           type: string
           description: Standard for the corresponding standard content.
       description: Describes a single instance of standard content.
+    BTStandardContentParameterIdAndValue:
+      type: object
+      properties:
+        parameterId:
+          type: string
+        value:
+          type: string
+      description: Parameters that drive configuration. Used to specify the standard content component to which the custom parameter values are associated.
+    BTStandardContentParameterDescriptor:
+      type: object
+      properties:
+        displayName:
+          type: string
+        parameterId:
+          type: string
+        parameterValues:
+          type: array
+          items:
+            type: string
+    BTStandardContentPropertyIdAndValue:
+      type: object
+      properties:
+        propertyId:
+          type: string
+        value:
+          type: string
+      description: Non-driving custom parameters whose values are to be set.
+    BTStandardContentSetCustomParametersError:
+      type: string
+      description: Indicates whether or not the individual request had an error.
+      enum:
+      - NONE
+      - INVALID_PARAMETER_VALUE
+      - FAILED_TO_SPECIFY_REQUIRED_PARAMETER
+      - INVALID_PARAMETER_ID
+    BTStandardContentSetCustomParametersBatchResponse:
+      type: object
+      properties:
+        responses:
+          type: array
+          items:
+            $ref: '#/components/schemas/BTStandardContentSetCustomParametersResponse'
     BTStandardContentSetCustomParametersResponse:
       type: object
       properties:
@@ -183,14 +217,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/BTStandardContentSetCustomParameterSpecifier'
-    BTStandardContentPropertyIdAndValue:
-      type: object
-      properties:
-        propertyId:
-          type: string
-        value:
-          type: string
-      description: Non-driving custom parameters whose values are to be set.
     BTStandardContentSetCustomParameterSpecifier:
       type: object
       properties:
@@ -205,32 +231,6 @@ components:
           items:
             $ref: '#/components/schemas/BTStandardContentParameterIdAndValue'
       description: Specifies a standard content component along with the custom properties whose values are to be set.
-    BTStandardContentParameterDescriptor:
-      type: object
-      properties:
-        displayName:
-          type: string
-        parameterId:
-          type: string
-        parameterValues:
-          type: array
-          items:
-            type: string
-    BTStandardContentSetCustomParametersBatchResponse:
-      type: object
-      properties:
-        responses:
-          type: array
-          items:
-            $ref: '#/components/schemas/BTStandardContentSetCustomParametersResponse'
-    BTStandardContentParameterIdAndValue:
-      type: object
-      properties:
-        parameterId:
-          type: string
-        value:
-          type: string
-      description: Parameters that drive configuration. Used to specify the standard content component to which the custom parameter values are associated.
   securitySchemes:
     OAuth2:
       type: oauth2

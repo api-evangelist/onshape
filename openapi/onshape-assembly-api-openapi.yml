@@ -1614,6 +1614,1620 @@ paths:
       x-BTVisibility: PRODUCTION
 components:
   schemas:
+    BTBillOfMaterialsItemSourceInfo:
+      type: object
+      properties:
+        configuration:
+          type: string
+        distinctConfigurations:
+          type: array
+          items:
+            type: string
+        documentId:
+          type: string
+        elementId:
+          type: string
+        fullConfiguration:
+          type: string
+        href:
+          type: string
+        isStandardContent:
+          type: boolean
+        nonGeometricItemId:
+          type: string
+        partId:
+          type: string
+        partIdentity:
+          type: string
+        sourceElementMicroversionId:
+          type: string
+        thumbnailInfo:
+          $ref: '#/components/schemas/BTThumbnailInfo'
+        versionMetadataWorkspaceMicroversionId:
+          type: string
+        viewHref:
+          type: string
+        wvmId:
+          type: string
+        wvmType:
+          type: string
+    GBTPreProcessParasolidOption:
+      type: string
+      description: Original geometry processing mode to improve results of translation to STEP.
+      enum:
+      - NO_PRE_PROCESSING
+      - USE_BODYSHOP_PRE_PROCESSING_ADVANCED
+      - USE_TRANSLATOR_PRE_PROCESSING
+      - USE_BODYSHOP_PRE_PROCESSING
+      - USE_BODYSHOP_PRE_PROCESSING_ADVANCED_WITH_SURFS_TO_BSURFS_CONVERTING
+      - UNKNOWN
+    BTZipFileInfo:
+      type: object
+      properties:
+        files:
+          type: array
+          items:
+            type: string
+    BTAssemblyParametricInstanceInfo:
+      type: object
+      properties:
+        children:
+          type: array
+          description: Child instances.
+          items:
+            $ref: '#/components/schemas/BTAssemblyParametricInstanceChildInfo'
+        id:
+          type: string
+          description: Id of the Part Studio instance.
+        name:
+          type: string
+          description: Name of the parametric instance.
+        status:
+          $ref: '#/components/schemas/GBTNodeStatusType'
+        suppressed:
+          type: boolean
+          description: If the parametric is suppressed.
+        type:
+          type: string
+          description: Type of parametric instance.
+      description: Parametric instance description.
+    BTAssemblyModificationParams:
+      type: object
+      properties:
+        deleteInstances:
+          type: array
+          description: Node ids of the instances to delete.
+          items:
+            type: string
+            description: Node ids of the instances to delete.
+        editDescription:
+          maxLength: 32
+          minLength: 0
+          type: string
+          description: Short description of the modification.
+        suppressInstances:
+          type: array
+          description: Deprecated in API v16. Use `suppressionStates` instead.Node ids of the instances to suppress.
+          deprecated: true
+          items:
+            type: string
+            description: Deprecated in API v16. Use `suppressionStates` instead.Node ids of the instances to suppress.
+            deprecated: true
+        suppressionStates:
+          type: object
+          additionalProperties:
+            $ref: '#/components/schemas/BTOptionallyConfiguredValue'
+          description: 'Suppression states keyed by node id. Each value is either a plain suppression state (`value`: `"true"` or `"false"`) or a configuration-controlled suppression state (`configuredValue`: a configuration parameter id and a map from configuration option id to `"true"` or `"false"`).'
+        transformDefinitions:
+          type: array
+          description: Occurrence transform definitions.
+          items:
+            $ref: '#/components/schemas/BTAssemblyTransformDefinitionParams'
+        unsuppressInstances:
+          type: array
+          description: Deprecated in API v16. Use `suppressionStates` instead.Node ids of the instances to unsuppress.
+          deprecated: true
+          items:
+            type: string
+            description: Deprecated in API v16. Use `suppressionStates` instead.Node ids of the instances to unsuppress.
+            deprecated: true
+    BTMNode-19:
+      type: object
+      properties:
+        btType:
+          type: string
+          description: Type of JSON object.
+        importMicroversion:
+          type: string
+          description: Microversion that resulted from the import.
+          writeOnly: true
+        nodeId:
+          type: string
+      discriminator:
+        propertyName: btType
+        mapping:
+          BTAssemblySimulationData-978: '#/components/schemas/BTAssemblySimulationData-978'
+          BTInstanceBase-2263: '#/components/schemas/BTInstanceBase-2263'
+          BTInstanceControlNode-750: '#/components/schemas/BTInstanceControlNode-750'
+          BTMAnnotation-4664: '#/components/schemas/BTMAnnotation-4664'
+          BTMArrayParameterItem-1843: '#/components/schemas/BTMArrayParameterItem-1843'
+          BTMConfigurationData-1560: '#/components/schemas/BTMConfigurationData-1560'
+          BTMConfigurationParameter-819: '#/components/schemas/BTMConfigurationParameter-819'
+          BTMConfigurationParameterList-5548: '#/components/schemas/BTMConfigurationParameterList-5548'
+          BTMConfiguredValue-1341: '#/components/schemas/BTMConfiguredValue-1341'
+          BTMEnumOption-592: '#/components/schemas/BTMEnumOption-592'
+          BTMFeature-134: '#/components/schemas/BTMFeature-134'
+          BTMFolder-3208: '#/components/schemas/BTMFolder-3208'
+          BTMImport-136: '#/components/schemas/BTMImport-136'
+          BTMIndividualQueryBase-139: '#/components/schemas/BTMIndividualQueryBase-139'
+          BTMModel-141: '#/components/schemas/BTMModel-141'
+          BTMNodeInvalid-1772: '#/components/schemas/BTMNodeInvalid-1772'
+          BTMParameter-1: '#/components/schemas/BTMParameter-1'
+          BTMRecordMetrics-1169: '#/components/schemas/BTMRecordMetrics-1169'
+          BTMRollback-150: '#/components/schemas/BTMRollback-150'
+          BTMSketchEntity-3: '#/components/schemas/BTMSketchEntity-3'
+          BTMSuppressionState-1924: '#/components/schemas/BTMSuppressionState-1924'
+          BTMUnitsDefault-160: '#/components/schemas/BTMUnitsDefault-160'
+          BTMUserCode-161: '#/components/schemas/BTMUserCode-161'
+          BTModelAnnotations-3945: '#/components/schemas/BTModelAnnotations-3945'
+          BTSimulationInstance-3093: '#/components/schemas/BTSimulationInstance-3093'
+          BTToleranceString-3274: '#/components/schemas/BTToleranceString-3274'
+    BTAssemblyInstanceOccurrenceInfo:
+      type: object
+      properties:
+        occurrences:
+          type: array
+          items:
+            $ref: '#/components/schemas/BTAssemblyOccurrenceInfo'
+    BTBillOfMaterialsSourceInfo:
+      type: object
+      properties:
+        document:
+          $ref: '#/components/schemas/BTBillOfMaterialsObjectWithPropertiesInfo'
+        documentMicroversion:
+          $ref: '#/components/schemas/BTBillOfMaterialsObjectWithPropertiesInfo'
+        element:
+          $ref: '#/components/schemas/BTBillOfMaterialsElementInfo'
+        href:
+          type: string
+        thumbnailInfo:
+          $ref: '#/components/schemas/BTThumbnailInfo'
+        version:
+          $ref: '#/components/schemas/BTBillOfMaterialsObjectWithPropertiesInfo'
+        viewHref:
+          type: string
+        workspace:
+          $ref: '#/components/schemas/BTBillOfMaterialsObjectWithPropertiesInfo'
+    BTBillOfMaterialsInfo:
+      type: object
+      properties:
+        bomSource:
+          $ref: '#/components/schemas/BTBillOfMaterialsSourceInfo'
+        createdAt:
+          type: string
+        formatVersion:
+          type: string
+        headers:
+          type: array
+          items:
+            $ref: '#/components/schemas/BTBillOfMaterialsHeaderInfo'
+        href:
+          type: string
+          description: URI to fetch complete information of the resource.
+          format: uri
+        id:
+          type: string
+          description: Id of the resource.
+        name:
+          type: string
+          description: Name of the resource.
+        rows:
+          type: array
+          items:
+            $ref: '#/components/schemas/BTBillOfMaterialsRowInfo'
+        templateId:
+          type: string
+        topLevelAssemblyRow:
+          $ref: '#/components/schemas/BTBillOfMaterialsRowInfo'
+        type:
+          type: string
+        viewRef:
+          type: string
+          description: URI to visualize the resource in a webclient if applicable.
+          format: uri
+    BTBillOfMaterialsElementInfo:
+      type: object
+      properties:
+        configuration:
+          type: string
+        headerIdToValue:
+          type: object
+          additionalProperties:
+            type: object
+        href:
+          type: string
+          description: URI to fetch complete information of the resource.
+          format: uri
+        id:
+          type: string
+          description: Id of the resource.
+        name:
+          type: string
+          description: Name of the resource.
+        selectedMetadataEnumValues:
+          type: object
+          additionalProperties:
+            $ref: '#/components/schemas/BTSelectedMetadataEnumValue'
+        viewRef:
+          type: string
+          description: URI to visualize the resource in a webclient if applicable.
+          format: uri
+    GBTQuantityType:
+      type: string
+      enum:
+      - UNKNOWN
+      - INTEGER
+      - REAL
+      - LENGTH
+      - ANGLE
+      - MASS
+      - TIME
+      - TEMPERATURE
+      - CURRENT
+      - ANYTHING
+      - ANYTHING_WITH_UNITS
+      - FORCE
+      - PRESSURE
+      - MOMENT
+      - ACCELERATION
+      - ANGULAR_VELOCITY
+      - ENERGY
+      - AREA
+      - VOLUME
+      - BOOLEAN
+      - STRING
+      - DENSITY
+      - FREQUENCY
+    BTAssemblyParametricInstanceChildInfo:
+      type: object
+      properties:
+        instanceIds:
+          type: array
+          description: Children instance ids.
+          items:
+            type: string
+            description: Children instance ids.
+        seedOccurrence:
+          type: string
+          description: Seed occurrence id. Unspecified if there is no seed.
+      description: Children instance description of parametric instance.
+    BTMFeature-134:
+      type: object
+      properties:
+        btType:
+          type: string
+          description: Type of JSON object.
+        featureId:
+          type: string
+          description: Unique ID of the feature instance within this Part Studio.
+        featureType:
+          type: string
+          description: The name of the feature spec that this feature instantiates.
+        importMicroversion:
+          type: string
+          description: Element microversion that is being imported.
+          writeOnly: true
+        mateConnectorFeature:
+          type: boolean
+        name:
+          type: string
+          description: User-visible name of the feature.
+        namespace:
+          type: string
+          description: Indicates where the feature definition lives. Features in the FeatureScript standard library have a namespace value of `""`. Custom features identify the Feature Studio that contains the definition.
+        nodeId:
+          type: string
+          description: ID for the feature node.
+        parameterLibraries:
+          type: array
+          items:
+            $ref: '#/components/schemas/BTMParameter-1'
+        parameters:
+          type: array
+          description: A list of parameter values for instantiation of the feature spec. Parameters are present for all defined parameters, even if not used in a specific instantiation.
+          items:
+            $ref: '#/components/schemas/BTMParameter-1'
+        parentSuppressed:
+          type: boolean
+        returnAfterSubfeatures:
+          type: boolean
+          description: For internal use only. Should always be `false`.
+        subFeatures:
+          type: array
+          description: List of subfeatures belonging to the feature.
+          items:
+            $ref: '#/components/schemas/BTMFeature-134'
+        suppressed:
+          type: boolean
+          description: If `true`, the feature is suppressed. It will skip regeneration, denoted by a line through the name in the Feature list.
+        suppressionConfigured:
+          type: boolean
+          description: '`true` if the suppression is configured in the Part Studio.'
+        suppressionState:
+          $ref: '#/components/schemas/BTMSuppressionState-1924'
+        variableStudioReference:
+          type: boolean
+          description: If `true`, the feature references a Variable Studio.
+      discriminator:
+        propertyName: btType
+        mapping:
+          BTMAssemblyFeature-887: '#/components/schemas/BTMAssemblyFeature-887'
+          BTMFeatureInvalid-1031: '#/components/schemas/BTMFeatureInvalid-1031'
+          BTMSketch-151: '#/components/schemas/BTMSketch-151'
+          BTMVariableStudioReference-2764: '#/components/schemas/BTMVariableStudioReference-2764'
+    BTPSpace-10:
+      type: object
+      properties:
+        btType:
+          type: string
+          description: Type of JSON object.
+        lines:
+          type: array
+          items:
+            type: string
+        nodeId:
+          type: string
+        text:
+          type: string
+    BTBObjExportParams:
+      type: object
+      properties:
+        advancedParams:
+          $ref: '#/components/schemas/BTBExportAdvancedParams'
+        cloudStorageOptions:
+          $ref: '#/components/schemas/BTBCloudStorageOptions'
+        destinationName:
+          type: string
+          description: The name of the exported file.
+          default: Untitled
+        emailExportOptions:
+          $ref: '#/components/schemas/BTBEmailExportOptions'
+        excludeHiddenEntities:
+          type: boolean
+          description: Whether or not to exclude hidden parts from export.
+          default: false
+        grouping:
+          type: boolean
+          description: Whether parts should be exported as a group or individually in a .zip file.
+          default: true
+        includeExportIds:
+          type: boolean
+          description: Whether topology ids should be exported as parasolid attributes.
+          default: false
+        isYAxisUp:
+          type: boolean
+          description: Rotate model from Z-axis-up orientation to Y-axis-up.
+          default: false
+        meshParams:
+          $ref: '#/components/schemas/BTBExportMeshParams'
+        notifyUser:
+          type: boolean
+          description: Send notification to the user client.
+          default: true
+        storeInDocument:
+          type: boolean
+          description: Create a blob with exported file in the source document.
+          default: true
+        triggerAutoDownload:
+          type: boolean
+          description: Automatically download a translated file.
+          default: false
+      description: Options for exporting elements to OBJ.
+    BTPartsExportFilter-4308:
+      type: object
+      properties:
+        btType:
+          type: string
+          description: Type of JSON object.
+        skipAllMesh:
+          type: boolean
+        skipCurves:
+          type: boolean
+        skipPartialMesh:
+          type: boolean
+      description: Skip mesh/curve foreign data creation in individual parts export
+      discriminator:
+        propertyName: btType
+        mapping:
+          BTPartsExportFilter-4308: '#/components/schemas/BTPartsExportFilter-4308'
+    BTSubAssemblyInfo:
+      type: object
+      properties:
+        configuration:
+          type: string
+        documentId:
+          type: string
+        documentMicroversion:
+          type: string
+        documentVersion:
+          type: string
+        elementId:
+          type: string
+        features:
+          type: array
+          description: List of Assembly features including those are created by replicates.
+          items:
+            $ref: '#/components/schemas/BTAssemblyFeatureInfo'
+        fullConfiguration:
+          type: string
+        instances:
+          type: array
+          description: List of instances including those created by patterns and replicates.
+          items:
+            $ref: '#/components/schemas/BTAssemblyInstanceInfo'
+        parametricInstances:
+          type: array
+          description: List of parametric instances.
+          items:
+            $ref: '#/components/schemas/BTAssemblyParametricInstanceInfo'
+        partNumber:
+          type: string
+        patterns:
+          type: array
+          description: List of patterns.
+          items:
+            $ref: '#/components/schemas/BTAssemblyPatternInfo'
+        revision:
+          type: string
+    BTBCloudStorageOptions:
+      required:
+      - cloudObjectId
+      - cloudStorageAccountId
+      type: object
+      properties:
+        cloudObjectId:
+          type: string
+          description: Folder id where to store the exported model.
+        cloudStorageAccountId:
+          type: string
+          description: Account id to access the cloud storage.
+      description: Options for exporting elements to cloud storage.
+    GBTUIHint:
+      type: string
+      enum:
+      - OPPOSITE_DIRECTION
+      - ALWAYS_HIDDEN
+      - SHOW_CREATE_SELECTION
+      - CONTROL_VISIBILITY
+      - NO_PREVIEW_PROVIDED
+      - REMEMBER_PREVIOUS_VALUE
+      - DISPLAY_SHORT
+      - ALLOW_FEATURE_SELECTION
+      - MATE_CONNECTOR_AXIS_TYPE
+      - PRIMARY_AXIS
+      - SHOW_EXPRESSION
+      - OPPOSITE_DIRECTION_CIRCULAR
+      - SHOW_LABEL
+      - HORIZONTAL_ENUM
+      - UNCONFIGURABLE
+      - MATCH_LAST_ARRAY_ITEM
+      - COLLAPSE_ARRAY_ITEMS
+      - INITIAL_FOCUS_ON_EDIT
+      - INITIAL_FOCUS
+      - DISPLAY_CURRENT_VALUE_ONLY
+      - READ_ONLY
+      - PREVENT_CREATING_NEW_MATE_CONNECTORS
+      - FIRST_IN_ROW
+      - ALLOW_QUERY_ORDER
+      - PREVENT_ARRAY_REORDER
+      - VARIABLE_NAME
+      - FOCUS_INNER_QUERY
+      - SHOW_TOLERANCE
+      - ALLOW_ARRAY_FOCUS
+      - SHOW_INLINE_CONFIG_INPUTS
+      - FOCUS_ON_VISIBLE
+      - CAN_BE_TOLERANT
+      - CAN_BE_TOLERANT_DIAMETER
+      - PLUS_MINUS
+      - ALWAYS_USE_DEPENDENCIES
+      - NO_QUERY_VARIABLE
+      - ALLOW_FLAT_SKETCH_SELECTION
+      - QUERY_VARIABLE_NAME
+      - HIDE_LABEL
+      - UNKNOWN
+    BTParameterSpec-6:
+      type: object
+      properties:
+        additionalLocalizedStrings:
+          type: integer
+          format: int32
+          writeOnly: true
+        btType:
+          type: string
+          description: Type of JSON object.
+        columnName:
+          type: string
+        defaultValue:
+          $ref: '#/components/schemas/BTMParameter-1'
+        enumOptions:
+          type: array
+          items:
+            type: string
+        iconUri:
+          type: string
+        localizableName:
+          type: string
+        localizedName:
+          type: string
+          writeOnly: true
+        parameterDescription:
+          type: string
+        parameterId:
+          type: string
+        parameterName:
+          type: string
+        quantityType:
+          $ref: '#/components/schemas/GBTQuantityType'
+        stringsToLocalize:
+          type: array
+          items:
+            type: string
+        uiHint:
+          type: string
+        uiHints:
+          type: array
+          items:
+            $ref: '#/components/schemas/GBTUIHint'
+        visibilityCondition:
+          $ref: '#/components/schemas/BTParameterVisibilityCondition-177'
+      discriminator:
+        propertyName: btType
+        mapping:
+          BTParameterSpecAppearance-1740: '#/components/schemas/BTParameterSpecAppearance-1740'
+          BTParameterSpecArray-2600: '#/components/schemas/BTParameterSpecArray-2600'
+          BTParameterSpecBoolean-170: '#/components/schemas/BTParameterSpecBoolean-170'
+          BTParameterSpecButton-4111: '#/components/schemas/BTParameterSpecButton-4111'
+          BTParameterSpecDatabase-1071: '#/components/schemas/BTParameterSpecDatabase-1071'
+          BTParameterSpecDerived-736: '#/components/schemas/BTParameterSpecDerived-736'
+          BTParameterSpecEnum-171: '#/components/schemas/BTParameterSpecEnum-171'
+          BTParameterSpecFeatureList-703: '#/components/schemas/BTParameterSpecFeatureList-703'
+          BTParameterSpecForeignId-172: '#/components/schemas/BTParameterSpecForeignId-172'
+          BTParameterSpecLookupTablePath-761: '#/components/schemas/BTParameterSpecLookupTablePath-761'
+          BTParameterSpecMaterial-2700: '#/components/schemas/BTParameterSpecMaterial-2700'
+          BTParameterSpecMultiEnum-3118: '#/components/schemas/BTParameterSpecMultiEnum-3118'
+          BTParameterSpecNullableQuantity-715: '#/components/schemas/BTParameterSpecNullableQuantity-715'
+          BTParameterSpecQuantity-173: '#/components/schemas/BTParameterSpecQuantity-173'
+          BTParameterSpecQuery-174: '#/components/schemas/BTParameterSpecQuery-174'
+          BTParameterSpecReference-2789: '#/components/schemas/BTParameterSpecReference-2789'
+          BTParameterSpecString-175: '#/components/schemas/BTParameterSpecString-175'
+          BTReadOnlyParameterSpec-1889: '#/components/schemas/BTReadOnlyParameterSpec-1889'
+    GBTRhinoVersions:
+      type: string
+      enum:
+      - V2
+      - V3
+      - V4
+      - V5
+      - V6
+      - V7
+      - V8
+      - UNKNOWN
+    BTFeatureState-1688:
+      type: object
+      properties:
+        btType:
+          type: string
+          description: Type of JSON object.
+        featureStatus:
+          $ref: '#/components/schemas/GBTNodeStatusType'
+        inactive:
+          type: boolean
+    BTObjectId:
+      type: object
+      properties:
+        empty:
+          type: boolean
+    BTAssemblyInsertTransformedInstancesResponse:
+      type: object
+      properties:
+        insertInstanceResponses:
+          type: array
+          items:
+            $ref: '#/components/schemas/BTAssemblyInstanceOccurrenceInfo'
+        insertResponses:
+          type: array
+          items:
+            $ref: '#/components/schemas/BTAssemblyOccurrenceInfo'
+    BTAssemblyMateValueInfo:
+      required:
+      - jsonType
+      type: object
+      properties:
+        featureId:
+          type: string
+          description: The ID of the assembly mate feature.
+        jsonType:
+          type: string
+        mateName:
+          type: string
+          description: The name of the assembly mate feature.
+        ownerOccurrencePath:
+          type: array
+          description: The path to the assembly owning this mate.
+          items:
+            type: string
+            description: The path to the assembly owning this mate.
+      description: Quantities for length are specified in meters, and quantities for angles are specified in radians.
+      discriminator:
+        propertyName: jsonType
+    BTOptionallyConfiguredValue:
+      type: object
+      properties:
+        configuredValue:
+          $ref: '#/components/schemas/BTConfiguredValue'
+        value:
+          type: string
+          description: The string value, if not configured
+      description: Optional map of configuration parameter id to value
+    BTAssemblyMateConnectorInfo:
+      type: object
+      properties:
+        featureId:
+          type: string
+        mateConnectorCS:
+          $ref: '#/components/schemas/BTMateConnectorCSInfo'
+    BTMSuppressionState-1924:
+      type: object
+      properties:
+        btType:
+          type: string
+          description: Type of JSON object.
+      discriminator:
+        propertyName: btType
+        mapping:
+          BTMSuppressionStateConfigured-2598: '#/components/schemas/BTMSuppressionStateConfigured-2598'
+          BTMSuppressionStateExpression-1811: '#/components/schemas/BTMSuppressionStateExpression-1811'
+          BTMSuppressionStateParentSuppressed-5404: '#/components/schemas/BTMSuppressionStateParentSuppressed-5404'
+      allOf:
+      - $ref: '#/components/schemas/BTMNode-19'
+      - type: object
+        properties:
+          btType:
+            type: string
+          suppressionConfigured:
+            type: boolean
+    BTAssemblyInstanceDefinitionParams:
+      required:
+      - documentId
+      type: object
+      properties:
+        configuration:
+          type: string
+        documentId:
+          type: string
+        elementId:
+          type: string
+        featureId:
+          type: string
+        includePartTypes:
+          type: array
+          items:
+            $ref: '#/components/schemas/GBTInsertableType'
+        isAssembly:
+          type: boolean
+        isHidden:
+          type: boolean
+        isSuppressed:
+          type: boolean
+        isWholePartStudio:
+          type: boolean
+        microversionId:
+          type: string
+        partId:
+          type: string
+        partNumber:
+          type: string
+        revision:
+          type: string
+        versionId:
+          type: string
+    BTBStepExportParams:
+      type: object
+      properties:
+        advancedParams:
+          $ref: '#/components/schemas/BTBExportAdvancedParams'
+        cloudStorageOptions:
+          $ref: '#/components/schemas/BTBCloudStorageOptions'
+        destinationName:
+          type: string
+          description: The name of the exported file.
+          default: Untitled
+        emailExportOptions:
+          $ref: '#/components/schemas/BTBEmailExportOptions'
+        excludeHiddenEntities:
+          type: boolean
+          description: Whether or not to exclude hidden parts from export.
+          default: false
+        grouping:
+          type: boolean
+          description: Whether parts should be exported as a group or individually in a .zip file.
+          default: true
+        includeExportIds:
+          type: boolean
+          description: Whether topology ids should be exported as parasolid attributes.
+          default: false
+        isYAxisUp:
+          type: boolean
+          description: Rotate model from Z-axis-up orientation to Y-axis-up.
+          default: false
+        notifyUser:
+          type: boolean
+          description: Send notification to the user client.
+          default: true
+        stepParasolidPreprocessingOption:
+          $ref: '#/components/schemas/GBTPreProcessParasolidOption'
+        stepUnit:
+          $ref: '#/components/schemas/GBTExportUnit'
+        stepVersionString:
+          type: string
+          description: 'Export STEP in version: `AP242` | `AP203` | `AP214`'
+          default: AP242
+        storeInDocument:
+          type: boolean
+          description: Create a blob with exported file in the source document.
+          default: true
+        triggerAutoDownload:
+          type: boolean
+          description: Automatically download a translated file.
+          default: false
+      description: Options for exporting elements to STEP.
+    BTAssemblyDefinitionInfo:
+      type: object
+      properties:
+        partStudioFeatures:
+          type: array
+          items:
+            $ref: '#/components/schemas/BTAssemblyPsFeatureInfo'
+        parts:
+          type: array
+          items:
+            $ref: '#/components/schemas/BTAssemblyPartInfo'
+        rootAssembly:
+          $ref: '#/components/schemas/BTRootAssemblyInfo'
+        subAssemblies:
+          type: array
+          items:
+            $ref: '#/components/schemas/BTSubAssemblyInfo'
+    BTThumbnailSizeInfo:
+      type: object
+      properties:
+        href:
+          type: string
+          format: uri
+        mediaType:
+          type: string
+        renderMode:
+          type: string
+        sheetName:
+          type: string
+        size:
+          type: string
+        uniqueId:
+          type: string
+        viewOrientation:
+          type: string
+    BTApplicationTargetInfo:
+      type: object
+      properties:
+        baseHref:
+          type: string
+          format: uri
+        clientId:
+          type: string
+        supportsCollaboration:
+          type: boolean
+        tabIconHref:
+          type: string
+          format: uri
+    GBTUrdfMeshFormat:
+      type: string
+      enum:
+      - STL
+      - GLTF
+      - OBJ
+      - UNKNOWN
+    GBTElementType:
+      type: string
+      enum:
+      - PARTSTUDIO
+      - ASSEMBLY
+      - DRAWING
+      - FEATURESTUDIO
+      - BLOB
+      - APPLICATION
+      - TABLE
+      - BILLOFMATERIALS
+      - VARIABLESTUDIO
+      - PUBLICATIONITEM
+      - UNKNOWN
+    BTDocumentVersionElementIds-1897:
+      type: object
+      properties:
+        btType:
+          type: string
+          description: Type of JSON object.
+        documentId:
+          type: string
+        elementId:
+          type: string
+        versionId:
+          type: string
+    GBTInsertableType:
+      type: string
+      enum:
+      - PARTS
+      - SKETCHES
+      - SURFACES
+      - FLATTENED_PARTS
+      - COMPOSITE_PARTS
+      - PART_STUDIOS
+      - WIRES
+      - PARAMETRIC_PART_STUDIOS
+      - UNKNOWN
+    BTPNode-7:
+      type: object
+      properties:
+        atomic:
+          type: boolean
+        btType:
+          type: string
+          description: Type of JSON object.
+        documentationType:
+          $ref: '#/components/schemas/GBTPDefinitionType'
+        endSourceLocation:
+          type: integer
+          format: int32
+        nodeId:
+          type: string
+        shortDescriptor:
+          type: string
+        spaceAfter:
+          $ref: '#/components/schemas/BTPSpace-10'
+        spaceBefore:
+          $ref: '#/components/schemas/BTPSpace-10'
+        spaceDefault:
+          type: boolean
+        startSourceLocation:
+          type: integer
+          format: int32
+      discriminator:
+        propertyName: btType
+        mapping:
+          BTPAnnotation-231: '#/components/schemas/BTPAnnotation-231'
+          BTPArgumentDeclaration-232: '#/components/schemas/BTPArgumentDeclaration-232'
+          BTPBuiltinIdentifier-233: '#/components/schemas/BTPBuiltinIdentifier-233'
+          BTPLValue-249: '#/components/schemas/BTPLValue-249'
+          BTPLiteralMapEntry-257: '#/components/schemas/BTPLiteralMapEntry-257'
+          BTPModule-234: '#/components/schemas/BTPModule-234'
+          BTPModuleId-235: '#/components/schemas/BTPModuleId-235'
+          BTPName-261: '#/components/schemas/BTPName-261'
+          BTPPropertyAccessor-23: '#/components/schemas/BTPPropertyAccessor-23'
+          BTPStatement-269: '#/components/schemas/BTPStatement-269'
+          BTPTopLevelNode-286: '#/components/schemas/BTPTopLevelNode-286'
+          BTPTypeName-290: '#/components/schemas/BTPTypeName-290'
+    BTAssemblyPartInfo:
+      type: object
+      properties:
+        bodyType:
+          $ref: '#/components/schemas/BTAssemblyPartBodyType'
+        configuration:
+          type: string
+        documentId:
+          type: string
+        documentMicroversion:
+          type: string
+        documentVersion:
+          type: string
+        elementId:
+          type: string
+        fullConfiguration:
+          type: string
+        isStandardContent:
+          type: boolean
+        mateConnectors:
+          type: array
+          items:
+            $ref: '#/components/schemas/BTAssemblyMateConnectorInfo'
+        partId:
+          type: string
+        partNumber:
+          type: string
+        revision:
+          type: string
+    BTOccurrence-74:
+      type: object
+      properties:
+        btType:
+          type: string
+          description: Type of JSON object.
+        fullPathAsString:
+          type: string
+        headInstanceId:
+          type: string
+        internalOccurrence:
+          type: boolean
+        path:
+          type: array
+          items:
+            type: string
+        rootOccurrence:
+          type: boolean
+        tailInstanceId:
+          type: string
+      discriminator:
+        propertyName: btType
+        mapping:
+          BTOccurrenceWithFullPartIds-1464: '#/components/schemas/BTOccurrenceWithFullPartIds-1464'
+    BTGraphicsSectionPlaneData-1429:
+      type: object
+      properties:
+        btType:
+          type: string
+          description: Type of JSON object.
+        center:
+          $ref: '#/components/schemas/BTVector3d-389'
+        normal:
+          $ref: '#/components/schemas/BTVector3d-389'
+        tangent:
+          $ref: '#/components/schemas/BTVector3d-389'
+    BTFeatureDefinitionResponse-1617:
+      type: object
+      properties:
+        btType:
+          type: string
+          description: Type of JSON object.
+        feature:
+          $ref: '#/components/schemas/BTMFeature-134'
+        featureState:
+          $ref: '#/components/schemas/BTFeatureState-1688'
+        libraryVersion:
+          type: integer
+          description: FeatureScript version used in the Part Studio. Do not modify.
+          format: int32
+        microversionSkew:
+          type: boolean
+          description: On output, `true` indicates a microversion mismatch was encountered.
+        rejectMicroversionSkew:
+          type: boolean
+          description: If `true`, the call will refuse to make the addition if the current microversion for the document does not match the source microversion. If `false`, a best-effort attempt is made to re-interpret the feature addition in the context of a newer document microversion.
+        serializationVersion:
+          type: string
+          description: Version of the structure serialization rules used to encode the output. This enables incompatibility detection during software updates.
+        sourceMicroversion:
+          type: string
+          description: The state from which the result was extracted. Geometry ID interpretation is dependent on this document microversion.
+    BTDocumentElementInfo:
+      type: object
+      properties:
+        accelerationUnits:
+          type: string
+        angleUnits:
+          type: string
+        angularVelocityUnits:
+          type: string
+        applicationTarget:
+          $ref: '#/components/schemas/BTApplicationTargetInfo'
+        areaUnits:
+          type: string
+        dataType:
+          type: string
+        deleted:
+          type: boolean
+        densityUnits:
+          type: string
+        elementType:
+          $ref: '#/components/schemas/GBTElementType'
+        energyUnits:
+          type: string
+        filename:
+          type: string
+        forceUnits:
+          type: string
+        foreignDataId:
+          type: string
+        frequencyUnits:
+          type: string
+        id:
+          type: string
+        lengthUnits:
+          type: string
+        massUnits:
+          type: string
+        microversionId:
+          type: string
+        momentUnits:
+          type: string
+        name:
+          type: string
+        pressureUnits:
+          type: string
+        prettyType:
+          type: string
+        safeToShow:
+          type: boolean
+        specifiedUnit:
+          type: string
+        thumbnailInfo:
+          $ref: '#/components/schemas/BTThumbnailInfo'
+        thumbnails:
+          type: string
+          format: uri
+        timeUnits:
+          type: string
+        type:
+          type: string
+        unupdatable:
+          type: boolean
+        volumeUnits:
+          type: string
+        zip:
+          $ref: '#/components/schemas/BTZipFileInfo'
+    GBTParameterLibraryRelationType:
+      type: string
+      enum:
+      - DEFAULT
+      - IGNORE_LIBRARY_VALUES
+      - UNKNOWN
+    BTMParameter-1:
+      type: object
+      properties:
+        btType:
+          type: string
+          description: Type of JSON object.
+        importMicroversion:
+          type: string
+          description: Microversion that resulted from the import.
+          writeOnly: true
+        libraryRelationType:
+          $ref: '#/components/schemas/GBTParameterLibraryRelationType'
+        nodeId:
+          type: string
+          description: ID of the parameter's node.
+        parameterId:
+          type: string
+          description: Unique ID of the parameter.
+        parameterName:
+          type: string
+        valueString:
+          type: string
+      description: A list of parameter values for instantiation of the feature spec. Parameters are present for all defined parameters, even if not used in a specific instantiation.
+      discriminator:
+        propertyName: btType
+        mapping:
+          BTMDatabaseParameter-2229: '#/components/schemas/BTMDatabaseParameter-2229'
+          BTMParameterAppearance-627: '#/components/schemas/BTMParameterAppearance-627'
+          BTMParameterArray-2025: '#/components/schemas/BTMParameterArray-2025'
+          BTMParameterBlobReference-1679: '#/components/schemas/BTMParameterBlobReference-1679'
+          BTMParameterBoolean-144: '#/components/schemas/BTMParameterBoolean-144'
+          BTMParameterButton-5169: '#/components/schemas/BTMParameterButton-5169'
+          BTMParameterConfigured-2222: '#/components/schemas/BTMParameterConfigured-2222'
+          BTMParameterDerived-864: '#/components/schemas/BTMParameterDerived-864'
+          BTMParameterEnum-145: '#/components/schemas/BTMParameterEnum-145'
+          BTMParameterFeatureList-1749: '#/components/schemas/BTMParameterFeatureList-1749'
+          BTMParameterForeignId-146: '#/components/schemas/BTMParameterForeignId-146'
+          BTMParameterInvalid-1664: '#/components/schemas/BTMParameterInvalid-1664'
+          BTMParameterLookupTablePath-1419: '#/components/schemas/BTMParameterLookupTablePath-1419'
+          BTMParameterMaterial-1388: '#/components/schemas/BTMParameterMaterial-1388'
+          BTMParameterMultiEnum-3411: '#/components/schemas/BTMParameterMultiEnum-3411'
+          BTMParameterQuantity-147: '#/components/schemas/BTMParameterQuantity-147'
+          BTMParameterQueryList-148: '#/components/schemas/BTMParameterQueryList-148'
+          BTMParameterQueryWithOccurrenceList-67: '#/components/schemas/BTMParameterQueryWithOccurrenceList-67'
+          BTMParameterReference-2434: '#/components/schemas/BTMParameterReference-2434'
+          BTMParameterString-149: '#/components/schemas/BTMParameterString-149'
+          BTMReadOnlyParameter-3800: '#/components/schemas/BTMReadOnlyParameter-3800'
+    BTAssemblyOccurrenceInfo:
+      type: object
+      properties:
+        fixed:
+          type: boolean
+        hidden:
+          type: boolean
+        mateStatuses:
+          type: object
+          additionalProperties:
+            $ref: '#/components/schemas/GBTNodeStatusType'
+        path:
+          type: array
+          items:
+            type: string
+        transform:
+          type: array
+          items:
+            type: number
+            format: double
+    BTMetadataEnumValueInfo:
+      type: object
+      properties:
+        label:
+          type: string
+        state:
+          type: integer
+          format: int32
+        value:
+          type: string
+    BTShadedViewsInfo:
+      type: object
+      properties:
+        images:
+          type: array
+          items:
+            type: array
+            items:
+              type: string
+              format: byte
+      description: Images are returned as base64-encoded strings.
+    GBTPDefinitionType:
+      type: string
+      enum:
+      - FUNCTION
+      - PREDICATE
+      - CONSTANT
+      - ENUM
+      - USER_TYPE
+      - FEATURE_DEFINITION
+      - FILE_HEADER
+      - UNDOCUMENTABLE
+      - CONST_LAMBDA
+      - UNKNOWN
+    BTSelectedMetadataEnumValue:
+      type: object
+      properties:
+        enumOptions:
+          type: array
+          items:
+            $ref: '#/components/schemas/BTMetadataEnumValueInfo'
+        selectedValue:
+          type: string
+    GBTStlEncodingType:
+      type: string
+      description: STL encoding type, `TEXT | BINARY`
+      default: TEXT
+      enum:
+      - TEXT
+      - BINARY
+      - UNKNOWN
+    BTBoundingBoxInfo:
+      type: object
+      properties:
+        highX:
+          type: number
+          format: double
+        highY:
+          type: number
+          format: double
+        highZ:
+          type: number
+          format: double
+        lowX:
+          type: number
+          format: double
+        lowY:
+          type: number
+          format: double
+        lowZ:
+          type: number
+          format: double
+    BTModelElementParams:
+      type: object
+      properties:
+        name:
+          type: string
+    BTBillOfMaterialsObjectWithPropertiesInfo:
+      type: object
+      properties:
+        headerIdToValue:
+          type: object
+          additionalProperties:
+            type: object
+        href:
+          type: string
+          description: URI to fetch complete information of the resource.
+          format: uri
+        id:
+          type: string
+          description: Id of the resource.
+        name:
+          type: string
+          description: Name of the resource.
+        selectedMetadataEnumValues:
+          type: object
+          additionalProperties:
+            $ref: '#/components/schemas/BTSelectedMetadataEnumValue'
+        viewRef:
+          type: string
+          description: URI to visualize the resource in a webclient if applicable.
+          format: uri
+    BTGraphicsSectionViewStateData-4379:
+      type: object
+      properties:
+        btType:
+          type: string
+          description: Type of JSON object.
+        elementId:
+          type: string
+        isExcluding:
+          type: boolean
+        sectionPlanes:
+          type: array
+          items:
+            $ref: '#/components/schemas/BTGraphicsSectionPlaneData-1429'
+        selectionsToExclude:
+          type: array
+          items:
+            $ref: '#/components/schemas/BTUiSelection-1185'
+        selectionsToInclude:
+          type: array
+          items:
+            $ref: '#/components/schemas/BTUiSelection-1185'
+    BTAssemblyMateValuesInfo:
+      type: object
+      properties:
+        mateValues:
+          type: array
+          description: Describes the relative position of the first mate connector with respect to the second along the designated degrees of freedom (DOF) for mates in the specified assembly.
+          items:
+            $ref: '#/components/schemas/BTAssemblyMateValueInfo'
+      description: Get a list of mate values for all the mates of a specified assembly.
+    GBTUiSelectionType:
+      type: string
+      enum:
+      - ENTITY
+      - FEATURE
+      - BODY
+      - OCCURRENCE
+      - USERCODE
+      - ROLLBACKBAR
+      - ELEMENT
+      - MATE
+      - MATE_CONNECTOR
+      - EDGE_POINT
+      - MESH_POINT
+      - TABLE_ITEM
+      - SKETCH_GROUP
+      - FOLDER
+      - NON_GEOMETRIC_ITEM
+      - TEMPORARY_GEOMETRY
+      - PROPERTY
+      - SIMULATION_LOAD
+      - PERSISTENT_QUERY_STRING
+      - GENERATIVE_DESIGN_ITEM
+      - ANNOTATION
+      - DIMENSION
+      - QUERY_VARIABLE
+      - UNKNOWN
+    BTAssemblyPartBodyType:
+      type: string
+      enum:
+      - solid
+      - sheet
+      - composite
+    BTMassPropertiesInfo:
+      type: object
+      properties:
+        centroid:
+          type: array
+          description: Centroid, center of gravity, center of mass
+          items:
+            type: number
+            description: Centroid, center of gravity, center of mass
+            format: double
+        hasMass:
+          type: boolean
+          description: '`true` if the part has mass.'
+        inertia:
+          type: array
+          description: Mass moments of inertia
+          items:
+            type: number
+            description: Mass moments of inertia
+            format: double
+        mass:
+          type: array
+          description: Mass
+          items:
+            type: number
+            description: Mass
+            format: double
+        massMissingCount:
+          type: integer
+          description: Number of parts without mass.
+          format: int32
+        periphery:
+          type: array
+          description: Surface area
+          items:
+            type: number
+            description: Surface area
+            format: double
+        principalAxes:
+          type: array
+          description: Vector coordinates of the principal axes. Use `BTVector3d-389` as the `btType`.
+          items:
+            $ref: '#/components/schemas/BTVector3d-389'
+        principalInertia:
+          type: array
+          description: Principal moments of inertia
+          items:
+            type: number
+            description: Principal moments of inertia
+            format: double
+        volume:
+          type: array
+          description: Volume
+          items:
+            type: number
+            description: Volume
+            format: double
+      description: Mass properties information.
+    BTAssemblyFeatureDataInfo:
+      type: object
+      properties:
+        name:
+          type: string
+    BTSectionPlaneInfo:
+      type: object
+      properties:
+        center:
+          type: array
+          items:
+            type: number
+            format: double
+        normal:
+          type: array
+          items:
+            type: number
+            format: double
+        tangent:
+          type: array
+          items:
+            type: number
+            format: double
+    BTThumbnailInfo:
+      type: object
+      properties:
+        href:
+          type: string
+          format: uri
+        id:
+          type: string
+        secondarySizes:
+          type: array
+          items:
+            type: array
+            items:
+              $ref: '#/components/schemas/BTThumbnailSizeInfo'
+        sizes:
+          type: array
+          items:
+            $ref: '#/components/schemas/BTThumbnailSizeInfo'
+    BTAssemblyInstanceInfo:
+      type: object
+      properties:
+        configuration:
+          type: string
+        designator:
+          type: string
+          description: Reference designator of the instance.
+        documentId:
+          type: string
+        documentMicroversion:
+          type: string
+        documentVersion:
+          type: string
+        elementId:
+          type: string
+        errorStatus:
+          $ref: '#/components/schemas/GBTNodeStatusType'
+        featureId:
+          type: string
+        fullConfiguration:
+          type: string
+        id:
+          type: string
+        isStandardContent:
+          type: boolean
+        name:
+          type: string
+        partId:
+          type: string
+        partNumber:
+          type: string
+        revision:
+          type: string
+        status:
+          $ref: '#/components/schemas/BTAssemblyInstanceStatus'
+        suppressed:
+          type: boolean
+        type:
+          $ref: '#/components/schemas/BTAssemblyInstanceType'
+      description: List of instances including those created by patterns and replicates.
+    BTAssemblyFeatureListResponse-1174:
+      type: object
+      properties:
+        btType:
+          type: string
+          description: Type of JSON object.
+      allOf:
+      - $ref: '#/components/schemas/BTFeatureApiBase-1430'
+      - type: object
+        properties:
+          btType:
+            type: string
+          featureStates:
+            type: object
+            additionalProperties:
+              $ref: '#/components/schemas/BTFeatureState-1688'
+          features:
+            type: array
+            items:
+              $ref: '#/components/schemas/BTMAssemblyFeature-887'
+          isComplete:
+            type: boolean
+    BTBExportMeshParams:
+      type: object
+      properties:
+        angularTolerance:
+          type: number
+          description: Determines the maximum angular deviation, between the analytical surface and its triangulation. Lower values result in a finer geometry and higher values result in coarser geometry.
+          format: double
+          default: 0.001
+        distanceTolerance:
+          type: number
+          description: Determines the maximum distance deviation, between the analytical surface and its triangulation. Lower values result in a finer geometry and higher values result in coarser geometry.
+          format: double
+          default: 0.001
+        maximumChordLength:
+          type: number
+          description: Determines the maximum of a triangle edge length. Lower values result in a finer geometry and higher values result in coarser geometry.
+          format: double
+          default: 0.01
+        resolution:
+          $ref: '#/components/schemas/GBTExportResolution'
+        unit:
+          $ref: '#/components/schemas/GBTExportUnit'
+      description: Options for an element export to mesh format.
+    BTMateConnectorCSInfo:
+      type: object
+      properties:
+        getxAxis:
+          type: array
+          items:
+            type: number
+            format: double
+        getyAxis:
+          type: array
+          items:
+            type: number
+            format: double
+        getzAxis:
+          type: array
+          items:
+            type: number
+            format: double
+        origin:
+          type: array
+          items:
+            type: number
+            format: double
+    BTAssemblyInstanceStatus:
+      type: string
+      enum:
+      - DeletedElement
+    BTAssemblyInstanceType:
+      type: string
+      enum:
+      - Assembly
+      - Feature
+      - Part
+      - Unknown
+    BTViewFeatureBaseInfo:
+      type: object
+      properties:
+        id:
+          type: string
+          description: The ID of the view feature.
+        name:
+          type: string
+          description: The name of the view feature.
+      description: Describes a view feature.
+    GBTExportUnit:
+      type: string
+      description: Units to export the model with.
+      default: METER
+      enum:
+      - METER
+      - CENTIMETER
+      - MILLIMETER
+      - INCH
+      - FOOT
+      - YARD
+      - UNKNOWN
+    BTAssemblyPatternInfo:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Id of the pattern.
+        name:
+          type: string
+          description: Name of the pattern.
+        seedToPatternInstances:
+          type: object
+          additionalProperties:
+            type: array
+            description: Mapping of seed to pattern instance ids.
+            items:
+              type: string
+              description: Mapping of seed to pattern instance ids.
+          description: Mapping of seed to pattern instance ids.
+        status:
+          $ref: '#/components/schemas/GBTNodeStatusType'
+        suppressed:
+          type: boolean
+          description: If pattern is suppressed.
+        type:
+          $ref: '#/components/schemas/GBTPatternType'
+      description: Pattern description.
+    GBTPatternType:
+      type: string
+      enum:
+      - LINEAR
+      - CIRCULAR
+      - UNKNOWN
+    BTBGltfExportParams:
+      type: object
+      properties:
+        advancedParams:
+          $ref: '#/components/schemas/BTBExportAdvancedParams'
+        cloudStorageOptions:
+          $ref: '#/components/schemas/BTBCloudStorageOptions'
+        destinationName:
+          type: string
+          description: The name of the exported file.
+          default: Untitled
+        emailExportOptions:
+          $ref: '#/components/schemas/BTBEmailExportOptions'
+        excludeHiddenEntities:
+          type: boolean
+          description: Whether or not to exclude hidden parts from export.
+          default: false
+        grouping:
+          type: boolean
+          description: Whether parts should be exported as a group or individually in a .zip file.
+          default: true
+        includeExportIds:
+          type: boolean
+          description: Whether topology ids should be exported as parasolid attributes.
+          default: false
+        isYAxisUp:
+          type: boolean
+          description: Rotate model from Z-axis-up orientation to Y-axis-up.
+          default: false
+        meshParams:
+          $ref: '#/components/schemas/BTBExportMeshParams'
+        notifyUser:
+          type: boolean
+          description: Send notification to the user client.
+          default: true
+        storeInDocument:
+          type: boolean
+          description: Create a blob with exported file in the source document.
+          default: true
+        triggerAutoDownload:
+          type: boolean
+          description: Automatically download a translated file.
+          default: false
+      description: Options for exporting elements to GLTF.
     BTVector3d-389:
       type: object
       properties:
@@ -1629,19 +3243,6 @@ components:
         z:
           type: number
           format: double
-    GBTPDefinitionType:
-      type: string
-      enum:
-      - FUNCTION
-      - PREDICATE
-      - CONSTANT
-      - ENUM
-      - USER_TYPE
-      - FEATURE_DEFINITION
-      - FILE_HEADER
-      - UNDOCUMENTABLE
-      - CONST_LAMBDA
-      - UNKNOWN
     BTTranslationRequestInfo:
       type: object
       properties:
@@ -1685,120 +3286,6 @@ components:
           description: URI to visualize the resource in a webclient if applicable.
           format: uri
         workspaceId:
-          type: string
-    GBTPatternType:
-      type: string
-      enum:
-      - LINEAR
-      - CIRCULAR
-      - UNKNOWN
-    BTFeatureSpecsResponse-664:
-      type: object
-      properties:
-        btType:
-          type: string
-          description: Type of JSON object.
-        featureSpecs:
-          type: array
-          items:
-            $ref: '#/components/schemas/BTFeatureSpec-129'
-        libraryVersion:
-          type: integer
-          description: FeatureScript version used in the Part Studio. Do not modify.
-          format: int32
-        microversionSkew:
-          type: boolean
-          description: On output, `true` indicates a microversion mismatch was encountered.
-        rejectMicroversionSkew:
-          type: boolean
-          description: If `true`, the call will refuse to make the addition if the current microversion for the document does not match the source microversion. If `false`, a best-effort attempt is made to re-interpret the feature addition in the context of a newer document microversion.
-        serializationVersion:
-          type: string
-          description: Version of the structure serialization rules used to encode the output. This enables incompatibility detection during software updates.
-        sourceMicroversion:
-          type: string
-          description: The state from which the result was extracted. Geometry ID interpretation is dependent on this document microversion.
-    BTDocumentVersionElementIds-1897:
-      type: object
-      properties:
-        btType:
-          type: string
-          description: Type of JSON object.
-        documentId:
-          type: string
-        elementId:
-          type: string
-        versionId:
-          type: string
-    BTMAssemblyFeature-887:
-      type: object
-      properties:
-        btType:
-          type: string
-          description: Type of JSON object.
-      discriminator:
-        propertyName: btType
-        mapping:
-          BTAssemblySimulation-2246: '#/components/schemas/BTAssemblySimulation-2246'
-          BTExplosion-2754: '#/components/schemas/BTExplosion-2754'
-          BTExplosionStepFeature-3008: '#/components/schemas/BTExplosionStepFeature-3008'
-          BTMAssemblyFeature1-2218: '#/components/schemas/BTMAssemblyFeature1-2218'
-          BTMAssemblyFeature2-1022: '#/components/schemas/BTMAssemblyFeature2-1022'
-          BTMAssemblyFeatureFolder-2543: '#/components/schemas/BTMAssemblyFeatureFolder-2543'
-          BTMAssemblyParametricInstanceFeature-5441: '#/components/schemas/BTMAssemblyParametricInstanceFeature-5441'
-          BTMGenerativeDesignFeature-3195: '#/components/schemas/BTMGenerativeDesignFeature-3195'
-          BTMGeometryMate-1260: '#/components/schemas/BTMGeometryMate-1260'
-          BTMMate-64: '#/components/schemas/BTMMate-64'
-          BTMMateConnector-66: '#/components/schemas/BTMMateConnector-66'
-          BTMMateGroup-65: '#/components/schemas/BTMMateGroup-65'
-          BTMMateRelation-1412: '#/components/schemas/BTMMateRelation-1412'
-          BTMNonGeometricItem-1864: '#/components/schemas/BTMNonGeometricItem-1864'
-          BTMSimulationFeature-5034: '#/components/schemas/BTMSimulationFeature-5034'
-          BTMWidthMate-1011: '#/components/schemas/BTMWidthMate-1011'
-      allOf:
-      - $ref: '#/components/schemas/BTMFeature-134'
-      - type: object
-        properties:
-          btType:
-            type: string
-          version:
-            type: integer
-            format: int32
-    BTAssemblyFeatureInfo:
-      type: object
-      properties:
-        featureData:
-          $ref: '#/components/schemas/BTAssemblyFeatureDataInfo'
-        featureType:
-          type: string
-        id:
-          type: string
-        status:
-          $ref: '#/components/schemas/GBTNodeStatusType'
-        suppressed:
-          type: boolean
-      description: List of Assembly features including those are created by replicates.
-    BTBCloudStorageOptions:
-      required:
-      - cloudObjectId
-      - cloudStorageAccountId
-      type: object
-      properties:
-        cloudObjectId:
-          type: string
-          description: Folder id where to store the exported model.
-        cloudStorageAccountId:
-          type: string
-          description: Account id to access the cloud storage.
-      description: Options for exporting elements to cloud storage.
-    BTSelectedMetadataEnumValue:
-      type: object
-      properties:
-        enumOptions:
-          type: array
-          items:
-            $ref: '#/components/schemas/BTMetadataEnumValueInfo'
-        selectedValue:
           type: string
     BTFeatureSpec-129:
       type: object
@@ -1904,229 +3391,44 @@ components:
           BTTableSpec-915: '#/components/schemas/BTTableSpec-915'
           BTToleranceSpec-3441: '#/components/schemas/BTToleranceSpec-3441'
           BTVariableStudioReferenceSpec-5278: '#/components/schemas/BTVariableStudioReferenceSpec-5278'
-    GBTExportResolution:
-      type: string
-      description: Determines export resolution of fine, medium, or coarse
-      default: FINE
-      enum:
-      - FINE
-      - MEDIUM
-      - COARSE
-      - UNKNOWN
-    GBTRhinoVersions:
-      type: string
-      enum:
-      - V2
-      - V3
-      - V4
-      - V5
-      - V6
-      - V7
-      - V8
-      - UNKNOWN
-    BTPSpace-10:
+    BTBillOfMaterialsRowInfo:
       type: object
       properties:
-        btType:
+        headerIdToValue:
+          type: object
+          additionalProperties:
+            type: object
+        href:
           type: string
-          description: Type of JSON object.
-        lines:
-          type: array
-          items:
-            type: string
-        nodeId:
+          description: URI to fetch complete information of the resource.
+          format: uri
+        id:
           type: string
-        text:
-          type: string
-    BTBExportMeshParams:
-      type: object
-      properties:
-        angularTolerance:
-          type: number
-          description: Determines the maximum angular deviation, between the analytical surface and its triangulation. Lower values result in a finer geometry and higher values result in coarser geometry.
-          format: double
-          default: 0.001
-        distanceTolerance:
-          type: number
-          description: Determines the maximum distance deviation, between the analytical surface and its triangulation. Lower values result in a finer geometry and higher values result in coarser geometry.
-          format: double
-          default: 0.001
-        maximumChordLength:
-          type: number
-          description: Determines the maximum of a triangle edge length. Lower values result in a finer geometry and higher values result in coarser geometry.
-          format: double
-          default: 0.01
-        resolution:
-          $ref: '#/components/schemas/GBTExportResolution'
-        unit:
-          $ref: '#/components/schemas/GBTExportUnit'
-      description: Options for an element export to mesh format.
-    BTBGltfExportParams:
-      type: object
-      properties:
-        advancedParams:
-          $ref: '#/components/schemas/BTBExportAdvancedParams'
-        cloudStorageOptions:
-          $ref: '#/components/schemas/BTBCloudStorageOptions'
-        destinationName:
-          type: string
-          description: The name of the exported file.
-          default: Untitled
-        emailExportOptions:
-          $ref: '#/components/schemas/BTBEmailExportOptions'
-        excludeHiddenEntities:
-          type: boolean
-          description: Whether or not to exclude hidden parts from export.
-          default: false
-        grouping:
-          type: boolean
-          description: Whether parts should be exported as a group or individually in a .zip file.
-          default: true
-        includeExportIds:
-          type: boolean
-          description: Whether topology ids should be exported as parasolid attributes.
-          default: false
-        isYAxisUp:
-          type: boolean
-          description: Rotate model from Z-axis-up orientation to Y-axis-up.
-          default: false
-        meshParams:
-          $ref: '#/components/schemas/BTBExportMeshParams'
-        notifyUser:
-          type: boolean
-          description: Send notification to the user client.
-          default: true
-        storeInDocument:
-          type: boolean
-          description: Create a blob with exported file in the source document.
-          default: true
-        triggerAutoDownload:
-          type: boolean
-          description: Automatically download a translated file.
-          default: false
-      description: Options for exporting elements to GLTF.
-    BTMNode-19:
-      type: object
-      properties:
-        btType:
-          type: string
-          description: Type of JSON object.
-        importMicroversion:
-          type: string
-          description: Microversion that resulted from the import.
-          writeOnly: true
-        nodeId:
-          type: string
-      discriminator:
-        propertyName: btType
-        mapping:
-          BTAssemblySimulationData-978: '#/components/schemas/BTAssemblySimulationData-978'
-          BTInstanceBase-2263: '#/components/schemas/BTInstanceBase-2263'
-          BTInstanceControlNode-750: '#/components/schemas/BTInstanceControlNode-750'
-          BTMAnnotation-4664: '#/components/schemas/BTMAnnotation-4664'
-          BTMArrayParameterItem-1843: '#/components/schemas/BTMArrayParameterItem-1843'
-          BTMConfigurationData-1560: '#/components/schemas/BTMConfigurationData-1560'
-          BTMConfigurationParameter-819: '#/components/schemas/BTMConfigurationParameter-819'
-          BTMConfigurationParameterList-5548: '#/components/schemas/BTMConfigurationParameterList-5548'
-          BTMConfiguredValue-1341: '#/components/schemas/BTMConfiguredValue-1341'
-          BTMEnumOption-592: '#/components/schemas/BTMEnumOption-592'
-          BTMFeature-134: '#/components/schemas/BTMFeature-134'
-          BTMFolder-3208: '#/components/schemas/BTMFolder-3208'
-          BTMImport-136: '#/components/schemas/BTMImport-136'
-          BTMIndividualQueryBase-139: '#/components/schemas/BTMIndividualQueryBase-139'
-          BTMModel-141: '#/components/schemas/BTMModel-141'
-          BTMNodeInvalid-1772: '#/components/schemas/BTMNodeInvalid-1772'
-          BTMParameter-1: '#/components/schemas/BTMParameter-1'
-          BTMRecordMetrics-1169: '#/components/schemas/BTMRecordMetrics-1169'
-          BTMRollback-150: '#/components/schemas/BTMRollback-150'
-          BTMSketchEntity-3: '#/components/schemas/BTMSketchEntity-3'
-          BTMSuppressionState-1924: '#/components/schemas/BTMSuppressionState-1924'
-          BTMUnitsDefault-160: '#/components/schemas/BTMUnitsDefault-160'
-          BTMUserCode-161: '#/components/schemas/BTMUserCode-161'
-          BTModelAnnotations-3945: '#/components/schemas/BTModelAnnotations-3945'
-          BTSimulationInstance-3093: '#/components/schemas/BTSimulationInstance-3093'
-          BTToleranceString-3274: '#/components/schemas/BTToleranceString-3274'
-    BTParameterGroupSpec-3469:
-      type: object
-      properties:
-        additionalLocalizedStrings:
+          description: Id of the resource.
+        indentLevel:
           type: integer
           format: int32
-          writeOnly: true
-        btType:
+        itemSource:
+          $ref: '#/components/schemas/BTBillOfMaterialsItemSourceInfo'
+        name:
           type: string
-          description: Type of JSON object.
-        collapsedByDefault:
-          type: boolean
-        drivingParameterId:
-          type: string
-        groupId:
-          type: string
-        groupName:
-          type: string
-        groupOrParameterIds:
+          description: Name of the resource.
+        relatedOccurrences:
           type: array
+          description: Occurrence IDs in the assembly that refer to the part described by this BOM row.
           items:
             type: string
-        localizableName:
+            description: Occurrence IDs in the assembly that refer to the part described by this BOM row.
+        rowId:
           type: string
-        localizedName:
+        selectedMetadataEnumValues:
+          type: object
+          additionalProperties:
+            $ref: '#/components/schemas/BTSelectedMetadataEnumValue'
+        viewRef:
           type: string
-          writeOnly: true
-        stringsToLocalize:
-          type: array
-          items:
-            type: string
-    BTAssemblyFeatureListResponse-1174:
-      type: object
-      properties:
-        btType:
-          type: string
-          description: Type of JSON object.
-      allOf:
-      - $ref: '#/components/schemas/BTFeatureApiBase-1430'
-      - type: object
-        properties:
-          btType:
-            type: string
-          featureStates:
-            type: object
-            additionalProperties:
-              $ref: '#/components/schemas/BTFeatureState-1688'
-          features:
-            type: array
-            items:
-              $ref: '#/components/schemas/BTMAssemblyFeature-887'
-          isComplete:
-            type: boolean
-    BTFeatureState-1688:
-      type: object
-      properties:
-        btType:
-          type: string
-          description: Type of JSON object.
-        featureStatus:
-          $ref: '#/components/schemas/GBTNodeStatusType'
-        inactive:
-          type: boolean
-    BTSectionPlaneInfo:
-      type: object
-      properties:
-        center:
-          type: array
-          items:
-            type: number
-            format: double
-        normal:
-          type: array
-          items:
-            type: number
-            format: double
-        tangent:
-          type: array
-          items:
-            type: number
-            format: double
+          description: URI to visualize the resource in a webclient if applicable.
+          format: uri
     BTBExportAdvancedParams:
       type: object
       properties:
@@ -2161,321 +3463,20 @@ components:
         partsExportFilter:
           $ref: '#/components/schemas/BTPartsExportFilter-4308'
       description: Advanced element export options.
-    BTBillOfMaterialsObjectWithPropertiesInfo:
+    BTConfiguredValue:
       type: object
       properties:
-        headerIdToValue:
+        configurationParameterId:
+          type: string
+          description: The id of the configuration input that drives this value.
+        configurationToValue:
           type: object
           additionalProperties:
-            type: object
-        href:
-          type: string
-          description: URI to fetch complete information of the resource.
-          format: uri
-        id:
-          type: string
-          description: Id of the resource.
-        name:
-          type: string
-          description: Name of the resource.
-        selectedMetadataEnumValues:
-          type: object
-          additionalProperties:
-            $ref: '#/components/schemas/BTSelectedMetadataEnumValue'
-        viewRef:
-          type: string
-          description: URI to visualize the resource in a webclient if applicable.
-          format: uri
-    BTAssemblyDefinitionInfo:
-      type: object
-      properties:
-        partStudioFeatures:
-          type: array
-          items:
-            $ref: '#/components/schemas/BTAssemblyPsFeatureInfo'
-        parts:
-          type: array
-          items:
-            $ref: '#/components/schemas/BTAssemblyPartInfo'
-        rootAssembly:
-          $ref: '#/components/schemas/BTRootAssemblyInfo'
-        subAssemblies:
-          type: array
-          items:
-            $ref: '#/components/schemas/BTSubAssemblyInfo'
-    BTDisplayStateInfo:
-      type: object
-      properties:
-        id:
-          type: string
-          description: The ID of the view feature.
-        isOnshapeDefault:
-          type: boolean
-          description: '`True` if this display state is in all assemblies by default; `false` if the display state is user-created.'
-        name:
-          type: string
-          description: The name of the view feature.
-      description: Describes a display state.
-    BTNamedViewsInfo:
-      type: object
-      properties:
-        namedViews:
-          type: object
-          additionalProperties:
-            $ref: '#/components/schemas/BTNamedViewInfo'
-    BTBObjExportParams:
-      type: object
-      properties:
-        advancedParams:
-          $ref: '#/components/schemas/BTBExportAdvancedParams'
-        cloudStorageOptions:
-          $ref: '#/components/schemas/BTBCloudStorageOptions'
-        destinationName:
-          type: string
-          description: The name of the exported file.
-          default: Untitled
-        emailExportOptions:
-          $ref: '#/components/schemas/BTBEmailExportOptions'
-        excludeHiddenEntities:
-          type: boolean
-          description: Whether or not to exclude hidden parts from export.
-          default: false
-        grouping:
-          type: boolean
-          description: Whether parts should be exported as a group or individually in a .zip file.
-          default: true
-        includeExportIds:
-          type: boolean
-          description: Whether topology ids should be exported as parasolid attributes.
-          default: false
-        isYAxisUp:
-          type: boolean
-          description: Rotate model from Z-axis-up orientation to Y-axis-up.
-          default: false
-        meshParams:
-          $ref: '#/components/schemas/BTBExportMeshParams'
-        notifyUser:
-          type: boolean
-          description: Send notification to the user client.
-          default: true
-        storeInDocument:
-          type: boolean
-          description: Create a blob with exported file in the source document.
-          default: true
-        triggerAutoDownload:
-          type: boolean
-          description: Automatically download a translated file.
-          default: false
-      description: Options for exporting elements to OBJ.
-    BTMFeature-134:
-      type: object
-      properties:
-        btType:
-          type: string
-          description: Type of JSON object.
-        featureId:
-          type: string
-          description: Unique ID of the feature instance within this Part Studio.
-        featureType:
-          type: string
-          description: The name of the feature spec that this feature instantiates.
-        importMicroversion:
-          type: string
-          description: Element microversion that is being imported.
-          writeOnly: true
-        mateConnectorFeature:
-          type: boolean
-        name:
-          type: string
-          description: User-visible name of the feature.
-        namespace:
-          type: string
-          description: Indicates where the feature definition lives. Features in the FeatureScript standard library have a namespace value of `""`. Custom features identify the Feature Studio that contains the definition.
-        nodeId:
-          type: string
-          description: ID for the feature node.
-        parameterLibraries:
-          type: array
-          items:
-            $ref: '#/components/schemas/BTMParameter-1'
-        parameters:
-          type: array
-          description: A list of parameter values for instantiation of the feature spec. Parameters are present for all defined parameters, even if not used in a specific instantiation.
-          items:
-            $ref: '#/components/schemas/BTMParameter-1'
-        parentSuppressed:
-          type: boolean
-        returnAfterSubfeatures:
-          type: boolean
-          description: For internal use only. Should always be `false`.
-        subFeatures:
-          type: array
-          description: List of subfeatures belonging to the feature.
-          items:
-            $ref: '#/components/schemas/BTMFeature-134'
-        suppressed:
-          type: boolean
-          description: If `true`, the feature is suppressed. It will skip regeneration, denoted by a line through the name in the Feature list.
-        suppressionConfigured:
-          type: boolean
-          description: '`true` if the suppression is configured in the Part Studio.'
-        suppressionState:
-          $ref: '#/components/schemas/BTMSuppressionState-1924'
-        variableStudioReference:
-          type: boolean
-          description: If `true`, the feature references a Variable Studio.
-      discriminator:
-        propertyName: btType
-        mapping:
-          BTMAssemblyFeature-887: '#/components/schemas/BTMAssemblyFeature-887'
-          BTMFeatureInvalid-1031: '#/components/schemas/BTMFeatureInvalid-1031'
-          BTMSketch-151: '#/components/schemas/BTMSketch-151'
-          BTMVariableStudioReference-2764: '#/components/schemas/BTMVariableStudioReference-2764'
-    GBTExportUnit:
-      type: string
-      description: Units to export the model with.
-      default: METER
-      enum:
-      - METER
-      - CENTIMETER
-      - MILLIMETER
-      - INCH
-      - FOOT
-      - YARD
-      - UNKNOWN
-    BTBillOfMaterialsSourceInfo:
-      type: object
-      properties:
-        document:
-          $ref: '#/components/schemas/BTBillOfMaterialsObjectWithPropertiesInfo'
-        documentMicroversion:
-          $ref: '#/components/schemas/BTBillOfMaterialsObjectWithPropertiesInfo'
-        element:
-          $ref: '#/components/schemas/BTBillOfMaterialsElementInfo'
-        href:
-          type: string
-        thumbnailInfo:
-          $ref: '#/components/schemas/BTThumbnailInfo'
-        version:
-          $ref: '#/components/schemas/BTBillOfMaterialsObjectWithPropertiesInfo'
-        viewHref:
-          type: string
-        workspace:
-          $ref: '#/components/schemas/BTBillOfMaterialsObjectWithPropertiesInfo'
-    BTParameterSpec-6:
-      type: object
-      properties:
-        additionalLocalizedStrings:
-          type: integer
-          format: int32
-          writeOnly: true
-        btType:
-          type: string
-          description: Type of JSON object.
-        columnName:
-          type: string
-        defaultValue:
-          $ref: '#/components/schemas/BTMParameter-1'
-        enumOptions:
-          type: array
-          items:
             type: string
-        iconUri:
-          type: string
-        localizableName:
-          type: string
-        localizedName:
-          type: string
-          writeOnly: true
-        parameterDescription:
-          type: string
-        parameterId:
-          type: string
-        parameterName:
-          type: string
-        quantityType:
-          $ref: '#/components/schemas/GBTQuantityType'
-        stringsToLocalize:
-          type: array
-          items:
-            type: string
-        uiHint:
-          type: string
-        uiHints:
-          type: array
-          items:
-            $ref: '#/components/schemas/GBTUIHint'
-        visibilityCondition:
-          $ref: '#/components/schemas/BTParameterVisibilityCondition-177'
-      discriminator:
-        propertyName: btType
-        mapping:
-          BTParameterSpecAppearance-1740: '#/components/schemas/BTParameterSpecAppearance-1740'
-          BTParameterSpecArray-2600: '#/components/schemas/BTParameterSpecArray-2600'
-          BTParameterSpecBoolean-170: '#/components/schemas/BTParameterSpecBoolean-170'
-          BTParameterSpecButton-4111: '#/components/schemas/BTParameterSpecButton-4111'
-          BTParameterSpecDatabase-1071: '#/components/schemas/BTParameterSpecDatabase-1071'
-          BTParameterSpecDerived-736: '#/components/schemas/BTParameterSpecDerived-736'
-          BTParameterSpecEnum-171: '#/components/schemas/BTParameterSpecEnum-171'
-          BTParameterSpecFeatureList-703: '#/components/schemas/BTParameterSpecFeatureList-703'
-          BTParameterSpecForeignId-172: '#/components/schemas/BTParameterSpecForeignId-172'
-          BTParameterSpecLookupTablePath-761: '#/components/schemas/BTParameterSpecLookupTablePath-761'
-          BTParameterSpecMaterial-2700: '#/components/schemas/BTParameterSpecMaterial-2700'
-          BTParameterSpecMultiEnum-3118: '#/components/schemas/BTParameterSpecMultiEnum-3118'
-          BTParameterSpecNullableQuantity-715: '#/components/schemas/BTParameterSpecNullableQuantity-715'
-          BTParameterSpecQuantity-173: '#/components/schemas/BTParameterSpecQuantity-173'
-          BTParameterSpecQuery-174: '#/components/schemas/BTParameterSpecQuery-174'
-          BTParameterSpecReference-2789: '#/components/schemas/BTParameterSpecReference-2789'
-          BTParameterSpecString-175: '#/components/schemas/BTParameterSpecString-175'
-          BTReadOnlyParameterSpec-1889: '#/components/schemas/BTReadOnlyParameterSpec-1889'
-    BTGraphicsSectionPlaneData-1429:
-      type: object
-      properties:
-        btType:
-          type: string
-          description: Type of JSON object.
-        center:
-          $ref: '#/components/schemas/BTVector3d-389'
-        normal:
-          $ref: '#/components/schemas/BTVector3d-389'
-        tangent:
-          $ref: '#/components/schemas/BTVector3d-389'
-    BTAssemblyInstanceDefinitionParams:
-      required:
-      - documentId
-      type: object
-      properties:
-        configuration:
-          type: string
-        documentId:
-          type: string
-        elementId:
-          type: string
-        featureId:
-          type: string
-        includePartTypes:
-          type: array
-          items:
-            $ref: '#/components/schemas/GBTInsertableType'
-        isAssembly:
-          type: boolean
-        isHidden:
-          type: boolean
-        isSuppressed:
-          type: boolean
-        isWholePartStudio:
-          type: boolean
-        microversionId:
-          type: string
-        partId:
-          type: string
-        partNumber:
-          type: string
-        revision:
-          type: string
-        versionId:
-          type: string
-    BTSubAssemblyInfo:
+            description: Map from configuration option id to string value.
+          description: Map from configuration option id to string value.
+      description: A value that varies per option of a configuration input.
+    BTAssemblyPsFeatureInfo:
       type: object
       properties:
         configuration:
@@ -2488,44 +3489,351 @@ components:
           type: string
         elementId:
           type: string
-        features:
-          type: array
-          description: List of Assembly features including those are created by replicates.
-          items:
-            $ref: '#/components/schemas/BTAssemblyFeatureInfo'
+        featureId:
+          type: string
+        featureType:
+          type: string
         fullConfiguration:
           type: string
-        instances:
-          type: array
-          description: List of instances including those created by patterns and replicates.
-          items:
-            $ref: '#/components/schemas/BTAssemblyInstanceInfo'
-        parametricInstances:
-          type: array
-          description: List of parametric instances.
-          items:
-            $ref: '#/components/schemas/BTAssemblyParametricInstanceInfo'
         partNumber:
           type: string
-        patterns:
-          type: array
-          description: List of patterns.
-          items:
-            $ref: '#/components/schemas/BTAssemblyPatternInfo'
         revision:
           type: string
-    GBTUrdfMeshFormat:
-      type: string
-      enum:
-      - STL
-      - GLTF
-      - OBJ
-      - UNKNOWN
-    BTObjectId:
+    BTBAssemblyExportParams:
       type: object
       properties:
-        empty:
+        occurrencesToExport:
+          type: string
+          description: 'IDs of the occurrences to retrieve. Use comma-separated IDs for multiple instances (example: occurrencesToExport=JHK,JHD).'
+      description: Options for exporting assemblies.
+    BTAssemblyTransformDefinitionParams:
+      type: object
+      properties:
+        isRelative:
           type: boolean
+        occurrences:
+          type: array
+          items:
+            $ref: '#/components/schemas/BTOccurrence-74'
+        transform:
+          type: array
+          items:
+            type: number
+            format: double
+    TransformGroup:
+      type: object
+      properties:
+        instances:
+          type: array
+          items:
+            $ref: '#/components/schemas/BTAssemblyInstanceDefinitionParams'
+        transform:
+          type: array
+          items:
+            type: number
+            format: double
+    BTAssemblyFeatureInfo:
+      type: object
+      properties:
+        featureData:
+          $ref: '#/components/schemas/BTAssemblyFeatureDataInfo'
+        featureType:
+          type: string
+        id:
+          type: string
+        status:
+          $ref: '#/components/schemas/GBTNodeStatusType'
+        suppressed:
+          type: boolean
+      description: List of Assembly features including those are created by replicates.
+    BTBEmailExportOptions:
+      required:
+      - emailLink
+      - emailTo
+      - fromUserId
+      type: object
+      properties:
+        emailLink:
+          type: boolean
+          description: Use `true` if a link in an email should be sent.
+          default: false
+        emailMessage:
+          type: string
+          description: Message to send in the email body along with the download link.
+        emailSubject:
+          type: string
+          description: Subject to send the email with.
+          default: User sent you a file exported from Onshape
+        emailTo:
+          type: array
+          description: List of email addresses to send the email to.
+          items:
+            type: string
+            description: List of email addresses to send the email to.
+        fromUserId:
+          type: string
+          description: Id of the user who does the export.
+        password:
+          type: string
+          description: A password to protect the email with.
+          default: 'false'
+        passwordRequired:
+          type: boolean
+          description: Use `true` if the email should be protected with a password.
+          default: false
+        sendCopyToMe:
+          type: boolean
+          description: Use `true` if email copy should be sent to the user who does the export.
+          default: false
+        validForDays:
+          type: integer
+          description: Number of days to keep the link valid for.
+          format: int32
+          default: 3
+      description: Options for exporting elements as a link in an email.
+    GBTExportResolution:
+      type: string
+      description: Determines export resolution of fine, medium, or coarse
+      default: FINE
+      enum:
+      - FINE
+      - MEDIUM
+      - COARSE
+      - UNKNOWN
+    GBTParasolidEncodingType:
+      type: string
+      description: Export Parasolid in `BINARY` (.x_b) or `TEXT` (.x_t) mode.
+      default: TEXT
+      enum:
+      - TEXT
+      - BINARY
+      - UNKNOWN
+    BTNamedViewInfo:
+      type: object
+      properties:
+        angle:
+          type: number
+          format: double
+        cameraViewport:
+          type: array
+          items:
+            type: number
+            format: double
+        perspective:
+          type: boolean
+        sectionPlanes:
+          type: array
+          items:
+            $ref: '#/components/schemas/BTSectionPlaneInfo'
+        sectionViewData:
+          $ref: '#/components/schemas/BTGraphicsSectionViewStateData-4379'
+        viewMatrix:
+          type: array
+          items:
+            type: number
+            format: double
+    BTNamedViewsInfo:
+      type: object
+      properties:
+        namedViews:
+          type: object
+          additionalProperties:
+            $ref: '#/components/schemas/BTNamedViewInfo'
+    BTBillOfMaterialsHeaderInfo:
+      type: object
+      properties:
+        href:
+          type: string
+          description: URI to fetch complete information of the resource.
+          format: uri
+        id:
+          type: string
+          description: Id of the resource.
+        name:
+          type: string
+          description: Name of the resource.
+        propertyName:
+          type: string
+        valueType:
+          type: string
+        viewRef:
+          type: string
+          description: URI to visualize the resource in a webclient if applicable.
+          format: uri
+        visible:
+          type: boolean
+    BTEditingLogic-2350:
+      type: object
+      properties:
+        btType:
+          type: string
+          description: Type of JSON object.
+        functionName:
+          type: string
+        wantsClickedButton:
+          type: boolean
+        wantsHiddenBodies:
+          type: boolean
+        wantsIsCreating:
+          type: boolean
+        wantsSpecifiedParameters:
+          type: boolean
+    BTFeatureSpecsResponse-664:
+      type: object
+      properties:
+        btType:
+          type: string
+          description: Type of JSON object.
+        featureSpecs:
+          type: array
+          items:
+            $ref: '#/components/schemas/BTFeatureSpec-129'
+        libraryVersion:
+          type: integer
+          description: FeatureScript version used in the Part Studio. Do not modify.
+          format: int32
+        microversionSkew:
+          type: boolean
+          description: On output, `true` indicates a microversion mismatch was encountered.
+        rejectMicroversionSkew:
+          type: boolean
+          description: If `true`, the call will refuse to make the addition if the current microversion for the document does not match the source microversion. If `false`, a best-effort attempt is made to re-interpret the feature addition in the context of a newer document microversion.
+        serializationVersion:
+          type: string
+          description: Version of the structure serialization rules used to encode the output. This enables incompatibility detection during software updates.
+        sourceMicroversion:
+          type: string
+          description: The state from which the result was extracted. Geometry ID interpretation is dependent on this document microversion.
+    BTFeatureApiBase-1430:
+      type: object
+      properties:
+        btType:
+          type: string
+          description: Type of JSON object.
+        libraryVersion:
+          type: integer
+          description: FeatureScript version used in the Part Studio. Do not modify.
+          format: int32
+        microversionSkew:
+          type: boolean
+          description: On output, `true` indicates a microversion mismatch was encountered.
+        rejectMicroversionSkew:
+          type: boolean
+          description: If `true`, the call will refuse to make the addition if the current microversion for the document does not match the source microversion. If `false`, a best-effort attempt is made to re-interpret the feature addition in the context of a newer document microversion.
+        serializationVersion:
+          type: string
+          description: Version of the structure serialization rules used to encode the output. This enables incompatibility detection during software updates.
+        sourceMicroversion:
+          type: string
+          description: The state from which the result was extracted. Geometry ID interpretation is dependent on this document microversion.
+      discriminator:
+        propertyName: btType
+        mapping:
+          BTAssemblyFeatureListResponse-1174: '#/components/schemas/BTAssemblyFeatureListResponse-1174'
+          BTConfigurationResponse-2019: '#/components/schemas/BTConfigurationResponse-2019'
+          BTConfigurationUpdateCall-2933: '#/components/schemas/BTConfigurationUpdateCall-2933'
+          BTFeatureDefinitionCall-1406: '#/components/schemas/BTFeatureDefinitionCall-1406'
+          BTFeatureDefinitionResponse-1617: '#/components/schemas/BTFeatureDefinitionResponse-1617'
+          BTFeatureListResponse-2457: '#/components/schemas/BTFeatureListResponse-2457'
+          BTFeatureScriptEvalCall-2377: '#/components/schemas/BTFeatureScriptEvalCall-2377'
+          BTFeatureScriptEvalResponse-1859: '#/components/schemas/BTFeatureScriptEvalResponse-1859'
+          BTFeatureSpecsResponse-664: '#/components/schemas/BTFeatureSpecsResponse-664'
+          BTFeatureStudioContents-2239: '#/components/schemas/BTFeatureStudioContents-2239'
+          BTSetFeatureRollbackCall-1899: '#/components/schemas/BTSetFeatureRollbackCall-1899'
+          BTSetFeatureRollbackResponse-1042: '#/components/schemas/BTSetFeatureRollbackResponse-1042'
+          BTUpdateFeaturesCall-1748: '#/components/schemas/BTUpdateFeaturesCall-1748'
+          BTUpdateFeaturesResponse-1333: '#/components/schemas/BTUpdateFeaturesResponse-1333'
+    BTTranslationRequestState:
+      type: string
+      enum:
+      - ACTIVE
+      - DONE
+      - FAILED
+    BTParameterGroupSpec-3469:
+      type: object
+      properties:
+        additionalLocalizedStrings:
+          type: integer
+          format: int32
+          writeOnly: true
+        btType:
+          type: string
+          description: Type of JSON object.
+        collapsedByDefault:
+          type: boolean
+        drivingParameterId:
+          type: string
+        groupId:
+          type: string
+        groupName:
+          type: string
+        groupOrParameterIds:
+          type: array
+          items:
+            type: string
+        localizableName:
+          type: string
+        localizedName:
+          type: string
+          writeOnly: true
+        stringsToLocalize:
+          type: array
+          items:
+            type: string
+    BTLocationInfo-226:
+      type: object
+      properties:
+        btType:
+          type: string
+          description: Type of JSON object.
+        character:
+          type: integer
+          format: int32
+        column:
+          type: integer
+          format: int32
+        document:
+          type: string
+        elementMicroversion:
+          type: string
+        endCharacter:
+          type: integer
+          format: int32
+        endColumn:
+          type: integer
+          format: int32
+        endLine:
+          type: integer
+          format: int32
+        fromNode:
+          $ref: '#/components/schemas/BTPNode-7'
+        fromTemplate:
+          $ref: '#/components/schemas/BTLocationInfo-226'
+        languageVersion:
+          type: integer
+          format: int32
+        line:
+          type: integer
+          format: int32
+        moduleIds:
+          $ref: '#/components/schemas/BTDocumentVersionElementIds-1897'
+        nodeId:
+          type: string
+        parseNodeId:
+          type: string
+        parseNodeIdRaw:
+          $ref: '#/components/schemas/BTObjectId'
+        topLevel:
+          type: string
+        version:
+          type: string
+    BTAssemblyTransformedInstancesDefinitionParams:
+      type: object
+      properties:
+        transformGroups:
+          type: array
+          items:
+            $ref: '#/components/schemas/TransformGroup'
     BTTranslateFormatParams:
       required:
       - formatName
@@ -2806,189 +4114,6 @@ components:
         documentId: INTERNAL
         preserveSourceIds: INTERNAL
         documentVersion: INTERNAL
-    GBTElementType:
-      type: string
-      enum:
-      - PARTSTUDIO
-      - ASSEMBLY
-      - DRAWING
-      - FEATURESTUDIO
-      - BLOB
-      - APPLICATION
-      - TABLE
-      - BILLOFMATERIALS
-      - VARIABLESTUDIO
-      - PUBLICATIONITEM
-      - UNKNOWN
-    BTThumbnailInfo:
-      type: object
-      properties:
-        href:
-          type: string
-          format: uri
-        id:
-          type: string
-        secondarySizes:
-          type: array
-          items:
-            type: array
-            items:
-              $ref: '#/components/schemas/BTThumbnailSizeInfo'
-        sizes:
-          type: array
-          items:
-            $ref: '#/components/schemas/BTThumbnailSizeInfo'
-    BTAssemblyTransformDefinitionParams:
-      type: object
-      properties:
-        isRelative:
-          type: boolean
-        occurrences:
-          type: array
-          items:
-            $ref: '#/components/schemas/BTOccurrence-74'
-        transform:
-          type: array
-          items:
-            type: number
-            format: double
-    BTFeatureDefinitionResponse-1617:
-      type: object
-      properties:
-        btType:
-          type: string
-          description: Type of JSON object.
-        feature:
-          $ref: '#/components/schemas/BTMFeature-134'
-        featureState:
-          $ref: '#/components/schemas/BTFeatureState-1688'
-        libraryVersion:
-          type: integer
-          description: FeatureScript version used in the Part Studio. Do not modify.
-          format: int32
-        microversionSkew:
-          type: boolean
-          description: On output, `true` indicates a microversion mismatch was encountered.
-        rejectMicroversionSkew:
-          type: boolean
-          description: If `true`, the call will refuse to make the addition if the current microversion for the document does not match the source microversion. If `false`, a best-effort attempt is made to re-interpret the feature addition in the context of a newer document microversion.
-        serializationVersion:
-          type: string
-          description: Version of the structure serialization rules used to encode the output. This enables incompatibility detection during software updates.
-        sourceMicroversion:
-          type: string
-          description: The state from which the result was extracted. Geometry ID interpretation is dependent on this document microversion.
-    GBTParasolidEncodingType:
-      type: string
-      description: Export Parasolid in `BINARY` (.x_b) or `TEXT` (.x_t) mode.
-      default: TEXT
-      enum:
-      - TEXT
-      - BINARY
-      - UNKNOWN
-    BTAssemblyInstanceStatus:
-      type: string
-      enum:
-      - DeletedElement
-    BTAssemblyInstanceInfo:
-      type: object
-      properties:
-        configuration:
-          type: string
-        designator:
-          type: string
-          description: Reference designator of the instance.
-        documentId:
-          type: string
-        documentMicroversion:
-          type: string
-        documentVersion:
-          type: string
-        elementId:
-          type: string
-        errorStatus:
-          $ref: '#/components/schemas/GBTNodeStatusType'
-        featureId:
-          type: string
-        fullConfiguration:
-          type: string
-        id:
-          type: string
-        isStandardContent:
-          type: boolean
-        name:
-          type: string
-        partId:
-          type: string
-        partNumber:
-          type: string
-        revision:
-          type: string
-        status:
-          $ref: '#/components/schemas/BTAssemblyInstanceStatus'
-        suppressed:
-          type: boolean
-        type:
-          $ref: '#/components/schemas/BTAssemblyInstanceType'
-      description: List of instances including those created by patterns and replicates.
-    BTAssemblyInsertTransformedInstancesResponse:
-      type: object
-      properties:
-        insertInstanceResponses:
-          type: array
-          items:
-            $ref: '#/components/schemas/BTAssemblyInstanceOccurrenceInfo'
-        insertResponses:
-          type: array
-          items:
-            $ref: '#/components/schemas/BTAssemblyOccurrenceInfo'
-    BTLocationInfo-226:
-      type: object
-      properties:
-        btType:
-          type: string
-          description: Type of JSON object.
-        character:
-          type: integer
-          format: int32
-        column:
-          type: integer
-          format: int32
-        document:
-          type: string
-        elementMicroversion:
-          type: string
-        endCharacter:
-          type: integer
-          format: int32
-        endColumn:
-          type: integer
-          format: int32
-        endLine:
-          type: integer
-          format: int32
-        fromNode:
-          $ref: '#/components/schemas/BTPNode-7'
-        fromTemplate:
-          $ref: '#/components/schemas/BTLocationInfo-226'
-        languageVersion:
-          type: integer
-          format: int32
-        line:
-          type: integer
-          format: int32
-        moduleIds:
-          $ref: '#/components/schemas/BTDocumentVersionElementIds-1897'
-        nodeId:
-          type: string
-        parseNodeId:
-          type: string
-        parseNodeIdRaw:
-          $ref: '#/components/schemas/BTObjectId'
-        topLevel:
-          type: string
-        version:
-          type: string
     GBTNodeStatusType:
       type: string
       enum:
@@ -2997,249 +4122,22 @@ components:
       - WARNING
       - ERROR
       - UNKNOWN
-    BTZipFileInfo:
-      type: object
-      properties:
-        files:
-          type: array
-          items:
-            type: string
-    TransformGroup:
-      type: object
-      properties:
-        instances:
-          type: array
-          items:
-            $ref: '#/components/schemas/BTAssemblyInstanceDefinitionParams'
-        transform:
-          type: array
-          items:
-            type: number
-            format: double
-    BTBEmailExportOptions:
-      required:
-      - emailLink
-      - emailTo
-      - fromUserId
-      type: object
-      properties:
-        emailLink:
-          type: boolean
-          description: Use `true` if a link in an email should be sent.
-          default: false
-        emailMessage:
-          type: string
-          description: Message to send in the email body along with the download link.
-        emailSubject:
-          type: string
-          description: Subject to send the email with.
-          default: User sent you a file exported from Onshape
-        emailTo:
-          type: array
-          description: List of email addresses to send the email to.
-          items:
-            type: string
-            description: List of email addresses to send the email to.
-        fromUserId:
-          type: string
-          description: Id of the user who does the export.
-        password:
-          type: string
-          description: A password to protect the email with.
-          default: 'false'
-        passwordRequired:
-          type: boolean
-          description: Use `true` if the email should be protected with a password.
-          default: false
-        sendCopyToMe:
-          type: boolean
-          description: Use `true` if email copy should be sent to the user who does the export.
-          default: false
-        validForDays:
-          type: integer
-          description: Number of days to keep the link valid for.
-          format: int32
-          default: 3
-      description: Options for exporting elements as a link in an email.
-    GBTUIHint:
-      type: string
-      enum:
-      - OPPOSITE_DIRECTION
-      - ALWAYS_HIDDEN
-      - SHOW_CREATE_SELECTION
-      - CONTROL_VISIBILITY
-      - NO_PREVIEW_PROVIDED
-      - REMEMBER_PREVIOUS_VALUE
-      - DISPLAY_SHORT
-      - ALLOW_FEATURE_SELECTION
-      - MATE_CONNECTOR_AXIS_TYPE
-      - PRIMARY_AXIS
-      - SHOW_EXPRESSION
-      - OPPOSITE_DIRECTION_CIRCULAR
-      - SHOW_LABEL
-      - HORIZONTAL_ENUM
-      - UNCONFIGURABLE
-      - MATCH_LAST_ARRAY_ITEM
-      - COLLAPSE_ARRAY_ITEMS
-      - INITIAL_FOCUS_ON_EDIT
-      - INITIAL_FOCUS
-      - DISPLAY_CURRENT_VALUE_ONLY
-      - READ_ONLY
-      - PREVENT_CREATING_NEW_MATE_CONNECTORS
-      - FIRST_IN_ROW
-      - ALLOW_QUERY_ORDER
-      - PREVENT_ARRAY_REORDER
-      - VARIABLE_NAME
-      - FOCUS_INNER_QUERY
-      - SHOW_TOLERANCE
-      - ALLOW_ARRAY_FOCUS
-      - SHOW_INLINE_CONFIG_INPUTS
-      - FOCUS_ON_VISIBLE
-      - CAN_BE_TOLERANT
-      - CAN_BE_TOLERANT_DIAMETER
-      - PLUS_MINUS
-      - ALWAYS_USE_DEPENDENCIES
-      - NO_QUERY_VARIABLE
-      - ALLOW_FLAT_SKETCH_SELECTION
-      - QUERY_VARIABLE_NAME
-      - HIDE_LABEL
-      - UNKNOWN
-    BTPartsExportFilter-4308:
+    BTParameterVisibilityCondition-177:
       type: object
       properties:
         btType:
           type: string
           description: Type of JSON object.
-        skipAllMesh:
+        selfOrChildAlwaysVisible:
           type: boolean
-        skipCurves:
-          type: boolean
-        skipPartialMesh:
-          type: boolean
-      description: Skip mesh/curve foreign data creation in individual parts export
       discriminator:
         propertyName: btType
         mapping:
-          BTPartsExportFilter-4308: '#/components/schemas/BTPartsExportFilter-4308'
-    GBTStlEncodingType:
-      type: string
-      description: STL encoding type, `TEXT | BINARY`
-      default: TEXT
-      enum:
-      - TEXT
-      - BINARY
-      - UNKNOWN
-    BTConfiguredValue:
-      type: object
-      properties:
-        configurationParameterId:
-          type: string
-          description: The id of the configuration input that drives this value.
-        configurationToValue:
-          type: object
-          additionalProperties:
-            type: string
-            description: Map from configuration option id to string value.
-          description: Map from configuration option id to string value.
-      description: A value that varies per option of a configuration input.
-    BTApplicationTargetInfo:
-      type: object
-      properties:
-        baseHref:
-          type: string
-          format: uri
-        clientId:
-          type: string
-        supportsCollaboration:
-          type: boolean
-        tabIconHref:
-          type: string
-          format: uri
-    BTAssemblyPsFeatureInfo:
-      type: object
-      properties:
-        configuration:
-          type: string
-        documentId:
-          type: string
-        documentMicroversion:
-          type: string
-        documentVersion:
-          type: string
-        elementId:
-          type: string
-        featureId:
-          type: string
-        featureType:
-          type: string
-        fullConfiguration:
-          type: string
-        partNumber:
-          type: string
-        revision:
-          type: string
-    BTBillOfMaterialsInfo:
-      type: object
-      properties:
-        bomSource:
-          $ref: '#/components/schemas/BTBillOfMaterialsSourceInfo'
-        createdAt:
-          type: string
-        formatVersion:
-          type: string
-        headers:
-          type: array
-          items:
-            $ref: '#/components/schemas/BTBillOfMaterialsHeaderInfo'
-        href:
-          type: string
-          description: URI to fetch complete information of the resource.
-          format: uri
-        id:
-          type: string
-          description: Id of the resource.
-        name:
-          type: string
-          description: Name of the resource.
-        rows:
-          type: array
-          items:
-            $ref: '#/components/schemas/BTBillOfMaterialsRowInfo'
-        templateId:
-          type: string
-        topLevelAssemblyRow:
-          $ref: '#/components/schemas/BTBillOfMaterialsRowInfo'
-        type:
-          type: string
-        viewRef:
-          type: string
-          description: URI to visualize the resource in a webclient if applicable.
-          format: uri
-    BTThumbnailSizeInfo:
-      type: object
-      properties:
-        href:
-          type: string
-          format: uri
-        mediaType:
-          type: string
-        renderMode:
-          type: string
-        sheetName:
-          type: string
-        size:
-          type: string
-        uniqueId:
-          type: string
-        viewOrientation:
-          type: string
-    BTAssemblyInstanceOccurrenceInfo:
-      type: object
-      properties:
-        occurrences:
-          type: array
-          items:
-            $ref: '#/components/schemas/BTAssemblyOccurrenceInfo'
+          BTParameterVisibilityAlwaysHidden-176: '#/components/schemas/BTParameterVisibilityAlwaysHidden-176'
+          BTParameterVisibilityAlwaysShown-5487: '#/components/schemas/BTParameterVisibilityAlwaysShown-5487'
+          BTParameterVisibilityInRange-2980: '#/components/schemas/BTParameterVisibilityInRange-2980'
+          BTParameterVisibilityLogical-178: '#/components/schemas/BTParameterVisibilityLogical-178'
+          BTParameterVisibilityOnEqual-180: '#/components/schemas/BTParameterVisibilityOnEqual-180'
     BTRootAssemblyInfo:
       type: object
       properties:
@@ -3283,458 +4181,6 @@ components:
             $ref: '#/components/schemas/BTAssemblyPatternInfo'
         revision:
           type: string
-    BTMetadataEnumValueInfo:
-      type: object
-      properties:
-        label:
-          type: string
-        state:
-          type: integer
-          format: int32
-        value:
-          type: string
-    BTTranslationRequestState:
-      type: string
-      enum:
-      - ACTIVE
-      - DONE
-      - FAILED
-    BTAssemblyParametricInstanceInfo:
-      type: object
-      properties:
-        children:
-          type: array
-          description: Child instances.
-          items:
-            $ref: '#/components/schemas/BTAssemblyParametricInstanceChildInfo'
-        id:
-          type: string
-          description: Id of the Part Studio instance.
-        name:
-          type: string
-          description: Name of the parametric instance.
-        status:
-          $ref: '#/components/schemas/GBTNodeStatusType'
-        suppressed:
-          type: boolean
-          description: If the parametric is suppressed.
-        type:
-          type: string
-          description: Type of parametric instance.
-      description: Parametric instance description.
-    BTShadedViewsInfo:
-      type: object
-      properties:
-        images:
-          type: array
-          items:
-            type: array
-            items:
-              type: string
-              format: byte
-      description: Images are returned as base64-encoded strings.
-    GBTParameterLibraryRelationType:
-      type: string
-      enum:
-      - DEFAULT
-      - IGNORE_LIBRARY_VALUES
-      - UNKNOWN
-    BTBStepExportParams:
-      type: object
-      properties:
-        advancedParams:
-          $ref: '#/components/schemas/BTBExportAdvancedParams'
-        cloudStorageOptions:
-          $ref: '#/components/schemas/BTBCloudStorageOptions'
-        destinationName:
-          type: string
-          description: The name of the exported file.
-          default: Untitled
-        emailExportOptions:
-          $ref: '#/components/schemas/BTBEmailExportOptions'
-        excludeHiddenEntities:
-          type: boolean
-          description: Whether or not to exclude hidden parts from export.
-          default: false
-        grouping:
-          type: boolean
-          description: Whether parts should be exported as a group or individually in a .zip file.
-          default: true
-        includeExportIds:
-          type: boolean
-          description: Whether topology ids should be exported as parasolid attributes.
-          default: false
-        isYAxisUp:
-          type: boolean
-          description: Rotate model from Z-axis-up orientation to Y-axis-up.
-          default: false
-        notifyUser:
-          type: boolean
-          description: Send notification to the user client.
-          default: true
-        stepParasolidPreprocessingOption:
-          $ref: '#/components/schemas/GBTPreProcessParasolidOption'
-        stepUnit:
-          $ref: '#/components/schemas/GBTExportUnit'
-        stepVersionString:
-          type: string
-          description: 'Export STEP in version: `AP242` | `AP203` | `AP214`'
-          default: AP242
-        storeInDocument:
-          type: boolean
-          description: Create a blob with exported file in the source document.
-          default: true
-        triggerAutoDownload:
-          type: boolean
-          description: Automatically download a translated file.
-          default: false
-      description: Options for exporting elements to STEP.
-    GBTQuantityType:
-      type: string
-      enum:
-      - UNKNOWN
-      - INTEGER
-      - REAL
-      - LENGTH
-      - ANGLE
-      - MASS
-      - TIME
-      - TEMPERATURE
-      - CURRENT
-      - ANYTHING
-      - ANYTHING_WITH_UNITS
-      - FORCE
-      - PRESSURE
-      - MOMENT
-      - ACCELERATION
-      - ANGULAR_VELOCITY
-      - ENERGY
-      - AREA
-      - VOLUME
-      - BOOLEAN
-      - STRING
-      - DENSITY
-      - FREQUENCY
-    BTParameterVisibilityCondition-177:
-      type: object
-      properties:
-        btType:
-          type: string
-          description: Type of JSON object.
-        selfOrChildAlwaysVisible:
-          type: boolean
-      discriminator:
-        propertyName: btType
-        mapping:
-          BTParameterVisibilityAlwaysHidden-176: '#/components/schemas/BTParameterVisibilityAlwaysHidden-176'
-          BTParameterVisibilityAlwaysShown-5487: '#/components/schemas/BTParameterVisibilityAlwaysShown-5487'
-          BTParameterVisibilityInRange-2980: '#/components/schemas/BTParameterVisibilityInRange-2980'
-          BTParameterVisibilityLogical-178: '#/components/schemas/BTParameterVisibilityLogical-178'
-          BTParameterVisibilityOnEqual-180: '#/components/schemas/BTParameterVisibilityOnEqual-180'
-    BTOptionallyConfiguredValue:
-      type: object
-      properties:
-        configuredValue:
-          $ref: '#/components/schemas/BTConfiguredValue'
-        value:
-          type: string
-          description: The string value, if not configured
-      description: Optional map of configuration parameter id to value
-    BTPNode-7:
-      type: object
-      properties:
-        atomic:
-          type: boolean
-        btType:
-          type: string
-          description: Type of JSON object.
-        documentationType:
-          $ref: '#/components/schemas/GBTPDefinitionType'
-        endSourceLocation:
-          type: integer
-          format: int32
-        nodeId:
-          type: string
-        shortDescriptor:
-          type: string
-        spaceAfter:
-          $ref: '#/components/schemas/BTPSpace-10'
-        spaceBefore:
-          $ref: '#/components/schemas/BTPSpace-10'
-        spaceDefault:
-          type: boolean
-        startSourceLocation:
-          type: integer
-          format: int32
-      discriminator:
-        propertyName: btType
-        mapping:
-          BTPAnnotation-231: '#/components/schemas/BTPAnnotation-231'
-          BTPArgumentDeclaration-232: '#/components/schemas/BTPArgumentDeclaration-232'
-          BTPBuiltinIdentifier-233: '#/components/schemas/BTPBuiltinIdentifier-233'
-          BTPLValue-249: '#/components/schemas/BTPLValue-249'
-          BTPLiteralMapEntry-257: '#/components/schemas/BTPLiteralMapEntry-257'
-          BTPModule-234: '#/components/schemas/BTPModule-234'
-          BTPModuleId-235: '#/components/schemas/BTPModuleId-235'
-          BTPName-261: '#/components/schemas/BTPName-261'
-          BTPPropertyAccessor-23: '#/components/schemas/BTPPropertyAccessor-23'
-          BTPStatement-269: '#/components/schemas/BTPStatement-269'
-          BTPTopLevelNode-286: '#/components/schemas/BTPTopLevelNode-286'
-          BTPTypeName-290: '#/components/schemas/BTPTypeName-290'
-    BTViewFeatureBaseInfo:
-      type: object
-      properties:
-        id:
-          type: string
-          description: The ID of the view feature.
-        name:
-          type: string
-          description: The name of the view feature.
-      description: Describes a view feature.
-    BTAssemblyPartBodyType:
-      type: string
-      enum:
-      - solid
-      - sheet
-      - composite
-    BTAssemblyFeatureDataInfo:
-      type: object
-      properties:
-        name:
-          type: string
-    BTMassPropertiesInfo:
-      type: object
-      properties:
-        centroid:
-          type: array
-          description: Centroid, center of gravity, center of mass
-          items:
-            type: number
-            description: Centroid, center of gravity, center of mass
-            format: double
-        hasMass:
-          type: boolean
-          description: '`true` if the part has mass.'
-        inertia:
-          type: array
-          description: Mass moments of inertia
-          items:
-            type: number
-            description: Mass moments of inertia
-            format: double
-        mass:
-          type: array
-          description: Mass
-          items:
-            type: number
-            description: Mass
-            format: double
-        massMissingCount:
-          type: integer
-          description: Number of parts without mass.
-          format: int32
-        periphery:
-          type: array
-          description: Surface area
-          items:
-            type: number
-            description: Surface area
-            format: double
-        principalAxes:
-          type: array
-          description: Vector coordinates of the principal axes. Use `BTVector3d-389` as the `btType`.
-          items:
-            $ref: '#/components/schemas/BTVector3d-389'
-        principalInertia:
-          type: array
-          description: Principal moments of inertia
-          items:
-            type: number
-            description: Principal moments of inertia
-            format: double
-        volume:
-          type: array
-          description: Volume
-          items:
-            type: number
-            description: Volume
-            format: double
-      description: Mass properties information.
-    BTBillOfMaterialsHeaderInfo:
-      type: object
-      properties:
-        href:
-          type: string
-          description: URI to fetch complete information of the resource.
-          format: uri
-        id:
-          type: string
-          description: Id of the resource.
-        name:
-          type: string
-          description: Name of the resource.
-        propertyName:
-          type: string
-        valueType:
-          type: string
-        viewRef:
-          type: string
-          description: URI to visualize the resource in a webclient if applicable.
-          format: uri
-        visible:
-          type: boolean
-    BTAssemblyPartInfo:
-      type: object
-      properties:
-        bodyType:
-          $ref: '#/components/schemas/BTAssemblyPartBodyType'
-        configuration:
-          type: string
-        documentId:
-          type: string
-        documentMicroversion:
-          type: string
-        documentVersion:
-          type: string
-        elementId:
-          type: string
-        fullConfiguration:
-          type: string
-        isStandardContent:
-          type: boolean
-        mateConnectors:
-          type: array
-          items:
-            $ref: '#/components/schemas/BTAssemblyMateConnectorInfo'
-        partId:
-          type: string
-        partNumber:
-          type: string
-        revision:
-          type: string
-    BTMParameter-1:
-      type: object
-      properties:
-        btType:
-          type: string
-          description: Type of JSON object.
-        importMicroversion:
-          type: string
-          description: Microversion that resulted from the import.
-          writeOnly: true
-        libraryRelationType:
-          $ref: '#/components/schemas/GBTParameterLibraryRelationType'
-        nodeId:
-          type: string
-          description: ID of the parameter's node.
-        parameterId:
-          type: string
-          description: Unique ID of the parameter.
-        parameterName:
-          type: string
-        valueString:
-          type: string
-      description: A list of parameter values for instantiation of the feature spec. Parameters are present for all defined parameters, even if not used in a specific instantiation.
-      discriminator:
-        propertyName: btType
-        mapping:
-          BTMDatabaseParameter-2229: '#/components/schemas/BTMDatabaseParameter-2229'
-          BTMParameterAppearance-627: '#/components/schemas/BTMParameterAppearance-627'
-          BTMParameterArray-2025: '#/components/schemas/BTMParameterArray-2025'
-          BTMParameterBlobReference-1679: '#/components/schemas/BTMParameterBlobReference-1679'
-          BTMParameterBoolean-144: '#/components/schemas/BTMParameterBoolean-144'
-          BTMParameterButton-5169: '#/components/schemas/BTMParameterButton-5169'
-          BTMParameterConfigured-2222: '#/components/schemas/BTMParameterConfigured-2222'
-          BTMParameterDerived-864: '#/components/schemas/BTMParameterDerived-864'
-          BTMParameterEnum-145: '#/components/schemas/BTMParameterEnum-145'
-          BTMParameterFeatureList-1749: '#/components/schemas/BTMParameterFeatureList-1749'
-          BTMParameterForeignId-146: '#/components/schemas/BTMParameterForeignId-146'
-          BTMParameterInvalid-1664: '#/components/schemas/BTMParameterInvalid-1664'
-          BTMParameterLookupTablePath-1419: '#/components/schemas/BTMParameterLookupTablePath-1419'
-          BTMParameterMaterial-1388: '#/components/schemas/BTMParameterMaterial-1388'
-          BTMParameterMultiEnum-3411: '#/components/schemas/BTMParameterMultiEnum-3411'
-          BTMParameterQuantity-147: '#/components/schemas/BTMParameterQuantity-147'
-          BTMParameterQueryList-148: '#/components/schemas/BTMParameterQueryList-148'
-          BTMParameterQueryWithOccurrenceList-67: '#/components/schemas/BTMParameterQueryWithOccurrenceList-67'
-          BTMParameterReference-2434: '#/components/schemas/BTMParameterReference-2434'
-          BTMParameterString-149: '#/components/schemas/BTMParameterString-149'
-          BTMReadOnlyParameter-3800: '#/components/schemas/BTMReadOnlyParameter-3800'
-    GBTInsertableType:
-      type: string
-      enum:
-      - PARTS
-      - SKETCHES
-      - SURFACES
-      - FLATTENED_PARTS
-      - COMPOSITE_PARTS
-      - PART_STUDIOS
-      - WIRES
-      - PARAMETRIC_PART_STUDIOS
-      - UNKNOWN
-    BTAssemblyModificationParams:
-      type: object
-      properties:
-        deleteInstances:
-          type: array
-          description: Node ids of the instances to delete.
-          items:
-            type: string
-            description: Node ids of the instances to delete.
-        editDescription:
-          maxLength: 32
-          minLength: 0
-          type: string
-          description: Short description of the modification.
-        suppressInstances:
-          type: array
-          description: Deprecated in API v16. Use `suppressionStates` instead.Node ids of the instances to suppress.
-          deprecated: true
-          items:
-            type: string
-            description: Deprecated in API v16. Use `suppressionStates` instead.Node ids of the instances to suppress.
-            deprecated: true
-        suppressionStates:
-          type: object
-          additionalProperties:
-            $ref: '#/components/schemas/BTOptionallyConfiguredValue'
-          description: 'Suppression states keyed by node id. Each value is either a plain suppression state (`value`: `"true"` or `"false"`) or a configuration-controlled suppression state (`configuredValue`: a configuration parameter id and a map from configuration option id to `"true"` or `"false"`).'
-        transformDefinitions:
-          type: array
-          description: Occurrence transform definitions.
-          items:
-            $ref: '#/components/schemas/BTAssemblyTransformDefinitionParams'
-        unsuppressInstances:
-          type: array
-          description: Deprecated in API v16. Use `suppressionStates` instead.Node ids of the instances to unsuppress.
-          deprecated: true
-          items:
-            type: string
-            description: Deprecated in API v16. Use `suppressionStates` instead.Node ids of the instances to unsuppress.
-            deprecated: true
-    BTNamedViewInfo:
-      type: object
-      properties:
-        angle:
-          type: number
-          format: double
-        cameraViewport:
-          type: array
-          items:
-            type: number
-            format: double
-        perspective:
-          type: boolean
-        sectionPlanes:
-          type: array
-          items:
-            $ref: '#/components/schemas/BTSectionPlaneInfo'
-        sectionViewData:
-          $ref: '#/components/schemas/BTGraphicsSectionViewStateData-4379'
-        viewMatrix:
-          type: array
-          items:
-            type: number
-            format: double
     BTFeatureDefinitionCall-1406:
       type: object
       properties:
@@ -3759,475 +4205,6 @@ components:
         sourceMicroversion:
           type: string
           description: The state from which the result was extracted. Geometry ID interpretation is dependent on this document microversion.
-    BTBoundingBoxInfo:
-      type: object
-      properties:
-        highX:
-          type: number
-          format: double
-        highY:
-          type: number
-          format: double
-        highZ:
-          type: number
-          format: double
-        lowX:
-          type: number
-          format: double
-        lowY:
-          type: number
-          format: double
-        lowZ:
-          type: number
-          format: double
-    BTBillOfMaterialsItemSourceInfo:
-      type: object
-      properties:
-        configuration:
-          type: string
-        distinctConfigurations:
-          type: array
-          items:
-            type: string
-        documentId:
-          type: string
-        elementId:
-          type: string
-        fullConfiguration:
-          type: string
-        href:
-          type: string
-        isStandardContent:
-          type: boolean
-        nonGeometricItemId:
-          type: string
-        partId:
-          type: string
-        partIdentity:
-          type: string
-        sourceElementMicroversionId:
-          type: string
-        thumbnailInfo:
-          $ref: '#/components/schemas/BTThumbnailInfo'
-        versionMetadataWorkspaceMicroversionId:
-          type: string
-        viewHref:
-          type: string
-        wvmId:
-          type: string
-        wvmType:
-          type: string
-    BTFeatureApiBase-1430:
-      type: object
-      properties:
-        btType:
-          type: string
-          description: Type of JSON object.
-        libraryVersion:
-          type: integer
-          description: FeatureScript version used in the Part Studio. Do not modify.
-          format: int32
-        microversionSkew:
-          type: boolean
-          description: On output, `true` indicates a microversion mismatch was encountered.
-        rejectMicroversionSkew:
-          type: boolean
-          description: If `true`, the call will refuse to make the addition if the current microversion for the document does not match the source microversion. If `false`, a best-effort attempt is made to re-interpret the feature addition in the context of a newer document microversion.
-        serializationVersion:
-          type: string
-          description: Version of the structure serialization rules used to encode the output. This enables incompatibility detection during software updates.
-        sourceMicroversion:
-          type: string
-          description: The state from which the result was extracted. Geometry ID interpretation is dependent on this document microversion.
-      discriminator:
-        propertyName: btType
-        mapping:
-          BTAssemblyFeatureListResponse-1174: '#/components/schemas/BTAssemblyFeatureListResponse-1174'
-          BTConfigurationResponse-2019: '#/components/schemas/BTConfigurationResponse-2019'
-          BTConfigurationUpdateCall-2933: '#/components/schemas/BTConfigurationUpdateCall-2933'
-          BTFeatureDefinitionCall-1406: '#/components/schemas/BTFeatureDefinitionCall-1406'
-          BTFeatureDefinitionResponse-1617: '#/components/schemas/BTFeatureDefinitionResponse-1617'
-          BTFeatureListResponse-2457: '#/components/schemas/BTFeatureListResponse-2457'
-          BTFeatureScriptEvalCall-2377: '#/components/schemas/BTFeatureScriptEvalCall-2377'
-          BTFeatureScriptEvalResponse-1859: '#/components/schemas/BTFeatureScriptEvalResponse-1859'
-          BTFeatureSpecsResponse-664: '#/components/schemas/BTFeatureSpecsResponse-664'
-          BTFeatureStudioContents-2239: '#/components/schemas/BTFeatureStudioContents-2239'
-          BTSetFeatureRollbackCall-1899: '#/components/schemas/BTSetFeatureRollbackCall-1899'
-          BTSetFeatureRollbackResponse-1042: '#/components/schemas/BTSetFeatureRollbackResponse-1042'
-          BTUpdateFeaturesCall-1748: '#/components/schemas/BTUpdateFeaturesCall-1748'
-          BTUpdateFeaturesResponse-1333: '#/components/schemas/BTUpdateFeaturesResponse-1333'
-    BTAssemblyMateConnectorInfo:
-      type: object
-      properties:
-        featureId:
-          type: string
-        mateConnectorCS:
-          $ref: '#/components/schemas/BTMateConnectorCSInfo'
-    BTAssemblyMateValuesInfo:
-      type: object
-      properties:
-        mateValues:
-          type: array
-          description: Describes the relative position of the first mate connector with respect to the second along the designated degrees of freedom (DOF) for mates in the specified assembly.
-          items:
-            $ref: '#/components/schemas/BTAssemblyMateValueInfo'
-      description: Get a list of mate values for all the mates of a specified assembly.
-    BTAssemblyMateValueInfo:
-      required:
-      - jsonType
-      type: object
-      properties:
-        featureId:
-          type: string
-          description: The ID of the assembly mate feature.
-        jsonType:
-          type: string
-        mateName:
-          type: string
-          description: The name of the assembly mate feature.
-        ownerOccurrencePath:
-          type: array
-          description: The path to the assembly owning this mate.
-          items:
-            type: string
-            description: The path to the assembly owning this mate.
-      description: Quantities for length are specified in meters, and quantities for angles are specified in radians.
-      discriminator:
-        propertyName: jsonType
-    BTGraphicsSectionViewStateData-4379:
-      type: object
-      properties:
-        btType:
-          type: string
-          description: Type of JSON object.
-        elementId:
-          type: string
-        isExcluding:
-          type: boolean
-        sectionPlanes:
-          type: array
-          items:
-            $ref: '#/components/schemas/BTGraphicsSectionPlaneData-1429'
-        selectionsToExclude:
-          type: array
-          items:
-            $ref: '#/components/schemas/BTUiSelection-1185'
-        selectionsToInclude:
-          type: array
-          items:
-            $ref: '#/components/schemas/BTUiSelection-1185'
-    BTAssemblyParametricInstanceChildInfo:
-      type: object
-      properties:
-        instanceIds:
-          type: array
-          description: Children instance ids.
-          items:
-            type: string
-            description: Children instance ids.
-        seedOccurrence:
-          type: string
-          description: Seed occurrence id. Unspecified if there is no seed.
-      description: Children instance description of parametric instance.
-    BTBAssemblyExportParams:
-      type: object
-      properties:
-        occurrencesToExport:
-          type: string
-          description: 'IDs of the occurrences to retrieve. Use comma-separated IDs for multiple instances (example: occurrencesToExport=JHK,JHD).'
-      description: Options for exporting assemblies.
-    BTAssemblyInstanceType:
-      type: string
-      enum:
-      - Assembly
-      - Feature
-      - Part
-      - Unknown
-    BTBillOfMaterialsElementInfo:
-      type: object
-      properties:
-        configuration:
-          type: string
-        headerIdToValue:
-          type: object
-          additionalProperties:
-            type: object
-        href:
-          type: string
-          description: URI to fetch complete information of the resource.
-          format: uri
-        id:
-          type: string
-          description: Id of the resource.
-        name:
-          type: string
-          description: Name of the resource.
-        selectedMetadataEnumValues:
-          type: object
-          additionalProperties:
-            $ref: '#/components/schemas/BTSelectedMetadataEnumValue'
-        viewRef:
-          type: string
-          description: URI to visualize the resource in a webclient if applicable.
-          format: uri
-    BTAssemblyPatternInfo:
-      type: object
-      properties:
-        id:
-          type: string
-          description: Id of the pattern.
-        name:
-          type: string
-          description: Name of the pattern.
-        seedToPatternInstances:
-          type: object
-          additionalProperties:
-            type: array
-            description: Mapping of seed to pattern instance ids.
-            items:
-              type: string
-              description: Mapping of seed to pattern instance ids.
-          description: Mapping of seed to pattern instance ids.
-        status:
-          $ref: '#/components/schemas/GBTNodeStatusType'
-        suppressed:
-          type: boolean
-          description: If pattern is suppressed.
-        type:
-          $ref: '#/components/schemas/GBTPatternType'
-      description: Pattern description.
-    GBTUiSelectionType:
-      type: string
-      enum:
-      - ENTITY
-      - FEATURE
-      - BODY
-      - OCCURRENCE
-      - USERCODE
-      - ROLLBACKBAR
-      - ELEMENT
-      - MATE
-      - MATE_CONNECTOR
-      - EDGE_POINT
-      - MESH_POINT
-      - TABLE_ITEM
-      - SKETCH_GROUP
-      - FOLDER
-      - NON_GEOMETRIC_ITEM
-      - TEMPORARY_GEOMETRY
-      - PROPERTY
-      - SIMULATION_LOAD
-      - PERSISTENT_QUERY_STRING
-      - GENERATIVE_DESIGN_ITEM
-      - ANNOTATION
-      - DIMENSION
-      - QUERY_VARIABLE
-      - UNKNOWN
-    BTModelElementParams:
-      type: object
-      properties:
-        name:
-          type: string
-    BTAssemblyTransformedInstancesDefinitionParams:
-      type: object
-      properties:
-        transformGroups:
-          type: array
-          items:
-            $ref: '#/components/schemas/TransformGroup'
-    GBTPreProcessParasolidOption:
-      type: string
-      description: Original geometry processing mode to improve results of translation to STEP.
-      enum:
-      - NO_PRE_PROCESSING
-      - USE_BODYSHOP_PRE_PROCESSING_ADVANCED
-      - USE_TRANSLATOR_PRE_PROCESSING
-      - USE_BODYSHOP_PRE_PROCESSING
-      - USE_BODYSHOP_PRE_PROCESSING_ADVANCED_WITH_SURFS_TO_BSURFS_CONVERTING
-      - UNKNOWN
-    BTMSuppressionState-1924:
-      type: object
-      properties:
-        btType:
-          type: string
-          description: Type of JSON object.
-      discriminator:
-        propertyName: btType
-        mapping:
-          BTMSuppressionStateConfigured-2598: '#/components/schemas/BTMSuppressionStateConfigured-2598'
-          BTMSuppressionStateExpression-1811: '#/components/schemas/BTMSuppressionStateExpression-1811'
-          BTMSuppressionStateParentSuppressed-5404: '#/components/schemas/BTMSuppressionStateParentSuppressed-5404'
-      allOf:
-      - $ref: '#/components/schemas/BTMNode-19'
-      - type: object
-        properties:
-          btType:
-            type: string
-          suppressionConfigured:
-            type: boolean
-    BTEditingLogic-2350:
-      type: object
-      properties:
-        btType:
-          type: string
-          description: Type of JSON object.
-        functionName:
-          type: string
-        wantsClickedButton:
-          type: boolean
-        wantsHiddenBodies:
-          type: boolean
-        wantsIsCreating:
-          type: boolean
-        wantsSpecifiedParameters:
-          type: boolean
-    BTAssemblyOccurrenceInfo:
-      type: object
-      properties:
-        fixed:
-          type: boolean
-        hidden:
-          type: boolean
-        mateStatuses:
-          type: object
-          additionalProperties:
-            $ref: '#/components/schemas/GBTNodeStatusType'
-        path:
-          type: array
-          items:
-            type: string
-        transform:
-          type: array
-          items:
-            type: number
-            format: double
-    BTMateConnectorCSInfo:
-      type: object
-      properties:
-        getxAxis:
-          type: array
-          items:
-            type: number
-            format: double
-        getyAxis:
-          type: array
-          items:
-            type: number
-            format: double
-        getzAxis:
-          type: array
-          items:
-            type: number
-            format: double
-        origin:
-          type: array
-          items:
-            type: number
-            format: double
-    BTBillOfMaterialsRowInfo:
-      type: object
-      properties:
-        headerIdToValue:
-          type: object
-          additionalProperties:
-            type: object
-        href:
-          type: string
-          description: URI to fetch complete information of the resource.
-          format: uri
-        id:
-          type: string
-          description: Id of the resource.
-        indentLevel:
-          type: integer
-          format: int32
-        itemSource:
-          $ref: '#/components/schemas/BTBillOfMaterialsItemSourceInfo'
-        name:
-          type: string
-          description: Name of the resource.
-        relatedOccurrences:
-          type: array
-          description: Occurrence IDs in the assembly that refer to the part described by this BOM row.
-          items:
-            type: string
-            description: Occurrence IDs in the assembly that refer to the part described by this BOM row.
-        rowId:
-          type: string
-        selectedMetadataEnumValues:
-          type: object
-          additionalProperties:
-            $ref: '#/components/schemas/BTSelectedMetadataEnumValue'
-        viewRef:
-          type: string
-          description: URI to visualize the resource in a webclient if applicable.
-          format: uri
-    BTDocumentElementInfo:
-      type: object
-      properties:
-        accelerationUnits:
-          type: string
-        angleUnits:
-          type: string
-        angularVelocityUnits:
-          type: string
-        applicationTarget:
-          $ref: '#/components/schemas/BTApplicationTargetInfo'
-        areaUnits:
-          type: string
-        dataType:
-          type: string
-        deleted:
-          type: boolean
-        densityUnits:
-          type: string
-        elementType:
-          $ref: '#/components/schemas/GBTElementType'
-        energyUnits:
-          type: string
-        filename:
-          type: string
-        forceUnits:
-          type: string
-        foreignDataId:
-          type: string
-        frequencyUnits:
-          type: string
-        id:
-          type: string
-        lengthUnits:
-          type: string
-        massUnits:
-          type: string
-        microversionId:
-          type: string
-        momentUnits:
-          type: string
-        name:
-          type: string
-        pressureUnits:
-          type: string
-        prettyType:
-          type: string
-        safeToShow:
-          type: boolean
-        specifiedUnit:
-          type: string
-        thumbnailInfo:
-          $ref: '#/components/schemas/BTThumbnailInfo'
-        thumbnails:
-          type: string
-          format: uri
-        timeUnits:
-          type: string
-        type:
-          type: string
-        unupdatable:
-          type: boolean
-        volumeUnits:
-          type: string
-        zip:
-          $ref: '#/components/schemas/BTZipFileInfo'
     BTUiSelection-1185:
       type: object
       properties:
@@ -4246,30 +4223,53 @@ components:
           type: string
         type:
           $ref: '#/components/schemas/GBTUiSelectionType'
-    BTOccurrence-74:
+    BTDisplayStateInfo:
+      type: object
+      properties:
+        id:
+          type: string
+          description: The ID of the view feature.
+        isOnshapeDefault:
+          type: boolean
+          description: '`True` if this display state is in all assemblies by default; `false` if the display state is user-created.'
+        name:
+          type: string
+          description: The name of the view feature.
+      description: Describes a display state.
+    BTMAssemblyFeature-887:
       type: object
       properties:
         btType:
           type: string
           description: Type of JSON object.
-        fullPathAsString:
-          type: string
-        headInstanceId:
-          type: string
-        internalOccurrence:
-          type: boolean
-        path:
-          type: array
-          items:
-            type: string
-        rootOccurrence:
-          type: boolean
-        tailInstanceId:
-          type: string
       discriminator:
         propertyName: btType
         mapping:
-          BTOccurrenceWithFullPartIds-1464: '#/components/schemas/BTOccurrenceWithFullPartIds-1464'
+          BTAssemblySimulation-2246: '#/components/schemas/BTAssemblySimulation-2246'
+          BTExplosion-2754: '#/components/schemas/BTExplosion-2754'
+          BTExplosionStepFeature-3008: '#/components/schemas/BTExplosionStepFeature-3008'
+          BTMAssemblyFeature1-2218: '#/components/schemas/BTMAssemblyFeature1-2218'
+          BTMAssemblyFeature2-1022: '#/components/schemas/BTMAssemblyFeature2-1022'
+          BTMAssemblyFeatureFolder-2543: '#/components/schemas/BTMAssemblyFeatureFolder-2543'
+          BTMAssemblyParametricInstanceFeature-5441: '#/components/schemas/BTMAssemblyParametricInstanceFeature-5441'
+          BTMGenerativeDesignFeature-3195: '#/components/schemas/BTMGenerativeDesignFeature-3195'
+          BTMGeometryMate-1260: '#/components/schemas/BTMGeometryMate-1260'
+          BTMMate-64: '#/components/schemas/BTMMate-64'
+          BTMMateConnector-66: '#/components/schemas/BTMMateConnector-66'
+          BTMMateGroup-65: '#/components/schemas/BTMMateGroup-65'
+          BTMMateRelation-1412: '#/components/schemas/BTMMateRelation-1412'
+          BTMNonGeometricItem-1864: '#/components/schemas/BTMNonGeometricItem-1864'
+          BTMSimulationFeature-5034: '#/components/schemas/BTMSimulationFeature-5034'
+          BTMWidthMate-1011: '#/components/schemas/BTMWidthMate-1011'
+      allOf:
+      - $ref: '#/components/schemas/BTMFeature-134'
+      - type: object
+        properties:
+          btType:
+            type: string
+          version:
+            type: integer
+            format: int32
   securitySchemes:
     OAuth2:
       type: oauth2

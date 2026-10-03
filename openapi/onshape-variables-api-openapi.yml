@@ -416,6 +416,72 @@ paths:
       x-BTVisibility: PRODUCTION
 components:
   schemas:
+    BTConfiguredValue:
+      type: object
+      properties:
+        configurationParameterId:
+          type: string
+          description: The id of the configuration input that drives this value.
+        configurationToValue:
+          type: object
+          additionalProperties:
+            type: string
+            description: Map from configuration option id to string value.
+          description: Map from configuration option id to string value.
+      description: A value that varies per option of a configuration input.
+    BTVariableInfo:
+      required:
+      - expression
+      - name
+      - type
+      - value
+      type: object
+      properties:
+        description:
+          type: string
+          description: Variable description
+        expression:
+          type: string
+          description: Variable expression
+        name:
+          type: string
+          description: Variable name
+        type:
+          $ref: '#/components/schemas/GBTVariableType'
+        value:
+          type: string
+          description: Variable formatted value
+      description: Variables in the VariableTable
+    BTThumbnailSizeInfo:
+      type: object
+      properties:
+        href:
+          type: string
+          format: uri
+        mediaType:
+          type: string
+        renderMode:
+          type: string
+        sheetName:
+          type: string
+        size:
+          type: string
+        uniqueId:
+          type: string
+        viewOrientation:
+          type: string
+    BTVariableTableInfo:
+      required:
+      - variables
+      type: object
+      properties:
+        variableStudioReference:
+          $ref: '#/components/schemas/BTVariableStudioReferenceInfo'
+        variables:
+          type: array
+          description: Variables in the VariableTable
+          items:
+            $ref: '#/components/schemas/BTVariableInfo'
     BTThumbnailInfo:
       type: object
       properties:
@@ -434,31 +500,13 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/BTThumbnailSizeInfo'
-    BTVariableTableInfo:
-      required:
-      - variables
+    BTZipFileInfo:
       type: object
       properties:
-        variableStudioReference:
-          $ref: '#/components/schemas/BTVariableStudioReferenceInfo'
-        variables:
+        files:
           type: array
-          description: Variables in the VariableTable
           items:
-            $ref: '#/components/schemas/BTVariableInfo'
-    BTConfiguredValue:
-      type: object
-      properties:
-        configurationParameterId:
-          type: string
-          description: The id of the configuration input that drives this value.
-        configurationToValue:
-          type: object
-          additionalProperties:
             type: string
-            description: Map from configuration option id to string value.
-          description: Map from configuration option id to string value.
-      description: A value that varies per option of a configuration input.
     BTApplicationTargetInfo:
       type: object
       properties:
@@ -472,14 +520,6 @@ components:
         tabIconHref:
           type: string
           format: uri
-    BTVariableStudioReferenceListInfo:
-      type: object
-      properties:
-        references:
-          type: array
-          description: List of variable studio references
-          items:
-            $ref: '#/components/schemas/BTVariableStudioReferenceInfo'
     BTVariableStudioReferenceInfo:
       required:
       - referenceElementId
@@ -512,52 +552,31 @@ components:
       x-BTVisibility-properties:
         nodeId: INTERNAL
         referenceId: INTERNAL
-    BTOptionallyConfiguredValue:
-      type: object
-      properties:
-        configuredValue:
-          $ref: '#/components/schemas/BTConfiguredValue'
-        value:
-          type: string
-          description: The string value, if not configured
-      description: Optional map of configuration parameter id to value
-    BTVariableInfo:
-      required:
-      - expression
-      - name
-      - type
-      - value
-      type: object
-      properties:
-        description:
-          type: string
-          description: Variable description
-        expression:
-          type: string
-          description: Variable expression
-        name:
-          type: string
-          description: Variable name
-        type:
-          $ref: '#/components/schemas/GBTVariableType'
-        value:
-          type: string
-          description: Variable formatted value
-      description: Variables in the VariableTable
-    GBTElementType:
+    GBTVariableType:
       type: string
+      description: Variable type name, from FeatureScript VariableType
       enum:
-      - PARTSTUDIO
-      - ASSEMBLY
-      - DRAWING
-      - FEATURESTUDIO
-      - BLOB
-      - APPLICATION
-      - TABLE
-      - BILLOFMATERIALS
-      - VARIABLESTUDIO
-      - PUBLICATIONITEM
+      - LENGTH
+      - ANGLE
+      - NUMBER
+      - ANY
       - UNKNOWN
+    BTVariableStudioReferenceListInfo:
+      type: object
+      properties:
+        references:
+          type: array
+          description: List of variable studio references
+          items:
+            $ref: '#/components/schemas/BTVariableStudioReferenceInfo'
+    BTVariableStudioScopeInfo:
+      required:
+      - isAutomaticallyInserted
+      type: object
+      properties:
+        isAutomaticallyInserted:
+          type: boolean
+          description: Whether variable studio is automatically inserted into part studios and assemblies in the workspace
     BTVariableParams:
       required:
       - name
@@ -581,6 +600,34 @@ components:
         type:
           type: string
           description: VariableType name, from FeatureScript VariableType
+    GBTElementType:
+      type: string
+      enum:
+      - PARTSTUDIO
+      - ASSEMBLY
+      - DRAWING
+      - FEATURESTUDIO
+      - BLOB
+      - APPLICATION
+      - TABLE
+      - BILLOFMATERIALS
+      - VARIABLESTUDIO
+      - PUBLICATIONITEM
+      - UNKNOWN
+    BTOptionallyConfiguredValue:
+      type: object
+      properties:
+        configuredValue:
+          $ref: '#/components/schemas/BTConfiguredValue'
+        value:
+          type: string
+          description: The string value, if not configured
+      description: Optional map of configuration parameter id to value
+    BTModelElementParams:
+      type: object
+      properties:
+        name:
+          type: string
     BTDocumentElementInfo:
       type: object
       properties:
@@ -647,53 +694,6 @@ components:
           type: string
         zip:
           $ref: '#/components/schemas/BTZipFileInfo'
-    BTThumbnailSizeInfo:
-      type: object
-      properties:
-        href:
-          type: string
-          format: uri
-        mediaType:
-          type: string
-        renderMode:
-          type: string
-        sheetName:
-          type: string
-        size:
-          type: string
-        uniqueId:
-          type: string
-        viewOrientation:
-          type: string
-    BTVariableStudioScopeInfo:
-      required:
-      - isAutomaticallyInserted
-      type: object
-      properties:
-        isAutomaticallyInserted:
-          type: boolean
-          description: Whether variable studio is automatically inserted into part studios and assemblies in the workspace
-    GBTVariableType:
-      type: string
-      description: Variable type name, from FeatureScript VariableType
-      enum:
-      - LENGTH
-      - ANGLE
-      - NUMBER
-      - ANY
-      - UNKNOWN
-    BTZipFileInfo:
-      type: object
-      properties:
-        files:
-          type: array
-          items:
-            type: string
-    BTModelElementParams:
-      type: object
-      properties:
-        name:
-          type: string
   securitySchemes:
     OAuth2:
       type: oauth2

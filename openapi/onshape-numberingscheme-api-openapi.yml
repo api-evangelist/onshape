@@ -86,6 +86,48 @@ paths:
       x-BTVisibility: PRODUCTION
 components:
   schemas:
+    BTNextPartNumber:
+      type: object
+      properties:
+        categories:
+          type: array
+          items:
+            $ref: '#/components/schemas/Category'
+        configuration:
+          type: string
+        documentId:
+          type: string
+        elementId:
+          type: string
+        elementType:
+          type: integer
+          format: int32
+        errorMessage:
+          type: string
+        id:
+          type: string
+        mimeType:
+          type: string
+        partId:
+          type: string
+        partNumber:
+          type: string
+        prefix:
+          type: string
+        resourceType:
+          type: integer
+          format: int32
+        versionId:
+          type: string
+        workspaceId:
+          type: string
+    BTCategoryParam:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
     BTNextPartNumberParam:
       type: object
       properties:
@@ -126,12 +168,14 @@ components:
           type: string
           description: Workspace ID
       description: Parameters for creating a part number.
-    BTCategoryParam:
+    Category:
       type: object
       properties:
         id:
           type: string
         name:
+          type: string
+        plmId:
           type: string
     BTNextPartNumbersParam:
       type: object
@@ -146,50 +190,6 @@ components:
           items:
             type: string
             description: Comma-separated list of part numbers to skip creating new part numbers for.
-    BTNextPartNumber:
-      type: object
-      properties:
-        categories:
-          type: array
-          items:
-            $ref: '#/components/schemas/Category'
-        configuration:
-          type: string
-        documentId:
-          type: string
-        elementId:
-          type: string
-        elementType:
-          type: integer
-          format: int32
-        errorMessage:
-          type: string
-        id:
-          type: string
-        mimeType:
-          type: string
-        partId:
-          type: string
-        partNumber:
-          type: string
-        prefix:
-          type: string
-        resourceType:
-          type: integer
-          format: int32
-        versionId:
-          type: string
-        workspaceId:
-          type: string
-    Category:
-      type: object
-      properties:
-        id:
-          type: string
-        name:
-          type: string
-        plmId:
-          type: string
   securitySchemes:
     OAuth2:
       type: oauth2

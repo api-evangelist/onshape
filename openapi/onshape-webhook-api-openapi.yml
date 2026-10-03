@@ -556,61 +556,243 @@ paths:
       x-BTVisibility: PRODUCTION
 components:
   schemas:
-    BTWebhookParams:
+    BTCompanySummaryInfo:
       type: object
       properties:
-        clientId:
-          type: string
-        companyId:
-          type: string
-          description: Company admins can register webhooks to listen to all company events.
-        data:
-          type: string
+        admin:
+          type: boolean
         description:
           type: string
-          description: Webhook description.
-        documentId:
+        domainPrefix:
           type: string
-        elementId:
+        enterpriseBaseUrl:
           type: string
-        events:
-          type: array
-          description: List of events for which webhook callback is invoked.
-          items:
-            type: string
-            description: List of events for which webhook callback is invoked.
-        externalSessionId:
+        enterpriseSubtype:
+          type: integer
+          format: int32
+        href:
           type: string
-          description: Applications can pass this parameter as X-Session-ID with every REST call to distinguish webhooks triggered by self.
-        filter:
-          type: string
-        folderId:
-          type: string
+          description: URI to fetch complete information of the resource.
+          format: uri
         id:
           type: string
-        isTransient:
-          type: boolean
-          description: Transient webhooks are automatically cleaned up after a period of inactivity.
-          default: true
-        linkDocumentId:
+          description: Id of the resource.
+        image:
           type: string
         name:
           type: string
-          description: Webhook name.
-        options:
-          $ref: '#/components/schemas/BTWebhookOptions'
-        partId:
+          description: Name of the resource.
+        noPublicDocuments:
+          type: boolean
+        ownerId:
           type: string
-        projectId:
+        secondaryDomainPrefixes:
+          uniqueItems: true
+          type: array
+          items:
+            type: string
+        state:
+          type: integer
+          format: int32
+        type:
+          type: integer
+          format: int32
+        viewRef:
           type: string
-        url:
+          description: URI to visualize the resource in a webclient if applicable.
+          format: uri
+    BTWebhookOptions:
+      type: object
+      properties:
+        collapseEvents:
+          type: boolean
+    BTApplicationSettingsType:
+      type: string
+      enum:
+      - USER
+      - COMPANY
+      - TEAM
+    BTRevisionMessageBody:
+      type: object
+      allOf:
+      - $ref: '#/components/schemas/BTReleaseItemMessageBody'
+      - type: object
+        properties:
+          revisionId:
+            type: string
+    GlobalPermissionInfo:
+      type: object
+      properties:
+        accessReports:
+          type: boolean
+        adminEnterprise:
+          type: boolean
+        allowAppStoreAccess:
+          type: boolean
+        allowPublicDocumentsAccess:
+          type: boolean
+        approveReleases:
+          type: boolean
+        branchLockPermissions:
+          type: boolean
+        createDocumentsInRoot:
+          type: boolean
+        createProject:
+          type: boolean
+        createReleases:
+          type: boolean
+        createTasks:
+          type: boolean
+        deletePermanently:
+          type: boolean
+        enableLabs:
+          type: boolean
+        exportFiles:
+          type: boolean
+        importFiles:
+          type: boolean
+        manageGuestUsers:
+          type: boolean
+        manageNonGeometricItems:
+          type: boolean
+        manageRbac:
+          type: boolean
+        manageStandardContentMetadata:
+          type: boolean
+        manageUsers:
+          type: boolean
+        manageWorkflows:
+          type: boolean
+        shareForAnonymousAccess:
+          type: boolean
+        transferDocumentsFromEnterprise:
+          type: boolean
+        useRevisionTools:
+          type: boolean
+    BTListResponseBTWebhookInfo:
+      type: object
+      properties:
+        href:
           type: string
-        userId:
+          description: URI for current page of resources.
+          format: uri
+        items:
+          type: array
+          description: Array of items in the current page.
+          items:
+            $ref: '#/components/schemas/BTWebhookInfo'
+        next:
           type: string
-        versionId:
+          description: URI for next page of the resources if more are available.
+          format: uri
+        previous:
           type: string
-        workspaceId:
+          description: URI for previous page of the resources.
+          format: uri
+      description: A list of resources that typically supports paging.
+    JobType:
+      type: string
+      description: All types of PLM background jobs
+      enum:
+      - SYNC_ITEM
+      - SYNC_BOM
+      - SYNC_RELEASE_CANDIDATE
+    BTWorkflowMessageBody:
+      type: object
+      properties:
+        appElementSessionId:
           type: string
+        data:
+          type: string
+        event:
+          type: string
+        messageId:
+          type: string
+        objectId:
+          type: string
+        objectType:
+          type: string
+        timestamp:
+          type: string
+          format: date-time
+        transitionName:
+          type: string
+        webhookId:
+          type: string
+        workflowId:
+          type: string
+    BTUserDetailSummaryInfo:
+      type: object
+      discriminator:
+        propertyName: jsonType
+        mapping:
+          user-detail-summary: '#/components/schemas/BTUserDetailSummaryInfo'
+          user-summary: '#/components/schemas/BTUserSummaryInfo'
+      allOf:
+      - $ref: '#/components/schemas/BTUserBasicSummaryInfo'
+      - type: object
+        properties:
+          documentationName:
+            type: string
+          email:
+            type: string
+          firstName:
+            type: string
+          lastName:
+            type: string
+    BTUserAppMessageBody:
+      type: object
+      properties:
+        appElementSessionId:
+          type: string
+        clientId:
+          type: string
+        data:
+          type: string
+        event:
+          type: string
+        identityId:
+          type: string
+        messageId:
+          type: string
+        settingType:
+          $ref: '#/components/schemas/BTApplicationSettingsType'
+        timestamp:
+          type: string
+          format: date-time
+        webhookId:
+          type: string
+    BTPLMMessageBody:
+      type: object
+      properties:
+        appElementSessionId:
+          type: string
+        data:
+          type: string
+        documentId:
+          type: string
+          description: Background PLM job's document ID.
+        event:
+          type: string
+        jobId:
+          type: string
+          description: ID of the background PLM job that was created.
+        jobType:
+          $ref: '#/components/schemas/JobType'
+        messageId:
+          type: string
+        settingsDisabled:
+          type: boolean
+          description: Whether PLM integration was disabled.
+        settingsModified:
+          type: boolean
+          description: Whether PLM integration settings parameters were modified.
+        timestamp:
+          type: string
+          format: date-time
+        webhookId:
+          type: string
+      description: Webhook notification payload for all PLM related notifications.
     BTWebhookInfo:
       type: object
       properties:
@@ -669,6 +851,159 @@ components:
           type: string
           description: URI to visualize the resource in a webclient if applicable.
           format: uri
+    BTReleaseItemMessageBody:
+      type: object
+      allOf:
+      - $ref: '#/components/schemas/BTDocumentMessageBody'
+      - type: object
+        properties:
+          elementType:
+            type: integer
+            format: int32
+          isFromInitialState:
+            type: boolean
+          isToTerminalState:
+            type: boolean
+          releaseId:
+            type: string
+          status:
+            type: string
+          transitionName:
+            type: string
+    BTWebhookLifecycleMessageBody:
+      type: object
+      properties:
+        appElementSessionId:
+          type: string
+        data:
+          type: string
+        event:
+          type: string
+        messageId:
+          type: string
+        timestamp:
+          type: string
+          format: date-time
+        webhookId:
+          type: string
+    BTBaseInfo:
+      type: object
+      properties:
+        href:
+          type: string
+          description: URI to fetch complete information of the resource.
+          format: uri
+        id:
+          type: string
+          description: Id of the resource.
+        name:
+          type: string
+          description: Name of the resource.
+        viewRef:
+          type: string
+          description: URI to visualize the resource in a webclient if applicable.
+          format: uri
+    BTUserBasicSummaryInfo:
+      required:
+      - jsonType
+      type: object
+      properties:
+        jsonType:
+          type: string
+      discriminator:
+        propertyName: jsonType
+        mapping:
+          user-summary: '#/components/schemas/BTUserBasicSummaryInfo'
+          user-detail-summary: '#/components/schemas/BTUserDetailSummaryInfo'
+      allOf:
+      - $ref: '#/components/schemas/BTBaseInfo'
+      - type: object
+        properties:
+          href:
+            type: string
+            description: URI to fetch complete information of the resource.
+            format: uri
+          id:
+            type: string
+            description: Id of the resource.
+          image:
+            type: string
+          isOnshapeSupport:
+            type: boolean
+          name:
+            type: string
+            description: Name of the resource.
+          state:
+            type: integer
+            format: int32
+          viewRef:
+            type: string
+            description: URI to visualize the resource in a webclient if applicable.
+            format: uri
+    BTWorkspaceMessageBody:
+      type: object
+      allOf:
+      - $ref: '#/components/schemas/BTDocumentMessageBody'
+      - type: object
+        properties:
+          documentMicroversionId:
+            type: string
+            description: The resultant document microverion if applicable created due to workspace modification.
+    BTWebhookParams:
+      type: object
+      properties:
+        clientId:
+          type: string
+        companyId:
+          type: string
+          description: Company admins can register webhooks to listen to all company events.
+        data:
+          type: string
+        description:
+          type: string
+          description: Webhook description.
+        documentId:
+          type: string
+        elementId:
+          type: string
+        events:
+          type: array
+          description: List of events for which webhook callback is invoked.
+          items:
+            type: string
+            description: List of events for which webhook callback is invoked.
+        externalSessionId:
+          type: string
+          description: Applications can pass this parameter as X-Session-ID with every REST call to distinguish webhooks triggered by self.
+        filter:
+          type: string
+        folderId:
+          type: string
+        id:
+          type: string
+        isTransient:
+          type: boolean
+          description: Transient webhooks are automatically cleaned up after a period of inactivity.
+          default: true
+        linkDocumentId:
+          type: string
+        name:
+          type: string
+          description: Webhook name.
+        options:
+          $ref: '#/components/schemas/BTWebhookOptions'
+        partId:
+          type: string
+        projectId:
+          type: string
+        url:
+          type: string
+        userId:
+          type: string
+        versionId:
+          type: string
+        workspaceId:
+          type: string
     BTDocumentMessageBody:
       type: object
       properties:
@@ -728,225 +1063,6 @@ components:
           type: string
         workspaceId:
           type: string
-    BTUserBasicSummaryInfo:
-      required:
-      - jsonType
-      type: object
-      properties:
-        jsonType:
-          type: string
-      discriminator:
-        propertyName: jsonType
-        mapping:
-          user-summary: '#/components/schemas/BTUserBasicSummaryInfo'
-          user-detail-summary: '#/components/schemas/BTUserDetailSummaryInfo'
-      allOf:
-      - $ref: '#/components/schemas/BTBaseInfo'
-      - type: object
-        properties:
-          href:
-            type: string
-            description: URI to fetch complete information of the resource.
-            format: uri
-          id:
-            type: string
-            description: Id of the resource.
-          image:
-            type: string
-          isOnshapeSupport:
-            type: boolean
-          name:
-            type: string
-            description: Name of the resource.
-          state:
-            type: integer
-            format: int32
-          viewRef:
-            type: string
-            description: URI to visualize the resource in a webclient if applicable.
-            format: uri
-    BTWorkspaceMessageBody:
-      type: object
-      allOf:
-      - $ref: '#/components/schemas/BTDocumentMessageBody'
-      - type: object
-        properties:
-          documentMicroversionId:
-            type: string
-            description: The resultant document microverion if applicable created due to workspace modification.
-    JobType:
-      type: string
-      description: All types of PLM background jobs
-      enum:
-      - SYNC_ITEM
-      - SYNC_BOM
-      - SYNC_RELEASE_CANDIDATE
-    BTListResponseBTWebhookInfo:
-      type: object
-      properties:
-        href:
-          type: string
-          description: URI for current page of resources.
-          format: uri
-        items:
-          type: array
-          description: Array of items in the current page.
-          items:
-            $ref: '#/components/schemas/BTWebhookInfo'
-        next:
-          type: string
-          description: URI for next page of the resources if more are available.
-          format: uri
-        previous:
-          type: string
-          description: URI for previous page of the resources.
-          format: uri
-      description: A list of resources that typically supports paging.
-    BTUserAppMessageBody:
-      type: object
-      properties:
-        appElementSessionId:
-          type: string
-        clientId:
-          type: string
-        data:
-          type: string
-        event:
-          type: string
-        identityId:
-          type: string
-        messageId:
-          type: string
-        settingType:
-          $ref: '#/components/schemas/BTApplicationSettingsType'
-        timestamp:
-          type: string
-          format: date-time
-        webhookId:
-          type: string
-    BTCompanySummaryInfo:
-      type: object
-      properties:
-        admin:
-          type: boolean
-        description:
-          type: string
-        domainPrefix:
-          type: string
-        enterpriseBaseUrl:
-          type: string
-        enterpriseSubtype:
-          type: integer
-          format: int32
-        href:
-          type: string
-          description: URI to fetch complete information of the resource.
-          format: uri
-        id:
-          type: string
-          description: Id of the resource.
-        image:
-          type: string
-        name:
-          type: string
-          description: Name of the resource.
-        noPublicDocuments:
-          type: boolean
-        ownerId:
-          type: string
-        secondaryDomainPrefixes:
-          uniqueItems: true
-          type: array
-          items:
-            type: string
-        state:
-          type: integer
-          format: int32
-        type:
-          type: integer
-          format: int32
-        viewRef:
-          type: string
-          description: URI to visualize the resource in a webclient if applicable.
-          format: uri
-    BTWebhookOptions:
-      type: object
-      properties:
-        collapseEvents:
-          type: boolean
-    BTRevisionMessageBody:
-      type: object
-      allOf:
-      - $ref: '#/components/schemas/BTReleaseItemMessageBody'
-      - type: object
-        properties:
-          revisionId:
-            type: string
-    BTApplicationSettingsType:
-      type: string
-      enum:
-      - USER
-      - COMPANY
-      - TEAM
-    BTUserDetailSummaryInfo:
-      type: object
-      discriminator:
-        propertyName: jsonType
-        mapping:
-          user-detail-summary: '#/components/schemas/BTUserDetailSummaryInfo'
-          user-summary: '#/components/schemas/BTUserSummaryInfo'
-      allOf:
-      - $ref: '#/components/schemas/BTUserBasicSummaryInfo'
-      - type: object
-        properties:
-          documentationName:
-            type: string
-          email:
-            type: string
-          firstName:
-            type: string
-          lastName:
-            type: string
-    BTWebhookLifecycleMessageBody:
-      type: object
-      properties:
-        appElementSessionId:
-          type: string
-        data:
-          type: string
-        event:
-          type: string
-        messageId:
-          type: string
-        timestamp:
-          type: string
-          format: date-time
-        webhookId:
-          type: string
-    BTWorkflowMessageBody:
-      type: object
-      properties:
-        appElementSessionId:
-          type: string
-        data:
-          type: string
-        event:
-          type: string
-        messageId:
-          type: string
-        objectId:
-          type: string
-        objectType:
-          type: string
-        timestamp:
-          type: string
-          format: date-time
-        transitionName:
-          type: string
-        webhookId:
-          type: string
-        workflowId:
-          type: string
     BTUserSummaryInfo:
       type: object
       discriminator:
@@ -989,122 +1105,6 @@ components:
           source:
             type: integer
             format: int32
-    GlobalPermissionInfo:
-      type: object
-      properties:
-        accessReports:
-          type: boolean
-        adminEnterprise:
-          type: boolean
-        allowAppStoreAccess:
-          type: boolean
-        allowPublicDocumentsAccess:
-          type: boolean
-        approveReleases:
-          type: boolean
-        branchLockPermissions:
-          type: boolean
-        createDocumentsInRoot:
-          type: boolean
-        createProject:
-          type: boolean
-        createReleases:
-          type: boolean
-        createTasks:
-          type: boolean
-        deletePermanently:
-          type: boolean
-        enableLabs:
-          type: boolean
-        exportFiles:
-          type: boolean
-        importFiles:
-          type: boolean
-        manageGuestUsers:
-          type: boolean
-        manageNonGeometricItems:
-          type: boolean
-        manageRbac:
-          type: boolean
-        manageStandardContentMetadata:
-          type: boolean
-        manageUsers:
-          type: boolean
-        manageWorkflows:
-          type: boolean
-        shareForAnonymousAccess:
-          type: boolean
-        transferDocumentsFromEnterprise:
-          type: boolean
-        useRevisionTools:
-          type: boolean
-    BTReleaseItemMessageBody:
-      type: object
-      allOf:
-      - $ref: '#/components/schemas/BTDocumentMessageBody'
-      - type: object
-        properties:
-          elementType:
-            type: integer
-            format: int32
-          isFromInitialState:
-            type: boolean
-          isToTerminalState:
-            type: boolean
-          releaseId:
-            type: string
-          status:
-            type: string
-          transitionName:
-            type: string
-    BTPLMMessageBody:
-      type: object
-      properties:
-        appElementSessionId:
-          type: string
-        data:
-          type: string
-        documentId:
-          type: string
-          description: Background PLM job's document ID.
-        event:
-          type: string
-        jobId:
-          type: string
-          description: ID of the background PLM job that was created.
-        jobType:
-          $ref: '#/components/schemas/JobType'
-        messageId:
-          type: string
-        settingsDisabled:
-          type: boolean
-          description: Whether PLM integration was disabled.
-        settingsModified:
-          type: boolean
-          description: Whether PLM integration settings parameters were modified.
-        timestamp:
-          type: string
-          format: date-time
-        webhookId:
-          type: string
-      description: Webhook notification payload for all PLM related notifications.
-    BTBaseInfo:
-      type: object
-      properties:
-        href:
-          type: string
-          description: URI to fetch complete information of the resource.
-          format: uri
-        id:
-          type: string
-          description: Id of the resource.
-        name:
-          type: string
-          description: Name of the resource.
-        viewRef:
-          type: string
-          description: URI to visualize the resource in a webclient if applicable.
-          format: uri
   securitySchemes:
     OAuth2:
       type: oauth2

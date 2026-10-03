@@ -59,15 +59,6 @@ paths:
       x-BTVisibility: PRODUCTION
 components:
   schemas:
-    Versions:
-      type: object
-      properties:
-        availableVersions:
-          type: array
-          items:
-            $ref: '#/components/schemas/BTApiVersion'
-        specifiedVersion:
-          $ref: '#/components/schemas/BTApiVersion'
     BTApiVersion:
       type: string
       enum:
@@ -88,6 +79,15 @@ components:
       - V14_FIX_REFERENCE_TYPE
       - V15_ADD_SKETCH_CHECK
       - V16_ASSEMBLY_CONFIGURE_INSTANCE_SUPPRESSION
+    Versions:
+      type: object
+      properties:
+        availableVersions:
+          type: array
+          items:
+            $ref: '#/components/schemas/BTApiVersion'
+        specifiedVersion:
+          $ref: '#/components/schemas/BTApiVersion'
   securitySchemes:
     OAuth2:
       type: oauth2

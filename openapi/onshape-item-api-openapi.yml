@@ -238,19 +238,6 @@ paths:
       x-BTVisibility: PRODUCTION
 components:
   schemas:
-    BTItemParams:
-      type: object
-      properties:
-        companyId:
-          type: string
-          description: ID of the company, classroom, or enterprise that owns this item.
-        name:
-          type: string
-          description: Item name.
-        publishState:
-          type: integer
-          description: '`0: PENDING | 1: ACTIVE | 2: INACTIVE`'
-          format: int32
     BTListResponseBTItemInfo:
       type: object
       properties:
@@ -303,6 +290,19 @@ components:
           description: URI to visualize the resource in a webclient if applicable.
           format: uri
       description: Information for non-geometric items.
+    BTItemParams:
+      type: object
+      properties:
+        companyId:
+          type: string
+          description: ID of the company, classroom, or enterprise that owns this item.
+        name:
+          type: string
+          description: Item name.
+        publishState:
+          type: integer
+          description: '`0: PENDING | 1: ACTIVE | 2: INACTIVE`'
+          format: int32
   securitySchemes:
     OAuth2:
       type: oauth2

@@ -369,13 +369,42 @@ paths:
       x-BTVisibility: PRODUCTION
 components:
   schemas:
-    BTAppElementErrorCode:
-      type: string
-      enum:
-      - OK
-      - TRANSACTION_CONFLICT
-      - NOT_FOUND
-      - INCONSISTENT_CHANGES
+    BTAppElementBasicInfo:
+      type: object
+      properties:
+        changeId:
+          type: string
+        errorCode:
+          type: integer
+          description: '`0: OK (healthy) | 1: INFO | 2: WARNING | 3: ERROR (dangling or view generation call failed) | 4: UNKNOWN`'
+          format: int32
+        errorDescription:
+          type: string
+          description: A human-readable value for the error that occurred, if one occurred.
+        errorValue:
+          $ref: '#/components/schemas/BTAppElementErrorCode'
+        parentChangeId:
+          type: string
+    BTAppElementParamsArrayBTCopyViewAssociativeDataParams:
+      type: object
+      properties:
+        description:
+          type: string
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/BTCopyViewAssociativeDataParams'
+        parentChangeId:
+          type: string
+        transactionId:
+          type: string
+    BTNameValuePair:
+      type: object
+      properties:
+        name:
+          type: string
+        value:
+          type: string
     BTAssociativeDataInfo:
       type: object
       properties:
@@ -403,25 +432,24 @@ components:
           $ref: '#/components/schemas/GBTAppElementAssociativeDataType'
         versionId:
           type: string
-    BTAppElementParamsArrayBTCopyViewAssociativeDataParams:
+    BTCopyViewAssociativeDataParams:
       type: object
       properties:
-        description:
-          type: string
-        items:
+        associativeDataIds:
           type: array
           items:
-            $ref: '#/components/schemas/BTCopyViewAssociativeDataParams'
-        parentChangeId:
+            type: string
+        destinationViewId:
           type: string
-        transactionId:
+        sourceDocumentId:
           type: string
-    BTNameValuePair:
-      type: object
-      properties:
-        name:
+        sourceElementId:
           type: string
-        value:
+        sourceViewId:
+          type: string
+        sourceWvm:
+          type: string
+        sourceWvmId:
           type: string
     BTAppAssociativeDataArrayInfo:
       type: object
@@ -451,41 +479,13 @@ components:
       - MODEL_DEFINITION_FEATURE
       - MODEL_DEFINITION_ENTITY
       - UNKNOWN
-    BTAppElementBasicInfo:
-      type: object
-      properties:
-        changeId:
-          type: string
-        errorCode:
-          type: integer
-          description: '`0: OK (healthy) | 1: INFO | 2: WARNING | 3: ERROR (dangling or view generation call failed) | 4: UNKNOWN`'
-          format: int32
-        errorDescription:
-          type: string
-          description: A human-readable value for the error that occurred, if one occurred.
-        errorValue:
-          $ref: '#/components/schemas/BTAppElementErrorCode'
-        parentChangeId:
-          type: string
-    BTCopyViewAssociativeDataParams:
-      type: object
-      properties:
-        associativeDataIds:
-          type: array
-          items:
-            type: string
-        destinationViewId:
-          type: string
-        sourceDocumentId:
-          type: string
-        sourceElementId:
-          type: string
-        sourceViewId:
-          type: string
-        sourceWvm:
-          type: string
-        sourceWvmId:
-          type: string
+    BTAppElementErrorCode:
+      type: string
+      enum:
+      - OK
+      - TRANSACTION_CONFLICT
+      - NOT_FOUND
+      - INCONSISTENT_CHANGES
   securitySchemes:
     OAuth2:
       type: oauth2

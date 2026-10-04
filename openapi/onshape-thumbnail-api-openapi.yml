@@ -625,41 +625,6 @@ paths:
       x-BTVisibility: PRODUCTION
 components:
   schemas:
-    BTThumbnailInfo:
-      type: object
-      properties:
-        href:
-          type: string
-          format: uri
-        id:
-          type: string
-        secondarySizes:
-          type: array
-          items:
-            type: array
-            items:
-              $ref: '#/components/schemas/BTThumbnailSizeInfo'
-        sizes:
-          type: array
-          items:
-            $ref: '#/components/schemas/BTThumbnailSizeInfo'
-    BTApplicationElementThumbnailParams:
-      type: object
-      properties:
-        base64EncodedImage:
-          type: string
-        description:
-          type: string
-        imageHeight:
-          type: integer
-          format: int32
-        imageWidth:
-          type: integer
-          format: int32
-        isPrimary:
-          type: boolean
-        uniqueId:
-          type: string
     BTThumbnailSizeInfo:
       type: object
       properties:
@@ -678,6 +643,41 @@ components:
           type: string
         viewOrientation:
           type: string
+    BTApplicationElementThumbnailParams:
+      type: object
+      properties:
+        base64EncodedImage:
+          type: string
+        description:
+          type: string
+        imageHeight:
+          type: integer
+          format: int32
+        imageWidth:
+          type: integer
+          format: int32
+        isPrimary:
+          type: boolean
+        uniqueId:
+          type: string
+    BTThumbnailInfo:
+      type: object
+      properties:
+        href:
+          type: string
+          format: uri
+        id:
+          type: string
+        secondarySizes:
+          type: array
+          items:
+            type: array
+            items:
+              $ref: '#/components/schemas/BTThumbnailSizeInfo'
+        sizes:
+          type: array
+          items:
+            $ref: '#/components/schemas/BTThumbnailSizeInfo'
     BTApplicationElementThumbnailParamsArray:
       type: object
       properties:

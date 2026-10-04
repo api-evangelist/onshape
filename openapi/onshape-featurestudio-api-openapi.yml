@@ -209,23 +209,52 @@ paths:
       x-BTVisibility: PRODUCTION
 components:
   schemas:
-    BTThumbnailSizeInfo:
+    BTLocationInfo-226:
       type: object
       properties:
-        href:
+        btType:
           type: string
-          format: uri
-        mediaType:
+          description: Type of JSON object.
+        character:
+          type: integer
+          format: int32
+        column:
+          type: integer
+          format: int32
+        document:
           type: string
-        renderMode:
+        elementMicroversion:
           type: string
-        sheetName:
+        endCharacter:
+          type: integer
+          format: int32
+        endColumn:
+          type: integer
+          format: int32
+        endLine:
+          type: integer
+          format: int32
+        fromNode:
+          $ref: '#/components/schemas/BTPNode-7'
+        fromTemplate:
+          $ref: '#/components/schemas/BTLocationInfo-226'
+        languageVersion:
+          type: integer
+          format: int32
+        line:
+          type: integer
+          format: int32
+        moduleIds:
+          $ref: '#/components/schemas/BTDocumentVersionElementIds-1897'
+        nodeId:
           type: string
-        size:
+        parseNodeId:
           type: string
-        uniqueId:
+        parseNodeIdRaw:
+          $ref: '#/components/schemas/BTObjectId'
+        topLevel:
           type: string
-        viewOrientation:
+        version:
           type: string
     BTZipFileInfo:
       type: object
@@ -234,112 +263,85 @@ components:
           type: array
           items:
             type: string
-    BTApplicationTargetInfo:
+    BTParameterGroupSpec-3469:
       type: object
       properties:
-        baseHref:
-          type: string
-          format: uri
-        clientId:
-          type: string
-        supportsCollaboration:
-          type: boolean
-        tabIconHref:
-          type: string
-          format: uri
-    GBTElementType:
-      type: string
-      enum:
-      - PARTSTUDIO
-      - ASSEMBLY
-      - DRAWING
-      - FEATURESTUDIO
-      - BLOB
-      - APPLICATION
-      - TABLE
-      - BILLOFMATERIALS
-      - VARIABLESTUDIO
-      - PUBLICATIONITEM
-      - UNKNOWN
-    GBTQuantityType:
-      type: string
-      enum:
-      - UNKNOWN
-      - INTEGER
-      - REAL
-      - LENGTH
-      - ANGLE
-      - MASS
-      - TIME
-      - TEMPERATURE
-      - CURRENT
-      - ANYTHING
-      - ANYTHING_WITH_UNITS
-      - FORCE
-      - PRESSURE
-      - MOMENT
-      - ACCELERATION
-      - ANGULAR_VELOCITY
-      - ENERGY
-      - AREA
-      - VOLUME
-      - BOOLEAN
-      - STRING
-      - DENSITY
-      - FREQUENCY
-    BTDocumentVersionElementIds-1897:
-      type: object
-      properties:
+        additionalLocalizedStrings:
+          type: integer
+          format: int32
+          writeOnly: true
         btType:
           type: string
           description: Type of JSON object.
-        documentId:
+        collapsedByDefault:
+          type: boolean
+        drivingParameterId:
           type: string
-        elementId:
+        groupId:
           type: string
-        versionId:
+        groupName:
           type: string
-    BTPNode-7:
+        groupOrParameterIds:
+          type: array
+          items:
+            type: string
+        localizableName:
+          type: string
+        localizedName:
+          type: string
+          writeOnly: true
+        stringsToLocalize:
+          type: array
+          items:
+            type: string
+    BTModelElementParams:
       type: object
       properties:
-        atomic:
-          type: boolean
-        btType:
+        name:
           type: string
-          description: Type of JSON object.
-        documentationType:
-          $ref: '#/components/schemas/GBTPDefinitionType'
-        endSourceLocation:
-          type: integer
-          format: int32
-        nodeId:
-          type: string
-        shortDescriptor:
-          type: string
-        spaceAfter:
-          $ref: '#/components/schemas/BTPSpace-10'
-        spaceBefore:
-          $ref: '#/components/schemas/BTPSpace-10'
-        spaceDefault:
-          type: boolean
-        startSourceLocation:
-          type: integer
-          format: int32
-      discriminator:
-        propertyName: btType
-        mapping:
-          BTPAnnotation-231: '#/components/schemas/BTPAnnotation-231'
-          BTPArgumentDeclaration-232: '#/components/schemas/BTPArgumentDeclaration-232'
-          BTPBuiltinIdentifier-233: '#/components/schemas/BTPBuiltinIdentifier-233'
-          BTPLValue-249: '#/components/schemas/BTPLValue-249'
-          BTPLiteralMapEntry-257: '#/components/schemas/BTPLiteralMapEntry-257'
-          BTPModule-234: '#/components/schemas/BTPModule-234'
-          BTPModuleId-235: '#/components/schemas/BTPModuleId-235'
-          BTPName-261: '#/components/schemas/BTPName-261'
-          BTPPropertyAccessor-23: '#/components/schemas/BTPPropertyAccessor-23'
-          BTPStatement-269: '#/components/schemas/BTPStatement-269'
-          BTPTopLevelNode-286: '#/components/schemas/BTPTopLevelNode-286'
-          BTPTypeName-290: '#/components/schemas/BTPTypeName-290'
+    GBTUIHint:
+      type: string
+      enum:
+      - OPPOSITE_DIRECTION
+      - ALWAYS_HIDDEN
+      - SHOW_CREATE_SELECTION
+      - CONTROL_VISIBILITY
+      - NO_PREVIEW_PROVIDED
+      - REMEMBER_PREVIOUS_VALUE
+      - DISPLAY_SHORT
+      - ALLOW_FEATURE_SELECTION
+      - MATE_CONNECTOR_AXIS_TYPE
+      - PRIMARY_AXIS
+      - SHOW_EXPRESSION
+      - OPPOSITE_DIRECTION_CIRCULAR
+      - SHOW_LABEL
+      - HORIZONTAL_ENUM
+      - UNCONFIGURABLE
+      - MATCH_LAST_ARRAY_ITEM
+      - COLLAPSE_ARRAY_ITEMS
+      - INITIAL_FOCUS_ON_EDIT
+      - INITIAL_FOCUS
+      - DISPLAY_CURRENT_VALUE_ONLY
+      - READ_ONLY
+      - PREVENT_CREATING_NEW_MATE_CONNECTORS
+      - FIRST_IN_ROW
+      - ALLOW_QUERY_ORDER
+      - PREVENT_ARRAY_REORDER
+      - VARIABLE_NAME
+      - FOCUS_INNER_QUERY
+      - SHOW_TOLERANCE
+      - ALLOW_ARRAY_FOCUS
+      - SHOW_INLINE_CONFIG_INPUTS
+      - FOCUS_ON_VISIBLE
+      - CAN_BE_TOLERANT
+      - CAN_BE_TOLERANT_DIAMETER
+      - PLUS_MINUS
+      - ALWAYS_USE_DEPENDENCIES
+      - NO_QUERY_VARIABLE
+      - ALLOW_FLAT_SKETCH_SELECTION
+      - QUERY_VARIABLE_NAME
+      - HIDE_LABEL
+      - UNKNOWN
     BTThumbnailInfo:
       type: object
       properties:
@@ -358,20 +360,22 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/BTThumbnailSizeInfo'
-    BTPSpace-10:
+    BTParameterVisibilityCondition-177:
       type: object
       properties:
         btType:
           type: string
           description: Type of JSON object.
-        lines:
-          type: array
-          items:
-            type: string
-        nodeId:
-          type: string
-        text:
-          type: string
+        selfOrChildAlwaysVisible:
+          type: boolean
+      discriminator:
+        propertyName: btType
+        mapping:
+          BTParameterVisibilityAlwaysHidden-176: '#/components/schemas/BTParameterVisibilityAlwaysHidden-176'
+          BTParameterVisibilityAlwaysShown-5487: '#/components/schemas/BTParameterVisibilityAlwaysShown-5487'
+          BTParameterVisibilityInRange-2980: '#/components/schemas/BTParameterVisibilityInRange-2980'
+          BTParameterVisibilityLogical-178: '#/components/schemas/BTParameterVisibilityLogical-178'
+          BTParameterVisibilityOnEqual-180: '#/components/schemas/BTParameterVisibilityOnEqual-180'
     BTDocumentElementInfo:
       type: object
       properties:
@@ -438,38 +442,65 @@ components:
           type: string
         zip:
           $ref: '#/components/schemas/BTZipFileInfo'
-    GBTParameterLibraryRelationType:
-      type: string
-      enum:
-      - DEFAULT
-      - IGNORE_LIBRARY_VALUES
-      - UNKNOWN
-    BTEditingLogic-2350:
+    BTDocumentVersionElementIds-1897:
       type: object
       properties:
         btType:
           type: string
           description: Type of JSON object.
-        functionName:
+        documentId:
           type: string
-        wantsClickedButton:
-          type: boolean
-        wantsHiddenBodies:
-          type: boolean
-        wantsIsCreating:
-          type: boolean
-        wantsSpecifiedParameters:
-          type: boolean
-    BTFeatureSpecsResponse-664:
+        elementId:
+          type: string
+        versionId:
+          type: string
+    BTPSpace-10:
       type: object
       properties:
         btType:
           type: string
           description: Type of JSON object.
-        featureSpecs:
+        lines:
           type: array
           items:
-            $ref: '#/components/schemas/BTFeatureSpec-129'
+            type: string
+        nodeId:
+          type: string
+        text:
+          type: string
+    BTApplicationTargetInfo:
+      type: object
+      properties:
+        baseHref:
+          type: string
+          format: uri
+        clientId:
+          type: string
+        supportsCollaboration:
+          type: boolean
+        tabIconHref:
+          type: string
+          format: uri
+    BTFeatureStudioContents-2239:
+      type: object
+      properties:
+        btType:
+          type: string
+          description: Type of JSON object.
+      allOf:
+      - $ref: '#/components/schemas/BTFeatureApiBase-1430'
+      - type: object
+        properties:
+          btType:
+            type: string
+          contents:
+            type: string
+    BTFeatureApiBase-1430:
+      type: object
+      properties:
+        btType:
+          type: string
+          description: Type of JSON object.
         libraryVersion:
           type: integer
           description: FeatureScript version used in the Part Studio. Do not modify.
@@ -486,6 +517,23 @@ components:
         sourceMicroversion:
           type: string
           description: The state from which the result was extracted. Geometry ID interpretation is dependent on this document microversion.
+      discriminator:
+        propertyName: btType
+        mapping:
+          BTAssemblyFeatureListResponse-1174: '#/components/schemas/BTAssemblyFeatureListResponse-1174'
+          BTConfigurationResponse-2019: '#/components/schemas/BTConfigurationResponse-2019'
+          BTConfigurationUpdateCall-2933: '#/components/schemas/BTConfigurationUpdateCall-2933'
+          BTFeatureDefinitionCall-1406: '#/components/schemas/BTFeatureDefinitionCall-1406'
+          BTFeatureDefinitionResponse-1617: '#/components/schemas/BTFeatureDefinitionResponse-1617'
+          BTFeatureListResponse-2457: '#/components/schemas/BTFeatureListResponse-2457'
+          BTFeatureScriptEvalCall-2377: '#/components/schemas/BTFeatureScriptEvalCall-2377'
+          BTFeatureScriptEvalResponse-1859: '#/components/schemas/BTFeatureScriptEvalResponse-1859'
+          BTFeatureSpecsResponse-664: '#/components/schemas/BTFeatureSpecsResponse-664'
+          BTFeatureStudioContents-2239: '#/components/schemas/BTFeatureStudioContents-2239'
+          BTSetFeatureRollbackCall-1899: '#/components/schemas/BTSetFeatureRollbackCall-1899'
+          BTSetFeatureRollbackResponse-1042: '#/components/schemas/BTSetFeatureRollbackResponse-1042'
+          BTUpdateFeaturesCall-1748: '#/components/schemas/BTUpdateFeaturesCall-1748'
+          BTUpdateFeaturesResponse-1333: '#/components/schemas/BTUpdateFeaturesResponse-1333'
     BTMParameter-1:
       type: object
       properties:
@@ -533,12 +581,57 @@ components:
           BTMParameterReference-2434: '#/components/schemas/BTMParameterReference-2434'
           BTMParameterString-149: '#/components/schemas/BTMParameterString-149'
           BTMReadOnlyParameter-3800: '#/components/schemas/BTMReadOnlyParameter-3800'
-    BTFeatureApiBase-1430:
+    BTPNode-7:
+      type: object
+      properties:
+        atomic:
+          type: boolean
+        btType:
+          type: string
+          description: Type of JSON object.
+        documentationType:
+          $ref: '#/components/schemas/GBTPDefinitionType'
+        endSourceLocation:
+          type: integer
+          format: int32
+        nodeId:
+          type: string
+        shortDescriptor:
+          type: string
+        spaceAfter:
+          $ref: '#/components/schemas/BTPSpace-10'
+        spaceBefore:
+          $ref: '#/components/schemas/BTPSpace-10'
+        spaceDefault:
+          type: boolean
+        startSourceLocation:
+          type: integer
+          format: int32
+      discriminator:
+        propertyName: btType
+        mapping:
+          BTPAnnotation-231: '#/components/schemas/BTPAnnotation-231'
+          BTPArgumentDeclaration-232: '#/components/schemas/BTPArgumentDeclaration-232'
+          BTPBuiltinIdentifier-233: '#/components/schemas/BTPBuiltinIdentifier-233'
+          BTPLValue-249: '#/components/schemas/BTPLValue-249'
+          BTPLiteralMapEntry-257: '#/components/schemas/BTPLiteralMapEntry-257'
+          BTPModule-234: '#/components/schemas/BTPModule-234'
+          BTPModuleId-235: '#/components/schemas/BTPModuleId-235'
+          BTPName-261: '#/components/schemas/BTPName-261'
+          BTPPropertyAccessor-23: '#/components/schemas/BTPPropertyAccessor-23'
+          BTPStatement-269: '#/components/schemas/BTPStatement-269'
+          BTPTopLevelNode-286: '#/components/schemas/BTPTopLevelNode-286'
+          BTPTypeName-290: '#/components/schemas/BTPTypeName-290'
+    BTFeatureSpecsResponse-664:
       type: object
       properties:
         btType:
           type: string
           description: Type of JSON object.
+        featureSpecs:
+          type: array
+          items:
+            $ref: '#/components/schemas/BTFeatureSpec-129'
         libraryVersion:
           type: integer
           description: FeatureScript version used in the Part Studio. Do not modify.
@@ -555,209 +648,23 @@ components:
         sourceMicroversion:
           type: string
           description: The state from which the result was extracted. Geometry ID interpretation is dependent on this document microversion.
-      discriminator:
-        propertyName: btType
-        mapping:
-          BTAssemblyFeatureListResponse-1174: '#/components/schemas/BTAssemblyFeatureListResponse-1174'
-          BTConfigurationResponse-2019: '#/components/schemas/BTConfigurationResponse-2019'
-          BTConfigurationUpdateCall-2933: '#/components/schemas/BTConfigurationUpdateCall-2933'
-          BTFeatureDefinitionCall-1406: '#/components/schemas/BTFeatureDefinitionCall-1406'
-          BTFeatureDefinitionResponse-1617: '#/components/schemas/BTFeatureDefinitionResponse-1617'
-          BTFeatureListResponse-2457: '#/components/schemas/BTFeatureListResponse-2457'
-          BTFeatureScriptEvalCall-2377: '#/components/schemas/BTFeatureScriptEvalCall-2377'
-          BTFeatureScriptEvalResponse-1859: '#/components/schemas/BTFeatureScriptEvalResponse-1859'
-          BTFeatureSpecsResponse-664: '#/components/schemas/BTFeatureSpecsResponse-664'
-          BTFeatureStudioContents-2239: '#/components/schemas/BTFeatureStudioContents-2239'
-          BTSetFeatureRollbackCall-1899: '#/components/schemas/BTSetFeatureRollbackCall-1899'
-          BTSetFeatureRollbackResponse-1042: '#/components/schemas/BTSetFeatureRollbackResponse-1042'
-          BTUpdateFeaturesCall-1748: '#/components/schemas/BTUpdateFeaturesCall-1748'
-          BTUpdateFeaturesResponse-1333: '#/components/schemas/BTUpdateFeaturesResponse-1333'
-    GBTUIHint:
-      type: string
-      enum:
-      - OPPOSITE_DIRECTION
-      - ALWAYS_HIDDEN
-      - SHOW_CREATE_SELECTION
-      - CONTROL_VISIBILITY
-      - NO_PREVIEW_PROVIDED
-      - REMEMBER_PREVIOUS_VALUE
-      - DISPLAY_SHORT
-      - ALLOW_FEATURE_SELECTION
-      - MATE_CONNECTOR_AXIS_TYPE
-      - PRIMARY_AXIS
-      - SHOW_EXPRESSION
-      - OPPOSITE_DIRECTION_CIRCULAR
-      - SHOW_LABEL
-      - HORIZONTAL_ENUM
-      - UNCONFIGURABLE
-      - MATCH_LAST_ARRAY_ITEM
-      - COLLAPSE_ARRAY_ITEMS
-      - INITIAL_FOCUS_ON_EDIT
-      - INITIAL_FOCUS
-      - DISPLAY_CURRENT_VALUE_ONLY
-      - READ_ONLY
-      - PREVENT_CREATING_NEW_MATE_CONNECTORS
-      - FIRST_IN_ROW
-      - ALLOW_QUERY_ORDER
-      - PREVENT_ARRAY_REORDER
-      - VARIABLE_NAME
-      - FOCUS_INNER_QUERY
-      - SHOW_TOLERANCE
-      - ALLOW_ARRAY_FOCUS
-      - SHOW_INLINE_CONFIG_INPUTS
-      - FOCUS_ON_VISIBLE
-      - CAN_BE_TOLERANT
-      - CAN_BE_TOLERANT_DIAMETER
-      - PLUS_MINUS
-      - ALWAYS_USE_DEPENDENCIES
-      - NO_QUERY_VARIABLE
-      - ALLOW_FLAT_SKETCH_SELECTION
-      - QUERY_VARIABLE_NAME
-      - HIDE_LABEL
-      - UNKNOWN
-    BTParameterGroupSpec-3469:
+    BTThumbnailSizeInfo:
       type: object
       properties:
-        additionalLocalizedStrings:
-          type: integer
-          format: int32
-          writeOnly: true
-        btType:
+        href:
           type: string
-          description: Type of JSON object.
-        collapsedByDefault:
-          type: boolean
-        drivingParameterId:
+          format: uri
+        mediaType:
           type: string
-        groupId:
+        renderMode:
           type: string
-        groupName:
+        sheetName:
           type: string
-        groupOrParameterIds:
-          type: array
-          items:
-            type: string
-        localizableName:
+        size:
           type: string
-        localizedName:
+        uniqueId:
           type: string
-          writeOnly: true
-        stringsToLocalize:
-          type: array
-          items:
-            type: string
-    BTParameterSpec-6:
-      type: object
-      properties:
-        additionalLocalizedStrings:
-          type: integer
-          format: int32
-          writeOnly: true
-        btType:
-          type: string
-          description: Type of JSON object.
-        columnName:
-          type: string
-        defaultValue:
-          $ref: '#/components/schemas/BTMParameter-1'
-        enumOptions:
-          type: array
-          items:
-            type: string
-        iconUri:
-          type: string
-        localizableName:
-          type: string
-        localizedName:
-          type: string
-          writeOnly: true
-        parameterDescription:
-          type: string
-        parameterId:
-          type: string
-        parameterName:
-          type: string
-        quantityType:
-          $ref: '#/components/schemas/GBTQuantityType'
-        stringsToLocalize:
-          type: array
-          items:
-            type: string
-        uiHint:
-          type: string
-        uiHints:
-          type: array
-          items:
-            $ref: '#/components/schemas/GBTUIHint'
-        visibilityCondition:
-          $ref: '#/components/schemas/BTParameterVisibilityCondition-177'
-      discriminator:
-        propertyName: btType
-        mapping:
-          BTParameterSpecAppearance-1740: '#/components/schemas/BTParameterSpecAppearance-1740'
-          BTParameterSpecArray-2600: '#/components/schemas/BTParameterSpecArray-2600'
-          BTParameterSpecBoolean-170: '#/components/schemas/BTParameterSpecBoolean-170'
-          BTParameterSpecButton-4111: '#/components/schemas/BTParameterSpecButton-4111'
-          BTParameterSpecDatabase-1071: '#/components/schemas/BTParameterSpecDatabase-1071'
-          BTParameterSpecDerived-736: '#/components/schemas/BTParameterSpecDerived-736'
-          BTParameterSpecEnum-171: '#/components/schemas/BTParameterSpecEnum-171'
-          BTParameterSpecFeatureList-703: '#/components/schemas/BTParameterSpecFeatureList-703'
-          BTParameterSpecForeignId-172: '#/components/schemas/BTParameterSpecForeignId-172'
-          BTParameterSpecLookupTablePath-761: '#/components/schemas/BTParameterSpecLookupTablePath-761'
-          BTParameterSpecMaterial-2700: '#/components/schemas/BTParameterSpecMaterial-2700'
-          BTParameterSpecMultiEnum-3118: '#/components/schemas/BTParameterSpecMultiEnum-3118'
-          BTParameterSpecNullableQuantity-715: '#/components/schemas/BTParameterSpecNullableQuantity-715'
-          BTParameterSpecQuantity-173: '#/components/schemas/BTParameterSpecQuantity-173'
-          BTParameterSpecQuery-174: '#/components/schemas/BTParameterSpecQuery-174'
-          BTParameterSpecReference-2789: '#/components/schemas/BTParameterSpecReference-2789'
-          BTParameterSpecString-175: '#/components/schemas/BTParameterSpecString-175'
-          BTReadOnlyParameterSpec-1889: '#/components/schemas/BTReadOnlyParameterSpec-1889'
-    BTLocationInfo-226:
-      type: object
-      properties:
-        btType:
-          type: string
-          description: Type of JSON object.
-        character:
-          type: integer
-          format: int32
-        column:
-          type: integer
-          format: int32
-        document:
-          type: string
-        elementMicroversion:
-          type: string
-        endCharacter:
-          type: integer
-          format: int32
-        endColumn:
-          type: integer
-          format: int32
-        endLine:
-          type: integer
-          format: int32
-        fromNode:
-          $ref: '#/components/schemas/BTPNode-7'
-        fromTemplate:
-          $ref: '#/components/schemas/BTLocationInfo-226'
-        languageVersion:
-          type: integer
-          format: int32
-        line:
-          type: integer
-          format: int32
-        moduleIds:
-          $ref: '#/components/schemas/BTDocumentVersionElementIds-1897'
-        nodeId:
-          type: string
-        parseNodeId:
-          type: string
-        parseNodeIdRaw:
-          $ref: '#/components/schemas/BTObjectId'
-        topLevel:
-          type: string
-        version:
+        viewOrientation:
           type: string
     GBTPDefinitionType:
       type: string
@@ -772,41 +679,22 @@ components:
       - UNDOCUMENTABLE
       - CONST_LAMBDA
       - UNKNOWN
-    BTObjectId:
-      type: object
-      properties:
-        empty:
-          type: boolean
-    BTParameterVisibilityCondition-177:
+    BTEditingLogic-2350:
       type: object
       properties:
         btType:
           type: string
           description: Type of JSON object.
-        selfOrChildAlwaysVisible:
-          type: boolean
-      discriminator:
-        propertyName: btType
-        mapping:
-          BTParameterVisibilityAlwaysHidden-176: '#/components/schemas/BTParameterVisibilityAlwaysHidden-176'
-          BTParameterVisibilityAlwaysShown-5487: '#/components/schemas/BTParameterVisibilityAlwaysShown-5487'
-          BTParameterVisibilityInRange-2980: '#/components/schemas/BTParameterVisibilityInRange-2980'
-          BTParameterVisibilityLogical-178: '#/components/schemas/BTParameterVisibilityLogical-178'
-          BTParameterVisibilityOnEqual-180: '#/components/schemas/BTParameterVisibilityOnEqual-180'
-    BTFeatureStudioContents-2239:
-      type: object
-      properties:
-        btType:
+        functionName:
           type: string
-          description: Type of JSON object.
-      allOf:
-      - $ref: '#/components/schemas/BTFeatureApiBase-1430'
-      - type: object
-        properties:
-          btType:
-            type: string
-          contents:
-            type: string
+        wantsClickedButton:
+          type: boolean
+        wantsHiddenBodies:
+          type: boolean
+        wantsIsCreating:
+          type: boolean
+        wantsSpecifiedParameters:
+          type: boolean
     BTFeatureSpec-129:
       type: object
       properties:
@@ -911,11 +799,123 @@ components:
           BTTableSpec-915: '#/components/schemas/BTTableSpec-915'
           BTToleranceSpec-3441: '#/components/schemas/BTToleranceSpec-3441'
           BTVariableStudioReferenceSpec-5278: '#/components/schemas/BTVariableStudioReferenceSpec-5278'
-    BTModelElementParams:
+    GBTQuantityType:
+      type: string
+      enum:
+      - UNKNOWN
+      - INTEGER
+      - REAL
+      - LENGTH
+      - ANGLE
+      - MASS
+      - TIME
+      - TEMPERATURE
+      - CURRENT
+      - ANYTHING
+      - ANYTHING_WITH_UNITS
+      - FORCE
+      - PRESSURE
+      - MOMENT
+      - ACCELERATION
+      - ANGULAR_VELOCITY
+      - ENERGY
+      - AREA
+      - VOLUME
+      - BOOLEAN
+      - STRING
+      - DENSITY
+      - FREQUENCY
+    BTObjectId:
       type: object
       properties:
-        name:
+        empty:
+          type: boolean
+    GBTElementType:
+      type: string
+      enum:
+      - PARTSTUDIO
+      - ASSEMBLY
+      - DRAWING
+      - FEATURESTUDIO
+      - BLOB
+      - APPLICATION
+      - TABLE
+      - BILLOFMATERIALS
+      - VARIABLESTUDIO
+      - PUBLICATIONITEM
+      - UNKNOWN
+    GBTParameterLibraryRelationType:
+      type: string
+      enum:
+      - DEFAULT
+      - IGNORE_LIBRARY_VALUES
+      - UNKNOWN
+    BTParameterSpec-6:
+      type: object
+      properties:
+        additionalLocalizedStrings:
+          type: integer
+          format: int32
+          writeOnly: true
+        btType:
           type: string
+          description: Type of JSON object.
+        columnName:
+          type: string
+        defaultValue:
+          $ref: '#/components/schemas/BTMParameter-1'
+        enumOptions:
+          type: array
+          items:
+            type: string
+        iconUri:
+          type: string
+        localizableName:
+          type: string
+        localizedName:
+          type: string
+          writeOnly: true
+        parameterDescription:
+          type: string
+        parameterId:
+          type: string
+        parameterName:
+          type: string
+        quantityType:
+          $ref: '#/components/schemas/GBTQuantityType'
+        stringsToLocalize:
+          type: array
+          items:
+            type: string
+        uiHint:
+          type: string
+        uiHints:
+          type: array
+          items:
+            $ref: '#/components/schemas/GBTUIHint'
+        visibilityCondition:
+          $ref: '#/components/schemas/BTParameterVisibilityCondition-177'
+      discriminator:
+        propertyName: btType
+        mapping:
+          BTParameterSpecAppearance-1740: '#/components/schemas/BTParameterSpecAppearance-1740'
+          BTParameterSpecArray-2600: '#/components/schemas/BTParameterSpecArray-2600'
+          BTParameterSpecBoolean-170: '#/components/schemas/BTParameterSpecBoolean-170'
+          BTParameterSpecButton-4111: '#/components/schemas/BTParameterSpecButton-4111'
+          BTParameterSpecDatabase-1071: '#/components/schemas/BTParameterSpecDatabase-1071'
+          BTParameterSpecDerived-736: '#/components/schemas/BTParameterSpecDerived-736'
+          BTParameterSpecEnum-171: '#/components/schemas/BTParameterSpecEnum-171'
+          BTParameterSpecFeatureList-703: '#/components/schemas/BTParameterSpecFeatureList-703'
+          BTParameterSpecForeignId-172: '#/components/schemas/BTParameterSpecForeignId-172'
+          BTParameterSpecLookupTablePath-761: '#/components/schemas/BTParameterSpecLookupTablePath-761'
+          BTParameterSpecMaterial-2700: '#/components/schemas/BTParameterSpecMaterial-2700'
+          BTParameterSpecMultiEnum-3118: '#/components/schemas/BTParameterSpecMultiEnum-3118'
+          BTParameterSpecNullableQuantity-715: '#/components/schemas/BTParameterSpecNullableQuantity-715'
+          BTParameterSpecQuantity-173: '#/components/schemas/BTParameterSpecQuantity-173'
+          BTParameterSpecQuery-174: '#/components/schemas/BTParameterSpecQuery-174'
+          BTParameterSpecReference-2789: '#/components/schemas/BTParameterSpecReference-2789'
+          BTParameterSpecString-175: '#/components/schemas/BTParameterSpecString-175'
+          BTReadOnlyParameterSpec-1889: '#/components/schemas/BTReadOnlyParameterSpec-1889'
   securitySchemes:
     OAuth2:
       type: oauth2

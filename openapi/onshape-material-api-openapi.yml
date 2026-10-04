@@ -164,17 +164,6 @@ components:
           type: array
           items:
             type: string
-    BTExternalElementReferenceInfo:
-      type: object
-      properties:
-        documentId:
-          type: string
-        elementId:
-          type: string
-        elementMicroversionId:
-          type: string
-        versionId:
-          type: string
     BTLibraryMaterialInfo:
       type: object
       properties:
@@ -188,6 +177,17 @@ components:
           type: object
           additionalProperties:
             type: string
+    BTExternalElementReferenceInfo:
+      type: object
+      properties:
+        documentId:
+          type: string
+        elementId:
+          type: string
+        elementMicroversionId:
+          type: string
+        versionId:
+          type: string
     BTMaterialLibraryInfo:
       type: object
       properties:

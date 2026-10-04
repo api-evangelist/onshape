@@ -122,13 +122,19 @@ components:
           type: string
         workspaceId:
           type: string
-    BTCategoryParam:
+    BTNextPartNumbersParam:
       type: object
       properties:
-        id:
-          type: string
-        name:
-          type: string
+        itemPartNumbers:
+          type: array
+          items:
+            $ref: '#/components/schemas/BTNextPartNumberParam'
+        skipPartNumbers:
+          type: array
+          description: Comma-separated list of part numbers to skip creating new part numbers for.
+          items:
+            type: string
+            description: Comma-separated list of part numbers to skip creating new part numbers for.
     BTNextPartNumberParam:
       type: object
       properties:
@@ -169,6 +175,13 @@ components:
           type: string
           description: Workspace ID
       description: Parameters for creating a part number.
+    BTCategoryParam:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
     Category:
       type: object
       properties:
@@ -178,19 +191,6 @@ components:
           type: string
         plmId:
           type: string
-    BTNextPartNumbersParam:
-      type: object
-      properties:
-        itemPartNumbers:
-          type: array
-          items:
-            $ref: '#/components/schemas/BTNextPartNumberParam'
-        skipPartNumbers:
-          type: array
-          description: Comma-separated list of part numbers to skip creating new part numbers for.
-          items:
-            type: string
-            description: Comma-separated list of part numbers to skip creating new part numbers for.
   securitySchemes:
     OAuth2:
       type: oauth2

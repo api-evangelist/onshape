@@ -234,6 +234,129 @@ paths:
       x-BTVisibility: PRODUCTION
 components:
   schemas:
+    BTAclInfo:
+      type: object
+      properties:
+        admin:
+          type: boolean
+        entries:
+          type: array
+          items:
+            $ref: '#/components/schemas/BTAclEntryInfo'
+        href:
+          type: string
+          description: URI to fetch complete information of the resource.
+          format: uri
+        id:
+          type: string
+          description: Id of the resource.
+        inheritedAcls:
+          type: array
+          items:
+            $ref: '#/components/schemas/BTInheritedAclInfo'
+        name:
+          type: string
+          description: Name of the resource.
+        objectId:
+          type: string
+        objectType:
+          type: integer
+          format: int64
+        owner:
+          $ref: '#/components/schemas/BTOwnerInfo'
+        public:
+          type: boolean
+        sharedWithSupport:
+          type: boolean
+        viewRef:
+          type: string
+          description: URI to visualize the resource in a webclient if applicable.
+          format: uri
+        visibility:
+          type: string
+    BTShareParams:
+      type: object
+      properties:
+        connectionId:
+          type: string
+        documentId:
+          type: string
+        elementId:
+          type: string
+        encodedConfiguration:
+          type: string
+        entries:
+          type: array
+          items:
+            $ref: '#/components/schemas/BTShareEntryParams'
+        folderId:
+          type: string
+        message:
+          type: string
+        permission:
+          type: integer
+          format: int64
+        permissionSet:
+          type: array
+          items:
+            type: string
+        update:
+          type: boolean
+        workspaceId:
+          type: string
+    BTOwnerInfo:
+      type: object
+      properties:
+        href:
+          type: string
+          description: URI to fetch complete information of the resource.
+          format: uri
+        id:
+          type: string
+          description: Id of the resource.
+        image:
+          type: string
+        isEnterpriseOwnedResource:
+          type: boolean
+        name:
+          type: string
+          description: Name of the resource.
+        type:
+          type: integer
+          format: int32
+        viewRef:
+          type: string
+          description: URI to visualize the resource in a webclient if applicable.
+          format: uri
+    BTShareEntryParams:
+      type: object
+      properties:
+        applicationId:
+          type: string
+        companyId:
+          type: string
+        connectionId:
+          type: string
+        email:
+          type: string
+        entryType:
+          type: integer
+          format: int32
+        teamId:
+          type: string
+        userId:
+          type: string
+    BTUserState:
+      type: string
+      enum:
+      - DELETED
+      - ACTIVE
+      - INACTIVE
+      - REQUESTED
+      - APPROVED
+      - REQUEST_EXPIRED
+      - ALL
+      - MARKED_FOR_DELETION
     BTAclEntryInfo:
       type: object
       properties:
@@ -284,129 +407,6 @@ components:
           format: int32
         teamName:
           type: string
-    BTShareEntryParams:
-      type: object
-      properties:
-        applicationId:
-          type: string
-        companyId:
-          type: string
-        connectionId:
-          type: string
-        email:
-          type: string
-        entryType:
-          type: integer
-          format: int32
-        teamId:
-          type: string
-        userId:
-          type: string
-    BTAclInfo:
-      type: object
-      properties:
-        admin:
-          type: boolean
-        entries:
-          type: array
-          items:
-            $ref: '#/components/schemas/BTAclEntryInfo'
-        href:
-          type: string
-          description: URI to fetch complete information of the resource.
-          format: uri
-        id:
-          type: string
-          description: Id of the resource.
-        inheritedAcls:
-          type: array
-          items:
-            $ref: '#/components/schemas/BTInheritedAclInfo'
-        name:
-          type: string
-          description: Name of the resource.
-        objectId:
-          type: string
-        objectType:
-          type: integer
-          format: int64
-        owner:
-          $ref: '#/components/schemas/BTOwnerInfo'
-        public:
-          type: boolean
-        sharedWithSupport:
-          type: boolean
-        viewRef:
-          type: string
-          description: URI to visualize the resource in a webclient if applicable.
-          format: uri
-        visibility:
-          type: string
-    BTOwnerInfo:
-      type: object
-      properties:
-        href:
-          type: string
-          description: URI to fetch complete information of the resource.
-          format: uri
-        id:
-          type: string
-          description: Id of the resource.
-        image:
-          type: string
-        isEnterpriseOwnedResource:
-          type: boolean
-        name:
-          type: string
-          description: Name of the resource.
-        type:
-          type: integer
-          format: int32
-        viewRef:
-          type: string
-          description: URI to visualize the resource in a webclient if applicable.
-          format: uri
-    BTShareParams:
-      type: object
-      properties:
-        connectionId:
-          type: string
-        documentId:
-          type: string
-        elementId:
-          type: string
-        encodedConfiguration:
-          type: string
-        entries:
-          type: array
-          items:
-            $ref: '#/components/schemas/BTShareEntryParams'
-        folderId:
-          type: string
-        message:
-          type: string
-        permission:
-          type: integer
-          format: int64
-        permissionSet:
-          type: array
-          items:
-            type: string
-        update:
-          type: boolean
-        workspaceId:
-          type: string
-    BTUserState:
-      type: string
-      enum:
-      - DELETED
-      - ACTIVE
-      - INACTIVE
-      - REQUESTED
-      - APPROVED
-      - REQUEST_EXPIRED
-      - ALL
-      - MARKED_FOR_DELETION
     BTInheritedAclInfo:
       type: object
       properties:

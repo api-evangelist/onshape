@@ -155,6 +155,151 @@ paths:
       x-BTVisibility: PRODUCTION
 components:
   schemas:
+    RequestBody:
+      type: object
+      properties:
+        content:
+          type: object
+          properties:
+            empty:
+              type: boolean
+          additionalProperties:
+            $ref: '#/components/schemas/MediaType'
+        description:
+          type: string
+        extensions:
+          type: object
+          additionalProperties:
+            type: object
+        get$ref:
+          type: string
+        required:
+          type: boolean
+    ServerVariable:
+      type: object
+      properties:
+        default:
+          type: string
+        description:
+          type: string
+        enum:
+          type: array
+          items:
+            type: string
+        extensions:
+          type: object
+          additionalProperties:
+            type: object
+    Discriminator:
+      type: object
+      properties:
+        extensions:
+          type: object
+          additionalProperties:
+            type: object
+        mapping:
+          type: object
+          additionalProperties:
+            type: string
+        propertyName:
+          type: string
+    PathItem:
+      type: object
+      properties:
+        delete:
+          $ref: '#/components/schemas/Operation'
+        description:
+          type: string
+        extensions:
+          type: object
+          additionalProperties:
+            type: object
+        get:
+          $ref: '#/components/schemas/Operation'
+        get$ref:
+          type: string
+        head:
+          $ref: '#/components/schemas/Operation'
+        options:
+          $ref: '#/components/schemas/Operation'
+        parameters:
+          type: array
+          items:
+            $ref: '#/components/schemas/Parameter'
+        patch:
+          $ref: '#/components/schemas/Operation'
+        post:
+          $ref: '#/components/schemas/Operation'
+        put:
+          $ref: '#/components/schemas/Operation'
+        servers:
+          type: array
+          items:
+            $ref: '#/components/schemas/Server'
+        summary:
+          type: string
+        trace:
+          $ref: '#/components/schemas/Operation'
+    Tag:
+      type: object
+      properties:
+        description:
+          type: string
+        extensions:
+          type: object
+          additionalProperties:
+            type: object
+        externalDocs:
+          $ref: '#/components/schemas/ExternalDocumentation'
+        name:
+          type: string
+    OAuthFlows:
+      type: object
+      properties:
+        authorizationCode:
+          $ref: '#/components/schemas/OAuthFlow'
+        clientCredentials:
+          $ref: '#/components/schemas/OAuthFlow'
+        extensions:
+          type: object
+          additionalProperties:
+            type: object
+        implicit:
+          $ref: '#/components/schemas/OAuthFlow'
+        password:
+          $ref: '#/components/schemas/OAuthFlow'
+    ExternalDocumentation:
+      type: object
+      properties:
+        description:
+          type: string
+        extensions:
+          type: object
+          additionalProperties:
+            type: object
+        url:
+          type: string
+    MediaType:
+      type: object
+      properties:
+        encoding:
+          type: object
+          additionalProperties:
+            $ref: '#/components/schemas/Encoding'
+        example:
+          type: object
+        exampleSetFlag:
+          type: boolean
+        examples:
+          type: object
+          additionalProperties:
+            $ref: '#/components/schemas/Example'
+        extensions:
+          type: object
+          additionalProperties:
+            type: object
+        schema:
+          $ref: '#/components/schemas/Schema'
     Type:
       type: string
       enum:
@@ -163,16 +308,169 @@ components:
       - OAUTH2
       - OPENIDCONNECT
       - MUTUALTLS
+    StyleEnum:
+      type: string
+      enum:
+      - FORM
+      - SPACE_DELIMITED
+      - PIPE_DELIMITED
+      - DEEP_OBJECT
+    Contact:
+      type: object
+      properties:
+        email:
+          type: string
+        extensions:
+          type: object
+          additionalProperties:
+            type: object
+        name:
+          type: string
+        url:
+          type: string
+    In:
+      type: string
+      enum:
+      - COOKIE
+      - HEADER
+      - QUERY
+    Link:
+      type: object
+      properties:
+        description:
+          type: string
+        extensions:
+          type: object
+          additionalProperties:
+            type: object
+        get$ref:
+          type: string
+        headers:
+          type: object
+          additionalProperties:
+            $ref: '#/components/schemas/Header'
+        operationId:
+          type: string
+        operationRef:
+          type: string
+        parameters:
+          type: object
+          additionalProperties:
+            type: string
+        requestBody:
+          type: object
+        server:
+          $ref: '#/components/schemas/Server'
+    OpenAPI:
+      type: object
+      properties:
+        components:
+          $ref: '#/components/schemas/Components'
+        extensions:
+          type: object
+          additionalProperties:
+            type: object
+        externalDocs:
+          $ref: '#/components/schemas/ExternalDocumentation'
+        info:
+          $ref: '#/components/schemas/Info'
+        jsonSchemaDialect:
+          type: string
+        openapi:
+          type: string
+        paths:
+          type: object
+          properties:
+            extensions:
+              type: object
+              additionalProperties:
+                type: object
+            empty:
+              type: boolean
+          additionalProperties:
+            $ref: '#/components/schemas/PathItem'
+        security:
+          type: array
+          items:
+            $ref: '#/components/schemas/SecurityRequirement'
+        servers:
+          type: array
+          items:
+            $ref: '#/components/schemas/Server'
+        tags:
+          type: array
+          items:
+            $ref: '#/components/schemas/Tag'
+        webhooks:
+          type: object
+          additionalProperties:
+            $ref: '#/components/schemas/PathItem'
+    Operation:
+      type: object
+      properties:
+        callbacks:
+          type: object
+          additionalProperties:
+            $ref: '#/components/schemas/Callback'
+        deprecated:
+          type: boolean
+        description:
+          type: string
+        extensions:
+          type: object
+          additionalProperties:
+            type: object
+        externalDocs:
+          $ref: '#/components/schemas/ExternalDocumentation'
+        operationId:
+          type: string
+        parameters:
+          type: array
+          items:
+            $ref: '#/components/schemas/Parameter'
+        requestBody:
+          $ref: '#/components/schemas/RequestBody'
+        responses:
+          type: object
+          properties:
+            extensions:
+              type: object
+              additionalProperties:
+                type: object
+            default:
+              $ref: '#/components/schemas/ApiResponse'
+            empty:
+              type: boolean
+          additionalProperties:
+            $ref: '#/components/schemas/ApiResponse'
+        security:
+          type: array
+          items:
+            $ref: '#/components/schemas/SecurityRequirement'
+        servers:
+          type: array
+          items:
+            $ref: '#/components/schemas/Server'
+        summary:
+          type: string
+        tags:
+          type: array
+          items:
+            type: string
     VersionAlias:
       type: string
       enum:
       - LAST_MINOR
       - LAST_BUILD
-    BTRestUserRole:
-      type: string
-      enum:
-      - PUBLIC
-      - INTERNAL
+    SecurityRequirement:
+      type: object
+      properties:
+        empty:
+          type: boolean
+      additionalProperties:
+        type: array
+        items:
+          type: string
     Server:
       type: object
       properties:
@@ -195,27 +493,192 @@ components:
               type: boolean
           additionalProperties:
             $ref: '#/components/schemas/ServerVariable'
-    Info:
+    ApiResponse:
       type: object
       properties:
-        contact:
-          $ref: '#/components/schemas/Contact'
+        content:
+          type: object
+          properties:
+            empty:
+              type: boolean
+          additionalProperties:
+            $ref: '#/components/schemas/MediaType'
         description:
           type: string
         extensions:
           type: object
           additionalProperties:
             type: object
-        license:
-          $ref: '#/components/schemas/License'
-        summary:
+        get$ref:
           type: string
-        termsOfService:
+        headers:
+          type: object
+          additionalProperties:
+            $ref: '#/components/schemas/Header'
+        links:
+          type: object
+          additionalProperties:
+            $ref: '#/components/schemas/Link'
+    SecurityScheme:
+      type: object
+      properties:
+        bearerFormat:
           type: string
-        title:
+        description:
           type: string
-        version:
+        extensions:
+          type: object
+          additionalProperties:
+            type: object
+        flows:
+          $ref: '#/components/schemas/OAuthFlows'
+        get$ref:
           type: string
+        in:
+          $ref: '#/components/schemas/In'
+        name:
+          type: string
+        openIdConnectUrl:
+          type: string
+        scheme:
+          type: string
+        type:
+          $ref: '#/components/schemas/Type'
+    Parameter:
+      type: object
+      properties:
+        allowEmptyValue:
+          type: boolean
+        allowReserved:
+          type: boolean
+        content:
+          type: object
+          properties:
+            empty:
+              type: boolean
+          additionalProperties:
+            $ref: '#/components/schemas/MediaType'
+        deprecated:
+          type: boolean
+        description:
+          type: string
+        example:
+          type: object
+        examples:
+          type: object
+          additionalProperties:
+            $ref: '#/components/schemas/Example'
+        explode:
+          type: boolean
+        extensions:
+          type: object
+          additionalProperties:
+            type: object
+        get$ref:
+          type: string
+        in:
+          type: string
+        name:
+          type: string
+        required:
+          type: boolean
+        schema:
+          $ref: '#/components/schemas/Schema'
+        style:
+          $ref: '#/components/schemas/StyleEnum'
+    OAuthFlow:
+      type: object
+      properties:
+        authorizationUrl:
+          type: string
+        extensions:
+          type: object
+          additionalProperties:
+            type: object
+        refreshUrl:
+          type: string
+        scopes:
+          type: object
+          properties:
+            extensions:
+              type: object
+              additionalProperties:
+                type: object
+            empty:
+              type: boolean
+          additionalProperties:
+            type: string
+        tokenUrl:
+          type: string
+    XML:
+      type: object
+      properties:
+        attribute:
+          type: boolean
+        extensions:
+          type: object
+          additionalProperties:
+            type: object
+        name:
+          type: string
+        namespace:
+          type: string
+        prefix:
+          type: string
+        wrapped:
+          type: boolean
+    Status:
+      type: string
+      enum:
+      - DB_TIMEOUT
+      - DB_MAX_NUMBER_ITEMS_EXCEEDED
+    Components:
+      type: object
+      properties:
+        callbacks:
+          type: object
+          additionalProperties:
+            $ref: '#/components/schemas/Callback'
+        examples:
+          type: object
+          additionalProperties:
+            $ref: '#/components/schemas/Example'
+        extensions:
+          type: object
+          additionalProperties:
+            type: object
+        headers:
+          type: object
+          additionalProperties:
+            $ref: '#/components/schemas/Header'
+        links:
+          type: object
+          additionalProperties:
+            $ref: '#/components/schemas/Link'
+        parameters:
+          type: object
+          additionalProperties:
+            $ref: '#/components/schemas/Parameter'
+        pathItems:
+          type: object
+          additionalProperties:
+            $ref: '#/components/schemas/PathItem'
+        requestBodies:
+          type: object
+          additionalProperties:
+            $ref: '#/components/schemas/RequestBody'
+        responses:
+          type: object
+          additionalProperties:
+            $ref: '#/components/schemas/ApiResponse'
+        schemas:
+          type: object
+          additionalProperties:
+            $ref: '#/components/schemas/Schema'
+        securitySchemes:
+          type: object
+          additionalProperties:
+            $ref: '#/components/schemas/SecurityScheme'
     SchemaObject:
       type: object
       properties:
@@ -380,222 +843,25 @@ components:
           type: boolean
         xml:
           $ref: '#/components/schemas/XML'
-    Discriminator:
+    Encoding:
       type: object
       properties:
-        extensions:
-          type: object
-          additionalProperties:
-            type: object
-        mapping:
-          type: object
-          additionalProperties:
-            type: string
-        propertyName:
-          type: string
-    ExternalDocumentation:
-      type: object
-      properties:
-        description:
-          type: string
-        extensions:
-          type: object
-          additionalProperties:
-            type: object
-        url:
-          type: string
-    MediaType:
-      type: object
-      properties:
-        encoding:
-          type: object
-          additionalProperties:
-            $ref: '#/components/schemas/Encoding'
-        example:
-          type: object
-        exampleSetFlag:
+        allowReserved:
           type: boolean
-        examples:
-          type: object
-          additionalProperties:
-            $ref: '#/components/schemas/Example'
-        extensions:
-          type: object
-          additionalProperties:
-            type: object
-        schema:
-          $ref: '#/components/schemas/Schema'
-    OpenAPI:
-      type: object
-      properties:
-        components:
-          $ref: '#/components/schemas/Components'
-        extensions:
-          type: object
-          additionalProperties:
-            type: object
-        externalDocs:
-          $ref: '#/components/schemas/ExternalDocumentation'
-        info:
-          $ref: '#/components/schemas/Info'
-        jsonSchemaDialect:
+        contentType:
           type: string
-        openapi:
-          type: string
-        paths:
-          type: object
-          properties:
-            extensions:
-              type: object
-              additionalProperties:
-                type: object
-            empty:
-              type: boolean
-          additionalProperties:
-            $ref: '#/components/schemas/PathItem'
-        security:
-          type: array
-          items:
-            $ref: '#/components/schemas/SecurityRequirement'
-        servers:
-          type: array
-          items:
-            $ref: '#/components/schemas/Server'
-        tags:
-          type: array
-          items:
-            $ref: '#/components/schemas/Tag'
-        webhooks:
-          type: object
-          additionalProperties:
-            $ref: '#/components/schemas/PathItem'
-    In:
-      type: string
-      enum:
-      - COOKIE
-      - HEADER
-      - QUERY
-    XML:
-      type: object
-      properties:
-        attribute:
+        explode:
           type: boolean
         extensions:
           type: object
           additionalProperties:
             type: object
-        name:
-          type: string
-        namespace:
-          type: string
-        prefix:
-          type: string
-        wrapped:
-          type: boolean
-    StyleEnum:
-      type: string
-      enum:
-      - FORM
-      - SPACE_DELIMITED
-      - PIPE_DELIMITED
-      - DEEP_OBJECT
-    Callback:
-      type: object
-      properties:
-        empty:
-          type: boolean
-        extensions:
-          type: object
-          additionalProperties:
-            type: object
-        get$ref:
-          type: string
-      additionalProperties:
-        $ref: '#/components/schemas/PathItem'
-    Link:
-      type: object
-      properties:
-        description:
-          type: string
-        extensions:
-          type: object
-          additionalProperties:
-            type: object
-        get$ref:
-          type: string
         headers:
           type: object
           additionalProperties:
             $ref: '#/components/schemas/Header'
-        operationId:
-          type: string
-        operationRef:
-          type: string
-        parameters:
-          type: object
-          additionalProperties:
-            type: string
-        requestBody:
-          type: object
-        server:
-          $ref: '#/components/schemas/Server'
-    PathItem:
-      type: object
-      properties:
-        delete:
-          $ref: '#/components/schemas/Operation'
-        description:
-          type: string
-        extensions:
-          type: object
-          additionalProperties:
-            type: object
-        get:
-          $ref: '#/components/schemas/Operation'
-        get$ref:
-          type: string
-        head:
-          $ref: '#/components/schemas/Operation'
-        options:
-          $ref: '#/components/schemas/Operation'
-        parameters:
-          type: array
-          items:
-            $ref: '#/components/schemas/Parameter'
-        patch:
-          $ref: '#/components/schemas/Operation'
-        post:
-          $ref: '#/components/schemas/Operation'
-        put:
-          $ref: '#/components/schemas/Operation'
-        servers:
-          type: array
-          items:
-            $ref: '#/components/schemas/Server'
-        summary:
-          type: string
-        trace:
-          $ref: '#/components/schemas/Operation'
-    RequestBody:
-      type: object
-      properties:
-        content:
-          type: object
-          properties:
-            empty:
-              type: boolean
-          additionalProperties:
-            $ref: '#/components/schemas/MediaType'
-        description:
-          type: string
-        extensions:
-          type: object
-          additionalProperties:
-            type: object
-        get$ref:
-          type: string
-        required:
-          type: boolean
+        style:
+          $ref: '#/components/schemas/StyleEnum'
     Schema:
       type: object
       properties:
@@ -772,80 +1038,6 @@ components:
           type: boolean
         xml:
           $ref: '#/components/schemas/XML'
-    Contact:
-      type: object
-      properties:
-        email:
-          type: string
-        extensions:
-          type: object
-          additionalProperties:
-            type: object
-        name:
-          type: string
-        url:
-          type: string
-    Parameter:
-      type: object
-      properties:
-        allowEmptyValue:
-          type: boolean
-        allowReserved:
-          type: boolean
-        content:
-          type: object
-          properties:
-            empty:
-              type: boolean
-          additionalProperties:
-            $ref: '#/components/schemas/MediaType'
-        deprecated:
-          type: boolean
-        description:
-          type: string
-        example:
-          type: object
-        examples:
-          type: object
-          additionalProperties:
-            $ref: '#/components/schemas/Example'
-        explode:
-          type: boolean
-        extensions:
-          type: object
-          additionalProperties:
-            type: object
-        get$ref:
-          type: string
-        in:
-          type: string
-        name:
-          type: string
-        required:
-          type: boolean
-        schema:
-          $ref: '#/components/schemas/Schema'
-        style:
-          $ref: '#/components/schemas/StyleEnum'
-    Encoding:
-      type: object
-      properties:
-        allowReserved:
-          type: boolean
-        contentType:
-          type: string
-        explode:
-          type: boolean
-        extensions:
-          type: object
-          additionalProperties:
-            type: object
-        headers:
-          type: object
-          additionalProperties:
-            $ref: '#/components/schemas/Header'
-        style:
-          $ref: '#/components/schemas/StyleEnum'
     Header:
       type: object
       properties:
@@ -873,61 +1065,26 @@ components:
           $ref: '#/components/schemas/Schema'
         style:
           $ref: '#/components/schemas/StyleEnum'
-    Components:
+    Info:
       type: object
       properties:
-        callbacks:
-          type: object
-          additionalProperties:
-            $ref: '#/components/schemas/Callback'
-        examples:
-          type: object
-          additionalProperties:
-            $ref: '#/components/schemas/Example'
+        contact:
+          $ref: '#/components/schemas/Contact'
+        description:
+          type: string
         extensions:
           type: object
           additionalProperties:
             type: object
-        headers:
-          type: object
-          additionalProperties:
-            $ref: '#/components/schemas/Header'
-        links:
-          type: object
-          additionalProperties:
-            $ref: '#/components/schemas/Link'
-        parameters:
-          type: object
-          additionalProperties:
-            $ref: '#/components/schemas/Parameter'
-        pathItems:
-          type: object
-          additionalProperties:
-            $ref: '#/components/schemas/PathItem'
-        requestBodies:
-          type: object
-          additionalProperties:
-            $ref: '#/components/schemas/RequestBody'
-        responses:
-          type: object
-          additionalProperties:
-            $ref: '#/components/schemas/ApiResponse'
-        schemas:
-          type: object
-          additionalProperties:
-            $ref: '#/components/schemas/Schema'
-        securitySchemes:
-          type: object
-          additionalProperties:
-            $ref: '#/components/schemas/SecurityScheme'
-    SecurityRequirement:
-      type: object
-      properties:
-        empty:
-          type: boolean
-      additionalProperties:
-        type: array
-        items:
+        license:
+          $ref: '#/components/schemas/License'
+        summary:
+          type: string
+        termsOfService:
+          type: string
+        title:
+          type: string
+        version:
           type: string
     Example:
       type: object
@@ -948,57 +1105,19 @@ components:
           type: object
         valueSetFlag:
           type: boolean
-    ApiResponse:
+    Callback:
       type: object
       properties:
-        content:
-          type: object
-          properties:
-            empty:
-              type: boolean
-          additionalProperties:
-            $ref: '#/components/schemas/MediaType'
-        description:
-          type: string
+        empty:
+          type: boolean
         extensions:
           type: object
           additionalProperties:
             type: object
         get$ref:
           type: string
-        headers:
-          type: object
-          additionalProperties:
-            $ref: '#/components/schemas/Header'
-        links:
-          type: object
-          additionalProperties:
-            $ref: '#/components/schemas/Link'
-    SecurityScheme:
-      type: object
-      properties:
-        bearerFormat:
-          type: string
-        description:
-          type: string
-        extensions:
-          type: object
-          additionalProperties:
-            type: object
-        flows:
-          $ref: '#/components/schemas/OAuthFlows'
-        get$ref:
-          type: string
-        in:
-          $ref: '#/components/schemas/In'
-        name:
-          type: string
-        openIdConnectUrl:
-          type: string
-        scheme:
-          type: string
-        type:
-          $ref: '#/components/schemas/Type'
+      additionalProperties:
+        $ref: '#/components/schemas/PathItem'
     License:
       type: object
       properties:
@@ -1012,130 +1131,11 @@ components:
           type: string
         url:
           type: string
-    Operation:
-      type: object
-      properties:
-        callbacks:
-          type: object
-          additionalProperties:
-            $ref: '#/components/schemas/Callback'
-        deprecated:
-          type: boolean
-        description:
-          type: string
-        extensions:
-          type: object
-          additionalProperties:
-            type: object
-        externalDocs:
-          $ref: '#/components/schemas/ExternalDocumentation'
-        operationId:
-          type: string
-        parameters:
-          type: array
-          items:
-            $ref: '#/components/schemas/Parameter'
-        requestBody:
-          $ref: '#/components/schemas/RequestBody'
-        responses:
-          type: object
-          properties:
-            extensions:
-              type: object
-              additionalProperties:
-                type: object
-            default:
-              $ref: '#/components/schemas/ApiResponse'
-            empty:
-              type: boolean
-          additionalProperties:
-            $ref: '#/components/schemas/ApiResponse'
-        security:
-          type: array
-          items:
-            $ref: '#/components/schemas/SecurityRequirement'
-        servers:
-          type: array
-          items:
-            $ref: '#/components/schemas/Server'
-        summary:
-          type: string
-        tags:
-          type: array
-          items:
-            type: string
-    OAuthFlow:
-      type: object
-      properties:
-        authorizationUrl:
-          type: string
-        extensions:
-          type: object
-          additionalProperties:
-            type: object
-        refreshUrl:
-          type: string
-        scopes:
-          type: object
-          properties:
-            extensions:
-              type: object
-              additionalProperties:
-                type: object
-            empty:
-              type: boolean
-          additionalProperties:
-            type: string
-        tokenUrl:
-          type: string
-    Status:
+    BTRestUserRole:
       type: string
       enum:
-      - DB_TIMEOUT
-      - DB_MAX_NUMBER_ITEMS_EXCEEDED
-    ServerVariable:
-      type: object
-      properties:
-        default:
-          type: string
-        description:
-          type: string
-        enum:
-          type: array
-          items:
-            type: string
-        extensions:
-          type: object
-          additionalProperties:
-            type: object
-    OAuthFlows:
-      type: object
-      properties:
-        authorizationCode:
-          $ref: '#/components/schemas/OAuthFlow'
-        clientCredentials:
-          $ref: '#/components/schemas/OAuthFlow'
-        extensions:
-          type: object
-          additionalProperties:
-            type: object
-        implicit:
-          $ref: '#/components/schemas/OAuthFlow'
-        password:
-          $ref: '#/components/schemas/OAuthFlow'
-    Tag:
-      type: object
-      properties:
-        description:
-          type: string
-        extensions:
-          type: object
-          additionalProperties:
-            type: object
-        externalDocs:
-          $ref: '#/components/schemas/ExternalDocumentation'
-        name:
-          type: string
+      - PUBLIC
+      - INTERNAL
   securitySchemes:
     OAuth2:
       type: oauth2

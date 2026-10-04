@@ -305,17 +305,35 @@ paths:
       x-BTVisibility: PRODUCTION
 components:
   schemas:
+    BTUserAppSettingsInfo:
+      type: object
+      properties:
+        settings:
+          type: array
+          items:
+            $ref: '#/components/schemas/BTSettingInfo'
+    BTSettingInfo:
+      type: object
+      properties:
+        key:
+          type: string
+        value:
+          type: object
     BTUserAppSettingOperationType:
       type: string
       enum:
       - ADD
       - REMOVE
       - UPDATE
-    BTSettingInfo:
+    BTSettingParam:
       type: object
       properties:
+        field:
+          type: string
         key:
           type: string
+        operation:
+          $ref: '#/components/schemas/BTUserAppSettingOperationType'
         value:
           type: object
     BTAPIApplicationExtensionInfo:
@@ -376,17 +394,6 @@ components:
           format: uri
         visibilityRule:
           type: string
-    BTSettingParam:
-      type: object
-      properties:
-        field:
-          type: string
-        key:
-          type: string
-        operation:
-          $ref: '#/components/schemas/BTUserAppSettingOperationType'
-        value:
-          type: object
     BTUserAppSettingsParams:
       type: object
       properties:
@@ -394,13 +401,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/BTSettingParam'
-    BTUserAppSettingsInfo:
-      type: object
-      properties:
-        settings:
-          type: array
-          items:
-            $ref: '#/components/schemas/BTSettingInfo'
   securitySchemes:
     OAuth2:
       type: oauth2

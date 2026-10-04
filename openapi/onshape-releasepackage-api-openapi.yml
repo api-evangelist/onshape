@@ -221,38 +221,205 @@ paths:
       x-BTVisibility: PRODUCTION
 components:
   schemas:
-    BTUpdateReleasePackageParams:
+    BTUserSummaryInfo:
+      type: object
+      discriminator:
+        propertyName: jsonType
+        mapping:
+          user-summary: '#/components/schemas/BTUserSummaryInfo'
+          companyuser: '#/components/schemas/BTCompanyUserSummaryInfo'
+          BTUserAdminSummaryInfo: '#/components/schemas/BTUserAdminSummaryInfo'
+          userinfo: '#/components/schemas/BTUserInfo'
+          BTUserOAuth2SummaryInfo: '#/components/schemas/BTUserOAuth2SummaryInfo'
+      allOf:
+      - $ref: '#/components/schemas/BTUserDetailSummaryInfo'
+      - type: object
+        properties:
+          company:
+            $ref: '#/components/schemas/BTCompanySummaryInfo'
+          companyUserState:
+            type: integer
+            format: int32
+          confirmationRequested:
+            type: boolean
+          documentationNameOverride:
+            type: string
+          globalPermissions:
+            $ref: '#/components/schemas/GlobalPermissionInfo'
+          invitationState:
+            type: integer
+            format: int32
+          isExternal:
+            type: boolean
+          isGuest:
+            type: boolean
+          isLight:
+            type: boolean
+          lastLoginTime:
+            type: string
+            format: date-time
+          personalMessageAllowed:
+            type: boolean
+          source:
+            type: integer
+            format: int32
+    BTWorkflowPropertyInfo:
       type: object
       properties:
-        itemIds:
+        aggregationSkippedFilteredOutValues:
+          type: boolean
+        computedAssemblyProperty:
+          type: boolean
+        computedProperty:
+          type: boolean
+        computedPropertyError:
+          type: string
+        computedPropertyEvalInfo:
+          type: string
+        dateFormat:
+          type: string
+        defaultValue:
+          type: object
+        dirty:
+          type: boolean
+        editable:
+          type: boolean
+        editableInUi:
+          type: boolean
+        enumValues:
           type: array
-          description: Items to remove from the release candidate when `action=REMOVE_ITEMS`.
+          items:
+            $ref: '#/components/schemas/BTMetadataEnumValueInfo'
+        hideInUi:
+          type: boolean
+        initialValue:
+          type: object
+        isApproverProperty:
+          type: boolean
+        isNotifierProperty:
+          type: boolean
+        multivalued:
+          type: boolean
+        name:
+          type: string
+        observers:
+          type: array
+          writeOnly: true
+          items:
+            $ref: '#/components/schemas/BTWorkflowableObjectObserver'
+        propertyId:
+          type: string
+        propertyOverrideStatus:
+          type: integer
+          description: '0: Unknown | 1: Not computed | 2: Computed without override | 3: Computed with override | 4: Computed with subassembly overrides | 5: Overridden'
+          format: int32
+        propertySource:
+          type: integer
+          format: int32
+        publicPartOverridable:
+          type: boolean
+        required:
+          type: boolean
+        schemaId:
+          type: string
+        teamsOnly:
+          type: boolean
+        uiHints:
+          $ref: '#/components/schemas/BTMetadataPropertyUiHintsInfo'
+        usersOnly:
+          type: boolean
+        validator:
+          $ref: '#/components/schemas/BTMetadataPropertyValidatorInfo'
+        value:
+          type: object
+        valueType:
+          type: string
+    BTCommentAttachmentInfo:
+      type: object
+      properties:
+        fileName:
+          type: string
+        href:
+          type: string
+          description: URI to fetch complete information of the resource.
+          format: uri
+        id:
+          type: string
+          description: Id of the resource.
+        mimeType:
+          type: string
+        name:
+          type: string
+          description: Name of the resource.
+        thumbnailFor:
+          type: string
+        viewRef:
+          type: string
+          description: URI to visualize the resource in a webclient if applicable.
+          format: uri
+    BTWorkflowObserverEntryType:
+      type: string
+      enum:
+      - USER
+      - TEAM
+      - ROLE
+      - ALIAS
+    BTBaseInfo:
+      type: object
+      properties:
+        href:
+          type: string
+          description: URI to fetch complete information of the resource.
+          format: uri
+        id:
+          type: string
+          description: Id of the resource.
+        name:
+          type: string
+          description: Name of the resource.
+        viewRef:
+          type: string
+          description: URI to visualize the resource in a webclient if applicable.
+          format: uri
+    BTWorkflowActionInfo:
+      type: object
+      properties:
+        action:
+          type: string
+        allowIfApprovers:
+          type: boolean
+        allowIfNoApprovers:
+          type: boolean
+        alwaysAllow:
+          type: boolean
+        isAdminOverride:
+          type: boolean
+        isApproverAction:
+          type: boolean
+        isCreatorOverride:
+          type: boolean
+        label:
+          type: string
+        requiredProperties:
+          uniqueItems: true
+          type: array
           items:
             type: string
-            description: Items to remove from the release candidate when `action=REMOVE_ITEMS`.
-        items:
-          type: array
-          description: Items in the release candidate.
-          items:
-            $ref: '#/components/schemas/BTReleasePackageItemParams'
-        properties:
-          type: array
-          description: Release candidate properties.
-          items:
-            $ref: '#/components/schemas/BTPropertyValueParam'
-      description: Parameters for updating a release or obsoletion candidate.
-    CoordinatesInfo:
-      type: object
-      properties:
-        x:
-          type: number
-          format: float
-        y:
-          type: number
-          format: float
-        z:
-          type: number
-          format: float
+        tooltip:
+          type: string
+        type:
+          $ref: '#/components/schemas/BTTransitionType'
+        uiHint:
+          type: string
+    BTReleaseSummaryState:
+      type: string
+      enum:
+      - HEALTHY
+      - IN_PROGRESS
+      - FAILED_PRECOMMIT
+      - FAILED_POSTCOMMIT
+      - DEGRADED_POSTCOMMIT
+      - FAILED
     BTCompanySummaryInfo:
       type: object
       properties:
@@ -298,62 +465,18 @@ components:
           type: string
           description: URI to visualize the resource in a webclient if applicable.
           format: uri
-    BTMetadataPropertyInfo:
+    CoordinatesInfo:
       type: object
       properties:
-        aggregationSkippedFilteredOutValues:
-          type: boolean
-        computedAssemblyProperty:
-          type: boolean
-        computedProperty:
-          type: boolean
-        computedPropertyError:
-          type: string
-        computedPropertyEvalInfo:
-          type: string
-        dateFormat:
-          type: string
-        defaultValue:
-          type: object
-        dirty:
-          type: boolean
-        editable:
-          type: boolean
-        editableInUi:
-          type: boolean
-        enumValues:
-          type: array
-          items:
-            $ref: '#/components/schemas/BTMetadataEnumValueInfo'
-        initialValue:
-          type: object
-        multivalued:
-          type: boolean
-        name:
-          type: string
-        propertyId:
-          type: string
-        propertyOverrideStatus:
-          type: integer
-          description: '0: Unknown | 1: Not computed | 2: Computed without override | 3: Computed with override | 4: Computed with subassembly overrides | 5: Overridden'
-          format: int32
-        propertySource:
-          type: integer
-          format: int32
-        publicPartOverridable:
-          type: boolean
-        required:
-          type: boolean
-        schemaId:
-          type: string
-        uiHints:
-          $ref: '#/components/schemas/BTMetadataPropertyUiHintsInfo'
-        validator:
-          $ref: '#/components/schemas/BTMetadataPropertyValidatorInfo'
-        value:
-          type: object
-        valueType:
-          type: string
+        x:
+          type: number
+          format: float
+        y:
+          type: number
+          format: float
+        z:
+          type: number
+          format: float
     BTWorkflowableObjectObserver:
       type: object
       properties:
@@ -410,129 +533,196 @@ components:
           format: date-time
         removable:
           type: boolean
-    BTReleasePackageParams:
+    BTReleaseStage:
+      type: string
+      enum:
+      - RELEASE_PACKAGE_INITIALIZED
+      - PRETRANSITION_MUTATIONS_COMMITTED
+      - WORKFLOW_TRANSITION_STARTED
+      - WORKFLOW_STATE_SAVED
+      - APPROVERS_RECORDED
+      - WORKFLOW_AUDIT_COMPLETED
+      - POSTSUBMIT_FANOUT_COMPLETED
+      - PRETRANSITION_MUTATIONS_STARTED
+      - APPROVERS_METADATA_STARTED
+      - POSTSUBMIT_FANOUT_STARTED
+      - RELEASE_PACKAGE_VALIDATION
+      - RELEASE_PACKAGE_METADATA_UPDATE
+      - RELEASE_PACKAGE_UPDATE
+      - PRETRANSITION_VALIDATION_STARTED
+      - HANDLE_FROZEN_PACKAGE
+      - UPDATE_PACKAGE_PROPERTIES
+      - CREATE_RELEASE_PACKAGE_INFO
+    BTUserDetailSummaryInfo:
       type: object
-      properties:
-        items:
-          type: array
-          description: List of items to include in the release candidate.
-          items:
-            $ref: '#/components/schemas/BTReleasePackageItemParams'
-      description: Parameters for creating a release candidate.
-    BTPropertyValueParam:
-      type: object
-      properties:
-        propertyId:
-          type: string
-          description: Id of the property to set.
-        value:
-          type: object
-          description: 'Value to set for the property. User property values must be a list of `{ "id": "idValue" }` maps.'
-    BTReleasePackageInfo:
-      type: object
-      properties:
-        addAllDrawingsActive:
-          type: boolean
-        changeOrderId:
-          type: string
-        columnNames:
-          type: object
-          additionalProperties:
+      discriminator:
+        propertyName: jsonType
+        mapping:
+          user-detail-summary: '#/components/schemas/BTUserDetailSummaryInfo'
+          user-summary: '#/components/schemas/BTUserSummaryInfo'
+      allOf:
+      - $ref: '#/components/schemas/BTUserBasicSummaryInfo'
+      - type: object
+        properties:
+          documentationName:
             type: string
+          email:
+            type: string
+          firstName:
+            type: string
+          lastName:
+            type: string
+    BTWorkflowObserverState:
+      type: string
+      enum:
+      - NONE
+      - APPROVED
+      - REJECTED
+      - OVERRIDDEN
+    BTReleaseCommentListInfo:
+      type: object
+      properties:
         comments:
           type: array
           items:
             $ref: '#/components/schemas/BTCommentInfo'
-        companyId:
+        rpId:
           type: string
-        createdAt:
+        rpName:
+          type: string
+    BTWorkflowSnapshotInfo:
+      type: object
+      properties:
+        actions:
+          type: array
+          items:
+            $ref: '#/components/schemas/BTWorkflowActionInfo'
+        approverIds:
+          type: array
+          items:
+            type: string
+        canBeDiscarded:
+          type: boolean
+        currentStateDisplayName:
+          type: string
+        debugMicroversionId:
+          type: string
+        errorMessage:
+          type: string
+        isCreator:
+          type: boolean
+        isDiscarded:
+          type: boolean
+        isFrozen:
+          type: boolean
+        isSetup:
+          type: boolean
+        metadataState:
+          type: string
+        notifierIds:
+          type: array
+          items:
+            type: string
+        state:
+          $ref: '#/components/schemas/BTWorkflowStateInfo'
+        usesExternalPlm:
+          type: boolean
+    BTReleaseTransitionStatusInfo:
+      type: object
+      properties:
+        errorMessage:
+          type: string
+        lastStage:
+          $ref: '#/components/schemas/BTReleaseStage'
+        lastUpdatedAt:
           type: string
           format: date-time
-        createdBy:
-          $ref: '#/components/schemas/BTUserBasicSummaryInfo'
-        description:
-          type: string
-        detailed:
+        retryable:
           type: boolean
+        summaryState:
+          $ref: '#/components/schemas/BTReleaseSummaryState'
+        supportCode:
+          type: string
+    BTMetadataEnumValueInfo:
+      type: object
+      properties:
+        label:
+          type: string
+        state:
+          type: integer
+          format: int32
+        value:
+          type: string
+    BTViewDataInfo:
+      type: object
+      properties:
+        angle:
+          type: number
+          format: double
+        cameraViewport:
+          type: array
+          items:
+            type: number
+            format: double
+        isPerspective:
+          type: boolean
+        viewMatrix:
+          type: array
+          items:
+            type: number
+            format: double
+    BTReleasePackageItemParams:
+      type: object
+      properties:
+        configuration:
+          type: string
+          description: Encoded configuration string for the item. See [encodeConfigurationMap](#/Element/encodeConfigurationMap).
         documentId:
           type: string
-        hasRevertedToRevisionItems:
-          type: boolean
+          description: Document containing the item.
+        elementId:
+          type: string
+          description: Element containing the item.
+        elementType:
+          type: integer
+          description: 'Type of element, which can be: `0: Part Studio, 1: Assembly, 2: Drawing. 4: Blob`'
+          format: int32
+        flatPartId:
+          type: string
+          description: Flat part ID.
         href:
           type: string
-          description: URI to fetch complete information of the resource.
-          format: uri
+          description: Href link to the item.
         id:
           type: string
-          description: Id of the resource.
-        isObsoletion:
-          type: boolean
-        items:
-          type: array
-          items:
-            $ref: '#/components/schemas/BTReleasePackageItemInfo'
-        linkedVersionIds:
-          type: array
-          items:
-            type: string
-        modifiedAt:
+          description: ID of the item. Use this to reference the item when updating it. See [getReleasePackage](#/ReleasePackage/getReleasePackage).
+        parentId:
           type: string
-          format: date-time
-        modifiedBy:
-          $ref: '#/components/schemas/BTUserBasicSummaryInfo'
-        name:
+          description: ID of the parent item, if any.
+        partId:
           type: string
-          description: Name of the resource.
-        originalWorkspaceId:
+          description: ID of the part to add to the release candidate.
+        partIdentity:
           type: string
-        packageThumbnail:
+          description: Part identity string for the part to add to the release candidate.
+        partNumber:
           type: string
-        parentComments:
-          type: array
-          items:
-            $ref: '#/components/schemas/BTReleaseCommentListInfo'
-        parentPackages:
-          type: array
-          items:
-            type: string
+          description: Part number. See [nextNumbers](#/NumberingScheme/nextNumbers).
         properties:
           type: array
+          description: List of property values associated with the item.
           items:
-            $ref: '#/components/schemas/BTWorkflowPropertyInfo'
-        retainedAsDraft:
-          type: boolean
-          description: Indicates whether the release is still in setup state and saved as a draft.
-        revisionRuleId:
+            $ref: '#/components/schemas/BTPropertyValueParam'
+        revisionId:
           type: string
-        rootItemsToRebuild:
-          type: array
-          items:
-            type: string
-        transitionStatus:
-          type: array
-          items:
-            $ref: '#/components/schemas/BTReleaseTransitionStatusInfo'
-        updatedItemIds:
-          type: array
-          items:
-            type: string
+          description: Revision ID of the item. Use when adding items to an obsoletion candidate.
         versionId:
           type: string
-        viewRef:
-          type: string
-          description: URI to visualize the resource in a webclient if applicable.
-          format: uri
-        workflow:
-          $ref: '#/components/schemas/BTWorkflowSnapshotInfo'
-        workflowError:
-          type: string
-          writeOnly: true
-        workflowId:
-          $ref: '#/components/schemas/BTPublishedWorkflowId'
+          description: Version containing the item.
         workspaceId:
           type: string
-      x-BTVisibility-properties:
-        draftItemCountChange: INTERNAL
+          description: Workspace containing the item.
+      description: Parameters for an item in a release or obsoletion candidate.
     GlobalPermissionInfo:
       type: object
       properties:
@@ -582,6 +772,283 @@ components:
           type: boolean
         useRevisionTools:
           type: boolean
+    BTReleasePackageItemInfo:
+      type: object
+      properties:
+        addedAutomatically:
+          type: boolean
+        canExport:
+          type: boolean
+        canRevert:
+          type: boolean
+        changeDetectionStatus:
+          type: integer
+          format: int32
+        companyId:
+          type: string
+        configuration:
+          type: string
+        configurationKey:
+          type: string
+        diffThumbnailConfigurationKey:
+          type: string
+        documentId:
+          type: string
+        elementId:
+          type: string
+        elementType:
+          type: integer
+          format: int32
+        errors:
+          type: array
+          items:
+            $ref: '#/components/schemas/BTReleaseItemErrorInfo'
+        flatPartId:
+          type: string
+        href:
+          type: string
+          description: URI to fetch complete information of the resource.
+          format: uri
+        id:
+          type: string
+          description: Id of the resource.
+        isRevisionManaged:
+          type: boolean
+        isRootItem:
+          type: boolean
+        isTranslatable:
+          type: boolean
+        manuallyRemovedChildrenIds:
+          type: array
+          items:
+            type: string
+        meshState:
+          type: integer
+          format: int32
+        mimeType:
+          type: string
+        name:
+          type: string
+          description: Name of the resource.
+        obsoletionRevisionId:
+          type: string
+        originalWorkspaceId:
+          type: string
+        parentId:
+          type: string
+        partId:
+          type: string
+        partIdentity:
+          type: string
+        partType:
+          type: string
+        properties:
+          type: array
+          items:
+            $ref: '#/components/schemas/BTMetadataPropertyInfo'
+        referenceIds:
+          type: array
+          items:
+            type: string
+        referenceIdsFromOriginalWorkspace:
+          type: array
+          items:
+            type: string
+        rpid:
+          type: string
+        smallThumbnailHref:
+          type: string
+        subassemblyBomBehavior:
+          type: string
+        syncedWithPLM:
+          type: boolean
+        versionId:
+          type: string
+        viewRef:
+          type: string
+          description: URI to visualize the resource in a webclient if applicable.
+          format: uri
+        workspaceId:
+          type: string
+    BTReleaseItemErrorInfo:
+      type: object
+      properties:
+        changeTaskId:
+          type: string
+        documentId:
+          type: string
+        message:
+          type: string
+        ordinal:
+          type: integer
+          format: int32
+        pendingTaskId:
+          type: string
+        pendingTaskObjectId:
+          type: string
+        pendingTaskType:
+          type: string
+        rejectAllowed:
+          type: boolean
+        releaseId:
+          type: string
+        severity:
+          type: integer
+          format: int32
+        versionId:
+          type: string
+        workspaceId:
+          type: string
+    BTPropertyValueParam:
+      type: object
+      properties:
+        propertyId:
+          type: string
+          description: Id of the property to set.
+        value:
+          type: object
+          description: 'Value to set for the property. User property values must be a list of `{ "id": "idValue" }` maps.'
+    BTMetadataPropertyInfo:
+      type: object
+      properties:
+        aggregationSkippedFilteredOutValues:
+          type: boolean
+        computedAssemblyProperty:
+          type: boolean
+        computedProperty:
+          type: boolean
+        computedPropertyError:
+          type: string
+        computedPropertyEvalInfo:
+          type: string
+        dateFormat:
+          type: string
+        defaultValue:
+          type: object
+        dirty:
+          type: boolean
+        editable:
+          type: boolean
+        editableInUi:
+          type: boolean
+        enumValues:
+          type: array
+          items:
+            $ref: '#/components/schemas/BTMetadataEnumValueInfo'
+        initialValue:
+          type: object
+        multivalued:
+          type: boolean
+        name:
+          type: string
+        propertyId:
+          type: string
+        propertyOverrideStatus:
+          type: integer
+          description: '0: Unknown | 1: Not computed | 2: Computed without override | 3: Computed with override | 4: Computed with subassembly overrides | 5: Overridden'
+          format: int32
+        propertySource:
+          type: integer
+          format: int32
+        publicPartOverridable:
+          type: boolean
+        required:
+          type: boolean
+        schemaId:
+          type: string
+        uiHints:
+          $ref: '#/components/schemas/BTMetadataPropertyUiHintsInfo'
+        validator:
+          $ref: '#/components/schemas/BTMetadataPropertyValidatorInfo'
+        value:
+          type: object
+        valueType:
+          type: string
+    BTReleasePackageParams:
+      type: object
+      properties:
+        items:
+          type: array
+          description: List of items to include in the release candidate.
+          items:
+            $ref: '#/components/schemas/BTReleasePackageItemParams'
+      description: Parameters for creating a release candidate.
+    BTMetadataPropertyValidatorInfo:
+      type: object
+      properties:
+        max:
+          type: number
+        maxCount:
+          type: integer
+          format: int32
+        maxDate:
+          type: string
+          format: date-time
+        maxLength:
+          type: integer
+          format: int32
+        min:
+          type: number
+        minCount:
+          type: integer
+          format: int32
+        minDate:
+          type: string
+          format: date-time
+        minLength:
+          type: integer
+          format: int32
+        pattern:
+          type: string
+        quantityType:
+          type: integer
+          format: int32
+    BTPublishedWorkflowId:
+      type: object
+      properties:
+        companyId:
+          type: string
+        versionId:
+          type: string
+        workflowId:
+          type: string
+    BTUserBasicSummaryInfo:
+      required:
+      - jsonType
+      type: object
+      properties:
+        jsonType:
+          type: string
+      discriminator:
+        propertyName: jsonType
+        mapping:
+          user-summary: '#/components/schemas/BTUserBasicSummaryInfo'
+          user-detail-summary: '#/components/schemas/BTUserDetailSummaryInfo'
+      allOf:
+      - $ref: '#/components/schemas/BTBaseInfo'
+      - type: object
+        properties:
+          href:
+            type: string
+            description: URI to fetch complete information of the resource.
+            format: uri
+          id:
+            type: string
+            description: Id of the resource.
+          image:
+            type: string
+          isOnshapeSupport:
+            type: boolean
+          name:
+            type: string
+            description: Name of the resource.
+          state:
+            type: integer
+            format: int32
+          viewRef:
+            type: string
+            description: URI to visualize the resource in a webclient if applicable.
+            format: uri
     BTCommentInfo:
       type: object
       properties:
@@ -689,192 +1156,6 @@ components:
           format: uri
         workspaceId:
           type: string
-    BTWorkflowSnapshotInfo:
-      type: object
-      properties:
-        actions:
-          type: array
-          items:
-            $ref: '#/components/schemas/BTWorkflowActionInfo'
-        approverIds:
-          type: array
-          items:
-            type: string
-        canBeDiscarded:
-          type: boolean
-        currentStateDisplayName:
-          type: string
-        debugMicroversionId:
-          type: string
-        errorMessage:
-          type: string
-        isCreator:
-          type: boolean
-        isDiscarded:
-          type: boolean
-        isFrozen:
-          type: boolean
-        isSetup:
-          type: boolean
-        metadataState:
-          type: string
-        notifierIds:
-          type: array
-          items:
-            type: string
-        state:
-          $ref: '#/components/schemas/BTWorkflowStateInfo'
-        usesExternalPlm:
-          type: boolean
-    BTMetadataPropertyUiHintsInfo:
-      type: object
-      properties:
-        multiline:
-          type: boolean
-    BTReleaseSummaryState:
-      type: string
-      enum:
-      - HEALTHY
-      - IN_PROGRESS
-      - FAILED_PRECOMMIT
-      - FAILED_POSTCOMMIT
-      - DEGRADED_POSTCOMMIT
-      - FAILED
-    BTReleasePackageItemInfo:
-      type: object
-      properties:
-        addedAutomatically:
-          type: boolean
-        canExport:
-          type: boolean
-        canRevert:
-          type: boolean
-        changeDetectionStatus:
-          type: integer
-          format: int32
-        companyId:
-          type: string
-        configuration:
-          type: string
-        configurationKey:
-          type: string
-        diffThumbnailConfigurationKey:
-          type: string
-        documentId:
-          type: string
-        elementId:
-          type: string
-        elementType:
-          type: integer
-          format: int32
-        errors:
-          type: array
-          items:
-            $ref: '#/components/schemas/BTReleaseItemErrorInfo'
-        flatPartId:
-          type: string
-        href:
-          type: string
-          description: URI to fetch complete information of the resource.
-          format: uri
-        id:
-          type: string
-          description: Id of the resource.
-        isRevisionManaged:
-          type: boolean
-        isRootItem:
-          type: boolean
-        isTranslatable:
-          type: boolean
-        manuallyRemovedChildrenIds:
-          type: array
-          items:
-            type: string
-        meshState:
-          type: integer
-          format: int32
-        mimeType:
-          type: string
-        name:
-          type: string
-          description: Name of the resource.
-        obsoletionRevisionId:
-          type: string
-        originalWorkspaceId:
-          type: string
-        parentId:
-          type: string
-        partId:
-          type: string
-        partIdentity:
-          type: string
-        partType:
-          type: string
-        properties:
-          type: array
-          items:
-            $ref: '#/components/schemas/BTMetadataPropertyInfo'
-        referenceIds:
-          type: array
-          items:
-            type: string
-        referenceIdsFromOriginalWorkspace:
-          type: array
-          items:
-            type: string
-        rpid:
-          type: string
-        smallThumbnailHref:
-          type: string
-        subassemblyBomBehavior:
-          type: string
-        syncedWithPLM:
-          type: boolean
-        versionId:
-          type: string
-        viewRef:
-          type: string
-          description: URI to visualize the resource in a webclient if applicable.
-          format: uri
-        workspaceId:
-          type: string
-    BTWorkflowObserverState:
-      type: string
-      enum:
-      - NONE
-      - APPROVED
-      - REJECTED
-      - OVERRIDDEN
-    BTReleaseCommentListInfo:
-      type: object
-      properties:
-        comments:
-          type: array
-          items:
-            $ref: '#/components/schemas/BTCommentInfo'
-        rpId:
-          type: string
-        rpName:
-          type: string
-    BTUserDetailSummaryInfo:
-      type: object
-      discriminator:
-        propertyName: jsonType
-        mapping:
-          user-detail-summary: '#/components/schemas/BTUserDetailSummaryInfo'
-          user-summary: '#/components/schemas/BTUserSummaryInfo'
-      allOf:
-      - $ref: '#/components/schemas/BTUserBasicSummaryInfo'
-      - type: object
-        properties:
-          documentationName:
-            type: string
-          email:
-            type: string
-          firstName:
-            type: string
-          lastName:
-            type: string
     BTTransitionType:
       type: string
       description: Transition types(SUBMIT, APPROVE, REJECT)
@@ -887,20 +1168,36 @@ components:
       - DELETE
       - COMMENT
       - REASSIGN_TASK
-    BTPublishedWorkflowId:
+    BTReleasePackageInfo:
       type: object
       properties:
+        addAllDrawingsActive:
+          type: boolean
+        changeOrderId:
+          type: string
+        columnNames:
+          type: object
+          additionalProperties:
+            type: string
+        comments:
+          type: array
+          items:
+            $ref: '#/components/schemas/BTCommentInfo'
         companyId:
           type: string
-        versionId:
+        createdAt:
           type: string
-        workflowId:
+          format: date-time
+        createdBy:
+          $ref: '#/components/schemas/BTUserBasicSummaryInfo'
+        description:
           type: string
-    BTCommentAttachmentInfo:
-      type: object
-      properties:
-        fileName:
+        detailed:
+          type: boolean
+        documentId:
           type: string
+        hasRevertedToRevisionItems:
+          type: boolean
         href:
           type: string
           description: URI to fetch complete information of the resource.
@@ -908,17 +1205,99 @@ components:
         id:
           type: string
           description: Id of the resource.
-        mimeType:
+        isObsoletion:
+          type: boolean
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/BTReleasePackageItemInfo'
+        linkedVersionIds:
+          type: array
+          items:
+            type: string
+        modifiedAt:
           type: string
+          format: date-time
+        modifiedBy:
+          $ref: '#/components/schemas/BTUserBasicSummaryInfo'
         name:
           type: string
           description: Name of the resource.
-        thumbnailFor:
+        originalWorkspaceId:
+          type: string
+        packageThumbnail:
+          type: string
+        parentComments:
+          type: array
+          items:
+            $ref: '#/components/schemas/BTReleaseCommentListInfo'
+        parentPackages:
+          type: array
+          items:
+            type: string
+        properties:
+          type: array
+          items:
+            $ref: '#/components/schemas/BTWorkflowPropertyInfo'
+        retainedAsDraft:
+          type: boolean
+          description: Indicates whether the release is still in setup state and saved as a draft.
+        revisionRuleId:
+          type: string
+        rootItemsToRebuild:
+          type: array
+          items:
+            type: string
+        transitionStatus:
+          type: array
+          items:
+            $ref: '#/components/schemas/BTReleaseTransitionStatusInfo'
+        updatedItemIds:
+          type: array
+          items:
+            type: string
+        versionId:
           type: string
         viewRef:
           type: string
           description: URI to visualize the resource in a webclient if applicable.
           format: uri
+        workflow:
+          $ref: '#/components/schemas/BTWorkflowSnapshotInfo'
+        workflowError:
+          type: string
+          writeOnly: true
+        workflowId:
+          $ref: '#/components/schemas/BTPublishedWorkflowId'
+        workspaceId:
+          type: string
+      x-BTVisibility-properties:
+        draftItemCountChange: INTERNAL
+    BTMetadataPropertyUiHintsInfo:
+      type: object
+      properties:
+        multiline:
+          type: boolean
+    BTUpdateReleasePackageParams:
+      type: object
+      properties:
+        itemIds:
+          type: array
+          description: Items to remove from the release candidate when `action=REMOVE_ITEMS`.
+          items:
+            type: string
+            description: Items to remove from the release candidate when `action=REMOVE_ITEMS`.
+        items:
+          type: array
+          description: Items in the release candidate.
+          items:
+            $ref: '#/components/schemas/BTReleasePackageItemParams'
+        properties:
+          type: array
+          description: Release candidate properties.
+          items:
+            $ref: '#/components/schemas/BTPropertyValueParam'
+      description: Parameters for updating a release or obsoletion candidate.
     BTWorkflowStateInfo:
       type: object
       properties:
@@ -955,385 +1334,6 @@ components:
           type: array
           items:
             type: string
-    BTMetadataEnumValueInfo:
-      type: object
-      properties:
-        label:
-          type: string
-        state:
-          type: integer
-          format: int32
-        value:
-          type: string
-    BTReleaseItemErrorInfo:
-      type: object
-      properties:
-        changeTaskId:
-          type: string
-        documentId:
-          type: string
-        message:
-          type: string
-        ordinal:
-          type: integer
-          format: int32
-        pendingTaskId:
-          type: string
-        pendingTaskObjectId:
-          type: string
-        pendingTaskType:
-          type: string
-        rejectAllowed:
-          type: boolean
-        releaseId:
-          type: string
-        severity:
-          type: integer
-          format: int32
-        versionId:
-          type: string
-        workspaceId:
-          type: string
-    BTWorkflowObserverEntryType:
-      type: string
-      enum:
-      - USER
-      - TEAM
-      - ROLE
-      - ALIAS
-    BTMetadataPropertyValidatorInfo:
-      type: object
-      properties:
-        max:
-          type: number
-        maxCount:
-          type: integer
-          format: int32
-        maxDate:
-          type: string
-          format: date-time
-        maxLength:
-          type: integer
-          format: int32
-        min:
-          type: number
-        minCount:
-          type: integer
-          format: int32
-        minDate:
-          type: string
-          format: date-time
-        minLength:
-          type: integer
-          format: int32
-        pattern:
-          type: string
-        quantityType:
-          type: integer
-          format: int32
-    BTWorkflowPropertyInfo:
-      type: object
-      properties:
-        aggregationSkippedFilteredOutValues:
-          type: boolean
-        computedAssemblyProperty:
-          type: boolean
-        computedProperty:
-          type: boolean
-        computedPropertyError:
-          type: string
-        computedPropertyEvalInfo:
-          type: string
-        dateFormat:
-          type: string
-        defaultValue:
-          type: object
-        dirty:
-          type: boolean
-        editable:
-          type: boolean
-        editableInUi:
-          type: boolean
-        enumValues:
-          type: array
-          items:
-            $ref: '#/components/schemas/BTMetadataEnumValueInfo'
-        hideInUi:
-          type: boolean
-        initialValue:
-          type: object
-        isApproverProperty:
-          type: boolean
-        isNotifierProperty:
-          type: boolean
-        multivalued:
-          type: boolean
-        name:
-          type: string
-        observers:
-          type: array
-          writeOnly: true
-          items:
-            $ref: '#/components/schemas/BTWorkflowableObjectObserver'
-        propertyId:
-          type: string
-        propertyOverrideStatus:
-          type: integer
-          description: '0: Unknown | 1: Not computed | 2: Computed without override | 3: Computed with override | 4: Computed with subassembly overrides | 5: Overridden'
-          format: int32
-        propertySource:
-          type: integer
-          format: int32
-        publicPartOverridable:
-          type: boolean
-        required:
-          type: boolean
-        schemaId:
-          type: string
-        teamsOnly:
-          type: boolean
-        uiHints:
-          $ref: '#/components/schemas/BTMetadataPropertyUiHintsInfo'
-        usersOnly:
-          type: boolean
-        validator:
-          $ref: '#/components/schemas/BTMetadataPropertyValidatorInfo'
-        value:
-          type: object
-        valueType:
-          type: string
-    BTWorkflowActionInfo:
-      type: object
-      properties:
-        action:
-          type: string
-        allowIfApprovers:
-          type: boolean
-        allowIfNoApprovers:
-          type: boolean
-        alwaysAllow:
-          type: boolean
-        isAdminOverride:
-          type: boolean
-        isApproverAction:
-          type: boolean
-        isCreatorOverride:
-          type: boolean
-        label:
-          type: string
-        requiredProperties:
-          uniqueItems: true
-          type: array
-          items:
-            type: string
-        tooltip:
-          type: string
-        type:
-          $ref: '#/components/schemas/BTTransitionType'
-        uiHint:
-          type: string
-    BTReleaseStage:
-      type: string
-      enum:
-      - RELEASE_PACKAGE_INITIALIZED
-      - PRETRANSITION_MUTATIONS_COMMITTED
-      - WORKFLOW_TRANSITION_STARTED
-      - WORKFLOW_STATE_SAVED
-      - APPROVERS_RECORDED
-      - WORKFLOW_AUDIT_COMPLETED
-      - POSTSUBMIT_FANOUT_COMPLETED
-      - PRETRANSITION_MUTATIONS_STARTED
-      - APPROVERS_METADATA_STARTED
-      - POSTSUBMIT_FANOUT_STARTED
-      - RELEASE_PACKAGE_VALIDATION
-      - RELEASE_PACKAGE_METADATA_UPDATE
-      - RELEASE_PACKAGE_UPDATE
-      - PRETRANSITION_VALIDATION_STARTED
-      - HANDLE_FROZEN_PACKAGE
-      - UPDATE_PACKAGE_PROPERTIES
-      - CREATE_RELEASE_PACKAGE_INFO
-    BTBaseInfo:
-      type: object
-      properties:
-        href:
-          type: string
-          description: URI to fetch complete information of the resource.
-          format: uri
-        id:
-          type: string
-          description: Id of the resource.
-        name:
-          type: string
-          description: Name of the resource.
-        viewRef:
-          type: string
-          description: URI to visualize the resource in a webclient if applicable.
-          format: uri
-    BTUserBasicSummaryInfo:
-      required:
-      - jsonType
-      type: object
-      properties:
-        jsonType:
-          type: string
-      discriminator:
-        propertyName: jsonType
-        mapping:
-          user-summary: '#/components/schemas/BTUserBasicSummaryInfo'
-          user-detail-summary: '#/components/schemas/BTUserDetailSummaryInfo'
-      allOf:
-      - $ref: '#/components/schemas/BTBaseInfo'
-      - type: object
-        properties:
-          href:
-            type: string
-            description: URI to fetch complete information of the resource.
-            format: uri
-          id:
-            type: string
-            description: Id of the resource.
-          image:
-            type: string
-          isOnshapeSupport:
-            type: boolean
-          name:
-            type: string
-            description: Name of the resource.
-          state:
-            type: integer
-            format: int32
-          viewRef:
-            type: string
-            description: URI to visualize the resource in a webclient if applicable.
-            format: uri
-    BTReleaseTransitionStatusInfo:
-      type: object
-      properties:
-        errorMessage:
-          type: string
-        lastStage:
-          $ref: '#/components/schemas/BTReleaseStage'
-        lastUpdatedAt:
-          type: string
-          format: date-time
-        retryable:
-          type: boolean
-        summaryState:
-          $ref: '#/components/schemas/BTReleaseSummaryState'
-        supportCode:
-          type: string
-    BTUserSummaryInfo:
-      type: object
-      discriminator:
-        propertyName: jsonType
-        mapping:
-          user-summary: '#/components/schemas/BTUserSummaryInfo'
-          companyuser: '#/components/schemas/BTCompanyUserSummaryInfo'
-          BTUserAdminSummaryInfo: '#/components/schemas/BTUserAdminSummaryInfo'
-          userinfo: '#/components/schemas/BTUserInfo'
-          BTUserOAuth2SummaryInfo: '#/components/schemas/BTUserOAuth2SummaryInfo'
-      allOf:
-      - $ref: '#/components/schemas/BTUserDetailSummaryInfo'
-      - type: object
-        properties:
-          company:
-            $ref: '#/components/schemas/BTCompanySummaryInfo'
-          companyUserState:
-            type: integer
-            format: int32
-          confirmationRequested:
-            type: boolean
-          documentationNameOverride:
-            type: string
-          globalPermissions:
-            $ref: '#/components/schemas/GlobalPermissionInfo'
-          invitationState:
-            type: integer
-            format: int32
-          isExternal:
-            type: boolean
-          isGuest:
-            type: boolean
-          isLight:
-            type: boolean
-          lastLoginTime:
-            type: string
-            format: date-time
-          personalMessageAllowed:
-            type: boolean
-          source:
-            type: integer
-            format: int32
-    BTViewDataInfo:
-      type: object
-      properties:
-        angle:
-          type: number
-          format: double
-        cameraViewport:
-          type: array
-          items:
-            type: number
-            format: double
-        isPerspective:
-          type: boolean
-        viewMatrix:
-          type: array
-          items:
-            type: number
-            format: double
-    BTReleasePackageItemParams:
-      type: object
-      properties:
-        configuration:
-          type: string
-          description: Encoded configuration string for the item. See [encodeConfigurationMap](#/Element/encodeConfigurationMap).
-        documentId:
-          type: string
-          description: Document containing the item.
-        elementId:
-          type: string
-          description: Element containing the item.
-        elementType:
-          type: integer
-          description: 'Type of element, which can be: `0: Part Studio, 1: Assembly, 2: Drawing. 4: Blob`'
-          format: int32
-        flatPartId:
-          type: string
-          description: Flat part ID.
-        href:
-          type: string
-          description: Href link to the item.
-        id:
-          type: string
-          description: ID of the item. Use this to reference the item when updating it. See [getReleasePackage](#/ReleasePackage/getReleasePackage).
-        parentId:
-          type: string
-          description: ID of the parent item, if any.
-        partId:
-          type: string
-          description: ID of the part to add to the release candidate.
-        partIdentity:
-          type: string
-          description: Part identity string for the part to add to the release candidate.
-        partNumber:
-          type: string
-          description: Part number. See [nextNumbers](#/NumberingScheme/nextNumbers).
-        properties:
-          type: array
-          description: List of property values associated with the item.
-          items:
-            $ref: '#/components/schemas/BTPropertyValueParam'
-        revisionId:
-          type: string
-          description: Revision ID of the item. Use when adding items to an obsoletion candidate.
-        versionId:
-          type: string
-          description: Version containing the item.
-        workspaceId:
-          type: string
-          description: Workspace containing the item.
-      description: Parameters for an item in a release or obsoletion candidate.
   securitySchemes:
     OAuth2:
       type: oauth2

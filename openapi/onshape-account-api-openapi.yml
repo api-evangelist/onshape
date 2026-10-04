@@ -176,23 +176,6 @@ paths:
       x-BTVisibility: PRODUCTION
 components:
   schemas:
-    BTCardInfo:
-      type: object
-      properties:
-        billingAddress:
-          $ref: '#/components/schemas/BTAddressInfo'
-        expMonth:
-          type: integer
-          format: int32
-        expYear:
-          type: integer
-          format: int32
-        last4:
-          type: string
-        name:
-          type: string
-        type:
-          type: string
     BTListResponseBTPurchaseInfo:
       type: object
       properties:
@@ -259,25 +242,67 @@ components:
           type: string
           description: URI to visualize the resource in a webclient if applicable.
           format: uri
-    BTUserDetailSummaryInfo:
+    BTAddressInfo:
+      type: object
+      properties:
+        address:
+          type: string
+        city:
+          type: string
+        country:
+          type: string
+        countryCode:
+          type: string
+        id:
+          type: string
+        state:
+          type: string
+        stateCode:
+          type: string
+        zip:
+          type: string
+    BTUserSummaryInfo:
       type: object
       discriminator:
         propertyName: jsonType
         mapping:
-          user-detail-summary: '#/components/schemas/BTUserDetailSummaryInfo'
           user-summary: '#/components/schemas/BTUserSummaryInfo'
+          companyuser: '#/components/schemas/BTCompanyUserSummaryInfo'
+          BTUserAdminSummaryInfo: '#/components/schemas/BTUserAdminSummaryInfo'
+          userinfo: '#/components/schemas/BTUserInfo'
+          BTUserOAuth2SummaryInfo: '#/components/schemas/BTUserOAuth2SummaryInfo'
       allOf:
-      - $ref: '#/components/schemas/BTUserBasicSummaryInfo'
+      - $ref: '#/components/schemas/BTUserDetailSummaryInfo'
       - type: object
         properties:
-          documentationName:
+          company:
+            $ref: '#/components/schemas/BTCompanySummaryInfo'
+          companyUserState:
+            type: integer
+            format: int32
+          confirmationRequested:
+            type: boolean
+          documentationNameOverride:
             type: string
-          email:
+          globalPermissions:
+            $ref: '#/components/schemas/GlobalPermissionInfo'
+          invitationState:
+            type: integer
+            format: int32
+          isExternal:
+            type: boolean
+          isGuest:
+            type: boolean
+          isLight:
+            type: boolean
+          lastLoginTime:
             type: string
-          firstName:
-            type: string
-          lastName:
-            type: string
+            format: date-time
+          personalMessageAllowed:
+            type: boolean
+          source:
+            type: integer
+            format: int32
     GlobalPermissionInfo:
       type: object
       properties:
@@ -327,6 +352,113 @@ components:
           type: boolean
         useRevisionTools:
           type: boolean
+    BTCardInfo:
+      type: object
+      properties:
+        billingAddress:
+          $ref: '#/components/schemas/BTAddressInfo'
+        expMonth:
+          type: integer
+          format: int32
+        expYear:
+          type: integer
+          format: int32
+        last4:
+          type: string
+        name:
+          type: string
+        type:
+          type: string
+    BTPlanSubscriberInfo:
+      type: object
+      properties:
+        email:
+          type: string
+        firstName:
+          type: string
+        href:
+          type: string
+          description: URI to fetch complete information of the resource.
+          format: uri
+        id:
+          type: string
+          description: Id of the resource.
+        image:
+          type: string
+        lastName:
+          type: string
+        name:
+          type: string
+          description: Name of the resource.
+        state:
+          type: integer
+          format: int32
+        viewRef:
+          type: string
+          description: URI to visualize the resource in a webclient if applicable.
+          format: uri
+    BTPurchaseIdentityParams:
+      type: object
+      properties:
+        consumedQuantity:
+          type: integer
+          format: int32
+        identityId:
+          type: string
+        identityType:
+          type: integer
+          format: int32
+        purchaseId:
+          type: string
+    BTDiscountInfo:
+      type: object
+      properties:
+        accountBalance:
+          type: integer
+          format: int32
+        amountOff:
+          type: integer
+          format: int32
+        couponType:
+          type: integer
+          format: int32
+        couponValidMonths:
+          type: integer
+          format: int32
+        createdAt:
+          type: string
+          format: date-time
+        createdBy:
+          $ref: '#/components/schemas/BTUserSummaryInfo'
+        expiresAt:
+          type: string
+          format: date-time
+        href:
+          type: string
+          description: URI to fetch complete information of the resource.
+          format: uri
+        id:
+          type: string
+          description: Id of the resource.
+        name:
+          type: string
+          description: Name of the resource.
+        ownerId:
+          type: string
+        percentOff:
+          type: integer
+          format: int32
+        planId:
+          type: string
+        trialEndDate:
+          type: string
+        usedAt:
+          type: string
+          format: date-time
+        viewRef:
+          type: string
+          description: URI to visualize the resource in a webclient if applicable.
+          format: uri
     BTPurchaseInfo:
       type: object
       properties:
@@ -462,263 +594,25 @@ components:
           type: string
           description: URI to visualize the resource in a webclient if applicable.
           format: uri
-    BTBaseInfo:
+    BTUserDetailSummaryInfo:
       type: object
-      properties:
-        href:
-          type: string
-          description: URI to fetch complete information of the resource.
-          format: uri
-        id:
-          type: string
-          description: Id of the resource.
-        name:
-          type: string
-          description: Name of the resource.
-        viewRef:
-          type: string
-          description: URI to visualize the resource in a webclient if applicable.
-          format: uri
-    BTUserBasicSummaryInfo:
-      required:
-      - jsonType
-      type: object
-      properties:
-        jsonType:
-          type: string
       discriminator:
         propertyName: jsonType
         mapping:
-          user-summary: '#/components/schemas/BTUserBasicSummaryInfo'
           user-detail-summary: '#/components/schemas/BTUserDetailSummaryInfo'
-      allOf:
-      - $ref: '#/components/schemas/BTBaseInfo'
-      - type: object
-        properties:
-          href:
-            type: string
-            description: URI to fetch complete information of the resource.
-            format: uri
-          id:
-            type: string
-            description: Id of the resource.
-          image:
-            type: string
-          isOnshapeSupport:
-            type: boolean
-          name:
-            type: string
-            description: Name of the resource.
-          state:
-            type: integer
-            format: int32
-          viewRef:
-            type: string
-            description: URI to visualize the resource in a webclient if applicable.
-            format: uri
-    BTPlanSubscriberInfo:
-      type: object
-      properties:
-        email:
-          type: string
-        firstName:
-          type: string
-        href:
-          type: string
-          description: URI to fetch complete information of the resource.
-          format: uri
-        id:
-          type: string
-          description: Id of the resource.
-        image:
-          type: string
-        lastName:
-          type: string
-        name:
-          type: string
-          description: Name of the resource.
-        state:
-          type: integer
-          format: int32
-        viewRef:
-          type: string
-          description: URI to visualize the resource in a webclient if applicable.
-          format: uri
-    BTPurchaseIdentityParams:
-      type: object
-      properties:
-        consumedQuantity:
-          type: integer
-          format: int32
-        identityId:
-          type: string
-        identityType:
-          type: integer
-          format: int32
-        purchaseId:
-          type: string
-    NextCharge:
-      type: object
-      properties:
-        amount:
-          type: integer
-          format: int64
-        currentPeriodEnd:
-          type: string
-          format: date-time
-        interval:
-          type: string
-        total:
-          type: integer
-          format: int64
-    BTAPIApplicationSummaryInfo:
-      type: object
-      properties:
-        applicationOwnerType:
-          type: integer
-          format: int32
-        clientId:
-          type: string
-        description:
-          type: string
-        href:
-          type: string
-          description: URI to fetch complete information of the resource.
-          format: uri
-        id:
-          type: string
-          description: Id of the resource.
-        name:
-          type: string
-          description: Name of the resource.
-        state:
-          type: integer
-          format: int32
-        viewRef:
-          type: string
-          description: URI to visualize the resource in a webclient if applicable.
-          format: uri
-    ProratedCharges:
-      type: object
-      properties:
-        amount:
-          type: integer
-          format: int64
-        date:
-          type: string
-          format: date-time
-        description:
-          type: string
-    BTUserSummaryInfo:
-      type: object
-      discriminator:
-        propertyName: jsonType
-        mapping:
           user-summary: '#/components/schemas/BTUserSummaryInfo'
-          companyuser: '#/components/schemas/BTCompanyUserSummaryInfo'
-          BTUserAdminSummaryInfo: '#/components/schemas/BTUserAdminSummaryInfo'
-          userinfo: '#/components/schemas/BTUserInfo'
-          BTUserOAuth2SummaryInfo: '#/components/schemas/BTUserOAuth2SummaryInfo'
       allOf:
-      - $ref: '#/components/schemas/BTUserDetailSummaryInfo'
+      - $ref: '#/components/schemas/BTUserBasicSummaryInfo'
       - type: object
         properties:
-          company:
-            $ref: '#/components/schemas/BTCompanySummaryInfo'
-          companyUserState:
-            type: integer
-            format: int32
-          confirmationRequested:
-            type: boolean
-          documentationNameOverride:
+          documentationName:
             type: string
-          globalPermissions:
-            $ref: '#/components/schemas/GlobalPermissionInfo'
-          invitationState:
-            type: integer
-            format: int32
-          isExternal:
-            type: boolean
-          isGuest:
-            type: boolean
-          isLight:
-            type: boolean
-          lastLoginTime:
+          email:
             type: string
-            format: date-time
-          personalMessageAllowed:
-            type: boolean
-          source:
-            type: integer
-            format: int32
-    BTAddressInfo:
-      type: object
-      properties:
-        address:
-          type: string
-        city:
-          type: string
-        country:
-          type: string
-        countryCode:
-          type: string
-        id:
-          type: string
-        state:
-          type: string
-        stateCode:
-          type: string
-        zip:
-          type: string
-    BTDiscountInfo:
-      type: object
-      properties:
-        accountBalance:
-          type: integer
-          format: int32
-        amountOff:
-          type: integer
-          format: int32
-        couponType:
-          type: integer
-          format: int32
-        couponValidMonths:
-          type: integer
-          format: int32
-        createdAt:
-          type: string
-          format: date-time
-        createdBy:
-          $ref: '#/components/schemas/BTUserSummaryInfo'
-        expiresAt:
-          type: string
-          format: date-time
-        href:
-          type: string
-          description: URI to fetch complete information of the resource.
-          format: uri
-        id:
-          type: string
-          description: Id of the resource.
-        name:
-          type: string
-          description: Name of the resource.
-        ownerId:
-          type: string
-        percentOff:
-          type: integer
-          format: int32
-        planId:
-          type: string
-        trialEndDate:
-          type: string
-        usedAt:
-          type: string
-          format: date-time
-        viewRef:
-          type: string
-          description: URI to visualize the resource in a webclient if applicable.
-          format: uri
+          firstName:
+            type: string
+          lastName:
+            type: string
     BTBillingPlanInfo:
       type: object
       properties:
@@ -768,6 +662,112 @@ components:
           type: string
           description: URI to visualize the resource in a webclient if applicable.
           format: uri
+    BTUserBasicSummaryInfo:
+      required:
+      - jsonType
+      type: object
+      properties:
+        jsonType:
+          type: string
+      discriminator:
+        propertyName: jsonType
+        mapping:
+          user-summary: '#/components/schemas/BTUserBasicSummaryInfo'
+          user-detail-summary: '#/components/schemas/BTUserDetailSummaryInfo'
+      allOf:
+      - $ref: '#/components/schemas/BTBaseInfo'
+      - type: object
+        properties:
+          href:
+            type: string
+            description: URI to fetch complete information of the resource.
+            format: uri
+          id:
+            type: string
+            description: Id of the resource.
+          image:
+            type: string
+          isOnshapeSupport:
+            type: boolean
+          name:
+            type: string
+            description: Name of the resource.
+          state:
+            type: integer
+            format: int32
+          viewRef:
+            type: string
+            description: URI to visualize the resource in a webclient if applicable.
+            format: uri
+    BTAPIApplicationSummaryInfo:
+      type: object
+      properties:
+        applicationOwnerType:
+          type: integer
+          format: int32
+        clientId:
+          type: string
+        description:
+          type: string
+        href:
+          type: string
+          description: URI to fetch complete information of the resource.
+          format: uri
+        id:
+          type: string
+          description: Id of the resource.
+        name:
+          type: string
+          description: Name of the resource.
+        state:
+          type: integer
+          format: int32
+        viewRef:
+          type: string
+          description: URI to visualize the resource in a webclient if applicable.
+          format: uri
+    BTBaseInfo:
+      type: object
+      properties:
+        href:
+          type: string
+          description: URI to fetch complete information of the resource.
+          format: uri
+        id:
+          type: string
+          description: Id of the resource.
+        name:
+          type: string
+          description: Name of the resource.
+        viewRef:
+          type: string
+          description: URI to visualize the resource in a webclient if applicable.
+          format: uri
+    ProratedCharges:
+      type: object
+      properties:
+        amount:
+          type: integer
+          format: int64
+        date:
+          type: string
+          format: date-time
+        description:
+          type: string
+    NextCharge:
+      type: object
+      properties:
+        amount:
+          type: integer
+          format: int64
+        currentPeriodEnd:
+          type: string
+          format: date-time
+        interval:
+          type: string
+        total:
+          type: integer
+          format: int64
   securitySchemes:
     OAuth2:
       type: oauth2

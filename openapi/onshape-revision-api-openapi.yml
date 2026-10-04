@@ -543,41 +543,6 @@ paths:
       x-BTVisibility: PRODUCTION
 components:
   schemas:
-    BTRevisionApproverInfo:
-      type: object
-      properties:
-        date:
-          type: string
-          description: Date the revision was created.
-          format: date-time
-        id:
-          type: string
-          description: User ID of the user who approved the revision.
-        name:
-          type: string
-          description: Name of the user who approved the revision.
-      description: The users who approved the release package that created this revision.
-    BTListResponseBTRevisionInfo:
-      type: object
-      properties:
-        href:
-          type: string
-          description: URI for current page of resources.
-          format: uri
-        items:
-          type: array
-          description: Array of items in the current page.
-          items:
-            $ref: '#/components/schemas/BTRevisionInfo'
-        next:
-          type: string
-          description: URI for next page of the resources if more are available.
-          format: uri
-        previous:
-          type: string
-          description: URI for previous page of the resources.
-          format: uri
-      description: A list of resources that typically supports paging.
     BTCompanySummaryInfo:
       type: object
       properties:
@@ -623,6 +588,148 @@ components:
           type: string
           description: URI to visualize the resource in a webclient if applicable.
           format: uri
+    BTUserSummaryInfo:
+      type: object
+      discriminator:
+        propertyName: jsonType
+        mapping:
+          user-summary: '#/components/schemas/BTUserSummaryInfo'
+          companyuser: '#/components/schemas/BTCompanyUserSummaryInfo'
+          BTUserAdminSummaryInfo: '#/components/schemas/BTUserAdminSummaryInfo'
+          userinfo: '#/components/schemas/BTUserInfo'
+          BTUserOAuth2SummaryInfo: '#/components/schemas/BTUserOAuth2SummaryInfo'
+      allOf:
+      - $ref: '#/components/schemas/BTUserDetailSummaryInfo'
+      - type: object
+        properties:
+          company:
+            $ref: '#/components/schemas/BTCompanySummaryInfo'
+          companyUserState:
+            type: integer
+            format: int32
+          confirmationRequested:
+            type: boolean
+          documentationNameOverride:
+            type: string
+          globalPermissions:
+            $ref: '#/components/schemas/GlobalPermissionInfo'
+          invitationState:
+            type: integer
+            format: int32
+          isExternal:
+            type: boolean
+          isGuest:
+            type: boolean
+          isLight:
+            type: boolean
+          lastLoginTime:
+            type: string
+            format: date-time
+          personalMessageAllowed:
+            type: boolean
+          source:
+            type: integer
+            format: int32
+    GlobalPermissionInfo:
+      type: object
+      properties:
+        accessReports:
+          type: boolean
+        adminEnterprise:
+          type: boolean
+        allowAppStoreAccess:
+          type: boolean
+        allowPublicDocumentsAccess:
+          type: boolean
+        approveReleases:
+          type: boolean
+        branchLockPermissions:
+          type: boolean
+        createDocumentsInRoot:
+          type: boolean
+        createProject:
+          type: boolean
+        createReleases:
+          type: boolean
+        createTasks:
+          type: boolean
+        deletePermanently:
+          type: boolean
+        enableLabs:
+          type: boolean
+        exportFiles:
+          type: boolean
+        importFiles:
+          type: boolean
+        manageGuestUsers:
+          type: boolean
+        manageNonGeometricItems:
+          type: boolean
+        manageRbac:
+          type: boolean
+        manageStandardContentMetadata:
+          type: boolean
+        manageUsers:
+          type: boolean
+        manageWorkflows:
+          type: boolean
+        shareForAnonymousAccess:
+          type: boolean
+        transferDocumentsFromEnterprise:
+          type: boolean
+        useRevisionTools:
+          type: boolean
+    BTRevisionApproverInfo:
+      type: object
+      properties:
+        date:
+          type: string
+          description: Date the revision was created.
+          format: date-time
+        id:
+          type: string
+          description: User ID of the user who approved the revision.
+        name:
+          type: string
+          description: Name of the user who approved the revision.
+      description: The users who approved the release package that created this revision.
+    BTUserBasicSummaryInfo:
+      required:
+      - jsonType
+      type: object
+      properties:
+        jsonType:
+          type: string
+      discriminator:
+        propertyName: jsonType
+        mapping:
+          user-summary: '#/components/schemas/BTUserBasicSummaryInfo'
+          user-detail-summary: '#/components/schemas/BTUserDetailSummaryInfo'
+      allOf:
+      - $ref: '#/components/schemas/BTBaseInfo'
+      - type: object
+        properties:
+          href:
+            type: string
+            description: URI to fetch complete information of the resource.
+            format: uri
+          id:
+            type: string
+            description: Id of the resource.
+          image:
+            type: string
+          isOnshapeSupport:
+            type: boolean
+          name:
+            type: string
+            description: Name of the resource.
+          state:
+            type: integer
+            format: int32
+          viewRef:
+            type: string
+            description: URI to visualize the resource in a webclient if applicable.
+            format: uri
     BTUserDetailSummaryInfo:
       type: object
       discriminator:
@@ -757,55 +864,27 @@ components:
           description: URI to visualize the resource in a webclient if applicable.
           format: uri
       description: Revision details.
-    GlobalPermissionInfo:
+    BTListResponseBTRevisionInfo:
       type: object
       properties:
-        accessReports:
-          type: boolean
-        adminEnterprise:
-          type: boolean
-        allowAppStoreAccess:
-          type: boolean
-        allowPublicDocumentsAccess:
-          type: boolean
-        approveReleases:
-          type: boolean
-        branchLockPermissions:
-          type: boolean
-        createDocumentsInRoot:
-          type: boolean
-        createProject:
-          type: boolean
-        createReleases:
-          type: boolean
-        createTasks:
-          type: boolean
-        deletePermanently:
-          type: boolean
-        enableLabs:
-          type: boolean
-        exportFiles:
-          type: boolean
-        importFiles:
-          type: boolean
-        manageGuestUsers:
-          type: boolean
-        manageNonGeometricItems:
-          type: boolean
-        manageRbac:
-          type: boolean
-        manageStandardContentMetadata:
-          type: boolean
-        manageUsers:
-          type: boolean
-        manageWorkflows:
-          type: boolean
-        shareForAnonymousAccess:
-          type: boolean
-        transferDocumentsFromEnterprise:
-          type: boolean
-        useRevisionTools:
-          type: boolean
+        href:
+          type: string
+          description: URI for current page of resources.
+          format: uri
+        items:
+          type: array
+          description: Array of items in the current page.
+          items:
+            $ref: '#/components/schemas/BTRevisionInfo'
+        next:
+          type: string
+          description: URI for next page of the resources if more are available.
+          format: uri
+        previous:
+          type: string
+          description: URI for previous page of the resources.
+          format: uri
+      description: A list of resources that typically supports paging.
     BTBaseInfo:
       type: object
       properties:
@@ -823,85 +902,6 @@ components:
           type: string
           description: URI to visualize the resource in a webclient if applicable.
           format: uri
-    BTUserBasicSummaryInfo:
-      required:
-      - jsonType
-      type: object
-      properties:
-        jsonType:
-          type: string
-      discriminator:
-        propertyName: jsonType
-        mapping:
-          user-summary: '#/components/schemas/BTUserBasicSummaryInfo'
-          user-detail-summary: '#/components/schemas/BTUserDetailSummaryInfo'
-      allOf:
-      - $ref: '#/components/schemas/BTBaseInfo'
-      - type: object
-        properties:
-          href:
-            type: string
-            description: URI to fetch complete information of the resource.
-            format: uri
-          id:
-            type: string
-            description: Id of the resource.
-          image:
-            type: string
-          isOnshapeSupport:
-            type: boolean
-          name:
-            type: string
-            description: Name of the resource.
-          state:
-            type: integer
-            format: int32
-          viewRef:
-            type: string
-            description: URI to visualize the resource in a webclient if applicable.
-            format: uri
-    BTUserSummaryInfo:
-      type: object
-      discriminator:
-        propertyName: jsonType
-        mapping:
-          user-summary: '#/components/schemas/BTUserSummaryInfo'
-          companyuser: '#/components/schemas/BTCompanyUserSummaryInfo'
-          BTUserAdminSummaryInfo: '#/components/schemas/BTUserAdminSummaryInfo'
-          userinfo: '#/components/schemas/BTUserInfo'
-          BTUserOAuth2SummaryInfo: '#/components/schemas/BTUserOAuth2SummaryInfo'
-      allOf:
-      - $ref: '#/components/schemas/BTUserDetailSummaryInfo'
-      - type: object
-        properties:
-          company:
-            $ref: '#/components/schemas/BTCompanySummaryInfo'
-          companyUserState:
-            type: integer
-            format: int32
-          confirmationRequested:
-            type: boolean
-          documentationNameOverride:
-            type: string
-          globalPermissions:
-            $ref: '#/components/schemas/GlobalPermissionInfo'
-          invitationState:
-            type: integer
-            format: int32
-          isExternal:
-            type: boolean
-          isGuest:
-            type: boolean
-          isLight:
-            type: boolean
-          lastLoginTime:
-            type: string
-            format: date-time
-          personalMessageAllowed:
-            type: boolean
-          source:
-            type: integer
-            format: int32
     BTRevisionListResponse:
       type: object
       properties:

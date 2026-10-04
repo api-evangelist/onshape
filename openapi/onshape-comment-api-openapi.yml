@@ -378,18 +378,24 @@ paths:
       x-BTVisibility: PRODUCTION
 components:
   schemas:
-    CoordinatesInfo:
+    BTViewDataInfo:
       type: object
       properties:
-        x:
+        angle:
           type: number
-          format: float
-        y:
-          type: number
-          format: float
-        z:
-          type: number
-          format: float
+          format: double
+        cameraViewport:
+          type: array
+          items:
+            type: number
+            format: double
+        isPerspective:
+          type: boolean
+        viewMatrix:
+          type: array
+          items:
+            type: number
+            format: double
     BTCompanySummaryInfo:
       type: object
       properties:
@@ -431,109 +437,6 @@ components:
         type:
           type: integer
           format: int32
-        viewRef:
-          type: string
-          description: URI to visualize the resource in a webclient if applicable.
-          format: uri
-    BTUserDetailSummaryInfo:
-      type: object
-      discriminator:
-        propertyName: jsonType
-        mapping:
-          user-detail-summary: '#/components/schemas/BTUserDetailSummaryInfo'
-          user-summary: '#/components/schemas/BTUserSummaryInfo'
-      allOf:
-      - $ref: '#/components/schemas/BTUserBasicSummaryInfo'
-      - type: object
-        properties:
-          documentationName:
-            type: string
-          email:
-            type: string
-          firstName:
-            type: string
-          lastName:
-            type: string
-    GlobalPermissionInfo:
-      type: object
-      properties:
-        accessReports:
-          type: boolean
-        adminEnterprise:
-          type: boolean
-        allowAppStoreAccess:
-          type: boolean
-        allowPublicDocumentsAccess:
-          type: boolean
-        approveReleases:
-          type: boolean
-        branchLockPermissions:
-          type: boolean
-        createDocumentsInRoot:
-          type: boolean
-        createProject:
-          type: boolean
-        createReleases:
-          type: boolean
-        createTasks:
-          type: boolean
-        deletePermanently:
-          type: boolean
-        enableLabs:
-          type: boolean
-        exportFiles:
-          type: boolean
-        importFiles:
-          type: boolean
-        manageGuestUsers:
-          type: boolean
-        manageNonGeometricItems:
-          type: boolean
-        manageRbac:
-          type: boolean
-        manageStandardContentMetadata:
-          type: boolean
-        manageUsers:
-          type: boolean
-        manageWorkflows:
-          type: boolean
-        shareForAnonymousAccess:
-          type: boolean
-        transferDocumentsFromEnterprise:
-          type: boolean
-        useRevisionTools:
-          type: boolean
-    CoordinatesParams:
-      type: object
-      properties:
-        x:
-          type: number
-          format: float
-        y:
-          type: number
-          format: float
-        z:
-          type: number
-          format: float
-    BTCommentAttachmentInfo:
-      type: object
-      properties:
-        fileName:
-          type: string
-        href:
-          type: string
-          description: URI to fetch complete information of the resource.
-          format: uri
-        id:
-          type: string
-          description: Id of the resource.
-        mimeType:
-          type: string
-        name:
-          type: string
-          description: Name of the resource.
-        thumbnailFor:
-          type: string
         viewRef:
           type: string
           description: URI to visualize the resource in a webclient if applicable.
@@ -645,85 +548,18 @@ components:
           format: uri
         workspaceId:
           type: string
-    BTUserBasicSummaryInfo:
-      required:
-      - jsonType
+    CoordinatesInfo:
       type: object
       properties:
-        jsonType:
-          type: string
-      discriminator:
-        propertyName: jsonType
-        mapping:
-          user-summary: '#/components/schemas/BTUserBasicSummaryInfo'
-          user-detail-summary: '#/components/schemas/BTUserDetailSummaryInfo'
-      allOf:
-      - $ref: '#/components/schemas/BTBaseInfo'
-      - type: object
-        properties:
-          href:
-            type: string
-            description: URI to fetch complete information of the resource.
-            format: uri
-          id:
-            type: string
-            description: Id of the resource.
-          image:
-            type: string
-          isOnshapeSupport:
-            type: boolean
-          name:
-            type: string
-            description: Name of the resource.
-          state:
-            type: integer
-            format: int32
-          viewRef:
-            type: string
-            description: URI to visualize the resource in a webclient if applicable.
-            format: uri
-    BTBaseInfo:
-      type: object
-      properties:
-        href:
-          type: string
-          description: URI to fetch complete information of the resource.
-          format: uri
-        id:
-          type: string
-          description: Id of the resource.
-        name:
-          type: string
-          description: Name of the resource.
-        viewRef:
-          type: string
-          description: URI to visualize the resource in a webclient if applicable.
-          format: uri
-    BTViewDataParams:
-      type: object
-      properties:
-        angle:
+        x:
           type: number
-          format: double
-        cameraViewport:
-          type: array
-          items:
-            type: number
-            format: double
-        isPerspective:
-          type: boolean
-        viewMatrix:
-          type: array
-          items:
-            type: number
-            format: double
-    BTBFileUpload:
-      type: object
-      properties:
-        file:
-          type: string
-          description: The file to upload.
-          format: binary
+          format: float
+        y:
+          type: number
+          format: float
+        z:
+          type: number
+          format: float
     BTUserSummaryInfo:
       type: object
       discriminator:
@@ -766,7 +602,63 @@ components:
           source:
             type: integer
             format: int32
-    BTViewDataInfo:
+    GlobalPermissionInfo:
+      type: object
+      properties:
+        accessReports:
+          type: boolean
+        adminEnterprise:
+          type: boolean
+        allowAppStoreAccess:
+          type: boolean
+        allowPublicDocumentsAccess:
+          type: boolean
+        approveReleases:
+          type: boolean
+        branchLockPermissions:
+          type: boolean
+        createDocumentsInRoot:
+          type: boolean
+        createProject:
+          type: boolean
+        createReleases:
+          type: boolean
+        createTasks:
+          type: boolean
+        deletePermanently:
+          type: boolean
+        enableLabs:
+          type: boolean
+        exportFiles:
+          type: boolean
+        importFiles:
+          type: boolean
+        manageGuestUsers:
+          type: boolean
+        manageNonGeometricItems:
+          type: boolean
+        manageRbac:
+          type: boolean
+        manageStandardContentMetadata:
+          type: boolean
+        manageUsers:
+          type: boolean
+        manageWorkflows:
+          type: boolean
+        shareForAnonymousAccess:
+          type: boolean
+        transferDocumentsFromEnterprise:
+          type: boolean
+        useRevisionTools:
+          type: boolean
+    BTBFileUpload:
+      type: object
+      properties:
+        file:
+          type: string
+          description: The file to upload.
+          format: binary
+    BTViewDataParams:
       type: object
       properties:
         angle:
@@ -784,6 +676,50 @@ components:
           items:
             type: number
             format: double
+    BTListResponseBTCommentInfo:
+      type: object
+      properties:
+        href:
+          type: string
+          description: URI for current page of resources.
+          format: uri
+        items:
+          type: array
+          description: Array of items in the current page.
+          items:
+            $ref: '#/components/schemas/BTCommentInfo'
+        next:
+          type: string
+          description: URI for next page of the resources if more are available.
+          format: uri
+        previous:
+          type: string
+          description: URI for previous page of the resources.
+          format: uri
+      description: A list of resources that typically supports paging.
+    BTCommentAttachmentInfo:
+      type: object
+      properties:
+        fileName:
+          type: string
+        href:
+          type: string
+          description: URI to fetch complete information of the resource.
+          format: uri
+        id:
+          type: string
+          description: Id of the resource.
+        mimeType:
+          type: string
+        name:
+          type: string
+          description: Name of the resource.
+        thumbnailFor:
+          type: string
+        viewRef:
+          type: string
+          description: URI to visualize the resource in a webclient if applicable.
+          format: uri
     BTCommentParams:
       type: object
       properties:
@@ -838,27 +774,91 @@ components:
           $ref: '#/components/schemas/BTViewDataParams'
         workspaceId:
           type: string
-    BTListResponseBTCommentInfo:
+    BTUserBasicSummaryInfo:
+      required:
+      - jsonType
+      type: object
+      properties:
+        jsonType:
+          type: string
+      discriminator:
+        propertyName: jsonType
+        mapping:
+          user-summary: '#/components/schemas/BTUserBasicSummaryInfo'
+          user-detail-summary: '#/components/schemas/BTUserDetailSummaryInfo'
+      allOf:
+      - $ref: '#/components/schemas/BTBaseInfo'
+      - type: object
+        properties:
+          href:
+            type: string
+            description: URI to fetch complete information of the resource.
+            format: uri
+          id:
+            type: string
+            description: Id of the resource.
+          image:
+            type: string
+          isOnshapeSupport:
+            type: boolean
+          name:
+            type: string
+            description: Name of the resource.
+          state:
+            type: integer
+            format: int32
+          viewRef:
+            type: string
+            description: URI to visualize the resource in a webclient if applicable.
+            format: uri
+    BTUserDetailSummaryInfo:
+      type: object
+      discriminator:
+        propertyName: jsonType
+        mapping:
+          user-detail-summary: '#/components/schemas/BTUserDetailSummaryInfo'
+          user-summary: '#/components/schemas/BTUserSummaryInfo'
+      allOf:
+      - $ref: '#/components/schemas/BTUserBasicSummaryInfo'
+      - type: object
+        properties:
+          documentationName:
+            type: string
+          email:
+            type: string
+          firstName:
+            type: string
+          lastName:
+            type: string
+    CoordinatesParams:
+      type: object
+      properties:
+        x:
+          type: number
+          format: float
+        y:
+          type: number
+          format: float
+        z:
+          type: number
+          format: float
+    BTBaseInfo:
       type: object
       properties:
         href:
           type: string
-          description: URI for current page of resources.
+          description: URI to fetch complete information of the resource.
           format: uri
-        items:
-          type: array
-          description: Array of items in the current page.
-          items:
-            $ref: '#/components/schemas/BTCommentInfo'
-        next:
+        id:
           type: string
-          description: URI for next page of the resources if more are available.
-          format: uri
-        previous:
+          description: Id of the resource.
+        name:
           type: string
-          description: URI for previous page of the resources.
+          description: Name of the resource.
+        viewRef:
+          type: string
+          description: URI to visualize the resource in a webclient if applicable.
           format: uri
-      description: A list of resources that typically supports paging.
   securitySchemes:
     OAuth2:
       type: oauth2

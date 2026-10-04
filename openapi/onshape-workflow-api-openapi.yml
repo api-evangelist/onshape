@@ -253,6 +253,48 @@ paths:
       x-BTVisibility: PRODUCTION
 components:
   schemas:
+    BTUserSummaryInfo:
+      type: object
+      discriminator:
+        propertyName: jsonType
+        mapping:
+          user-summary: '#/components/schemas/BTUserSummaryInfo'
+          companyuser: '#/components/schemas/BTCompanyUserSummaryInfo'
+          BTUserAdminSummaryInfo: '#/components/schemas/BTUserAdminSummaryInfo'
+          userinfo: '#/components/schemas/BTUserInfo'
+          BTUserOAuth2SummaryInfo: '#/components/schemas/BTUserOAuth2SummaryInfo'
+      allOf:
+      - $ref: '#/components/schemas/BTUserDetailSummaryInfo'
+      - type: object
+        properties:
+          company:
+            $ref: '#/components/schemas/BTCompanySummaryInfo'
+          companyUserState:
+            type: integer
+            format: int32
+          confirmationRequested:
+            type: boolean
+          documentationNameOverride:
+            type: string
+          globalPermissions:
+            $ref: '#/components/schemas/GlobalPermissionInfo'
+          invitationState:
+            type: integer
+            format: int32
+          isExternal:
+            type: boolean
+          isGuest:
+            type: boolean
+          isLight:
+            type: boolean
+          lastLoginTime:
+            type: string
+            format: date-time
+          personalMessageAllowed:
+            type: boolean
+          source:
+            type: integer
+            format: int32
     BTMetadataStateType:
       type: string
       description: The current state metadata values if applicable.
@@ -263,6 +305,115 @@ components:
       - OBSOLETE
       - REJECTED
       - DISCARDED
+    BTObjectWorkflowInfo:
+      type: object
+      properties:
+        canBeDiscarded:
+          type: boolean
+          description: Whether workflowable object can be discarded.
+        href:
+          type: string
+          description: URI to fetch complete information of the resource.
+          format: uri
+        id:
+          type: string
+          description: Id of the resource.
+        isDiscarded:
+          type: boolean
+          description: Whether workflowable object has been discarded.
+        isFrozen:
+          type: boolean
+          description: Whether workflowable object has reached terminal state and is frozen.
+        lastAttemptTimestamp:
+          type: string
+          description: The timestamp of the last workflow action.
+          format: date-time
+        lastEncounteredErrorMessage:
+          type: string
+          description: The error message from the last failed workflow action, if any.
+        metadataState:
+          $ref: '#/components/schemas/BTMetadataStateType'
+        name:
+          type: string
+          description: Name of the resource.
+        objectType:
+          $ref: '#/components/schemas/BTAPIWorkflowableType'
+        stateId:
+          type: string
+          description: The current state of object like SETUP, REJECTED etc. Custom workflows can have any declared state.
+        viewRef:
+          type: string
+          description: URI to visualize the resource in a webclient if applicable.
+          format: uri
+        workflowId:
+          type: string
+          description: The workflow definition id that governs this object's states and transitions.
+      description: An workflowable object like Release or Task that supports states and transitions.
+    BTAPIWorkflowableType:
+      type: string
+      description: All workflowable types that can be enumerated.
+      enum:
+      - RELEASE
+      - TASK
+      - ASSIGNMENT
+      - OBSOLETION
+    BTBaseInfo:
+      type: object
+      properties:
+        href:
+          type: string
+          description: URI to fetch complete information of the resource.
+          format: uri
+        id:
+          type: string
+          description: Id of the resource.
+        name:
+          type: string
+          description: Name of the resource.
+        viewRef:
+          type: string
+          description: URI to visualize the resource in a webclient if applicable.
+          format: uri
+    BTPublishedWorkflowInfo:
+      type: object
+      properties:
+        activeState:
+          type: integer
+          format: int32
+        companyId:
+          type: string
+        description:
+          type: string
+        documentId:
+          type: string
+        elementId:
+          type: string
+        id:
+          type: string
+        imageSrc:
+          type: string
+        isPickable:
+          type: boolean
+        json:
+          type: string
+        name:
+          type: string
+        objectType:
+          type: integer
+          format: int32
+        ownerType:
+          type: integer
+          format: int32
+        publishedDate:
+          type: string
+          description: The date of publication of workflow
+          format: date-time
+        usesExternalPlm:
+          type: boolean
+          description: Whether the workflow connects to an external PLM service like Arena
+        versionId:
+          type: string
+      description: Captures information about a published workflow
     BTCompanySummaryInfo:
       type: object
       properties:
@@ -308,194 +459,6 @@ components:
           type: string
           description: URI to visualize the resource in a webclient if applicable.
           format: uri
-    BTActiveWorkflowTypeInfo:
-      type: object
-      properties:
-        hasInactiveCustomWorkflows:
-          type: boolean
-        pickableWorkflows:
-          type: array
-          items:
-            $ref: '#/components/schemas/BTPublishedWorkflowInfo'
-        workflow:
-          $ref: '#/components/schemas/BTPublishedWorkflowInfo'
-    BTOwnerInfo:
-      type: object
-      properties:
-        href:
-          type: string
-          description: URI to fetch complete information of the resource.
-          format: uri
-        id:
-          type: string
-          description: Id of the resource.
-        image:
-          type: string
-        isEnterpriseOwnedResource:
-          type: boolean
-        name:
-          type: string
-          description: Name of the resource.
-        type:
-          type: integer
-          format: int32
-        viewRef:
-          type: string
-          description: URI to visualize the resource in a webclient if applicable.
-          format: uri
-    BTListResponseBTWorkflowObserverOptionInfo:
-      type: object
-      properties:
-        href:
-          type: string
-          description: URI for current page of resources.
-          format: uri
-        items:
-          type: array
-          description: Array of items in the current page.
-          items:
-            $ref: '#/components/schemas/BTWorkflowObserverOptionInfo'
-        next:
-          type: string
-          description: URI for next page of the resources if more are available.
-          format: uri
-        previous:
-          type: string
-          description: URI for previous page of the resources.
-          format: uri
-      description: A list of resources that typically supports paging.
-    BTPublishedWorkflowInfo:
-      type: object
-      properties:
-        activeState:
-          type: integer
-          format: int32
-        companyId:
-          type: string
-        description:
-          type: string
-        documentId:
-          type: string
-        elementId:
-          type: string
-        id:
-          type: string
-        imageSrc:
-          type: string
-        isPickable:
-          type: boolean
-        json:
-          type: string
-        name:
-          type: string
-        objectType:
-          type: integer
-          format: int32
-        ownerType:
-          type: integer
-          format: int32
-        publishedDate:
-          type: string
-          description: The date of publication of workflow
-          format: date-time
-        usesExternalPlm:
-          type: boolean
-          description: Whether the workflow connects to an external PLM service like Arena
-        versionId:
-          type: string
-      description: Captures information about a published workflow
-    GlobalPermissionInfo:
-      type: object
-      properties:
-        accessReports:
-          type: boolean
-        adminEnterprise:
-          type: boolean
-        allowAppStoreAccess:
-          type: boolean
-        allowPublicDocumentsAccess:
-          type: boolean
-        approveReleases:
-          type: boolean
-        branchLockPermissions:
-          type: boolean
-        createDocumentsInRoot:
-          type: boolean
-        createProject:
-          type: boolean
-        createReleases:
-          type: boolean
-        createTasks:
-          type: boolean
-        deletePermanently:
-          type: boolean
-        enableLabs:
-          type: boolean
-        exportFiles:
-          type: boolean
-        importFiles:
-          type: boolean
-        manageGuestUsers:
-          type: boolean
-        manageNonGeometricItems:
-          type: boolean
-        manageRbac:
-          type: boolean
-        manageStandardContentMetadata:
-          type: boolean
-        manageUsers:
-          type: boolean
-        manageWorkflows:
-          type: boolean
-        shareForAnonymousAccess:
-          type: boolean
-        transferDocumentsFromEnterprise:
-          type: boolean
-        useRevisionTools:
-          type: boolean
-    BTRbacRoleInfo:
-      type: object
-      properties:
-        active:
-          type: boolean
-        description:
-          type: string
-        href:
-          type: string
-          description: URI to fetch complete information of the resource.
-          format: uri
-        id:
-          type: string
-          description: Id of the resource.
-        name:
-          type: string
-          description: Name of the resource.
-        predefinedRole:
-          type: integer
-          format: int32
-        viewRef:
-          type: string
-          description: URI to visualize the resource in a webclient if applicable.
-          format: uri
-    BTUserDetailSummaryInfo:
-      type: object
-      discriminator:
-        propertyName: jsonType
-        mapping:
-          user-detail-summary: '#/components/schemas/BTUserDetailSummaryInfo'
-          user-summary: '#/components/schemas/BTUserSummaryInfo'
-      allOf:
-      - $ref: '#/components/schemas/BTUserBasicSummaryInfo'
-      - type: object
-        properties:
-          documentationName:
-            type: string
-          email:
-            type: string
-          firstName:
-            type: string
-          lastName:
-            type: string
     BTAliasInfo:
       type: object
       properties:
@@ -528,18 +491,22 @@ components:
           type: string
           description: URI to visualize the resource in a webclient if applicable.
           format: uri
-    BTPublishedWorkflowId:
+    BTActiveWorkflowTypeInfo:
       type: object
       properties:
-        companyId:
-          type: string
-        versionId:
-          type: string
-        workflowId:
-          type: string
-    BTIdentityInfo:
+        hasInactiveCustomWorkflows:
+          type: boolean
+        pickableWorkflows:
+          type: array
+          items:
+            $ref: '#/components/schemas/BTPublishedWorkflowInfo'
+        workflow:
+          $ref: '#/components/schemas/BTPublishedWorkflowInfo'
+    BTWorkflowObserverOptionInfo:
       type: object
       properties:
+        alias:
+          $ref: '#/components/schemas/BTAliasInfo'
         company:
           $ref: '#/components/schemas/BTCompanySummaryInfo'
         href:
@@ -552,6 +519,8 @@ components:
         identityType:
           type: integer
           format: int32
+        role:
+          $ref: '#/components/schemas/BTRbacRoleInfo'
         team:
           $ref: '#/components/schemas/BTTeamSummaryInfo'
         user:
@@ -560,93 +529,7 @@ components:
           type: string
           description: URI to visualize the resource in a webclient if applicable.
           format: uri
-    BTPropertyUpdateInfo:
-      type: object
-      properties:
-        errorMessage:
-          type: string
-        itemHref:
-          type: string
-        newValue:
-          type: object
-        oldValue:
-          type: object
-        propertyId:
-          type: string
-    BTAPIWorkflowableType:
-      type: string
-      description: All workflowable types that can be enumerated.
-      enum:
-      - RELEASE
-      - TASK
-      - ASSIGNMENT
-      - OBSOLETION
-    BTAliasEntryInfo:
-      type: object
-      properties:
-        createdAt:
-          type: string
-          format: date-time
-        href:
-          type: string
-          description: URI to fetch complete information of the resource.
-          format: uri
-        id:
-          type: string
-          description: Id of the resource.
-        identity:
-          $ref: '#/components/schemas/BTIdentityInfo'
-        name:
-          type: string
-          description: Name of the resource.
-        viewRef:
-          type: string
-          description: URI to visualize the resource in a webclient if applicable.
-          format: uri
-    BTObjectWorkflowInfo:
-      type: object
-      properties:
-        canBeDiscarded:
-          type: boolean
-          description: Whether workflowable object can be discarded.
-        href:
-          type: string
-          description: URI to fetch complete information of the resource.
-          format: uri
-        id:
-          type: string
-          description: Id of the resource.
-        isDiscarded:
-          type: boolean
-          description: Whether workflowable object has been discarded.
-        isFrozen:
-          type: boolean
-          description: Whether workflowable object has reached terminal state and is frozen.
-        lastAttemptTimestamp:
-          type: string
-          description: The timestamp of the last workflow action.
-          format: date-time
-        lastEncounteredErrorMessage:
-          type: string
-          description: The error message from the last failed workflow action, if any.
-        metadataState:
-          $ref: '#/components/schemas/BTMetadataStateType'
-        name:
-          type: string
-          description: Name of the resource.
-        objectType:
-          $ref: '#/components/schemas/BTAPIWorkflowableType'
-        stateId:
-          type: string
-          description: The current state of object like SETUP, REJECTED etc. Custom workflows can have any declared state.
-        viewRef:
-          type: string
-          description: URI to visualize the resource in a webclient if applicable.
-          format: uri
-        workflowId:
-          type: string
-          description: The workflow definition id that governs this object's states and transitions.
-      description: An workflowable object like Release or Task that supports states and transitions.
+      description: Array of items in the current page.
     BTWorkflowAuditLogEntryInfo:
       type: object
       properties:
@@ -696,26 +579,30 @@ components:
           type: string
         workflowTransition:
           type: string
-    BTTeamSummaryInfo:
+    BTUserDetailSummaryInfo:
+      type: object
+      discriminator:
+        propertyName: jsonType
+        mapping:
+          user-detail-summary: '#/components/schemas/BTUserDetailSummaryInfo'
+          user-summary: '#/components/schemas/BTUserSummaryInfo'
+      allOf:
+      - $ref: '#/components/schemas/BTUserBasicSummaryInfo'
+      - type: object
+        properties:
+          documentationName:
+            type: string
+          email:
+            type: string
+          firstName:
+            type: string
+          lastName:
+            type: string
+    BTIdentityInfo:
       type: object
       properties:
-        active:
-          type: boolean
-        canMove:
-          type: boolean
-        connectionName:
-          type: string
-        connectionNames:
-          type: array
-          items:
-            type: string
-        createdAt:
-          type: string
-          format: date-time
-        createdBy:
-          $ref: '#/components/schemas/BTUserBasicSummaryInfo'
-        description:
-          type: string
+        company:
+          $ref: '#/components/schemas/BTCompanySummaryInfo'
         href:
           type: string
           description: URI to fetch complete information of the resource.
@@ -723,47 +610,17 @@ components:
         id:
           type: string
           description: Id of the resource.
-        isContainer:
-          type: boolean
-        isEnterpriseOwned:
-          type: boolean
-        isExternalConnectionResource:
-          type: boolean
-        isMutable:
-          type: boolean
-        modifiedAt:
-          type: string
-          format: date-time
-        modifiedBy:
-          $ref: '#/components/schemas/BTUserBasicSummaryInfo'
-        name:
-          type: string
-          description: Name of the resource.
-        owner:
-          $ref: '#/components/schemas/BTOwnerInfo'
-        parentId:
-          type: string
-        predefinedTeam:
+        identityType:
           type: integer
           format: int32
-        predefinedTeamMutable:
-          type: boolean
-        projectId:
-          type: string
-        resourceType:
-          type: string
-        treeHref:
-          type: string
-        unparentHref:
-          type: string
+        team:
+          $ref: '#/components/schemas/BTTeamSummaryInfo'
+        user:
+          $ref: '#/components/schemas/BTUserSummaryInfo'
         viewRef:
           type: string
           description: URI to visualize the resource in a webclient if applicable.
           format: uri
-      discriminator:
-        propertyName: jsonType
-        mapping:
-          team: '#/components/schemas/BTTeamInfo'
     BTActiveWorkflowInfo:
       type: object
       properties:
@@ -871,9 +728,13 @@ components:
           type: boolean
         usingThirdPartyPartNumbering:
           type: boolean
-    BTBaseInfo:
+    BTRbacRoleInfo:
       type: object
       properties:
+        active:
+          type: boolean
+        description:
+          type: string
         href:
           type: string
           description: URI to fetch complete information of the resource.
@@ -884,10 +745,96 @@ components:
         name:
           type: string
           description: Name of the resource.
+        predefinedRole:
+          type: integer
+          format: int32
         viewRef:
           type: string
           description: URI to visualize the resource in a webclient if applicable.
           format: uri
+    GlobalPermissionInfo:
+      type: object
+      properties:
+        accessReports:
+          type: boolean
+        adminEnterprise:
+          type: boolean
+        allowAppStoreAccess:
+          type: boolean
+        allowPublicDocumentsAccess:
+          type: boolean
+        approveReleases:
+          type: boolean
+        branchLockPermissions:
+          type: boolean
+        createDocumentsInRoot:
+          type: boolean
+        createProject:
+          type: boolean
+        createReleases:
+          type: boolean
+        createTasks:
+          type: boolean
+        deletePermanently:
+          type: boolean
+        enableLabs:
+          type: boolean
+        exportFiles:
+          type: boolean
+        importFiles:
+          type: boolean
+        manageGuestUsers:
+          type: boolean
+        manageNonGeometricItems:
+          type: boolean
+        manageRbac:
+          type: boolean
+        manageStandardContentMetadata:
+          type: boolean
+        manageUsers:
+          type: boolean
+        manageWorkflows:
+          type: boolean
+        shareForAnonymousAccess:
+          type: boolean
+        transferDocumentsFromEnterprise:
+          type: boolean
+        useRevisionTools:
+          type: boolean
+    BTListResponseBTObjectWorkflowInfo:
+      type: object
+      properties:
+        href:
+          type: string
+          description: URI for current page of resources.
+          format: uri
+        items:
+          type: array
+          description: Array of items in the current page.
+          items:
+            $ref: '#/components/schemas/BTObjectWorkflowInfo'
+        next:
+          type: string
+          description: URI for next page of the resources if more are available.
+          format: uri
+        previous:
+          type: string
+          description: URI for previous page of the resources.
+          format: uri
+      description: A list of resources that typically supports paging.
+    BTPropertyUpdateInfo:
+      type: object
+      properties:
+        errorMessage:
+          type: string
+        itemHref:
+          type: string
+        newValue:
+          type: object
+        oldValue:
+          type: object
+        propertyId:
+          type: string
     BTUserBasicSummaryInfo:
       required:
       - jsonType
@@ -925,7 +872,38 @@ components:
             type: string
             description: URI to visualize the resource in a webclient if applicable.
             format: uri
-    BTListResponseBTObjectWorkflowInfo:
+    BTPublishedWorkflowId:
+      type: object
+      properties:
+        companyId:
+          type: string
+        versionId:
+          type: string
+        workflowId:
+          type: string
+    BTAliasEntryInfo:
+      type: object
+      properties:
+        createdAt:
+          type: string
+          format: date-time
+        href:
+          type: string
+          description: URI to fetch complete information of the resource.
+          format: uri
+        id:
+          type: string
+          description: Id of the resource.
+        identity:
+          $ref: '#/components/schemas/BTIdentityInfo'
+        name:
+          type: string
+          description: Name of the resource.
+        viewRef:
+          type: string
+          description: URI to visualize the resource in a webclient if applicable.
+          format: uri
+    BTListResponseBTWorkflowObserverOptionInfo:
       type: object
       properties:
         href:
@@ -936,7 +914,7 @@ components:
           type: array
           description: Array of items in the current page.
           items:
-            $ref: '#/components/schemas/BTObjectWorkflowInfo'
+            $ref: '#/components/schemas/BTWorkflowObserverOptionInfo'
         next:
           type: string
           description: URI for next page of the resources if more are available.
@@ -946,13 +924,26 @@ components:
           description: URI for previous page of the resources.
           format: uri
       description: A list of resources that typically supports paging.
-    BTWorkflowObserverOptionInfo:
+    BTTeamSummaryInfo:
       type: object
       properties:
-        alias:
-          $ref: '#/components/schemas/BTAliasInfo'
-        company:
-          $ref: '#/components/schemas/BTCompanySummaryInfo'
+        active:
+          type: boolean
+        canMove:
+          type: boolean
+        connectionName:
+          type: string
+        connectionNames:
+          type: array
+          items:
+            type: string
+        createdAt:
+          type: string
+          format: date-time
+        createdBy:
+          $ref: '#/components/schemas/BTUserBasicSummaryInfo'
+        description:
+          type: string
         href:
           type: string
           description: URI to fetch complete information of the resource.
@@ -960,62 +951,71 @@ components:
         id:
           type: string
           description: Id of the resource.
-        identityType:
+        isContainer:
+          type: boolean
+        isEnterpriseOwned:
+          type: boolean
+        isExternalConnectionResource:
+          type: boolean
+        isMutable:
+          type: boolean
+        modifiedAt:
+          type: string
+          format: date-time
+        modifiedBy:
+          $ref: '#/components/schemas/BTUserBasicSummaryInfo'
+        name:
+          type: string
+          description: Name of the resource.
+        owner:
+          $ref: '#/components/schemas/BTOwnerInfo'
+        parentId:
+          type: string
+        predefinedTeam:
           type: integer
           format: int32
-        role:
-          $ref: '#/components/schemas/BTRbacRoleInfo'
-        team:
-          $ref: '#/components/schemas/BTTeamSummaryInfo'
-        user:
-          $ref: '#/components/schemas/BTUserSummaryInfo'
+        predefinedTeamMutable:
+          type: boolean
+        projectId:
+          type: string
+        resourceType:
+          type: string
+        treeHref:
+          type: string
+        unparentHref:
+          type: string
         viewRef:
           type: string
           description: URI to visualize the resource in a webclient if applicable.
           format: uri
-      description: Array of items in the current page.
-    BTUserSummaryInfo:
-      type: object
       discriminator:
         propertyName: jsonType
         mapping:
-          user-summary: '#/components/schemas/BTUserSummaryInfo'
-          companyuser: '#/components/schemas/BTCompanyUserSummaryInfo'
-          BTUserAdminSummaryInfo: '#/components/schemas/BTUserAdminSummaryInfo'
-          userinfo: '#/components/schemas/BTUserInfo'
-          BTUserOAuth2SummaryInfo: '#/components/schemas/BTUserOAuth2SummaryInfo'
-      allOf:
-      - $ref: '#/components/schemas/BTUserDetailSummaryInfo'
-      - type: object
-        properties:
-          company:
-            $ref: '#/components/schemas/BTCompanySummaryInfo'
-          companyUserState:
-            type: integer
-            format: int32
-          confirmationRequested:
-            type: boolean
-          documentationNameOverride:
-            type: string
-          globalPermissions:
-            $ref: '#/components/schemas/GlobalPermissionInfo'
-          invitationState:
-            type: integer
-            format: int32
-          isExternal:
-            type: boolean
-          isGuest:
-            type: boolean
-          isLight:
-            type: boolean
-          lastLoginTime:
-            type: string
-            format: date-time
-          personalMessageAllowed:
-            type: boolean
-          source:
-            type: integer
-            format: int32
+          team: '#/components/schemas/BTTeamInfo'
+    BTOwnerInfo:
+      type: object
+      properties:
+        href:
+          type: string
+          description: URI to fetch complete information of the resource.
+          format: uri
+        id:
+          type: string
+          description: Id of the resource.
+        image:
+          type: string
+        isEnterpriseOwnedResource:
+          type: boolean
+        name:
+          type: string
+          description: Name of the resource.
+        type:
+          type: integer
+          format: int32
+        viewRef:
+          type: string
+          description: URI to visualize the resource in a webclient if applicable.
+          format: uri
     BTWorkflowAuditLogInfo:
       type: object
       properties:

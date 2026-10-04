@@ -442,37 +442,14 @@ paths:
       x-BTVisibility: PRODUCTION
 components:
   schemas:
-    BTThumbnailSizeInfo:
+    BTTreeNode-20:
       type: object
       properties:
-        href:
+        btType:
           type: string
-          format: uri
-        mediaType:
+          description: Type of JSON object.
+        nodeId:
           type: string
-        renderMode:
-          type: string
-        sheetName:
-          type: string
-        size:
-          type: string
-        uniqueId:
-          type: string
-        viewOrientation:
-          type: string
-    UpdateParams:
-      type: object
-      properties:
-        fromReference:
-          $ref: '#/components/schemas/BTUniqueDocumentItemParams'
-        idsToUpdate:
-          type: array
-          items:
-            type: string
-        ignoreChildren:
-          type: boolean
-        toReference:
-          $ref: '#/components/schemas/BTUniqueDocumentItemParams'
     BTZipFileInfo:
       type: object
       properties:
@@ -480,28 +457,13 @@ components:
           type: array
           items:
             type: string
-    BTApplicationTargetInfo:
+    ConfigurationEntry:
       type: object
       properties:
-        baseHref:
+        parameterId:
           type: string
-          format: uri
-        clientId:
+        parameterValue:
           type: string
-        supportsCollaboration:
-          type: boolean
-        tabIconHref:
-          type: string
-          format: uri
-    BTConfigurationInfo:
-      type: object
-      properties:
-        isStandardContent:
-          type: boolean
-        parameters:
-          type: array
-          items:
-            $ref: '#/components/schemas/ConfigurationInfoEntry'
     BTMNode-19:
       type: object
       properties:
@@ -543,14 +505,59 @@ components:
           BTModelAnnotations-3945: '#/components/schemas/BTModelAnnotations-3945'
           BTSimulationInstance-3093: '#/components/schemas/BTSimulationInstance-3093'
           BTToleranceString-3274: '#/components/schemas/BTToleranceString-3274'
-    ConfigurationEntry:
+    UpdateParams:
       type: object
       properties:
-        parameterId:
+        fromReference:
+          $ref: '#/components/schemas/BTUniqueDocumentItemParams'
+        idsToUpdate:
+          type: array
+          items:
+            type: string
+        ignoreChildren:
+          type: boolean
+        toReference:
+          $ref: '#/components/schemas/BTUniqueDocumentItemParams'
+    BTUniqueDocumentItemParams:
+      type: object
+      properties:
+        apiConfiguration:
           type: string
-        parameterValue:
+        documentId:
           type: string
-    BTConfigurationResponse-2019:
+        elementId:
+          type: string
+        elementType:
+          type: string
+        partId:
+          type: string
+        partNumber:
+          type: string
+        revision:
+          type: string
+        versionId:
+          type: string
+        workspaceId:
+          type: string
+    BTThumbnailInfo:
+      type: object
+      properties:
+        href:
+          type: string
+          format: uri
+        id:
+          type: string
+        secondarySizes:
+          type: array
+          items:
+            type: array
+            items:
+              $ref: '#/components/schemas/BTThumbnailSizeInfo'
+        sizes:
+          type: array
+          items:
+            $ref: '#/components/schemas/BTThumbnailSizeInfo'
+    BTConfigurationUpdateCall-2933:
       type: object
       properties:
         btType:
@@ -580,20 +587,6 @@ components:
         sourceMicroversion:
           type: string
           description: The state from which the result was extracted. Geometry ID interpretation is dependent on this document microversion.
-    GBTElementType:
-      type: string
-      enum:
-      - PARTSTUDIO
-      - ASSEMBLY
-      - DRAWING
-      - FEATURESTUDIO
-      - BLOB
-      - APPLICATION
-      - TABLE
-      - BILLOFMATERIALS
-      - VARIABLESTUDIO
-      - PUBLICATIONITEM
-      - UNKNOWN
     GBTConfigurationParameterType:
       type: string
       enum:
@@ -601,76 +594,22 @@ components:
       - BOOLEAN
       - STRING
       - QUANTITY
-    BTModelFormatInfo:
-      type: object
-      properties:
-        couldBeAssembly:
-          type: boolean
-          description: Indicates if this format could be an assembly.
-          example: true
-        name:
-          type: string
-          description: Name of the format.
-          example: STEP
-        translatorName:
-          type: string
-          description: The name of the translator for the format.
-          example: step
-    BTThumbnailInfo:
-      type: object
-      properties:
-        href:
-          type: string
-          format: uri
-        id:
-          type: string
-        secondarySizes:
-          type: array
-          items:
-            type: array
-            items:
-              $ref: '#/components/schemas/BTThumbnailSizeInfo'
-        sizes:
-          type: array
-          items:
-            $ref: '#/components/schemas/BTThumbnailSizeInfo'
-    BTMConfigurationParameter-819:
+    BTParameterVisibilityCondition-177:
       type: object
       properties:
         btType:
           type: string
           description: Type of JSON object.
+        selfOrChildAlwaysVisible:
+          type: boolean
       discriminator:
         propertyName: btType
         mapping:
-          BTMConfigurationParameterBoolean-2550: '#/components/schemas/BTMConfigurationParameterBoolean-2550'
-          BTMConfigurationParameterEnum-105: '#/components/schemas/BTMConfigurationParameterEnum-105'
-          BTMConfigurationParameterQuantity-1826: '#/components/schemas/BTMConfigurationParameterQuantity-1826'
-          BTMConfigurationParameterString-872: '#/components/schemas/BTMConfigurationParameterString-872'
-      allOf:
-      - $ref: '#/components/schemas/BTMNode-19'
-      - type: object
-        properties:
-          btType:
-            type: string
-          enumOptionIds:
-            type: array
-            items:
-              type: string
-          generatedParameterId:
-            $ref: '#/components/schemas/BTTreeNode-20'
-          isCosmetic:
-            type: boolean
-          parameterId:
-            type: string
-          parameterName:
-            type: string
-          parameterType:
-            $ref: '#/components/schemas/GBTConfigurationParameterType'
-          valid:
-            type: boolean
-          visibilityCondition:
-            $ref: '#/components/schemas/BTParameterVisibilityCondition-177'
+          BTParameterVisibilityAlwaysHidden-176: '#/components/schemas/BTParameterVisibilityAlwaysHidden-176'
+          BTParameterVisibilityAlwaysShown-5487: '#/components/schemas/BTParameterVisibilityAlwaysShown-5487'
+          BTParameterVisibilityInRange-2980: '#/components/schemas/BTParameterVisibilityInRange-2980'
+          BTParameterVisibilityLogical-178: '#/components/schemas/BTParameterVisibilityLogical-178'
+          BTParameterVisibilityOnEqual-180: '#/components/schemas/BTParameterVisibilityOnEqual-180'
     BTDocumentElementInfo:
       type: object
       properties:
@@ -737,63 +676,41 @@ components:
           type: string
         zip:
           $ref: '#/components/schemas/BTZipFileInfo'
-    BTConfigurationUpdateCall-2933:
+    ConfigurationInfoEntry:
       type: object
       properties:
-        btType:
+        explicit:
+          type: boolean
+        isCosmetic:
+          type: boolean
+        isVisible:
+          type: boolean
+        parameterAbbreviatedDisplayValue:
           type: string
-          description: Type of JSON object.
-        configurationParameters:
-          type: array
-          items:
-            $ref: '#/components/schemas/BTMConfigurationParameter-819'
-        currentConfiguration:
-          type: array
-          items:
-            $ref: '#/components/schemas/BTMParameter-1'
-        libraryVersion:
+        parameterDisplayValue:
+          type: string
+        parameterId:
+          type: string
+        parameterName:
+          type: string
+        parameterType:
           type: integer
-          description: FeatureScript version used in the Part Studio. Do not modify.
           format: int32
-        microversionSkew:
-          type: boolean
-          description: On output, `true` indicates a microversion mismatch was encountered.
-        rejectMicroversionSkew:
-          type: boolean
-          description: If `true`, the call will refuse to make the addition if the current microversion for the document does not match the source microversion. If `false`, a best-effort attempt is made to re-interpret the feature addition in the context of a newer document microversion.
-        serializationVersion:
+        parameterValue:
           type: string
-          description: Version of the structure serialization rules used to encode the output. This enables incompatibility detection during software updates.
-        sourceMicroversion:
-          type: string
-          description: The state from which the result was extracted. Geometry ID interpretation is dependent on this document microversion.
-    GBTParameterLibraryRelationType:
-      type: string
-      enum:
-      - DEFAULT
-      - IGNORE_LIBRARY_VALUES
-      - UNKNOWN
-    BTUniqueDocumentItemParams:
+    BTApplicationTargetInfo:
       type: object
       properties:
-        apiConfiguration:
+        baseHref:
           type: string
-        documentId:
+          format: uri
+        clientId:
           type: string
-        elementId:
+        supportsCollaboration:
+          type: boolean
+        tabIconHref:
           type: string
-        elementType:
-          type: string
-        partId:
-          type: string
-        partNumber:
-          type: string
-        revision:
-          type: string
-        versionId:
-          type: string
-        workspaceId:
-          type: string
+          format: uri
     BTMParameter-1:
       type: object
       properties:
@@ -841,13 +758,6 @@ components:
           BTMParameterReference-2434: '#/components/schemas/BTMParameterReference-2434'
           BTMParameterString-149: '#/components/schemas/BTMParameterString-149'
           BTMReadOnlyParameter-3800: '#/components/schemas/BTMReadOnlyParameter-3800'
-    BTEncodedConfigurationInfo:
-      type: object
-      properties:
-        encodedId:
-          type: string
-        queryParam:
-          type: string
     BTUpdateReferenceParams:
       type: object
       properties:
@@ -859,35 +769,12 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/UpdateParams'
-    ConfigurationInfoEntry:
+    BTEncodedConfigurationInfo:
       type: object
       properties:
-        explicit:
-          type: boolean
-        isCosmetic:
-          type: boolean
-        isVisible:
-          type: boolean
-        parameterAbbreviatedDisplayValue:
+        encodedId:
           type: string
-        parameterDisplayValue:
-          type: string
-        parameterId:
-          type: string
-        parameterName:
-          type: string
-        parameterType:
-          type: integer
-          format: int32
-        parameterValue:
-          type: string
-    BTTreeNode-20:
-      type: object
-      properties:
-        btType:
-          type: string
-          description: Type of JSON object.
-        nodeId:
+        queryParam:
           type: string
     BTConfigurationParams:
       type: object
@@ -898,22 +785,69 @@ components:
             $ref: '#/components/schemas/ConfigurationEntry'
         standardContentParametersId:
           type: string
-    BTParameterVisibilityCondition-177:
+    BTModelFormatInfo:
+      type: object
+      properties:
+        couldBeAssembly:
+          type: boolean
+          description: Indicates if this format could be an assembly.
+          example: true
+        name:
+          type: string
+          description: Name of the format.
+          example: STEP
+        translatorName:
+          type: string
+          description: The name of the translator for the format.
+          example: step
+    BTThumbnailSizeInfo:
+      type: object
+      properties:
+        href:
+          type: string
+          format: uri
+        mediaType:
+          type: string
+        renderMode:
+          type: string
+        sheetName:
+          type: string
+        size:
+          type: string
+        uniqueId:
+          type: string
+        viewOrientation:
+          type: string
+    BTConfigurationResponse-2019:
       type: object
       properties:
         btType:
           type: string
           description: Type of JSON object.
-        selfOrChildAlwaysVisible:
+        configurationParameters:
+          type: array
+          items:
+            $ref: '#/components/schemas/BTMConfigurationParameter-819'
+        currentConfiguration:
+          type: array
+          items:
+            $ref: '#/components/schemas/BTMParameter-1'
+        libraryVersion:
+          type: integer
+          description: FeatureScript version used in the Part Studio. Do not modify.
+          format: int32
+        microversionSkew:
           type: boolean
-      discriminator:
-        propertyName: btType
-        mapping:
-          BTParameterVisibilityAlwaysHidden-176: '#/components/schemas/BTParameterVisibilityAlwaysHidden-176'
-          BTParameterVisibilityAlwaysShown-5487: '#/components/schemas/BTParameterVisibilityAlwaysShown-5487'
-          BTParameterVisibilityInRange-2980: '#/components/schemas/BTParameterVisibilityInRange-2980'
-          BTParameterVisibilityLogical-178: '#/components/schemas/BTParameterVisibilityLogical-178'
-          BTParameterVisibilityOnEqual-180: '#/components/schemas/BTParameterVisibilityOnEqual-180'
+          description: On output, `true` indicates a microversion mismatch was encountered.
+        rejectMicroversionSkew:
+          type: boolean
+          description: If `true`, the call will refuse to make the addition if the current microversion for the document does not match the source microversion. If `false`, a best-effort attempt is made to re-interpret the feature addition in the context of a newer document microversion.
+        serializationVersion:
+          type: string
+          description: Version of the structure serialization rules used to encode the output. This enables incompatibility detection during software updates.
+        sourceMicroversion:
+          type: string
+          description: The state from which the result was extracted. Geometry ID interpretation is dependent on this document microversion.
     BTCopyElementParams:
       type: object
       properties:
@@ -927,6 +861,72 @@ components:
           type: boolean
         workspaceIdSource:
           type: string
+    GBTElementType:
+      type: string
+      enum:
+      - PARTSTUDIO
+      - ASSEMBLY
+      - DRAWING
+      - FEATURESTUDIO
+      - BLOB
+      - APPLICATION
+      - TABLE
+      - BILLOFMATERIALS
+      - VARIABLESTUDIO
+      - PUBLICATIONITEM
+      - UNKNOWN
+    GBTParameterLibraryRelationType:
+      type: string
+      enum:
+      - DEFAULT
+      - IGNORE_LIBRARY_VALUES
+      - UNKNOWN
+    BTMConfigurationParameter-819:
+      type: object
+      properties:
+        btType:
+          type: string
+          description: Type of JSON object.
+      discriminator:
+        propertyName: btType
+        mapping:
+          BTMConfigurationParameterBoolean-2550: '#/components/schemas/BTMConfigurationParameterBoolean-2550'
+          BTMConfigurationParameterEnum-105: '#/components/schemas/BTMConfigurationParameterEnum-105'
+          BTMConfigurationParameterQuantity-1826: '#/components/schemas/BTMConfigurationParameterQuantity-1826'
+          BTMConfigurationParameterString-872: '#/components/schemas/BTMConfigurationParameterString-872'
+      allOf:
+      - $ref: '#/components/schemas/BTMNode-19'
+      - type: object
+        properties:
+          btType:
+            type: string
+          enumOptionIds:
+            type: array
+            items:
+              type: string
+          generatedParameterId:
+            $ref: '#/components/schemas/BTTreeNode-20'
+          isCosmetic:
+            type: boolean
+          parameterId:
+            type: string
+          parameterName:
+            type: string
+          parameterType:
+            $ref: '#/components/schemas/GBTConfigurationParameterType'
+          valid:
+            type: boolean
+          visibilityCondition:
+            $ref: '#/components/schemas/BTParameterVisibilityCondition-177'
+    BTConfigurationInfo:
+      type: object
+      properties:
+        isStandardContent:
+          type: boolean
+        parameters:
+          type: array
+          items:
+            $ref: '#/components/schemas/ConfigurationInfoEntry'
   securitySchemes:
     OAuth2:
       type: oauth2

@@ -195,48 +195,6 @@ paths:
       x-BTVisibility: PRODUCTION
 components:
   schemas:
-    BTListResponseBTInsertableInfo:
-      type: object
-      properties:
-        href:
-          type: string
-          description: URI for current page of resources.
-          format: uri
-        items:
-          type: array
-          description: Array of items in the current page.
-          items:
-            $ref: '#/components/schemas/BTInsertableInfo'
-        next:
-          type: string
-          description: URI for next page of the resources if more are available.
-          format: uri
-        previous:
-          type: string
-          description: URI for previous page of the resources.
-          format: uri
-      description: A list of resources that typically supports paging.
-    GBTMeshState:
-      type: string
-      enum:
-      - NO_MESH
-      - MIXED
-      - ALL_MESH
-      - UNKNOWN
-    GBTElementType:
-      type: string
-      enum:
-      - PARTSTUDIO
-      - ASSEMBLY
-      - DRAWING
-      - FEATURESTUDIO
-      - BLOB
-      - APPLICATION
-      - TABLE
-      - BILLOFMATERIALS
-      - VARIABLESTUDIO
-      - PUBLICATIONITEM
-      - UNKNOWN
     BTInsertableInfo:
       type: object
       properties:
@@ -352,6 +310,48 @@ components:
       - POINT
       - MATE_CONNECTOR
       - COMPOSITE
+      - UNKNOWN
+    GBTElementType:
+      type: string
+      enum:
+      - PARTSTUDIO
+      - ASSEMBLY
+      - DRAWING
+      - FEATURESTUDIO
+      - BLOB
+      - APPLICATION
+      - TABLE
+      - BILLOFMATERIALS
+      - VARIABLESTUDIO
+      - PUBLICATIONITEM
+      - UNKNOWN
+    BTListResponseBTInsertableInfo:
+      type: object
+      properties:
+        href:
+          type: string
+          description: URI for current page of resources.
+          format: uri
+        items:
+          type: array
+          description: Array of items in the current page.
+          items:
+            $ref: '#/components/schemas/BTInsertableInfo'
+        next:
+          type: string
+          description: URI for next page of the resources if more are available.
+          format: uri
+        previous:
+          type: string
+          description: URI for previous page of the resources.
+          format: uri
+      description: A list of resources that typically supports paging.
+    GBTMeshState:
+      type: string
+      enum:
+      - NO_MESH
+      - MIXED
+      - ALL_MESH
       - UNKNOWN
   securitySchemes:
     OAuth2:

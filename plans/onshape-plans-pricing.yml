@@ -49,3 +49,44 @@ plans:
   period: none
   unit: user
   included_quota: All the features of Professional, SSO, Analytics, Arena PLM Connection, Priority Support
+x-canonical:
+  generated: '2026-10-08'
+  vocabulary: all/0-working/economics/plans-canonical.yml
+  models:
+  - free
+  - seat
+  units:
+  - seat
+  plans:
+  - name: Free Plan
+    access: other
+    model: free
+    model_how: derived
+    units:
+    - seat
+    periods:
+    - none
+  - name: Standard Plan
+    access: other
+    model: seat
+    model_how: derived
+    units:
+    - seat
+    periods:
+    - year
+  - name: Professional Plan
+    access: other
+    model: seat
+    model_how: derived
+    units:
+    - seat
+    periods:
+    - year
+  - name: Enterprise
+    access: other
+    model: unstated
+    model_how: derived
+    units:
+    - seat
+    periods:
+    - none

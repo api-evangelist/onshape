@@ -1,18 +1,33 @@
-generated: '2026-07-20'
+generated: '2026-09-23'
 method: generated
-source: openapi/onshape-openapi-original.json
+source: openapi/onshape-account-api-openapi.yml, openapi/onshape-alias-api-openapi.yml, openapi/onshape-api-application-api-openapi.yml,
+  openapi/onshape-appassociativedata-api-openapi.yml, openapi/onshape-appelement-api-openapi.yml,
+  openapi/onshape-assembly-api-openapi.yml, openapi/onshape-billing-api-openapi.yml, openapi/onshape-blobelement-api-openapi.yml,
+  openapi/onshape-comment-api-openapi.yml, openapi/onshape-company-api-openapi.yml, openapi/onshape-document-api-openapi.yml,
+  openapi/onshape-drawing-api-openapi.yml, openapi/onshape-element-api-openapi.yml, openapi/onshape-exportrule-api-openapi.yml,
+  openapi/onshape-featurestudio-api-openapi.yml, openapi/onshape-folder-api-openapi.yml, openapi/onshape-insertable-api-openapi.yml,
+  openapi/onshape-item-api-openapi.yml, openapi/onshape-material-api-openapi.yml, openapi/onshape-metadata-api-openapi.yml,
+  openapi/onshape-metadatacategory-api-openapi.yml, openapi/onshape-numberingscheme-api-openapi.yml,
+  openapi/onshape-open-api-api-openapi.yml, openapi/onshape-part-api-openapi.yml, openapi/onshape-partnumber-api-openapi.yml,
+  openapi/onshape-partstudio-api-openapi.yml, openapi/onshape-product-structure-api-openapi.yml,
+  openapi/onshape-propertiestabletemplate-api-openapi.yml, openapi/onshape-publication-api-openapi.yml,
+  openapi/onshape-releasepackage-api-openapi.yml, openapi/onshape-revision-api-openapi.yml,
+  openapi/onshape-sketch-api-openapi.yml, openapi/onshape-standardcontent-api-openapi.yml, openapi/onshape-task-api-openapi.yml,
+  openapi/onshape-team-api-openapi.yml, openapi/onshape-thumbnail-api-openapi.yml, openapi/onshape-translation-api-openapi.yml,
+  openapi/onshape-user-api-openapi.yml, openapi/onshape-variables-api-openapi.yml, openapi/onshape-version-api-openapi.yml,
+  openapi/onshape-webhook-api-openapi.yml, openapi/onshape-workflow-api-openapi.yml
 description: Recommended x-agentic-access execution contracts, classified heuristically from
   the OpenAPI. A governance starting point for exposing this API to AI agents — review and bind
   audience per deployment. See research/curity/agentic-governance/.
 summary:
   operations: 302
   by_action_class:
-    connected: 160
-    acting: 142
+    connected: 164
+    acting: 138
   by_consequence:
-    read: 160
+    read: 164
     physical: 2
-    write: 138
+    write: 134
     safety-critical: 2
   human_in_the_loop_required: 2
 operations:
@@ -166,6 +181,169 @@ operations:
     token:
       max-ttl: 3600
     audit: none
+- path: /applications/clients/{cid}/settings/companies/{cpid}
+  method: get
+  operationId: getCompanyAppSettings
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /applications/clients/{cid}/settings/companies/{cpid}
+  method: post
+  operationId: updateAppCompanySettings
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /applications/clients/{cid}/settings/companies/{cpid}
+  method: delete
+  operationId: deleteCompanyAppSettings
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /applications/clients/{cid}/settings/users/{uid}
+  method: get
+  operationId: getUserAppSettings
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /applications/clients/{cid}/settings/users/{uid}
+  method: post
+  operationId: updateAppSettings
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /applications/clients/{cid}/settings/users/{uid}
+  method: delete
+  operationId: deleteAppSettings
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /applications/extensions/user/{uid}/client/{cid}
+  method: get
+  operationId: getApplicableExtensionsForClient
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - OAuth2ReadPII
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /appelements/d/{did}/w/{wid}/e/{eid}/copyassociativedata
+  method: post
+  operationId: copyAssociativeData
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - OAuth2Write
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /appelements/d/{did}/{wvm}/{wvmid}/e/{eid}/associativedata
+  method: get
+  operationId: getAssociativeData
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - OAuth2Read
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /appelements/d/{did}/{wvm}/{wvmid}/e/{eid}/associativedata
+  method: post
+  operationId: postAssociativeData
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - OAuth2Read
+    - OAuth2Write
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /appelements/d/{did}/{wvm}/{wvmid}/e/{eid}/associativedata
+  method: delete
+  operationId: deleteAssociativeData
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - OAuth2Write
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
 - path: /appelements/d/{did}/w/{wid}
   method: post
   operationId: createElement
@@ -235,24 +413,6 @@ operations:
 - path: /appelements/d/{did}/w/{wid}/e/{eid}/blob/{bid}
   method: delete
   operationId: deleteBlobSubelement
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    scope:
-    - OAuth2Write
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /appelements/d/{did}/w/{wid}/e/{eid}/copyassociativedata
-  method: post
-  operationId: copyAssociativeData
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -346,55 +506,6 @@ operations:
     token:
       max-ttl: 3600
     audit: none
-- path: /appelements/d/{did}/{wvm}/{wvmid}/e/{eid}/associativedata
-  method: get
-  operationId: getAssociativeData
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    scope:
-    - OAuth2Read
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /appelements/d/{did}/{wvm}/{wvmid}/e/{eid}/associativedata
-  method: post
-  operationId: postAssociativeData
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    scope:
-    - OAuth2Read
-    - OAuth2Write
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /appelements/d/{did}/{wvm}/{wvmid}/e/{eid}/associativedata
-  method: delete
-  operationId: deleteAssociativeData
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    scope:
-    - OAuth2Write
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
 - path: /appelements/d/{did}/{wvm}/{wvmid}/e/{eid}/blob
   method: get
   operationId: getBlobSubelementIds
@@ -490,20 +601,14 @@ operations:
   method: post
   operationId: getJsonPaths
   x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
+    action-class: connected
+    consequence: read
+    subject: optional
     scope:
     - OAuth2Read
-    audience: null
     token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
+      max-ttl: 3600
+    audit: none
 - path: /appelements/d/{did}/{wvm}/{wvmid}/e/{eid}/content/subelements
   method: get
   operationId: getSubElementContentBatch
@@ -639,102 +744,6 @@ operations:
     subject: optional
     scope:
     - OAuth2Read
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /applications/clients/{cid}/settings/companies/{cpid}
-  method: get
-  operationId: getCompanyAppSettings
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /applications/clients/{cid}/settings/companies/{cpid}
-  method: post
-  operationId: updateAppCompanySettings
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /applications/clients/{cid}/settings/companies/{cpid}
-  method: delete
-  operationId: deleteCompanyAppSettings
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /applications/clients/{cid}/settings/users/{uid}
-  method: get
-  operationId: getUserAppSettings
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /applications/clients/{cid}/settings/users/{uid}
-  method: post
-  operationId: updateAppSettings
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /applications/clients/{cid}/settings/users/{uid}
-  method: delete
-  operationId: deleteAppSettings
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /applications/extensions/user/{uid}/client/{cid}
-  method: get
-  operationId: getApplicableExtensionsForClient
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    scope:
-    - OAuth2ReadPII
     token:
       max-ttl: 3600
     audit: none
@@ -1841,20 +1850,14 @@ operations:
   method: post
   operationId: search
   x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
+    action-class: connected
+    consequence: read
+    subject: optional
     scope:
     - OAuth2Read
-    audience: null
     token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
+      max-ttl: 3600
+    audit: none
 - path: /documents/{did}
   method: get
   operationId: getDocument
@@ -2759,20 +2762,14 @@ operations:
   method: post
   operationId: nextNumbers
   x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
+    action-class: connected
+    consequence: read
+    subject: optional
     scope:
     - OAuth2Read
-    audience: null
     token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
+      max-ttl: 3600
+    audit: none
 - path: /openapi
   method: get
   operationId: getOpenApi
@@ -2793,24 +2790,6 @@ operations:
     token:
       max-ttl: 3600
     audit: none
-- path: /partnumber/nextnumbers
-  method: post
-  operationId: updateNextNumbers
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    scope:
-    - OAuth2Read
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
 - path: /parts/d/{did}/{wvm}/{wvmid}
   method: get
   operationId: getPartsWMV
@@ -2955,6 +2934,24 @@ operations:
     token:
       max-ttl: 3600
     audit: none
+- path: /partnumber/nextnumbers
+  method: post
+  operationId: updateNextNumbers
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - OAuth2Read
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
 - path: /partstudios/d/{did}/e/{eid}/namedViews
   method: get
   operationId: getPartStudioNamedViews
@@ -3193,20 +3190,14 @@ operations:
   method: post
   operationId: translateIds
   x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
+    action-class: connected
+    consequence: read
+    subject: optional
     scope:
     - OAuth2Read
-    audience: null
     token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
+      max-ttl: 3600
+    audit: none
 - path: /partstudios/d/{did}/{wvm}/{wvmid}/e/{eid}/massproperties
   method: get
   operationId: getPartStudioMassProperties
@@ -3234,42 +3225,6 @@ operations:
 - path: /partstudios/d/{did}/{wvm}/{wvmid}/e/{eid}/shadedviews
   method: get
   operationId: getPartStudioShadedViews
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    scope:
-    - OAuth2Read
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /partstudios/d/{did}/{wvm}/{wvmid}/e/{eid}/sketches
-  method: get
-  operationId: getSketchInfo
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    scope:
-    - OAuth2Read
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /partstudios/d/{did}/{wvm}/{wvmid}/e/{eid}/sketches/{sid}/boundingboxes
-  method: get
-  operationId: getSketchBoundingBoxes
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    scope:
-    - OAuth2Read
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /partstudios/d/{did}/{wvm}/{wvmid}/e/{eid}/sketches/{sid}/tessellatedentities
-  method: get
-  operationId: getTessellatedEntities
   x-agentic-access:
     action-class: connected
     consequence: read
@@ -3393,6 +3348,78 @@ operations:
     token:
       max-ttl: 3600
     audit: none
+- path: /tabletemplates
+  method: post
+  operationId: createTableTemplate
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - OAuth2Write
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /tabletemplates/companies/{cid}
+  method: get
+  operationId: getByCompanyId
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - OAuth2Read
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /tabletemplates/d/{did}
+  method: get
+  operationId: getByDocumentId
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - OAuth2Read
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /tabletemplates/{tid}
+  method: get
+  operationId: getTableTemplate
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - OAuth2Read
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /tabletemplates/{tid}
+  method: delete
+  operationId: deleteTableTemplate
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - OAuth2Delete
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
 - path: /publications
   method: post
   operationId: createPublication
@@ -3693,6 +3720,42 @@ operations:
     token:
       max-ttl: 3600
     audit: none
+- path: /partstudios/d/{did}/{wvm}/{wvmid}/e/{eid}/sketches
+  method: get
+  operationId: getSketchInfo
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - OAuth2Read
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /partstudios/d/{did}/{wvm}/{wvmid}/e/{eid}/sketches/{sid}/boundingboxes
+  method: get
+  operationId: getSketchBoundingBoxes
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - OAuth2Read
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /partstudios/d/{did}/{wvm}/{wvmid}/e/{eid}/sketches/{sid}/tessellatedentities
+  method: get
+  operationId: getTessellatedEntities
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - OAuth2Read
+    token:
+      max-ttl: 3600
+    audit: none
 - path: /standardcontent/d/{did}/customparameters
   method: post
   operationId: setCustomParameters
@@ -3735,78 +3798,6 @@ operations:
     token:
       max-ttl: 3600
     audit: none
-- path: /tabletemplates
-  method: post
-  operationId: createTableTemplate
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    scope:
-    - OAuth2Write
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /tabletemplates/companies/{cid}
-  method: get
-  operationId: getByCompanyId
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    scope:
-    - OAuth2Read
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /tabletemplates/d/{did}
-  method: get
-  operationId: getByDocumentId
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    scope:
-    - OAuth2Read
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /tabletemplates/{tid}
-  method: get
-  operationId: getTableTemplate
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    scope:
-    - OAuth2Read
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /tabletemplates/{tid}
-  method: delete
-  operationId: deleteTableTemplate
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    scope:
-    - OAuth2Delete
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
 - path: /tasks
   method: get
   operationId: getActionItems

@@ -76,12 +76,118 @@ edges:
     detected: '2026-10-18'
   detected_by: sweep-official-sdks.py
   first_seen: '2026-10-18'
+- partner_name: C-Infinity
+  app: AutoAssembler
+  partner: c-infinity
+  partner_match: domain
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://cad.onshape.com/appstore/apps/AI%20Tools/6818f2e821972030f75fa7f3
+  category: AI Tools
+  contract_reference:
+    register: Onshape App Store (cad.onshape.com/appstore; the page's own anonymous storeentries call)
+    spec_file: null
+    role: onshape-app
+    registered_name: C-Infinity
+    matched_domain: c-infinity.ai
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - AutoAssembler
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-engineering-cad.py
+    detected: '2026-10-19'
+  detected_by: sweep-engineering-cad.py
+  detected: '2026-10-19'
+- partner_name: MathWorks
+  app: Simscape Multibody
+  partner: matlab
+  partner_match: domain+verified
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://cad.onshape.com/appstore/apps/Simulation/57dadeaa9aaed50f3dc62665
+  category: Simulation
+  contract_reference:
+    register: Onshape App Store (cad.onshape.com/appstore; the page's own anonymous storeentries call)
+    spec_file: null
+    role: onshape-app
+    registered_name: MathWorks
+    matched_domain: mathworks.com
+    matched_by: domain+verified
+    listings: 1
+    sample_apps:
+    - Simscape Multibody
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-engineering-cad.py
+    detected: '2026-10-19'
+  detected_by: sweep-engineering-cad.py
+  detected: '2026-10-19'
+- partner_name: SimScale GmbH
+  app: SimScale AI Agent
+  partner: simscale
+  partner_match: domain
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://cad.onshape.com/appstore/apps/Simulation/6a8d3cb7e6a8356d982d6bb5
+  category: Simulation
+  contract_reference:
+    register: Onshape App Store (cad.onshape.com/appstore; the page's own anonymous storeentries call)
+    spec_file: null
+    role: onshape-app
+    registered_name: SimScale GmbH
+    matched_domain: simscale.com
+    matched_by: domain
+    listings: 2
+    sample_apps:
+    - SimScale
+    - SimScale AI Agent
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-engineering-cad.py
+    detected: '2026-10-19'
+  detected_by: sweep-engineering-cad.py
+  detected: '2026-10-19'
+- partner_name: Violet Labs
+  app: Violet
+  partner: violetlabs
+  partner_match: domain
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://cad.onshape.com/appstore/apps/Project%20%26%20Data%20Management/68e58a98da73921b0d3c0543
+  category: Project & Data Management
+  contract_reference:
+    register: Onshape App Store (cad.onshape.com/appstore; the page's own anonymous storeentries call)
+    spec_file: null
+    role: onshape-app
+    registered_name: Violet Labs
+    matched_domain: violetlabs.com
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - Violet
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-engineering-cad.py
+    detected: '2026-10-19'
+  detected_by: sweep-engineering-cad.py
+  detected: '2026-10-19'
 generated: '2026-10-18'
 method: searched
 source:
 - slack/integrations/slack-integration-edges.yml
 checked:
 - https://api.nuget.org/v3
+- https://cad.onshape.com/appstore
 - https://crates.io/api/v1
 - https://proxy.golang.org
 - https://pypi.org/pypi
@@ -89,3 +195,12 @@ checked:
 - https://repo1.maven.org/maven2
 - https://rubygems.org/api/v1
 - slack/integrations/slack-integration-edges.yml
+marketplace_apps:
+- marketplace: own
+  channel: partner-built
+  app: onshape
+  url: https://cad.onshape.com/appstore
+  adapter: sweep-engineering-cad.py:onshape
+  listed: 4
+  note: Onshape App Store (cad.onshape.com/appstore; the page's own anonymous storeentries call); only domain-linked,
+    market-fit publishers are written

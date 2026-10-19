@@ -77,3 +77,108 @@
     detected: '2026-10-18'
   status: not-a-workflow
   arazzo: null
+- slug: onshape-c-infinity
+  label: C-Infinity
+  partner: c-infinity
+  partner_name: C-Infinity
+  category: AI Tools
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://cad.onshape.com/appstore/apps/AI%20Tools/6818f2e821972030f75fa7f3
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Onshape App Store (cad.onshape.com/appstore; the page's own anonymous storeentries call)
+    spec_file: null
+    role: onshape-app
+    registered_name: C-Infinity
+    matched_domain: c-infinity.ai
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - AutoAssembler
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-engineering-cad.py
+    detected: '2026-10-19'
+  status: not-a-workflow
+  arazzo: null
+- slug: onshape-mathworks
+  label: MathWorks
+  partner: matlab
+  partner_name: MathWorks
+  category: Simulation
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://cad.onshape.com/appstore/apps/Simulation/57dadeaa9aaed50f3dc62665
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Onshape App Store (cad.onshape.com/appstore; the page's own anonymous storeentries call)
+    spec_file: null
+    role: onshape-app
+    registered_name: MathWorks
+    matched_domain: mathworks.com
+    matched_by: domain+verified
+    listings: 1
+    sample_apps:
+    - Simscape Multibody
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-engineering-cad.py
+    detected: '2026-10-19'
+  status: not-a-workflow
+  arazzo: null
+- slug: onshape-simscale-gmbh
+  label: SimScale GmbH
+  partner: simscale
+  partner_name: SimScale GmbH
+  category: Simulation
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://cad.onshape.com/appstore/apps/Simulation/6a8d3cb7e6a8356d982d6bb5
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Onshape App Store (cad.onshape.com/appstore; the page's own anonymous storeentries call)
+    spec_file: null
+    role: onshape-app
+    registered_name: SimScale GmbH
+    matched_domain: simscale.com
+    matched_by: domain
+    listings: 2
+    sample_apps:
+    - SimScale
+    - SimScale AI Agent
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-engineering-cad.py
+    detected: '2026-10-19'
+  status: not-a-workflow
+  arazzo: null
+- slug: onshape-violet-labs
+  label: Violet Labs
+  partner: violetlabs
+  partner_name: Violet Labs
+  category: Project & Data Management
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://cad.onshape.com/appstore/apps/Project%20%26%20Data%20Management/68e58a98da73921b0d3c0543
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Onshape App Store (cad.onshape.com/appstore; the page's own anonymous storeentries call)
+    spec_file: null
+    role: onshape-app
+    registered_name: Violet Labs
+    matched_domain: violetlabs.com
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - Violet
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-engineering-cad.py
+    detected: '2026-10-19'
+  status: not-a-workflow
+  arazzo: null

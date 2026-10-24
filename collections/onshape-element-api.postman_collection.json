@@ -1,1479 +1,1627 @@
 {
+  "info": {
+    "_postman_id": "b6e6a7e7-a2c2-485d-a529-fe8ab135cbc6",
+    "name": "Onshape REST Element API",
+    "description": "## Welcome to the Onshape REST API Explorer\n\n**See the API Explorer Guide for help navigating this page.**\n\n### Using this page\n1.\n\nContact Support:\n Email: api-support@onshape.zendesk.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-10-22T02:11:04.000Z",
+    "updatedAt": "2026-10-22T02:11:04.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-b6e6a7e7-a2c2-485d-a529-fe8ab135cbc6"
+  },
   "item": [
     {
-      "id": "6c20260d-da7e-4e0f-b547-bc13b84b210b",
-      "name": "Element",
-      "description": {
-        "content": "Access and manage Elements. Every Element in an Onshape document is represented by a tab.",
-        "type": "text/plain"
-      },
+      "name": "elements",
       "item": [
         {
-          "id": "03800d2f-95ca-4a26-ae7e-1e000298b97a",
-          "name": "Copy an element from a source document.",
-          "request": {
-            "name": "Copy an element from a source document.",
-            "description": {
-              "content": "Specify the target document and workspace in the URL. Specify the source document, workspace, and element in the request body. \nIf `anchorElementId` is specified, the copied element will be inserted after the anchor element. If not specified, the copied element will be inserted at the end of the tab list. \n",
-              "type": "text/plain"
-            },
-            "url": {
-              "path": [
-                "elements",
-                "copyelement",
-                ":did",
-                "workspace",
-                ":wid"
-              ],
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "query": [],
-              "variable": [
-                {
-                  "disabled": false,
-                  "type": "any",
-                  "value": "<string>",
-                  "key": "did",
-                  "description": "(Required) "
-                },
-                {
-                  "disabled": false,
-                  "type": "any",
-                  "value": "<string>",
-                  "key": "wid",
-                  "description": "(Required) "
-                }
-              ]
-            },
-            "header": [
-              {
-                "key": "Content-Type",
-                "value": "application/json;charset=UTF-8; qs=0.09"
-              },
-              {
-                "key": "Accept",
-                "value": "application/json;charset=UTF-8; qs=0.09"
-              }
-            ],
-            "method": "POST",
-            "auth": {
-              "type": "oauth2",
-              "oauth2": [
-                {
-                  "key": "scope",
-                  "value": "OAuth2Internal OAuth2ReadPII OAuth2Read OAuth2Write OAuth2Delete OAuth2Purchase OAuth2Share document.create document.edit document.delete document.read enterprise.create enterprise.read enterprise.edit enterprise.delete enterprise.member.create enterprise.member.read enterprise.member.edit enterprise.member.delete webhook.create webhook.edit webhook.read webhook.delete PLMIntegration"
-                },
-                {
-                  "key": "redirect_uri",
-                  "value": "/oauth/token"
-                },
-                {
-                  "key": "accessTokenUrl",
-                  "value": "/oauth/token"
-                },
-                {
-                  "key": "authUrl",
-                  "value": "/oauth/authorize"
-                },
-                {
-                  "key": "grant_type",
-                  "value": "authorization_code"
-                }
-              ]
-            },
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"anchorElementId\": \"<string>\",\n  \"documentIdSource\": \"<string>\",\n  \"elementIdSource\": \"<string>\",\n  \"isGroupAnchor\": \"<boolean>\",\n  \"workspaceIdSource\": \"<string>\"\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
-            }
-          },
-          "response": [
+          "name": "copyelement",
+          "item": [
             {
-              "id": "1655a8a9-db1d-4c43-b5f6-621da1987a52",
-              "name": "default response",
-              "originalRequest": {
-                "url": {
-                  "path": [
-                    "elements",
-                    "copyelement",
-                    ":did",
-                    "workspace",
-                    ":wid"
-                  ],
-                  "host": [
-                    "{{baseUrl}}"
-                  ],
-                  "query": [],
-                  "variable": [
-                    {
-                      "disabled": false,
-                      "type": "any",
-                      "value": "<string>",
-                      "key": "did",
-                      "description": "(Required) "
-                    },
-                    {
-                      "disabled": false,
-                      "type": "any",
-                      "value": "<string>",
-                      "key": "wid",
-                      "description": "(Required) "
-                    }
-                  ]
-                },
-                "header": [
-                  {
-                    "description": {
-                      "content": "Added as a part of security scheme: oauth2",
-                      "type": "text/plain"
-                    },
-                    "key": "Authorization",
-                    "value": "<token>"
-                  },
-                  {
-                    "key": "Accept",
-                    "value": "application/json;charset=UTF-8; qs=0.09"
-                  }
-                ],
-                "method": "POST",
-                "body": {
-                  "mode": "raw",
-                  "raw": "{\n  \"anchorElementId\": \"<string>\",\n  \"documentIdSource\": \"<string>\",\n  \"elementIdSource\": \"<string>\",\n  \"isGroupAnchor\": \"<boolean>\",\n  \"workspaceIdSource\": \"<string>\"\n}",
-                  "options": {
-                    "raw": {
-                      "language": "json"
-                    }
-                  }
-                }
-              },
-              "status": "Internal Server Error",
-              "code": 500,
-              "header": [
+              "name": "{did}",
+              "item": [
                 {
-                  "key": "Content-Type",
-                  "value": "application/json;charset=UTF-8; qs=0.09"
+                  "name": "workspace",
+                  "item": [
+                    {
+                      "name": "{wid}",
+                      "item": [
+                        {
+                          "name": "Copy an element from a source document",
+                          "id": "de377474-7b5a-4db6-aabe-630e1de5fe49",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "auth": {
+                              "type": "oauth2",
+                              "oauth2": [
+                                {
+                                  "key": "scope",
+                                  "value": "OAuth2Internal OAuth2ReadPII OAuth2Read OAuth2Write OAuth2Delete OAuth2Purchase OAuth2Share document.create document.edit document.delete document.read enterprise.create enterprise.read enterprise.edit enterprise.delete enterprise.member.create enterprise.member.read enterprise.member.edit enterprise.member.delete webhook.create webhook.edit webhook.read webhook.delete PLMIntegration",
+                                  "type": "string"
+                                },
+                                {
+                                  "key": "redirect_uri",
+                                  "value": "/oauth/token",
+                                  "type": "string"
+                                },
+                                {
+                                  "key": "accessTokenUrl",
+                                  "value": "/oauth/token",
+                                  "type": "string"
+                                },
+                                {
+                                  "key": "authUrl",
+                                  "value": "/oauth/authorize",
+                                  "type": "string"
+                                },
+                                {
+                                  "key": "grant_type",
+                                  "value": "authorization_code",
+                                  "type": "string"
+                                }
+                              ]
+                            },
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json;charset=UTF-8; qs=0.09"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json;charset=UTF-8; qs=0.09"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"anchorElementId\": \"<string>\",\n  \"documentIdSource\": \"<string>\",\n  \"elementIdSource\": \"<string>\",\n  \"isGroupAnchor\": \"<boolean>\",\n  \"workspaceIdSource\": \"<string>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/elements/copyelement/:did/workspace/:wid",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "elements",
+                                "copyelement",
+                                ":did",
+                                "workspace",
+                                ":wid"
+                              ],
+                              "variable": [
+                                {
+                                  "id": "53f4ab19-891f-4faa-a542-865d91f9d2dd",
+                                  "key": "did",
+                                  "value": "<string>",
+                                  "description": "(Required) "
+                                },
+                                {
+                                  "id": "5f824287-c9ac-4b62-871c-bc0a0e881998",
+                                  "key": "wid",
+                                  "value": "<string>",
+                                  "description": "(Required) "
+                                }
+                              ]
+                            },
+                            "description": "Specify the target document and workspace in the URL. Specify the source document, workspace, and element in the request body.\nIf `anchorElementId` is specified, the copied element will be inserted after the anchor element. If not specified, the copied element will be inserted at the end of the tab list."
+                          },
+                          "response": [
+                            {
+                              "id": "6649f122-69ba-4ddd-94f0-bc901d864ba5",
+                              "name": "default response",
+                              "originalRequest": {
+                                "method": "POST",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json;charset=UTF-8; qs=0.09"
+                                  },
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json;charset=UTF-8; qs=0.09"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: oauth2",
+                                    "key": "Authorization",
+                                    "value": "<token>"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"anchorElementId\": \"<string>\",\n  \"documentIdSource\": \"<string>\",\n  \"elementIdSource\": \"<string>\",\n  \"isGroupAnchor\": \"<boolean>\",\n  \"workspaceIdSource\": \"<string>\"\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/elements/copyelement/:did/workspace/:wid",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "elements",
+                                    "copyelement",
+                                    ":did",
+                                    "workspace",
+                                    ":wid"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "did"
+                                    },
+                                    {
+                                      "key": "wid"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Internal Server Error",
+                              "code": 500,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json;charset=UTF-8; qs=0.09"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"accelerationUnits\": \"<string>\",\n  \"angleUnits\": \"<string>\",\n  \"angularVelocityUnits\": \"<string>\",\n  \"applicationTarget\": {\n    \"baseHref\": \"<uri>\",\n    \"clientId\": \"<string>\",\n    \"supportsCollaboration\": \"<boolean>\",\n    \"tabIconHref\": \"<uri>\"\n  },\n  \"areaUnits\": \"<string>\",\n  \"dataType\": \"<string>\",\n  \"deleted\": \"<boolean>\",\n  \"densityUnits\": \"<string>\",\n  \"elementType\": \"BILLOFMATERIALS\",\n  \"energyUnits\": \"<string>\",\n  \"filename\": \"<string>\",\n  \"forceUnits\": \"<string>\",\n  \"foreignDataId\": \"<string>\",\n  \"frequencyUnits\": \"<string>\",\n  \"id\": \"<string>\",\n  \"lengthUnits\": \"<string>\",\n  \"massUnits\": \"<string>\",\n  \"microversionId\": \"<string>\",\n  \"momentUnits\": \"<string>\",\n  \"name\": \"<string>\",\n  \"pressureUnits\": \"<string>\",\n  \"prettyType\": \"<string>\",\n  \"safeToShow\": \"<boolean>\",\n  \"specifiedUnit\": \"<string>\",\n  \"thumbnailInfo\": {\n    \"href\": \"<uri>\",\n    \"id\": \"<string>\",\n    \"secondarySizes\": [\n      [\n        {\n          \"href\": \"<uri>\",\n          \"mediaType\": \"<string>\",\n          \"renderMode\": \"<string>\",\n          \"sheetName\": \"<string>\",\n          \"size\": \"<string>\",\n          \"uniqueId\": \"<string>\",\n          \"viewOrientation\": \"<string>\"\n        },\n        {\n          \"href\": \"<uri>\",\n          \"mediaType\": \"<string>\",\n          \"renderMode\": \"<string>\",\n          \"sheetName\": \"<string>\",\n          \"size\": \"<string>\",\n          \"uniqueId\": \"<string>\",\n          \"viewOrientation\": \"<string>\"\n        }\n      ],\n      [\n        {\n          \"href\": \"<uri>\",\n          \"mediaType\": \"<string>\",\n          \"renderMode\": \"<string>\",\n          \"sheetName\": \"<string>\",\n          \"size\": \"<string>\",\n          \"uniqueId\": \"<string>\",\n          \"viewOrientation\": \"<string>\"\n        },\n        {\n          \"href\": \"<uri>\",\n          \"mediaType\": \"<string>\",\n          \"renderMode\": \"<string>\",\n          \"sheetName\": \"<string>\",\n          \"size\": \"<string>\",\n          \"uniqueId\": \"<string>\",\n          \"viewOrientation\": \"<string>\"\n        }\n      ]\n    ],\n    \"sizes\": [\n      {\n        \"href\": \"<uri>\",\n        \"mediaType\": \"<string>\",\n        \"renderMode\": \"<string>\",\n        \"sheetName\": \"<string>\",\n        \"size\": \"<string>\",\n        \"uniqueId\": \"<string>\",\n        \"viewOrientation\": \"<string>\"\n      },\n      {\n        \"href\": \"<uri>\",\n        \"mediaType\": \"<string>\",\n        \"renderMode\": \"<string>\",\n        \"sheetName\": \"<string>\",\n        \"size\": \"<string>\",\n        \"uniqueId\": \"<string>\",\n        \"viewOrientation\": \"<string>\"\n      }\n    ]\n  },\n  \"thumbnails\": \"<uri>\",\n  \"timeUnits\": \"<string>\",\n  \"type\": \"<string>\",\n  \"unupdatable\": \"<boolean>\",\n  \"volumeUnits\": \"<string>\",\n  \"zip\": {\n    \"files\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  }\n}",
+                              "createdAt": "2026-10-22T02:11:04.000Z",
+                              "updatedAt": "2026-10-22T02:11:04.000Z",
+                              "uid": "35240-6649f122-69ba-4ddd-94f0-bc901d864ba5"
+                            }
+                          ],
+                          "createdAt": "2026-10-22T02:11:04.000Z",
+                          "updatedAt": "2026-10-22T02:11:04.000Z",
+                          "uid": "35240-de377474-7b5a-4db6-aabe-630e1de5fe49"
+                        }
+                      ],
+                      "id": "05a24481-76f8-416c-aaf2-52014bb4ce28",
+                      "createdAt": "2026-10-22T02:11:04.000Z",
+                      "updatedAt": "2026-10-22T02:11:04.000Z",
+                      "uid": "35240-05a24481-76f8-416c-aaf2-52014bb4ce28"
+                    }
+                  ],
+                  "id": "052b2ed8-c459-4602-9423-955495f2c2c6",
+                  "createdAt": "2026-10-22T02:11:04.000Z",
+                  "updatedAt": "2026-10-22T02:11:04.000Z",
+                  "uid": "35240-052b2ed8-c459-4602-9423-955495f2c2c6"
                 }
               ],
-              "body": "{\n  \"accelerationUnits\": \"string\",\n  \"angleUnits\": \"string\",\n  \"angularVelocityUnits\": \"string\",\n  \"applicationTarget\": {\n    \"baseHref\": \"https://uULWsDEoyawgYaXGAwKoCPTAqt.wwvez\",\n    \"clientId\": \"string\",\n    \"supportsCollaboration\": false,\n    \"tabIconHref\": \"https://oYOSgJAyGfiV.fdch5beEX41vQ5E8oc1J\"\n  },\n  \"areaUnits\": \"string\",\n  \"dataType\": \"string\",\n  \"deleted\": false,\n  \"densityUnits\": \"string\",\n  \"elementType\": \"DRAWING\",\n  \"energyUnits\": \"string\",\n  \"filename\": \"string\",\n  \"forceUnits\": \"string\",\n  \"foreignDataId\": \"string\",\n  \"frequencyUnits\": \"string\",\n  \"id\": \"string\",\n  \"lengthUnits\": \"string\",\n  \"massUnits\": \"string\",\n  \"microversionId\": \"string\",\n  \"momentUnits\": \"string\",\n  \"name\": \"string\",\n  \"pressureUnits\": \"string\",\n  \"prettyType\": \"string\",\n  \"safeToShow\": true,\n  \"specifiedUnit\": \"string\",\n  \"thumbnailInfo\": {\n    \"href\": \"http://mkcJREAGcDUepxKO.rbBFYH.elYD7wHOSIH-RuaMM\",\n    \"id\": \"string\",\n    \"secondarySizes\": [\n      [\n        {\n          \"href\": \"https://KSeoyRlaCQEiSbfpMOuhjSWqFQ.hragC5osI8.tTZQMZjR0t8SDp9G52NRJ-,jXpJ4VrL6t4JvqDKUPtQQs,TkJk4qmud7sItT\",\n          \"mediaType\": \"string\",\n          \"renderMode\": \"string\",\n          \"sheetName\": \"string\",\n          \"size\": \"string\",\n          \"uniqueId\": \"string\",\n          \"viewOrientation\": \"string\"\n        },\n        {\n          \"href\": \"http://ntKrXxEKsxRWiOH.ggAX6OzzL1EBl7lA,mLCgd8M9iqJ00ur,md+F3LAuqfuL8.L5zHEWZnE5LsGHYX\",\n          \"mediaType\": \"string\",\n          \"renderMode\": \"string\",\n          \"sheetName\": \"string\",\n          \"size\": \"string\",\n          \"uniqueId\": \"string\",\n          \"viewOrientation\": \"string\"\n        }\n      ],\n      [\n        {\n          \"href\": \"https://kfybzKsMTIzkFhpLXRCkWvB.gxcg4e0GbhdN\",\n          \"mediaType\": \"string\",\n          \"renderMode\": \"string\",\n          \"sheetName\": \"string\",\n          \"size\": \"string\",\n          \"uniqueId\": \"string\",\n          \"viewOrientation\": \"string\"\n        },\n        {\n          \"href\": \"http://nEbWKMfbyhvzmueHmV.xtnySqvAeig4NOrhqNvzhfc9FwkzmM3DD9YZx\",\n          \"mediaType\": \"string\",\n          \"renderMode\": \"string\",\n          \"sheetName\": \"string\",\n          \"size\": \"string\",\n          \"uniqueId\": \"string\",\n          \"viewOrientation\": \"string\"\n        }\n      ]\n    ],\n    \"sizes\": [\n      {\n        \"href\": \"http://fghduoaiEPKRTUz.ayvfOzwlLIHb,ssfi2i5a7twnVZW9DXXSzI\",\n        \"mediaType\": \"string\",\n        \"renderMode\": \"string\",\n        \"sheetName\": \"string\",\n        \"size\": \"string\",\n        \"uniqueId\": \"string\",\n        \"viewOrientation\": \"string\"\n      },\n      {\n        \"href\": \"https://VAFH.koO6BOLS0\",\n        \"mediaType\": \"string\",\n        \"renderMode\": \"string\",\n        \"sheetName\": \"string\",\n        \"size\": \"string\",\n        \"uniqueId\": \"string\",\n        \"viewOrientation\": \"string\"\n      }\n    ]\n  },\n  \"thumbnails\": \"https://qaGKH.pvtm.uzW,CIaPrnMnAigL0fICs8sgKM5X5xpqzvp8zRlVJidE\",\n  \"timeUnits\": \"string\",\n  \"type\": \"string\",\n  \"unupdatable\": true,\n  \"volumeUnits\": \"string\",\n  \"zip\": {\n    \"files\": [\n      \"string\",\n      \"string\"\n    ]\n  }\n}",
-              "cookie": [],
-              "_postman_previewlanguage": "json"
+              "id": "c91a6c69-ab06-4904-a136-191bf58e1662",
+              "createdAt": "2026-10-22T02:11:04.000Z",
+              "updatedAt": "2026-10-22T02:11:04.000Z",
+              "uid": "35240-c91a6c69-ab06-4904-a136-191bf58e1662"
             }
           ],
-          "event": [],
-          "protocolProfileBehavior": {
-            "disableBodyPruning": true
-          }
+          "id": "7c736d35-fc56-4322-8d21-3ff3d727541c",
+          "createdAt": "2026-10-22T02:11:04.000Z",
+          "updatedAt": "2026-10-22T02:11:04.000Z",
+          "uid": "35240-7c736d35-fc56-4322-8d21-3ff3d727541c"
         },
         {
-          "id": "30eb3ec9-9858-48c4-b9bd-dff97eb717b6",
-          "name": "Encode a configuration option for use in other API calls.",
-          "request": {
-            "name": "Encode a configuration option for use in other API calls.",
-            "description": {
-              "content": "Returns a configuration string in the following form: \n`configuration=parameterId%3DparameterValue` \nThe configuration string can be used in other Onshape API calls to specify which configuration option to use. See the [Configuration API Guide](https://onshape-public.github.io/docs/api-adv/configs/) for additional details. \n",
-              "type": "text/plain"
-            },
-            "url": {
-              "path": [
-                "elements",
-                "d",
-                ":did",
-                "e",
-                ":eid",
-                "configurationencodings"
-              ],
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "query": [
-                {
-                  "disabled": false,
-                  "key": "versionId",
-                  "value": "<string>"
-                },
-                {
-                  "disabled": false,
-                  "key": "linkDocumentId",
-                  "value": "<string>"
-                }
-              ],
-              "variable": [
-                {
-                  "disabled": false,
-                  "type": "any",
-                  "value": "<string>",
-                  "key": "did",
-                  "description": "(Required) "
-                },
-                {
-                  "disabled": false,
-                  "type": "any",
-                  "value": "<string>",
-                  "key": "eid",
-                  "description": "(Required) "
-                }
-              ]
-            },
-            "header": [
-              {
-                "key": "Content-Type",
-                "value": "application/json;charset=UTF-8; qs=0.09"
-              },
-              {
-                "key": "Accept",
-                "value": "application/json;charset=UTF-8; qs=0.09"
-              }
-            ],
-            "method": "POST",
-            "auth": {
-              "type": "oauth2",
-              "oauth2": [
-                {
-                  "key": "scope",
-                  "value": "OAuth2Internal OAuth2ReadPII OAuth2Read OAuth2Write OAuth2Delete OAuth2Purchase OAuth2Share document.create document.edit document.delete document.read enterprise.create enterprise.read enterprise.edit enterprise.delete enterprise.member.create enterprise.member.read enterprise.member.edit enterprise.member.delete webhook.create webhook.edit webhook.read webhook.delete PLMIntegration"
-                },
-                {
-                  "key": "redirect_uri",
-                  "value": "/oauth/token"
-                },
-                {
-                  "key": "accessTokenUrl",
-                  "value": "/oauth/token"
-                },
-                {
-                  "key": "authUrl",
-                  "value": "/oauth/authorize"
-                },
-                {
-                  "key": "grant_type",
-                  "value": "authorization_code"
-                }
-              ]
-            },
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"parameters\": [\n    {\n      \"parameterId\": \"<string>\",\n      \"parameterValue\": \"<string>\"\n    },\n    {\n      \"parameterId\": \"<string>\",\n      \"parameterValue\": \"<string>\"\n    }\n  ],\n  \"standardContentParametersId\": \"<string>\"\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
-            }
-          },
-          "response": [
+          "name": "d",
+          "item": [
             {
-              "id": "8294f0c9-bba0-4f12-8197-b7b4a4fd6c27",
-              "name": "default response",
-              "originalRequest": {
-                "url": {
-                  "path": [
-                    "elements",
-                    "d",
-                    ":did",
-                    "e",
-                    ":eid",
-                    "configurationencodings"
-                  ],
-                  "host": [
-                    "{{baseUrl}}"
-                  ],
-                  "query": [
-                    {
-                      "key": "versionId",
-                      "value": "<string>"
-                    },
-                    {
-                      "key": "linkDocumentId",
-                      "value": "<string>"
-                    }
-                  ],
-                  "variable": [
-                    {
-                      "disabled": false,
-                      "type": "any",
-                      "value": "<string>",
-                      "key": "did",
-                      "description": "(Required) "
-                    },
-                    {
-                      "disabled": false,
-                      "type": "any",
-                      "value": "<string>",
-                      "key": "eid",
-                      "description": "(Required) "
-                    }
-                  ]
-                },
-                "header": [
-                  {
-                    "description": {
-                      "content": "Added as a part of security scheme: oauth2",
-                      "type": "text/plain"
-                    },
-                    "key": "Authorization",
-                    "value": "<token>"
-                  },
-                  {
-                    "key": "Accept",
-                    "value": "application/json;charset=UTF-8; qs=0.09"
-                  }
-                ],
-                "method": "POST",
-                "body": {
-                  "mode": "raw",
-                  "raw": "{\n  \"parameters\": [\n    {\n      \"parameterId\": \"<string>\",\n      \"parameterValue\": \"<string>\"\n    },\n    {\n      \"parameterId\": \"<string>\",\n      \"parameterValue\": \"<string>\"\n    }\n  ],\n  \"standardContentParametersId\": \"<string>\"\n}",
-                  "options": {
-                    "raw": {
-                      "language": "json"
-                    }
-                  }
-                }
-              },
-              "status": "Internal Server Error",
-              "code": 500,
-              "header": [
+              "name": "{did}",
+              "item": [
                 {
-                  "key": "Content-Type",
-                  "value": "application/json;charset=UTF-8; qs=0.09"
+                  "name": "e",
+                  "item": [
+                    {
+                      "name": "{eid}",
+                      "item": [
+                        {
+                          "name": "configurationencodings",
+                          "item": [
+                            {
+                              "name": "Encode a configuration option for use in other API calls",
+                              "id": "d01478f5-106b-4595-944d-9fb654f34418",
+                              "protocolProfileBehavior": {
+                                "disableBodyPruning": true
+                              },
+                              "request": {
+                                "auth": {
+                                  "type": "oauth2",
+                                  "oauth2": [
+                                    {
+                                      "key": "scope",
+                                      "value": "OAuth2Internal OAuth2ReadPII OAuth2Read OAuth2Write OAuth2Delete OAuth2Purchase OAuth2Share document.create document.edit document.delete document.read enterprise.create enterprise.read enterprise.edit enterprise.delete enterprise.member.create enterprise.member.read enterprise.member.edit enterprise.member.delete webhook.create webhook.edit webhook.read webhook.delete PLMIntegration",
+                                      "type": "string"
+                                    },
+                                    {
+                                      "key": "redirect_uri",
+                                      "value": "/oauth/token",
+                                      "type": "string"
+                                    },
+                                    {
+                                      "key": "accessTokenUrl",
+                                      "value": "/oauth/token",
+                                      "type": "string"
+                                    },
+                                    {
+                                      "key": "authUrl",
+                                      "value": "/oauth/authorize",
+                                      "type": "string"
+                                    },
+                                    {
+                                      "key": "grant_type",
+                                      "value": "authorization_code",
+                                      "type": "string"
+                                    }
+                                  ]
+                                },
+                                "method": "POST",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json;charset=UTF-8; qs=0.09"
+                                  },
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json;charset=UTF-8; qs=0.09"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"parameters\": [\n    {\n      \"parameterId\": \"<string>\",\n      \"parameterValue\": \"<string>\"\n    },\n    {\n      \"parameterId\": \"<string>\",\n      \"parameterValue\": \"<string>\"\n    }\n  ],\n  \"standardContentParametersId\": \"<string>\"\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/elements/d/:did/e/:eid/configurationencodings?versionId=<string>&linkDocumentId=<string>",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "elements",
+                                    "d",
+                                    ":did",
+                                    "e",
+                                    ":eid",
+                                    "configurationencodings"
+                                  ],
+                                  "query": [
+                                    {
+                                      "key": "versionId",
+                                      "value": "<string>"
+                                    },
+                                    {
+                                      "key": "linkDocumentId",
+                                      "value": "<string>"
+                                    }
+                                  ],
+                                  "variable": [
+                                    {
+                                      "id": "c3873e47-61f5-4c8c-9588-5fe20e41fb85",
+                                      "key": "did",
+                                      "value": "<string>",
+                                      "description": "(Required) "
+                                    },
+                                    {
+                                      "id": "90405c34-b346-473c-90d2-d2be7b196ae5",
+                                      "key": "eid",
+                                      "value": "<string>",
+                                      "description": "(Required) "
+                                    }
+                                  ]
+                                },
+                                "description": "Returns a configuration string in the following form:\n`configuration=parameterId%3DparameterValue`\nThe configuration string can be used in other Onshape API calls to specify which configuration option to use. See the Configuration API Guide for additional details."
+                              },
+                              "response": [
+                                {
+                                  "id": "4d92d637-491c-4086-8634-4bf5f60abc30",
+                                  "name": "default response",
+                                  "originalRequest": {
+                                    "method": "POST",
+                                    "header": [
+                                      {
+                                        "key": "Content-Type",
+                                        "value": "application/json;charset=UTF-8; qs=0.09"
+                                      },
+                                      {
+                                        "key": "Accept",
+                                        "value": "application/json;charset=UTF-8; qs=0.09"
+                                      },
+                                      {
+                                        "description": "Added as a part of security scheme: oauth2",
+                                        "key": "Authorization",
+                                        "value": "<token>"
+                                      }
+                                    ],
+                                    "body": {
+                                      "mode": "raw",
+                                      "raw": "{\n  \"parameters\": [\n    {\n      \"parameterId\": \"<string>\",\n      \"parameterValue\": \"<string>\"\n    },\n    {\n      \"parameterId\": \"<string>\",\n      \"parameterValue\": \"<string>\"\n    }\n  ],\n  \"standardContentParametersId\": \"<string>\"\n}",
+                                      "options": {
+                                        "raw": {
+                                          "headerFamily": "json",
+                                          "language": "json"
+                                        }
+                                      }
+                                    },
+                                    "url": {
+                                      "raw": "{{baseUrl}}/elements/d/:did/e/:eid/configurationencodings?versionId=<string>&linkDocumentId=<string>",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "elements",
+                                        "d",
+                                        ":did",
+                                        "e",
+                                        ":eid",
+                                        "configurationencodings"
+                                      ],
+                                      "query": [
+                                        {
+                                          "key": "versionId",
+                                          "value": "<string>"
+                                        },
+                                        {
+                                          "key": "linkDocumentId",
+                                          "value": "<string>"
+                                        }
+                                      ],
+                                      "variable": [
+                                        {
+                                          "key": "did"
+                                        },
+                                        {
+                                          "key": "eid"
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  "status": "Internal Server Error",
+                                  "code": 500,
+                                  "_postman_previewlanguage": "json",
+                                  "header": [
+                                    {
+                                      "key": "Content-Type",
+                                      "value": "application/json;charset=UTF-8; qs=0.09"
+                                    }
+                                  ],
+                                  "cookie": [],
+                                  "responseTime": null,
+                                  "body": "{\n  \"encodedId\": \"<string>\",\n  \"queryParam\": \"<string>\"\n}",
+                                  "createdAt": "2026-10-22T02:11:04.000Z",
+                                  "updatedAt": "2026-10-22T02:11:04.000Z",
+                                  "uid": "35240-4d92d637-491c-4086-8634-4bf5f60abc30"
+                                }
+                              ],
+                              "createdAt": "2026-10-22T02:11:04.000Z",
+                              "updatedAt": "2026-10-22T02:11:04.000Z",
+                              "uid": "35240-d01478f5-106b-4595-944d-9fb654f34418"
+                            }
+                          ],
+                          "id": "d29bbaa3-99bb-4704-a3fd-8ac0d24a5f61",
+                          "createdAt": "2026-10-22T02:11:04.000Z",
+                          "updatedAt": "2026-10-22T02:11:04.000Z",
+                          "uid": "35240-d29bbaa3-99bb-4704-a3fd-8ac0d24a5f61"
+                        }
+                      ],
+                      "id": "ca873fc3-968b-445a-b14e-765978f246a3",
+                      "createdAt": "2026-10-22T02:11:04.000Z",
+                      "updatedAt": "2026-10-22T02:11:04.000Z",
+                      "uid": "35240-ca873fc3-968b-445a-b14e-765978f246a3"
+                    }
+                  ],
+                  "id": "f63fb5fc-f117-4a31-86a9-f5448cd856be",
+                  "createdAt": "2026-10-22T02:11:04.000Z",
+                  "updatedAt": "2026-10-22T02:11:04.000Z",
+                  "uid": "35240-f63fb5fc-f117-4a31-86a9-f5448cd856be"
+                },
+                {
+                  "name": "w",
+                  "item": [
+                    {
+                      "name": "{wid}",
+                      "item": [
+                        {
+                          "name": "e",
+                          "item": [
+                            {
+                              "name": "{eid}",
+                              "item": [
+                                {
+                                  "name": "updatereferences",
+                                  "item": [
+                                    {
+                                      "name": "Update or replace references in an element",
+                                      "id": "c4b27974-f135-4cee-a737-f972a52b534f",
+                                      "protocolProfileBehavior": {
+                                        "disableBodyPruning": true
+                                      },
+                                      "request": {
+                                        "auth": {
+                                          "type": "oauth2",
+                                          "oauth2": [
+                                            {
+                                              "key": "scope",
+                                              "value": "OAuth2Internal OAuth2ReadPII OAuth2Read OAuth2Write OAuth2Delete OAuth2Purchase OAuth2Share document.create document.edit document.delete document.read enterprise.create enterprise.read enterprise.edit enterprise.delete enterprise.member.create enterprise.member.read enterprise.member.edit enterprise.member.delete webhook.create webhook.edit webhook.read webhook.delete PLMIntegration",
+                                              "type": "string"
+                                            },
+                                            {
+                                              "key": "redirect_uri",
+                                              "value": "/oauth/token",
+                                              "type": "string"
+                                            },
+                                            {
+                                              "key": "accessTokenUrl",
+                                              "value": "/oauth/token",
+                                              "type": "string"
+                                            },
+                                            {
+                                              "key": "authUrl",
+                                              "value": "/oauth/authorize",
+                                              "type": "string"
+                                            },
+                                            {
+                                              "key": "grant_type",
+                                              "value": "authorization_code",
+                                              "type": "string"
+                                            }
+                                          ]
+                                        },
+                                        "method": "POST",
+                                        "header": [
+                                          {
+                                            "key": "Content-Type",
+                                            "value": "application/json;charset=UTF-8; qs=0.09"
+                                          },
+                                          {
+                                            "key": "Accept",
+                                            "value": "application/json;charset=UTF-8; qs=0.09"
+                                          }
+                                        ],
+                                        "body": {
+                                          "mode": "raw",
+                                          "raw": "{\n  \"connectionId\": \"<string>\",\n  \"editDescription\": \"<string>\",\n  \"referenceUpdates\": [\n    {\n      \"fromReference\": {\n        \"apiConfiguration\": \"<string>\",\n        \"documentId\": \"<string>\",\n        \"elementId\": \"<string>\",\n        \"elementType\": \"<string>\",\n        \"partId\": \"<string>\",\n        \"partNumber\": \"<string>\",\n        \"revision\": \"<string>\",\n        \"versionId\": \"<string>\",\n        \"workspaceId\": \"<string>\"\n      },\n      \"idsToUpdate\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"ignoreChildren\": \"<boolean>\",\n      \"toReference\": {\n        \"apiConfiguration\": \"<string>\",\n        \"documentId\": \"<string>\",\n        \"elementId\": \"<string>\",\n        \"elementType\": \"<string>\",\n        \"partId\": \"<string>\",\n        \"partNumber\": \"<string>\",\n        \"revision\": \"<string>\",\n        \"versionId\": \"<string>\",\n        \"workspaceId\": \"<string>\"\n      }\n    },\n    {\n      \"fromReference\": {\n        \"apiConfiguration\": \"<string>\",\n        \"documentId\": \"<string>\",\n        \"elementId\": \"<string>\",\n        \"elementType\": \"<string>\",\n        \"partId\": \"<string>\",\n        \"partNumber\": \"<string>\",\n        \"revision\": \"<string>\",\n        \"versionId\": \"<string>\",\n        \"workspaceId\": \"<string>\"\n      },\n      \"idsToUpdate\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"ignoreChildren\": \"<boolean>\",\n      \"toReference\": {\n        \"apiConfiguration\": \"<string>\",\n        \"documentId\": \"<string>\",\n        \"elementId\": \"<string>\",\n        \"elementType\": \"<string>\",\n        \"partId\": \"<string>\",\n        \"partNumber\": \"<string>\",\n        \"revision\": \"<string>\",\n        \"versionId\": \"<string>\",\n        \"workspaceId\": \"<string>\"\n      }\n    }\n  ]\n}",
+                                          "options": {
+                                            "raw": {
+                                              "headerFamily": "json",
+                                              "language": "json"
+                                            }
+                                          }
+                                        },
+                                        "url": {
+                                          "raw": "{{baseUrl}}/elements/d/:did/w/:wid/e/:eid/updatereferences",
+                                          "host": [
+                                            "{{baseUrl}}"
+                                          ],
+                                          "path": [
+                                            "elements",
+                                            "d",
+                                            ":did",
+                                            "w",
+                                            ":wid",
+                                            "e",
+                                            ":eid",
+                                            "updatereferences"
+                                          ],
+                                          "variable": [
+                                            {
+                                              "id": "c1fbe89e-9060-4e5e-86e0-d059ca01a208",
+                                              "key": "did",
+                                              "value": "<string>",
+                                              "description": "(Required) "
+                                            },
+                                            {
+                                              "id": "614ec61a-bde4-4196-88b2-ed61da19beb5",
+                                              "key": "wid",
+                                              "value": "<string>",
+                                              "description": "(Required) "
+                                            },
+                                            {
+                                              "id": "9d78d561-1a96-4ec1-aae3-c5b7c550f523",
+                                              "key": "eid",
+                                              "value": "<string>",
+                                              "description": "(Required) "
+                                            }
+                                          ]
+                                        }
+                                      },
+                                      "response": [
+                                        {
+                                          "id": "3a3a9efa-88b0-44a4-9da8-1459b05eeb2d",
+                                          "name": "default response",
+                                          "originalRequest": {
+                                            "method": "POST",
+                                            "header": [
+                                              {
+                                                "key": "Content-Type",
+                                                "value": "application/json;charset=UTF-8; qs=0.09"
+                                              },
+                                              {
+                                                "key": "Accept",
+                                                "value": "application/json;charset=UTF-8; qs=0.09"
+                                              },
+                                              {
+                                                "description": "Added as a part of security scheme: oauth2",
+                                                "key": "Authorization",
+                                                "value": "<token>"
+                                              }
+                                            ],
+                                            "body": {
+                                              "mode": "raw",
+                                              "raw": "{\n  \"connectionId\": \"<string>\",\n  \"editDescription\": \"<string>\",\n  \"referenceUpdates\": [\n    {\n      \"fromReference\": {\n        \"apiConfiguration\": \"<string>\",\n        \"documentId\": \"<string>\",\n        \"elementId\": \"<string>\",\n        \"elementType\": \"<string>\",\n        \"partId\": \"<string>\",\n        \"partNumber\": \"<string>\",\n        \"revision\": \"<string>\",\n        \"versionId\": \"<string>\",\n        \"workspaceId\": \"<string>\"\n      },\n      \"idsToUpdate\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"ignoreChildren\": \"<boolean>\",\n      \"toReference\": {\n        \"apiConfiguration\": \"<string>\",\n        \"documentId\": \"<string>\",\n        \"elementId\": \"<string>\",\n        \"elementType\": \"<string>\",\n        \"partId\": \"<string>\",\n        \"partNumber\": \"<string>\",\n        \"revision\": \"<string>\",\n        \"versionId\": \"<string>\",\n        \"workspaceId\": \"<string>\"\n      }\n    },\n    {\n      \"fromReference\": {\n        \"apiConfiguration\": \"<string>\",\n        \"documentId\": \"<string>\",\n        \"elementId\": \"<string>\",\n        \"elementType\": \"<string>\",\n        \"partId\": \"<string>\",\n        \"partNumber\": \"<string>\",\n        \"revision\": \"<string>\",\n        \"versionId\": \"<string>\",\n        \"workspaceId\": \"<string>\"\n      },\n      \"idsToUpdate\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"ignoreChildren\": \"<boolean>\",\n      \"toReference\": {\n        \"apiConfiguration\": \"<string>\",\n        \"documentId\": \"<string>\",\n        \"elementId\": \"<string>\",\n        \"elementType\": \"<string>\",\n        \"partId\": \"<string>\",\n        \"partNumber\": \"<string>\",\n        \"revision\": \"<string>\",\n        \"versionId\": \"<string>\",\n        \"workspaceId\": \"<string>\"\n      }\n    }\n  ]\n}",
+                                              "options": {
+                                                "raw": {
+                                                  "headerFamily": "json",
+                                                  "language": "json"
+                                                }
+                                              }
+                                            },
+                                            "url": {
+                                              "raw": "{{baseUrl}}/elements/d/:did/w/:wid/e/:eid/updatereferences",
+                                              "host": [
+                                                "{{baseUrl}}"
+                                              ],
+                                              "path": [
+                                                "elements",
+                                                "d",
+                                                ":did",
+                                                "w",
+                                                ":wid",
+                                                "e",
+                                                ":eid",
+                                                "updatereferences"
+                                              ],
+                                              "variable": [
+                                                {
+                                                  "key": "did"
+                                                },
+                                                {
+                                                  "key": "wid"
+                                                },
+                                                {
+                                                  "key": "eid"
+                                                }
+                                              ]
+                                            }
+                                          },
+                                          "status": "Internal Server Error",
+                                          "code": 500,
+                                          "_postman_previewlanguage": "json",
+                                          "header": [
+                                            {
+                                              "key": "Content-Type",
+                                              "value": "application/json;charset=UTF-8; qs=0.09"
+                                            }
+                                          ],
+                                          "cookie": [],
+                                          "responseTime": null,
+                                          "body": "{}",
+                                          "createdAt": "2026-10-22T02:11:04.000Z",
+                                          "updatedAt": "2026-10-22T02:11:04.000Z",
+                                          "uid": "35240-3a3a9efa-88b0-44a4-9da8-1459b05eeb2d"
+                                        }
+                                      ],
+                                      "createdAt": "2026-10-22T02:11:04.000Z",
+                                      "updatedAt": "2026-10-22T02:11:04.000Z",
+                                      "uid": "35240-c4b27974-f135-4cee-a737-f972a52b534f"
+                                    }
+                                  ],
+                                  "id": "c8d891fe-990b-400c-8e0f-cba5abce7b3e",
+                                  "createdAt": "2026-10-22T02:11:04.000Z",
+                                  "updatedAt": "2026-10-22T02:11:04.000Z",
+                                  "uid": "35240-c8d891fe-990b-400c-8e0f-cba5abce7b3e"
+                                },
+                                {
+                                  "name": "Delete an element from a document",
+                                  "id": "08203314-024d-4f1a-a75b-a6c175c94b37",
+                                  "protocolProfileBehavior": {
+                                    "disableBodyPruning": true
+                                  },
+                                  "request": {
+                                    "auth": {
+                                      "type": "oauth2",
+                                      "oauth2": [
+                                        {
+                                          "key": "scope",
+                                          "value": "OAuth2Internal OAuth2ReadPII OAuth2Read OAuth2Write OAuth2Delete OAuth2Purchase OAuth2Share document.create document.edit document.delete document.read enterprise.create enterprise.read enterprise.edit enterprise.delete enterprise.member.create enterprise.member.read enterprise.member.edit enterprise.member.delete webhook.create webhook.edit webhook.read webhook.delete PLMIntegration",
+                                          "type": "string"
+                                        },
+                                        {
+                                          "key": "redirect_uri",
+                                          "value": "/oauth/token",
+                                          "type": "string"
+                                        },
+                                        {
+                                          "key": "accessTokenUrl",
+                                          "value": "/oauth/token",
+                                          "type": "string"
+                                        },
+                                        {
+                                          "key": "authUrl",
+                                          "value": "/oauth/authorize",
+                                          "type": "string"
+                                        },
+                                        {
+                                          "key": "grant_type",
+                                          "value": "authorization_code",
+                                          "type": "string"
+                                        }
+                                      ]
+                                    },
+                                    "method": "DELETE",
+                                    "header": [
+                                      {
+                                        "key": "Accept",
+                                        "value": "application/json;charset=UTF-8; qs=0.09"
+                                      }
+                                    ],
+                                    "url": {
+                                      "raw": "{{baseUrl}}/elements/d/:did/w/:wid/e/:eid",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "elements",
+                                        "d",
+                                        ":did",
+                                        "w",
+                                        ":wid",
+                                        "e",
+                                        ":eid"
+                                      ],
+                                      "variable": [
+                                        {
+                                          "id": "d22e24df-5be6-4ff7-ba24-99142dc60779",
+                                          "key": "did",
+                                          "value": "<string>",
+                                          "description": "(Required) "
+                                        },
+                                        {
+                                          "id": "60418b6e-f90b-4f1f-b87a-c2fa0bf57623",
+                                          "key": "wid",
+                                          "value": "<string>",
+                                          "description": "(Required) "
+                                        },
+                                        {
+                                          "id": "7e9dc9bf-e79e-475f-a408-1b8c574985d2",
+                                          "key": "eid",
+                                          "value": "<string>",
+                                          "description": "(Required) "
+                                        }
+                                      ]
+                                    },
+                                    "description": "Attempting to delete the last element in a document will result in an error."
+                                  },
+                                  "response": [
+                                    {
+                                      "id": "9e24a5be-e468-4a3f-a777-09e7859cfce8",
+                                      "name": "default response",
+                                      "originalRequest": {
+                                        "method": "DELETE",
+                                        "header": [
+                                          {
+                                            "key": "Accept",
+                                            "value": "application/json;charset=UTF-8; qs=0.09"
+                                          },
+                                          {
+                                            "description": "Added as a part of security scheme: oauth2",
+                                            "key": "Authorization",
+                                            "value": "<token>"
+                                          }
+                                        ],
+                                        "url": {
+                                          "raw": "{{baseUrl}}/elements/d/:did/w/:wid/e/:eid",
+                                          "host": [
+                                            "{{baseUrl}}"
+                                          ],
+                                          "path": [
+                                            "elements",
+                                            "d",
+                                            ":did",
+                                            "w",
+                                            ":wid",
+                                            "e",
+                                            ":eid"
+                                          ],
+                                          "variable": [
+                                            {
+                                              "key": "did"
+                                            },
+                                            {
+                                              "key": "wid"
+                                            },
+                                            {
+                                              "key": "eid"
+                                            }
+                                          ]
+                                        }
+                                      },
+                                      "status": "Internal Server Error",
+                                      "code": 500,
+                                      "_postman_previewlanguage": "json",
+                                      "header": [
+                                        {
+                                          "key": "Content-Type",
+                                          "value": "application/json;charset=UTF-8; qs=0.09"
+                                        }
+                                      ],
+                                      "cookie": [],
+                                      "responseTime": null,
+                                      "body": "{}",
+                                      "createdAt": "2026-10-22T02:11:04.000Z",
+                                      "updatedAt": "2026-10-22T02:11:04.000Z",
+                                      "uid": "35240-9e24a5be-e468-4a3f-a777-09e7859cfce8"
+                                    }
+                                  ],
+                                  "createdAt": "2026-10-22T02:11:04.000Z",
+                                  "updatedAt": "2026-10-22T02:11:04.000Z",
+                                  "uid": "35240-08203314-024d-4f1a-a75b-a6c175c94b37"
+                                }
+                              ],
+                              "id": "6fd77048-988c-4bbe-9675-ef6c9c231ab5",
+                              "createdAt": "2026-10-22T02:11:04.000Z",
+                              "updatedAt": "2026-10-22T02:11:04.000Z",
+                              "uid": "35240-6fd77048-988c-4bbe-9675-ef6c9c231ab5"
+                            }
+                          ],
+                          "id": "1c8a4a03-74e8-47ec-803e-991ba299b993",
+                          "createdAt": "2026-10-22T02:11:04.000Z",
+                          "updatedAt": "2026-10-22T02:11:04.000Z",
+                          "uid": "35240-1c8a4a03-74e8-47ec-803e-991ba299b993"
+                        }
+                      ],
+                      "id": "1fa2b219-fd8d-4c8d-b4ac-4ad1f78729b1",
+                      "createdAt": "2026-10-22T02:11:04.000Z",
+                      "updatedAt": "2026-10-22T02:11:04.000Z",
+                      "uid": "35240-1fa2b219-fd8d-4c8d-b4ac-4ad1f78729b1"
+                    }
+                  ],
+                  "id": "1407b00b-9e9f-44d1-aaac-36e7e3b64a9c",
+                  "createdAt": "2026-10-22T02:11:04.000Z",
+                  "updatedAt": "2026-10-22T02:11:04.000Z",
+                  "uid": "35240-1407b00b-9e9f-44d1-aaac-36e7e3b64a9c"
+                },
+                {
+                  "name": "{wvm}",
+                  "item": [
+                    {
+                      "name": "{wvmid}",
+                      "item": [
+                        {
+                          "name": "e",
+                          "item": [
+                            {
+                              "name": "{eid}",
+                              "item": [
+                                {
+                                  "name": "configuration",
+                                  "item": [
+                                    {
+                                      "name": "Get the configuration definition for a Part Studio, Variable Studio, or Assembly",
+                                      "id": "25f34fe0-3575-4b11-b631-b2b30641c5bd",
+                                      "protocolProfileBehavior": {
+                                        "disableBodyPruning": true
+                                      },
+                                      "request": {
+                                        "auth": {
+                                          "type": "oauth2",
+                                          "oauth2": [
+                                            {
+                                              "key": "scope",
+                                              "value": "OAuth2Internal OAuth2ReadPII OAuth2Read OAuth2Write OAuth2Delete OAuth2Purchase OAuth2Share document.create document.edit document.delete document.read enterprise.create enterprise.read enterprise.edit enterprise.delete enterprise.member.create enterprise.member.read enterprise.member.edit enterprise.member.delete webhook.create webhook.edit webhook.read webhook.delete PLMIntegration",
+                                              "type": "string"
+                                            },
+                                            {
+                                              "key": "redirect_uri",
+                                              "value": "/oauth/token",
+                                              "type": "string"
+                                            },
+                                            {
+                                              "key": "accessTokenUrl",
+                                              "value": "/oauth/token",
+                                              "type": "string"
+                                            },
+                                            {
+                                              "key": "authUrl",
+                                              "value": "/oauth/authorize",
+                                              "type": "string"
+                                            },
+                                            {
+                                              "key": "grant_type",
+                                              "value": "authorization_code",
+                                              "type": "string"
+                                            }
+                                          ]
+                                        },
+                                        "method": "GET",
+                                        "header": [
+                                          {
+                                            "key": "Accept",
+                                            "value": "application/json;charset=UTF-8; qs=0.09"
+                                          }
+                                        ],
+                                        "url": {
+                                          "raw": "{{baseUrl}}/elements/d/:did/:wvm/:wvmid/e/:eid/configuration?linkDocumentId=",
+                                          "host": [
+                                            "{{baseUrl}}"
+                                          ],
+                                          "path": [
+                                            "elements",
+                                            "d",
+                                            ":did",
+                                            ":wvm",
+                                            ":wvmid",
+                                            "e",
+                                            ":eid",
+                                            "configuration"
+                                          ],
+                                          "query": [
+                                            {
+                                              "description": "The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both.",
+                                              "key": "linkDocumentId",
+                                              "value": ""
+                                            }
+                                          ],
+                                          "variable": [
+                                            {
+                                              "id": "074b16ee-c1d4-46d1-809a-af41d573e88a",
+                                              "key": "did",
+                                              "value": "<string>",
+                                              "description": "(Required) The id of the document in which to perform the operation."
+                                            },
+                                            {
+                                              "id": "dd92dc1a-fddb-4a4c-90d9-d7b787e3075a",
+                                              "key": "wvm",
+                                              "value": "v",
+                                              "description": "(Required) Indicates which of workspace (w), version (v), or document microversion (m) id is specified below."
+                                            },
+                                            {
+                                              "id": "8a9f4135-795d-4a9b-b88e-79cd813933e8",
+                                              "key": "wvmid",
+                                              "value": "<string>",
+                                              "description": "(Required) The id of the workspace, version or document microversion in which the operation should be performed."
+                                            },
+                                            {
+                                              "id": "0b7e9e06-b7e0-44f2-b54a-29446453ceac",
+                                              "key": "eid",
+                                              "value": "<string>",
+                                              "description": "(Required) The id of the element in which to perform the operation."
+                                            }
+                                          ]
+                                        },
+                                        "description": "Use Configurations to create variations of elements. You can configure feature and parameter values, part properties, custom part properties, face and part appearances, and sketch text. Each Part Studio can have only one Configuration, but it can contain multiple Configuration inputs.\nSee the Configuration API Guide for additional details."
+                                      },
+                                      "response": [
+                                        {
+                                          "id": "ab49684a-9116-4308-aaa6-ebc94cbce603",
+                                          "name": "default response",
+                                          "originalRequest": {
+                                            "method": "GET",
+                                            "header": [
+                                              {
+                                                "key": "Accept",
+                                                "value": "application/json;charset=UTF-8; qs=0.09"
+                                              },
+                                              {
+                                                "description": "Added as a part of security scheme: oauth2",
+                                                "key": "Authorization",
+                                                "value": "<token>"
+                                              }
+                                            ],
+                                            "url": {
+                                              "raw": "{{baseUrl}}/elements/d/:did/:wvm/:wvmid/e/:eid/configuration?linkDocumentId=",
+                                              "host": [
+                                                "{{baseUrl}}"
+                                              ],
+                                              "path": [
+                                                "elements",
+                                                "d",
+                                                ":did",
+                                                ":wvm",
+                                                ":wvmid",
+                                                "e",
+                                                ":eid",
+                                                "configuration"
+                                              ],
+                                              "query": [
+                                                {
+                                                  "description": "The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both.",
+                                                  "key": "linkDocumentId",
+                                                  "value": ""
+                                                }
+                                              ],
+                                              "variable": [
+                                                {
+                                                  "key": "did"
+                                                },
+                                                {
+                                                  "key": "wvm"
+                                                },
+                                                {
+                                                  "key": "wvmid"
+                                                },
+                                                {
+                                                  "key": "eid"
+                                                }
+                                              ]
+                                            }
+                                          },
+                                          "status": "Internal Server Error",
+                                          "code": 500,
+                                          "_postman_previewlanguage": "json",
+                                          "header": [
+                                            {
+                                              "key": "Content-Type",
+                                              "value": "application/json;charset=UTF-8; qs=0.09"
+                                            }
+                                          ],
+                                          "cookie": [],
+                                          "responseTime": null,
+                                          "body": "{\n  \"btType\": \"<string>\",\n  \"configurationParameters\": [\n    {\n      \"btType\": \"<string>\",\n      \"importMicroversion\": \"<string>\",\n      \"nodeId\": \"<string>\",\n      \"enumOptionIds\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"generatedParameterId\": {\n        \"btType\": \"<string>\",\n        \"nodeId\": \"<string>\"\n      },\n      \"isCosmetic\": \"<boolean>\",\n      \"parameterId\": \"<string>\",\n      \"parameterName\": \"<string>\",\n      \"parameterType\": \"ENUM\",\n      \"valid\": \"<boolean>\",\n      \"visibilityCondition\": {\n        \"btType\": \"<string>\",\n        \"selfOrChildAlwaysVisible\": \"<boolean>\"\n      }\n    },\n    {\n      \"btType\": \"<string>\",\n      \"importMicroversion\": \"<string>\",\n      \"nodeId\": \"<string>\",\n      \"enumOptionIds\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"generatedParameterId\": {\n        \"btType\": \"<string>\",\n        \"nodeId\": \"<string>\"\n      },\n      \"isCosmetic\": \"<boolean>\",\n      \"parameterId\": \"<string>\",\n      \"parameterName\": \"<string>\",\n      \"parameterType\": \"STRING\",\n      \"valid\": \"<boolean>\",\n      \"visibilityCondition\": {\n        \"btType\": \"<string>\",\n        \"selfOrChildAlwaysVisible\": \"<boolean>\"\n      }\n    }\n  ],\n  \"currentConfiguration\": [\n    {\n      \"btType\": \"<string>\",\n      \"importMicroversion\": \"<string>\",\n      \"libraryRelationType\": \"DEFAULT\",\n      \"nodeId\": \"<string>\",\n      \"parameterId\": \"<string>\",\n      \"parameterName\": \"<string>\",\n      \"valueString\": \"<string>\"\n    },\n    {\n      \"btType\": \"<string>\",\n      \"importMicroversion\": \"<string>\",\n      \"libraryRelationType\": \"IGNORE_LIBRARY_VALUES\",\n      \"nodeId\": \"<string>\",\n      \"parameterId\": \"<string>\",\n      \"parameterName\": \"<string>\",\n      \"valueString\": \"<string>\"\n    }\n  ],\n  \"libraryVersion\": \"<integer>\",\n  \"microversionSkew\": \"<boolean>\",\n  \"rejectMicroversionSkew\": \"<boolean>\",\n  \"serializationVersion\": \"<string>\",\n  \"sourceMicroversion\": \"<string>\"\n}",
+                                          "createdAt": "2026-10-22T02:11:04.000Z",
+                                          "updatedAt": "2026-10-22T02:11:04.000Z",
+                                          "uid": "35240-ab49684a-9116-4308-aaa6-ebc94cbce603"
+                                        }
+                                      ],
+                                      "createdAt": "2026-10-22T02:11:04.000Z",
+                                      "updatedAt": "2026-10-22T02:11:04.000Z",
+                                      "uid": "35240-25f34fe0-3575-4b11-b631-b2b30641c5bd"
+                                    },
+                                    {
+                                      "name": "Update the configuration definition for a Part Studio, Variable Studio, or\u2026",
+                                      "id": "aec6f452-e7de-4e7d-a994-72ac3c6f6359",
+                                      "protocolProfileBehavior": {
+                                        "disableBodyPruning": true
+                                      },
+                                      "request": {
+                                        "auth": {
+                                          "type": "oauth2",
+                                          "oauth2": [
+                                            {
+                                              "key": "scope",
+                                              "value": "OAuth2Internal OAuth2ReadPII OAuth2Read OAuth2Write OAuth2Delete OAuth2Purchase OAuth2Share document.create document.edit document.delete document.read enterprise.create enterprise.read enterprise.edit enterprise.delete enterprise.member.create enterprise.member.read enterprise.member.edit enterprise.member.delete webhook.create webhook.edit webhook.read webhook.delete PLMIntegration",
+                                              "type": "string"
+                                            },
+                                            {
+                                              "key": "redirect_uri",
+                                              "value": "/oauth/token",
+                                              "type": "string"
+                                            },
+                                            {
+                                              "key": "accessTokenUrl",
+                                              "value": "/oauth/token",
+                                              "type": "string"
+                                            },
+                                            {
+                                              "key": "authUrl",
+                                              "value": "/oauth/authorize",
+                                              "type": "string"
+                                            },
+                                            {
+                                              "key": "grant_type",
+                                              "value": "authorization_code",
+                                              "type": "string"
+                                            }
+                                          ]
+                                        },
+                                        "method": "POST",
+                                        "header": [
+                                          {
+                                            "key": "Content-Type",
+                                            "value": "application/json;charset=UTF-8; qs=0.09"
+                                          },
+                                          {
+                                            "key": "Accept",
+                                            "value": "application/json;charset=UTF-8; qs=0.09"
+                                          }
+                                        ],
+                                        "body": {
+                                          "mode": "raw",
+                                          "raw": "{\n  \"btType\": \"<string>\",\n  \"configurationParameters\": [\n    {\n      \"btType\": \"<string>\",\n      \"importMicroversion\": \"<string>\",\n      \"nodeId\": \"<string>\",\n      \"enumOptionIds\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"generatedParameterId\": {\n        \"btType\": \"<string>\",\n        \"nodeId\": \"<string>\"\n      },\n      \"isCosmetic\": \"<boolean>\",\n      \"parameterId\": \"<string>\",\n      \"parameterName\": \"<string>\",\n      \"parameterType\": \"ENUM\",\n      \"valid\": \"<boolean>\",\n      \"visibilityCondition\": {\n        \"btType\": \"<string>\",\n        \"selfOrChildAlwaysVisible\": \"<boolean>\"\n      }\n    },\n    {\n      \"btType\": \"<string>\",\n      \"importMicroversion\": \"<string>\",\n      \"nodeId\": \"<string>\",\n      \"enumOptionIds\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"generatedParameterId\": {\n        \"btType\": \"<string>\",\n        \"nodeId\": \"<string>\"\n      },\n      \"isCosmetic\": \"<boolean>\",\n      \"parameterId\": \"<string>\",\n      \"parameterName\": \"<string>\",\n      \"parameterType\": \"STRING\",\n      \"valid\": \"<boolean>\",\n      \"visibilityCondition\": {\n        \"btType\": \"<string>\",\n        \"selfOrChildAlwaysVisible\": \"<boolean>\"\n      }\n    }\n  ],\n  \"currentConfiguration\": [\n    {\n      \"btType\": \"<string>\",\n      \"importMicroversion\": \"<string>\",\n      \"libraryRelationType\": \"DEFAULT\",\n      \"nodeId\": \"<string>\",\n      \"parameterId\": \"<string>\",\n      \"parameterName\": \"<string>\",\n      \"valueString\": \"<string>\"\n    },\n    {\n      \"btType\": \"<string>\",\n      \"importMicroversion\": \"<string>\",\n      \"libraryRelationType\": \"IGNORE_LIBRARY_VALUES\",\n      \"nodeId\": \"<string>\",\n      \"parameterId\": \"<string>\",\n      \"parameterName\": \"<string>\",\n      \"valueString\": \"<string>\"\n    }\n  ],\n  \"libraryVersion\": \"<integer>\",\n  \"microversionSkew\": \"<boolean>\",\n  \"rejectMicroversionSkew\": \"<boolean>\",\n  \"serializationVersion\": \"<string>\",\n  \"sourceMicroversion\": \"<string>\"\n}",
+                                          "options": {
+                                            "raw": {
+                                              "headerFamily": "json",
+                                              "language": "json"
+                                            }
+                                          }
+                                        },
+                                        "url": {
+                                          "raw": "{{baseUrl}}/elements/d/:did/:wvm/:wvmid/e/:eid/configuration",
+                                          "host": [
+                                            "{{baseUrl}}"
+                                          ],
+                                          "path": [
+                                            "elements",
+                                            "d",
+                                            ":did",
+                                            ":wvm",
+                                            ":wvmid",
+                                            "e",
+                                            ":eid",
+                                            "configuration"
+                                          ],
+                                          "variable": [
+                                            {
+                                              "id": "e6fec307-7ddf-42f9-8219-db28cdc3031d",
+                                              "key": "did",
+                                              "value": "<string>",
+                                              "description": "(Required) "
+                                            },
+                                            {
+                                              "id": "d8ae5810-eaa3-422e-876f-3b163a199efd",
+                                              "key": "wvm",
+                                              "value": "<string>",
+                                              "description": "(Required) "
+                                            },
+                                            {
+                                              "id": "04d46f78-6841-46af-aeef-296e5127965c",
+                                              "key": "wvmid",
+                                              "value": "<string>",
+                                              "description": "(Required) "
+                                            },
+                                            {
+                                              "id": "512c5e88-05a4-4d61-be5d-76a7a7f0b0cf",
+                                              "key": "eid",
+                                              "value": "<string>",
+                                              "description": "(Required) "
+                                            }
+                                          ]
+                                        },
+                                        "description": "See the Configuration API Guide for additional details"
+                                      },
+                                      "response": [
+                                        {
+                                          "id": "5863fe35-dda0-4417-98fa-3b208814dab4",
+                                          "name": "default response",
+                                          "originalRequest": {
+                                            "method": "POST",
+                                            "header": [
+                                              {
+                                                "key": "Content-Type",
+                                                "value": "application/json;charset=UTF-8; qs=0.09"
+                                              },
+                                              {
+                                                "key": "Accept",
+                                                "value": "application/json;charset=UTF-8; qs=0.09"
+                                              },
+                                              {
+                                                "description": "Added as a part of security scheme: oauth2",
+                                                "key": "Authorization",
+                                                "value": "<token>"
+                                              }
+                                            ],
+                                            "body": {
+                                              "mode": "raw",
+                                              "raw": "{\n  \"btType\": \"<string>\",\n  \"configurationParameters\": [\n    {\n      \"btType\": \"<string>\",\n      \"importMicroversion\": \"<string>\",\n      \"nodeId\": \"<string>\",\n      \"enumOptionIds\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"generatedParameterId\": {\n        \"btType\": \"<string>\",\n        \"nodeId\": \"<string>\"\n      },\n      \"isCosmetic\": \"<boolean>\",\n      \"parameterId\": \"<string>\",\n      \"parameterName\": \"<string>\",\n      \"parameterType\": \"ENUM\",\n      \"valid\": \"<boolean>\",\n      \"visibilityCondition\": {\n        \"btType\": \"<string>\",\n        \"selfOrChildAlwaysVisible\": \"<boolean>\"\n      }\n    },\n    {\n      \"btType\": \"<string>\",\n      \"importMicroversion\": \"<string>\",\n      \"nodeId\": \"<string>\",\n      \"enumOptionIds\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"generatedParameterId\": {\n        \"btType\": \"<string>\",\n        \"nodeId\": \"<string>\"\n      },\n      \"isCosmetic\": \"<boolean>\",\n      \"parameterId\": \"<string>\",\n      \"parameterName\": \"<string>\",\n      \"parameterType\": \"STRING\",\n      \"valid\": \"<boolean>\",\n      \"visibilityCondition\": {\n        \"btType\": \"<string>\",\n        \"selfOrChildAlwaysVisible\": \"<boolean>\"\n      }\n    }\n  ],\n  \"currentConfiguration\": [\n    {\n      \"btType\": \"<string>\",\n      \"importMicroversion\": \"<string>\",\n      \"libraryRelationType\": \"DEFAULT\",\n      \"nodeId\": \"<string>\",\n      \"parameterId\": \"<string>\",\n      \"parameterName\": \"<string>\",\n      \"valueString\": \"<string>\"\n    },\n    {\n      \"btType\": \"<string>\",\n      \"importMicroversion\": \"<string>\",\n      \"libraryRelationType\": \"IGNORE_LIBRARY_VALUES\",\n      \"nodeId\": \"<string>\",\n      \"parameterId\": \"<string>\",\n      \"parameterName\": \"<string>\",\n      \"valueString\": \"<string>\"\n    }\n  ],\n  \"libraryVersion\": \"<integer>\",\n  \"microversionSkew\": \"<boolean>\",\n  \"rejectMicroversionSkew\": \"<boolean>\",\n  \"serializationVersion\": \"<string>\",\n  \"sourceMicroversion\": \"<string>\"\n}",
+                                              "options": {
+                                                "raw": {
+                                                  "headerFamily": "json",
+                                                  "language": "json"
+                                                }
+                                              }
+                                            },
+                                            "url": {
+                                              "raw": "{{baseUrl}}/elements/d/:did/:wvm/:wvmid/e/:eid/configuration",
+                                              "host": [
+                                                "{{baseUrl}}"
+                                              ],
+                                              "path": [
+                                                "elements",
+                                                "d",
+                                                ":did",
+                                                ":wvm",
+                                                ":wvmid",
+                                                "e",
+                                                ":eid",
+                                                "configuration"
+                                              ],
+                                              "variable": [
+                                                {
+                                                  "key": "did"
+                                                },
+                                                {
+                                                  "key": "wvm"
+                                                },
+                                                {
+                                                  "key": "wvmid"
+                                                },
+                                                {
+                                                  "key": "eid"
+                                                }
+                                              ]
+                                            }
+                                          },
+                                          "status": "Internal Server Error",
+                                          "code": 500,
+                                          "_postman_previewlanguage": "json",
+                                          "header": [
+                                            {
+                                              "key": "Content-Type",
+                                              "value": "application/json;charset=UTF-8; qs=0.09"
+                                            }
+                                          ],
+                                          "cookie": [],
+                                          "responseTime": null,
+                                          "body": "{\n  \"btType\": \"<string>\",\n  \"configurationParameters\": [\n    {\n      \"btType\": \"<string>\",\n      \"importMicroversion\": \"<string>\",\n      \"nodeId\": \"<string>\",\n      \"enumOptionIds\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"generatedParameterId\": {\n        \"btType\": \"<string>\",\n        \"nodeId\": \"<string>\"\n      },\n      \"isCosmetic\": \"<boolean>\",\n      \"parameterId\": \"<string>\",\n      \"parameterName\": \"<string>\",\n      \"parameterType\": \"ENUM\",\n      \"valid\": \"<boolean>\",\n      \"visibilityCondition\": {\n        \"btType\": \"<string>\",\n        \"selfOrChildAlwaysVisible\": \"<boolean>\"\n      }\n    },\n    {\n      \"btType\": \"<string>\",\n      \"importMicroversion\": \"<string>\",\n      \"nodeId\": \"<string>\",\n      \"enumOptionIds\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"generatedParameterId\": {\n        \"btType\": \"<string>\",\n        \"nodeId\": \"<string>\"\n      },\n      \"isCosmetic\": \"<boolean>\",\n      \"parameterId\": \"<string>\",\n      \"parameterName\": \"<string>\",\n      \"parameterType\": \"STRING\",\n      \"valid\": \"<boolean>\",\n      \"visibilityCondition\": {\n        \"btType\": \"<string>\",\n        \"selfOrChildAlwaysVisible\": \"<boolean>\"\n      }\n    }\n  ],\n  \"currentConfiguration\": [\n    {\n      \"btType\": \"<string>\",\n      \"importMicroversion\": \"<string>\",\n      \"libraryRelationType\": \"DEFAULT\",\n      \"nodeId\": \"<string>\",\n      \"parameterId\": \"<string>\",\n      \"parameterName\": \"<string>\",\n      \"valueString\": \"<string>\"\n    },\n    {\n      \"btType\": \"<string>\",\n      \"importMicroversion\": \"<string>\",\n      \"libraryRelationType\": \"IGNORE_LIBRARY_VALUES\",\n      \"nodeId\": \"<string>\",\n      \"parameterId\": \"<string>\",\n      \"parameterName\": \"<string>\",\n      \"valueString\": \"<string>\"\n    }\n  ],\n  \"libraryVersion\": \"<integer>\",\n  \"microversionSkew\": \"<boolean>\",\n  \"rejectMicroversionSkew\": \"<boolean>\",\n  \"serializationVersion\": \"<string>\",\n  \"sourceMicroversion\": \"<string>\"\n}",
+                                          "createdAt": "2026-10-22T02:11:04.000Z",
+                                          "updatedAt": "2026-10-22T02:11:04.000Z",
+                                          "uid": "35240-5863fe35-dda0-4417-98fa-3b208814dab4"
+                                        }
+                                      ],
+                                      "createdAt": "2026-10-22T02:11:04.000Z",
+                                      "updatedAt": "2026-10-22T02:11:04.000Z",
+                                      "uid": "35240-aec6f452-e7de-4e7d-a994-72ac3c6f6359"
+                                    }
+                                  ],
+                                  "id": "c7364e76-90c2-4f2b-98b3-5ab72ddce585",
+                                  "createdAt": "2026-10-22T02:11:04.000Z",
+                                  "updatedAt": "2026-10-22T02:11:04.000Z",
+                                  "uid": "35240-c7364e76-90c2-4f2b-98b3-5ab72ddce585"
+                                },
+                                {
+                                  "name": "configurationencodings",
+                                  "item": [
+                                    {
+                                      "name": "{cid}",
+                                      "item": [
+                                        {
+                                          "name": "Decode a configuration string",
+                                          "id": "870c69b1-6750-488b-a0f3-9100fa76202b",
+                                          "protocolProfileBehavior": {
+                                            "disableBodyPruning": true
+                                          },
+                                          "request": {
+                                            "auth": {
+                                              "type": "oauth2",
+                                              "oauth2": [
+                                                {
+                                                  "key": "scope",
+                                                  "value": "OAuth2Internal OAuth2ReadPII OAuth2Read OAuth2Write OAuth2Delete OAuth2Purchase OAuth2Share document.create document.edit document.delete document.read enterprise.create enterprise.read enterprise.edit enterprise.delete enterprise.member.create enterprise.member.read enterprise.member.edit enterprise.member.delete webhook.create webhook.edit webhook.read webhook.delete PLMIntegration",
+                                                  "type": "string"
+                                                },
+                                                {
+                                                  "key": "redirect_uri",
+                                                  "value": "/oauth/token",
+                                                  "type": "string"
+                                                },
+                                                {
+                                                  "key": "accessTokenUrl",
+                                                  "value": "/oauth/token",
+                                                  "type": "string"
+                                                },
+                                                {
+                                                  "key": "authUrl",
+                                                  "value": "/oauth/authorize",
+                                                  "type": "string"
+                                                },
+                                                {
+                                                  "key": "grant_type",
+                                                  "value": "authorization_code",
+                                                  "type": "string"
+                                                }
+                                              ]
+                                            },
+                                            "method": "GET",
+                                            "header": [
+                                              {
+                                                "key": "Accept",
+                                                "value": "application/json;charset=UTF-8; qs=0.09"
+                                              }
+                                            ],
+                                            "url": {
+                                              "raw": "{{baseUrl}}/elements/d/:did/:wvm/:wvmid/e/:eid/configurationencodings/:cid?linkDocumentId=<string>&includeDisplay=false&configurationIsId=false",
+                                              "host": [
+                                                "{{baseUrl}}"
+                                              ],
+                                              "path": [
+                                                "elements",
+                                                "d",
+                                                ":did",
+                                                ":wvm",
+                                                ":wvmid",
+                                                "e",
+                                                ":eid",
+                                                "configurationencodings",
+                                                ":cid"
+                                              ],
+                                              "query": [
+                                                {
+                                                  "key": "linkDocumentId",
+                                                  "value": "<string>"
+                                                },
+                                                {
+                                                  "key": "includeDisplay",
+                                                  "value": "false"
+                                                },
+                                                {
+                                                  "key": "configurationIsId",
+                                                  "value": "false"
+                                                }
+                                              ],
+                                              "variable": [
+                                                {
+                                                  "id": "c54edb1f-1d10-4f33-b830-9101497c808b",
+                                                  "key": "did",
+                                                  "value": "<string>",
+                                                  "description": "(Required) "
+                                                },
+                                                {
+                                                  "id": "866cdf3c-1936-497c-abf4-139519464f2c",
+                                                  "key": "wvm",
+                                                  "value": "<string>",
+                                                  "description": "(Required) "
+                                                },
+                                                {
+                                                  "id": "593fac99-0905-46dd-8638-9a8ea4bbfb6b",
+                                                  "key": "wvmid",
+                                                  "value": "<string>",
+                                                  "description": "(Required) "
+                                                },
+                                                {
+                                                  "id": "6f93111a-81ca-4b1a-8864-f8e1c07988d2",
+                                                  "key": "eid",
+                                                  "value": "<string>",
+                                                  "description": "(Required) "
+                                                },
+                                                {
+                                                  "id": "1befefbc-64a4-4705-bd36-e6680d9b9d36",
+                                                  "key": "cid",
+                                                  "value": "<string>",
+                                                  "description": "(Required) "
+                                                }
+                                              ]
+                                            },
+                                            "description": "Decode a configuration string into its original JSON form to obtain configuration parameter ID and value. See the Configuration API Guide for additional details."
+                                          },
+                                          "response": [
+                                            {
+                                              "id": "a2162ba0-0ba9-430c-99c4-24944812e1dc",
+                                              "name": "default response",
+                                              "originalRequest": {
+                                                "method": "GET",
+                                                "header": [
+                                                  {
+                                                    "key": "Accept",
+                                                    "value": "application/json;charset=UTF-8; qs=0.09"
+                                                  },
+                                                  {
+                                                    "description": "Added as a part of security scheme: oauth2",
+                                                    "key": "Authorization",
+                                                    "value": "<token>"
+                                                  }
+                                                ],
+                                                "url": {
+                                                  "raw": "{{baseUrl}}/elements/d/:did/:wvm/:wvmid/e/:eid/configurationencodings/:cid?linkDocumentId=<string>&includeDisplay=false&configurationIsId=false",
+                                                  "host": [
+                                                    "{{baseUrl}}"
+                                                  ],
+                                                  "path": [
+                                                    "elements",
+                                                    "d",
+                                                    ":did",
+                                                    ":wvm",
+                                                    ":wvmid",
+                                                    "e",
+                                                    ":eid",
+                                                    "configurationencodings",
+                                                    ":cid"
+                                                  ],
+                                                  "query": [
+                                                    {
+                                                      "key": "linkDocumentId",
+                                                      "value": "<string>"
+                                                    },
+                                                    {
+                                                      "key": "includeDisplay",
+                                                      "value": "false"
+                                                    },
+                                                    {
+                                                      "key": "configurationIsId",
+                                                      "value": "false"
+                                                    }
+                                                  ],
+                                                  "variable": [
+                                                    {
+                                                      "key": "did"
+                                                    },
+                                                    {
+                                                      "key": "wvm"
+                                                    },
+                                                    {
+                                                      "key": "wvmid"
+                                                    },
+                                                    {
+                                                      "key": "eid"
+                                                    },
+                                                    {
+                                                      "key": "cid"
+                                                    }
+                                                  ]
+                                                }
+                                              },
+                                              "status": "Internal Server Error",
+                                              "code": 500,
+                                              "_postman_previewlanguage": "json",
+                                              "header": [
+                                                {
+                                                  "key": "Content-Type",
+                                                  "value": "application/json;charset=UTF-8; qs=0.09"
+                                                }
+                                              ],
+                                              "cookie": [],
+                                              "responseTime": null,
+                                              "body": "{\n  \"isStandardContent\": \"<boolean>\",\n  \"parameters\": [\n    {\n      \"explicit\": \"<boolean>\",\n      \"isCosmetic\": \"<boolean>\",\n      \"isVisible\": \"<boolean>\",\n      \"parameterAbbreviatedDisplayValue\": \"<string>\",\n      \"parameterDisplayValue\": \"<string>\",\n      \"parameterId\": \"<string>\",\n      \"parameterName\": \"<string>\",\n      \"parameterType\": \"<integer>\",\n      \"parameterValue\": \"<string>\"\n    },\n    {\n      \"explicit\": \"<boolean>\",\n      \"isCosmetic\": \"<boolean>\",\n      \"isVisible\": \"<boolean>\",\n      \"parameterAbbreviatedDisplayValue\": \"<string>\",\n      \"parameterDisplayValue\": \"<string>\",\n      \"parameterId\": \"<string>\",\n      \"parameterName\": \"<string>\",\n      \"parameterType\": \"<integer>\",\n      \"parameterValue\": \"<string>\"\n    }\n  ]\n}",
+                                              "createdAt": "2026-10-22T02:11:04.000Z",
+                                              "updatedAt": "2026-10-22T02:11:04.000Z",
+                                              "uid": "35240-a2162ba0-0ba9-430c-99c4-24944812e1dc"
+                                            }
+                                          ],
+                                          "createdAt": "2026-10-22T02:11:04.000Z",
+                                          "updatedAt": "2026-10-22T02:11:04.000Z",
+                                          "uid": "35240-870c69b1-6750-488b-a0f3-9100fa76202b"
+                                        }
+                                      ],
+                                      "id": "888c2203-88fa-47e3-a3fa-5e08979740ad",
+                                      "createdAt": "2026-10-22T02:11:04.000Z",
+                                      "updatedAt": "2026-10-22T02:11:04.000Z",
+                                      "uid": "35240-888c2203-88fa-47e3-a3fa-5e08979740ad"
+                                    }
+                                  ],
+                                  "id": "3e8003d9-378e-4225-ad09-ad24ef9ff0ed",
+                                  "createdAt": "2026-10-22T02:11:04.000Z",
+                                  "updatedAt": "2026-10-22T02:11:04.000Z",
+                                  "uid": "35240-3e8003d9-378e-4225-ad09-ad24ef9ff0ed"
+                                }
+                              ],
+                              "id": "b5531f23-957c-42bf-9aa5-a5585302c894",
+                              "createdAt": "2026-10-22T02:11:04.000Z",
+                              "updatedAt": "2026-10-22T02:11:04.000Z",
+                              "uid": "35240-b5531f23-957c-42bf-9aa5-a5585302c894"
+                            }
+                          ],
+                          "id": "4735edb5-a359-4ee0-b7a5-fe7d555869cb",
+                          "createdAt": "2026-10-22T02:11:04.000Z",
+                          "updatedAt": "2026-10-22T02:11:04.000Z",
+                          "uid": "35240-4735edb5-a359-4ee0-b7a5-fe7d555869cb"
+                        }
+                      ],
+                      "id": "ed4a7bb8-bd1a-45dc-984b-750218d1d4e9",
+                      "createdAt": "2026-10-22T02:11:04.000Z",
+                      "updatedAt": "2026-10-22T02:11:04.000Z",
+                      "uid": "35240-ed4a7bb8-bd1a-45dc-984b-750218d1d4e9"
+                    }
+                  ],
+                  "id": "1e575d43-e21e-4edc-bf2e-ec2d8e431cfe",
+                  "createdAt": "2026-10-22T02:11:04.000Z",
+                  "updatedAt": "2026-10-22T02:11:04.000Z",
+                  "uid": "35240-1e575d43-e21e-4edc-bf2e-ec2d8e431cfe"
                 }
               ],
-              "body": "{\n  \"encodedId\": \"string\",\n  \"queryParam\": \"string\"\n}",
-              "cookie": [],
-              "_postman_previewlanguage": "json"
+              "id": "de107646-e7c4-4698-8995-9e48052fd7a8",
+              "createdAt": "2026-10-22T02:11:04.000Z",
+              "updatedAt": "2026-10-22T02:11:04.000Z",
+              "uid": "35240-de107646-e7c4-4698-8995-9e48052fd7a8"
             }
           ],
-          "event": [],
-          "protocolProfileBehavior": {
-            "disableBodyPruning": true
-          }
+          "id": "78efab5e-d1dc-4cec-9be0-9dc085bfee7b",
+          "createdAt": "2026-10-22T02:11:04.000Z",
+          "updatedAt": "2026-10-22T02:11:04.000Z",
+          "uid": "35240-78efab5e-d1dc-4cec-9be0-9dc085bfee7b"
         },
         {
-          "id": "b806ff33-a078-4b97-ac85-766b27eee1b0",
-          "name": "Delete an element from a document.",
-          "request": {
-            "name": "Delete an element from a document.",
-            "description": {
-              "content": "Attempting to delete the last element in a document will result in an error.",
-              "type": "text/plain"
-            },
-            "url": {
-              "path": [
-                "elements",
-                "d",
-                ":did",
-                "w",
-                ":wid",
-                "e",
-                ":eid"
-              ],
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "query": [],
-              "variable": [
-                {
-                  "disabled": false,
-                  "type": "any",
-                  "value": "<string>",
-                  "key": "did",
-                  "description": "(Required) "
-                },
-                {
-                  "disabled": false,
-                  "type": "any",
-                  "value": "<string>",
-                  "key": "wid",
-                  "description": "(Required) "
-                },
-                {
-                  "disabled": false,
-                  "type": "any",
-                  "value": "<string>",
-                  "key": "eid",
-                  "description": "(Required) "
-                }
-              ]
-            },
-            "header": [
-              {
-                "key": "Accept",
-                "value": "application/json;charset=UTF-8; qs=0.09"
-              }
-            ],
-            "method": "DELETE",
-            "auth": {
-              "type": "oauth2",
-              "oauth2": [
-                {
-                  "key": "scope",
-                  "value": "OAuth2Internal OAuth2ReadPII OAuth2Read OAuth2Write OAuth2Delete OAuth2Purchase OAuth2Share document.create document.edit document.delete document.read enterprise.create enterprise.read enterprise.edit enterprise.delete enterprise.member.create enterprise.member.read enterprise.member.edit enterprise.member.delete webhook.create webhook.edit webhook.read webhook.delete PLMIntegration"
-                },
-                {
-                  "key": "redirect_uri",
-                  "value": "/oauth/token"
-                },
-                {
-                  "key": "accessTokenUrl",
-                  "value": "/oauth/token"
-                },
-                {
-                  "key": "authUrl",
-                  "value": "/oauth/authorize"
-                },
-                {
-                  "key": "grant_type",
-                  "value": "authorization_code"
-                }
-              ]
-            }
-          },
-          "response": [
+          "name": "translatorFormats",
+          "item": [
             {
-              "id": "c46ff75c-2f5b-4dae-bc31-2351fc1c09ad",
-              "name": "default response",
-              "originalRequest": {
-                "url": {
-                  "path": [
-                    "elements",
-                    "d",
-                    ":did",
-                    "w",
-                    ":wid",
-                    "e",
-                    ":eid"
-                  ],
-                  "host": [
-                    "{{baseUrl}}"
-                  ],
-                  "query": [],
-                  "variable": [
-                    {
-                      "disabled": false,
-                      "type": "any",
-                      "value": "<string>",
-                      "key": "did",
-                      "description": "(Required) "
-                    },
-                    {
-                      "disabled": false,
-                      "type": "any",
-                      "value": "<string>",
-                      "key": "wid",
-                      "description": "(Required) "
-                    },
-                    {
-                      "disabled": false,
-                      "type": "any",
-                      "value": "<string>",
-                      "key": "eid",
-                      "description": "(Required) "
-                    }
-                  ]
-                },
-                "header": [
-                  {
-                    "description": {
-                      "content": "Added as a part of security scheme: oauth2",
-                      "type": "text/plain"
-                    },
-                    "key": "Authorization",
-                    "value": "<token>"
-                  },
-                  {
-                    "key": "Accept",
-                    "value": "application/json;charset=UTF-8; qs=0.09"
-                  }
-                ],
-                "method": "DELETE",
-                "body": {}
-              },
-              "status": "Internal Server Error",
-              "code": 500,
-              "header": [
+              "name": "{did}",
+              "item": [
                 {
-                  "key": "Content-Type",
-                  "value": "application/json;charset=UTF-8; qs=0.09"
+                  "name": "{wv}",
+                  "item": [
+                    {
+                      "name": "{wvid}",
+                      "item": [
+                        {
+                          "name": "{eid}",
+                          "item": [
+                            {
+                              "name": "Gets the list of formats an element can be translated to or from",
+                              "id": "eb7c6f67-6a13-4de6-a06a-733235a4614c",
+                              "protocolProfileBehavior": {
+                                "disableBodyPruning": true
+                              },
+                              "request": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json;charset=UTF-8; qs=0.09"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/elements/translatorFormats/:did/:wv/:wvid/:eid?linkDocumentId=&checkContent=true&configuration=",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "elements",
+                                    "translatorFormats",
+                                    ":did",
+                                    ":wv",
+                                    ":wvid",
+                                    ":eid"
+                                  ],
+                                  "query": [
+                                    {
+                                      "description": "The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both.",
+                                      "key": "linkDocumentId",
+                                      "value": ""
+                                    },
+                                    {
+                                      "key": "checkContent",
+                                      "value": "true"
+                                    },
+                                    {
+                                      "key": "configuration",
+                                      "value": ""
+                                    }
+                                  ],
+                                  "variable": [
+                                    {
+                                      "id": "4a150757-f244-4ae1-bf13-375c60e13ca7",
+                                      "key": "did",
+                                      "value": "<string>",
+                                      "description": "(Required) The id of the document in which to perform the operation."
+                                    },
+                                    {
+                                      "id": "c14d2c29-bda5-466f-9d1d-f6e945849cc7",
+                                      "key": "wv",
+                                      "value": "w",
+                                      "description": "(Required) Indicates which of workspace (w) or version (v) id is specified below."
+                                    },
+                                    {
+                                      "id": "6d864b0c-610b-4613-a02a-20780f325deb",
+                                      "key": "wvid",
+                                      "value": "<string>",
+                                      "description": "(Required) The id of the workspace, version in which the operation should be performed."
+                                    },
+                                    {
+                                      "id": "1aa5dabb-c9da-4c30-baeb-db79cf03d681",
+                                      "key": "eid",
+                                      "value": "<string>",
+                                      "description": "(Required) The id of the element in which to perform the operation."
+                                    }
+                                  ]
+                                },
+                                "description": "See the Translation API Guide for additional details."
+                              },
+                              "response": [
+                                {
+                                  "id": "6d638170-0c31-4fad-ac30-a8e500e8e6a9",
+                                  "name": "default response",
+                                  "originalRequest": {
+                                    "method": "GET",
+                                    "header": [
+                                      {
+                                        "key": "Accept",
+                                        "value": "application/json;charset=UTF-8; qs=0.09"
+                                      },
+                                      {
+                                        "description": "Added as a part of security scheme: basic",
+                                        "key": "Authorization",
+                                        "value": "Basic <credentials>"
+                                      }
+                                    ],
+                                    "url": {
+                                      "raw": "{{baseUrl}}/elements/translatorFormats/:did/:wv/:wvid/:eid?linkDocumentId=&checkContent=true&configuration=",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "elements",
+                                        "translatorFormats",
+                                        ":did",
+                                        ":wv",
+                                        ":wvid",
+                                        ":eid"
+                                      ],
+                                      "query": [
+                                        {
+                                          "description": "The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both.",
+                                          "key": "linkDocumentId",
+                                          "value": ""
+                                        },
+                                        {
+                                          "key": "checkContent",
+                                          "value": "true"
+                                        },
+                                        {
+                                          "key": "configuration",
+                                          "value": ""
+                                        }
+                                      ],
+                                      "variable": [
+                                        {
+                                          "key": "did"
+                                        },
+                                        {
+                                          "key": "wv"
+                                        },
+                                        {
+                                          "key": "wvid"
+                                        },
+                                        {
+                                          "key": "eid"
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  "status": "Internal Server Error",
+                                  "code": 500,
+                                  "_postman_previewlanguage": "json",
+                                  "header": [
+                                    {
+                                      "key": "Content-Type",
+                                      "value": "application/json;charset=UTF-8; qs=0.09"
+                                    }
+                                  ],
+                                  "cookie": [],
+                                  "responseTime": null,
+                                  "body": "[\n  {\n    \"couldBeAssembly\": \"<boolean>\",\n    \"name\": \"<string>\",\n    \"translatorName\": \"<string>\"\n  },\n  {\n    \"couldBeAssembly\": \"<boolean>\",\n    \"name\": \"<string>\",\n    \"translatorName\": \"<string>\"\n  }\n]",
+                                  "createdAt": "2026-10-22T02:11:04.000Z",
+                                  "updatedAt": "2026-10-22T02:11:04.000Z",
+                                  "uid": "35240-6d638170-0c31-4fad-ac30-a8e500e8e6a9"
+                                }
+                              ],
+                              "createdAt": "2026-10-22T02:11:04.000Z",
+                              "updatedAt": "2026-10-22T02:11:04.000Z",
+                              "uid": "35240-eb7c6f67-6a13-4de6-a06a-733235a4614c"
+                            }
+                          ],
+                          "id": "c16ec352-940a-42f4-bab3-99eb9e8b65cf",
+                          "createdAt": "2026-10-22T02:11:04.000Z",
+                          "updatedAt": "2026-10-22T02:11:04.000Z",
+                          "uid": "35240-c16ec352-940a-42f4-bab3-99eb9e8b65cf"
+                        }
+                      ],
+                      "id": "f79cd4c2-effb-47c1-9913-3a5024bef712",
+                      "createdAt": "2026-10-22T02:11:04.000Z",
+                      "updatedAt": "2026-10-22T02:11:04.000Z",
+                      "uid": "35240-f79cd4c2-effb-47c1-9913-3a5024bef712"
+                    }
+                  ],
+                  "id": "0291ac8b-d355-4a50-9c70-f9f1eec8d1ca",
+                  "createdAt": "2026-10-22T02:11:04.000Z",
+                  "updatedAt": "2026-10-22T02:11:04.000Z",
+                  "uid": "35240-0291ac8b-d355-4a50-9c70-f9f1eec8d1ca"
                 }
               ],
-              "body": "{}",
-              "cookie": [],
-              "_postman_previewlanguage": "json"
+              "id": "a964dae7-a33d-406c-858f-9a0704781a78",
+              "createdAt": "2026-10-22T02:11:04.000Z",
+              "updatedAt": "2026-10-22T02:11:04.000Z",
+              "uid": "35240-a964dae7-a33d-406c-858f-9a0704781a78"
             }
           ],
-          "event": [],
-          "protocolProfileBehavior": {
-            "disableBodyPruning": true
-          }
-        },
-        {
-          "id": "702f9374-473f-4af3-af11-60f445ada450",
-          "name": "Update or replace references in an element.",
-          "request": {
-            "name": "Update or replace references in an element.",
-            "description": {},
-            "url": {
-              "path": [
-                "elements",
-                "d",
-                ":did",
-                "w",
-                ":wid",
-                "e",
-                ":eid",
-                "updatereferences"
-              ],
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "query": [],
-              "variable": [
-                {
-                  "disabled": false,
-                  "type": "any",
-                  "value": "<string>",
-                  "key": "did",
-                  "description": "(Required) "
-                },
-                {
-                  "disabled": false,
-                  "type": "any",
-                  "value": "<string>",
-                  "key": "wid",
-                  "description": "(Required) "
-                },
-                {
-                  "disabled": false,
-                  "type": "any",
-                  "value": "<string>",
-                  "key": "eid",
-                  "description": "(Required) "
-                }
-              ]
-            },
-            "header": [
-              {
-                "key": "Content-Type",
-                "value": "application/json;charset=UTF-8; qs=0.09"
-              },
-              {
-                "key": "Accept",
-                "value": "application/json;charset=UTF-8; qs=0.09"
-              }
-            ],
-            "method": "POST",
-            "auth": {
-              "type": "oauth2",
-              "oauth2": [
-                {
-                  "key": "scope",
-                  "value": "OAuth2Internal OAuth2ReadPII OAuth2Read OAuth2Write OAuth2Delete OAuth2Purchase OAuth2Share document.create document.edit document.delete document.read enterprise.create enterprise.read enterprise.edit enterprise.delete enterprise.member.create enterprise.member.read enterprise.member.edit enterprise.member.delete webhook.create webhook.edit webhook.read webhook.delete PLMIntegration"
-                },
-                {
-                  "key": "redirect_uri",
-                  "value": "/oauth/token"
-                },
-                {
-                  "key": "accessTokenUrl",
-                  "value": "/oauth/token"
-                },
-                {
-                  "key": "authUrl",
-                  "value": "/oauth/authorize"
-                },
-                {
-                  "key": "grant_type",
-                  "value": "authorization_code"
-                }
-              ]
-            },
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"connectionId\": \"<string>\",\n  \"editDescription\": \"<string>\",\n  \"referenceUpdates\": [\n    {\n      \"fromReference\": {\n        \"apiConfiguration\": \"<string>\",\n        \"documentId\": \"<string>\",\n        \"elementId\": \"<string>\",\n        \"elementType\": \"<string>\",\n        \"partId\": \"<string>\",\n        \"partNumber\": \"<string>\",\n        \"revision\": \"<string>\",\n        \"versionId\": \"<string>\",\n        \"workspaceId\": \"<string>\"\n      },\n      \"idsToUpdate\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"ignoreChildren\": \"<boolean>\",\n      \"toReference\": {\n        \"apiConfiguration\": \"<string>\",\n        \"documentId\": \"<string>\",\n        \"elementId\": \"<string>\",\n        \"elementType\": \"<string>\",\n        \"partId\": \"<string>\",\n        \"partNumber\": \"<string>\",\n        \"revision\": \"<string>\",\n        \"versionId\": \"<string>\",\n        \"workspaceId\": \"<string>\"\n      }\n    },\n    {\n      \"fromReference\": {\n        \"apiConfiguration\": \"<string>\",\n        \"documentId\": \"<string>\",\n        \"elementId\": \"<string>\",\n        \"elementType\": \"<string>\",\n        \"partId\": \"<string>\",\n        \"partNumber\": \"<string>\",\n        \"revision\": \"<string>\",\n        \"versionId\": \"<string>\",\n        \"workspaceId\": \"<string>\"\n      },\n      \"idsToUpdate\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"ignoreChildren\": \"<boolean>\",\n      \"toReference\": {\n        \"apiConfiguration\": \"<string>\",\n        \"documentId\": \"<string>\",\n        \"elementId\": \"<string>\",\n        \"elementType\": \"<string>\",\n        \"partId\": \"<string>\",\n        \"partNumber\": \"<string>\",\n        \"revision\": \"<string>\",\n        \"versionId\": \"<string>\",\n        \"workspaceId\": \"<string>\"\n      }\n    }\n  ]\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
-            }
-          },
-          "response": [
-            {
-              "id": "05f0071d-9111-4a52-9e1a-3dad8e92396b",
-              "name": "default response",
-              "originalRequest": {
-                "url": {
-                  "path": [
-                    "elements",
-                    "d",
-                    ":did",
-                    "w",
-                    ":wid",
-                    "e",
-                    ":eid",
-                    "updatereferences"
-                  ],
-                  "host": [
-                    "{{baseUrl}}"
-                  ],
-                  "query": [],
-                  "variable": [
-                    {
-                      "disabled": false,
-                      "type": "any",
-                      "value": "<string>",
-                      "key": "did",
-                      "description": "(Required) "
-                    },
-                    {
-                      "disabled": false,
-                      "type": "any",
-                      "value": "<string>",
-                      "key": "wid",
-                      "description": "(Required) "
-                    },
-                    {
-                      "disabled": false,
-                      "type": "any",
-                      "value": "<string>",
-                      "key": "eid",
-                      "description": "(Required) "
-                    }
-                  ]
-                },
-                "header": [
-                  {
-                    "description": {
-                      "content": "Added as a part of security scheme: oauth2",
-                      "type": "text/plain"
-                    },
-                    "key": "Authorization",
-                    "value": "<token>"
-                  },
-                  {
-                    "key": "Accept",
-                    "value": "application/json;charset=UTF-8; qs=0.09"
-                  }
-                ],
-                "method": "POST",
-                "body": {
-                  "mode": "raw",
-                  "raw": "{\n  \"connectionId\": \"<string>\",\n  \"editDescription\": \"<string>\",\n  \"referenceUpdates\": [\n    {\n      \"fromReference\": {\n        \"apiConfiguration\": \"<string>\",\n        \"documentId\": \"<string>\",\n        \"elementId\": \"<string>\",\n        \"elementType\": \"<string>\",\n        \"partId\": \"<string>\",\n        \"partNumber\": \"<string>\",\n        \"revision\": \"<string>\",\n        \"versionId\": \"<string>\",\n        \"workspaceId\": \"<string>\"\n      },\n      \"idsToUpdate\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"ignoreChildren\": \"<boolean>\",\n      \"toReference\": {\n        \"apiConfiguration\": \"<string>\",\n        \"documentId\": \"<string>\",\n        \"elementId\": \"<string>\",\n        \"elementType\": \"<string>\",\n        \"partId\": \"<string>\",\n        \"partNumber\": \"<string>\",\n        \"revision\": \"<string>\",\n        \"versionId\": \"<string>\",\n        \"workspaceId\": \"<string>\"\n      }\n    },\n    {\n      \"fromReference\": {\n        \"apiConfiguration\": \"<string>\",\n        \"documentId\": \"<string>\",\n        \"elementId\": \"<string>\",\n        \"elementType\": \"<string>\",\n        \"partId\": \"<string>\",\n        \"partNumber\": \"<string>\",\n        \"revision\": \"<string>\",\n        \"versionId\": \"<string>\",\n        \"workspaceId\": \"<string>\"\n      },\n      \"idsToUpdate\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"ignoreChildren\": \"<boolean>\",\n      \"toReference\": {\n        \"apiConfiguration\": \"<string>\",\n        \"documentId\": \"<string>\",\n        \"elementId\": \"<string>\",\n        \"elementType\": \"<string>\",\n        \"partId\": \"<string>\",\n        \"partNumber\": \"<string>\",\n        \"revision\": \"<string>\",\n        \"versionId\": \"<string>\",\n        \"workspaceId\": \"<string>\"\n      }\n    }\n  ]\n}",
-                  "options": {
-                    "raw": {
-                      "language": "json"
-                    }
-                  }
-                }
-              },
-              "status": "Internal Server Error",
-              "code": 500,
-              "header": [
-                {
-                  "key": "Content-Type",
-                  "value": "application/json;charset=UTF-8; qs=0.09"
-                }
-              ],
-              "body": "{}",
-              "cookie": [],
-              "_postman_previewlanguage": "json"
-            }
-          ],
-          "event": [],
-          "protocolProfileBehavior": {
-            "disableBodyPruning": true
-          }
-        },
-        {
-          "id": "20c5dfc4-e2a0-4364-8b66-8d46334378ab",
-          "name": "Get the configuration definition for a Part Studio, Variable Studio, or Assembly.",
-          "request": {
-            "name": "Get the configuration definition for a Part Studio, Variable Studio, or Assembly.",
-            "description": {
-              "content": "Use Configurations to create variations of elements. You can configure feature and parameter values, part properties, custom part properties, face and part appearances, and sketch text. Each Part Studio can have only one Configuration, but it can contain multiple Configuration inputs. \nSee the [Configuration API Guide](https://onshape-public.github.io/docs/api-adv/configs/) for additional details. ",
-              "type": "text/plain"
-            },
-            "url": {
-              "path": [
-                "elements",
-                "d",
-                ":did",
-                ":wvm",
-                ":wvmid",
-                "e",
-                ":eid",
-                "configuration"
-              ],
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "query": [
-                {
-                  "disabled": false,
-                  "key": "linkDocumentId",
-                  "value": "",
-                  "description": "The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both."
-                }
-              ],
-              "variable": [
-                {
-                  "disabled": false,
-                  "type": "any",
-                  "value": "<string>",
-                  "key": "did",
-                  "description": "(Required) The id of the document in which to perform the operation."
-                },
-                {
-                  "disabled": false,
-                  "type": "any",
-                  "value": "<string>",
-                  "key": "wvm",
-                  "description": "(Required) Indicates which of workspace (w), version (v), or document microversion (m) id is specified below."
-                },
-                {
-                  "disabled": false,
-                  "type": "any",
-                  "value": "<string>",
-                  "key": "wvmid",
-                  "description": "(Required) The id of the workspace, version or document microversion in which the operation should be performed."
-                },
-                {
-                  "disabled": false,
-                  "type": "any",
-                  "value": "<string>",
-                  "key": "eid",
-                  "description": "(Required) The id of the element in which to perform the operation."
-                }
-              ]
-            },
-            "header": [
-              {
-                "key": "Accept",
-                "value": "application/json;charset=UTF-8; qs=0.09"
-              }
-            ],
-            "method": "GET",
-            "auth": {
-              "type": "oauth2",
-              "oauth2": [
-                {
-                  "key": "scope",
-                  "value": "OAuth2Internal OAuth2ReadPII OAuth2Read OAuth2Write OAuth2Delete OAuth2Purchase OAuth2Share document.create document.edit document.delete document.read enterprise.create enterprise.read enterprise.edit enterprise.delete enterprise.member.create enterprise.member.read enterprise.member.edit enterprise.member.delete webhook.create webhook.edit webhook.read webhook.delete PLMIntegration"
-                },
-                {
-                  "key": "redirect_uri",
-                  "value": "/oauth/token"
-                },
-                {
-                  "key": "accessTokenUrl",
-                  "value": "/oauth/token"
-                },
-                {
-                  "key": "authUrl",
-                  "value": "/oauth/authorize"
-                },
-                {
-                  "key": "grant_type",
-                  "value": "authorization_code"
-                }
-              ]
-            }
-          },
-          "response": [
-            {
-              "id": "133ae0d6-6ebf-4215-b62b-4d9ec9e907e6",
-              "name": "default response",
-              "originalRequest": {
-                "url": {
-                  "path": [
-                    "elements",
-                    "d",
-                    ":did",
-                    ":wvm",
-                    ":wvmid",
-                    "e",
-                    ":eid",
-                    "configuration"
-                  ],
-                  "host": [
-                    "{{baseUrl}}"
-                  ],
-                  "query": [
-                    {
-                      "key": "linkDocumentId",
-                      "value": ""
-                    }
-                  ],
-                  "variable": [
-                    {
-                      "disabled": false,
-                      "type": "any",
-                      "value": "<string>",
-                      "key": "did",
-                      "description": "(Required) The id of the document in which to perform the operation."
-                    },
-                    {
-                      "disabled": false,
-                      "type": "any",
-                      "value": "<string>",
-                      "key": "wvm",
-                      "description": "(Required) Indicates which of workspace (w), version (v), or document microversion (m) id is specified below."
-                    },
-                    {
-                      "disabled": false,
-                      "type": "any",
-                      "value": "<string>",
-                      "key": "wvmid",
-                      "description": "(Required) The id of the workspace, version or document microversion in which the operation should be performed."
-                    },
-                    {
-                      "disabled": false,
-                      "type": "any",
-                      "value": "<string>",
-                      "key": "eid",
-                      "description": "(Required) The id of the element in which to perform the operation."
-                    }
-                  ]
-                },
-                "header": [
-                  {
-                    "description": {
-                      "content": "Added as a part of security scheme: oauth2",
-                      "type": "text/plain"
-                    },
-                    "key": "Authorization",
-                    "value": "<token>"
-                  },
-                  {
-                    "key": "Accept",
-                    "value": "application/json;charset=UTF-8; qs=0.09"
-                  }
-                ],
-                "method": "GET",
-                "body": {}
-              },
-              "status": "Internal Server Error",
-              "code": 500,
-              "header": [
-                {
-                  "key": "Content-Type",
-                  "value": "application/json;charset=UTF-8; qs=0.09"
-                }
-              ],
-              "body": "{\n  \"btType\": \"string\",\n  \"configurationParameters\": [\n    {\n      \"btType\": \"string\",\n      \"nodeId\": \"string\",\n      \"enumOptionIds\": [\n        \"string\",\n        \"string\"\n      ],\n      \"generatedParameterId\": {\n        \"btType\": \"string\",\n        \"nodeId\": \"string\"\n      },\n      \"isCosmetic\": false,\n      \"parameterId\": \"string\",\n      \"parameterName\": \"string\",\n      \"parameterType\": \"ENUM\",\n      \"valid\": false,\n      \"visibilityCondition\": {\n        \"btType\": \"string\",\n        \"selfOrChildAlwaysVisible\": false\n      }\n    },\n    {\n      \"btType\": \"string\",\n      \"nodeId\": \"string\",\n      \"enumOptionIds\": [\n        \"string\",\n        \"string\"\n      ],\n      \"generatedParameterId\": {\n        \"btType\": \"string\",\n        \"nodeId\": \"string\"\n      },\n      \"isCosmetic\": true,\n      \"parameterId\": \"string\",\n      \"parameterName\": \"string\",\n      \"parameterType\": \"ENUM\",\n      \"valid\": false,\n      \"visibilityCondition\": {\n        \"btType\": \"string\",\n        \"selfOrChildAlwaysVisible\": false\n      }\n    }\n  ],\n  \"currentConfiguration\": [\n    {\n      \"btType\": \"string\",\n      \"libraryRelationType\": \"IGNORE_LIBRARY_VALUES\",\n      \"nodeId\": \"string\",\n      \"parameterId\": \"string\",\n      \"parameterName\": \"string\",\n      \"valueString\": \"string\"\n    },\n    {\n      \"btType\": \"string\",\n      \"libraryRelationType\": \"DEFAULT\",\n      \"nodeId\": \"string\",\n      \"parameterId\": \"string\",\n      \"parameterName\": \"string\",\n      \"valueString\": \"string\"\n    }\n  ],\n  \"libraryVersion\": 278,\n  \"microversionSkew\": true,\n  \"rejectMicroversionSkew\": false,\n  \"serializationVersion\": \"string\",\n  \"sourceMicroversion\": \"string\"\n}",
-              "cookie": [],
-              "_postman_previewlanguage": "json"
-            }
-          ],
-          "event": [],
-          "protocolProfileBehavior": {
-            "disableBodyPruning": true
-          }
-        },
-        {
-          "id": "aabc8964-36d3-4aa0-88a8-5bfef8d3b428",
-          "name": "Update the configuration definition for a Part Studio, Variable Studio, or Assembly.",
-          "request": {
-            "name": "Update the configuration definition for a Part Studio, Variable Studio, or Assembly.",
-            "description": {
-              "content": "See the [Configuration API Guide](https://onshape-public.github.io/docs/api-adv/configs/) for additional details",
-              "type": "text/plain"
-            },
-            "url": {
-              "path": [
-                "elements",
-                "d",
-                ":did",
-                ":wvm",
-                ":wvmid",
-                "e",
-                ":eid",
-                "configuration"
-              ],
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "query": [],
-              "variable": [
-                {
-                  "disabled": false,
-                  "type": "any",
-                  "value": "<string>",
-                  "key": "did",
-                  "description": "(Required) "
-                },
-                {
-                  "disabled": false,
-                  "type": "any",
-                  "value": "<string>",
-                  "key": "wvm",
-                  "description": "(Required) "
-                },
-                {
-                  "disabled": false,
-                  "type": "any",
-                  "value": "<string>",
-                  "key": "wvmid",
-                  "description": "(Required) "
-                },
-                {
-                  "disabled": false,
-                  "type": "any",
-                  "value": "<string>",
-                  "key": "eid",
-                  "description": "(Required) "
-                }
-              ]
-            },
-            "header": [
-              {
-                "key": "Content-Type",
-                "value": "application/json;charset=UTF-8; qs=0.09"
-              },
-              {
-                "key": "Accept",
-                "value": "application/json;charset=UTF-8; qs=0.09"
-              }
-            ],
-            "method": "POST",
-            "auth": {
-              "type": "oauth2",
-              "oauth2": [
-                {
-                  "key": "scope",
-                  "value": "OAuth2Internal OAuth2ReadPII OAuth2Read OAuth2Write OAuth2Delete OAuth2Purchase OAuth2Share document.create document.edit document.delete document.read enterprise.create enterprise.read enterprise.edit enterprise.delete enterprise.member.create enterprise.member.read enterprise.member.edit enterprise.member.delete webhook.create webhook.edit webhook.read webhook.delete PLMIntegration"
-                },
-                {
-                  "key": "redirect_uri",
-                  "value": "/oauth/token"
-                },
-                {
-                  "key": "accessTokenUrl",
-                  "value": "/oauth/token"
-                },
-                {
-                  "key": "authUrl",
-                  "value": "/oauth/authorize"
-                },
-                {
-                  "key": "grant_type",
-                  "value": "authorization_code"
-                }
-              ]
-            },
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"btType\": \"<string>\",\n  \"configurationParameters\": [\n    {\n      \"btType\": \"<string>\",\n      \"importMicroversion\": \"<string>\",\n      \"nodeId\": \"<string>\",\n      \"enumOptionIds\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"generatedParameterId\": {\n        \"btType\": \"<string>\",\n        \"nodeId\": \"<string>\"\n      },\n      \"isCosmetic\": \"<boolean>\",\n      \"parameterId\": \"<string>\",\n      \"parameterName\": \"<string>\",\n      \"parameterType\": \"<string>\",\n      \"valid\": \"<boolean>\",\n      \"visibilityCondition\": {\n        \"btType\": \"<string>\",\n        \"selfOrChildAlwaysVisible\": \"<boolean>\"\n      }\n    },\n    {\n      \"btType\": \"<string>\",\n      \"importMicroversion\": \"<string>\",\n      \"nodeId\": \"<string>\",\n      \"enumOptionIds\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"generatedParameterId\": {\n        \"btType\": \"<string>\",\n        \"nodeId\": \"<string>\"\n      },\n      \"isCosmetic\": \"<boolean>\",\n      \"parameterId\": \"<string>\",\n      \"parameterName\": \"<string>\",\n      \"parameterType\": \"<string>\",\n      \"valid\": \"<boolean>\",\n      \"visibilityCondition\": {\n        \"btType\": \"<string>\",\n        \"selfOrChildAlwaysVisible\": \"<boolean>\"\n      }\n    }\n  ],\n  \"currentConfiguration\": [\n    {\n      \"btType\": \"<string>\",\n      \"importMicroversion\": \"<string>\",\n      \"libraryRelationType\": \"<string>\",\n      \"nodeId\": \"<string>\",\n      \"parameterId\": \"<string>\",\n      \"parameterName\": \"<string>\",\n      \"valueString\": \"<string>\"\n    },\n    {\n      \"btType\": \"<string>\",\n      \"importMicroversion\": \"<string>\",\n      \"libraryRelationType\": \"<string>\",\n      \"nodeId\": \"<string>\",\n      \"parameterId\": \"<string>\",\n      \"parameterName\": \"<string>\",\n      \"valueString\": \"<string>\"\n    }\n  ],\n  \"libraryVersion\": \"<integer>\",\n  \"microversionSkew\": \"<boolean>\",\n  \"rejectMicroversionSkew\": \"<boolean>\",\n  \"serializationVersion\": \"<string>\",\n  \"sourceMicroversion\": \"<string>\"\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
-            }
-          },
-          "response": [
-            {
-              "id": "66bdc058-9d8b-4489-8bf5-c3a227934d81",
-              "name": "default response",
-              "originalRequest": {
-                "url": {
-                  "path": [
-                    "elements",
-                    "d",
-                    ":did",
-                    ":wvm",
-                    ":wvmid",
-                    "e",
-                    ":eid",
-                    "configuration"
-                  ],
-                  "host": [
-                    "{{baseUrl}}"
-                  ],
-                  "query": [],
-                  "variable": [
-                    {
-                      "disabled": false,
-                      "type": "any",
-                      "value": "<string>",
-                      "key": "did",
-                      "description": "(Required) "
-                    },
-                    {
-                      "disabled": false,
-                      "type": "any",
-                      "value": "<string>",
-                      "key": "wvm",
-                      "description": "(Required) "
-                    },
-                    {
-                      "disabled": false,
-                      "type": "any",
-                      "value": "<string>",
-                      "key": "wvmid",
-                      "description": "(Required) "
-                    },
-                    {
-                      "disabled": false,
-                      "type": "any",
-                      "value": "<string>",
-                      "key": "eid",
-                      "description": "(Required) "
-                    }
-                  ]
-                },
-                "header": [
-                  {
-                    "description": {
-                      "content": "Added as a part of security scheme: oauth2",
-                      "type": "text/plain"
-                    },
-                    "key": "Authorization",
-                    "value": "<token>"
-                  },
-                  {
-                    "key": "Accept",
-                    "value": "application/json;charset=UTF-8; qs=0.09"
-                  }
-                ],
-                "method": "POST",
-                "body": {
-                  "mode": "raw",
-                  "raw": "{\n  \"btType\": \"<string>\",\n  \"configurationParameters\": [\n    {\n      \"btType\": \"<string>\",\n      \"importMicroversion\": \"<string>\",\n      \"nodeId\": \"<string>\",\n      \"enumOptionIds\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"generatedParameterId\": {\n        \"btType\": \"<string>\",\n        \"nodeId\": \"<string>\"\n      },\n      \"isCosmetic\": \"<boolean>\",\n      \"parameterId\": \"<string>\",\n      \"parameterName\": \"<string>\",\n      \"parameterType\": \"<string>\",\n      \"valid\": \"<boolean>\",\n      \"visibilityCondition\": {\n        \"btType\": \"<string>\",\n        \"selfOrChildAlwaysVisible\": \"<boolean>\"\n      }\n    },\n    {\n      \"btType\": \"<string>\",\n      \"importMicroversion\": \"<string>\",\n      \"nodeId\": \"<string>\",\n      \"enumOptionIds\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"generatedParameterId\": {\n        \"btType\": \"<string>\",\n        \"nodeId\": \"<string>\"\n      },\n      \"isCosmetic\": \"<boolean>\",\n      \"parameterId\": \"<string>\",\n      \"parameterName\": \"<string>\",\n      \"parameterType\": \"<string>\",\n      \"valid\": \"<boolean>\",\n      \"visibilityCondition\": {\n        \"btType\": \"<string>\",\n        \"selfOrChildAlwaysVisible\": \"<boolean>\"\n      }\n    }\n  ],\n  \"currentConfiguration\": [\n    {\n      \"btType\": \"<string>\",\n      \"importMicroversion\": \"<string>\",\n      \"libraryRelationType\": \"<string>\",\n      \"nodeId\": \"<string>\",\n      \"parameterId\": \"<string>\",\n      \"parameterName\": \"<string>\",\n      \"valueString\": \"<string>\"\n    },\n    {\n      \"btType\": \"<string>\",\n      \"importMicroversion\": \"<string>\",\n      \"libraryRelationType\": \"<string>\",\n      \"nodeId\": \"<string>\",\n      \"parameterId\": \"<string>\",\n      \"parameterName\": \"<string>\",\n      \"valueString\": \"<string>\"\n    }\n  ],\n  \"libraryVersion\": \"<integer>\",\n  \"microversionSkew\": \"<boolean>\",\n  \"rejectMicroversionSkew\": \"<boolean>\",\n  \"serializationVersion\": \"<string>\",\n  \"sourceMicroversion\": \"<string>\"\n}",
-                  "options": {
-                    "raw": {
-                      "language": "json"
-                    }
-                  }
-                }
-              },
-              "status": "Internal Server Error",
-              "code": 500,
-              "header": [
-                {
-                  "key": "Content-Type",
-                  "value": "application/json;charset=UTF-8; qs=0.09"
-                }
-              ],
-              "body": "{\n  \"btType\": \"string\",\n  \"configurationParameters\": [\n    {\n      \"btType\": \"<string>\",\n      \"nodeId\": \"<string>\",\n      \"enumOptionIds\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"generatedParameterId\": {\n        \"btType\": \"<string>\",\n        \"nodeId\": \"<string>\"\n      },\n      \"isCosmetic\": \"<boolean>\",\n      \"parameterId\": \"<string>\",\n      \"parameterName\": \"<string>\",\n      \"parameterType\": \"<string>\",\n      \"valid\": \"<boolean>\",\n      \"visibilityCondition\": {\n        \"btType\": \"<string>\",\n        \"selfOrChildAlwaysVisible\": \"<boolean>\"\n      }\n    },\n    {\n      \"btType\": \"<string>\",\n      \"nodeId\": \"<string>\",\n      \"enumOptionIds\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"generatedParameterId\": {\n        \"btType\": \"<string>\",\n        \"nodeId\": \"<string>\"\n      },\n      \"isCosmetic\": \"<boolean>\",\n      \"parameterId\": \"<string>\",\n      \"parameterName\": \"<string>\",\n      \"parameterType\": \"<string>\",\n      \"valid\": \"<boolean>\",\n      \"visibilityCondition\": {\n        \"btType\": \"<string>\",\n        \"selfOrChildAlwaysVisible\": \"<boolean>\"\n      }\n    }\n  ],\n  \"currentConfiguration\": [\n    {\n      \"btType\": \"<string>\",\n      \"libraryRelationType\": \"<string>\",\n      \"nodeId\": \"<string>\",\n      \"parameterId\": \"<string>\",\n      \"parameterName\": \"<string>\",\n      \"valueString\": \"<string>\"\n    },\n    {\n      \"btType\": \"<string>\",\n      \"libraryRelationType\": \"<string>\",\n      \"nodeId\": \"<string>\",\n      \"parameterId\": \"<string>\",\n      \"parameterName\": \"<string>\",\n      \"valueString\": \"<string>\"\n    }\n  ],\n  \"libraryVersion\": 9274,\n  \"microversionSkew\": true,\n  \"rejectMicroversionSkew\": true,\n  \"serializationVersion\": \"string\",\n  \"sourceMicroversion\": \"string\"\n}",
-              "cookie": [],
-              "_postman_previewlanguage": "json"
-            }
-          ],
-          "event": [],
-          "protocolProfileBehavior": {
-            "disableBodyPruning": true
-          }
-        },
-        {
-          "id": "3dade6ed-c1a4-4a92-9530-86cb83f47ba6",
-          "name": "Decode a configuration string.",
-          "request": {
-            "name": "Decode a configuration string.",
-            "description": {
-              "content": "Decode a configuration string into its original JSON form to obtain configuration parameter ID and value. See the [Configuration API Guide](https://onshape-public.github.io/docs/api-adv/configs/) for additional details.  ",
-              "type": "text/plain"
-            },
-            "url": {
-              "path": [
-                "elements",
-                "d",
-                ":did",
-                ":wvm",
-                ":wvmid",
-                "e",
-                ":eid",
-                "configurationencodings",
-                ":cid"
-              ],
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "query": [
-                {
-                  "disabled": false,
-                  "key": "linkDocumentId",
-                  "value": "<string>"
-                },
-                {
-                  "disabled": false,
-                  "key": "includeDisplay",
-                  "value": "false"
-                },
-                {
-                  "disabled": false,
-                  "key": "configurationIsId",
-                  "value": "false"
-                }
-              ],
-              "variable": [
-                {
-                  "disabled": false,
-                  "type": "any",
-                  "value": "<string>",
-                  "key": "did",
-                  "description": "(Required) "
-                },
-                {
-                  "disabled": false,
-                  "type": "any",
-                  "value": "<string>",
-                  "key": "wvm",
-                  "description": "(Required) "
-                },
-                {
-                  "disabled": false,
-                  "type": "any",
-                  "value": "<string>",
-                  "key": "wvmid",
-                  "description": "(Required) "
-                },
-                {
-                  "disabled": false,
-                  "type": "any",
-                  "value": "<string>",
-                  "key": "eid",
-                  "description": "(Required) "
-                },
-                {
-                  "disabled": false,
-                  "type": "any",
-                  "value": "<string>",
-                  "key": "cid",
-                  "description": "(Required) "
-                }
-              ]
-            },
-            "header": [
-              {
-                "key": "Accept",
-                "value": "application/json;charset=UTF-8; qs=0.09"
-              }
-            ],
-            "method": "GET",
-            "auth": {
-              "type": "oauth2",
-              "oauth2": [
-                {
-                  "key": "scope",
-                  "value": "OAuth2Internal OAuth2ReadPII OAuth2Read OAuth2Write OAuth2Delete OAuth2Purchase OAuth2Share document.create document.edit document.delete document.read enterprise.create enterprise.read enterprise.edit enterprise.delete enterprise.member.create enterprise.member.read enterprise.member.edit enterprise.member.delete webhook.create webhook.edit webhook.read webhook.delete PLMIntegration"
-                },
-                {
-                  "key": "redirect_uri",
-                  "value": "/oauth/token"
-                },
-                {
-                  "key": "accessTokenUrl",
-                  "value": "/oauth/token"
-                },
-                {
-                  "key": "authUrl",
-                  "value": "/oauth/authorize"
-                },
-                {
-                  "key": "grant_type",
-                  "value": "authorization_code"
-                }
-              ]
-            }
-          },
-          "response": [
-            {
-              "id": "9518cc21-09cd-41fc-91cd-e69bef49e76f",
-              "name": "default response",
-              "originalRequest": {
-                "url": {
-                  "path": [
-                    "elements",
-                    "d",
-                    ":did",
-                    ":wvm",
-                    ":wvmid",
-                    "e",
-                    ":eid",
-                    "configurationencodings",
-                    ":cid"
-                  ],
-                  "host": [
-                    "{{baseUrl}}"
-                  ],
-                  "query": [
-                    {
-                      "key": "linkDocumentId",
-                      "value": "<string>"
-                    },
-                    {
-                      "key": "includeDisplay",
-                      "value": "false"
-                    },
-                    {
-                      "key": "configurationIsId",
-                      "value": "false"
-                    }
-                  ],
-                  "variable": [
-                    {
-                      "disabled": false,
-                      "type": "any",
-                      "value": "<string>",
-                      "key": "did",
-                      "description": "(Required) "
-                    },
-                    {
-                      "disabled": false,
-                      "type": "any",
-                      "value": "<string>",
-                      "key": "wvm",
-                      "description": "(Required) "
-                    },
-                    {
-                      "disabled": false,
-                      "type": "any",
-                      "value": "<string>",
-                      "key": "wvmid",
-                      "description": "(Required) "
-                    },
-                    {
-                      "disabled": false,
-                      "type": "any",
-                      "value": "<string>",
-                      "key": "eid",
-                      "description": "(Required) "
-                    },
-                    {
-                      "disabled": false,
-                      "type": "any",
-                      "value": "<string>",
-                      "key": "cid",
-                      "description": "(Required) "
-                    }
-                  ]
-                },
-                "header": [
-                  {
-                    "description": {
-                      "content": "Added as a part of security scheme: oauth2",
-                      "type": "text/plain"
-                    },
-                    "key": "Authorization",
-                    "value": "<token>"
-                  },
-                  {
-                    "key": "Accept",
-                    "value": "application/json;charset=UTF-8; qs=0.09"
-                  }
-                ],
-                "method": "GET",
-                "body": {}
-              },
-              "status": "Internal Server Error",
-              "code": 500,
-              "header": [
-                {
-                  "key": "Content-Type",
-                  "value": "application/json;charset=UTF-8; qs=0.09"
-                }
-              ],
-              "body": "{\n  \"isStandardContent\": false,\n  \"parameters\": [\n    {\n      \"explicit\": true,\n      \"isCosmetic\": true,\n      \"isVisible\": true,\n      \"parameterAbbreviatedDisplayValue\": \"string\",\n      \"parameterDisplayValue\": \"string\",\n      \"parameterId\": \"string\",\n      \"parameterName\": \"string\",\n      \"parameterType\": 6531,\n      \"parameterValue\": \"string\"\n    },\n    {\n      \"explicit\": true,\n      \"isCosmetic\": true,\n      \"isVisible\": true,\n      \"parameterAbbreviatedDisplayValue\": \"string\",\n      \"parameterDisplayValue\": \"string\",\n      \"parameterId\": \"string\",\n      \"parameterName\": \"string\",\n      \"parameterType\": 5046,\n      \"parameterValue\": \"string\"\n    }\n  ]\n}",
-              "cookie": [],
-              "_postman_previewlanguage": "json"
-            }
-          ],
-          "event": [],
-          "protocolProfileBehavior": {
-            "disableBodyPruning": true
-          }
-        },
-        {
-          "id": "231ac700-6a1b-45d2-a51b-69048d706a92",
-          "name": "Gets the list of formats an element can be translated to or from.",
-          "request": {
-            "name": "Gets the list of formats an element can be translated to or from.",
-            "description": {
-              "content": "See the [Translation API Guide](https://onshape-public.github.io/docs/api-adv/translation/) for additional details. ",
-              "type": "text/plain"
-            },
-            "url": {
-              "path": [
-                "elements",
-                "translatorFormats",
-                ":did",
-                ":wv",
-                ":wvid",
-                ":eid"
-              ],
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "query": [
-                {
-                  "disabled": false,
-                  "key": "linkDocumentId",
-                  "value": "",
-                  "description": "The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both."
-                },
-                {
-                  "disabled": false,
-                  "key": "checkContent",
-                  "value": "true"
-                },
-                {
-                  "disabled": false,
-                  "key": "configuration",
-                  "value": ""
-                }
-              ],
-              "variable": [
-                {
-                  "disabled": false,
-                  "type": "any",
-                  "value": "<string>",
-                  "key": "did",
-                  "description": "(Required) The id of the document in which to perform the operation."
-                },
-                {
-                  "disabled": false,
-                  "type": "any",
-                  "value": "<string>",
-                  "key": "wv",
-                  "description": "(Required) Indicates which of workspace (w) or version (v) id is specified below."
-                },
-                {
-                  "disabled": false,
-                  "type": "any",
-                  "value": "<string>",
-                  "key": "wvid",
-                  "description": "(Required) The id of the workspace, version in which the operation should be performed."
-                },
-                {
-                  "disabled": false,
-                  "type": "any",
-                  "value": "<string>",
-                  "key": "eid",
-                  "description": "(Required) The id of the element in which to perform the operation."
-                }
-              ]
-            },
-            "header": [
-              {
-                "key": "Accept",
-                "value": "application/json;charset=UTF-8; qs=0.09"
-              }
-            ],
-            "method": "GET",
-            "auth": null
-          },
-          "response": [
-            {
-              "id": "37689c91-3c66-4cd3-ada6-5b3bc0256508",
-              "name": "default response",
-              "originalRequest": {
-                "url": {
-                  "path": [
-                    "elements",
-                    "translatorFormats",
-                    ":did",
-                    ":wv",
-                    ":wvid",
-                    ":eid"
-                  ],
-                  "host": [
-                    "{{baseUrl}}"
-                  ],
-                  "query": [
-                    {
-                      "key": "linkDocumentId",
-                      "value": ""
-                    },
-                    {
-                      "key": "checkContent",
-                      "value": "true"
-                    },
-                    {
-                      "key": "configuration",
-                      "value": ""
-                    }
-                  ],
-                  "variable": [
-                    {
-                      "disabled": false,
-                      "type": "any",
-                      "value": "<string>",
-                      "key": "did",
-                      "description": "(Required) The id of the document in which to perform the operation."
-                    },
-                    {
-                      "disabled": false,
-                      "type": "any",
-                      "value": "<string>",
-                      "key": "wv",
-                      "description": "(Required) Indicates which of workspace (w) or version (v) id is specified below."
-                    },
-                    {
-                      "disabled": false,
-                      "type": "any",
-                      "value": "<string>",
-                      "key": "wvid",
-                      "description": "(Required) The id of the workspace, version in which the operation should be performed."
-                    },
-                    {
-                      "disabled": false,
-                      "type": "any",
-                      "value": "<string>",
-                      "key": "eid",
-                      "description": "(Required) The id of the element in which to perform the operation."
-                    }
-                  ]
-                },
-                "header": [
-                  {
-                    "description": {
-                      "content": "Added as a part of security scheme: basic",
-                      "type": "text/plain"
-                    },
-                    "key": "Authorization",
-                    "value": "Basic <credentials>"
-                  },
-                  {
-                    "key": "Accept",
-                    "value": "application/json;charset=UTF-8; qs=0.09"
-                  }
-                ],
-                "method": "GET",
-                "body": {}
-              },
-              "status": "Internal Server Error",
-              "code": 500,
-              "header": [
-                {
-                  "key": "Content-Type",
-                  "value": "application/json;charset=UTF-8; qs=0.09"
-                }
-              ],
-              "body": "[\n  {\n    \"couldBeAssembly\": true,\n    \"name\": \"STEP\",\n    \"translatorName\": \"step\"\n  },\n  {\n    \"couldBeAssembly\": true,\n    \"name\": \"STEP\",\n    \"translatorName\": \"step\"\n  }\n]",
-              "cookie": [],
-              "_postman_previewlanguage": "json"
-            }
-          ],
-          "event": [],
-          "protocolProfileBehavior": {
-            "disableBodyPruning": true
-          }
+          "id": "641d9a82-4b71-414f-99a1-e162d28fcdc4",
+          "createdAt": "2026-10-22T02:11:04.000Z",
+          "updatedAt": "2026-10-22T02:11:04.000Z",
+          "uid": "35240-641d9a82-4b71-414f-99a1-e162d28fcdc4"
         }
       ],
-      "event": []
-    }
-  ],
-  "event": [],
-  "variable": [
-    {
-      "type": "string",
-      "value": "https://cad.onshape.com/api/v16",
-      "key": "baseUrl"
+      "id": "8b037e4f-1c36-46fd-bd43-f523926075da",
+      "createdAt": "2026-10-22T02:11:04.000Z",
+      "updatedAt": "2026-10-22T02:11:04.000Z",
+      "uid": "35240-8b037e4f-1c36-46fd-bd43-f523926075da"
     }
   ],
   "auth": {
@@ -1481,21 +1629,20 @@
     "basic": [
       {
         "key": "username",
-        "value": "{{basicAuthUsername}}"
+        "value": "{{basicAuthUsername}}",
+        "type": "string"
       },
       {
         "key": "password",
-        "value": "{{basicAuthPassword}}"
+        "value": "{{basicAuthPassword}}",
+        "type": "string"
       }
     ]
   },
-  "info": {
-    "_postman_id": "04838b55-431a-463c-acc9-dec70a02211e",
-    "name": "Onshape REST Account Element API",
-    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-    "description": {
-      "content": "## Welcome to the Onshape REST API Explorer\n\n**See the [API Explorer Guide](https://onshape-public.github.io/docs/api-intro/explorer/) for help navigating this page.**\n\n### Using this page\n1. Sign in to your [Onshape](https://cad.onshape.com) account in another tab.\n2. Click the `Try it out` button below. It toggles to a `Cancel` button when selected.\n\n### Authenticating\nTo authenticate your calls, click the `Authorize` button. See [API Explorer Guide: Authentication](https://onshape-public.github.io/docs/api-intro/explorer/#authentication) for details. Calls made when authenticated via API Keys or OAuth count against your annual [API limits](https://onshape-public.github.io/docs/auth/limits/#annual-api-call-limits).\n* **Tip:** To ensure the current session isn't used when trying other authentication techniques, make sure to [remove the Onshape cookie](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site) as per the instructions for your browser, or use a private or incognito window.\n\n### Additional resources\n\n* [Onshape API Guide](https://onshape-public.github.io/docs/): Our full suite of developer guides, to be used as an accompaniment to this API Explorer.\n* [Onshape Developer Portal](https://cad.onshape.com/appstore/dev-portal): The Onshape portal for managing your API keys, OAuth2 credentials, your Onshape applications, and your Onshape App Store entries.\n* [Authentication Guide](https://onshape-public.github.io/docs/auth/): Our guide to using API keys, request signatures, and OAuth2 in your Onshape applications.\n\nContact Support:\n Email: api-support@onshape.zendesk.com",
-      "type": "text/plain"
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://cad.onshape.com/api/v16"
     }
-  }
+  ]
 }

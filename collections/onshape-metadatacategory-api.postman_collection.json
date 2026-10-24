@@ -1,139 +1,73 @@
 {
+  "info": {
+    "_postman_id": "1b75bd9e-aacb-42cf-8a23-ee443d994c09",
+    "name": "Onshape REST Metadata Category API",
+    "description": "## Welcome to the Onshape REST API Explorer\n\n**See the API Explorer Guide for help navigating this page.**\n\n### Using this page\n1.\n\nContact Support:\n Email: api-support@onshape.zendesk.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-10-22T02:11:42.000Z",
+    "updatedAt": "2026-10-22T02:11:42.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-1b75bd9e-aacb-42cf-8a23-ee443d994c09"
+  },
   "item": [
     {
-      "id": "aba8e684-da46-49aa-aea6-5f8f71221a3e",
-      "name": "MetadataCategory",
-      "description": {
-        "content": "Access properties associated with metadata categories.",
-        "type": "text/plain"
-      },
+      "name": "metadatacategory",
       "item": [
         {
-          "id": "94304e85-f432-4b26-871e-21d2d7bd5346",
-          "name": "Get properties associated with the specified metadata categories.",
-          "request": {
-            "name": "Get properties associated with the specified metadata categories.",
-            "description": {
-              "content": "An object's category specifies its type: Part, Assembly, Drawing, etc. Available properties depend on the object's category.",
-              "type": "text/plain"
-            },
-            "url": {
-              "path": [
-                "metadatacategory",
-                "categoryproperties"
-              ],
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "query": [
-                {
-                  "disabled": false,
-                  "key": "ownerId",
-                  "value": "<string>"
-                },
-                {
-                  "disabled": false,
-                  "key": "ownerType",
-                  "value": "1"
-                },
-                {
-                  "disabled": false,
-                  "key": "documentId",
-                  "value": "<string>"
-                },
-                {
-                  "disabled": false,
-                  "key": "categoryIds",
-                  "value": "<string>"
-                },
-                {
-                  "disabled": false,
-                  "key": "categoryIds",
-                  "value": "<string>"
-                },
-                {
-                  "disabled": false,
-                  "key": "objectType",
-                  "value": "<integer>"
-                },
-                {
-                  "disabled": false,
-                  "key": "strict",
-                  "value": "true"
-                },
-                {
-                  "disabled": false,
-                  "key": "includeObjectTypeDefaults",
-                  "value": "false"
-                },
-                {
-                  "disabled": false,
-                  "key": "includeComputedProperties",
-                  "value": "true"
-                },
-                {
-                  "disabled": false,
-                  "key": "includePartPropertiesTableOnlyProperties",
-                  "value": "true"
-                },
-                {
-                  "disabled": false,
-                  "key": "onlyActive",
-                  "value": "false"
-                },
-                {
-                  "disabled": false,
-                  "key": "onlyObjectTypeDefaults",
-                  "value": "false"
-                }
-              ],
-              "variable": []
-            },
-            "header": [
-              {
-                "key": "Accept",
-                "value": "application/json;charset=UTF-8; qs=0.09"
-              }
-            ],
-            "method": "GET",
-            "auth": {
-              "type": "oauth2",
-              "oauth2": [
-                {
-                  "key": "scope",
-                  "value": "OAuth2Internal OAuth2ReadPII OAuth2Read OAuth2Write OAuth2Delete OAuth2Purchase OAuth2Share document.create document.edit document.delete document.read enterprise.create enterprise.read enterprise.edit enterprise.delete enterprise.member.create enterprise.member.read enterprise.member.edit enterprise.member.delete webhook.create webhook.edit webhook.read webhook.delete PLMIntegration"
-                },
-                {
-                  "key": "redirect_uri",
-                  "value": "/oauth/token"
-                },
-                {
-                  "key": "accessTokenUrl",
-                  "value": "/oauth/token"
-                },
-                {
-                  "key": "authUrl",
-                  "value": "/oauth/authorize"
-                },
-                {
-                  "key": "grant_type",
-                  "value": "authorization_code"
-                }
-              ]
-            }
-          },
-          "response": [
+          "name": "categoryproperties",
+          "item": [
             {
-              "id": "16a1c6a4-13a0-4d81-8325-1fbe60e0b477",
-              "name": "default response",
-              "originalRequest": {
+              "name": "Get properties associated with the specified metadata categories",
+              "id": "ca1790fc-df4e-4ee6-ab0d-9e430a4202cd",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "auth": {
+                  "type": "oauth2",
+                  "oauth2": [
+                    {
+                      "key": "scope",
+                      "value": "OAuth2Internal OAuth2ReadPII OAuth2Read OAuth2Write OAuth2Delete OAuth2Purchase OAuth2Share document.create document.edit document.delete document.read enterprise.create enterprise.read enterprise.edit enterprise.delete enterprise.member.create enterprise.member.read enterprise.member.edit enterprise.member.delete webhook.create webhook.edit webhook.read webhook.delete PLMIntegration",
+                      "type": "string"
+                    },
+                    {
+                      "key": "redirect_uri",
+                      "value": "/oauth/token",
+                      "type": "string"
+                    },
+                    {
+                      "key": "accessTokenUrl",
+                      "value": "/oauth/token",
+                      "type": "string"
+                    },
+                    {
+                      "key": "authUrl",
+                      "value": "/oauth/authorize",
+                      "type": "string"
+                    },
+                    {
+                      "key": "grant_type",
+                      "value": "authorization_code",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json;charset=UTF-8; qs=0.09"
+                  }
+                ],
                 "url": {
+                  "raw": "{{baseUrl}}/metadatacategory/categoryproperties?ownerId=<string>&ownerType=1&documentId=<string>&categoryIds=<string>&categoryIds=<string>&objectType=<integer>&strict=true&includeObjectTypeDefaults=false&includeComputedProperties=true&includePartPropertiesTableOnlyProperties=true&onlyActive=false&onlyObjectTypeDefaults=false",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
                   "path": [
                     "metadatacategory",
                     "categoryproperties"
-                  ],
-                  "host": [
-                    "{{baseUrl}}"
                   ],
                   "query": [
                     {
@@ -184,54 +118,116 @@
                       "key": "onlyObjectTypeDefaults",
                       "value": "false"
                     }
-                  ],
-                  "variable": []
+                  ]
                 },
-                "header": [
-                  {
-                    "description": {
-                      "content": "Added as a part of security scheme: oauth2",
-                      "type": "text/plain"
-                    },
-                    "key": "Authorization",
-                    "value": "<token>"
-                  },
-                  {
-                    "key": "Accept",
-                    "value": "application/json;charset=UTF-8; qs=0.09"
-                  }
-                ],
-                "method": "GET",
-                "body": {}
+                "description": "An object's category specifies its type: Part, Assembly, Drawing, etc. Available properties depend on the object's category."
               },
-              "status": "Internal Server Error",
-              "code": 500,
-              "header": [
+              "response": [
                 {
-                  "key": "Content-Type",
-                  "value": "application/json;charset=UTF-8; qs=0.09"
+                  "id": "4631bb74-70a2-4a1f-81b1-33ec9ab22c45",
+                  "name": "default response",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json;charset=UTF-8; qs=0.09"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: oauth2",
+                        "key": "Authorization",
+                        "value": "<token>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/metadatacategory/categoryproperties?ownerId=<string>&ownerType=1&documentId=<string>&categoryIds=<string>&objectType=<integer>&strict=true&includeObjectTypeDefaults=false&includeComputedProperties=true&includePartPropertiesTableOnlyProperties=true&onlyActive=false&onlyObjectTypeDefaults=false",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "metadatacategory",
+                        "categoryproperties"
+                      ],
+                      "query": [
+                        {
+                          "key": "ownerId",
+                          "value": "<string>"
+                        },
+                        {
+                          "key": "ownerType",
+                          "value": "1"
+                        },
+                        {
+                          "key": "documentId",
+                          "value": "<string>"
+                        },
+                        {
+                          "key": "categoryIds",
+                          "value": "<string>"
+                        },
+                        {
+                          "key": "objectType",
+                          "value": "<integer>"
+                        },
+                        {
+                          "key": "strict",
+                          "value": "true"
+                        },
+                        {
+                          "key": "includeObjectTypeDefaults",
+                          "value": "false"
+                        },
+                        {
+                          "key": "includeComputedProperties",
+                          "value": "true"
+                        },
+                        {
+                          "key": "includePartPropertiesTableOnlyProperties",
+                          "value": "true"
+                        },
+                        {
+                          "key": "onlyActive",
+                          "value": "false"
+                        },
+                        {
+                          "key": "onlyObjectTypeDefaults",
+                          "value": "false"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "Internal Server Error",
+                  "code": 500,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json;charset=UTF-8; qs=0.09"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"href\": \"<uri>\",\n  \"items\": [\n    {\n      \"array\": \"<boolean>\",\n      \"assignable\": \"<boolean>\",\n      \"blobMimeType\": \"<string>\",\n      \"categoryPropertyConfigInfo\": {\n        \"computedAssemblyPropertyAggregatedPropertyId\": \"<string>\",\n        \"computedAssemblyPropertyAggregationOperator\": \"<integer>\",\n        \"computedAssemblyPropertyConfig\": {\n          \"aggregatedPropertyId\": \"<string>\",\n          \"aggregationOperator\": \"AVERAGE\",\n          \"errorValuePolicy\": \"PropagateError\",\n          \"filterPropertyId\": \"<string>\",\n          \"isFilterPropertyInverted\": \"<boolean>\",\n          \"missingValuePolicy\": \"ExcludeFromComputation\",\n          \"secondaryPropertyId\": \"<string>\"\n        },\n        \"computedAssemblyPropertyErrorValuePolicy\": \"<integer>\",\n        \"computedAssemblyPropertyFilterInverted\": \"<boolean>\",\n        \"computedAssemblyPropertyFilterPropertyId\": \"<string>\",\n        \"computedAssemblyPropertyMissingValuePolicy\": \"<integer>\",\n        \"computedAssemblyPropertySecondaryPropertyId\": \"<string>\",\n        \"computedPartPropertyConfig\": {\n          \"computedPartPropertySpecFunction\": \"<string>\",\n          \"computedPartPropertySpecNamespace\": \"<string>\",\n          \"computedPropertyFunctionReturnType\": \"<integer>\",\n          \"propertyFunctionDocumentId\": \"<string>\"\n        },\n        \"computedPropertyFunctionName\": \"<string>\",\n        \"computedPropertyFunctionNamespace\": \"<string>\",\n        \"computedPropertyFunctionURL\": \"<string>\",\n        \"defaultValue\": \"<string>\",\n        \"displayName\": \"<string>\",\n        \"enumValues\": [\n          {\n            \"label\": \"<string>\",\n            \"state\": \"<integer>\",\n            \"value\": \"<string>\"\n          },\n          {\n            \"label\": \"<string>\",\n            \"state\": \"<integer>\",\n            \"value\": \"<string>\"\n          }\n        ],\n        \"maxCount\": \"<integer>\",\n        \"maxDate\": \"<dateTime>\",\n        \"maxLength\": \"<integer>\",\n        \"maxValue\": \"<double>\",\n        \"minCount\": \"<integer>\",\n        \"minDate\": \"<dateTime>\",\n        \"minLength\": \"<integer>\",\n        \"minValue\": \"<double>\",\n        \"multiline\": \"<boolean>\",\n        \"multivalued\": \"<boolean>\",\n        \"pattern\": \"<string>\",\n        \"publishState\": \"<integer>\",\n        \"quantityType\": \"<integer>\",\n        \"required\": \"<boolean>\"\n      },\n      \"categorySummaryInfoList\": [\n        {\n          \"defaultObjectType\": \"<integer>\",\n          \"description\": \"<string>\",\n          \"href\": \"<uri>\",\n          \"id\": \"<string>\",\n          \"name\": \"<string>\",\n          \"objectTypes\": [\n            \"<integer>\",\n            \"<integer>\"\n          ],\n          \"ownerId\": \"<string>\",\n          \"ownerType\": \"<integer>\",\n          \"publishState\": \"<integer>\",\n          \"viewRef\": \"<uri>\"\n        },\n        {\n          \"defaultObjectType\": \"<integer>\",\n          \"description\": \"<string>\",\n          \"href\": \"<uri>\",\n          \"id\": \"<string>\",\n          \"name\": \"<string>\",\n          \"objectTypes\": [\n            \"<integer>\",\n            \"<integer>\"\n          ],\n          \"ownerId\": \"<string>\",\n          \"ownerType\": \"<integer>\",\n          \"publishState\": \"<integer>\",\n          \"viewRef\": \"<uri>\"\n        }\n      ],\n      \"description\": \"<string>\",\n      \"editableInMicroversion\": \"<boolean>\",\n      \"editableInVersion\": \"<boolean>\",\n      \"href\": \"<uri>\",\n      \"id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"objectDefName\": \"<string>\",\n      \"ownerId\": \"<string>\",\n      \"ownerType\": \"<integer>\",\n      \"uiReadonlyInMicroversion\": \"<boolean>\",\n      \"uiReadonlyInVersion\": \"<boolean>\",\n      \"valueType\": \"<integer>\",\n      \"viewRef\": \"<uri>\"\n    },\n    {\n      \"array\": \"<boolean>\",\n      \"assignable\": \"<boolean>\",\n      \"blobMimeType\": \"<string>\",\n      \"categoryPropertyConfigInfo\": {\n        \"computedAssemblyPropertyAggregatedPropertyId\": \"<string>\",\n        \"computedAssemblyPropertyAggregationOperator\": \"<integer>\",\n        \"computedAssemblyPropertyConfig\": {\n          \"aggregatedPropertyId\": \"<string>\",\n          \"aggregationOperator\": \"ALL\",\n          \"errorValuePolicy\": \"ExcludeFromComputation\",\n          \"filterPropertyId\": \"<string>\",\n          \"isFilterPropertyInverted\": \"<boolean>\",\n          \"missingValuePolicy\": \"TreatAsZero\",\n          \"secondaryPropertyId\": \"<string>\"\n        },\n        \"computedAssemblyPropertyErrorValuePolicy\": \"<integer>\",\n        \"computedAssemblyPropertyFilterInverted\": \"<boolean>\",\n        \"computedAssemblyPropertyFilterPropertyId\": \"<string>\",\n        \"computedAssemblyPropertyMissingValuePolicy\": \"<integer>\",\n        \"computedAssemblyPropertySecondaryPropertyId\": \"<string>\",\n        \"computedPartPropertyConfig\": {\n          \"computedPartPropertySpecFunction\": \"<string>\",\n          \"computedPartPropertySpecNamespace\": \"<string>\",\n          \"computedPropertyFunctionReturnType\": \"<integer>\",\n          \"propertyFunctionDocumentId\": \"<string>\"\n        },\n        \"computedPropertyFunctionName\": \"<string>\",\n        \"computedPropertyFunctionNamespace\": \"<string>\",\n        \"computedPropertyFunctionURL\": \"<string>\",\n        \"defaultValue\": \"<string>\",\n        \"displayName\": \"<string>\",\n        \"enumValues\": [\n          {\n            \"label\": \"<string>\",\n            \"state\": \"<integer>\",\n            \"value\": \"<string>\"\n          },\n          {\n            \"label\": \"<string>\",\n            \"state\": \"<integer>\",\n            \"value\": \"<string>\"\n          }\n        ],\n        \"maxCount\": \"<integer>\",\n        \"maxDate\": \"<dateTime>\",\n        \"maxLength\": \"<integer>\",\n        \"maxValue\": \"<double>\",\n        \"minCount\": \"<integer>\",\n        \"minDate\": \"<dateTime>\",\n        \"minLength\": \"<integer>\",\n        \"minValue\": \"<double>\",\n        \"multiline\": \"<boolean>\",\n        \"multivalued\": \"<boolean>\",\n        \"pattern\": \"<string>\",\n        \"publishState\": \"<integer>\",\n        \"quantityType\": \"<integer>\",\n        \"required\": \"<boolean>\"\n      },\n      \"categorySummaryInfoList\": [\n        {\n          \"defaultObjectType\": \"<integer>\",\n          \"description\": \"<string>\",\n          \"href\": \"<uri>\",\n          \"id\": \"<string>\",\n          \"name\": \"<string>\",\n          \"objectTypes\": [\n            \"<integer>\",\n            \"<integer>\"\n          ],\n          \"ownerId\": \"<string>\",\n          \"ownerType\": \"<integer>\",\n          \"publishState\": \"<integer>\",\n          \"viewRef\": \"<uri>\"\n        },\n        {\n          \"defaultObjectType\": \"<integer>\",\n          \"description\": \"<string>\",\n          \"href\": \"<uri>\",\n          \"id\": \"<string>\",\n          \"name\": \"<string>\",\n          \"objectTypes\": [\n            \"<integer>\",\n            \"<integer>\"\n          ],\n          \"ownerId\": \"<string>\",\n          \"ownerType\": \"<integer>\",\n          \"publishState\": \"<integer>\",\n          \"viewRef\": \"<uri>\"\n        }\n      ],\n      \"description\": \"<string>\",\n      \"editableInMicroversion\": \"<boolean>\",\n      \"editableInVersion\": \"<boolean>\",\n      \"href\": \"<uri>\",\n      \"id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"objectDefName\": \"<string>\",\n      \"ownerId\": \"<string>\",\n      \"ownerType\": \"<integer>\",\n      \"uiReadonlyInMicroversion\": \"<boolean>\",\n      \"uiReadonlyInVersion\": \"<boolean>\",\n      \"valueType\": \"<integer>\",\n      \"viewRef\": \"<uri>\"\n    }\n  ],\n  \"next\": \"<uri>\",\n  \"previous\": \"<uri>\"\n}",
+                  "createdAt": "2026-10-22T02:11:42.000Z",
+                  "updatedAt": "2026-10-22T02:11:42.000Z",
+                  "uid": "35240-4631bb74-70a2-4a1f-81b1-33ec9ab22c45"
                 }
               ],
-              "body": "{\n  \"href\": \"https://RnyLExvYmktRyQ.bvwPudz.0S6jcaeQ9FYBl\",\n  \"items\": [\n    {\n      \"array\": false,\n      \"assignable\": true,\n      \"blobMimeType\": \"string\",\n      \"categoryPropertyConfigInfo\": {\n        \"computedAssemblyPropertyAggregatedPropertyId\": \"string\",\n        \"computedAssemblyPropertyAggregationOperator\": 6178,\n        \"computedAssemblyPropertyConfig\": {\n          \"aggregatedPropertyId\": \"string\",\n          \"aggregationOperator\": \"WEIGHTED_AVERAGE\",\n          \"errorValuePolicy\": \"TreatAsFalse\",\n          \"filterPropertyId\": \"string\",\n          \"isFilterPropertyInverted\": false,\n          \"missingValuePolicy\": \"ExcludeFromComputation\",\n          \"secondaryPropertyId\": \"string\"\n        },\n        \"computedAssemblyPropertyErrorValuePolicy\": 8541,\n        \"computedAssemblyPropertyFilterInverted\": false,\n        \"computedAssemblyPropertyFilterPropertyId\": \"string\",\n        \"computedAssemblyPropertyMissingValuePolicy\": 6498,\n        \"computedAssemblyPropertySecondaryPropertyId\": \"string\",\n        \"computedPartPropertyConfig\": {\n          \"computedPartPropertySpecFunction\": \"string\",\n          \"computedPartPropertySpecNamespace\": \"string\",\n          \"computedPropertyFunctionReturnType\": 8589,\n          \"propertyFunctionDocumentId\": \"string\"\n        },\n        \"computedPropertyFunctionName\": \"string\",\n        \"computedPropertyFunctionNamespace\": \"string\",\n        \"computedPropertyFunctionURL\": \"string\",\n        \"defaultValue\": \"string\",\n        \"displayName\": \"string\",\n        \"enumValues\": [\n          {\n            \"label\": \"string\",\n            \"state\": 6667,\n            \"value\": \"string\"\n          },\n          {\n            \"label\": \"string\",\n            \"state\": 8753,\n            \"value\": \"string\"\n          }\n        ],\n        \"maxCount\": 567,\n        \"maxDate\": \"2011-07-07T13:08:44.121Z\",\n        \"maxLength\": 7990,\n        \"maxValue\": 481.5833484285048,\n        \"minCount\": 9244,\n        \"minDate\": \"1952-04-15T11:40:39.687Z\",\n        \"minLength\": 8063,\n        \"minValue\": 8809.964529898136,\n        \"multiline\": true,\n        \"multivalued\": false,\n        \"pattern\": \"string\",\n        \"publishState\": 8261,\n        \"quantityType\": 747,\n        \"required\": true\n      },\n      \"categorySummaryInfoList\": [\n        {\n          \"defaultObjectType\": 433,\n          \"description\": \"string\",\n          \"href\": \"https://OrOFLqOapKNlgZtrQenZAjGda.eucgy+zAiReyhhfUOXjIDODADJ\",\n          \"id\": \"string\",\n          \"name\": \"string\",\n          \"objectTypes\": [\n            279,\n            4531\n          ],\n          \"ownerId\": \"string\",\n          \"ownerType\": 6864,\n          \"publishState\": 2723,\n          \"viewRef\": \"http://peHGAc.ajhpEJSmS5Ehi7mpYtuLp8+ftKT32PV-.YwNhn4BROSVdt\"\n        },\n        {\n          \"defaultObjectType\": 2537,\n          \"description\": \"string\",\n          \"href\": \"https://pDlvEaLHZRDfRaPJ.auzHF1NyKAOv.n2u2wy1eLdDZdgRZ9oQYVNlEyVGMPM9TGT3h4aubK\",\n          \"id\": \"string\",\n          \"name\": \"string\",\n          \"objectTypes\": [\n            8497,\n            2725\n          ],\n          \"ownerId\": \"string\",\n          \"ownerType\": 3166,\n          \"publishState\": 1968,\n          \"viewRef\": \"http://mIoEQwkdlCOVVWLjv.bfcfcaTnYBkEBY\"\n        }\n      ],\n      \"description\": \"string\",\n      \"editableInMicroversion\": true,\n      \"editableInVersion\": true,\n      \"href\": \"http://KOrCAJVQtOekBILKGxIMnyeqScY.nphcuNdWQWPjNBCwj4Cjde9yNIZO+-..Av.AJ.mG7BMYsEYvoB88Jzs\",\n      \"id\": \"string\",\n      \"name\": \"string\",\n      \"objectDefName\": \"string\",\n      \"ownerId\": \"string\",\n      \"ownerType\": 1528,\n      \"uiReadonlyInMicroversion\": false,\n      \"uiReadonlyInVersion\": true,\n      \"valueType\": 8371,\n      \"viewRef\": \"https://LEHK.utmntZnlVnG1kxCLQmnCNsZiUh7CrDzLVn2Afv0cfyxPWJumSCQ\"\n    },\n    {\n      \"array\": true,\n      \"assignable\": true,\n      \"blobMimeType\": \"string\",\n      \"categoryPropertyConfigInfo\": {\n        \"computedAssemblyPropertyAggregatedPropertyId\": \"string\",\n        \"computedAssemblyPropertyAggregationOperator\": 8593,\n        \"computedAssemblyPropertyConfig\": {\n          \"aggregatedPropertyId\": \"string\",\n          \"aggregationOperator\": \"NOT_ANY\",\n          \"errorValuePolicy\": \"ExcludeFromComputation\",\n          \"filterPropertyId\": \"string\",\n          \"isFilterPropertyInverted\": true,\n          \"missingValuePolicy\": \"PropagateError\",\n          \"secondaryPropertyId\": \"string\"\n        },\n        \"computedAssemblyPropertyErrorValuePolicy\": 8775,\n        \"computedAssemblyPropertyFilterInverted\": true,\n        \"computedAssemblyPropertyFilterPropertyId\": \"string\",\n        \"computedAssemblyPropertyMissingValuePolicy\": 6178,\n        \"computedAssemblyPropertySecondaryPropertyId\": \"string\",\n        \"computedPartPropertyConfig\": {\n          \"computedPartPropertySpecFunction\": \"string\",\n          \"computedPartPropertySpecNamespace\": \"string\",\n          \"computedPropertyFunctionReturnType\": 6629,\n          \"propertyFunctionDocumentId\": \"string\"\n        },\n        \"computedPropertyFunctionName\": \"string\",\n        \"computedPropertyFunctionNamespace\": \"string\",\n        \"computedPropertyFunctionURL\": \"string\",\n        \"defaultValue\": \"string\",\n        \"displayName\": \"string\",\n        \"enumValues\": [\n          {\n            \"label\": \"string\",\n            \"state\": 5372,\n            \"value\": \"string\"\n          },\n          {\n            \"label\": \"string\",\n            \"state\": 1517,\n            \"value\": \"string\"\n          }\n        ],\n        \"maxCount\": 7893,\n        \"maxDate\": \"1954-04-06T05:17:22.119Z\",\n        \"maxLength\": 9778,\n        \"maxValue\": 4257.509535259764,\n        \"minCount\": 9717,\n        \"minDate\": \"1959-08-23T11:24:35.032Z\",\n        \"minLength\": 793,\n        \"minValue\": 2232.240745116596,\n        \"multiline\": false,\n        \"multivalued\": false,\n        \"pattern\": \"string\",\n        \"publishState\": 7868,\n        \"quantityType\": 2309,\n        \"required\": false\n      },\n      \"categorySummaryInfoList\": [\n        {\n          \"defaultObjectType\": 7094,\n          \"description\": \"string\",\n          \"href\": \"http://OT.xyTfUkBp0klb0ZOwMKn0tfluHssb-l8qxPQAaDUPLlIanmKQ,cgd7X0g\",\n          \"id\": \"string\",\n          \"name\": \"string\",\n          \"objectTypes\": [\n            7573,\n            7358\n          ],\n          \"ownerId\": \"string\",\n          \"ownerType\": 9390,\n          \"publishState\": 9638,\n          \"viewRef\": \"http://EOCaQMWyMBAjjwlDOogFwvMcF.gjEUbnlE6WF3oSe1Fmo7Ba1PWKuDF+oKGCWSkYvMuNsHMiPn,r,6Q4r\"\n        },\n        {\n          \"defaultObjectType\": 6252,\n          \"description\": \"string\",\n          \"href\": \"https://SqClMKKVdHaNbPkdFdKAEJnGexgfXigxF.azYE-\",\n          \"id\": \"string\",\n          \"name\": \"string\",\n          \"objectTypes\": [\n            1803,\n            1921\n          ],\n          \"ownerId\": \"string\",\n          \"ownerType\": 7240,\n          \"publishState\": 8141,\n          \"viewRef\": \"http://jiN.qkcl8kfZUz5w4JtmUroVebe8ZdbxPAiNMB3Sq-TUU\"\n        }\n      ],\n      \"description\": \"string\",\n      \"editableInMicroversion\": false,\n      \"editableInVersion\": false,\n      \"href\": \"http://NtnjDjegeDSJwuKxV.lbROTL6ZpTh+dMSKd0bzaHVFDQJwEdzKzWVqIAVfkQiWl\",\n      \"id\": \"string\",\n      \"name\": \"string\",\n      \"objectDefName\": \"string\",\n      \"ownerId\": \"string\",\n      \"ownerType\": 2362,\n      \"uiReadonlyInMicroversion\": false,\n      \"uiReadonlyInVersion\": true,\n      \"valueType\": 6554,\n      \"viewRef\": \"http://bLafdh.xwam+8xL45lzjKY1cuSSbkfB7kbn,KfbKPdbjeeZ,BcXf3AlctNu\"\n    }\n  ],\n  \"next\": \"http://lLgFdCmL.wqujjuwOix.1s+HLfO-nyXyaltMG6-Zyx\",\n  \"previous\": \"https://Yyg.gcuH.DwAwp-mpESll+nPWLK5L5yio\"\n}",
-              "cookie": [],
-              "_postman_previewlanguage": "json"
+              "createdAt": "2026-10-22T02:11:42.000Z",
+              "updatedAt": "2026-10-22T02:11:42.000Z",
+              "uid": "35240-ca1790fc-df4e-4ee6-ab0d-9e430a4202cd"
             }
           ],
-          "event": [],
-          "protocolProfileBehavior": {
-            "disableBodyPruning": true
-          }
+          "id": "ecc9aabf-d758-4b6e-abe2-07a1f5167dc8",
+          "createdAt": "2026-10-22T02:11:42.000Z",
+          "updatedAt": "2026-10-22T02:11:42.000Z",
+          "uid": "35240-ecc9aabf-d758-4b6e-abe2-07a1f5167dc8"
         }
       ],
-      "event": []
-    }
-  ],
-  "event": [],
-  "variable": [
-    {
-      "type": "string",
-      "value": "https://cad.onshape.com/api/v16",
-      "key": "baseUrl"
+      "id": "51a86a0c-ce17-4454-bb88-91325b76f5cf",
+      "createdAt": "2026-10-22T02:11:42.000Z",
+      "updatedAt": "2026-10-22T02:11:42.000Z",
+      "uid": "35240-51a86a0c-ce17-4454-bb88-91325b76f5cf"
     }
   ],
   "auth": {
@@ -239,21 +235,20 @@
     "basic": [
       {
         "key": "username",
-        "value": "{{basicAuthUsername}}"
+        "value": "{{basicAuthUsername}}",
+        "type": "string"
       },
       {
         "key": "password",
-        "value": "{{basicAuthPassword}}"
+        "value": "{{basicAuthPassword}}",
+        "type": "string"
       }
     ]
   },
-  "info": {
-    "_postman_id": "fea1906d-30b8-4bd7-ae0d-627c922d9756",
-    "name": "Onshape REST Account MetadataCategory API",
-    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-    "description": {
-      "content": "## Welcome to the Onshape REST API Explorer\n\n**See the [API Explorer Guide](https://onshape-public.github.io/docs/api-intro/explorer/) for help navigating this page.**\n\n### Using this page\n1. Sign in to your [Onshape](https://cad.onshape.com) account in another tab.\n2. Click the `Try it out` button below. It toggles to a `Cancel` button when selected.\n\n### Authenticating\nTo authenticate your calls, click the `Authorize` button. See [API Explorer Guide: Authentication](https://onshape-public.github.io/docs/api-intro/explorer/#authentication) for details. Calls made when authenticated via API Keys or OAuth count against your annual [API limits](https://onshape-public.github.io/docs/auth/limits/#annual-api-call-limits).\n* **Tip:** To ensure the current session isn't used when trying other authentication techniques, make sure to [remove the Onshape cookie](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site) as per the instructions for your browser, or use a private or incognito window.\n\n### Additional resources\n\n* [Onshape API Guide](https://onshape-public.github.io/docs/): Our full suite of developer guides, to be used as an accompaniment to this API Explorer.\n* [Onshape Developer Portal](https://cad.onshape.com/appstore/dev-portal): The Onshape portal for managing your API keys, OAuth2 credentials, your Onshape applications, and your Onshape App Store entries.\n* [Authentication Guide](https://onshape-public.github.io/docs/auth/): Our guide to using API keys, request signatures, and OAuth2 in your Onshape applications.\n\nContact Support:\n Email: api-support@onshape.zendesk.com",
-      "type": "text/plain"
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://cad.onshape.com/api/v16"
     }
-  }
+  ]
 }

@@ -1,119 +1,433 @@
 {
+  "info": {
+    "_postman_id": "a259624d-a5e2-4a6c-a617-4d9f013290b5",
+    "name": "Onshape REST Team API",
+    "description": "## Welcome to the Onshape REST API Explorer\n\n**See the API Explorer Guide for help navigating this page.**\n\n### Using this page\n1.\n\nContact Support:\n Email: api-support@onshape.zendesk.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-10-22T02:12:44.000Z",
+    "updatedAt": "2026-10-22T02:12:45.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-a259624d-a5e2-4a6c-a617-4d9f013290b5"
+  },
   "item": [
     {
-      "id": "f7107f98-e62a-4555-b691-60447da75097",
-      "name": "Team",
-      "description": {
-        "content": "Access team information.",
-        "type": "text/plain"
-      },
+      "name": "teams",
       "item": [
         {
-          "id": "8572b4ec-2d0c-4b25-9149-47156d54a9e4",
-          "name": "Get a list of all teams the current user belongs to.",
-          "request": {
-            "name": "Get a list of all teams the current user belongs to.",
-            "description": {},
-            "url": {
-              "path": [
-                "teams"
-              ],
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "query": [
+          "name": "{tid}",
+          "item": [
+            {
+              "name": "members",
+              "item": [
                 {
-                  "disabled": false,
-                  "key": "query",
-                  "value": ""
-                },
-                {
-                  "disabled": false,
-                  "key": "filter",
-                  "value": "0"
-                },
-                {
-                  "disabled": false,
-                  "key": "uid",
-                  "value": "<string>"
-                },
-                {
-                  "disabled": false,
-                  "key": "companyId",
-                  "value": "<string>"
-                },
-                {
-                  "disabled": false,
-                  "key": "sortColumn",
-                  "value": "<string>"
-                },
-                {
-                  "disabled": false,
-                  "key": "sortOrder",
-                  "value": "asc"
-                },
-                {
-                  "disabled": false,
-                  "key": "includeCompanyOwnedTeams",
-                  "value": "true"
-                },
-                {
-                  "disabled": false,
-                  "key": "offset",
-                  "value": "0"
-                },
-                {
-                  "disabled": false,
-                  "key": "limit",
-                  "value": "100"
+                  "name": "Get a list of a team's members",
+                  "id": "8beded94-fcf7-4e36-998b-522bed4f104f",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "auth": {
+                      "type": "oauth2",
+                      "oauth2": [
+                        {
+                          "key": "scope",
+                          "value": "OAuth2Internal OAuth2ReadPII OAuth2Read OAuth2Write OAuth2Delete OAuth2Purchase OAuth2Share document.create document.edit document.delete document.read enterprise.create enterprise.read enterprise.edit enterprise.delete enterprise.member.create enterprise.member.read enterprise.member.edit enterprise.member.delete webhook.create webhook.edit webhook.read webhook.delete PLMIntegration",
+                          "type": "string"
+                        },
+                        {
+                          "key": "redirect_uri",
+                          "value": "/oauth/token",
+                          "type": "string"
+                        },
+                        {
+                          "key": "accessTokenUrl",
+                          "value": "/oauth/token",
+                          "type": "string"
+                        },
+                        {
+                          "key": "authUrl",
+                          "value": "/oauth/authorize",
+                          "type": "string"
+                        },
+                        {
+                          "key": "grant_type",
+                          "value": "authorization_code",
+                          "type": "string"
+                        }
+                      ]
+                    },
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json;charset=UTF-8; qs=0.09"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/teams/:tid/members?sortColumn=<string>&sortOrder=asc&q=&offset=0&limit=20",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "teams",
+                        ":tid",
+                        "members"
+                      ],
+                      "query": [
+                        {
+                          "key": "sortColumn",
+                          "value": "<string>"
+                        },
+                        {
+                          "key": "sortOrder",
+                          "value": "asc"
+                        },
+                        {
+                          "key": "q",
+                          "value": ""
+                        },
+                        {
+                          "key": "offset",
+                          "value": "0"
+                        },
+                        {
+                          "key": "limit",
+                          "value": "20"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "id": "ce64dbda-d618-425a-b087-6e3de2b36db3",
+                          "key": "tid",
+                          "value": "<string>",
+                          "description": "(Required) "
+                        }
+                      ]
+                    },
+                    "description": "Returns a maximum of 20 per page."
+                  },
+                  "response": [
+                    {
+                      "id": "99a88976-56a1-40cd-8397-af660b577c0b",
+                      "name": "default response",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json;charset=UTF-8; qs=0.09"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: oauth2",
+                            "key": "Authorization",
+                            "value": "<token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/teams/:tid/members?sortColumn=<string>&sortOrder=asc&q=&offset=0&limit=20",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "teams",
+                            ":tid",
+                            "members"
+                          ],
+                          "query": [
+                            {
+                              "key": "sortColumn",
+                              "value": "<string>"
+                            },
+                            {
+                              "key": "sortOrder",
+                              "value": "asc"
+                            },
+                            {
+                              "key": "q",
+                              "value": ""
+                            },
+                            {
+                              "key": "offset",
+                              "value": "0"
+                            },
+                            {
+                              "key": "limit",
+                              "value": "20"
+                            }
+                          ],
+                          "variable": [
+                            {
+                              "key": "tid"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Internal Server Error",
+                      "code": 500,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json;charset=UTF-8; qs=0.09"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"href\": \"<uri>\",\n  \"items\": [\n    {\n      \"admin\": \"<boolean>\",\n      \"href\": \"<uri>\",\n      \"id\": \"<string>\",\n      \"member\": {\n        \"jsonType\": \"in ut labore nisi\",\n        \"href\": \"<uri>\",\n        \"id\": \"<string>\",\n        \"name\": \"<string>\",\n        \"viewRef\": \"<uri>\",\n        \"image\": \"<string>\",\n        \"isOnshapeSupport\": \"<boolean>\",\n        \"state\": \"<integer>\",\n        \"documentationName\": \"<string>\",\n        \"email\": \"<string>\",\n        \"firstName\": \"<string>\",\n        \"lastName\": \"<string>\",\n        \"company\": {\n          \"admin\": \"<boolean>\",\n          \"description\": \"<string>\",\n          \"domainPrefix\": \"<string>\",\n          \"enterpriseBaseUrl\": \"<string>\",\n          \"enterpriseSubtype\": \"<integer>\",\n          \"href\": \"<uri>\",\n          \"id\": \"<string>\",\n          \"image\": \"<string>\",\n          \"name\": \"<string>\",\n          \"noPublicDocuments\": \"<boolean>\",\n          \"ownerId\": \"<string>\",\n          \"secondaryDomainPrefixes\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"state\": \"<integer>\",\n          \"type\": \"<integer>\",\n          \"viewRef\": \"<uri>\"\n        },\n        \"companyUserState\": \"<integer>\",\n        \"confirmationRequested\": \"<boolean>\",\n        \"documentationNameOverride\": \"<string>\",\n        \"globalPermissions\": {\n          \"accessReports\": \"<boolean>\",\n          \"adminEnterprise\": \"<boolean>\",\n          \"allowAppStoreAccess\": \"<boolean>\",\n          \"allowPublicDocumentsAccess\": \"<boolean>\",\n          \"approveReleases\": \"<boolean>\",\n          \"branchLockPermissions\": \"<boolean>\",\n          \"createDocumentsInRoot\": \"<boolean>\",\n          \"createProject\": \"<boolean>\",\n          \"createReleases\": \"<boolean>\",\n          \"createTasks\": \"<boolean>\",\n          \"deletePermanently\": \"<boolean>\",\n          \"enableLabs\": \"<boolean>\",\n          \"exportFiles\": \"<boolean>\",\n          \"importFiles\": \"<boolean>\",\n          \"manageGuestUsers\": \"<boolean>\",\n          \"manageNonGeometricItems\": \"<boolean>\",\n          \"manageRbac\": \"<boolean>\",\n          \"manageStandardContentMetadata\": \"<boolean>\",\n          \"manageUsers\": \"<boolean>\",\n          \"manageWorkflows\": \"<boolean>\",\n          \"shareForAnonymousAccess\": \"<boolean>\",\n          \"transferDocumentsFromEnterprise\": \"<boolean>\",\n          \"useRevisionTools\": \"<boolean>\"\n        },\n        \"invitationState\": \"<integer>\",\n        \"isExternal\": \"<boolean>\",\n        \"isGuest\": \"<boolean>\",\n        \"isLight\": \"<boolean>\",\n        \"lastLoginTime\": \"<dateTime>\",\n        \"personalMessageAllowed\": \"<boolean>\",\n        \"source\": \"<integer>\"\n      },\n      \"name\": \"<string>\",\n      \"team\": {\n        \"active\": \"<boolean>\",\n        \"canMove\": \"<boolean>\",\n        \"connectionName\": \"<string>\",\n        \"connectionNames\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"createdAt\": \"<dateTime>\",\n        \"createdBy\": {\n          \"jsonType\": \"voluptate est Duis\",\n          \"href\": \"<uri>\",\n          \"id\": \"<string>\",\n          \"name\": \"<string>\",\n          \"viewRef\": \"<uri>\",\n          \"image\": \"<string>\",\n          \"isOnshapeSupport\": \"<boolean>\",\n          \"state\": \"<integer>\"\n        },\n        \"description\": \"<string>\",\n        \"href\": \"<uri>\",\n        \"id\": \"<string>\",\n        \"isContainer\": \"<boolean>\",\n        \"isEnterpriseOwned\": \"<boolean>\",\n        \"isExternalConnectionResource\": \"<boolean>\",\n        \"isMutable\": \"<boolean>\",\n        \"modifiedAt\": \"<dateTime>\",\n        \"modifiedBy\": {\n          \"jsonType\": \"mollit nisi ea nulla\",\n          \"href\": \"<uri>\",\n          \"id\": \"<string>\",\n          \"name\": \"<string>\",\n          \"viewRef\": \"<uri>\",\n          \"image\": \"<string>\",\n          \"isOnshapeSupport\": \"<boolean>\",\n          \"state\": \"<integer>\"\n        },\n        \"name\": \"<string>\",\n        \"owner\": {\n          \"href\": \"<uri>\",\n          \"id\": \"<string>\",\n          \"image\": \"<string>\",\n          \"isEnterpriseOwnedResource\": \"<boolean>\",\n          \"name\": \"<string>\",\n          \"type\": \"<integer>\",\n          \"viewRef\": \"<uri>\"\n        },\n        \"parentId\": \"<string>\",\n        \"predefinedTeam\": \"<integer>\",\n        \"predefinedTeamMutable\": \"<boolean>\",\n        \"projectId\": \"<string>\",\n        \"resourceType\": \"<string>\",\n        \"treeHref\": \"<string>\",\n        \"unparentHref\": \"<string>\",\n        \"viewRef\": \"<uri>\"\n      },\n      \"viewRef\": \"<uri>\"\n    },\n    {\n      \"admin\": \"<boolean>\",\n      \"href\": \"<uri>\",\n      \"id\": \"<string>\",\n      \"member\": {\n        \"jsonType\": \"fugiat exercitation Ut\",\n        \"href\": \"<uri>\",\n        \"id\": \"<string>\",\n        \"name\": \"<string>\",\n        \"viewRef\": \"<uri>\",\n        \"image\": \"<string>\",\n        \"isOnshapeSupport\": \"<boolean>\",\n        \"state\": \"<integer>\",\n        \"documentationName\": \"<string>\",\n        \"email\": \"<string>\",\n        \"firstName\": \"<string>\",\n        \"lastName\": \"<string>\",\n        \"company\": {\n          \"admin\": \"<boolean>\",\n          \"description\": \"<string>\",\n          \"domainPrefix\": \"<string>\",\n          \"enterpriseBaseUrl\": \"<string>\",\n          \"enterpriseSubtype\": \"<integer>\",\n          \"href\": \"<uri>\",\n          \"id\": \"<string>\",\n          \"image\": \"<string>\",\n          \"name\": \"<string>\",\n          \"noPublicDocuments\": \"<boolean>\",\n          \"ownerId\": \"<string>\",\n          \"secondaryDomainPrefixes\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"state\": \"<integer>\",\n          \"type\": \"<integer>\",\n          \"viewRef\": \"<uri>\"\n        },\n        \"companyUserState\": \"<integer>\",\n        \"confirmationRequested\": \"<boolean>\",\n        \"documentationNameOverride\": \"<string>\",\n        \"globalPermissions\": {\n          \"accessReports\": \"<boolean>\",\n          \"adminEnterprise\": \"<boolean>\",\n          \"allowAppStoreAccess\": \"<boolean>\",\n          \"allowPublicDocumentsAccess\": \"<boolean>\",\n          \"approveReleases\": \"<boolean>\",\n          \"branchLockPermissions\": \"<boolean>\",\n          \"createDocumentsInRoot\": \"<boolean>\",\n          \"createProject\": \"<boolean>\",\n          \"createReleases\": \"<boolean>\",\n          \"createTasks\": \"<boolean>\",\n          \"deletePermanently\": \"<boolean>\",\n          \"enableLabs\": \"<boolean>\",\n          \"exportFiles\": \"<boolean>\",\n          \"importFiles\": \"<boolean>\",\n          \"manageGuestUsers\": \"<boolean>\",\n          \"manageNonGeometricItems\": \"<boolean>\",\n          \"manageRbac\": \"<boolean>\",\n          \"manageStandardContentMetadata\": \"<boolean>\",\n          \"manageUsers\": \"<boolean>\",\n          \"manageWorkflows\": \"<boolean>\",\n          \"shareForAnonymousAccess\": \"<boolean>\",\n          \"transferDocumentsFromEnterprise\": \"<boolean>\",\n          \"useRevisionTools\": \"<boolean>\"\n        },\n        \"invitationState\": \"<integer>\",\n        \"isExternal\": \"<boolean>\",\n        \"isGuest\": \"<boolean>\",\n        \"isLight\": \"<boolean>\",\n        \"lastLoginTime\": \"<dateTime>\",\n        \"personalMessageAllowed\": \"<boolean>\",\n        \"source\": \"<integer>\"\n      },\n      \"name\": \"<string>\",\n      \"team\": {\n        \"active\": \"<boolean>\",\n        \"canMove\": \"<boolean>\",\n        \"connectionName\": \"<string>\",\n        \"connectionNames\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"createdAt\": \"<dateTime>\",\n        \"createdBy\": {\n          \"jsonType\": \"ex irure\",\n          \"href\": \"<uri>\",\n          \"id\": \"<string>\",\n          \"name\": \"<string>\",\n          \"viewRef\": \"<uri>\",\n          \"image\": \"<string>\",\n          \"isOnshapeSupport\": \"<boolean>\",\n          \"state\": \"<integer>\"\n        },\n        \"description\": \"<string>\",\n        \"href\": \"<uri>\",\n        \"id\": \"<string>\",\n        \"isContainer\": \"<boolean>\",\n        \"isEnterpriseOwned\": \"<boolean>\",\n        \"isExternalConnectionResource\": \"<boolean>\",\n        \"isMutable\": \"<boolean>\",\n        \"modifiedAt\": \"<dateTime>\",\n        \"modifiedBy\": {\n          \"jsonType\": \"ipsum officia Excepteur anim\",\n          \"href\": \"<uri>\",\n          \"id\": \"<string>\",\n          \"name\": \"<string>\",\n          \"viewRef\": \"<uri>\",\n          \"image\": \"<string>\",\n          \"isOnshapeSupport\": \"<boolean>\",\n          \"state\": \"<integer>\"\n        },\n        \"name\": \"<string>\",\n        \"owner\": {\n          \"href\": \"<uri>\",\n          \"id\": \"<string>\",\n          \"image\": \"<string>\",\n          \"isEnterpriseOwnedResource\": \"<boolean>\",\n          \"name\": \"<string>\",\n          \"type\": \"<integer>\",\n          \"viewRef\": \"<uri>\"\n        },\n        \"parentId\": \"<string>\",\n        \"predefinedTeam\": \"<integer>\",\n        \"predefinedTeamMutable\": \"<boolean>\",\n        \"projectId\": \"<string>\",\n        \"resourceType\": \"<string>\",\n        \"treeHref\": \"<string>\",\n        \"unparentHref\": \"<string>\",\n        \"viewRef\": \"<uri>\"\n      },\n      \"viewRef\": \"<uri>\"\n    }\n  ],\n  \"next\": \"<uri>\",\n  \"previous\": \"<uri>\"\n}",
+                      "createdAt": "2026-10-22T02:12:45.000Z",
+                      "updatedAt": "2026-10-22T02:12:45.000Z",
+                      "uid": "35240-99a88976-56a1-40cd-8397-af660b577c0b"
+                    }
+                  ],
+                  "createdAt": "2026-10-22T02:12:45.000Z",
+                  "updatedAt": "2026-10-22T02:12:45.000Z",
+                  "uid": "35240-8beded94-fcf7-4e36-998b-522bed4f104f"
                 }
               ],
-              "variable": []
+              "id": "96cb4c65-9e31-494e-8895-f435abe78d21",
+              "createdAt": "2026-10-22T02:12:45.000Z",
+              "updatedAt": "2026-10-22T02:12:45.000Z",
+              "uid": "35240-96cb4c65-9e31-494e-8895-f435abe78d21"
             },
+            {
+              "name": "Get team information by team ID",
+              "id": "dff771db-51e3-4357-9106-9fa3a6480583",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "auth": {
+                  "type": "oauth2",
+                  "oauth2": [
+                    {
+                      "key": "scope",
+                      "value": "OAuth2Internal OAuth2ReadPII OAuth2Read OAuth2Write OAuth2Delete OAuth2Purchase OAuth2Share document.create document.edit document.delete document.read enterprise.create enterprise.read enterprise.edit enterprise.delete enterprise.member.create enterprise.member.read enterprise.member.edit enterprise.member.delete webhook.create webhook.edit webhook.read webhook.delete PLMIntegration",
+                      "type": "string"
+                    },
+                    {
+                      "key": "redirect_uri",
+                      "value": "/oauth/token",
+                      "type": "string"
+                    },
+                    {
+                      "key": "accessTokenUrl",
+                      "value": "/oauth/token",
+                      "type": "string"
+                    },
+                    {
+                      "key": "authUrl",
+                      "value": "/oauth/authorize",
+                      "type": "string"
+                    },
+                    {
+                      "key": "grant_type",
+                      "value": "authorization_code",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json;charset=UTF-8; qs=0.09"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/teams/:tid",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "teams",
+                    ":tid"
+                  ],
+                  "variable": [
+                    {
+                      "id": "b9cb58ac-d63d-4016-b3ca-02b359f68876",
+                      "key": "tid",
+                      "value": "<string>",
+                      "description": "(Required) "
+                    }
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "id": "399ca1d2-7525-4920-86e7-fab9e1c09027",
+                  "name": "default response",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json;charset=UTF-8; qs=0.09"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: oauth2",
+                        "key": "Authorization",
+                        "value": "<token>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/teams/:tid",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "teams",
+                        ":tid"
+                      ],
+                      "variable": [
+                        {
+                          "key": "tid"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "Internal Server Error",
+                  "code": 500,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json;charset=UTF-8; qs=0.09"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"active\": \"<boolean>\",\n  \"canMove\": \"<boolean>\",\n  \"connectionName\": \"<string>\",\n  \"connectionNames\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"createdAt\": \"<dateTime>\",\n  \"createdBy\": {\n    \"jsonType\": \"et dolore\",\n    \"href\": \"<uri>\",\n    \"id\": \"<string>\",\n    \"name\": \"<string>\",\n    \"viewRef\": \"<uri>\",\n    \"image\": \"<string>\",\n    \"isOnshapeSupport\": \"<boolean>\",\n    \"state\": \"<integer>\"\n  },\n  \"description\": \"<string>\",\n  \"href\": \"<uri>\",\n  \"id\": \"<string>\",\n  \"isContainer\": \"<boolean>\",\n  \"isEnterpriseOwned\": \"<boolean>\",\n  \"isExternalConnectionResource\": \"<boolean>\",\n  \"isMutable\": \"<boolean>\",\n  \"modifiedAt\": \"<dateTime>\",\n  \"modifiedBy\": {\n    \"jsonType\": \"occaecat non amet pariatur\",\n    \"href\": \"<uri>\",\n    \"id\": \"<string>\",\n    \"name\": \"<string>\",\n    \"viewRef\": \"<uri>\",\n    \"image\": \"<string>\",\n    \"isOnshapeSupport\": \"<boolean>\",\n    \"state\": \"<integer>\"\n  },\n  \"name\": \"<string>\",\n  \"owner\": {\n    \"href\": \"<uri>\",\n    \"id\": \"<string>\",\n    \"image\": \"<string>\",\n    \"isEnterpriseOwnedResource\": \"<boolean>\",\n    \"name\": \"<string>\",\n    \"type\": \"<integer>\",\n    \"viewRef\": \"<uri>\"\n  },\n  \"parentId\": \"<string>\",\n  \"predefinedTeam\": \"<integer>\",\n  \"predefinedTeamMutable\": \"<boolean>\",\n  \"projectId\": \"<string>\",\n  \"resourceType\": \"<string>\",\n  \"treeHref\": \"<string>\",\n  \"unparentHref\": \"<string>\",\n  \"viewRef\": \"<uri>\",\n  \"admin\": \"<boolean>\",\n  \"member\": \"<boolean>\",\n  \"size\": \"<integer>\"\n}",
+                  "createdAt": "2026-10-22T02:12:45.000Z",
+                  "updatedAt": "2026-10-22T02:12:45.000Z",
+                  "uid": "35240-399ca1d2-7525-4920-86e7-fab9e1c09027"
+                }
+              ],
+              "createdAt": "2026-10-22T02:12:45.000Z",
+              "updatedAt": "2026-10-22T02:12:45.000Z",
+              "uid": "35240-dff771db-51e3-4357-9106-9fa3a6480583"
+            }
+          ],
+          "id": "1565d3c3-dc9f-4377-864d-1e8831840edc",
+          "createdAt": "2026-10-22T02:12:45.000Z",
+          "updatedAt": "2026-10-22T02:12:45.000Z",
+          "uid": "35240-1565d3c3-dc9f-4377-864d-1e8831840edc"
+        },
+        {
+          "name": "Get a list of all teams the current user belongs to",
+          "id": "af62c586-81a5-4021-b52f-67d7679e9d3d",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "scope",
+                  "value": "OAuth2Internal OAuth2ReadPII OAuth2Read OAuth2Write OAuth2Delete OAuth2Purchase OAuth2Share document.create document.edit document.delete document.read enterprise.create enterprise.read enterprise.edit enterprise.delete enterprise.member.create enterprise.member.read enterprise.member.edit enterprise.member.delete webhook.create webhook.edit webhook.read webhook.delete PLMIntegration",
+                  "type": "string"
+                },
+                {
+                  "key": "redirect_uri",
+                  "value": "/oauth/token",
+                  "type": "string"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "/oauth/token",
+                  "type": "string"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "/oauth/authorize",
+                  "type": "string"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
             "header": [
               {
                 "key": "Accept",
                 "value": "application/json;charset=UTF-8; qs=0.09"
               }
             ],
-            "method": "GET",
-            "auth": {
-              "type": "oauth2",
-              "oauth2": [
+            "url": {
+              "raw": "{{baseUrl}}/teams?query=&filter=0&uid=<string>&companyId=<string>&sortColumn=<string>&sortOrder=asc&includeCompanyOwnedTeams=true&offset=0&limit=100",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "teams"
+              ],
+              "query": [
                 {
-                  "key": "scope",
-                  "value": "OAuth2Internal OAuth2ReadPII OAuth2Read OAuth2Write OAuth2Delete OAuth2Purchase OAuth2Share document.create document.edit document.delete document.read enterprise.create enterprise.read enterprise.edit enterprise.delete enterprise.member.create enterprise.member.read enterprise.member.edit enterprise.member.delete webhook.create webhook.edit webhook.read webhook.delete PLMIntegration"
+                  "key": "query",
+                  "value": ""
                 },
                 {
-                  "key": "redirect_uri",
-                  "value": "/oauth/token"
+                  "key": "filter",
+                  "value": "0"
                 },
                 {
-                  "key": "accessTokenUrl",
-                  "value": "/oauth/token"
+                  "key": "uid",
+                  "value": "<string>"
                 },
                 {
-                  "key": "authUrl",
-                  "value": "/oauth/authorize"
+                  "key": "companyId",
+                  "value": "<string>"
                 },
                 {
-                  "key": "grant_type",
-                  "value": "authorization_code"
+                  "key": "sortColumn",
+                  "value": "<string>"
+                },
+                {
+                  "key": "sortOrder",
+                  "value": "asc"
+                },
+                {
+                  "key": "includeCompanyOwnedTeams",
+                  "value": "true"
+                },
+                {
+                  "key": "offset",
+                  "value": "0"
+                },
+                {
+                  "key": "limit",
+                  "value": "100"
                 }
               ]
             }
           },
           "response": [
             {
-              "id": "8abdcd76-3060-4216-9c26-2149a3e22c41",
+              "id": "fb140cfc-b5ca-423a-9437-6d278d231339",
               "name": "default response",
               "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json;charset=UTF-8; qs=0.09"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: oauth2",
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
                 "url": {
-                  "path": [
-                    "teams"
-                  ],
+                  "raw": "{{baseUrl}}/teams?query=&filter=0&uid=<string>&companyId=<string>&sortColumn=<string>&sortOrder=asc&includeCompanyOwnedTeams=true&offset=0&limit=100",
                   "host": [
                     "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "teams"
                   ],
                   "query": [
                     {
@@ -152,340 +466,35 @@
                       "key": "limit",
                       "value": "100"
                     }
-                  ],
-                  "variable": []
-                },
-                "header": [
-                  {
-                    "description": {
-                      "content": "Added as a part of security scheme: oauth2",
-                      "type": "text/plain"
-                    },
-                    "key": "Authorization",
-                    "value": "<token>"
-                  },
-                  {
-                    "key": "Accept",
-                    "value": "application/json;charset=UTF-8; qs=0.09"
-                  }
-                ],
-                "method": "GET",
-                "body": {}
-              },
-              "status": "Internal Server Error",
-              "code": 500,
-              "header": [
-                {
-                  "key": "Content-Type",
-                  "value": "application/json;charset=UTF-8; qs=0.09"
-                }
-              ],
-              "body": "{\n  \"href\": \"https://h.qpNC9AtSzIbPVgdF57fV1iV\",\n  \"items\": {\n    \"empty\": false,\n    \"first\": {\n      \"active\": false,\n      \"canMove\": true,\n      \"connectionName\": \"string\",\n      \"connectionNames\": [\n        \"string\",\n        \"string\"\n      ],\n      \"createdAt\": \"1980-01-31T03:34:07.802Z\",\n      \"createdBy\": {\n        \"jsonType\": \"string\",\n        \"href\": \"https://EOFJDNntKjaILVjKdOzXLiFikEdGKVuz.wxfTAcSoFBe2eWVT1nHN0a1blphEtNT8KUkvj\",\n        \"id\": \"string\",\n        \"name\": \"string\",\n        \"viewRef\": \"http://IAzkiCGzgtzDqaBVSNsmAzJWILNE.ruzgk+wHtF1sttK3h2CTbQszW3gftBKnyxAQi0wQL5DQ-z3jAJ,Xr\",\n        \"image\": \"string\",\n        \"isOnshapeSupport\": true,\n        \"state\": 7977\n      },\n      \"description\": \"string\",\n      \"href\": \"http://HOQUEIRhWDHuojlWtEAzIj.odkKtlUMEMLQd+theOo3-qaCFfuR,le4Ic8WegItAYiZJQoBHz4kE20UQI5\",\n      \"id\": \"string\",\n      \"isContainer\": true,\n      \"isEnterpriseOwned\": false,\n      \"isExternalConnectionResource\": false,\n      \"isMutable\": false,\n      \"modifiedAt\": \"1954-01-13T14:29:43.368Z\",\n      \"modifiedBy\": {\n        \"jsonType\": \"string\",\n        \"href\": \"https://vcUQWYTNpeo.uxUJhUEszzLTwjQqBDYVMqwkiObHr+-WzDtOMqw-QkNaxLxUiRjtjrt\",\n        \"id\": \"string\",\n        \"name\": \"string\",\n        \"viewRef\": \"http://PkvOapFiqJrGKoZzxwhrTxgYloKJScV.vhaLi\",\n        \"image\": \"string\",\n        \"isOnshapeSupport\": false,\n        \"state\": 5565\n      },\n      \"name\": \"string\",\n      \"owner\": {\n        \"href\": \"https://JnMTfSxFpJoCfVMBdckBndAogJdTX.jxQUQm\",\n        \"id\": \"string\",\n        \"image\": \"string\",\n        \"isEnterpriseOwnedResource\": false,\n        \"name\": \"string\",\n        \"type\": 7862,\n        \"viewRef\": \"http://RltlvDlkgmUKzJmbrchSNamJFZGlcltMr.ospNoRCDGU4j2EksSZnTIJt5239BI4ytOo,B+zkT3\"\n      },\n      \"parentId\": \"string\",\n      \"predefinedTeam\": 6982,\n      \"predefinedTeamMutable\": true,\n      \"projectId\": \"string\",\n      \"resourceType\": \"string\",\n      \"treeHref\": \"string\",\n      \"unparentHref\": \"string\",\n      \"viewRef\": \"http://ZpllTJExUufOCmhbBGCXRFzEiv.tcqzvTj3j6Ch0VbCV2EZ2cxHL0hNOztQ\",\n      \"admin\": true,\n      \"member\": true,\n      \"size\": 2422\n    },\n    \"last\": {\n      \"active\": true,\n      \"canMove\": true,\n      \"connectionName\": \"string\",\n      \"connectionNames\": [\n        \"string\",\n        \"string\"\n      ],\n      \"createdAt\": \"1978-05-28T16:40:41.662Z\",\n      \"createdBy\": {\n        \"jsonType\": \"string\",\n        \"href\": \"http://kjkGX.simcP.RbpFNdDpMfJLaw2HpAg7+Gwbcq04FCgcPvH\",\n        \"id\": \"string\",\n        \"name\": \"string\",\n        \"viewRef\": \"https://aUDAUKiFehOjzMQ.zuqxmC0dadr,i+hcjmi0m0XjbwKrMhOMjIMII.2ljGFd2uGi\",\n        \"image\": \"string\",\n        \"isOnshapeSupport\": false,\n        \"state\": 4233\n      },\n      \"description\": \"string\",\n      \"href\": \"http://uAvTGoDdkloOjDWXm.ddnvJDB+6kl61uJ8415pr7VKpH6PTFCKrhdavweXlm1gqn2hIR7WT0Oqn.Xp9O7Mxkdv9YYT\",\n      \"id\": \"string\",\n      \"isContainer\": false,\n      \"isEnterpriseOwned\": true,\n      \"isExternalConnectionResource\": false,\n      \"isMutable\": false,\n      \"modifiedAt\": \"1967-02-16T14:41:12.590Z\",\n      \"modifiedBy\": {\n        \"jsonType\": \"string\",\n        \"href\": \"https://RpTSCvmoiyBSVYfkoQqIs.zvkwxELbWu4.w,yyGKZa7gLRQ2IqJg0Asa6zC0UM9-tlE3jMEdWjkDaVJTG-\",\n        \"id\": \"string\",\n        \"name\": \"string\",\n        \"viewRef\": \"http://tCaLADdlo.qzwxa2IX-AqQBTHYkAtXl+PIokd+p7kzVoX9\",\n        \"image\": \"string\",\n        \"isOnshapeSupport\": true,\n        \"state\": 3065\n      },\n      \"name\": \"string\",\n      \"owner\": {\n        \"href\": \"http://VuVEFtOZXXXUJPyRkdRWgrymo.pzkfM08nzWxOeilMbDclMx5N,qwAYhyvpbuxlaaCummiN8NHp\",\n        \"id\": \"string\",\n        \"image\": \"string\",\n        \"isEnterpriseOwnedResource\": true,\n        \"name\": \"string\",\n        \"type\": 1799,\n        \"viewRef\": \"http://slMcqtnSGyqgIyXX.mflldsBH,YI6PXsFJb4h\"\n      },\n      \"parentId\": \"string\",\n      \"predefinedTeam\": 9842,\n      \"predefinedTeamMutable\": false,\n      \"projectId\": \"string\",\n      \"resourceType\": \"string\",\n      \"treeHref\": \"string\",\n      \"unparentHref\": \"string\",\n      \"viewRef\": \"https://jqeshOYY.lyjxHtELd4dNA\",\n      \"admin\": false,\n      \"member\": true,\n      \"size\": 6146\n    }\n  },\n  \"next\": \"https://wyXPPQVkcQ.rlzqw-IkwlVswd\",\n  \"previous\": \"http://JNSYcYwRdrDOLeuTTUGfvkvKHU.xzekCDVP6p16RLFhhGE,ROobzB+4SKxi,z8PGn4G6CoU38\"\n}",
-              "cookie": [],
-              "_postman_previewlanguage": "json"
-            }
-          ],
-          "event": [],
-          "protocolProfileBehavior": {
-            "disableBodyPruning": true
-          }
-        },
-        {
-          "id": "e8f9c0c5-4259-421a-b8df-a3772d18be73",
-          "name": "Get team information by team ID.",
-          "request": {
-            "name": "Get team information by team ID.",
-            "description": {},
-            "url": {
-              "path": [
-                "teams",
-                ":tid"
-              ],
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "query": [],
-              "variable": [
-                {
-                  "disabled": false,
-                  "type": "any",
-                  "value": "<string>",
-                  "key": "tid",
-                  "description": "(Required) "
-                }
-              ]
-            },
-            "header": [
-              {
-                "key": "Accept",
-                "value": "application/json;charset=UTF-8; qs=0.09"
-              }
-            ],
-            "method": "GET",
-            "auth": {
-              "type": "oauth2",
-              "oauth2": [
-                {
-                  "key": "scope",
-                  "value": "OAuth2Internal OAuth2ReadPII OAuth2Read OAuth2Write OAuth2Delete OAuth2Purchase OAuth2Share document.create document.edit document.delete document.read enterprise.create enterprise.read enterprise.edit enterprise.delete enterprise.member.create enterprise.member.read enterprise.member.edit enterprise.member.delete webhook.create webhook.edit webhook.read webhook.delete PLMIntegration"
-                },
-                {
-                  "key": "redirect_uri",
-                  "value": "/oauth/token"
-                },
-                {
-                  "key": "accessTokenUrl",
-                  "value": "/oauth/token"
-                },
-                {
-                  "key": "authUrl",
-                  "value": "/oauth/authorize"
-                },
-                {
-                  "key": "grant_type",
-                  "value": "authorization_code"
-                }
-              ]
-            }
-          },
-          "response": [
-            {
-              "id": "d87b8e8f-aad1-4521-a83a-5e5be8d51779",
-              "name": "default response",
-              "originalRequest": {
-                "url": {
-                  "path": [
-                    "teams",
-                    ":tid"
-                  ],
-                  "host": [
-                    "{{baseUrl}}"
-                  ],
-                  "query": [],
-                  "variable": [
-                    {
-                      "disabled": false,
-                      "type": "any",
-                      "value": "<string>",
-                      "key": "tid",
-                      "description": "(Required) "
-                    }
                   ]
-                },
-                "header": [
-                  {
-                    "description": {
-                      "content": "Added as a part of security scheme: oauth2",
-                      "type": "text/plain"
-                    },
-                    "key": "Authorization",
-                    "value": "<token>"
-                  },
-                  {
-                    "key": "Accept",
-                    "value": "application/json;charset=UTF-8; qs=0.09"
-                  }
-                ],
-                "method": "GET",
-                "body": {}
+                }
               },
               "status": "Internal Server Error",
               "code": 500,
+              "_postman_previewlanguage": "json",
               "header": [
                 {
                   "key": "Content-Type",
                   "value": "application/json;charset=UTF-8; qs=0.09"
                 }
               ],
-              "body": "{\n  \"active\": true,\n  \"canMove\": false,\n  \"connectionName\": \"string\",\n  \"connectionNames\": [\n    \"string\",\n    \"string\"\n  ],\n  \"createdAt\": \"1998-11-17T12:50:13.140Z\",\n  \"createdBy\": {\n    \"jsonType\": \"string\",\n    \"href\": \"http://SPceJJkFdjkPBY.ecwmO4SOb6c3NJV\",\n    \"id\": \"string\",\n    \"name\": \"string\",\n    \"viewRef\": \"http://fjKhlvtCXZDDjbYhoReOAvELziKZtqi.snuN9rB6qTXQtoFZ7j5Q+3FESTxLxkHW4FXO7FmZ0g5EfcyBr.L6\",\n    \"image\": \"string\",\n    \"isOnshapeSupport\": false,\n    \"state\": 9125\n  },\n  \"description\": \"string\",\n  \"href\": \"http://ZTSeBkqirGr.hbhnmmfllgwDOYF0rfRLhAT0hCKh7bzZhW2maIB70X+lklGCKq\",\n  \"id\": \"string\",\n  \"isContainer\": true,\n  \"isEnterpriseOwned\": true,\n  \"isExternalConnectionResource\": false,\n  \"isMutable\": false,\n  \"modifiedAt\": \"1978-02-18T12:17:19.734Z\",\n  \"modifiedBy\": {\n    \"jsonType\": \"string\",\n    \"href\": \"https://lORSeqcDCvAejRj.ckvk6Z2,dYNhYM,wbb-J\",\n    \"id\": \"string\",\n    \"name\": \"string\",\n    \"viewRef\": \"https://VgNhDJeFFuIwvWHxAIrtJwY.qzzoHu-EmOzfepGW.eXdLkszxmE.eD0g0Lb46\",\n    \"image\": \"string\",\n    \"isOnshapeSupport\": true,\n    \"state\": 7398\n  },\n  \"name\": \"string\",\n  \"owner\": {\n    \"href\": \"http://yc.jcjN7KagAJnlD+9YIanqMJEevNZNXdcmPLv\",\n    \"id\": \"string\",\n    \"image\": \"string\",\n    \"isEnterpriseOwnedResource\": false,\n    \"name\": \"string\",\n    \"type\": 9338,\n    \"viewRef\": \"http://ItTbSstEBIurbXCJbwIUQGNFLDxrPvrn.mrFsoEqmZSPJa0bpOcGMdi5SfRat5nNf7H7RhC5niByTWlLSAKYh9aMip,qv.GXEUcyRqtbaN\"\n  },\n  \"parentId\": \"string\",\n  \"predefinedTeam\": 2488,\n  \"predefinedTeamMutable\": true,\n  \"projectId\": \"string\",\n  \"resourceType\": \"string\",\n  \"treeHref\": \"string\",\n  \"unparentHref\": \"string\",\n  \"viewRef\": \"http://IUDce.zfX7FwASLQ+Y5E.Wrllb93YV,ShpGkD5U2mWpY9syyj1cnGL8rDPPPcw5290,BdM\",\n  \"admin\": true,\n  \"member\": true,\n  \"size\": 3993\n}",
               "cookie": [],
-              "_postman_previewlanguage": "json"
+              "responseTime": null,
+              "body": "{\n  \"href\": \"<uri>\",\n  \"next\": \"<uri>\",\n  \"previous\": \"<uri>\"\n}",
+              "createdAt": "2026-10-22T02:12:45.000Z",
+              "updatedAt": "2026-10-22T02:12:45.000Z",
+              "uid": "35240-fb140cfc-b5ca-423a-9437-6d278d231339"
             }
           ],
-          "event": [],
-          "protocolProfileBehavior": {
-            "disableBodyPruning": true
-          }
-        },
-        {
-          "id": "ef24e114-891b-46bb-b015-4007244e1f3f",
-          "name": "Get a list of a team's members.",
-          "request": {
-            "name": "Get a list of a team's members.",
-            "description": {
-              "content": "Returns a maximum of 20 per page.",
-              "type": "text/plain"
-            },
-            "url": {
-              "path": [
-                "teams",
-                ":tid",
-                "members"
-              ],
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "query": [
-                {
-                  "disabled": false,
-                  "key": "sortColumn",
-                  "value": "<string>"
-                },
-                {
-                  "disabled": false,
-                  "key": "sortOrder",
-                  "value": "asc"
-                },
-                {
-                  "disabled": false,
-                  "key": "q",
-                  "value": ""
-                },
-                {
-                  "disabled": false,
-                  "key": "offset",
-                  "value": "0"
-                },
-                {
-                  "disabled": false,
-                  "key": "limit",
-                  "value": "20"
-                }
-              ],
-              "variable": [
-                {
-                  "disabled": false,
-                  "type": "any",
-                  "value": "<string>",
-                  "key": "tid",
-                  "description": "(Required) "
-                }
-              ]
-            },
-            "header": [
-              {
-                "key": "Accept",
-                "value": "application/json;charset=UTF-8; qs=0.09"
-              }
-            ],
-            "method": "GET",
-            "auth": {
-              "type": "oauth2",
-              "oauth2": [
-                {
-                  "key": "scope",
-                  "value": "OAuth2Internal OAuth2ReadPII OAuth2Read OAuth2Write OAuth2Delete OAuth2Purchase OAuth2Share document.create document.edit document.delete document.read enterprise.create enterprise.read enterprise.edit enterprise.delete enterprise.member.create enterprise.member.read enterprise.member.edit enterprise.member.delete webhook.create webhook.edit webhook.read webhook.delete PLMIntegration"
-                },
-                {
-                  "key": "redirect_uri",
-                  "value": "/oauth/token"
-                },
-                {
-                  "key": "accessTokenUrl",
-                  "value": "/oauth/token"
-                },
-                {
-                  "key": "authUrl",
-                  "value": "/oauth/authorize"
-                },
-                {
-                  "key": "grant_type",
-                  "value": "authorization_code"
-                }
-              ]
-            }
-          },
-          "response": [
-            {
-              "id": "028b66ad-5cfc-42e9-915b-f7b57bba9140",
-              "name": "default response",
-              "originalRequest": {
-                "url": {
-                  "path": [
-                    "teams",
-                    ":tid",
-                    "members"
-                  ],
-                  "host": [
-                    "{{baseUrl}}"
-                  ],
-                  "query": [
-                    {
-                      "key": "sortColumn",
-                      "value": "<string>"
-                    },
-                    {
-                      "key": "sortOrder",
-                      "value": "asc"
-                    },
-                    {
-                      "key": "q",
-                      "value": ""
-                    },
-                    {
-                      "key": "offset",
-                      "value": "0"
-                    },
-                    {
-                      "key": "limit",
-                      "value": "20"
-                    }
-                  ],
-                  "variable": [
-                    {
-                      "disabled": false,
-                      "type": "any",
-                      "value": "<string>",
-                      "key": "tid",
-                      "description": "(Required) "
-                    }
-                  ]
-                },
-                "header": [
-                  {
-                    "description": {
-                      "content": "Added as a part of security scheme: oauth2",
-                      "type": "text/plain"
-                    },
-                    "key": "Authorization",
-                    "value": "<token>"
-                  },
-                  {
-                    "key": "Accept",
-                    "value": "application/json;charset=UTF-8; qs=0.09"
-                  }
-                ],
-                "method": "GET",
-                "body": {}
-              },
-              "status": "Internal Server Error",
-              "code": 500,
-              "header": [
-                {
-                  "key": "Content-Type",
-                  "value": "application/json;charset=UTF-8; qs=0.09"
-                }
-              ],
-              "body": "{\n  \"href\": \"https://TJsGtuKKylRzRdkmhMGsFEEuSsGTpJEQ.rqNPpiemwTL6DnFjLo0z-uchZOtlFxESSsSTJ6G1iHIg\",\n  \"items\": [\n    {\n      \"admin\": true,\n      \"href\": \"https://WUztbtxxrWS.unxnEVIln\",\n      \"id\": \"string\",\n      \"member\": {\n        \"documentationName\": \"string\",\n        \"email\": \"string\",\n        \"firstName\": \"string\",\n        \"lastName\": \"string\",\n        \"company\": {\n          \"admin\": true,\n          \"description\": \"string\",\n          \"domainPrefix\": \"string\",\n          \"enterpriseBaseUrl\": \"string\",\n          \"enterpriseSubtype\": 6240,\n          \"href\": \"https://mORNCowfgnQLSHzlCn.gfruOE0AmN4NIWIrTxeSFqoFhal-WlqmASHW2KCWwEwjQgHaX\",\n          \"id\": \"string\",\n          \"image\": \"string\",\n          \"name\": \"string\",\n          \"noPublicDocuments\": true,\n          \"ownerId\": \"string\",\n          \"secondaryDomainPrefixes\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ],\n          \"state\": 530,\n          \"type\": 4957,\n          \"viewRef\": \"https://qYppwXpMHCOORizmtebr.dhzaUxgK7q0bKzMbb1JmLlp..,JcQUHiqgpXYz3cBfstHMeLVFvyPqkLlxUUQlQA,\"\n        },\n        \"companyUserState\": 2936,\n        \"confirmationRequested\": false,\n        \"documentationNameOverride\": \"string\",\n        \"globalPermissions\": {\n          \"accessReports\": false,\n          \"adminEnterprise\": true,\n          \"allowAppStoreAccess\": true,\n          \"allowPublicDocumentsAccess\": true,\n          \"approveReleases\": true,\n          \"branchLockPermissions\": false,\n          \"createDocumentsInRoot\": true,\n          \"createProject\": true,\n          \"createReleases\": true,\n          \"createTasks\": false,\n          \"deletePermanently\": true,\n          \"enableLabs\": true,\n          \"exportFiles\": true,\n          \"importFiles\": true,\n          \"manageGuestUsers\": false,\n          \"manageNonGeometricItems\": true,\n          \"manageRbac\": true,\n          \"manageStandardContentMetadata\": true,\n          \"manageUsers\": false,\n          \"manageWorkflows\": false,\n          \"shareForAnonymousAccess\": true,\n          \"transferDocumentsFromEnterprise\": true,\n          \"useRevisionTools\": false\n        },\n        \"invitationState\": 278,\n        \"isExternal\": false,\n        \"isGuest\": true,\n        \"isLight\": true,\n        \"lastLoginTime\": \"2011-03-27T11:57:42.771Z\",\n        \"personalMessageAllowed\": false,\n        \"source\": 3491\n      },\n      \"name\": \"string\",\n      \"team\": {\n        \"active\": false,\n        \"canMove\": false,\n        \"connectionName\": \"string\",\n        \"connectionNames\": [\n          \"string\",\n          \"string\"\n        ],\n        \"createdAt\": \"1958-02-23T16:13:06.376Z\",\n        \"createdBy\": {\n          \"jsonType\": \"string\",\n          \"href\": \"http://TgHZXrjNLHMRuYwBIcTXRERWniy.mwsaE-OzY,.ih6ew43TUz0YaF2w0f\",\n          \"id\": \"string\",\n          \"name\": \"string\",\n          \"viewRef\": \"http://bRFBNskCcSeUMHTlnEjcIEr.ibskKRsK4BGMp2.vW3LOh\",\n          \"image\": \"string\",\n          \"isOnshapeSupport\": false,\n          \"state\": 7175\n        },\n        \"description\": \"string\",\n        \"href\": \"https://hGMQlcHxloehFibfWPYPiSiLJvoOPc.ggqgrLBMeO70jxxAXa1EP3SNstNh77wQD8nt34FPW7EogWo.zz1fNTIZXuqeOuKHIRjjWQVrfAn+OywHf\",\n        \"id\": \"string\",\n        \"isContainer\": false,\n        \"isEnterpriseOwned\": true,\n        \"isExternalConnectionResource\": true,\n        \"isMutable\": false,\n        \"modifiedAt\": \"1994-10-11T12:18:10.026Z\",\n        \"modifiedBy\": {\n          \"jsonType\": \"string\",\n          \"href\": \"http://TPfoevccQWPWSsK.hmfpzZyzwFuaHwGNW6\",\n          \"id\": \"string\",\n          \"name\": \"string\",\n          \"viewRef\": \"http://QllPLPUCvYTjzkcRPmiROYdpvzesj.thlyvjvH-nzqdSXSCgUpqJf44g,0\",\n          \"image\": \"string\",\n          \"isOnshapeSupport\": true,\n          \"state\": 2987\n        },\n        \"name\": \"string\",\n        \"owner\": {\n          \"href\": \"https://QzmITmGyTmTyzOpHgtpkgnTOhIgfLAT.rncdUbNrht\",\n          \"id\": \"string\",\n          \"image\": \"string\",\n          \"isEnterpriseOwnedResource\": false,\n          \"name\": \"string\",\n          \"type\": 4729,\n          \"viewRef\": \"http://yQpAmGxQOuWXiqTOfJsDuoEQmCEoqmff.bktbxwpm33.XWKwvUexIBeEzV0wpref+3suph\"\n        },\n        \"parentId\": \"string\",\n        \"predefinedTeam\": 7164,\n        \"predefinedTeamMutable\": true,\n        \"projectId\": \"string\",\n        \"resourceType\": \"string\",\n        \"treeHref\": \"string\",\n        \"unparentHref\": \"string\",\n        \"viewRef\": \"http://FNppWLsTz.nlhK2yHxWHmfvRAobcR6qy77OwY\"\n      },\n      \"viewRef\": \"https://dgEupssmpIARlYvQbbX.mjnuJwZxKqvhAlCvsLVMaYW+YL+BWx1I04-VD6RMkzdXyw0ic4HJbXZOzzHaR-dwzV\"\n    },\n    {\n      \"admin\": false,\n      \"href\": \"http://ZGTMfClIjMKUILlAoRBpCoHAQu.skvww6,osYcLMM9pDBfmS,jH7-Qmjw\",\n      \"id\": \"string\",\n      \"member\": {\n        \"documentationName\": \"string\",\n        \"email\": \"string\",\n        \"firstName\": \"string\",\n        \"lastName\": \"string\",\n        \"company\": {\n          \"admin\": false,\n          \"description\": \"string\",\n          \"domainPrefix\": \"string\",\n          \"enterpriseBaseUrl\": \"string\",\n          \"enterpriseSubtype\": 1662,\n          \"href\": \"https://pcTLiaREIgZEatn.jwgSLba6zCl9Bc\",\n          \"id\": \"string\",\n          \"image\": \"string\",\n          \"name\": \"string\",\n          \"noPublicDocuments\": false,\n          \"ownerId\": \"string\",\n          \"secondaryDomainPrefixes\": [\n            {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          ],\n          \"state\": 6391,\n          \"type\": 6961,\n          \"viewRef\": \"https://BmkCSnHcOmqNhkm.ujYMMzekwwT-Zb8.v\"\n        },\n        \"companyUserState\": 5300,\n        \"confirmationRequested\": true,\n        \"documentationNameOverride\": \"string\",\n        \"globalPermissions\": {\n          \"accessReports\": false,\n          \"adminEnterprise\": false,\n          \"allowAppStoreAccess\": false,\n          \"allowPublicDocumentsAccess\": true,\n          \"approveReleases\": false,\n          \"branchLockPermissions\": false,\n          \"createDocumentsInRoot\": false,\n          \"createProject\": false,\n          \"createReleases\": false,\n          \"createTasks\": true,\n          \"deletePermanently\": false,\n          \"enableLabs\": true,\n          \"exportFiles\": false,\n          \"importFiles\": false,\n          \"manageGuestUsers\": true,\n          \"manageNonGeometricItems\": false,\n          \"manageRbac\": false,\n          \"manageStandardContentMetadata\": false,\n          \"manageUsers\": true,\n          \"manageWorkflows\": false,\n          \"shareForAnonymousAccess\": false,\n          \"transferDocumentsFromEnterprise\": true,\n          \"useRevisionTools\": true\n        },\n        \"invitationState\": 9322,\n        \"isExternal\": false,\n        \"isGuest\": true,\n        \"isLight\": true,\n        \"lastLoginTime\": \"1955-01-03T05:33:26.117Z\",\n        \"personalMessageAllowed\": false,\n        \"source\": 1181\n      },\n      \"name\": \"string\",\n      \"team\": {\n        \"active\": true,\n        \"canMove\": false,\n        \"connectionName\": \"string\",\n        \"connectionNames\": [\n          \"string\",\n          \"string\"\n        ],\n        \"createdAt\": \"2022-05-31T23:28:35.546Z\",\n        \"createdBy\": {\n          \"jsonType\": \"string\",\n          \"href\": \"https://eIMmHe.nnanv06ymjAx0q-DWUO.Ef9lGJ+7Y\",\n          \"id\": \"string\",\n          \"name\": \"string\",\n          \"viewRef\": \"https://ZevjaewRlOr.pbdtc8AB1dc+OHDr3ieLk2cfp\",\n          \"image\": \"string\",\n          \"isOnshapeSupport\": false,\n          \"state\": 1764\n        },\n        \"description\": \"string\",\n        \"href\": \"https://aNnfgDscSOLcflggKygTYjgJ.qvmLiE1ZuIHnbnWQHt6cMOUmbsuTcPFYBEmarMI8cIITr9cCmaRTZV5N.AqI0lAEFcE\",\n        \"id\": \"string\",\n        \"isContainer\": false,\n        \"isEnterpriseOwned\": true,\n        \"isExternalConnectionResource\": false,\n        \"isMutable\": true,\n        \"modifiedAt\": \"2008-07-27T07:19:46.202Z\",\n        \"modifiedBy\": {\n          \"jsonType\": \"string\",\n          \"href\": \"http://LGRSFiSNPWtzqKknhG.istrt,ZwKpeCDWjbcO1tW89F3jcvXphn24NUVRrLsQdEjyurbKPO2,T-nDw1l0+tD2azh\",\n          \"id\": \"string\",\n          \"name\": \"string\",\n          \"viewRef\": \"https://KcmUYpimxeFUjkguXc.cbaXQXtlYuKl9s\",\n          \"image\": \"string\",\n          \"isOnshapeSupport\": true,\n          \"state\": 5352\n        },\n        \"name\": \"string\",\n        \"owner\": {\n          \"href\": \"http://zRONbZitFgZOu.damLpWobSsYeuyw2ZTgE2zrSS8d3Lb6zjUpJTg2i\",\n          \"id\": \"string\",\n          \"image\": \"string\",\n          \"isEnterpriseOwnedResource\": false,\n          \"name\": \"string\",\n          \"type\": 1278,\n          \"viewRef\": \"http://vdZbsZTUbAAdYfJBXMebeoZxgRjj.auwVKp8mH75VXfiKC81.KTmwMYsJ1Srv1DBq5RlNuK-2t+fhQTQTqvC7\"\n        },\n        \"parentId\": \"string\",\n        \"predefinedTeam\": 6766,\n        \"predefinedTeamMutable\": true,\n        \"projectId\": \"string\",\n        \"resourceType\": \"string\",\n        \"treeHref\": \"string\",\n        \"unparentHref\": \"string\",\n        \"viewRef\": \"http://TlhetmBVjLsbqhWnctnLkjrIDrmLVYw.rqwqLDTxtjzVhlrxhj+Pb+fVPV53kCLWc\"\n      },\n      \"viewRef\": \"http://GMmTvcuYjIzz.agnSfvb9NFRu5jXjZt,-3A-yyJI+bvoIWD.1PIPAxqT3huf.e1cqnnK2Z1bRiokbc0vDuQGEIA.6F0\"\n    }\n  ],\n  \"next\": \"http://QeLFTIF.agrLQ1J7kmwmVROskmY,XfcK62fL,gfwR5eRauo.pTMJ9rj9sxb9-tk4c9fJlethQTMCHwRwfySYb2l-+\",\n  \"previous\": \"https://TOoN.sxgAtftMXXx\"\n}",
-              "cookie": [],
-              "_postman_previewlanguage": "json"
-            }
-          ],
-          "event": [],
-          "protocolProfileBehavior": {
-            "disableBodyPruning": true
-          }
+          "createdAt": "2026-10-22T02:12:45.000Z",
+          "updatedAt": "2026-10-22T02:12:45.000Z",
+          "uid": "35240-af62c586-81a5-4021-b52f-67d7679e9d3d"
         }
       ],
-      "event": []
-    }
-  ],
-  "event": [],
-  "variable": [
-    {
-      "type": "string",
-      "value": "https://cad.onshape.com/api/v16",
-      "key": "baseUrl"
+      "id": "f0e5bfe2-e177-47e7-adbc-4df92adce097",
+      "createdAt": "2026-10-22T02:12:45.000Z",
+      "updatedAt": "2026-10-22T02:12:45.000Z",
+      "uid": "35240-f0e5bfe2-e177-47e7-adbc-4df92adce097"
     }
   ],
   "auth": {
@@ -493,21 +502,20 @@
     "basic": [
       {
         "key": "username",
-        "value": "{{basicAuthUsername}}"
+        "value": "{{basicAuthUsername}}",
+        "type": "string"
       },
       {
         "key": "password",
-        "value": "{{basicAuthPassword}}"
+        "value": "{{basicAuthPassword}}",
+        "type": "string"
       }
     ]
   },
-  "info": {
-    "_postman_id": "d9426749-c8eb-4deb-a907-c359f5d673bd",
-    "name": "Onshape REST Account Team API",
-    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-    "description": {
-      "content": "## Welcome to the Onshape REST API Explorer\n\n**See the [API Explorer Guide](https://onshape-public.github.io/docs/api-intro/explorer/) for help navigating this page.**\n\n### Using this page\n1. Sign in to your [Onshape](https://cad.onshape.com) account in another tab.\n2. Click the `Try it out` button below. It toggles to a `Cancel` button when selected.\n\n### Authenticating\nTo authenticate your calls, click the `Authorize` button. See [API Explorer Guide: Authentication](https://onshape-public.github.io/docs/api-intro/explorer/#authentication) for details. Calls made when authenticated via API Keys or OAuth count against your annual [API limits](https://onshape-public.github.io/docs/auth/limits/#annual-api-call-limits).\n* **Tip:** To ensure the current session isn't used when trying other authentication techniques, make sure to [remove the Onshape cookie](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site) as per the instructions for your browser, or use a private or incognito window.\n\n### Additional resources\n\n* [Onshape API Guide](https://onshape-public.github.io/docs/): Our full suite of developer guides, to be used as an accompaniment to this API Explorer.\n* [Onshape Developer Portal](https://cad.onshape.com/appstore/dev-portal): The Onshape portal for managing your API keys, OAuth2 credentials, your Onshape applications, and your Onshape App Store entries.\n* [Authentication Guide](https://onshape-public.github.io/docs/auth/): Our guide to using API keys, request signatures, and OAuth2 in your Onshape applications.\n\nContact Support:\n Email: api-support@onshape.zendesk.com",
-      "type": "text/plain"
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://cad.onshape.com/api/v16"
     }
-  }
+  ]
 }

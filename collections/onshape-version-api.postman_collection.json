@@ -1,98 +1,95 @@
 {
+  "info": {
+    "_postman_id": "45fd59a3-aa29-4d45-95c0-9941ad00b8af",
+    "name": "Onshape REST Version API",
+    "description": "## Welcome to the Onshape REST API Explorer\n\n**See the API Explorer Guide for help navigating this page.**\n\n### Using this page\n1.\n\nContact Support:\n Email: api-support@onshape.zendesk.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-10-22T02:13:00.000Z",
+    "updatedAt": "2026-10-22T02:13:00.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-45fd59a3-aa29-4d45-95c0-9941ad00b8af"
+  },
   "item": [
     {
-      "id": "21d1c44e-b9c1-499a-ae3b-2fde6d0b0149",
-      "name": "Version",
-      "description": {
-        "content": "Get all versions of the Onshape REST APIs.",
-        "type": "text/plain"
-      },
+      "name": "versions",
       "item": [
         {
-          "id": "315d23be-31a1-4a6e-83cf-34c61cd5e465",
-          "name": "Get all versions of the Onshape REST APIs.",
+          "name": "Get all versions of the Onshape REST APIs",
+          "id": "f7446c5c-2f74-4b62-a754-3d01752ee576",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
           "request": {
-            "name": "Get all versions of the Onshape REST APIs.",
-            "description": {},
-            "url": {
-              "path": [
-                "versions"
-              ],
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "query": [],
-              "variable": []
-            },
+            "method": "GET",
             "header": [
               {
                 "key": "Accept",
                 "value": "application/json;charset=UTF-8; qs=0.09"
               }
             ],
-            "method": "GET",
-            "auth": null
+            "url": {
+              "raw": "{{baseUrl}}/versions",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "versions"
+              ]
+            }
           },
           "response": [
             {
-              "id": "f3325e7d-f738-418e-ba26-f9f0b96ba779",
+              "id": "470cda5a-e33a-48f5-b0a7-d3d4071d6ce0",
               "name": "default response",
               "originalRequest": {
-                "url": {
-                  "path": [
-                    "versions"
-                  ],
-                  "host": [
-                    "{{baseUrl}}"
-                  ],
-                  "query": [],
-                  "variable": []
-                },
+                "method": "GET",
                 "header": [
-                  {
-                    "description": {
-                      "content": "Added as a part of security scheme: basic",
-                      "type": "text/plain"
-                    },
-                    "key": "Authorization",
-                    "value": "Basic <credentials>"
-                  },
                   {
                     "key": "Accept",
                     "value": "application/json;charset=UTF-8; qs=0.09"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: basic",
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
                   }
                 ],
-                "method": "GET",
-                "body": {}
+                "url": {
+                  "raw": "{{baseUrl}}/versions",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "versions"
+                  ]
+                }
               },
               "status": "Internal Server Error",
               "code": 500,
+              "_postman_previewlanguage": "json",
               "header": [
                 {
                   "key": "Content-Type",
                   "value": "application/json;charset=UTF-8; qs=0.09"
                 }
               ],
-              "body": "{\n  \"availableVersions\": [\n    \"V5_BODY_DETAILS_COMPOSITE_REFERENCE\",\n    \"V7_SKETCH_ENDPOINT_INCLUDES_SOLVE_STATUS\"\n  ],\n  \"specifiedVersion\": \"V6_JSON_EDIT_RESPONSE_BUGFIX\"\n}",
               "cookie": [],
-              "_postman_previewlanguage": "json"
+              "responseTime": null,
+              "body": "{\n  \"availableVersions\": [\n    \"V2_SERIALIZATION_UNIFICATION\",\n    \"V15_ADD_SKETCH_CHECK\"\n  ],\n  \"specifiedVersion\": \"V12_VALIDATE_ELEMENT_TYPE_FOR_TRANSLATIONS\"\n}",
+              "createdAt": "2026-10-22T02:13:01.000Z",
+              "updatedAt": "2026-10-22T02:13:01.000Z",
+              "uid": "35240-470cda5a-e33a-48f5-b0a7-d3d4071d6ce0"
             }
           ],
-          "event": [],
-          "protocolProfileBehavior": {
-            "disableBodyPruning": true
-          }
+          "createdAt": "2026-10-22T02:13:01.000Z",
+          "updatedAt": "2026-10-22T02:13:01.000Z",
+          "uid": "35240-f7446c5c-2f74-4b62-a754-3d01752ee576"
         }
       ],
-      "event": []
-    }
-  ],
-  "event": [],
-  "variable": [
-    {
-      "type": "string",
-      "value": "https://cad.onshape.com/api/v16",
-      "key": "baseUrl"
+      "id": "2a306206-726b-4214-a949-c8f499deb3c5",
+      "createdAt": "2026-10-22T02:13:01.000Z",
+      "updatedAt": "2026-10-22T02:13:01.000Z",
+      "uid": "35240-2a306206-726b-4214-a949-c8f499deb3c5"
     }
   ],
   "auth": {
@@ -100,21 +97,20 @@
     "basic": [
       {
         "key": "username",
-        "value": "{{basicAuthUsername}}"
+        "value": "{{basicAuthUsername}}",
+        "type": "string"
       },
       {
         "key": "password",
-        "value": "{{basicAuthPassword}}"
+        "value": "{{basicAuthPassword}}",
+        "type": "string"
       }
     ]
   },
-  "info": {
-    "_postman_id": "1c343833-20d5-416b-ac16-983e4566609e",
-    "name": "Onshape REST Account Version API",
-    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-    "description": {
-      "content": "## Welcome to the Onshape REST API Explorer\n\n**See the [API Explorer Guide](https://onshape-public.github.io/docs/api-intro/explorer/) for help navigating this page.**\n\n### Using this page\n1. Sign in to your [Onshape](https://cad.onshape.com) account in another tab.\n2. Click the `Try it out` button below. It toggles to a `Cancel` button when selected.\n\n### Authenticating\nTo authenticate your calls, click the `Authorize` button. See [API Explorer Guide: Authentication](https://onshape-public.github.io/docs/api-intro/explorer/#authentication) for details. Calls made when authenticated via API Keys or OAuth count against your annual [API limits](https://onshape-public.github.io/docs/auth/limits/#annual-api-call-limits).\n* **Tip:** To ensure the current session isn't used when trying other authentication techniques, make sure to [remove the Onshape cookie](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site) as per the instructions for your browser, or use a private or incognito window.\n\n### Additional resources\n\n* [Onshape API Guide](https://onshape-public.github.io/docs/): Our full suite of developer guides, to be used as an accompaniment to this API Explorer.\n* [Onshape Developer Portal](https://cad.onshape.com/appstore/dev-portal): The Onshape portal for managing your API keys, OAuth2 credentials, your Onshape applications, and your Onshape App Store entries.\n* [Authentication Guide](https://onshape-public.github.io/docs/auth/): Our guide to using API keys, request signatures, and OAuth2 in your Onshape applications.\n\nContact Support:\n Email: api-support@onshape.zendesk.com",
-      "type": "text/plain"
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://cad.onshape.com/api/v16"
     }
-  }
+  ]
 }

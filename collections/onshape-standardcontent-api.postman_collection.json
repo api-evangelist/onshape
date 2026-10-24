@@ -1,411 +1,470 @@
 {
+  "info": {
+    "_postman_id": "46ba59ba-932f-4cf2-ad06-ac5747158e98",
+    "name": "Onshape REST Standard Content API",
+    "description": "## Welcome to the Onshape REST API Explorer\n\n**See the API Explorer Guide for help navigating this page.**\n\n### Using this page\n1.\n\nContact Support:\n Email: api-support@onshape.zendesk.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-10-22T02:12:36.000Z",
+    "updatedAt": "2026-10-22T02:12:37.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-46ba59ba-932f-4cf2-ad06-ac5747158e98"
+  },
   "item": [
     {
-      "id": "f0722629-358f-4d71-b497-f5faf96d8151",
-      "name": "StandardContent",
-      "description": {
-        "content": "Work with Onshape standard content.",
-        "type": "text/plain"
-      },
+      "name": "standardcontent",
       "item": [
         {
-          "id": "d5c04544-d044-4ec7-8875-85ce00fb38a9",
-          "name": "Sets the part number and description for a standard content component.",
-          "request": {
-            "name": "Sets the part number and description for a standard content component.",
-            "description": {},
-            "url": {
-              "path": [
-                "standardcontent",
-                "d",
-                ":did",
-                "customparameters"
-              ],
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "query": [
-                {
-                  "disabled": false,
-                  "key": "companyId",
-                  "value": "",
-                  "description": "The id of the company that owns the metadata to be modified."
-                }
-              ],
-              "variable": [
-                {
-                  "disabled": false,
-                  "type": "any",
-                  "value": "<string>",
-                  "key": "did",
-                  "description": "(Required) Document ID."
-                }
-              ]
-            },
-            "header": [
-              {
-                "key": "Content-Type",
-                "value": "application/json;charset=UTF-8; qs=0.09"
-              },
-              {
-                "key": "Accept",
-                "value": "application/json;charset=UTF-8; qs=0.09"
-              }
-            ],
-            "method": "POST",
-            "auth": {
-              "type": "oauth2",
-              "oauth2": [
-                {
-                  "key": "scope",
-                  "value": "OAuth2Internal OAuth2ReadPII OAuth2Read OAuth2Write OAuth2Delete OAuth2Purchase OAuth2Share document.create document.edit document.delete document.read enterprise.create enterprise.read enterprise.edit enterprise.delete enterprise.member.create enterprise.member.read enterprise.member.edit enterprise.member.delete webhook.create webhook.edit webhook.read webhook.delete PLMIntegration"
-                },
-                {
-                  "key": "redirect_uri",
-                  "value": "/oauth/token"
-                },
-                {
-                  "key": "accessTokenUrl",
-                  "value": "/oauth/token"
-                },
-                {
-                  "key": "authUrl",
-                  "value": "/oauth/authorize"
-                },
-                {
-                  "key": "grant_type",
-                  "value": "authorization_code"
-                }
-              ]
-            },
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"specifiers\": [\n    {\n      \"customParameters\": [\n        {\n          \"propertyId\": \"<string>\",\n          \"value\": \"<string>\"\n        },\n        {\n          \"propertyId\": \"<string>\",\n          \"value\": \"<string>\"\n        }\n      ],\n      \"parameters\": [\n        {\n          \"parameterId\": \"<string>\",\n          \"value\": \"<string>\"\n        },\n        {\n          \"parameterId\": \"<string>\",\n          \"value\": \"<string>\"\n        }\n      ]\n    },\n    {\n      \"customParameters\": [\n        {\n          \"propertyId\": \"<string>\",\n          \"value\": \"<string>\"\n        },\n        {\n          \"propertyId\": \"<string>\",\n          \"value\": \"<string>\"\n        }\n      ],\n      \"parameters\": [\n        {\n          \"parameterId\": \"<string>\",\n          \"value\": \"<string>\"\n        },\n        {\n          \"parameterId\": \"<string>\",\n          \"value\": \"<string>\"\n        }\n      ]\n    }\n  ]\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
-            }
-          },
-          "response": [
+          "name": "d",
+          "item": [
             {
-              "id": "bfdd27c6-d2d5-4c3f-8fe8-735232618e2a",
-              "name": "default response",
-              "originalRequest": {
-                "url": {
-                  "path": [
-                    "standardcontent",
-                    "d",
-                    ":did",
-                    "customparameters"
-                  ],
-                  "host": [
-                    "{{baseUrl}}"
-                  ],
-                  "query": [
-                    {
-                      "key": "companyId",
-                      "value": ""
-                    }
-                  ],
-                  "variable": [
-                    {
-                      "disabled": false,
-                      "type": "any",
-                      "value": "<string>",
-                      "key": "did",
-                      "description": "(Required) Document ID."
-                    }
-                  ]
-                },
-                "header": [
-                  {
-                    "description": {
-                      "content": "Added as a part of security scheme: oauth2",
-                      "type": "text/plain"
-                    },
-                    "key": "Authorization",
-                    "value": "<token>"
-                  },
-                  {
-                    "key": "Accept",
-                    "value": "application/json;charset=UTF-8; qs=0.09"
-                  }
-                ],
-                "method": "POST",
-                "body": {
-                  "mode": "raw",
-                  "raw": "{\n  \"specifiers\": [\n    {\n      \"customParameters\": [\n        {\n          \"propertyId\": \"<string>\",\n          \"value\": \"<string>\"\n        },\n        {\n          \"propertyId\": \"<string>\",\n          \"value\": \"<string>\"\n        }\n      ],\n      \"parameters\": [\n        {\n          \"parameterId\": \"<string>\",\n          \"value\": \"<string>\"\n        },\n        {\n          \"parameterId\": \"<string>\",\n          \"value\": \"<string>\"\n        }\n      ]\n    },\n    {\n      \"customParameters\": [\n        {\n          \"propertyId\": \"<string>\",\n          \"value\": \"<string>\"\n        },\n        {\n          \"propertyId\": \"<string>\",\n          \"value\": \"<string>\"\n        }\n      ],\n      \"parameters\": [\n        {\n          \"parameterId\": \"<string>\",\n          \"value\": \"<string>\"\n        },\n        {\n          \"parameterId\": \"<string>\",\n          \"value\": \"<string>\"\n        }\n      ]\n    }\n  ]\n}",
-                  "options": {
-                    "raw": {
-                      "language": "json"
-                    }
-                  }
-                }
-              },
-              "status": "Internal Server Error",
-              "code": 500,
-              "header": [
+              "name": "{did}",
+              "item": [
                 {
-                  "key": "Content-Type",
-                  "value": "application/json;charset=UTF-8; qs=0.09"
+                  "name": "customparameters",
+                  "item": [
+                    {
+                      "name": "Sets the part number and description for a standard content component",
+                      "id": "d6f92d45-8201-4064-bfe4-d5068d14ad5b",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "auth": {
+                          "type": "oauth2",
+                          "oauth2": [
+                            {
+                              "key": "scope",
+                              "value": "OAuth2Internal OAuth2ReadPII OAuth2Read OAuth2Write OAuth2Delete OAuth2Purchase OAuth2Share document.create document.edit document.delete document.read enterprise.create enterprise.read enterprise.edit enterprise.delete enterprise.member.create enterprise.member.read enterprise.member.edit enterprise.member.delete webhook.create webhook.edit webhook.read webhook.delete PLMIntegration",
+                              "type": "string"
+                            },
+                            {
+                              "key": "redirect_uri",
+                              "value": "/oauth/token",
+                              "type": "string"
+                            },
+                            {
+                              "key": "accessTokenUrl",
+                              "value": "/oauth/token",
+                              "type": "string"
+                            },
+                            {
+                              "key": "authUrl",
+                              "value": "/oauth/authorize",
+                              "type": "string"
+                            },
+                            {
+                              "key": "grant_type",
+                              "value": "authorization_code",
+                              "type": "string"
+                            }
+                          ]
+                        },
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json;charset=UTF-8; qs=0.09"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json;charset=UTF-8; qs=0.09"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"specifiers\": [\n    {\n      \"customParameters\": [\n        {\n          \"propertyId\": \"<string>\",\n          \"value\": \"<string>\"\n        },\n        {\n          \"propertyId\": \"<string>\",\n          \"value\": \"<string>\"\n        }\n      ],\n      \"parameters\": [\n        {\n          \"parameterId\": \"<string>\",\n          \"value\": \"<string>\"\n        },\n        {\n          \"parameterId\": \"<string>\",\n          \"value\": \"<string>\"\n        }\n      ]\n    },\n    {\n      \"customParameters\": [\n        {\n          \"propertyId\": \"<string>\",\n          \"value\": \"<string>\"\n        },\n        {\n          \"propertyId\": \"<string>\",\n          \"value\": \"<string>\"\n        }\n      ],\n      \"parameters\": [\n        {\n          \"parameterId\": \"<string>\",\n          \"value\": \"<string>\"\n        },\n        {\n          \"parameterId\": \"<string>\",\n          \"value\": \"<string>\"\n        }\n      ]\n    }\n  ]\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/standardcontent/d/:did/customparameters?companyId=",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "standardcontent",
+                            "d",
+                            ":did",
+                            "customparameters"
+                          ],
+                          "query": [
+                            {
+                              "description": "The id of the company that owns the metadata to be modified.",
+                              "key": "companyId",
+                              "value": ""
+                            }
+                          ],
+                          "variable": [
+                            {
+                              "id": "79ec48a5-01d5-43a2-88d5-01307af96dac",
+                              "key": "did",
+                              "value": "<string>",
+                              "description": "(Required) Document ID."
+                            }
+                          ]
+                        }
+                      },
+                      "response": [
+                        {
+                          "id": "35d17c52-1dc3-49af-9dc2-b6ba391d076c",
+                          "name": "default response",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json;charset=UTF-8; qs=0.09"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json;charset=UTF-8; qs=0.09"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"specifiers\": [\n    {\n      \"customParameters\": [\n        {\n          \"propertyId\": \"<string>\",\n          \"value\": \"<string>\"\n        },\n        {\n          \"propertyId\": \"<string>\",\n          \"value\": \"<string>\"\n        }\n      ],\n      \"parameters\": [\n        {\n          \"parameterId\": \"<string>\",\n          \"value\": \"<string>\"\n        },\n        {\n          \"parameterId\": \"<string>\",\n          \"value\": \"<string>\"\n        }\n      ]\n    },\n    {\n      \"customParameters\": [\n        {\n          \"propertyId\": \"<string>\",\n          \"value\": \"<string>\"\n        },\n        {\n          \"propertyId\": \"<string>\",\n          \"value\": \"<string>\"\n        }\n      ],\n      \"parameters\": [\n        {\n          \"parameterId\": \"<string>\",\n          \"value\": \"<string>\"\n        },\n        {\n          \"parameterId\": \"<string>\",\n          \"value\": \"<string>\"\n        }\n      ]\n    }\n  ]\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/standardcontent/d/:did/customparameters?companyId=",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "standardcontent",
+                                "d",
+                                ":did",
+                                "customparameters"
+                              ],
+                              "query": [
+                                {
+                                  "description": "The id of the company that owns the metadata to be modified.",
+                                  "key": "companyId",
+                                  "value": ""
+                                }
+                              ],
+                              "variable": [
+                                {
+                                  "key": "did"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Internal Server Error",
+                          "code": 500,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json;charset=UTF-8; qs=0.09"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"responses\": [\n    {\n      \"error\": \"INVALID_PARAMETER_ID\",\n      \"errorMessage\": \"<string>\"\n    },\n    {\n      \"error\": \"INVALID_PARAMETER_VALUE\",\n      \"errorMessage\": \"<string>\"\n    }\n  ]\n}",
+                          "createdAt": "2026-10-22T02:12:37.000Z",
+                          "updatedAt": "2026-10-22T02:12:37.000Z",
+                          "uid": "35240-35d17c52-1dc3-49af-9dc2-b6ba391d076c"
+                        }
+                      ],
+                      "createdAt": "2026-10-22T02:12:37.000Z",
+                      "updatedAt": "2026-10-22T02:12:37.000Z",
+                      "uid": "35240-d6f92d45-8201-4064-bfe4-d5068d14ad5b"
+                    }
+                  ],
+                  "id": "676903fa-440c-4e5a-af32-efaf2fa46574",
+                  "createdAt": "2026-10-22T02:12:37.000Z",
+                  "updatedAt": "2026-10-22T02:12:37.000Z",
+                  "uid": "35240-676903fa-440c-4e5a-af32-efaf2fa46574"
+                },
+                {
+                  "name": "parametervalues",
+                  "item": [
+                    {
+                      "name": "Gets all possible values for each of the standard content parameters",
+                      "id": "1c8b1d39-b3d4-43b0-9907-16629d179838",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "auth": {
+                          "type": "oauth2",
+                          "oauth2": [
+                            {
+                              "key": "scope",
+                              "value": "OAuth2Internal OAuth2ReadPII OAuth2Read OAuth2Write OAuth2Delete OAuth2Purchase OAuth2Share document.create document.edit document.delete document.read enterprise.create enterprise.read enterprise.edit enterprise.delete enterprise.member.create enterprise.member.read enterprise.member.edit enterprise.member.delete webhook.create webhook.edit webhook.read webhook.delete PLMIntegration",
+                              "type": "string"
+                            },
+                            {
+                              "key": "redirect_uri",
+                              "value": "/oauth/token",
+                              "type": "string"
+                            },
+                            {
+                              "key": "accessTokenUrl",
+                              "value": "/oauth/token",
+                              "type": "string"
+                            },
+                            {
+                              "key": "authUrl",
+                              "value": "/oauth/authorize",
+                              "type": "string"
+                            },
+                            {
+                              "key": "grant_type",
+                              "value": "authorization_code",
+                              "type": "string"
+                            }
+                          ]
+                        },
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json;charset=UTF-8; qs=0.09"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/standardcontent/d/:did/parametervalues",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "standardcontent",
+                            "d",
+                            ":did",
+                            "parametervalues"
+                          ],
+                          "variable": [
+                            {
+                              "id": "3a1e0b5f-2e99-4759-bcb0-0ddefd843372",
+                              "key": "did",
+                              "value": "<string>",
+                              "description": "(Required) Document ID."
+                            }
+                          ]
+                        }
+                      },
+                      "response": [
+                        {
+                          "id": "87ed122b-beb4-4310-832e-e93369a7dd0c",
+                          "name": "default response",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json;charset=UTF-8; qs=0.09"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/standardcontent/d/:did/parametervalues",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "standardcontent",
+                                "d",
+                                ":did",
+                                "parametervalues"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "did"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Internal Server Error",
+                          "code": 500,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json;charset=UTF-8; qs=0.09"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "[\n  {\n    \"displayName\": \"<string>\",\n    \"parameterId\": \"<string>\",\n    \"parameterValues\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  {\n    \"displayName\": \"<string>\",\n    \"parameterId\": \"<string>\",\n    \"parameterValues\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  }\n]",
+                          "createdAt": "2026-10-22T02:12:37.000Z",
+                          "updatedAt": "2026-10-22T02:12:37.000Z",
+                          "uid": "35240-87ed122b-beb4-4310-832e-e93369a7dd0c"
+                        }
+                      ],
+                      "createdAt": "2026-10-22T02:12:37.000Z",
+                      "updatedAt": "2026-10-22T02:12:37.000Z",
+                      "uid": "35240-1c8b1d39-b3d4-43b0-9907-16629d179838"
+                    }
+                  ],
+                  "id": "9ba23e2a-1619-4902-bd90-297d48832fc7",
+                  "createdAt": "2026-10-22T02:12:37.000Z",
+                  "updatedAt": "2026-10-22T02:12:37.000Z",
+                  "uid": "35240-9ba23e2a-1619-4902-bd90-297d48832fc7"
                 }
               ],
-              "body": "{\n  \"responses\": [\n    {\n      \"error\": \"NONE\",\n      \"errorMessage\": \"string\"\n    },\n    {\n      \"error\": \"INVALID_PARAMETER_ID\",\n      \"errorMessage\": \"string\"\n    }\n  ]\n}",
-              "cookie": [],
-              "_postman_previewlanguage": "json"
+              "id": "865e9e02-6954-4247-8acd-0863b4ac07ee",
+              "createdAt": "2026-10-22T02:12:37.000Z",
+              "updatedAt": "2026-10-22T02:12:37.000Z",
+              "uid": "35240-865e9e02-6954-4247-8acd-0863b4ac07ee"
             }
           ],
-          "event": [],
-          "protocolProfileBehavior": {
-            "disableBodyPruning": true
-          }
+          "id": "41df9ae6-feb6-4c3e-a7b0-dc64b2ee5e5e",
+          "createdAt": "2026-10-22T02:12:37.000Z",
+          "updatedAt": "2026-10-22T02:12:37.000Z",
+          "uid": "35240-41df9ae6-feb6-4c3e-a7b0-dc64b2ee5e5e"
         },
         {
-          "id": "88898700-e0de-4d5c-9d77-9d49245ec694",
-          "name": "Gets all possible values for each of the standard content parameters.",
-          "request": {
-            "name": "Gets all possible values for each of the standard content parameters.",
-            "description": {},
-            "url": {
-              "path": [
-                "standardcontent",
-                "d",
-                ":did",
-                "parametervalues"
-              ],
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "query": [],
-              "variable": [
-                {
-                  "disabled": false,
-                  "type": "any",
-                  "value": "<string>",
-                  "key": "did",
-                  "description": "(Required) Document ID."
-                }
-              ]
-            },
-            "header": [
-              {
-                "key": "Accept",
-                "value": "application/json;charset=UTF-8; qs=0.09"
-              }
-            ],
-            "method": "GET",
-            "auth": {
-              "type": "oauth2",
-              "oauth2": [
-                {
-                  "key": "scope",
-                  "value": "OAuth2Internal OAuth2ReadPII OAuth2Read OAuth2Write OAuth2Delete OAuth2Purchase OAuth2Share document.create document.edit document.delete document.read enterprise.create enterprise.read enterprise.edit enterprise.delete enterprise.member.create enterprise.member.read enterprise.member.edit enterprise.member.delete webhook.create webhook.edit webhook.read webhook.delete PLMIntegration"
-                },
-                {
-                  "key": "redirect_uri",
-                  "value": "/oauth/token"
-                },
-                {
-                  "key": "accessTokenUrl",
-                  "value": "/oauth/token"
-                },
-                {
-                  "key": "authUrl",
-                  "value": "/oauth/authorize"
-                },
-                {
-                  "key": "grant_type",
-                  "value": "authorization_code"
-                }
-              ]
-            }
-          },
-          "response": [
+          "name": "list",
+          "item": [
             {
-              "id": "1ee32d40-f053-4350-b2f5-311a5c37e798",
-              "name": "default response",
-              "originalRequest": {
-                "url": {
-                  "path": [
-                    "standardcontent",
-                    "d",
-                    ":did",
-                    "parametervalues"
-                  ],
-                  "host": [
-                    "{{baseUrl}}"
-                  ],
-                  "query": [],
-                  "variable": [
+              "name": "List all standard content",
+              "id": "953cef04-32da-47ea-b578-cec9cc5f88e6",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "auth": {
+                  "type": "oauth2",
+                  "oauth2": [
                     {
-                      "disabled": false,
-                      "type": "any",
-                      "value": "<string>",
-                      "key": "did",
-                      "description": "(Required) Document ID."
+                      "key": "scope",
+                      "value": "OAuth2Internal OAuth2ReadPII OAuth2Read OAuth2Write OAuth2Delete OAuth2Purchase OAuth2Share document.create document.edit document.delete document.read enterprise.create enterprise.read enterprise.edit enterprise.delete enterprise.member.create enterprise.member.read enterprise.member.edit enterprise.member.delete webhook.create webhook.edit webhook.read webhook.delete PLMIntegration",
+                      "type": "string"
+                    },
+                    {
+                      "key": "redirect_uri",
+                      "value": "/oauth/token",
+                      "type": "string"
+                    },
+                    {
+                      "key": "accessTokenUrl",
+                      "value": "/oauth/token",
+                      "type": "string"
+                    },
+                    {
+                      "key": "authUrl",
+                      "value": "/oauth/authorize",
+                      "type": "string"
+                    },
+                    {
+                      "key": "grant_type",
+                      "value": "authorization_code",
+                      "type": "string"
                     }
                   ]
                 },
-                "header": [
-                  {
-                    "description": {
-                      "content": "Added as a part of security scheme: oauth2",
-                      "type": "text/plain"
-                    },
-                    "key": "Authorization",
-                    "value": "<token>"
-                  },
-                  {
-                    "key": "Accept",
-                    "value": "application/json;charset=UTF-8; qs=0.09"
-                  }
-                ],
                 "method": "GET",
-                "body": {}
-              },
-              "status": "Internal Server Error",
-              "code": 500,
-              "header": [
-                {
-                  "key": "Content-Type",
-                  "value": "application/json;charset=UTF-8; qs=0.09"
-                }
-              ],
-              "body": "[\n  {\n    \"displayName\": \"string\",\n    \"parameterId\": \"string\",\n    \"parameterValues\": [\n      \"string\",\n      \"string\"\n    ]\n  },\n  {\n    \"displayName\": \"string\",\n    \"parameterId\": \"string\",\n    \"parameterValues\": [\n      \"string\",\n      \"string\"\n    ]\n  }\n]",
-              "cookie": [],
-              "_postman_previewlanguage": "json"
-            }
-          ],
-          "event": [],
-          "protocolProfileBehavior": {
-            "disableBodyPruning": true
-          }
-        },
-        {
-          "id": "9e1592a9-fb77-4142-9fa4-1430281cb0a8",
-          "name": "List all standard content.",
-          "request": {
-            "name": "List all standard content.",
-            "description": {},
-            "url": {
-              "path": [
-                "standardcontent",
-                "list"
-              ],
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "query": [
-                {
-                  "disabled": false,
-                  "key": "standard",
-                  "value": "",
-                  "description": "If provided, list only standard content corresponding to this standard."
-                }
-              ],
-              "variable": []
-            },
-            "header": [
-              {
-                "key": "Accept",
-                "value": "application/json;charset=UTF-8; qs=0.09"
-              }
-            ],
-            "method": "GET",
-            "auth": {
-              "type": "oauth2",
-              "oauth2": [
-                {
-                  "key": "scope",
-                  "value": "OAuth2Internal OAuth2ReadPII OAuth2Read OAuth2Write OAuth2Delete OAuth2Purchase OAuth2Share document.create document.edit document.delete document.read enterprise.create enterprise.read enterprise.edit enterprise.delete enterprise.member.create enterprise.member.read enterprise.member.edit enterprise.member.delete webhook.create webhook.edit webhook.read webhook.delete PLMIntegration"
-                },
-                {
-                  "key": "redirect_uri",
-                  "value": "/oauth/token"
-                },
-                {
-                  "key": "accessTokenUrl",
-                  "value": "/oauth/token"
-                },
-                {
-                  "key": "authUrl",
-                  "value": "/oauth/authorize"
-                },
-                {
-                  "key": "grant_type",
-                  "value": "authorization_code"
-                }
-              ]
-            }
-          },
-          "response": [
-            {
-              "id": "304acc48-fcf1-4d3a-a572-d0b35ea9ec17",
-              "name": "default response",
-              "originalRequest": {
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json;charset=UTF-8; qs=0.09"
+                  }
+                ],
                 "url": {
+                  "raw": "{{baseUrl}}/standardcontent/list?standard=",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
                   "path": [
                     "standardcontent",
                     "list"
                   ],
-                  "host": [
-                    "{{baseUrl}}"
-                  ],
                   "query": [
                     {
+                      "description": "If provided, list only standard content corresponding to this standard.",
                       "key": "standard",
                       "value": ""
                     }
-                  ],
-                  "variable": []
-                },
-                "header": [
-                  {
-                    "description": {
-                      "content": "Added as a part of security scheme: oauth2",
-                      "type": "text/plain"
-                    },
-                    "key": "Authorization",
-                    "value": "<token>"
-                  },
-                  {
-                    "key": "Accept",
-                    "value": "application/json;charset=UTF-8; qs=0.09"
-                  }
-                ],
-                "method": "GET",
-                "body": {}
+                  ]
+                }
               },
-              "status": "Internal Server Error",
-              "code": 500,
-              "header": [
+              "response": [
                 {
-                  "key": "Content-Type",
-                  "value": "application/json;charset=UTF-8; qs=0.09"
+                  "id": "7938786e-e0d8-43ec-a38e-cfa70ec2990e",
+                  "name": "default response",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json;charset=UTF-8; qs=0.09"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: oauth2",
+                        "key": "Authorization",
+                        "value": "<token>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/standardcontent/list?standard=",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "standardcontent",
+                        "list"
+                      ],
+                      "query": [
+                        {
+                          "description": "If provided, list only standard content corresponding to this standard.",
+                          "key": "standard",
+                          "value": ""
+                        }
+                      ]
+                    }
+                  },
+                  "status": "Internal Server Error",
+                  "code": 500,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json;charset=UTF-8; qs=0.09"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "[\n  {\n    \"category\": \"<string>\",\n    \"class\": \"<string>\",\n    \"component\": \"<string>\",\n    \"id\": \"<string>\",\n    \"standard\": \"<string>\"\n  },\n  {\n    \"category\": \"<string>\",\n    \"class\": \"<string>\",\n    \"component\": \"<string>\",\n    \"id\": \"<string>\",\n    \"standard\": \"<string>\"\n  }\n]",
+                  "createdAt": "2026-10-22T02:12:37.000Z",
+                  "updatedAt": "2026-10-22T02:12:37.000Z",
+                  "uid": "35240-7938786e-e0d8-43ec-a38e-cfa70ec2990e"
                 }
               ],
-              "body": "[\n  {\n    \"category\": \"string\",\n    \"class\": \"string\",\n    \"component\": \"string\",\n    \"id\": \"string\",\n    \"standard\": \"string\"\n  },\n  {\n    \"category\": \"string\",\n    \"class\": \"string\",\n    \"component\": \"string\",\n    \"id\": \"string\",\n    \"standard\": \"string\"\n  }\n]",
-              "cookie": [],
-              "_postman_previewlanguage": "json"
+              "createdAt": "2026-10-22T02:12:37.000Z",
+              "updatedAt": "2026-10-22T02:12:37.000Z",
+              "uid": "35240-953cef04-32da-47ea-b578-cec9cc5f88e6"
             }
           ],
-          "event": [],
-          "protocolProfileBehavior": {
-            "disableBodyPruning": true
-          }
+          "id": "d4af1c48-3471-41a7-aed8-46abbd912c1e",
+          "createdAt": "2026-10-22T02:12:37.000Z",
+          "updatedAt": "2026-10-22T02:12:37.000Z",
+          "uid": "35240-d4af1c48-3471-41a7-aed8-46abbd912c1e"
         }
       ],
-      "event": []
-    }
-  ],
-  "event": [],
-  "variable": [
-    {
-      "type": "string",
-      "value": "https://cad.onshape.com/api/v16",
-      "key": "baseUrl"
+      "id": "df640a27-d2e3-4d19-a557-6c1f726e7579",
+      "createdAt": "2026-10-22T02:12:37.000Z",
+      "updatedAt": "2026-10-22T02:12:37.000Z",
+      "uid": "35240-df640a27-d2e3-4d19-a557-6c1f726e7579"
     }
   ],
   "auth": {
@@ -413,21 +472,20 @@
     "basic": [
       {
         "key": "username",
-        "value": "{{basicAuthUsername}}"
+        "value": "{{basicAuthUsername}}",
+        "type": "string"
       },
       {
         "key": "password",
-        "value": "{{basicAuthPassword}}"
+        "value": "{{basicAuthPassword}}",
+        "type": "string"
       }
     ]
   },
-  "info": {
-    "_postman_id": "6870cdb1-94d7-450a-ac29-d52bd2d082c7",
-    "name": "Onshape REST Account StandardContent API",
-    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-    "description": {
-      "content": "## Welcome to the Onshape REST API Explorer\n\n**See the [API Explorer Guide](https://onshape-public.github.io/docs/api-intro/explorer/) for help navigating this page.**\n\n### Using this page\n1. Sign in to your [Onshape](https://cad.onshape.com) account in another tab.\n2. Click the `Try it out` button below. It toggles to a `Cancel` button when selected.\n\n### Authenticating\nTo authenticate your calls, click the `Authorize` button. See [API Explorer Guide: Authentication](https://onshape-public.github.io/docs/api-intro/explorer/#authentication) for details. Calls made when authenticated via API Keys or OAuth count against your annual [API limits](https://onshape-public.github.io/docs/auth/limits/#annual-api-call-limits).\n* **Tip:** To ensure the current session isn't used when trying other authentication techniques, make sure to [remove the Onshape cookie](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site) as per the instructions for your browser, or use a private or incognito window.\n\n### Additional resources\n\n* [Onshape API Guide](https://onshape-public.github.io/docs/): Our full suite of developer guides, to be used as an accompaniment to this API Explorer.\n* [Onshape Developer Portal](https://cad.onshape.com/appstore/dev-portal): The Onshape portal for managing your API keys, OAuth2 credentials, your Onshape applications, and your Onshape App Store entries.\n* [Authentication Guide](https://onshape-public.github.io/docs/auth/): Our guide to using API keys, request signatures, and OAuth2 in your Onshape applications.\n\nContact Support:\n Email: api-support@onshape.zendesk.com",
-      "type": "text/plain"
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://cad.onshape.com/api/v16"
     }
-  }
+  ]
 }

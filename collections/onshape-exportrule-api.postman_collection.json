@@ -1,161 +1,181 @@
 {
+  "info": {
+    "_postman_id": "404ee404-dd4d-43f8-b835-90c282cd0b7a",
+    "name": "Onshape REST Export Rule API",
+    "description": "## Welcome to the Onshape REST API Explorer\n\n**See the API Explorer Guide for help navigating this page.**\n\n### Using this page\n1.\n\nContact Support:\n Email: api-support@onshape.zendesk.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-10-22T02:11:09.000Z",
+    "updatedAt": "2026-10-22T02:11:09.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-404ee404-dd4d-43f8-b835-90c282cd0b7a"
+  },
   "item": [
     {
-      "id": "d5c97f26-087c-4881-9bea-ef931e81f7fa",
-      "name": "ExportRule",
-      "description": {
-        "content": "Access valid export rules.",
-        "type": "text/plain"
-      },
+      "name": "exportrules",
       "item": [
         {
-          "id": "422ced0c-04ed-465e-ad11-e4f50584f2f6",
-          "name": " Get a list of valid export rule options for the user or company.",
-          "request": {
-            "name": " Get a list of valid export rule options for the user or company.",
-            "description": {
-              "content": "Does NOT get the rules themselves; it gets the information used to create them.",
-              "type": "text/plain"
-            },
-            "url": {
-              "path": [
-                "exportrules",
-                "options",
-                ":cu",
-                ":cuid"
-              ],
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "query": [],
-              "variable": [
-                {
-                  "disabled": false,
-                  "type": "any",
-                  "value": "<string>",
-                  "key": "cu",
-                  "description": "(Required) Indicates which of company (c) or user (u) id is specified below."
-                },
-                {
-                  "disabled": false,
-                  "type": "any",
-                  "value": "<string>",
-                  "key": "cuid",
-                  "description": "(Required) The id of the company or user in which the operation should be performed."
-                }
-              ]
-            },
-            "header": [
-              {
-                "key": "Accept",
-                "value": "application/json;charset=UTF-8; qs=0.09"
-              }
-            ],
-            "method": "GET",
-            "auth": {
-              "type": "oauth2",
-              "oauth2": [
-                {
-                  "key": "scope",
-                  "value": "OAuth2Internal OAuth2ReadPII OAuth2Read OAuth2Write OAuth2Delete OAuth2Purchase OAuth2Share document.create document.edit document.delete document.read enterprise.create enterprise.read enterprise.edit enterprise.delete enterprise.member.create enterprise.member.read enterprise.member.edit enterprise.member.delete webhook.create webhook.edit webhook.read webhook.delete PLMIntegration"
-                },
-                {
-                  "key": "redirect_uri",
-                  "value": "/oauth/token"
-                },
-                {
-                  "key": "accessTokenUrl",
-                  "value": "/oauth/token"
-                },
-                {
-                  "key": "authUrl",
-                  "value": "/oauth/authorize"
-                },
-                {
-                  "key": "grant_type",
-                  "value": "authorization_code"
-                }
-              ]
-            }
-          },
-          "response": [
+          "name": "options",
+          "item": [
             {
-              "id": "48960504-1fe8-4bec-be4d-af30cce8d323",
-              "name": "default response",
-              "originalRequest": {
-                "url": {
-                  "path": [
-                    "exportrules",
-                    "options",
-                    ":cu",
-                    ":cuid"
-                  ],
-                  "host": [
-                    "{{baseUrl}}"
-                  ],
-                  "query": [],
-                  "variable": [
-                    {
-                      "disabled": false,
-                      "type": "any",
-                      "value": "<string>",
-                      "key": "cu",
-                      "description": "(Required) Indicates which of company (c) or user (u) id is specified below."
-                    },
-                    {
-                      "disabled": false,
-                      "type": "any",
-                      "value": "<string>",
-                      "key": "cuid",
-                      "description": "(Required) The id of the company or user in which the operation should be performed."
-                    }
-                  ]
-                },
-                "header": [
-                  {
-                    "description": {
-                      "content": "Added as a part of security scheme: oauth2",
-                      "type": "text/plain"
-                    },
-                    "key": "Authorization",
-                    "value": "<token>"
-                  },
-                  {
-                    "key": "Accept",
-                    "value": "application/json;charset=UTF-8; qs=0.09"
-                  }
-                ],
-                "method": "GET",
-                "body": {}
-              },
-              "status": "Internal Server Error",
-              "code": 500,
-              "header": [
+              "name": "{cu}",
+              "item": [
                 {
-                  "key": "Content-Type",
-                  "value": "application/json;charset=UTF-8; qs=0.09"
+                  "name": "{cuid}",
+                  "item": [
+                    {
+                      "name": "Get a list of valid export rule options for the user or company",
+                      "id": "b7ef0752-7c2a-4077-bd19-8f9799b5a3b5",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "auth": {
+                          "type": "oauth2",
+                          "oauth2": [
+                            {
+                              "key": "scope",
+                              "value": "OAuth2Internal OAuth2ReadPII OAuth2Read OAuth2Write OAuth2Delete OAuth2Purchase OAuth2Share document.create document.edit document.delete document.read enterprise.create enterprise.read enterprise.edit enterprise.delete enterprise.member.create enterprise.member.read enterprise.member.edit enterprise.member.delete webhook.create webhook.edit webhook.read webhook.delete PLMIntegration",
+                              "type": "string"
+                            },
+                            {
+                              "key": "redirect_uri",
+                              "value": "/oauth/token",
+                              "type": "string"
+                            },
+                            {
+                              "key": "accessTokenUrl",
+                              "value": "/oauth/token",
+                              "type": "string"
+                            },
+                            {
+                              "key": "authUrl",
+                              "value": "/oauth/authorize",
+                              "type": "string"
+                            },
+                            {
+                              "key": "grant_type",
+                              "value": "authorization_code",
+                              "type": "string"
+                            }
+                          ]
+                        },
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json;charset=UTF-8; qs=0.09"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/exportrules/options/:cu/:cuid",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "exportrules",
+                            "options",
+                            ":cu",
+                            ":cuid"
+                          ],
+                          "variable": [
+                            {
+                              "id": "8199a034-ac27-4d88-a6d9-9d0dae14e6ed",
+                              "key": "cu",
+                              "value": "u",
+                              "description": "(Required) Indicates which of company (c) or user (u) id is specified below."
+                            },
+                            {
+                              "id": "d75744a6-4910-4603-8fea-d46dca7404ae",
+                              "key": "cuid",
+                              "value": "<string>",
+                              "description": "(Required) The id of the company or user in which the operation should be performed."
+                            }
+                          ]
+                        },
+                        "description": "Does NOT get the rules themselves; it gets the information used to create them."
+                      },
+                      "response": [
+                        {
+                          "id": "53147684-9be4-4c9b-b09e-524dee6e5772",
+                          "name": "default response",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json;charset=UTF-8; qs=0.09"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/exportrules/options/:cu/:cuid",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "exportrules",
+                                "options",
+                                ":cu",
+                                ":cuid"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "cu"
+                                },
+                                {
+                                  "key": "cuid"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Internal Server Error",
+                          "code": 500,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json;charset=UTF-8; qs=0.09"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"conventionPlaceholder\": \"<string>\",\n  \"hardcodedProperties\": [\n    {\n      \"context\": \"<integer>\",\n      \"id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"objectTypes\": [\n        \"<integer>\",\n        \"<integer>\"\n      ]\n    },\n    {\n      \"context\": \"<integer>\",\n      \"id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"objectTypes\": [\n        \"<integer>\",\n        \"<integer>\"\n      ]\n    }\n  ],\n  \"propertyContextDisplayMap\": {\n    \"anim_\": \"<string>\",\n    \"in_5_4\": \"<string>\",\n    \"consectetur_d55\": \"<string>\",\n    \"incididuntb24\": \"<string>\",\n    \"qui_3\": \"<string>\"\n  },\n  \"validObjectTypes\": [\n    \"<integer>\",\n    \"<integer>\"\n  ]\n}",
+                          "createdAt": "2026-10-22T02:11:10.000Z",
+                          "updatedAt": "2026-10-22T02:11:10.000Z",
+                          "uid": "35240-53147684-9be4-4c9b-b09e-524dee6e5772"
+                        }
+                      ],
+                      "createdAt": "2026-10-22T02:11:10.000Z",
+                      "updatedAt": "2026-10-22T02:11:10.000Z",
+                      "uid": "35240-b7ef0752-7c2a-4077-bd19-8f9799b5a3b5"
+                    }
+                  ],
+                  "id": "cbc4dba6-3004-4a38-8bb0-5b9bba163f58",
+                  "createdAt": "2026-10-22T02:11:10.000Z",
+                  "updatedAt": "2026-10-22T02:11:10.000Z",
+                  "uid": "35240-cbc4dba6-3004-4a38-8bb0-5b9bba163f58"
                 }
               ],
-              "body": "{\n  \"conventionPlaceholder\": \"string\",\n  \"hardcodedProperties\": [\n    {\n      \"context\": 7705,\n      \"id\": \"string\",\n      \"name\": \"string\",\n      \"objectTypes\": [\n        5369,\n        5993\n      ]\n    },\n    {\n      \"context\": 4405,\n      \"id\": \"string\",\n      \"name\": \"string\",\n      \"objectTypes\": [\n        9169,\n        3223\n      ]\n    }\n  ],\n  \"propertyContextDisplayMap\": {\n    \"key_0\": \"string\"\n  },\n  \"validObjectTypes\": [\n    8474,\n    535\n  ]\n}",
-              "cookie": [],
-              "_postman_previewlanguage": "json"
+              "id": "8351d8b4-6b10-4d78-846f-d92dbdad7dcc",
+              "createdAt": "2026-10-22T02:11:10.000Z",
+              "updatedAt": "2026-10-22T02:11:10.000Z",
+              "uid": "35240-8351d8b4-6b10-4d78-846f-d92dbdad7dcc"
             }
           ],
-          "event": [],
-          "protocolProfileBehavior": {
-            "disableBodyPruning": true
-          }
+          "id": "8a59c17e-8ebc-46e4-ab0e-052f4901df8f",
+          "createdAt": "2026-10-22T02:11:10.000Z",
+          "updatedAt": "2026-10-22T02:11:10.000Z",
+          "uid": "35240-8a59c17e-8ebc-46e4-ab0e-052f4901df8f"
         }
       ],
-      "event": []
-    }
-  ],
-  "event": [],
-  "variable": [
-    {
-      "type": "string",
-      "value": "https://cad.onshape.com/api/v16",
-      "key": "baseUrl"
+      "id": "ee273c2c-4940-4786-8df6-61046ea7226b",
+      "createdAt": "2026-10-22T02:11:10.000Z",
+      "updatedAt": "2026-10-22T02:11:10.000Z",
+      "uid": "35240-ee273c2c-4940-4786-8df6-61046ea7226b"
     }
   ],
   "auth": {
@@ -163,21 +183,20 @@
     "basic": [
       {
         "key": "username",
-        "value": "{{basicAuthUsername}}"
+        "value": "{{basicAuthUsername}}",
+        "type": "string"
       },
       {
         "key": "password",
-        "value": "{{basicAuthPassword}}"
+        "value": "{{basicAuthPassword}}",
+        "type": "string"
       }
     ]
   },
-  "info": {
-    "_postman_id": "40ee7d7c-8ab1-49e7-a7eb-c0a33ea60366",
-    "name": "Onshape REST Account ExportRule API",
-    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-    "description": {
-      "content": "## Welcome to the Onshape REST API Explorer\n\n**See the [API Explorer Guide](https://onshape-public.github.io/docs/api-intro/explorer/) for help navigating this page.**\n\n### Using this page\n1. Sign in to your [Onshape](https://cad.onshape.com) account in another tab.\n2. Click the `Try it out` button below. It toggles to a `Cancel` button when selected.\n\n### Authenticating\nTo authenticate your calls, click the `Authorize` button. See [API Explorer Guide: Authentication](https://onshape-public.github.io/docs/api-intro/explorer/#authentication) for details. Calls made when authenticated via API Keys or OAuth count against your annual [API limits](https://onshape-public.github.io/docs/auth/limits/#annual-api-call-limits).\n* **Tip:** To ensure the current session isn't used when trying other authentication techniques, make sure to [remove the Onshape cookie](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site) as per the instructions for your browser, or use a private or incognito window.\n\n### Additional resources\n\n* [Onshape API Guide](https://onshape-public.github.io/docs/): Our full suite of developer guides, to be used as an accompaniment to this API Explorer.\n* [Onshape Developer Portal](https://cad.onshape.com/appstore/dev-portal): The Onshape portal for managing your API keys, OAuth2 credentials, your Onshape applications, and your Onshape App Store entries.\n* [Authentication Guide](https://onshape-public.github.io/docs/auth/): Our guide to using API keys, request signatures, and OAuth2 in your Onshape applications.\n\nContact Support:\n Email: api-support@onshape.zendesk.com",
-      "type": "text/plain"
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://cad.onshape.com/api/v16"
     }
-  }
+  ]
 }

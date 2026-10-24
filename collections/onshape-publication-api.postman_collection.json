@@ -1,426 +1,911 @@
 {
+  "info": {
+    "_postman_id": "6a891fe1-b808-469f-846a-9675c8181938",
+    "name": "Onshape REST Publication API",
+    "description": "## Welcome to the Onshape REST API Explorer\n\n**See the API Explorer Guide for help navigating this page.**\n\n### Using this page\n1.\n\nContact Support:\n Email: api-support@onshape.zendesk.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-10-22T02:12:12.000Z",
+    "updatedAt": "2026-10-22T02:12:12.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-6a891fe1-b808-469f-846a-9675c8181938"
+  },
   "item": [
     {
-      "id": "ff4f57e5-11d0-4c97-9478-94e9f026e700",
-      "name": "Publication",
-      "description": {
-        "content": "Access publication information.",
-        "type": "text/plain"
-      },
+      "name": "publications",
       "item": [
         {
-          "id": "3b19c2d5-1f64-48b7-b426-706c65526f92",
-          "name": "Create a new publication.",
-          "request": {
-            "name": "Create a new publication.",
-            "description": {},
-            "url": {
-              "path": [
-                "publications"
-              ],
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "query": [],
-              "variable": []
-            },
-            "header": [
-              {
-                "key": "Content-Type",
-                "value": "application/json;charset=UTF-8; qs=0.09"
-              },
-              {
-                "key": "Accept",
-                "value": "application/json;charset=UTF-8; qs=0.09"
-              }
-            ],
-            "method": "POST",
-            "auth": {
-              "type": "oauth2",
-              "oauth2": [
-                {
-                  "key": "scope",
-                  "value": "OAuth2Internal OAuth2ReadPII OAuth2Read OAuth2Write OAuth2Delete OAuth2Purchase OAuth2Share document.create document.edit document.delete document.read enterprise.create enterprise.read enterprise.edit enterprise.delete enterprise.member.create enterprise.member.read enterprise.member.edit enterprise.member.delete webhook.create webhook.edit webhook.read webhook.delete PLMIntegration"
-                },
-                {
-                  "key": "redirect_uri",
-                  "value": "/oauth/token"
-                },
-                {
-                  "key": "accessTokenUrl",
-                  "value": "/oauth/token"
-                },
-                {
-                  "key": "authUrl",
-                  "value": "/oauth/authorize"
-                },
-                {
-                  "key": "grant_type",
-                  "value": "authorization_code"
-                }
-              ]
-            },
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"description\": \"<string>\",\n  \"items\": [\n    {\n      \"dataType\": \"<string>\",\n      \"documentId\": \"<string>\",\n      \"elementId\": \"<string>\",\n      \"encodedConfiguration\": \"<string>\",\n      \"isApplication\": \"<boolean>\",\n      \"isAssembly\": \"<boolean>\",\n      \"isBlob\": \"<boolean>\",\n      \"isWholePartStudio\": \"<boolean>\",\n      \"mimeType\": \"<string>\",\n      \"partId\": \"<string>\",\n      \"partName\": \"<string>\",\n      \"partNumber\": \"<string>\",\n      \"revision\": \"<string>\",\n      \"revisionId\": \"<string>\",\n      \"versionId\": \"<string>\"\n    },\n    {\n      \"dataType\": \"<string>\",\n      \"documentId\": \"<string>\",\n      \"elementId\": \"<string>\",\n      \"encodedConfiguration\": \"<string>\",\n      \"isApplication\": \"<boolean>\",\n      \"isAssembly\": \"<boolean>\",\n      \"isBlob\": \"<boolean>\",\n      \"isWholePartStudio\": \"<boolean>\",\n      \"mimeType\": \"<string>\",\n      \"partId\": \"<string>\",\n      \"partName\": \"<string>\",\n      \"partNumber\": \"<string>\",\n      \"revision\": \"<string>\",\n      \"revisionId\": \"<string>\",\n      \"versionId\": \"<string>\"\n    }\n  ],\n  \"name\": \"<string>\",\n  \"notes\": \"<string>\",\n  \"oldClientNotes\": \"<string>\",\n  \"ownerId\": \"<string>\",\n  \"ownerType\": \"<integer>\",\n  \"parentId\": \"<string>\",\n  \"projectId\": \"<string>\"\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
-            }
-          },
-          "response": [
+          "name": "{pid}",
+          "item": [
             {
-              "id": "ea7e1ed7-92b3-405d-8be5-54ec0f1ecf6e",
-              "name": "default response",
-              "originalRequest": {
-                "url": {
-                  "path": [
-                    "publications"
-                  ],
-                  "host": [
-                    "{{baseUrl}}"
-                  ],
-                  "query": [],
-                  "variable": []
-                },
-                "header": [
-                  {
-                    "description": {
-                      "content": "Added as a part of security scheme: oauth2",
-                      "type": "text/plain"
-                    },
-                    "key": "Authorization",
-                    "value": "<token>"
-                  },
-                  {
-                    "key": "Accept",
-                    "value": "application/json;charset=UTF-8; qs=0.09"
-                  }
-                ],
-                "method": "POST",
-                "body": {
-                  "mode": "raw",
-                  "raw": "{\n  \"description\": \"<string>\",\n  \"items\": [\n    {\n      \"dataType\": \"<string>\",\n      \"documentId\": \"<string>\",\n      \"elementId\": \"<string>\",\n      \"encodedConfiguration\": \"<string>\",\n      \"isApplication\": \"<boolean>\",\n      \"isAssembly\": \"<boolean>\",\n      \"isBlob\": \"<boolean>\",\n      \"isWholePartStudio\": \"<boolean>\",\n      \"mimeType\": \"<string>\",\n      \"partId\": \"<string>\",\n      \"partName\": \"<string>\",\n      \"partNumber\": \"<string>\",\n      \"revision\": \"<string>\",\n      \"revisionId\": \"<string>\",\n      \"versionId\": \"<string>\"\n    },\n    {\n      \"dataType\": \"<string>\",\n      \"documentId\": \"<string>\",\n      \"elementId\": \"<string>\",\n      \"encodedConfiguration\": \"<string>\",\n      \"isApplication\": \"<boolean>\",\n      \"isAssembly\": \"<boolean>\",\n      \"isBlob\": \"<boolean>\",\n      \"isWholePartStudio\": \"<boolean>\",\n      \"mimeType\": \"<string>\",\n      \"partId\": \"<string>\",\n      \"partName\": \"<string>\",\n      \"partNumber\": \"<string>\",\n      \"revision\": \"<string>\",\n      \"revisionId\": \"<string>\",\n      \"versionId\": \"<string>\"\n    }\n  ],\n  \"name\": \"<string>\",\n  \"notes\": \"<string>\",\n  \"oldClientNotes\": \"<string>\",\n  \"ownerId\": \"<string>\",\n  \"ownerType\": \"<integer>\",\n  \"parentId\": \"<string>\",\n  \"projectId\": \"<string>\"\n}",
-                  "options": {
-                    "raw": {
-                      "language": "json"
-                    }
-                  }
-                }
-              },
-              "status": "Internal Server Error",
-              "code": 500,
-              "header": [
+              "name": "item",
+              "item": [
                 {
-                  "key": "Content-Type",
-                  "value": "application/json;charset=UTF-8; qs=0.09"
-                }
-              ],
-              "body": "{\n  \"jsonType\": \"string\",\n  \"canMove\": false,\n  \"connectionName\": \"string\",\n  \"connectionNames\": [\n    \"string\",\n    \"string\"\n  ],\n  \"createdAt\": \"1946-11-07T15:08:31.197Z\",\n  \"createdBy\": {\n    \"jsonType\": \"string\",\n    \"href\": \"https://QEcInhzTiOVUoxAd.jdbMzfy2uKbnWFK1UXEaB,amQBUBHIsjCfGBy-GZOLlJ7CsxR\",\n    \"id\": \"string\",\n    \"name\": \"string\",\n    \"viewRef\": \"http://WqryQIBOEWZuuJsTafHdF.ctrlUYM68XwRLa,rTnQvj\",\n    \"image\": \"string\",\n    \"isOnshapeSupport\": false,\n    \"state\": 5921\n  },\n  \"description\": \"string\",\n  \"href\": \"http://CRkRrUUFrMgTkxHgzyawzUKCeV.hpqzfLb8xlQS\",\n  \"id\": \"string\",\n  \"isContainer\": false,\n  \"isEnterpriseOwned\": false,\n  \"isExternalConnectionResource\": true,\n  \"isMutable\": false,\n  \"modifiedAt\": \"2024-05-25T15:23:23.058Z\",\n  \"modifiedBy\": {\n    \"jsonType\": \"string\",\n    \"href\": \"https://HgPKllvxdWnSpEuxjDCflyDxc.nffgFq,SU3mJwv,dyYUKpwNoM3Bji9Mq-,NEbwet\",\n    \"id\": \"string\",\n    \"name\": \"string\",\n    \"viewRef\": \"http://fHQr.aqlgY+QlHRYHU596dqJZUvpRkHlUrmAi,FtiHC.98yCh7fOn1ulamFKQFfKm9Qz\",\n    \"image\": \"string\",\n    \"isOnshapeSupport\": false,\n    \"state\": 2058\n  },\n  \"name\": \"string\",\n  \"owner\": {\n    \"href\": \"https://UZETM.mzj0ldzLKBbdKORP+vOSc.unhcjeI8EZf4uIB5\",\n    \"id\": \"string\",\n    \"image\": \"string\",\n    \"isEnterpriseOwnedResource\": false,\n    \"name\": \"string\",\n    \"type\": 2036,\n    \"viewRef\": \"http://PVyGMQskaHAqHEDpeUNeaGqp.agBiEu3D7jKoaSzyCwzFFWprzWuUG4MX+DMgKgtNhwte9TjUrIgi\"\n  },\n  \"parentId\": \"string\",\n  \"projectId\": \"string\",\n  \"resourceType\": \"string\",\n  \"treeHref\": \"string\",\n  \"unparentHref\": \"string\",\n  \"viewRef\": \"https://Gw.gtqdulpBln7lvvFf82x0+fRPJIZ.L\",\n  \"defaultWorkspaceId\": \"string\",\n  \"items\": [\n    {\n      \"jsonType\": \"string\",\n      \"applicationTarget\": {\n        \"baseHref\": \"https://dGAsYFxmuwLVnrpOzFXHbx.kyp+QRcXv9NamsiepczKYFkikd1ZfCJ4kglM\",\n        \"clientId\": \"string\",\n        \"supportsCollaboration\": false,\n        \"tabIconHref\": \"http://duyORvyhKmKSNGRUlhOVdWtvCTKup.icsQ9b8A3x2tDM\"\n      },\n      \"dataType\": \"string\",\n      \"documentId\": \"string\",\n      \"elementId\": \"string\",\n      \"elementType\": \"TABLE\",\n      \"encodedConfiguration\": \"string\",\n      \"id\": \"string\",\n      \"partId\": \"string\",\n      \"partName\": \"string\",\n      \"partNumber\": \"string\",\n      \"revision\": \"string\",\n      \"revisionId\": \"string\",\n      \"state\": 762,\n      \"versionId\": \"string\",\n      \"versionName\": \"string\"\n    },\n    {\n      \"jsonType\": \"string\",\n      \"applicationTarget\": {\n        \"baseHref\": \"http://EqbfYEymMBCOZtFQuoWQGExTdLGhohWh.gqLqwFgnYrSx-ULd7B36wK8F3T78uG,pkP8mJ5,4lDL8xKz3a1LE7Iy.a6kfyHTiq\",\n        \"clientId\": \"string\",\n        \"supportsCollaboration\": true,\n        \"tabIconHref\": \"https://gpKmRVsyAGfzVxqtaKPdrCNrKHMnH.fniAJNkJ\"\n      },\n      \"dataType\": \"string\",\n      \"documentId\": \"string\",\n      \"elementId\": \"string\",\n      \"elementType\": \"PARTSTUDIO\",\n      \"encodedConfiguration\": \"string\",\n      \"id\": \"string\",\n      \"partId\": \"string\",\n      \"partName\": \"string\",\n      \"partNumber\": \"string\",\n      \"revision\": \"string\",\n      \"revisionId\": \"string\",\n      \"state\": 9961,\n      \"versionId\": \"string\",\n      \"versionName\": \"string\"\n    }\n  ],\n  \"notes\": \"string\",\n  \"sequence\": \"string\"\n}",
-              "cookie": [],
-              "_postman_previewlanguage": "json"
-            }
-          ],
-          "event": [],
-          "protocolProfileBehavior": {
-            "disableBodyPruning": true
-          }
-        },
-        {
-          "id": "c97cbafb-0645-46ca-b6b9-25388cab971f",
-          "name": "Update publication's attributes name, description, and notes.",
-          "request": {
-            "name": "Update publication's attributes name, description, and notes.",
-            "description": {},
-            "url": {
-              "path": [
-                "publications",
-                ":pid"
-              ],
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "query": [],
-              "variable": [
-                {
-                  "disabled": false,
-                  "type": "any",
-                  "value": "<string>",
-                  "key": "pid",
-                  "description": "(Required) Publication ID."
-                }
-              ]
-            },
-            "header": [
-              {
-                "key": "Content-Type",
-                "value": "application/json;charset=UTF-8; qs=0.09"
-              },
-              {
-                "key": "Accept",
-                "value": "application/json;charset=UTF-8; qs=0.09"
-              }
-            ],
-            "method": "POST",
-            "auth": {
-              "type": "oauth2",
-              "oauth2": [
-                {
-                  "key": "scope",
-                  "value": "OAuth2Internal OAuth2ReadPII OAuth2Read OAuth2Write OAuth2Delete OAuth2Purchase OAuth2Share document.create document.edit document.delete document.read enterprise.create enterprise.read enterprise.edit enterprise.delete enterprise.member.create enterprise.member.read enterprise.member.edit enterprise.member.delete webhook.create webhook.edit webhook.read webhook.delete PLMIntegration"
-                },
-                {
-                  "key": "redirect_uri",
-                  "value": "/oauth/token"
-                },
-                {
-                  "key": "accessTokenUrl",
-                  "value": "/oauth/token"
-                },
-                {
-                  "key": "authUrl",
-                  "value": "/oauth/authorize"
-                },
-                {
-                  "key": "grant_type",
-                  "value": "authorization_code"
-                }
-              ]
-            },
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"description\": \"<string>\",\n  \"items\": [\n    {\n      \"dataType\": \"<string>\",\n      \"documentId\": \"<string>\",\n      \"elementId\": \"<string>\",\n      \"encodedConfiguration\": \"<string>\",\n      \"isApplication\": \"<boolean>\",\n      \"isAssembly\": \"<boolean>\",\n      \"isBlob\": \"<boolean>\",\n      \"isWholePartStudio\": \"<boolean>\",\n      \"mimeType\": \"<string>\",\n      \"partId\": \"<string>\",\n      \"partName\": \"<string>\",\n      \"partNumber\": \"<string>\",\n      \"revision\": \"<string>\",\n      \"revisionId\": \"<string>\",\n      \"versionId\": \"<string>\"\n    },\n    {\n      \"dataType\": \"<string>\",\n      \"documentId\": \"<string>\",\n      \"elementId\": \"<string>\",\n      \"encodedConfiguration\": \"<string>\",\n      \"isApplication\": \"<boolean>\",\n      \"isAssembly\": \"<boolean>\",\n      \"isBlob\": \"<boolean>\",\n      \"isWholePartStudio\": \"<boolean>\",\n      \"mimeType\": \"<string>\",\n      \"partId\": \"<string>\",\n      \"partName\": \"<string>\",\n      \"partNumber\": \"<string>\",\n      \"revision\": \"<string>\",\n      \"revisionId\": \"<string>\",\n      \"versionId\": \"<string>\"\n    }\n  ],\n  \"name\": \"<string>\",\n  \"notes\": \"<string>\",\n  \"oldClientNotes\": \"<string>\",\n  \"ownerId\": \"<string>\",\n  \"ownerType\": \"<integer>\",\n  \"parentId\": \"<string>\",\n  \"projectId\": \"<string>\"\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
-            }
-          },
-          "response": [
-            {
-              "id": "8a8de9b7-19aa-416f-96e4-25d83c0b343b",
-              "name": "default response",
-              "originalRequest": {
-                "url": {
-                  "path": [
-                    "publications",
-                    ":pid"
-                  ],
-                  "host": [
-                    "{{baseUrl}}"
-                  ],
-                  "query": [],
-                  "variable": [
+                  "name": "{iid}",
+                  "item": [
                     {
-                      "disabled": false,
-                      "type": "any",
-                      "value": "<string>",
-                      "key": "pid",
-                      "description": "(Required) Publication ID."
+                      "name": "Remove an item from a publication",
+                      "id": "d5e54037-e43d-4ab7-b69c-ec328f77303a",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "auth": {
+                          "type": "oauth2",
+                          "oauth2": [
+                            {
+                              "key": "scope",
+                              "value": "OAuth2Internal OAuth2ReadPII OAuth2Read OAuth2Write OAuth2Delete OAuth2Purchase OAuth2Share document.create document.edit document.delete document.read enterprise.create enterprise.read enterprise.edit enterprise.delete enterprise.member.create enterprise.member.read enterprise.member.edit enterprise.member.delete webhook.create webhook.edit webhook.read webhook.delete PLMIntegration",
+                              "type": "string"
+                            },
+                            {
+                              "key": "redirect_uri",
+                              "value": "/oauth/token",
+                              "type": "string"
+                            },
+                            {
+                              "key": "accessTokenUrl",
+                              "value": "/oauth/token",
+                              "type": "string"
+                            },
+                            {
+                              "key": "authUrl",
+                              "value": "/oauth/authorize",
+                              "type": "string"
+                            },
+                            {
+                              "key": "grant_type",
+                              "value": "authorization_code",
+                              "type": "string"
+                            }
+                          ]
+                        },
+                        "method": "DELETE",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json;charset=UTF-8; qs=0.09"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/publications/:pid/item/:iid",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "publications",
+                            ":pid",
+                            "item",
+                            ":iid"
+                          ],
+                          "variable": [
+                            {
+                              "id": "c2f32dd3-5f41-4c63-b80c-a95fbdd82d2d",
+                              "key": "pid",
+                              "value": "<string>",
+                              "description": "(Required) Publication ID."
+                            },
+                            {
+                              "id": "8fa131c2-e4f3-4f3f-9758-7e747bced287",
+                              "key": "iid",
+                              "value": "<string>",
+                              "description": "(Required) Publication item ID."
+                            }
+                          ]
+                        }
+                      },
+                      "response": [
+                        {
+                          "id": "e104cea6-59e6-4d58-a9c2-f29d30ad87d9",
+                          "name": "default response",
+                          "originalRequest": {
+                            "method": "DELETE",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json;charset=UTF-8; qs=0.09"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/publications/:pid/item/:iid",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "publications",
+                                ":pid",
+                                "item",
+                                ":iid"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "pid"
+                                },
+                                {
+                                  "key": "iid"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Internal Server Error",
+                          "code": 500,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json;charset=UTF-8; qs=0.09"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{}",
+                          "createdAt": "2026-10-22T02:12:13.000Z",
+                          "updatedAt": "2026-10-22T02:12:13.000Z",
+                          "uid": "35240-e104cea6-59e6-4d58-a9c2-f29d30ad87d9"
+                        }
+                      ],
+                      "createdAt": "2026-10-22T02:12:13.000Z",
+                      "updatedAt": "2026-10-22T02:12:13.000Z",
+                      "uid": "35240-d5e54037-e43d-4ab7-b69c-ec328f77303a"
+                    }
+                  ],
+                  "id": "b3ce8db8-83ae-4dc2-b6cc-fa16bd83ea70",
+                  "createdAt": "2026-10-22T02:12:13.000Z",
+                  "updatedAt": "2026-10-22T02:12:13.000Z",
+                  "uid": "35240-b3ce8db8-83ae-4dc2-b6cc-fa16bd83ea70"
+                },
+                {
+                  "name": "Add an item in a publication",
+                  "id": "fe9288b7-cb5e-453a-9a6e-731fe2cd95ea",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "auth": {
+                      "type": "oauth2",
+                      "oauth2": [
+                        {
+                          "key": "scope",
+                          "value": "OAuth2Internal OAuth2ReadPII OAuth2Read OAuth2Write OAuth2Delete OAuth2Purchase OAuth2Share document.create document.edit document.delete document.read enterprise.create enterprise.read enterprise.edit enterprise.delete enterprise.member.create enterprise.member.read enterprise.member.edit enterprise.member.delete webhook.create webhook.edit webhook.read webhook.delete PLMIntegration",
+                          "type": "string"
+                        },
+                        {
+                          "key": "redirect_uri",
+                          "value": "/oauth/token",
+                          "type": "string"
+                        },
+                        {
+                          "key": "accessTokenUrl",
+                          "value": "/oauth/token",
+                          "type": "string"
+                        },
+                        {
+                          "key": "authUrl",
+                          "value": "/oauth/authorize",
+                          "type": "string"
+                        },
+                        {
+                          "key": "grant_type",
+                          "value": "authorization_code",
+                          "type": "string"
+                        }
+                      ]
+                    },
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json;charset=UTF-8; qs=0.09"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json;charset=UTF-8; qs=0.09"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"dataType\": \"<string>\",\n  \"documentId\": \"<string>\",\n  \"elementId\": \"<string>\",\n  \"encodedConfiguration\": \"<string>\",\n  \"isApplication\": \"<boolean>\",\n  \"isAssembly\": \"<boolean>\",\n  \"isBlob\": \"<boolean>\",\n  \"isWholePartStudio\": \"<boolean>\",\n  \"mimeType\": \"<string>\",\n  \"partId\": \"<string>\",\n  \"partName\": \"<string>\",\n  \"partNumber\": \"<string>\",\n  \"revision\": \"<string>\",\n  \"revisionId\": \"<string>\",\n  \"versionId\": \"<string>\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/publications/:pid/item",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "publications",
+                        ":pid",
+                        "item"
+                      ],
+                      "variable": [
+                        {
+                          "id": "91b6143d-1928-4bf6-b98e-1637c9e92022",
+                          "key": "pid",
+                          "value": "<string>",
+                          "description": "(Required) Publication ID."
+                        }
+                      ]
+                    }
+                  },
+                  "response": [
+                    {
+                      "id": "8511f360-18cc-4bae-aaef-824ee7193b1b",
+                      "name": "default response",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json;charset=UTF-8; qs=0.09"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json;charset=UTF-8; qs=0.09"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: oauth2",
+                            "key": "Authorization",
+                            "value": "<token>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"dataType\": \"<string>\",\n  \"documentId\": \"<string>\",\n  \"elementId\": \"<string>\",\n  \"encodedConfiguration\": \"<string>\",\n  \"isApplication\": \"<boolean>\",\n  \"isAssembly\": \"<boolean>\",\n  \"isBlob\": \"<boolean>\",\n  \"isWholePartStudio\": \"<boolean>\",\n  \"mimeType\": \"<string>\",\n  \"partId\": \"<string>\",\n  \"partName\": \"<string>\",\n  \"partNumber\": \"<string>\",\n  \"revision\": \"<string>\",\n  \"revisionId\": \"<string>\",\n  \"versionId\": \"<string>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/publications/:pid/item",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "publications",
+                            ":pid",
+                            "item"
+                          ],
+                          "variable": [
+                            {
+                              "key": "pid"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Internal Server Error",
+                      "code": 500,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json;charset=UTF-8; qs=0.09"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"jsonType\": \"<string>\",\n  \"canMove\": \"<boolean>\",\n  \"connectionName\": \"<string>\",\n  \"connectionNames\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"createdAt\": \"<dateTime>\",\n  \"createdBy\": {\n    \"jsonType\": \"et\",\n    \"href\": \"<uri>\",\n    \"id\": \"<string>\",\n    \"name\": \"<string>\",\n    \"viewRef\": \"<uri>\",\n    \"image\": \"<string>\",\n    \"isOnshapeSupport\": \"<boolean>\",\n    \"state\": \"<integer>\"\n  },\n  \"description\": \"<string>\",\n  \"href\": \"<uri>\",\n  \"id\": \"<string>\",\n  \"isContainer\": \"<boolean>\",\n  \"isEnterpriseOwned\": \"<boolean>\",\n  \"isExternalConnectionResource\": \"<boolean>\",\n  \"isMutable\": \"<boolean>\",\n  \"modifiedAt\": \"<dateTime>\",\n  \"modifiedBy\": {\n    \"jsonType\": \"eiusmod\",\n    \"href\": \"<uri>\",\n    \"id\": \"<string>\",\n    \"name\": \"<string>\",\n    \"viewRef\": \"<uri>\",\n    \"image\": \"<string>\",\n    \"isOnshapeSupport\": \"<boolean>\",\n    \"state\": \"<integer>\"\n  },\n  \"name\": \"<string>\",\n  \"owner\": {\n    \"href\": \"<uri>\",\n    \"id\": \"<string>\",\n    \"image\": \"<string>\",\n    \"isEnterpriseOwnedResource\": \"<boolean>\",\n    \"name\": \"<string>\",\n    \"type\": \"<integer>\",\n    \"viewRef\": \"<uri>\"\n  },\n  \"parentId\": \"<string>\",\n  \"projectId\": \"<string>\",\n  \"resourceType\": \"<string>\",\n  \"treeHref\": \"<string>\",\n  \"unparentHref\": \"<string>\",\n  \"viewRef\": \"<uri>\",\n  \"defaultWorkspaceId\": \"<string>\",\n  \"items\": [\n    {\n      \"jsonType\": \"<string>\",\n      \"applicationTarget\": {\n        \"baseHref\": \"<uri>\",\n        \"clientId\": \"<string>\",\n        \"supportsCollaboration\": \"<boolean>\",\n        \"tabIconHref\": \"<uri>\"\n      },\n      \"dataType\": \"<string>\",\n      \"documentId\": \"<string>\",\n      \"elementId\": \"<string>\",\n      \"elementType\": \"ASSEMBLY\",\n      \"encodedConfiguration\": \"<string>\",\n      \"id\": \"<string>\",\n      \"partId\": \"<string>\",\n      \"partName\": \"<string>\",\n      \"partNumber\": \"<string>\",\n      \"revision\": \"<string>\",\n      \"revisionId\": \"<string>\",\n      \"state\": \"<integer>\",\n      \"versionId\": \"<string>\",\n      \"versionName\": \"<string>\"\n    },\n    {\n      \"jsonType\": \"<string>\",\n      \"applicationTarget\": {\n        \"baseHref\": \"<uri>\",\n        \"clientId\": \"<string>\",\n        \"supportsCollaboration\": \"<boolean>\",\n        \"tabIconHref\": \"<uri>\"\n      },\n      \"dataType\": \"<string>\",\n      \"documentId\": \"<string>\",\n      \"elementId\": \"<string>\",\n      \"elementType\": \"TABLE\",\n      \"encodedConfiguration\": \"<string>\",\n      \"id\": \"<string>\",\n      \"partId\": \"<string>\",\n      \"partName\": \"<string>\",\n      \"partNumber\": \"<string>\",\n      \"revision\": \"<string>\",\n      \"revisionId\": \"<string>\",\n      \"state\": \"<integer>\",\n      \"versionId\": \"<string>\",\n      \"versionName\": \"<string>\"\n    }\n  ],\n  \"notes\": \"<string>\",\n  \"sequence\": \"<string>\"\n}",
+                      "createdAt": "2026-10-22T02:12:13.000Z",
+                      "updatedAt": "2026-10-22T02:12:13.000Z",
+                      "uid": "35240-8511f360-18cc-4bae-aaef-824ee7193b1b"
+                    }
+                  ],
+                  "createdAt": "2026-10-22T02:12:13.000Z",
+                  "updatedAt": "2026-10-22T02:12:13.000Z",
+                  "uid": "35240-fe9288b7-cb5e-453a-9a6e-731fe2cd95ea"
+                }
+              ],
+              "id": "79247219-aee5-407b-9fd7-0b54690b442c",
+              "createdAt": "2026-10-22T02:12:13.000Z",
+              "updatedAt": "2026-10-22T02:12:13.000Z",
+              "uid": "35240-79247219-aee5-407b-9fd7-0b54690b442c"
+            },
+            {
+              "name": "items",
+              "item": [
+                {
+                  "name": "Get all items in a publication",
+                  "id": "bc46b6a4-65ec-483d-8a20-ca438047e8c0",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "auth": {
+                      "type": "oauth2",
+                      "oauth2": [
+                        {
+                          "key": "scope",
+                          "value": "OAuth2Internal OAuth2ReadPII OAuth2Read OAuth2Write OAuth2Delete OAuth2Purchase OAuth2Share document.create document.edit document.delete document.read enterprise.create enterprise.read enterprise.edit enterprise.delete enterprise.member.create enterprise.member.read enterprise.member.edit enterprise.member.delete webhook.create webhook.edit webhook.read webhook.delete PLMIntegration",
+                          "type": "string"
+                        },
+                        {
+                          "key": "redirect_uri",
+                          "value": "/oauth/token",
+                          "type": "string"
+                        },
+                        {
+                          "key": "accessTokenUrl",
+                          "value": "/oauth/token",
+                          "type": "string"
+                        },
+                        {
+                          "key": "authUrl",
+                          "value": "/oauth/authorize",
+                          "type": "string"
+                        },
+                        {
+                          "key": "grant_type",
+                          "value": "authorization_code",
+                          "type": "string"
+                        }
+                      ]
+                    },
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json;charset=UTF-8; qs=0.09"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/publications/:pid/items",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "publications",
+                        ":pid",
+                        "items"
+                      ],
+                      "variable": [
+                        {
+                          "id": "7f679f13-3081-4d0c-bfcb-934f6171325e",
+                          "key": "pid",
+                          "value": "<string>",
+                          "description": "(Required) Publication ID."
+                        }
+                      ]
+                    }
+                  },
+                  "response": [
+                    {
+                      "id": "6b12b88b-a1b3-42c3-a189-85d35bb6e2bd",
+                      "name": "default response",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json;charset=UTF-8; qs=0.09"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: oauth2",
+                            "key": "Authorization",
+                            "value": "<token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/publications/:pid/items",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "publications",
+                            ":pid",
+                            "items"
+                          ],
+                          "variable": [
+                            {
+                              "key": "pid"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Internal Server Error",
+                      "code": 500,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json;charset=UTF-8; qs=0.09"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"jsonType\": \"<string>\",\n  \"canMove\": \"<boolean>\",\n  \"connectionName\": \"<string>\",\n  \"connectionNames\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"createdAt\": \"<dateTime>\",\n  \"createdBy\": {\n    \"jsonType\": \"et\",\n    \"href\": \"<uri>\",\n    \"id\": \"<string>\",\n    \"name\": \"<string>\",\n    \"viewRef\": \"<uri>\",\n    \"image\": \"<string>\",\n    \"isOnshapeSupport\": \"<boolean>\",\n    \"state\": \"<integer>\"\n  },\n  \"description\": \"<string>\",\n  \"href\": \"<uri>\",\n  \"id\": \"<string>\",\n  \"isContainer\": \"<boolean>\",\n  \"isEnterpriseOwned\": \"<boolean>\",\n  \"isExternalConnectionResource\": \"<boolean>\",\n  \"isMutable\": \"<boolean>\",\n  \"modifiedAt\": \"<dateTime>\",\n  \"modifiedBy\": {\n    \"jsonType\": \"eiusmod\",\n    \"href\": \"<uri>\",\n    \"id\": \"<string>\",\n    \"name\": \"<string>\",\n    \"viewRef\": \"<uri>\",\n    \"image\": \"<string>\",\n    \"isOnshapeSupport\": \"<boolean>\",\n    \"state\": \"<integer>\"\n  },\n  \"name\": \"<string>\",\n  \"owner\": {\n    \"href\": \"<uri>\",\n    \"id\": \"<string>\",\n    \"image\": \"<string>\",\n    \"isEnterpriseOwnedResource\": \"<boolean>\",\n    \"name\": \"<string>\",\n    \"type\": \"<integer>\",\n    \"viewRef\": \"<uri>\"\n  },\n  \"parentId\": \"<string>\",\n  \"projectId\": \"<string>\",\n  \"resourceType\": \"<string>\",\n  \"treeHref\": \"<string>\",\n  \"unparentHref\": \"<string>\",\n  \"viewRef\": \"<uri>\",\n  \"defaultWorkspaceId\": \"<string>\",\n  \"items\": [\n    {\n      \"jsonType\": \"<string>\",\n      \"applicationTarget\": {\n        \"baseHref\": \"<uri>\",\n        \"clientId\": \"<string>\",\n        \"supportsCollaboration\": \"<boolean>\",\n        \"tabIconHref\": \"<uri>\"\n      },\n      \"dataType\": \"<string>\",\n      \"documentId\": \"<string>\",\n      \"elementId\": \"<string>\",\n      \"elementType\": \"ASSEMBLY\",\n      \"encodedConfiguration\": \"<string>\",\n      \"id\": \"<string>\",\n      \"partId\": \"<string>\",\n      \"partName\": \"<string>\",\n      \"partNumber\": \"<string>\",\n      \"revision\": \"<string>\",\n      \"revisionId\": \"<string>\",\n      \"state\": \"<integer>\",\n      \"versionId\": \"<string>\",\n      \"versionName\": \"<string>\"\n    },\n    {\n      \"jsonType\": \"<string>\",\n      \"applicationTarget\": {\n        \"baseHref\": \"<uri>\",\n        \"clientId\": \"<string>\",\n        \"supportsCollaboration\": \"<boolean>\",\n        \"tabIconHref\": \"<uri>\"\n      },\n      \"dataType\": \"<string>\",\n      \"documentId\": \"<string>\",\n      \"elementId\": \"<string>\",\n      \"elementType\": \"TABLE\",\n      \"encodedConfiguration\": \"<string>\",\n      \"id\": \"<string>\",\n      \"partId\": \"<string>\",\n      \"partName\": \"<string>\",\n      \"partNumber\": \"<string>\",\n      \"revision\": \"<string>\",\n      \"revisionId\": \"<string>\",\n      \"state\": \"<integer>\",\n      \"versionId\": \"<string>\",\n      \"versionName\": \"<string>\"\n    }\n  ],\n  \"notes\": \"<string>\",\n  \"sequence\": \"<string>\"\n}",
+                      "createdAt": "2026-10-22T02:12:13.000Z",
+                      "updatedAt": "2026-10-22T02:12:13.000Z",
+                      "uid": "35240-6b12b88b-a1b3-42c3-a189-85d35bb6e2bd"
+                    }
+                  ],
+                  "createdAt": "2026-10-22T02:12:13.000Z",
+                  "updatedAt": "2026-10-22T02:12:13.000Z",
+                  "uid": "35240-bc46b6a4-65ec-483d-8a20-ca438047e8c0"
+                },
+                {
+                  "name": "Add publication items in bulk",
+                  "id": "3725c163-af20-4407-a324-f0df90ac95b5",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "auth": {
+                      "type": "oauth2",
+                      "oauth2": [
+                        {
+                          "key": "scope",
+                          "value": "OAuth2Internal OAuth2ReadPII OAuth2Read OAuth2Write OAuth2Delete OAuth2Purchase OAuth2Share document.create document.edit document.delete document.read enterprise.create enterprise.read enterprise.edit enterprise.delete enterprise.member.create enterprise.member.read enterprise.member.edit enterprise.member.delete webhook.create webhook.edit webhook.read webhook.delete PLMIntegration",
+                          "type": "string"
+                        },
+                        {
+                          "key": "redirect_uri",
+                          "value": "/oauth/token",
+                          "type": "string"
+                        },
+                        {
+                          "key": "accessTokenUrl",
+                          "value": "/oauth/token",
+                          "type": "string"
+                        },
+                        {
+                          "key": "authUrl",
+                          "value": "/oauth/authorize",
+                          "type": "string"
+                        },
+                        {
+                          "key": "grant_type",
+                          "value": "authorization_code",
+                          "type": "string"
+                        }
+                      ]
+                    },
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json;charset=UTF-8; qs=0.09"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json;charset=UTF-8; qs=0.09"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"items\": [\n    {\n      \"dataType\": \"<string>\",\n      \"documentId\": \"<string>\",\n      \"elementId\": \"<string>\",\n      \"encodedConfiguration\": \"<string>\",\n      \"isApplication\": \"<boolean>\",\n      \"isAssembly\": \"<boolean>\",\n      \"isBlob\": \"<boolean>\",\n      \"isWholePartStudio\": \"<boolean>\",\n      \"mimeType\": \"<string>\",\n      \"partId\": \"<string>\",\n      \"partName\": \"<string>\",\n      \"partNumber\": \"<string>\",\n      \"revision\": \"<string>\",\n      \"revisionId\": \"<string>\",\n      \"versionId\": \"<string>\"\n    },\n    {\n      \"dataType\": \"<string>\",\n      \"documentId\": \"<string>\",\n      \"elementId\": \"<string>\",\n      \"encodedConfiguration\": \"<string>\",\n      \"isApplication\": \"<boolean>\",\n      \"isAssembly\": \"<boolean>\",\n      \"isBlob\": \"<boolean>\",\n      \"isWholePartStudio\": \"<boolean>\",\n      \"mimeType\": \"<string>\",\n      \"partId\": \"<string>\",\n      \"partName\": \"<string>\",\n      \"partNumber\": \"<string>\",\n      \"revision\": \"<string>\",\n      \"revisionId\": \"<string>\",\n      \"versionId\": \"<string>\"\n    }\n  ]\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/publications/:pid/items",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "publications",
+                        ":pid",
+                        "items"
+                      ],
+                      "variable": [
+                        {
+                          "id": "76c29f41-a5a7-465a-b37f-54e19a953bb2",
+                          "key": "pid",
+                          "value": "<string>",
+                          "description": "(Required) Publication ID."
+                        }
+                      ]
+                    }
+                  },
+                  "response": [
+                    {
+                      "id": "5a229b6c-3091-4bda-bc30-7d3a5d69a001",
+                      "name": "default response",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json;charset=UTF-8; qs=0.09"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json;charset=UTF-8; qs=0.09"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: oauth2",
+                            "key": "Authorization",
+                            "value": "<token>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"items\": [\n    {\n      \"dataType\": \"<string>\",\n      \"documentId\": \"<string>\",\n      \"elementId\": \"<string>\",\n      \"encodedConfiguration\": \"<string>\",\n      \"isApplication\": \"<boolean>\",\n      \"isAssembly\": \"<boolean>\",\n      \"isBlob\": \"<boolean>\",\n      \"isWholePartStudio\": \"<boolean>\",\n      \"mimeType\": \"<string>\",\n      \"partId\": \"<string>\",\n      \"partName\": \"<string>\",\n      \"partNumber\": \"<string>\",\n      \"revision\": \"<string>\",\n      \"revisionId\": \"<string>\",\n      \"versionId\": \"<string>\"\n    },\n    {\n      \"dataType\": \"<string>\",\n      \"documentId\": \"<string>\",\n      \"elementId\": \"<string>\",\n      \"encodedConfiguration\": \"<string>\",\n      \"isApplication\": \"<boolean>\",\n      \"isAssembly\": \"<boolean>\",\n      \"isBlob\": \"<boolean>\",\n      \"isWholePartStudio\": \"<boolean>\",\n      \"mimeType\": \"<string>\",\n      \"partId\": \"<string>\",\n      \"partName\": \"<string>\",\n      \"partNumber\": \"<string>\",\n      \"revision\": \"<string>\",\n      \"revisionId\": \"<string>\",\n      \"versionId\": \"<string>\"\n    }\n  ]\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/publications/:pid/items",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "publications",
+                            ":pid",
+                            "items"
+                          ],
+                          "variable": [
+                            {
+                              "key": "pid"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Internal Server Error",
+                      "code": 500,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json;charset=UTF-8; qs=0.09"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"jsonType\": \"<string>\",\n  \"canMove\": \"<boolean>\",\n  \"connectionName\": \"<string>\",\n  \"connectionNames\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"createdAt\": \"<dateTime>\",\n  \"createdBy\": {\n    \"jsonType\": \"et\",\n    \"href\": \"<uri>\",\n    \"id\": \"<string>\",\n    \"name\": \"<string>\",\n    \"viewRef\": \"<uri>\",\n    \"image\": \"<string>\",\n    \"isOnshapeSupport\": \"<boolean>\",\n    \"state\": \"<integer>\"\n  },\n  \"description\": \"<string>\",\n  \"href\": \"<uri>\",\n  \"id\": \"<string>\",\n  \"isContainer\": \"<boolean>\",\n  \"isEnterpriseOwned\": \"<boolean>\",\n  \"isExternalConnectionResource\": \"<boolean>\",\n  \"isMutable\": \"<boolean>\",\n  \"modifiedAt\": \"<dateTime>\",\n  \"modifiedBy\": {\n    \"jsonType\": \"eiusmod\",\n    \"href\": \"<uri>\",\n    \"id\": \"<string>\",\n    \"name\": \"<string>\",\n    \"viewRef\": \"<uri>\",\n    \"image\": \"<string>\",\n    \"isOnshapeSupport\": \"<boolean>\",\n    \"state\": \"<integer>\"\n  },\n  \"name\": \"<string>\",\n  \"owner\": {\n    \"href\": \"<uri>\",\n    \"id\": \"<string>\",\n    \"image\": \"<string>\",\n    \"isEnterpriseOwnedResource\": \"<boolean>\",\n    \"name\": \"<string>\",\n    \"type\": \"<integer>\",\n    \"viewRef\": \"<uri>\"\n  },\n  \"parentId\": \"<string>\",\n  \"projectId\": \"<string>\",\n  \"resourceType\": \"<string>\",\n  \"treeHref\": \"<string>\",\n  \"unparentHref\": \"<string>\",\n  \"viewRef\": \"<uri>\",\n  \"defaultWorkspaceId\": \"<string>\",\n  \"items\": [\n    {\n      \"jsonType\": \"<string>\",\n      \"applicationTarget\": {\n        \"baseHref\": \"<uri>\",\n        \"clientId\": \"<string>\",\n        \"supportsCollaboration\": \"<boolean>\",\n        \"tabIconHref\": \"<uri>\"\n      },\n      \"dataType\": \"<string>\",\n      \"documentId\": \"<string>\",\n      \"elementId\": \"<string>\",\n      \"elementType\": \"ASSEMBLY\",\n      \"encodedConfiguration\": \"<string>\",\n      \"id\": \"<string>\",\n      \"partId\": \"<string>\",\n      \"partName\": \"<string>\",\n      \"partNumber\": \"<string>\",\n      \"revision\": \"<string>\",\n      \"revisionId\": \"<string>\",\n      \"state\": \"<integer>\",\n      \"versionId\": \"<string>\",\n      \"versionName\": \"<string>\"\n    },\n    {\n      \"jsonType\": \"<string>\",\n      \"applicationTarget\": {\n        \"baseHref\": \"<uri>\",\n        \"clientId\": \"<string>\",\n        \"supportsCollaboration\": \"<boolean>\",\n        \"tabIconHref\": \"<uri>\"\n      },\n      \"dataType\": \"<string>\",\n      \"documentId\": \"<string>\",\n      \"elementId\": \"<string>\",\n      \"elementType\": \"TABLE\",\n      \"encodedConfiguration\": \"<string>\",\n      \"id\": \"<string>\",\n      \"partId\": \"<string>\",\n      \"partName\": \"<string>\",\n      \"partNumber\": \"<string>\",\n      \"revision\": \"<string>\",\n      \"revisionId\": \"<string>\",\n      \"state\": \"<integer>\",\n      \"versionId\": \"<string>\",\n      \"versionName\": \"<string>\"\n    }\n  ],\n  \"notes\": \"<string>\",\n  \"sequence\": \"<string>\"\n}",
+                      "createdAt": "2026-10-22T02:12:13.000Z",
+                      "updatedAt": "2026-10-22T02:12:13.000Z",
+                      "uid": "35240-5a229b6c-3091-4bda-bc30-7d3a5d69a001"
+                    }
+                  ],
+                  "createdAt": "2026-10-22T02:12:13.000Z",
+                  "updatedAt": "2026-10-22T02:12:13.000Z",
+                  "uid": "35240-3725c163-af20-4407-a324-f0df90ac95b5"
+                }
+              ],
+              "id": "3a88ec3e-4a0d-4aab-ab10-274eede74508",
+              "createdAt": "2026-10-22T02:12:13.000Z",
+              "updatedAt": "2026-10-22T02:12:13.000Z",
+              "uid": "35240-3a88ec3e-4a0d-4aab-ab10-274eede74508"
+            },
+            {
+              "name": "Update publication's attributes name, description, and notes",
+              "id": "81062e18-6ee3-4944-b902-e2e59699cfae",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "auth": {
+                  "type": "oauth2",
+                  "oauth2": [
+                    {
+                      "key": "scope",
+                      "value": "OAuth2Internal OAuth2ReadPII OAuth2Read OAuth2Write OAuth2Delete OAuth2Purchase OAuth2Share document.create document.edit document.delete document.read enterprise.create enterprise.read enterprise.edit enterprise.delete enterprise.member.create enterprise.member.read enterprise.member.edit enterprise.member.delete webhook.create webhook.edit webhook.read webhook.delete PLMIntegration",
+                      "type": "string"
+                    },
+                    {
+                      "key": "redirect_uri",
+                      "value": "/oauth/token",
+                      "type": "string"
+                    },
+                    {
+                      "key": "accessTokenUrl",
+                      "value": "/oauth/token",
+                      "type": "string"
+                    },
+                    {
+                      "key": "authUrl",
+                      "value": "/oauth/authorize",
+                      "type": "string"
+                    },
+                    {
+                      "key": "grant_type",
+                      "value": "authorization_code",
+                      "type": "string"
                     }
                   ]
                 },
+                "method": "POST",
                 "header": [
                   {
-                    "description": {
-                      "content": "Added as a part of security scheme: oauth2",
-                      "type": "text/plain"
-                    },
-                    "key": "Authorization",
-                    "value": "<token>"
+                    "key": "Content-Type",
+                    "value": "application/json;charset=UTF-8; qs=0.09"
                   },
                   {
                     "key": "Accept",
                     "value": "application/json;charset=UTF-8; qs=0.09"
                   }
                 ],
-                "method": "POST",
                 "body": {
                   "mode": "raw",
                   "raw": "{\n  \"description\": \"<string>\",\n  \"items\": [\n    {\n      \"dataType\": \"<string>\",\n      \"documentId\": \"<string>\",\n      \"elementId\": \"<string>\",\n      \"encodedConfiguration\": \"<string>\",\n      \"isApplication\": \"<boolean>\",\n      \"isAssembly\": \"<boolean>\",\n      \"isBlob\": \"<boolean>\",\n      \"isWholePartStudio\": \"<boolean>\",\n      \"mimeType\": \"<string>\",\n      \"partId\": \"<string>\",\n      \"partName\": \"<string>\",\n      \"partNumber\": \"<string>\",\n      \"revision\": \"<string>\",\n      \"revisionId\": \"<string>\",\n      \"versionId\": \"<string>\"\n    },\n    {\n      \"dataType\": \"<string>\",\n      \"documentId\": \"<string>\",\n      \"elementId\": \"<string>\",\n      \"encodedConfiguration\": \"<string>\",\n      \"isApplication\": \"<boolean>\",\n      \"isAssembly\": \"<boolean>\",\n      \"isBlob\": \"<boolean>\",\n      \"isWholePartStudio\": \"<boolean>\",\n      \"mimeType\": \"<string>\",\n      \"partId\": \"<string>\",\n      \"partName\": \"<string>\",\n      \"partNumber\": \"<string>\",\n      \"revision\": \"<string>\",\n      \"revisionId\": \"<string>\",\n      \"versionId\": \"<string>\"\n    }\n  ],\n  \"name\": \"<string>\",\n  \"notes\": \"<string>\",\n  \"oldClientNotes\": \"<string>\",\n  \"ownerId\": \"<string>\",\n  \"ownerType\": \"<integer>\",\n  \"parentId\": \"<string>\",\n  \"projectId\": \"<string>\"\n}",
                   "options": {
                     "raw": {
+                      "headerFamily": "json",
                       "language": "json"
                     }
                   }
-                }
-              },
-              "status": "Internal Server Error",
-              "code": 500,
-              "header": [
-                {
-                  "key": "Content-Type",
-                  "value": "application/json;charset=UTF-8; qs=0.09"
-                }
-              ],
-              "body": "{}",
-              "cookie": [],
-              "_postman_previewlanguage": "json"
-            }
-          ],
-          "event": [],
-          "protocolProfileBehavior": {
-            "disableBodyPruning": true
-          }
-        },
-        {
-          "id": "91952783-35be-4cf0-b8ff-939f76b11e69",
-          "name": "Delete a publication.",
-          "request": {
-            "name": "Delete a publication.",
-            "description": {},
-            "url": {
-              "path": [
-                "publications",
-                ":pid"
-              ],
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "query": [
-                {
-                  "disabled": false,
-                  "key": "forever",
-                  "value": "false",
-                  "description": "If true, publication is deleted forever."
-                }
-              ],
-              "variable": [
-                {
-                  "disabled": false,
-                  "type": "any",
-                  "value": "<string>",
-                  "key": "pid",
-                  "description": "(Required) Publication ID."
-                }
-              ]
-            },
-            "header": [
-              {
-                "key": "Accept",
-                "value": "application/json;charset=UTF-8; qs=0.09"
-              }
-            ],
-            "method": "DELETE",
-            "auth": {
-              "type": "oauth2",
-              "oauth2": [
-                {
-                  "key": "scope",
-                  "value": "OAuth2Internal OAuth2ReadPII OAuth2Read OAuth2Write OAuth2Delete OAuth2Purchase OAuth2Share document.create document.edit document.delete document.read enterprise.create enterprise.read enterprise.edit enterprise.delete enterprise.member.create enterprise.member.read enterprise.member.edit enterprise.member.delete webhook.create webhook.edit webhook.read webhook.delete PLMIntegration"
                 },
-                {
-                  "key": "redirect_uri",
-                  "value": "/oauth/token"
-                },
-                {
-                  "key": "accessTokenUrl",
-                  "value": "/oauth/token"
-                },
-                {
-                  "key": "authUrl",
-                  "value": "/oauth/authorize"
-                },
-                {
-                  "key": "grant_type",
-                  "value": "authorization_code"
-                }
-              ]
-            }
-          },
-          "response": [
-            {
-              "id": "75f02897-6c50-4851-8488-2a8af9aa02e6",
-              "name": "default response",
-              "originalRequest": {
                 "url": {
+                  "raw": "{{baseUrl}}/publications/:pid",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
                   "path": [
                     "publications",
                     ":pid"
                   ],
+                  "variable": [
+                    {
+                      "id": "b4845cd0-282e-49cf-9e5a-a5632879b9e8",
+                      "key": "pid",
+                      "value": "<string>",
+                      "description": "(Required) Publication ID."
+                    }
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "id": "78f0ae3a-d84d-4492-bfe1-b895d3393021",
+                  "name": "default response",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json;charset=UTF-8; qs=0.09"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json;charset=UTF-8; qs=0.09"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: oauth2",
+                        "key": "Authorization",
+                        "value": "<token>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"description\": \"<string>\",\n  \"items\": [\n    {\n      \"dataType\": \"<string>\",\n      \"documentId\": \"<string>\",\n      \"elementId\": \"<string>\",\n      \"encodedConfiguration\": \"<string>\",\n      \"isApplication\": \"<boolean>\",\n      \"isAssembly\": \"<boolean>\",\n      \"isBlob\": \"<boolean>\",\n      \"isWholePartStudio\": \"<boolean>\",\n      \"mimeType\": \"<string>\",\n      \"partId\": \"<string>\",\n      \"partName\": \"<string>\",\n      \"partNumber\": \"<string>\",\n      \"revision\": \"<string>\",\n      \"revisionId\": \"<string>\",\n      \"versionId\": \"<string>\"\n    },\n    {\n      \"dataType\": \"<string>\",\n      \"documentId\": \"<string>\",\n      \"elementId\": \"<string>\",\n      \"encodedConfiguration\": \"<string>\",\n      \"isApplication\": \"<boolean>\",\n      \"isAssembly\": \"<boolean>\",\n      \"isBlob\": \"<boolean>\",\n      \"isWholePartStudio\": \"<boolean>\",\n      \"mimeType\": \"<string>\",\n      \"partId\": \"<string>\",\n      \"partName\": \"<string>\",\n      \"partNumber\": \"<string>\",\n      \"revision\": \"<string>\",\n      \"revisionId\": \"<string>\",\n      \"versionId\": \"<string>\"\n    }\n  ],\n  \"name\": \"<string>\",\n  \"notes\": \"<string>\",\n  \"oldClientNotes\": \"<string>\",\n  \"ownerId\": \"<string>\",\n  \"ownerType\": \"<integer>\",\n  \"parentId\": \"<string>\",\n  \"projectId\": \"<string>\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/publications/:pid",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "publications",
+                        ":pid"
+                      ],
+                      "variable": [
+                        {
+                          "key": "pid"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "Internal Server Error",
+                  "code": 500,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json;charset=UTF-8; qs=0.09"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-10-22T02:12:13.000Z",
+                  "updatedAt": "2026-10-22T02:12:13.000Z",
+                  "uid": "35240-78f0ae3a-d84d-4492-bfe1-b895d3393021"
+                }
+              ],
+              "createdAt": "2026-10-22T02:12:13.000Z",
+              "updatedAt": "2026-10-22T02:12:13.000Z",
+              "uid": "35240-81062e18-6ee3-4944-b902-e2e59699cfae"
+            },
+            {
+              "name": "Delete a publication",
+              "id": "a74b5cbe-830c-4bdb-9104-7224159ee71d",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "auth": {
+                  "type": "oauth2",
+                  "oauth2": [
+                    {
+                      "key": "scope",
+                      "value": "OAuth2Internal OAuth2ReadPII OAuth2Read OAuth2Write OAuth2Delete OAuth2Purchase OAuth2Share document.create document.edit document.delete document.read enterprise.create enterprise.read enterprise.edit enterprise.delete enterprise.member.create enterprise.member.read enterprise.member.edit enterprise.member.delete webhook.create webhook.edit webhook.read webhook.delete PLMIntegration",
+                      "type": "string"
+                    },
+                    {
+                      "key": "redirect_uri",
+                      "value": "/oauth/token",
+                      "type": "string"
+                    },
+                    {
+                      "key": "accessTokenUrl",
+                      "value": "/oauth/token",
+                      "type": "string"
+                    },
+                    {
+                      "key": "authUrl",
+                      "value": "/oauth/authorize",
+                      "type": "string"
+                    },
+                    {
+                      "key": "grant_type",
+                      "value": "authorization_code",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json;charset=UTF-8; qs=0.09"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/publications/:pid?forever=false",
                   "host": [
                     "{{baseUrl}}"
                   ],
+                  "path": [
+                    "publications",
+                    ":pid"
+                  ],
                   "query": [
                     {
+                      "description": "If true, publication is deleted forever.",
                       "key": "forever",
                       "value": "false"
                     }
                   ],
                   "variable": [
                     {
-                      "disabled": false,
-                      "type": "any",
-                      "value": "<string>",
+                      "id": "4d0f3bbe-bf09-477d-badf-524f6302ace6",
                       "key": "pid",
+                      "value": "<string>",
                       "description": "(Required) Publication ID."
                     }
                   ]
-                },
-                "header": [
-                  {
-                    "description": {
-                      "content": "Added as a part of security scheme: oauth2",
-                      "type": "text/plain"
-                    },
-                    "key": "Authorization",
-                    "value": "<token>"
-                  },
-                  {
-                    "key": "Accept",
-                    "value": "application/json;charset=UTF-8; qs=0.09"
-                  }
-                ],
-                "method": "DELETE",
-                "body": {}
+                }
               },
-              "status": "Internal Server Error",
-              "code": 500,
-              "header": [
+              "response": [
                 {
-                  "key": "Content-Type",
-                  "value": "application/json;charset=UTF-8; qs=0.09"
+                  "id": "806130e3-cfba-4e7d-b301-d5fe565bd973",
+                  "name": "default response",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json;charset=UTF-8; qs=0.09"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: oauth2",
+                        "key": "Authorization",
+                        "value": "<token>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/publications/:pid?forever=false",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "publications",
+                        ":pid"
+                      ],
+                      "query": [
+                        {
+                          "description": "If true, publication is deleted forever.",
+                          "key": "forever",
+                          "value": "false"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "key": "pid"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "Internal Server Error",
+                  "code": 500,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json;charset=UTF-8; qs=0.09"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-10-22T02:12:13.000Z",
+                  "updatedAt": "2026-10-22T02:12:13.000Z",
+                  "uid": "35240-806130e3-cfba-4e7d-b301-d5fe565bd973"
                 }
               ],
-              "body": "{}",
-              "cookie": [],
-              "_postman_previewlanguage": "json"
+              "createdAt": "2026-10-22T02:12:13.000Z",
+              "updatedAt": "2026-10-22T02:12:13.000Z",
+              "uid": "35240-a74b5cbe-830c-4bdb-9104-7224159ee71d"
             }
           ],
-          "event": [],
-          "protocolProfileBehavior": {
-            "disableBodyPruning": true
-          }
+          "id": "341d2588-c1c5-42a5-a97f-c4128253e119",
+          "createdAt": "2026-10-22T02:12:13.000Z",
+          "updatedAt": "2026-10-22T02:12:13.000Z",
+          "uid": "35240-341d2588-c1c5-42a5-a97f-c4128253e119"
         },
         {
-          "id": "69a3da60-ed44-4f3b-bd04-7d6f5a0a0208",
-          "name": "Add an item in a publication.",
+          "name": "Create a new publication",
+          "id": "61bd0eaa-bf0d-4e0f-bf4c-0af8158c95cf",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
           "request": {
-            "name": "Add an item in a publication.",
-            "description": {},
-            "url": {
-              "path": [
-                "publications",
-                ":pid",
-                "item"
-              ],
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "query": [],
-              "variable": [
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
                 {
-                  "disabled": false,
-                  "type": "any",
-                  "value": "<string>",
-                  "key": "pid",
-                  "description": "(Required) Publication ID."
+                  "key": "scope",
+                  "value": "OAuth2Internal OAuth2ReadPII OAuth2Read OAuth2Write OAuth2Delete OAuth2Purchase OAuth2Share document.create document.edit document.delete document.read enterprise.create enterprise.read enterprise.edit enterprise.delete enterprise.member.create enterprise.member.read enterprise.member.edit enterprise.member.delete webhook.create webhook.edit webhook.read webhook.delete PLMIntegration",
+                  "type": "string"
+                },
+                {
+                  "key": "redirect_uri",
+                  "value": "/oauth/token",
+                  "type": "string"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "/oauth/token",
+                  "type": "string"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "/oauth/authorize",
+                  "type": "string"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code",
+                  "type": "string"
                 }
               ]
             },
+            "method": "POST",
             "header": [
               {
                 "key": "Content-Type",
@@ -431,514 +916,93 @@
                 "value": "application/json;charset=UTF-8; qs=0.09"
               }
             ],
-            "method": "POST",
-            "auth": {
-              "type": "oauth2",
-              "oauth2": [
-                {
-                  "key": "scope",
-                  "value": "OAuth2Internal OAuth2ReadPII OAuth2Read OAuth2Write OAuth2Delete OAuth2Purchase OAuth2Share document.create document.edit document.delete document.read enterprise.create enterprise.read enterprise.edit enterprise.delete enterprise.member.create enterprise.member.read enterprise.member.edit enterprise.member.delete webhook.create webhook.edit webhook.read webhook.delete PLMIntegration"
-                },
-                {
-                  "key": "redirect_uri",
-                  "value": "/oauth/token"
-                },
-                {
-                  "key": "accessTokenUrl",
-                  "value": "/oauth/token"
-                },
-                {
-                  "key": "authUrl",
-                  "value": "/oauth/authorize"
-                },
-                {
-                  "key": "grant_type",
-                  "value": "authorization_code"
-                }
-              ]
-            },
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"dataType\": \"<string>\",\n  \"documentId\": \"<string>\",\n  \"elementId\": \"<string>\",\n  \"encodedConfiguration\": \"<string>\",\n  \"isApplication\": \"<boolean>\",\n  \"isAssembly\": \"<boolean>\",\n  \"isBlob\": \"<boolean>\",\n  \"isWholePartStudio\": \"<boolean>\",\n  \"mimeType\": \"<string>\",\n  \"partId\": \"<string>\",\n  \"partName\": \"<string>\",\n  \"partNumber\": \"<string>\",\n  \"revision\": \"<string>\",\n  \"revisionId\": \"<string>\",\n  \"versionId\": \"<string>\"\n}",
+              "raw": "{\n  \"description\": \"<string>\",\n  \"items\": [\n    {\n      \"dataType\": \"<string>\",\n      \"documentId\": \"<string>\",\n      \"elementId\": \"<string>\",\n      \"encodedConfiguration\": \"<string>\",\n      \"isApplication\": \"<boolean>\",\n      \"isAssembly\": \"<boolean>\",\n      \"isBlob\": \"<boolean>\",\n      \"isWholePartStudio\": \"<boolean>\",\n      \"mimeType\": \"<string>\",\n      \"partId\": \"<string>\",\n      \"partName\": \"<string>\",\n      \"partNumber\": \"<string>\",\n      \"revision\": \"<string>\",\n      \"revisionId\": \"<string>\",\n      \"versionId\": \"<string>\"\n    },\n    {\n      \"dataType\": \"<string>\",\n      \"documentId\": \"<string>\",\n      \"elementId\": \"<string>\",\n      \"encodedConfiguration\": \"<string>\",\n      \"isApplication\": \"<boolean>\",\n      \"isAssembly\": \"<boolean>\",\n      \"isBlob\": \"<boolean>\",\n      \"isWholePartStudio\": \"<boolean>\",\n      \"mimeType\": \"<string>\",\n      \"partId\": \"<string>\",\n      \"partName\": \"<string>\",\n      \"partNumber\": \"<string>\",\n      \"revision\": \"<string>\",\n      \"revisionId\": \"<string>\",\n      \"versionId\": \"<string>\"\n    }\n  ],\n  \"name\": \"<string>\",\n  \"notes\": \"<string>\",\n  \"oldClientNotes\": \"<string>\",\n  \"ownerId\": \"<string>\",\n  \"ownerType\": \"<integer>\",\n  \"parentId\": \"<string>\",\n  \"projectId\": \"<string>\"\n}",
               "options": {
                 "raw": {
+                  "headerFamily": "json",
                   "language": "json"
                 }
               }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/publications",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "publications"
+              ]
             }
           },
           "response": [
             {
-              "id": "909f8a11-a1a2-4879-9b9c-f6a28cbc37a6",
+              "id": "dd4b0ffe-af6d-463f-9b42-a4bfbe945067",
               "name": "default response",
               "originalRequest": {
-                "url": {
-                  "path": [
-                    "publications",
-                    ":pid",
-                    "item"
-                  ],
-                  "host": [
-                    "{{baseUrl}}"
-                  ],
-                  "query": [],
-                  "variable": [
-                    {
-                      "disabled": false,
-                      "type": "any",
-                      "value": "<string>",
-                      "key": "pid",
-                      "description": "(Required) Publication ID."
-                    }
-                  ]
-                },
+                "method": "POST",
                 "header": [
                   {
-                    "description": {
-                      "content": "Added as a part of security scheme: oauth2",
-                      "type": "text/plain"
-                    },
-                    "key": "Authorization",
-                    "value": "<token>"
+                    "key": "Content-Type",
+                    "value": "application/json;charset=UTF-8; qs=0.09"
                   },
                   {
                     "key": "Accept",
                     "value": "application/json;charset=UTF-8; qs=0.09"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: oauth2",
+                    "key": "Authorization",
+                    "value": "<token>"
                   }
                 ],
-                "method": "POST",
                 "body": {
                   "mode": "raw",
-                  "raw": "{\n  \"dataType\": \"<string>\",\n  \"documentId\": \"<string>\",\n  \"elementId\": \"<string>\",\n  \"encodedConfiguration\": \"<string>\",\n  \"isApplication\": \"<boolean>\",\n  \"isAssembly\": \"<boolean>\",\n  \"isBlob\": \"<boolean>\",\n  \"isWholePartStudio\": \"<boolean>\",\n  \"mimeType\": \"<string>\",\n  \"partId\": \"<string>\",\n  \"partName\": \"<string>\",\n  \"partNumber\": \"<string>\",\n  \"revision\": \"<string>\",\n  \"revisionId\": \"<string>\",\n  \"versionId\": \"<string>\"\n}",
+                  "raw": "{\n  \"description\": \"<string>\",\n  \"items\": [\n    {\n      \"dataType\": \"<string>\",\n      \"documentId\": \"<string>\",\n      \"elementId\": \"<string>\",\n      \"encodedConfiguration\": \"<string>\",\n      \"isApplication\": \"<boolean>\",\n      \"isAssembly\": \"<boolean>\",\n      \"isBlob\": \"<boolean>\",\n      \"isWholePartStudio\": \"<boolean>\",\n      \"mimeType\": \"<string>\",\n      \"partId\": \"<string>\",\n      \"partName\": \"<string>\",\n      \"partNumber\": \"<string>\",\n      \"revision\": \"<string>\",\n      \"revisionId\": \"<string>\",\n      \"versionId\": \"<string>\"\n    },\n    {\n      \"dataType\": \"<string>\",\n      \"documentId\": \"<string>\",\n      \"elementId\": \"<string>\",\n      \"encodedConfiguration\": \"<string>\",\n      \"isApplication\": \"<boolean>\",\n      \"isAssembly\": \"<boolean>\",\n      \"isBlob\": \"<boolean>\",\n      \"isWholePartStudio\": \"<boolean>\",\n      \"mimeType\": \"<string>\",\n      \"partId\": \"<string>\",\n      \"partName\": \"<string>\",\n      \"partNumber\": \"<string>\",\n      \"revision\": \"<string>\",\n      \"revisionId\": \"<string>\",\n      \"versionId\": \"<string>\"\n    }\n  ],\n  \"name\": \"<string>\",\n  \"notes\": \"<string>\",\n  \"oldClientNotes\": \"<string>\",\n  \"ownerId\": \"<string>\",\n  \"ownerType\": \"<integer>\",\n  \"parentId\": \"<string>\",\n  \"projectId\": \"<string>\"\n}",
                   "options": {
                     "raw": {
+                      "headerFamily": "json",
                       "language": "json"
                     }
                   }
-                }
-              },
-              "status": "Internal Server Error",
-              "code": 500,
-              "header": [
-                {
-                  "key": "Content-Type",
-                  "value": "application/json;charset=UTF-8; qs=0.09"
-                }
-              ],
-              "body": "{\n  \"jsonType\": \"string\",\n  \"canMove\": true,\n  \"connectionName\": \"string\",\n  \"connectionNames\": [\n    \"string\",\n    \"string\"\n  ],\n  \"createdAt\": \"1951-12-03T10:43:29.522Z\",\n  \"createdBy\": {\n    \"jsonType\": \"string\",\n    \"href\": \"http://OqjtIK.blfqvod\",\n    \"id\": \"string\",\n    \"name\": \"string\",\n    \"viewRef\": \"http://HWVwOfKOngwrUGmzamkToxpsuAUc.puuiN,wsPRZ6W5N1+\",\n    \"image\": \"string\",\n    \"isOnshapeSupport\": false,\n    \"state\": 1220\n  },\n  \"description\": \"string\",\n  \"href\": \"http://cUxsUnzUedrCKBRcpWTFW.wrhsCCBd9nZ3SiOX79g0uC0MNXPCUxh\",\n  \"id\": \"string\",\n  \"isContainer\": false,\n  \"isEnterpriseOwned\": true,\n  \"isExternalConnectionResource\": false,\n  \"isMutable\": true,\n  \"modifiedAt\": \"1984-05-09T10:14:43.127Z\",\n  \"modifiedBy\": {\n    \"jsonType\": \"string\",\n    \"href\": \"https://ovWphNNdOHCI.wiylFfspvTyX.xSu72Zt..lYm2rL7jVV1qQK.RKkcAyUUvsFH7cPq8QUSbY9yYQGfk1MJQIJ7ODOcZ\",\n    \"id\": \"string\",\n    \"name\": \"string\",\n    \"viewRef\": \"http://ozneSFSoIOoXyRDLPJWEWfGeRMnCvVQ.xaQMF-T1KxDWqHbw+M+yzGbGryVOhCTep91+Sf6nS,4jNa1WbGbaDQSV-,2Q7uR1Vl2u\",\n    \"image\": \"string\",\n    \"isOnshapeSupport\": true,\n    \"state\": 5409\n  },\n  \"name\": \"string\",\n  \"owner\": {\n    \"href\": \"http://zirGdfDW.btfNtDYwHlIa\",\n    \"id\": \"string\",\n    \"image\": \"string\",\n    \"isEnterpriseOwnedResource\": true,\n    \"name\": \"string\",\n    \"type\": 7519,\n    \"viewRef\": \"https://TdJIuPGsmEGaQGMDwuLYMmqSoENhSEC.giiQ1CTElXRGT6YgaMVJC,V5-q\"\n  },\n  \"parentId\": \"string\",\n  \"projectId\": \"string\",\n  \"resourceType\": \"string\",\n  \"treeHref\": \"string\",\n  \"unparentHref\": \"string\",\n  \"viewRef\": \"http://DxJbuxDmBGepT.nluiTVNXVI2LrymlyIyHtHeItZzvZtkJdc-TztUdOg7Q52GpX-hWX9pJtxlbob\",\n  \"defaultWorkspaceId\": \"string\",\n  \"items\": [\n    {\n      \"jsonType\": \"string\",\n      \"applicationTarget\": {\n        \"baseHref\": \"http://wWfHdXXSJwlIynfmjTQGmdPcyQ.perzpInNybgtGGYjO8HZj6stvf-osJG7r8OoFy3SQg79m.iVEhFO\",\n        \"clientId\": \"string\",\n        \"supportsCollaboration\": true,\n        \"tabIconHref\": \"http://hbJFygTgxiFM.wfFKQa-\"\n      },\n      \"dataType\": \"string\",\n      \"documentId\": \"string\",\n      \"elementId\": \"string\",\n      \"elementType\": \"BLOB\",\n      \"encodedConfiguration\": \"string\",\n      \"id\": \"string\",\n      \"partId\": \"string\",\n      \"partName\": \"string\",\n      \"partNumber\": \"string\",\n      \"revision\": \"string\",\n      \"revisionId\": \"string\",\n      \"state\": 3809,\n      \"versionId\": \"string\",\n      \"versionName\": \"string\"\n    },\n    {\n      \"jsonType\": \"string\",\n      \"applicationTarget\": {\n        \"baseHref\": \"https://COjIWgX.wlgVZ8HNOKAA9XPThM8,MTSFPe6cM\",\n        \"clientId\": \"string\",\n        \"supportsCollaboration\": true,\n        \"tabIconHref\": \"https://VmGxLCjC.zeW7Kz9QXvCoS,bCX\"\n      },\n      \"dataType\": \"string\",\n      \"documentId\": \"string\",\n      \"elementId\": \"string\",\n      \"elementType\": \"FEATURESTUDIO\",\n      \"encodedConfiguration\": \"string\",\n      \"id\": \"string\",\n      \"partId\": \"string\",\n      \"partName\": \"string\",\n      \"partNumber\": \"string\",\n      \"revision\": \"string\",\n      \"revisionId\": \"string\",\n      \"state\": 467,\n      \"versionId\": \"string\",\n      \"versionName\": \"string\"\n    }\n  ],\n  \"notes\": \"string\",\n  \"sequence\": \"string\"\n}",
-              "cookie": [],
-              "_postman_previewlanguage": "json"
-            }
-          ],
-          "event": [],
-          "protocolProfileBehavior": {
-            "disableBodyPruning": true
-          }
-        },
-        {
-          "id": "a613b944-0ab3-40a5-9698-8fe461c246fb",
-          "name": "Remove an item from a publication.",
-          "request": {
-            "name": "Remove an item from a publication.",
-            "description": {},
-            "url": {
-              "path": [
-                "publications",
-                ":pid",
-                "item",
-                ":iid"
-              ],
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "query": [],
-              "variable": [
-                {
-                  "disabled": false,
-                  "type": "any",
-                  "value": "<string>",
-                  "key": "pid",
-                  "description": "(Required) Publication ID."
                 },
-                {
-                  "disabled": false,
-                  "type": "any",
-                  "value": "<string>",
-                  "key": "iid",
-                  "description": "(Required) Publication item ID."
-                }
-              ]
-            },
-            "header": [
-              {
-                "key": "Accept",
-                "value": "application/json;charset=UTF-8; qs=0.09"
-              }
-            ],
-            "method": "DELETE",
-            "auth": {
-              "type": "oauth2",
-              "oauth2": [
-                {
-                  "key": "scope",
-                  "value": "OAuth2Internal OAuth2ReadPII OAuth2Read OAuth2Write OAuth2Delete OAuth2Purchase OAuth2Share document.create document.edit document.delete document.read enterprise.create enterprise.read enterprise.edit enterprise.delete enterprise.member.create enterprise.member.read enterprise.member.edit enterprise.member.delete webhook.create webhook.edit webhook.read webhook.delete PLMIntegration"
-                },
-                {
-                  "key": "redirect_uri",
-                  "value": "/oauth/token"
-                },
-                {
-                  "key": "accessTokenUrl",
-                  "value": "/oauth/token"
-                },
-                {
-                  "key": "authUrl",
-                  "value": "/oauth/authorize"
-                },
-                {
-                  "key": "grant_type",
-                  "value": "authorization_code"
-                }
-              ]
-            }
-          },
-          "response": [
-            {
-              "id": "ffe4c528-1fa9-4404-be77-5fbb2dd6550c",
-              "name": "default response",
-              "originalRequest": {
                 "url": {
-                  "path": [
-                    "publications",
-                    ":pid",
-                    "item",
-                    ":iid"
-                  ],
+                  "raw": "{{baseUrl}}/publications",
                   "host": [
                     "{{baseUrl}}"
                   ],
-                  "query": [],
-                  "variable": [
-                    {
-                      "disabled": false,
-                      "type": "any",
-                      "value": "<string>",
-                      "key": "pid",
-                      "description": "(Required) Publication ID."
-                    },
-                    {
-                      "disabled": false,
-                      "type": "any",
-                      "value": "<string>",
-                      "key": "iid",
-                      "description": "(Required) Publication item ID."
-                    }
-                  ]
-                },
-                "header": [
-                  {
-                    "description": {
-                      "content": "Added as a part of security scheme: oauth2",
-                      "type": "text/plain"
-                    },
-                    "key": "Authorization",
-                    "value": "<token>"
-                  },
-                  {
-                    "key": "Accept",
-                    "value": "application/json;charset=UTF-8; qs=0.09"
-                  }
-                ],
-                "method": "DELETE",
-                "body": {}
-              },
-              "status": "Internal Server Error",
-              "code": 500,
-              "header": [
-                {
-                  "key": "Content-Type",
-                  "value": "application/json;charset=UTF-8; qs=0.09"
-                }
-              ],
-              "body": "{}",
-              "cookie": [],
-              "_postman_previewlanguage": "json"
-            }
-          ],
-          "event": [],
-          "protocolProfileBehavior": {
-            "disableBodyPruning": true
-          }
-        },
-        {
-          "id": "d9a92507-ecfb-4168-910e-ea6a82c0d520",
-          "name": "Get all items in a publication.",
-          "request": {
-            "name": "Get all items in a publication.",
-            "description": {},
-            "url": {
-              "path": [
-                "publications",
-                ":pid",
-                "items"
-              ],
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "query": [],
-              "variable": [
-                {
-                  "disabled": false,
-                  "type": "any",
-                  "value": "<string>",
-                  "key": "pid",
-                  "description": "(Required) Publication ID."
-                }
-              ]
-            },
-            "header": [
-              {
-                "key": "Accept",
-                "value": "application/json;charset=UTF-8; qs=0.09"
-              }
-            ],
-            "method": "GET",
-            "auth": {
-              "type": "oauth2",
-              "oauth2": [
-                {
-                  "key": "scope",
-                  "value": "OAuth2Internal OAuth2ReadPII OAuth2Read OAuth2Write OAuth2Delete OAuth2Purchase OAuth2Share document.create document.edit document.delete document.read enterprise.create enterprise.read enterprise.edit enterprise.delete enterprise.member.create enterprise.member.read enterprise.member.edit enterprise.member.delete webhook.create webhook.edit webhook.read webhook.delete PLMIntegration"
-                },
-                {
-                  "key": "redirect_uri",
-                  "value": "/oauth/token"
-                },
-                {
-                  "key": "accessTokenUrl",
-                  "value": "/oauth/token"
-                },
-                {
-                  "key": "authUrl",
-                  "value": "/oauth/authorize"
-                },
-                {
-                  "key": "grant_type",
-                  "value": "authorization_code"
-                }
-              ]
-            }
-          },
-          "response": [
-            {
-              "id": "d46ecbc6-fee7-4fba-a3a5-3baad319102d",
-              "name": "default response",
-              "originalRequest": {
-                "url": {
                   "path": [
-                    "publications",
-                    ":pid",
-                    "items"
-                  ],
-                  "host": [
-                    "{{baseUrl}}"
-                  ],
-                  "query": [],
-                  "variable": [
-                    {
-                      "disabled": false,
-                      "type": "any",
-                      "value": "<string>",
-                      "key": "pid",
-                      "description": "(Required) Publication ID."
-                    }
+                    "publications"
                   ]
-                },
-                "header": [
-                  {
-                    "description": {
-                      "content": "Added as a part of security scheme: oauth2",
-                      "type": "text/plain"
-                    },
-                    "key": "Authorization",
-                    "value": "<token>"
-                  },
-                  {
-                    "key": "Accept",
-                    "value": "application/json;charset=UTF-8; qs=0.09"
-                  }
-                ],
-                "method": "GET",
-                "body": {}
+                }
               },
               "status": "Internal Server Error",
               "code": 500,
+              "_postman_previewlanguage": "json",
               "header": [
                 {
                   "key": "Content-Type",
                   "value": "application/json;charset=UTF-8; qs=0.09"
                 }
               ],
-              "body": "{\n  \"jsonType\": \"string\",\n  \"canMove\": true,\n  \"connectionName\": \"string\",\n  \"connectionNames\": [\n    \"string\",\n    \"string\"\n  ],\n  \"createdAt\": \"1951-12-03T10:43:29.522Z\",\n  \"createdBy\": {\n    \"jsonType\": \"string\",\n    \"href\": \"http://OqjtIK.blfqvod\",\n    \"id\": \"string\",\n    \"name\": \"string\",\n    \"viewRef\": \"http://HWVwOfKOngwrUGmzamkToxpsuAUc.puuiN,wsPRZ6W5N1+\",\n    \"image\": \"string\",\n    \"isOnshapeSupport\": false,\n    \"state\": 1220\n  },\n  \"description\": \"string\",\n  \"href\": \"http://cUxsUnzUedrCKBRcpWTFW.wrhsCCBd9nZ3SiOX79g0uC0MNXPCUxh\",\n  \"id\": \"string\",\n  \"isContainer\": false,\n  \"isEnterpriseOwned\": true,\n  \"isExternalConnectionResource\": false,\n  \"isMutable\": true,\n  \"modifiedAt\": \"1984-05-09T10:14:43.127Z\",\n  \"modifiedBy\": {\n    \"jsonType\": \"string\",\n    \"href\": \"https://ovWphNNdOHCI.wiylFfspvTyX.xSu72Zt..lYm2rL7jVV1qQK.RKkcAyUUvsFH7cPq8QUSbY9yYQGfk1MJQIJ7ODOcZ\",\n    \"id\": \"string\",\n    \"name\": \"string\",\n    \"viewRef\": \"http://ozneSFSoIOoXyRDLPJWEWfGeRMnCvVQ.xaQMF-T1KxDWqHbw+M+yzGbGryVOhCTep91+Sf6nS,4jNa1WbGbaDQSV-,2Q7uR1Vl2u\",\n    \"image\": \"string\",\n    \"isOnshapeSupport\": true,\n    \"state\": 5409\n  },\n  \"name\": \"string\",\n  \"owner\": {\n    \"href\": \"http://zirGdfDW.btfNtDYwHlIa\",\n    \"id\": \"string\",\n    \"image\": \"string\",\n    \"isEnterpriseOwnedResource\": true,\n    \"name\": \"string\",\n    \"type\": 7519,\n    \"viewRef\": \"https://TdJIuPGsmEGaQGMDwuLYMmqSoENhSEC.giiQ1CTElXRGT6YgaMVJC,V5-q\"\n  },\n  \"parentId\": \"string\",\n  \"projectId\": \"string\",\n  \"resourceType\": \"string\",\n  \"treeHref\": \"string\",\n  \"unparentHref\": \"string\",\n  \"viewRef\": \"http://DxJbuxDmBGepT.nluiTVNXVI2LrymlyIyHtHeItZzvZtkJdc-TztUdOg7Q52GpX-hWX9pJtxlbob\",\n  \"defaultWorkspaceId\": \"string\",\n  \"items\": [\n    {\n      \"jsonType\": \"string\",\n      \"applicationTarget\": {\n        \"baseHref\": \"http://wWfHdXXSJwlIynfmjTQGmdPcyQ.perzpInNybgtGGYjO8HZj6stvf-osJG7r8OoFy3SQg79m.iVEhFO\",\n        \"clientId\": \"string\",\n        \"supportsCollaboration\": true,\n        \"tabIconHref\": \"http://hbJFygTgxiFM.wfFKQa-\"\n      },\n      \"dataType\": \"string\",\n      \"documentId\": \"string\",\n      \"elementId\": \"string\",\n      \"elementType\": \"BLOB\",\n      \"encodedConfiguration\": \"string\",\n      \"id\": \"string\",\n      \"partId\": \"string\",\n      \"partName\": \"string\",\n      \"partNumber\": \"string\",\n      \"revision\": \"string\",\n      \"revisionId\": \"string\",\n      \"state\": 3809,\n      \"versionId\": \"string\",\n      \"versionName\": \"string\"\n    },\n    {\n      \"jsonType\": \"string\",\n      \"applicationTarget\": {\n        \"baseHref\": \"https://COjIWgX.wlgVZ8HNOKAA9XPThM8,MTSFPe6cM\",\n        \"clientId\": \"string\",\n        \"supportsCollaboration\": true,\n        \"tabIconHref\": \"https://VmGxLCjC.zeW7Kz9QXvCoS,bCX\"\n      },\n      \"dataType\": \"string\",\n      \"documentId\": \"string\",\n      \"elementId\": \"string\",\n      \"elementType\": \"FEATURESTUDIO\",\n      \"encodedConfiguration\": \"string\",\n      \"id\": \"string\",\n      \"partId\": \"string\",\n      \"partName\": \"string\",\n      \"partNumber\": \"string\",\n      \"revision\": \"string\",\n      \"revisionId\": \"string\",\n      \"state\": 467,\n      \"versionId\": \"string\",\n      \"versionName\": \"string\"\n    }\n  ],\n  \"notes\": \"string\",\n  \"sequence\": \"string\"\n}",
               "cookie": [],
-              "_postman_previewlanguage": "json"
+              "responseTime": null,
+              "body": "{\n  \"jsonType\": \"<string>\",\n  \"canMove\": \"<boolean>\",\n  \"connectionName\": \"<string>\",\n  \"connectionNames\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"createdAt\": \"<dateTime>\",\n  \"createdBy\": {\n    \"jsonType\": \"et\",\n    \"href\": \"<uri>\",\n    \"id\": \"<string>\",\n    \"name\": \"<string>\",\n    \"viewRef\": \"<uri>\",\n    \"image\": \"<string>\",\n    \"isOnshapeSupport\": \"<boolean>\",\n    \"state\": \"<integer>\"\n  },\n  \"description\": \"<string>\",\n  \"href\": \"<uri>\",\n  \"id\": \"<string>\",\n  \"isContainer\": \"<boolean>\",\n  \"isEnterpriseOwned\": \"<boolean>\",\n  \"isExternalConnectionResource\": \"<boolean>\",\n  \"isMutable\": \"<boolean>\",\n  \"modifiedAt\": \"<dateTime>\",\n  \"modifiedBy\": {\n    \"jsonType\": \"eiusmod\",\n    \"href\": \"<uri>\",\n    \"id\": \"<string>\",\n    \"name\": \"<string>\",\n    \"viewRef\": \"<uri>\",\n    \"image\": \"<string>\",\n    \"isOnshapeSupport\": \"<boolean>\",\n    \"state\": \"<integer>\"\n  },\n  \"name\": \"<string>\",\n  \"owner\": {\n    \"href\": \"<uri>\",\n    \"id\": \"<string>\",\n    \"image\": \"<string>\",\n    \"isEnterpriseOwnedResource\": \"<boolean>\",\n    \"name\": \"<string>\",\n    \"type\": \"<integer>\",\n    \"viewRef\": \"<uri>\"\n  },\n  \"parentId\": \"<string>\",\n  \"projectId\": \"<string>\",\n  \"resourceType\": \"<string>\",\n  \"treeHref\": \"<string>\",\n  \"unparentHref\": \"<string>\",\n  \"viewRef\": \"<uri>\",\n  \"defaultWorkspaceId\": \"<string>\",\n  \"items\": [\n    {\n      \"jsonType\": \"<string>\",\n      \"applicationTarget\": {\n        \"baseHref\": \"<uri>\",\n        \"clientId\": \"<string>\",\n        \"supportsCollaboration\": \"<boolean>\",\n        \"tabIconHref\": \"<uri>\"\n      },\n      \"dataType\": \"<string>\",\n      \"documentId\": \"<string>\",\n      \"elementId\": \"<string>\",\n      \"elementType\": \"ASSEMBLY\",\n      \"encodedConfiguration\": \"<string>\",\n      \"id\": \"<string>\",\n      \"partId\": \"<string>\",\n      \"partName\": \"<string>\",\n      \"partNumber\": \"<string>\",\n      \"revision\": \"<string>\",\n      \"revisionId\": \"<string>\",\n      \"state\": \"<integer>\",\n      \"versionId\": \"<string>\",\n      \"versionName\": \"<string>\"\n    },\n    {\n      \"jsonType\": \"<string>\",\n      \"applicationTarget\": {\n        \"baseHref\": \"<uri>\",\n        \"clientId\": \"<string>\",\n        \"supportsCollaboration\": \"<boolean>\",\n        \"tabIconHref\": \"<uri>\"\n      },\n      \"dataType\": \"<string>\",\n      \"documentId\": \"<string>\",\n      \"elementId\": \"<string>\",\n      \"elementType\": \"TABLE\",\n      \"encodedConfiguration\": \"<string>\",\n      \"id\": \"<string>\",\n      \"partId\": \"<string>\",\n      \"partName\": \"<string>\",\n      \"partNumber\": \"<string>\",\n      \"revision\": \"<string>\",\n      \"revisionId\": \"<string>\",\n      \"state\": \"<integer>\",\n      \"versionId\": \"<string>\",\n      \"versionName\": \"<string>\"\n    }\n  ],\n  \"notes\": \"<string>\",\n  \"sequence\": \"<string>\"\n}",
+              "createdAt": "2026-10-22T02:12:13.000Z",
+              "updatedAt": "2026-10-22T02:12:13.000Z",
+              "uid": "35240-dd4b0ffe-af6d-463f-9b42-a4bfbe945067"
             }
           ],
-          "event": [],
-          "protocolProfileBehavior": {
-            "disableBodyPruning": true
-          }
-        },
-        {
-          "id": "0d8e9a2d-f2af-4db5-b320-ba8e7e97a3c2",
-          "name": "Add publication items in bulk.",
-          "request": {
-            "name": "Add publication items in bulk.",
-            "description": {},
-            "url": {
-              "path": [
-                "publications",
-                ":pid",
-                "items"
-              ],
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "query": [],
-              "variable": [
-                {
-                  "disabled": false,
-                  "type": "any",
-                  "value": "<string>",
-                  "key": "pid",
-                  "description": "(Required) Publication ID."
-                }
-              ]
-            },
-            "header": [
-              {
-                "key": "Content-Type",
-                "value": "application/json;charset=UTF-8; qs=0.09"
-              },
-              {
-                "key": "Accept",
-                "value": "application/json;charset=UTF-8; qs=0.09"
-              }
-            ],
-            "method": "POST",
-            "auth": {
-              "type": "oauth2",
-              "oauth2": [
-                {
-                  "key": "scope",
-                  "value": "OAuth2Internal OAuth2ReadPII OAuth2Read OAuth2Write OAuth2Delete OAuth2Purchase OAuth2Share document.create document.edit document.delete document.read enterprise.create enterprise.read enterprise.edit enterprise.delete enterprise.member.create enterprise.member.read enterprise.member.edit enterprise.member.delete webhook.create webhook.edit webhook.read webhook.delete PLMIntegration"
-                },
-                {
-                  "key": "redirect_uri",
-                  "value": "/oauth/token"
-                },
-                {
-                  "key": "accessTokenUrl",
-                  "value": "/oauth/token"
-                },
-                {
-                  "key": "authUrl",
-                  "value": "/oauth/authorize"
-                },
-                {
-                  "key": "grant_type",
-                  "value": "authorization_code"
-                }
-              ]
-            },
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"items\": [\n    {\n      \"dataType\": \"<string>\",\n      \"documentId\": \"<string>\",\n      \"elementId\": \"<string>\",\n      \"encodedConfiguration\": \"<string>\",\n      \"isApplication\": \"<boolean>\",\n      \"isAssembly\": \"<boolean>\",\n      \"isBlob\": \"<boolean>\",\n      \"isWholePartStudio\": \"<boolean>\",\n      \"mimeType\": \"<string>\",\n      \"partId\": \"<string>\",\n      \"partName\": \"<string>\",\n      \"partNumber\": \"<string>\",\n      \"revision\": \"<string>\",\n      \"revisionId\": \"<string>\",\n      \"versionId\": \"<string>\"\n    },\n    {\n      \"dataType\": \"<string>\",\n      \"documentId\": \"<string>\",\n      \"elementId\": \"<string>\",\n      \"encodedConfiguration\": \"<string>\",\n      \"isApplication\": \"<boolean>\",\n      \"isAssembly\": \"<boolean>\",\n      \"isBlob\": \"<boolean>\",\n      \"isWholePartStudio\": \"<boolean>\",\n      \"mimeType\": \"<string>\",\n      \"partId\": \"<string>\",\n      \"partName\": \"<string>\",\n      \"partNumber\": \"<string>\",\n      \"revision\": \"<string>\",\n      \"revisionId\": \"<string>\",\n      \"versionId\": \"<string>\"\n    }\n  ]\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
-            }
-          },
-          "response": [
-            {
-              "id": "b69e1d7f-6cab-45bc-9cab-0b95c4a85e9d",
-              "name": "default response",
-              "originalRequest": {
-                "url": {
-                  "path": [
-                    "publications",
-                    ":pid",
-                    "items"
-                  ],
-                  "host": [
-                    "{{baseUrl}}"
-                  ],
-                  "query": [],
-                  "variable": [
-                    {
-                      "disabled": false,
-                      "type": "any",
-                      "value": "<string>",
-                      "key": "pid",
-                      "description": "(Required) Publication ID."
-                    }
-                  ]
-                },
-                "header": [
-                  {
-                    "description": {
-                      "content": "Added as a part of security scheme: oauth2",
-                      "type": "text/plain"
-                    },
-                    "key": "Authorization",
-                    "value": "<token>"
-                  },
-                  {
-                    "key": "Accept",
-                    "value": "application/json;charset=UTF-8; qs=0.09"
-                  }
-                ],
-                "method": "POST",
-                "body": {
-                  "mode": "raw",
-                  "raw": "{\n  \"items\": [\n    {\n      \"dataType\": \"<string>\",\n      \"documentId\": \"<string>\",\n      \"elementId\": \"<string>\",\n      \"encodedConfiguration\": \"<string>\",\n      \"isApplication\": \"<boolean>\",\n      \"isAssembly\": \"<boolean>\",\n      \"isBlob\": \"<boolean>\",\n      \"isWholePartStudio\": \"<boolean>\",\n      \"mimeType\": \"<string>\",\n      \"partId\": \"<string>\",\n      \"partName\": \"<string>\",\n      \"partNumber\": \"<string>\",\n      \"revision\": \"<string>\",\n      \"revisionId\": \"<string>\",\n      \"versionId\": \"<string>\"\n    },\n    {\n      \"dataType\": \"<string>\",\n      \"documentId\": \"<string>\",\n      \"elementId\": \"<string>\",\n      \"encodedConfiguration\": \"<string>\",\n      \"isApplication\": \"<boolean>\",\n      \"isAssembly\": \"<boolean>\",\n      \"isBlob\": \"<boolean>\",\n      \"isWholePartStudio\": \"<boolean>\",\n      \"mimeType\": \"<string>\",\n      \"partId\": \"<string>\",\n      \"partName\": \"<string>\",\n      \"partNumber\": \"<string>\",\n      \"revision\": \"<string>\",\n      \"revisionId\": \"<string>\",\n      \"versionId\": \"<string>\"\n    }\n  ]\n}",
-                  "options": {
-                    "raw": {
-                      "language": "json"
-                    }
-                  }
-                }
-              },
-              "status": "Internal Server Error",
-              "code": 500,
-              "header": [
-                {
-                  "key": "Content-Type",
-                  "value": "application/json;charset=UTF-8; qs=0.09"
-                }
-              ],
-              "body": "{\n  \"jsonType\": \"string\",\n  \"canMove\": true,\n  \"connectionName\": \"string\",\n  \"connectionNames\": [\n    \"string\",\n    \"string\"\n  ],\n  \"createdAt\": \"1951-12-03T10:43:29.522Z\",\n  \"createdBy\": {\n    \"jsonType\": \"string\",\n    \"href\": \"http://OqjtIK.blfqvod\",\n    \"id\": \"string\",\n    \"name\": \"string\",\n    \"viewRef\": \"http://HWVwOfKOngwrUGmzamkToxpsuAUc.puuiN,wsPRZ6W5N1+\",\n    \"image\": \"string\",\n    \"isOnshapeSupport\": false,\n    \"state\": 1220\n  },\n  \"description\": \"string\",\n  \"href\": \"http://cUxsUnzUedrCKBRcpWTFW.wrhsCCBd9nZ3SiOX79g0uC0MNXPCUxh\",\n  \"id\": \"string\",\n  \"isContainer\": false,\n  \"isEnterpriseOwned\": true,\n  \"isExternalConnectionResource\": false,\n  \"isMutable\": true,\n  \"modifiedAt\": \"1984-05-09T10:14:43.127Z\",\n  \"modifiedBy\": {\n    \"jsonType\": \"string\",\n    \"href\": \"https://ovWphNNdOHCI.wiylFfspvTyX.xSu72Zt..lYm2rL7jVV1qQK.RKkcAyUUvsFH7cPq8QUSbY9yYQGfk1MJQIJ7ODOcZ\",\n    \"id\": \"string\",\n    \"name\": \"string\",\n    \"viewRef\": \"http://ozneSFSoIOoXyRDLPJWEWfGeRMnCvVQ.xaQMF-T1KxDWqHbw+M+yzGbGryVOhCTep91+Sf6nS,4jNa1WbGbaDQSV-,2Q7uR1Vl2u\",\n    \"image\": \"string\",\n    \"isOnshapeSupport\": true,\n    \"state\": 5409\n  },\n  \"name\": \"string\",\n  \"owner\": {\n    \"href\": \"http://zirGdfDW.btfNtDYwHlIa\",\n    \"id\": \"string\",\n    \"image\": \"string\",\n    \"isEnterpriseOwnedResource\": true,\n    \"name\": \"string\",\n    \"type\": 7519,\n    \"viewRef\": \"https://TdJIuPGsmEGaQGMDwuLYMmqSoENhSEC.giiQ1CTElXRGT6YgaMVJC,V5-q\"\n  },\n  \"parentId\": \"string\",\n  \"projectId\": \"string\",\n  \"resourceType\": \"string\",\n  \"treeHref\": \"string\",\n  \"unparentHref\": \"string\",\n  \"viewRef\": \"http://DxJbuxDmBGepT.nluiTVNXVI2LrymlyIyHtHeItZzvZtkJdc-TztUdOg7Q52GpX-hWX9pJtxlbob\",\n  \"defaultWorkspaceId\": \"string\",\n  \"items\": [\n    {\n      \"jsonType\": \"string\",\n      \"applicationTarget\": {\n        \"baseHref\": \"http://wWfHdXXSJwlIynfmjTQGmdPcyQ.perzpInNybgtGGYjO8HZj6stvf-osJG7r8OoFy3SQg79m.iVEhFO\",\n        \"clientId\": \"string\",\n        \"supportsCollaboration\": true,\n        \"tabIconHref\": \"http://hbJFygTgxiFM.wfFKQa-\"\n      },\n      \"dataType\": \"string\",\n      \"documentId\": \"string\",\n      \"elementId\": \"string\",\n      \"elementType\": \"BLOB\",\n      \"encodedConfiguration\": \"string\",\n      \"id\": \"string\",\n      \"partId\": \"string\",\n      \"partName\": \"string\",\n      \"partNumber\": \"string\",\n      \"revision\": \"string\",\n      \"revisionId\": \"string\",\n      \"state\": 3809,\n      \"versionId\": \"string\",\n      \"versionName\": \"string\"\n    },\n    {\n      \"jsonType\": \"string\",\n      \"applicationTarget\": {\n        \"baseHref\": \"https://COjIWgX.wlgVZ8HNOKAA9XPThM8,MTSFPe6cM\",\n        \"clientId\": \"string\",\n        \"supportsCollaboration\": true,\n        \"tabIconHref\": \"https://VmGxLCjC.zeW7Kz9QXvCoS,bCX\"\n      },\n      \"dataType\": \"string\",\n      \"documentId\": \"string\",\n      \"elementId\": \"string\",\n      \"elementType\": \"FEATURESTUDIO\",\n      \"encodedConfiguration\": \"string\",\n      \"id\": \"string\",\n      \"partId\": \"string\",\n      \"partName\": \"string\",\n      \"partNumber\": \"string\",\n      \"revision\": \"string\",\n      \"revisionId\": \"string\",\n      \"state\": 467,\n      \"versionId\": \"string\",\n      \"versionName\": \"string\"\n    }\n  ],\n  \"notes\": \"string\",\n  \"sequence\": \"string\"\n}",
-              "cookie": [],
-              "_postman_previewlanguage": "json"
-            }
-          ],
-          "event": [],
-          "protocolProfileBehavior": {
-            "disableBodyPruning": true
-          }
+          "createdAt": "2026-10-22T02:12:13.000Z",
+          "updatedAt": "2026-10-22T02:12:13.000Z",
+          "uid": "35240-61bd0eaa-bf0d-4e0f-bf4c-0af8158c95cf"
         }
       ],
-      "event": []
-    }
-  ],
-  "event": [],
-  "variable": [
-    {
-      "type": "string",
-      "value": "https://cad.onshape.com/api/v16",
-      "key": "baseUrl"
+      "id": "6b540272-9c86-4eee-9379-eabea434d50b",
+      "createdAt": "2026-10-22T02:12:13.000Z",
+      "updatedAt": "2026-10-22T02:12:13.000Z",
+      "uid": "35240-6b540272-9c86-4eee-9379-eabea434d50b"
     }
   ],
   "auth": {
@@ -946,21 +1010,20 @@
     "basic": [
       {
         "key": "username",
-        "value": "{{basicAuthUsername}}"
+        "value": "{{basicAuthUsername}}",
+        "type": "string"
       },
       {
         "key": "password",
-        "value": "{{basicAuthPassword}}"
+        "value": "{{basicAuthPassword}}",
+        "type": "string"
       }
     ]
   },
-  "info": {
-    "_postman_id": "331d92c2-a3a0-4842-b900-dc2a9e0b4cea",
-    "name": "Onshape REST Account Publication API",
-    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-    "description": {
-      "content": "## Welcome to the Onshape REST API Explorer\n\n**See the [API Explorer Guide](https://onshape-public.github.io/docs/api-intro/explorer/) for help navigating this page.**\n\n### Using this page\n1. Sign in to your [Onshape](https://cad.onshape.com) account in another tab.\n2. Click the `Try it out` button below. It toggles to a `Cancel` button when selected.\n\n### Authenticating\nTo authenticate your calls, click the `Authorize` button. See [API Explorer Guide: Authentication](https://onshape-public.github.io/docs/api-intro/explorer/#authentication) for details. Calls made when authenticated via API Keys or OAuth count against your annual [API limits](https://onshape-public.github.io/docs/auth/limits/#annual-api-call-limits).\n* **Tip:** To ensure the current session isn't used when trying other authentication techniques, make sure to [remove the Onshape cookie](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site) as per the instructions for your browser, or use a private or incognito window.\n\n### Additional resources\n\n* [Onshape API Guide](https://onshape-public.github.io/docs/): Our full suite of developer guides, to be used as an accompaniment to this API Explorer.\n* [Onshape Developer Portal](https://cad.onshape.com/appstore/dev-portal): The Onshape portal for managing your API keys, OAuth2 credentials, your Onshape applications, and your Onshape App Store entries.\n* [Authentication Guide](https://onshape-public.github.io/docs/auth/): Our guide to using API keys, request signatures, and OAuth2 in your Onshape applications.\n\nContact Support:\n Email: api-support@onshape.zendesk.com",
-      "type": "text/plain"
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://cad.onshape.com/api/v16"
     }
-  }
+  ]
 }

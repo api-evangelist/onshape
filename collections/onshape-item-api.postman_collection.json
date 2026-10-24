@@ -1,474 +1,647 @@
 {
+  "info": {
+    "_postman_id": "ad7da755-0163-48d9-8c6c-67f929e16846",
+    "name": "Onshape REST Item API",
+    "description": "## Welcome to the Onshape REST API Explorer\n\n**See the API Explorer Guide for help navigating this page.**\n\n### Using this page\n1.\n\nContact Support:\n Email: api-support@onshape.zendesk.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-10-22T02:11:30.000Z",
+    "updatedAt": "2026-10-22T02:11:31.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-ad7da755-0163-48d9-8c6c-67f929e16846"
+  },
   "item": [
     {
-      "id": "eaeef525-b2d5-48f4-8f3f-2846eead5eae",
-      "name": "Item",
-      "description": {
-        "content": "Manage non-geometric [items](https://cad.onshape.com/help/Content/Plans/items.htm). (Professional, Educator, and Enterprise accounts only.)",
-        "type": "text/plain"
-      },
+      "name": "items",
       "item": [
         {
-          "id": "0b6ca50d-a493-48b7-8642-45981e885cf8",
-          "name": "Get all items owned by a company/classroom/enterprise.",
-          "request": {
-            "name": "Get all items owned by a company/classroom/enterprise.",
-            "description": {
-              "content": "Returns a list of all items owned by the company/classroom/enterprise. \n \nEither `documentId` or `companyId` must be provided.",
-              "type": "text/plain"
-            },
-            "url": {
-              "path": [
-                "items"
-              ],
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "query": [
-                {
-                  "disabled": false,
-                  "key": "documentId",
-                  "value": "<string>",
-                  "description": "ID of any document owned by the company/classroom/enterprise."
-                },
-                {
-                  "disabled": false,
-                  "key": "companyId",
-                  "value": "<string>",
-                  "description": "Company/classroom/enterprise ID."
-                },
-                {
-                  "disabled": false,
-                  "key": "q",
-                  "value": "",
-                  "description": "Optional search string."
-                },
-                {
-                  "disabled": false,
-                  "key": "publishStates",
-                  "value": "",
-                  "description": "Refine returned items by publish states: `0: PENDING | 1: ACTIVE | 2: INACTIVE`"
-                },
-                {
-                  "disabled": false,
-                  "key": "classification",
-                  "value": "",
-                  "description": "Refine returned items by classification. Classifications are managed in company/classroom/enterprise [Properties settings](https://cad.onshape.com/help/Content/Plans/items.htm#item-class)."
-                },
-                {
-                  "disabled": false,
-                  "key": "offset",
-                  "value": "0",
-                  "description": "Number of entries to skip in the returned list."
-                },
-                {
-                  "disabled": false,
-                  "key": "limit",
-                  "value": "30",
-                  "description": "The number of list entries to return in a single API call."
-                }
-              ],
-              "variable": []
-            },
-            "header": [
-              {
-                "key": "Accept",
-                "value": "application/json;charset=UTF-8; qs=0.09"
-              }
-            ],
-            "method": "GET",
-            "auth": {
-              "type": "oauth2",
-              "oauth2": [
-                {
-                  "key": "scope",
-                  "value": "OAuth2Internal OAuth2ReadPII OAuth2Read OAuth2Write OAuth2Delete OAuth2Purchase OAuth2Share document.create document.edit document.delete document.read enterprise.create enterprise.read enterprise.edit enterprise.delete enterprise.member.create enterprise.member.read enterprise.member.edit enterprise.member.delete webhook.create webhook.edit webhook.read webhook.delete PLMIntegration"
-                },
-                {
-                  "key": "redirect_uri",
-                  "value": "/oauth/token"
-                },
-                {
-                  "key": "accessTokenUrl",
-                  "value": "/oauth/token"
-                },
-                {
-                  "key": "authUrl",
-                  "value": "/oauth/authorize"
-                },
-                {
-                  "key": "grant_type",
-                  "value": "authorization_code"
-                }
-              ]
-            }
-          },
-          "response": [
+          "name": "{iid}",
+          "item": [
             {
-              "id": "4e006a56-0d02-4c69-be36-e6ea51a0bbee",
-              "name": "default response",
-              "originalRequest": {
-                "url": {
-                  "path": [
-                    "items"
-                  ],
-                  "host": [
-                    "{{baseUrl}}"
-                  ],
-                  "query": [
+              "name": "Get item by ID",
+              "id": "077ccce2-8f5b-463e-81f4-a4471be47aa7",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "auth": {
+                  "type": "oauth2",
+                  "oauth2": [
                     {
-                      "key": "documentId",
-                      "value": "<string>"
+                      "key": "scope",
+                      "value": "OAuth2Internal OAuth2ReadPII OAuth2Read OAuth2Write OAuth2Delete OAuth2Purchase OAuth2Share document.create document.edit document.delete document.read enterprise.create enterprise.read enterprise.edit enterprise.delete enterprise.member.create enterprise.member.read enterprise.member.edit enterprise.member.delete webhook.create webhook.edit webhook.read webhook.delete PLMIntegration",
+                      "type": "string"
                     },
                     {
-                      "key": "companyId",
-                      "value": "<string>"
+                      "key": "redirect_uri",
+                      "value": "/oauth/token",
+                      "type": "string"
                     },
                     {
-                      "key": "q",
-                      "value": ""
+                      "key": "accessTokenUrl",
+                      "value": "/oauth/token",
+                      "type": "string"
                     },
                     {
-                      "key": "publishStates",
-                      "value": ""
+                      "key": "authUrl",
+                      "value": "/oauth/authorize",
+                      "type": "string"
                     },
                     {
-                      "key": "classification",
-                      "value": ""
-                    },
-                    {
-                      "key": "offset",
-                      "value": "0"
-                    },
-                    {
-                      "key": "limit",
-                      "value": "30"
+                      "key": "grant_type",
+                      "value": "authorization_code",
+                      "type": "string"
                     }
-                  ],
-                  "variable": []
+                  ]
                 },
-                "header": [
-                  {
-                    "description": {
-                      "content": "Added as a part of security scheme: oauth2",
-                      "type": "text/plain"
-                    },
-                    "key": "Authorization",
-                    "value": "<token>"
-                  },
-                  {
-                    "key": "Accept",
-                    "value": "application/json;charset=UTF-8; qs=0.09"
-                  }
-                ],
                 "method": "GET",
-                "body": {}
-              },
-              "status": "Internal Server Error",
-              "code": 500,
-              "header": [
-                {
-                  "key": "Content-Type",
-                  "value": "application/json;charset=UTF-8; qs=0.09"
-                }
-              ],
-              "body": "{\n  \"href\": \"https://CurULmbPNouSuOhgcnxkxOHqxhb.hsPSAVk29ZRhf+PsGhYHpfZG795WM\",\n  \"items\": [\n    {\n      \"companyId\": \"string\",\n      \"href\": \"https://HGezLYDSbJuXMFEiU.zsrbxWwVzaFhEYJs8qA\",\n      \"id\": \"string\",\n      \"name\": \"string\",\n      \"properties\": {\n        \"key_0\": \"string\"\n      },\n      \"publishState\": 1817,\n      \"viewRef\": \"https://YFWfwTYNE.brnUrexnNxnfRpBEPT\"\n    },\n    {\n      \"companyId\": \"string\",\n      \"href\": \"https://FvKDITuyOq.ydnDmkcFTEbrjiW+l7Sym41DRihB61WG\",\n      \"id\": \"string\",\n      \"name\": \"string\",\n      \"properties\": {\n        \"key_0\": \"string\"\n      },\n      \"publishState\": 871,\n      \"viewRef\": \"https://HJSPXsvEZAujYEoTeQICSsPJAkeOUfo.ftLu5bLJmjJfUz7JSgfWlf8VbTLu+fvQhpWyvF1Je\"\n    }\n  ],\n  \"next\": \"http://KNZCveGbnjJun.ahuiZvrVZOC+5MRQ0BkUsqeVbquddjBEfz-yq,P46j\",\n  \"previous\": \"http://QcoQOuZusBuUZ.tyTetUzvLqYEyGYbIgyEnjm1Ftuhn9KNZ\"\n}",
-              "cookie": [],
-              "_postman_previewlanguage": "json"
-            }
-          ],
-          "event": [],
-          "protocolProfileBehavior": {
-            "disableBodyPruning": true
-          }
-        },
-        {
-          "id": "c88a7a76-3bb7-4b43-8e02-71c3b7527177",
-          "name": "Create a new item.",
-          "request": {
-            "name": "Create a new item.",
-            "description": {},
-            "url": {
-              "path": [
-                "items"
-              ],
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "query": [],
-              "variable": []
-            },
-            "header": [
-              {
-                "key": "Content-Type",
-                "value": "application/json;charset=UTF-8; qs=0.09"
-              },
-              {
-                "key": "Accept",
-                "value": "application/json;charset=UTF-8; qs=0.09"
-              }
-            ],
-            "method": "POST",
-            "auth": {
-              "type": "oauth2",
-              "oauth2": [
-                {
-                  "key": "scope",
-                  "value": "OAuth2Internal OAuth2ReadPII OAuth2Read OAuth2Write OAuth2Delete OAuth2Purchase OAuth2Share document.create document.edit document.delete document.read enterprise.create enterprise.read enterprise.edit enterprise.delete enterprise.member.create enterprise.member.read enterprise.member.edit enterprise.member.delete webhook.create webhook.edit webhook.read webhook.delete PLMIntegration"
-                },
-                {
-                  "key": "redirect_uri",
-                  "value": "/oauth/token"
-                },
-                {
-                  "key": "accessTokenUrl",
-                  "value": "/oauth/token"
-                },
-                {
-                  "key": "authUrl",
-                  "value": "/oauth/authorize"
-                },
-                {
-                  "key": "grant_type",
-                  "value": "authorization_code"
-                }
-              ]
-            },
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"companyId\": \"<string>\",\n  \"name\": \"<string>\",\n  \"publishState\": \"<integer>\"\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
-            }
-          },
-          "response": [
-            {
-              "id": "764e5df3-89fc-4162-b11e-209b5f76960c",
-              "name": "default response",
-              "originalRequest": {
-                "url": {
-                  "path": [
-                    "items"
-                  ],
-                  "host": [
-                    "{{baseUrl}}"
-                  ],
-                  "query": [],
-                  "variable": []
-                },
                 "header": [
-                  {
-                    "description": {
-                      "content": "Added as a part of security scheme: oauth2",
-                      "type": "text/plain"
-                    },
-                    "key": "Authorization",
-                    "value": "<token>"
-                  },
                   {
                     "key": "Accept",
                     "value": "application/json;charset=UTF-8; qs=0.09"
                   }
                 ],
-                "method": "POST",
-                "body": {
-                  "mode": "raw",
-                  "raw": "{\n  \"companyId\": \"<string>\",\n  \"name\": \"<string>\",\n  \"publishState\": \"<integer>\"\n}",
-                  "options": {
-                    "raw": {
-                      "language": "json"
-                    }
-                  }
-                }
-              },
-              "status": "Internal Server Error",
-              "code": 500,
-              "header": [
-                {
-                  "key": "Content-Type",
-                  "value": "application/json;charset=UTF-8; qs=0.09"
-                }
-              ],
-              "body": "{\n  \"companyId\": \"string\",\n  \"href\": \"http://sI.xwuBy7EfxIgkO6TPnTsgqoW+Ma58URc72fyu2dXXYMJS.g24iMSWehd8OB3cC+\",\n  \"id\": \"string\",\n  \"name\": \"string\",\n  \"properties\": {\n    \"key_0\": \"string\",\n    \"key_1\": \"string\",\n    \"key_2\": \"string\",\n    \"key_3\": \"string\"\n  },\n  \"publishState\": 4269,\n  \"viewRef\": \"https://AgOXCwbvXYCLqwUDeehSLnJbX.piqdYKZG.6QebbvyCkZF,wsYKBVj+a7e\"\n}",
-              "cookie": [],
-              "_postman_previewlanguage": "json"
-            }
-          ],
-          "event": [],
-          "protocolProfileBehavior": {
-            "disableBodyPruning": true
-          }
-        },
-        {
-          "id": "490f6b38-411a-4f37-b5a3-8bd4c3fb8c67",
-          "name": "Get item by ID.",
-          "request": {
-            "name": "Get item by ID.",
-            "description": {
-              "content": "Either `documentId` or `companyId` must be provided, in addition to the item ID.",
-              "type": "text/plain"
-            },
-            "url": {
-              "path": [
-                "items",
-                ":iid"
-              ],
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "query": [
-                {
-                  "disabled": false,
-                  "key": "documentId",
-                  "value": "<string>",
-                  "description": "ID of any document owned by the company/classroom/enterprise."
-                },
-                {
-                  "disabled": false,
-                  "key": "companyId",
-                  "value": "<string>",
-                  "description": "Company/classroom/enterprise ID."
-                }
-              ],
-              "variable": [
-                {
-                  "disabled": false,
-                  "type": "any",
-                  "value": "<string>",
-                  "key": "iid",
-                  "description": "(Required) Item ID. "
-                }
-              ]
-            },
-            "header": [
-              {
-                "key": "Accept",
-                "value": "application/json;charset=UTF-8; qs=0.09"
-              }
-            ],
-            "method": "GET",
-            "auth": {
-              "type": "oauth2",
-              "oauth2": [
-                {
-                  "key": "scope",
-                  "value": "OAuth2Internal OAuth2ReadPII OAuth2Read OAuth2Write OAuth2Delete OAuth2Purchase OAuth2Share document.create document.edit document.delete document.read enterprise.create enterprise.read enterprise.edit enterprise.delete enterprise.member.create enterprise.member.read enterprise.member.edit enterprise.member.delete webhook.create webhook.edit webhook.read webhook.delete PLMIntegration"
-                },
-                {
-                  "key": "redirect_uri",
-                  "value": "/oauth/token"
-                },
-                {
-                  "key": "accessTokenUrl",
-                  "value": "/oauth/token"
-                },
-                {
-                  "key": "authUrl",
-                  "value": "/oauth/authorize"
-                },
-                {
-                  "key": "grant_type",
-                  "value": "authorization_code"
-                }
-              ]
-            }
-          },
-          "response": [
-            {
-              "id": "11b62678-c401-4eb2-9642-f45974bee316",
-              "name": "default response",
-              "originalRequest": {
                 "url": {
+                  "raw": "{{baseUrl}}/items/:iid?documentId=<string>&companyId=<string>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
                   "path": [
                     "items",
                     ":iid"
                   ],
-                  "host": [
-                    "{{baseUrl}}"
-                  ],
                   "query": [
                     {
+                      "description": "ID of any document owned by the company/classroom/enterprise.",
                       "key": "documentId",
                       "value": "<string>"
                     },
                     {
+                      "description": "Company/classroom/enterprise ID.",
                       "key": "companyId",
                       "value": "<string>"
                     }
                   ],
                   "variable": [
                     {
-                      "disabled": false,
-                      "type": "any",
-                      "value": "<string>",
+                      "id": "08c38854-b222-42f9-a615-08b82ae3a320",
                       "key": "iid",
+                      "value": "<string>",
                       "description": "(Required) Item ID. "
                     }
                   ]
                 },
+                "description": "Either `documentId` or `companyId` must be provided, in addition to the item ID."
+              },
+              "response": [
+                {
+                  "id": "2398641f-73c1-434c-9997-e564d3870cbd",
+                  "name": "default response",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json;charset=UTF-8; qs=0.09"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: oauth2",
+                        "key": "Authorization",
+                        "value": "<token>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/items/:iid?documentId=<string>&companyId=<string>",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "items",
+                        ":iid"
+                      ],
+                      "query": [
+                        {
+                          "description": "ID of any document owned by the company/classroom/enterprise.",
+                          "key": "documentId",
+                          "value": "<string>"
+                        },
+                        {
+                          "description": "Company/classroom/enterprise ID.",
+                          "key": "companyId",
+                          "value": "<string>"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "key": "iid"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "Internal Server Error",
+                  "code": 500,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json;charset=UTF-8; qs=0.09"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"companyId\": \"<string>\",\n  \"href\": \"<uri>\",\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"properties\": {\n    \"amet2d\": \"<string>\",\n    \"qui_1c\": \"<string>\"\n  },\n  \"publishState\": \"<integer>\",\n  \"viewRef\": \"<uri>\"\n}",
+                  "createdAt": "2026-10-22T02:11:31.000Z",
+                  "updatedAt": "2026-10-22T02:11:31.000Z",
+                  "uid": "35240-2398641f-73c1-434c-9997-e564d3870cbd"
+                }
+              ],
+              "createdAt": "2026-10-22T02:11:31.000Z",
+              "updatedAt": "2026-10-22T02:11:31.000Z",
+              "uid": "35240-077ccce2-8f5b-463e-81f4-a4471be47aa7"
+            },
+            {
+              "name": "Update an item",
+              "id": "e0c2b07b-7fde-4fbc-b8f6-d47122ba7201",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "auth": {
+                  "type": "oauth2",
+                  "oauth2": [
+                    {
+                      "key": "scope",
+                      "value": "OAuth2Internal OAuth2ReadPII OAuth2Read OAuth2Write OAuth2Delete OAuth2Purchase OAuth2Share document.create document.edit document.delete document.read enterprise.create enterprise.read enterprise.edit enterprise.delete enterprise.member.create enterprise.member.read enterprise.member.edit enterprise.member.delete webhook.create webhook.edit webhook.read webhook.delete PLMIntegration",
+                      "type": "string"
+                    },
+                    {
+                      "key": "redirect_uri",
+                      "value": "/oauth/token",
+                      "type": "string"
+                    },
+                    {
+                      "key": "accessTokenUrl",
+                      "value": "/oauth/token",
+                      "type": "string"
+                    },
+                    {
+                      "key": "authUrl",
+                      "value": "/oauth/authorize",
+                      "type": "string"
+                    },
+                    {
+                      "key": "grant_type",
+                      "value": "authorization_code",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "POST",
                 "header": [
                   {
-                    "description": {
-                      "content": "Added as a part of security scheme: oauth2",
-                      "type": "text/plain"
-                    },
-                    "key": "Authorization",
-                    "value": "<token>"
+                    "key": "Content-Type",
+                    "value": "application/json;charset=UTF-8; qs=0.09"
                   },
                   {
                     "key": "Accept",
                     "value": "application/json;charset=UTF-8; qs=0.09"
                   }
                 ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"companyId\": \"<string>\",\n  \"name\": \"<string>\",\n  \"publishState\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/items/:iid",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "items",
+                    ":iid"
+                  ],
+                  "variable": [
+                    {
+                      "id": "7ee7cbe4-071b-4322-946d-264c0741b704",
+                      "key": "iid",
+                      "value": "<string>",
+                      "description": "(Required) ID of the item to update."
+                    }
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "id": "fce0abf3-5e0c-412a-a8e0-cfc5439767fb",
+                  "name": "default response",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json;charset=UTF-8; qs=0.09"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json;charset=UTF-8; qs=0.09"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: oauth2",
+                        "key": "Authorization",
+                        "value": "<token>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"companyId\": \"<string>\",\n  \"name\": \"<string>\",\n  \"publishState\": \"<integer>\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/items/:iid",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "items",
+                        ":iid"
+                      ],
+                      "variable": [
+                        {
+                          "key": "iid"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "Internal Server Error",
+                  "code": 500,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json;charset=UTF-8; qs=0.09"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"companyId\": \"<string>\",\n  \"href\": \"<uri>\",\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"properties\": {\n    \"amet2d\": \"<string>\",\n    \"qui_1c\": \"<string>\"\n  },\n  \"publishState\": \"<integer>\",\n  \"viewRef\": \"<uri>\"\n}",
+                  "createdAt": "2026-10-22T02:11:31.000Z",
+                  "updatedAt": "2026-10-22T02:11:31.000Z",
+                  "uid": "35240-fce0abf3-5e0c-412a-a8e0-cfc5439767fb"
+                }
+              ],
+              "createdAt": "2026-10-22T02:11:31.000Z",
+              "updatedAt": "2026-10-22T02:11:31.000Z",
+              "uid": "35240-e0c2b07b-7fde-4fbc-b8f6-d47122ba7201"
+            },
+            {
+              "name": "Delete an item",
+              "id": "ef7ccd55-5b66-455f-8938-71c1a310e617",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "auth": {
+                  "type": "oauth2",
+                  "oauth2": [
+                    {
+                      "key": "scope",
+                      "value": "OAuth2Internal OAuth2ReadPII OAuth2Read OAuth2Write OAuth2Delete OAuth2Purchase OAuth2Share document.create document.edit document.delete document.read enterprise.create enterprise.read enterprise.edit enterprise.delete enterprise.member.create enterprise.member.read enterprise.member.edit enterprise.member.delete webhook.create webhook.edit webhook.read webhook.delete PLMIntegration",
+                      "type": "string"
+                    },
+                    {
+                      "key": "redirect_uri",
+                      "value": "/oauth/token",
+                      "type": "string"
+                    },
+                    {
+                      "key": "accessTokenUrl",
+                      "value": "/oauth/token",
+                      "type": "string"
+                    },
+                    {
+                      "key": "authUrl",
+                      "value": "/oauth/authorize",
+                      "type": "string"
+                    },
+                    {
+                      "key": "grant_type",
+                      "value": "authorization_code",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json;charset=UTF-8; qs=0.09"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/items/:iid",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "items",
+                    ":iid"
+                  ],
+                  "variable": [
+                    {
+                      "id": "00d3bc2a-e800-45ac-aba5-99e6aef16783",
+                      "key": "iid",
+                      "value": "<string>",
+                      "description": "(Required) ID of the item to delete."
+                    }
+                  ]
+                },
+                "description": "Items can only be deleted if `publishState = 0` (`PENDING`). `GET /items/{iid}` to get the `publishState`."
+              },
+              "response": [
+                {
+                  "id": "adef896f-2930-42a3-baee-884d4c269a8b",
+                  "name": "default response",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json;charset=UTF-8; qs=0.09"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: oauth2",
+                        "key": "Authorization",
+                        "value": "<token>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/items/:iid",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "items",
+                        ":iid"
+                      ],
+                      "variable": [
+                        {
+                          "key": "iid"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "Internal Server Error",
+                  "code": 500,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json;charset=UTF-8; qs=0.09"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-10-22T02:11:31.000Z",
+                  "updatedAt": "2026-10-22T02:11:31.000Z",
+                  "uid": "35240-adef896f-2930-42a3-baee-884d4c269a8b"
+                }
+              ],
+              "createdAt": "2026-10-22T02:11:31.000Z",
+              "updatedAt": "2026-10-22T02:11:31.000Z",
+              "uid": "35240-ef7ccd55-5b66-455f-8938-71c1a310e617"
+            }
+          ],
+          "id": "4057eabf-01ec-4eed-853b-3fdb488a367f",
+          "createdAt": "2026-10-22T02:11:31.000Z",
+          "updatedAt": "2026-10-22T02:11:31.000Z",
+          "uid": "35240-4057eabf-01ec-4eed-853b-3fdb488a367f"
+        },
+        {
+          "name": "Get all items owned by a company/classroom/enterprise",
+          "id": "11124c34-fcf4-4561-8ec8-1381d0495483",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "scope",
+                  "value": "OAuth2Internal OAuth2ReadPII OAuth2Read OAuth2Write OAuth2Delete OAuth2Purchase OAuth2Share document.create document.edit document.delete document.read enterprise.create enterprise.read enterprise.edit enterprise.delete enterprise.member.create enterprise.member.read enterprise.member.edit enterprise.member.delete webhook.create webhook.edit webhook.read webhook.delete PLMIntegration",
+                  "type": "string"
+                },
+                {
+                  "key": "redirect_uri",
+                  "value": "/oauth/token",
+                  "type": "string"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "/oauth/token",
+                  "type": "string"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "/oauth/authorize",
+                  "type": "string"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json;charset=UTF-8; qs=0.09"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/items?documentId=<string>&companyId=<string>&q=&publishStates=&classification=&offset=0&limit=30",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "items"
+              ],
+              "query": [
+                {
+                  "description": "ID of any document owned by the company/classroom/enterprise.",
+                  "key": "documentId",
+                  "value": "<string>"
+                },
+                {
+                  "description": "Company/classroom/enterprise ID.",
+                  "key": "companyId",
+                  "value": "<string>"
+                },
+                {
+                  "description": "Optional search string.",
+                  "key": "q",
+                  "value": ""
+                },
+                {
+                  "description": "Refine returned items by publish states: `0: PENDING | 1: ACTIVE | 2: INACTIVE`",
+                  "key": "publishStates",
+                  "value": ""
+                },
+                {
+                  "description": "Refine returned items by classification. Classifications are managed in company/classroom/enterprise [Properties settings](https://cad.onshape.com/help/Content/Plans/items.htm#item-class).",
+                  "key": "classification",
+                  "value": ""
+                },
+                {
+                  "description": "Number of entries to skip in the returned list.",
+                  "key": "offset",
+                  "value": "0"
+                },
+                {
+                  "description": "The number of list entries to return in a single API call.",
+                  "key": "limit",
+                  "value": "30"
+                }
+              ]
+            },
+            "description": "Returns a list of all items owned by the company/classroom/enterprise.\n\nEither `documentId` or `companyId` must be provided."
+          },
+          "response": [
+            {
+              "id": "b03bc7b3-bed7-4949-9493-a7f3d8dc8841",
+              "name": "default response",
+              "originalRequest": {
                 "method": "GET",
-                "body": {}
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json;charset=UTF-8; qs=0.09"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: oauth2",
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/items?documentId=<string>&companyId=<string>&q=&publishStates=&classification=&offset=0&limit=30",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "items"
+                  ],
+                  "query": [
+                    {
+                      "description": "ID of any document owned by the company/classroom/enterprise.",
+                      "key": "documentId",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Company/classroom/enterprise ID.",
+                      "key": "companyId",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Optional search string.",
+                      "key": "q",
+                      "value": ""
+                    },
+                    {
+                      "description": "Refine returned items by publish states: `0: PENDING | 1: ACTIVE | 2: INACTIVE`",
+                      "key": "publishStates",
+                      "value": ""
+                    },
+                    {
+                      "description": "Refine returned items by classification. Classifications are managed in company/classroom/enterprise [Properties settings](https://cad.onshape.com/help/Content/Plans/items.htm#item-class).",
+                      "key": "classification",
+                      "value": ""
+                    },
+                    {
+                      "description": "Number of entries to skip in the returned list.",
+                      "key": "offset",
+                      "value": "0"
+                    },
+                    {
+                      "description": "The number of list entries to return in a single API call.",
+                      "key": "limit",
+                      "value": "30"
+                    }
+                  ]
+                }
               },
               "status": "Internal Server Error",
               "code": 500,
+              "_postman_previewlanguage": "json",
               "header": [
                 {
                   "key": "Content-Type",
                   "value": "application/json;charset=UTF-8; qs=0.09"
                 }
               ],
-              "body": "{\n  \"companyId\": \"string\",\n  \"href\": \"http://sI.xwuBy7EfxIgkO6TPnTsgqoW+Ma58URc72fyu2dXXYMJS.g24iMSWehd8OB3cC+\",\n  \"id\": \"string\",\n  \"name\": \"string\",\n  \"properties\": {\n    \"key_0\": \"string\",\n    \"key_1\": \"string\",\n    \"key_2\": \"string\",\n    \"key_3\": \"string\"\n  },\n  \"publishState\": 4269,\n  \"viewRef\": \"https://AgOXCwbvXYCLqwUDeehSLnJbX.piqdYKZG.6QebbvyCkZF,wsYKBVj+a7e\"\n}",
               "cookie": [],
-              "_postman_previewlanguage": "json"
+              "responseTime": null,
+              "body": "{\n  \"href\": \"<uri>\",\n  \"items\": [\n    {\n      \"companyId\": \"<string>\",\n      \"href\": \"<uri>\",\n      \"id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"properties\": {\n        \"quis820\": \"<string>\",\n        \"non_62\": \"<string>\",\n        \"proidenta7\": \"<string>\"\n      },\n      \"publishState\": \"<integer>\",\n      \"viewRef\": \"<uri>\"\n    },\n    {\n      \"companyId\": \"<string>\",\n      \"href\": \"<uri>\",\n      \"id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"properties\": {\n        \"qui_29f\": \"<string>\",\n        \"nulla24a\": \"<string>\"\n      },\n      \"publishState\": \"<integer>\",\n      \"viewRef\": \"<uri>\"\n    }\n  ],\n  \"next\": \"<uri>\",\n  \"previous\": \"<uri>\"\n}",
+              "createdAt": "2026-10-22T02:11:31.000Z",
+              "updatedAt": "2026-10-22T02:11:31.000Z",
+              "uid": "35240-b03bc7b3-bed7-4949-9493-a7f3d8dc8841"
             }
           ],
-          "event": [],
-          "protocolProfileBehavior": {
-            "disableBodyPruning": true
-          }
+          "createdAt": "2026-10-22T02:11:31.000Z",
+          "updatedAt": "2026-10-22T02:11:31.000Z",
+          "uid": "35240-11124c34-fcf4-4561-8ec8-1381d0495483"
         },
         {
-          "id": "cd221859-91d5-4322-820e-cffddb1475c1",
-          "name": "Update an item.",
+          "name": "Create a new item",
+          "id": "ee679f7c-3469-4f52-90d6-2bbb1e2067c5",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
           "request": {
-            "name": "Update an item.",
-            "description": {},
-            "url": {
-              "path": [
-                "items",
-                ":iid"
-              ],
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "query": [],
-              "variable": [
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
                 {
-                  "disabled": false,
-                  "type": "any",
-                  "value": "<string>",
-                  "key": "iid",
-                  "description": "(Required) ID of the item to update."
+                  "key": "scope",
+                  "value": "OAuth2Internal OAuth2ReadPII OAuth2Read OAuth2Write OAuth2Delete OAuth2Purchase OAuth2Share document.create document.edit document.delete document.read enterprise.create enterprise.read enterprise.edit enterprise.delete enterprise.member.create enterprise.member.read enterprise.member.edit enterprise.member.delete webhook.create webhook.edit webhook.read webhook.delete PLMIntegration",
+                  "type": "string"
+                },
+                {
+                  "key": "redirect_uri",
+                  "value": "/oauth/token",
+                  "type": "string"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "/oauth/token",
+                  "type": "string"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "/oauth/authorize",
+                  "type": "string"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code",
+                  "type": "string"
                 }
               ]
             },
+            "method": "POST",
             "header": [
               {
                 "key": "Content-Type",
@@ -479,239 +652,93 @@
                 "value": "application/json;charset=UTF-8; qs=0.09"
               }
             ],
-            "method": "POST",
-            "auth": {
-              "type": "oauth2",
-              "oauth2": [
-                {
-                  "key": "scope",
-                  "value": "OAuth2Internal OAuth2ReadPII OAuth2Read OAuth2Write OAuth2Delete OAuth2Purchase OAuth2Share document.create document.edit document.delete document.read enterprise.create enterprise.read enterprise.edit enterprise.delete enterprise.member.create enterprise.member.read enterprise.member.edit enterprise.member.delete webhook.create webhook.edit webhook.read webhook.delete PLMIntegration"
-                },
-                {
-                  "key": "redirect_uri",
-                  "value": "/oauth/token"
-                },
-                {
-                  "key": "accessTokenUrl",
-                  "value": "/oauth/token"
-                },
-                {
-                  "key": "authUrl",
-                  "value": "/oauth/authorize"
-                },
-                {
-                  "key": "grant_type",
-                  "value": "authorization_code"
-                }
-              ]
-            },
             "body": {
               "mode": "raw",
               "raw": "{\n  \"companyId\": \"<string>\",\n  \"name\": \"<string>\",\n  \"publishState\": \"<integer>\"\n}",
               "options": {
                 "raw": {
+                  "headerFamily": "json",
                   "language": "json"
                 }
               }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/items",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "items"
+              ]
             }
           },
           "response": [
             {
-              "id": "71feacc1-e9d3-4518-a713-bf9632cfe50b",
+              "id": "11be217b-dea8-42a8-af32-ecaa24aa5247",
               "name": "default response",
               "originalRequest": {
-                "url": {
-                  "path": [
-                    "items",
-                    ":iid"
-                  ],
-                  "host": [
-                    "{{baseUrl}}"
-                  ],
-                  "query": [],
-                  "variable": [
-                    {
-                      "disabled": false,
-                      "type": "any",
-                      "value": "<string>",
-                      "key": "iid",
-                      "description": "(Required) ID of the item to update."
-                    }
-                  ]
-                },
+                "method": "POST",
                 "header": [
                   {
-                    "description": {
-                      "content": "Added as a part of security scheme: oauth2",
-                      "type": "text/plain"
-                    },
-                    "key": "Authorization",
-                    "value": "<token>"
+                    "key": "Content-Type",
+                    "value": "application/json;charset=UTF-8; qs=0.09"
                   },
                   {
                     "key": "Accept",
                     "value": "application/json;charset=UTF-8; qs=0.09"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: oauth2",
+                    "key": "Authorization",
+                    "value": "<token>"
                   }
                 ],
-                "method": "POST",
                 "body": {
                   "mode": "raw",
                   "raw": "{\n  \"companyId\": \"<string>\",\n  \"name\": \"<string>\",\n  \"publishState\": \"<integer>\"\n}",
                   "options": {
                     "raw": {
+                      "headerFamily": "json",
                       "language": "json"
                     }
                   }
-                }
-              },
-              "status": "Internal Server Error",
-              "code": 500,
-              "header": [
-                {
-                  "key": "Content-Type",
-                  "value": "application/json;charset=UTF-8; qs=0.09"
-                }
-              ],
-              "body": "{\n  \"companyId\": \"string\",\n  \"href\": \"http://sI.xwuBy7EfxIgkO6TPnTsgqoW+Ma58URc72fyu2dXXYMJS.g24iMSWehd8OB3cC+\",\n  \"id\": \"string\",\n  \"name\": \"string\",\n  \"properties\": {\n    \"key_0\": \"string\",\n    \"key_1\": \"string\",\n    \"key_2\": \"string\",\n    \"key_3\": \"string\"\n  },\n  \"publishState\": 4269,\n  \"viewRef\": \"https://AgOXCwbvXYCLqwUDeehSLnJbX.piqdYKZG.6QebbvyCkZF,wsYKBVj+a7e\"\n}",
-              "cookie": [],
-              "_postman_previewlanguage": "json"
-            }
-          ],
-          "event": [],
-          "protocolProfileBehavior": {
-            "disableBodyPruning": true
-          }
-        },
-        {
-          "id": "a97fb0a9-f28c-4d35-9c19-88ead470527c",
-          "name": "Delete an item.",
-          "request": {
-            "name": "Delete an item.",
-            "description": {
-              "content": "Items can only be deleted if `publishState = 0` (`PENDING`). [`GET /items/{iid}`](#/Items/getItem) to get the `publishState`.",
-              "type": "text/plain"
-            },
-            "url": {
-              "path": [
-                "items",
-                ":iid"
-              ],
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "query": [],
-              "variable": [
-                {
-                  "disabled": false,
-                  "type": "any",
-                  "value": "<string>",
-                  "key": "iid",
-                  "description": "(Required) ID of the item to delete."
-                }
-              ]
-            },
-            "header": [
-              {
-                "key": "Accept",
-                "value": "application/json;charset=UTF-8; qs=0.09"
-              }
-            ],
-            "method": "DELETE",
-            "auth": {
-              "type": "oauth2",
-              "oauth2": [
-                {
-                  "key": "scope",
-                  "value": "OAuth2Internal OAuth2ReadPII OAuth2Read OAuth2Write OAuth2Delete OAuth2Purchase OAuth2Share document.create document.edit document.delete document.read enterprise.create enterprise.read enterprise.edit enterprise.delete enterprise.member.create enterprise.member.read enterprise.member.edit enterprise.member.delete webhook.create webhook.edit webhook.read webhook.delete PLMIntegration"
                 },
-                {
-                  "key": "redirect_uri",
-                  "value": "/oauth/token"
-                },
-                {
-                  "key": "accessTokenUrl",
-                  "value": "/oauth/token"
-                },
-                {
-                  "key": "authUrl",
-                  "value": "/oauth/authorize"
-                },
-                {
-                  "key": "grant_type",
-                  "value": "authorization_code"
-                }
-              ]
-            }
-          },
-          "response": [
-            {
-              "id": "a9f158a3-e6d9-440a-9e83-f0cba8fef503",
-              "name": "default response",
-              "originalRequest": {
                 "url": {
-                  "path": [
-                    "items",
-                    ":iid"
-                  ],
+                  "raw": "{{baseUrl}}/items",
                   "host": [
                     "{{baseUrl}}"
                   ],
-                  "query": [],
-                  "variable": [
-                    {
-                      "disabled": false,
-                      "type": "any",
-                      "value": "<string>",
-                      "key": "iid",
-                      "description": "(Required) ID of the item to delete."
-                    }
+                  "path": [
+                    "items"
                   ]
-                },
-                "header": [
-                  {
-                    "description": {
-                      "content": "Added as a part of security scheme: oauth2",
-                      "type": "text/plain"
-                    },
-                    "key": "Authorization",
-                    "value": "<token>"
-                  },
-                  {
-                    "key": "Accept",
-                    "value": "application/json;charset=UTF-8; qs=0.09"
-                  }
-                ],
-                "method": "DELETE",
-                "body": {}
+                }
               },
               "status": "Internal Server Error",
               "code": 500,
+              "_postman_previewlanguage": "json",
               "header": [
                 {
                   "key": "Content-Type",
                   "value": "application/json;charset=UTF-8; qs=0.09"
                 }
               ],
-              "body": "{}",
               "cookie": [],
-              "_postman_previewlanguage": "json"
+              "responseTime": null,
+              "body": "{\n  \"companyId\": \"<string>\",\n  \"href\": \"<uri>\",\n  \"id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"properties\": {\n    \"amet2d\": \"<string>\",\n    \"qui_1c\": \"<string>\"\n  },\n  \"publishState\": \"<integer>\",\n  \"viewRef\": \"<uri>\"\n}",
+              "createdAt": "2026-10-22T02:11:31.000Z",
+              "updatedAt": "2026-10-22T02:11:31.000Z",
+              "uid": "35240-11be217b-dea8-42a8-af32-ecaa24aa5247"
             }
           ],
-          "event": [],
-          "protocolProfileBehavior": {
-            "disableBodyPruning": true
-          }
+          "createdAt": "2026-10-22T02:11:31.000Z",
+          "updatedAt": "2026-10-22T02:11:31.000Z",
+          "uid": "35240-ee679f7c-3469-4f52-90d6-2bbb1e2067c5"
         }
       ],
-      "event": []
-    }
-  ],
-  "event": [],
-  "variable": [
-    {
-      "type": "string",
-      "value": "https://cad.onshape.com/api/v16",
-      "key": "baseUrl"
+      "id": "60bfc1b4-bf5a-4da1-8be7-a4aace50e43a",
+      "createdAt": "2026-10-22T02:11:31.000Z",
+      "updatedAt": "2026-10-22T02:11:31.000Z",
+      "uid": "35240-60bfc1b4-bf5a-4da1-8be7-a4aace50e43a"
     }
   ],
   "auth": {
@@ -719,21 +746,20 @@
     "basic": [
       {
         "key": "username",
-        "value": "{{basicAuthUsername}}"
+        "value": "{{basicAuthUsername}}",
+        "type": "string"
       },
       {
         "key": "password",
-        "value": "{{basicAuthPassword}}"
+        "value": "{{basicAuthPassword}}",
+        "type": "string"
       }
     ]
   },
-  "info": {
-    "_postman_id": "61b93553-3f73-4561-a03f-dc87cfa713fe",
-    "name": "Onshape REST Account Item API",
-    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-    "description": {
-      "content": "## Welcome to the Onshape REST API Explorer\n\n**See the [API Explorer Guide](https://onshape-public.github.io/docs/api-intro/explorer/) for help navigating this page.**\n\n### Using this page\n1. Sign in to your [Onshape](https://cad.onshape.com) account in another tab.\n2. Click the `Try it out` button below. It toggles to a `Cancel` button when selected.\n\n### Authenticating\nTo authenticate your calls, click the `Authorize` button. See [API Explorer Guide: Authentication](https://onshape-public.github.io/docs/api-intro/explorer/#authentication) for details. Calls made when authenticated via API Keys or OAuth count against your annual [API limits](https://onshape-public.github.io/docs/auth/limits/#annual-api-call-limits).\n* **Tip:** To ensure the current session isn't used when trying other authentication techniques, make sure to [remove the Onshape cookie](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site) as per the instructions for your browser, or use a private or incognito window.\n\n### Additional resources\n\n* [Onshape API Guide](https://onshape-public.github.io/docs/): Our full suite of developer guides, to be used as an accompaniment to this API Explorer.\n* [Onshape Developer Portal](https://cad.onshape.com/appstore/dev-portal): The Onshape portal for managing your API keys, OAuth2 credentials, your Onshape applications, and your Onshape App Store entries.\n* [Authentication Guide](https://onshape-public.github.io/docs/auth/): Our guide to using API keys, request signatures, and OAuth2 in your Onshape applications.\n\nContact Support:\n Email: api-support@onshape.zendesk.com",
-      "type": "text/plain"
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://cad.onshape.com/api/v16"
     }
-  }
+  ]
 }

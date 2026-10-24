@@ -1,386 +1,467 @@
 {
+  "info": {
+    "_postman_id": "128ac88a-ab7b-4dc2-906a-a309fc198719",
+    "name": "Onshape REST Material API",
+    "description": "## Welcome to the Onshape REST API Explorer\n\n**See the API Explorer Guide for help navigating this page.**\n\n### Using this page\n1.\n\nContact Support:\n Email: api-support@onshape.zendesk.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-10-22T02:11:34.000Z",
+    "updatedAt": "2026-10-22T02:11:35.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-128ac88a-ab7b-4dc2-906a-a309fc198719"
+  },
   "item": [
     {
-      "id": "f2fc488f-6a30-4723-92af-c82a8ba45bda",
-      "name": "Material",
-      "description": {
-        "content": "Work with the Onshape Material Library.",
-        "type": "text/plain"
-      },
+      "name": "materials",
       "item": [
         {
-          "id": "0478773b-c05b-45f9-b673-5023f9bc0633",
-          "name": "Updates an existing material library",
-          "request": {
-            "name": "Updates an existing material library",
-            "description": {
-              "content": "Update a material in an Onshape Material Library from a csv file. Changes made replace the existing library.",
-              "type": "text/plain"
-            },
-            "url": {
-              "path": [
-                "materials",
-                "libraries",
-                "d",
-                ":did",
-                "w",
-                ":wid",
-                "e",
-                ":eid",
-                "csv"
-              ],
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "query": [],
-              "variable": [
-                {
-                  "disabled": false,
-                  "type": "any",
-                  "value": "<string>",
-                  "key": "did",
-                  "description": "(Required) Document ID."
-                },
-                {
-                  "disabled": false,
-                  "type": "any",
-                  "value": "<string>",
-                  "key": "wid",
-                  "description": "(Required) Workspace ID."
-                },
-                {
-                  "disabled": false,
-                  "type": "any",
-                  "value": "<string>",
-                  "key": "eid",
-                  "description": "(Required) Element ID."
-                }
-              ]
-            },
-            "header": [
-              {
-                "key": "Content-Type",
-                "value": "multipart/form-data"
-              },
-              {
-                "key": "Accept",
-                "value": "application/json;charset=UTF-8; qs=0.09"
-              }
-            ],
-            "method": "POST",
-            "auth": {
-              "type": "oauth2",
-              "oauth2": [
-                {
-                  "key": "scope",
-                  "value": "OAuth2Internal OAuth2ReadPII OAuth2Read OAuth2Write OAuth2Delete OAuth2Purchase OAuth2Share document.create document.edit document.delete document.read enterprise.create enterprise.read enterprise.edit enterprise.delete enterprise.member.create enterprise.member.read enterprise.member.edit enterprise.member.delete webhook.create webhook.edit webhook.read webhook.delete PLMIntegration"
-                },
-                {
-                  "key": "redirect_uri",
-                  "value": "/oauth/token"
-                },
-                {
-                  "key": "accessTokenUrl",
-                  "value": "/oauth/token"
-                },
-                {
-                  "key": "authUrl",
-                  "value": "/oauth/authorize"
-                },
-                {
-                  "key": "grant_type",
-                  "value": "authorization_code"
-                }
-              ]
-            },
-            "body": {
-              "mode": "formdata",
-              "formdata": [
-                {
-                  "key": "file",
-                  "type": "file",
-                  "description": "The file to upload."
-                }
-              ]
-            }
-          },
-          "response": [
+          "name": "libraries",
+          "item": [
             {
-              "id": "91347877-43d6-4300-90c1-e92ffdb72245",
-              "name": "default response",
-              "originalRequest": {
-                "url": {
-                  "path": [
-                    "materials",
-                    "libraries",
-                    "d",
-                    ":did",
-                    "w",
-                    ":wid",
-                    "e",
-                    ":eid",
-                    "csv"
-                  ],
-                  "host": [
-                    "{{baseUrl}}"
-                  ],
-                  "query": [],
-                  "variable": [
-                    {
-                      "disabled": false,
-                      "type": "any",
-                      "value": "<string>",
-                      "key": "did",
-                      "description": "(Required) Document ID."
-                    },
-                    {
-                      "disabled": false,
-                      "type": "any",
-                      "value": "<string>",
-                      "key": "wid",
-                      "description": "(Required) Workspace ID."
-                    },
-                    {
-                      "disabled": false,
-                      "type": "any",
-                      "value": "<string>",
-                      "key": "eid",
-                      "description": "(Required) Element ID."
-                    }
-                  ]
-                },
-                "header": [
-                  {
-                    "description": {
-                      "content": "Added as a part of security scheme: oauth2",
-                      "type": "text/plain"
-                    },
-                    "key": "Authorization",
-                    "value": "<token>"
-                  },
-                  {
-                    "key": "Accept",
-                    "value": "application/json;charset=UTF-8; qs=0.09"
-                  }
-                ],
-                "method": "POST",
-                "body": {
-                  "mode": "formdata",
-                  "formdata": [
-                    {
-                      "description": {
-                        "content": "The file to upload.",
-                        "type": "text/plain"
-                      },
-                      "key": "file",
-                      "value": "<binary>",
-                      "type": "text"
-                    }
-                  ]
-                }
-              },
-              "status": "Internal Server Error",
-              "code": 500,
-              "header": [
+              "name": "d",
+              "item": [
                 {
-                  "key": "Content-Type",
-                  "value": "application/json;charset=UTF-8; qs=0.09"
+                  "name": "{did}",
+                  "item": [
+                    {
+                      "name": "w",
+                      "item": [
+                        {
+                          "name": "{wid}",
+                          "item": [
+                            {
+                              "name": "e",
+                              "item": [
+                                {
+                                  "name": "{eid}",
+                                  "item": [
+                                    {
+                                      "name": "csv",
+                                      "item": [
+                                        {
+                                          "name": "Updates an existing material library",
+                                          "id": "1f767db1-0353-496e-a1b7-1d2521b9d08e",
+                                          "protocolProfileBehavior": {
+                                            "disableBodyPruning": true
+                                          },
+                                          "request": {
+                                            "auth": {
+                                              "type": "oauth2",
+                                              "oauth2": [
+                                                {
+                                                  "key": "scope",
+                                                  "value": "OAuth2Internal OAuth2ReadPII OAuth2Read OAuth2Write OAuth2Delete OAuth2Purchase OAuth2Share document.create document.edit document.delete document.read enterprise.create enterprise.read enterprise.edit enterprise.delete enterprise.member.create enterprise.member.read enterprise.member.edit enterprise.member.delete webhook.create webhook.edit webhook.read webhook.delete PLMIntegration",
+                                                  "type": "string"
+                                                },
+                                                {
+                                                  "key": "redirect_uri",
+                                                  "value": "/oauth/token",
+                                                  "type": "string"
+                                                },
+                                                {
+                                                  "key": "accessTokenUrl",
+                                                  "value": "/oauth/token",
+                                                  "type": "string"
+                                                },
+                                                {
+                                                  "key": "authUrl",
+                                                  "value": "/oauth/authorize",
+                                                  "type": "string"
+                                                },
+                                                {
+                                                  "key": "grant_type",
+                                                  "value": "authorization_code",
+                                                  "type": "string"
+                                                }
+                                              ]
+                                            },
+                                            "method": "POST",
+                                            "header": [
+                                              {
+                                                "key": "Content-Type",
+                                                "value": "multipart/form-data"
+                                              },
+                                              {
+                                                "key": "Accept",
+                                                "value": "application/json;charset=UTF-8; qs=0.09"
+                                              }
+                                            ],
+                                            "body": {
+                                              "mode": "formdata",
+                                              "formdata": [
+                                                {
+                                                  "description": "The file to upload.",
+                                                  "key": "file",
+                                                  "type": "file",
+                                                  "value": null
+                                                }
+                                              ]
+                                            },
+                                            "url": {
+                                              "raw": "{{baseUrl}}/materials/libraries/d/:did/w/:wid/e/:eid/csv",
+                                              "host": [
+                                                "{{baseUrl}}"
+                                              ],
+                                              "path": [
+                                                "materials",
+                                                "libraries",
+                                                "d",
+                                                ":did",
+                                                "w",
+                                                ":wid",
+                                                "e",
+                                                ":eid",
+                                                "csv"
+                                              ],
+                                              "variable": [
+                                                {
+                                                  "id": "57cf5023-966d-4081-a1ed-450dd651264d",
+                                                  "key": "did",
+                                                  "value": "<string>",
+                                                  "description": "(Required) Document ID."
+                                                },
+                                                {
+                                                  "id": "fabd3608-cc39-4c4d-b22d-c74240344f5e",
+                                                  "key": "wid",
+                                                  "value": "<string>",
+                                                  "description": "(Required) Workspace ID."
+                                                },
+                                                {
+                                                  "id": "5753e129-0675-4b30-9320-620c2bf0a216",
+                                                  "key": "eid",
+                                                  "value": "<string>",
+                                                  "description": "(Required) Element ID."
+                                                }
+                                              ]
+                                            },
+                                            "description": "Update a material in an Onshape Material Library from a csv file. Changes made replace the existing library."
+                                          },
+                                          "response": [
+                                            {
+                                              "id": "770cd48a-9c8c-4d29-a8c0-18e74cb48560",
+                                              "name": "default response",
+                                              "originalRequest": {
+                                                "method": "POST",
+                                                "header": [
+                                                  {
+                                                    "key": "Content-Type",
+                                                    "value": "multipart/form-data"
+                                                  },
+                                                  {
+                                                    "key": "Accept",
+                                                    "value": "application/json;charset=UTF-8; qs=0.09"
+                                                  },
+                                                  {
+                                                    "description": "Added as a part of security scheme: oauth2",
+                                                    "key": "Authorization",
+                                                    "value": "<token>"
+                                                  }
+                                                ],
+                                                "body": {
+                                                  "mode": "formdata",
+                                                  "formdata": [
+                                                    {
+                                                      "description": "The file to upload.",
+                                                      "key": "file",
+                                                      "type": "file"
+                                                    }
+                                                  ]
+                                                },
+                                                "url": {
+                                                  "raw": "{{baseUrl}}/materials/libraries/d/:did/w/:wid/e/:eid/csv",
+                                                  "host": [
+                                                    "{{baseUrl}}"
+                                                  ],
+                                                  "path": [
+                                                    "materials",
+                                                    "libraries",
+                                                    "d",
+                                                    ":did",
+                                                    "w",
+                                                    ":wid",
+                                                    "e",
+                                                    ":eid",
+                                                    "csv"
+                                                  ],
+                                                  "variable": [
+                                                    {
+                                                      "key": "did"
+                                                    },
+                                                    {
+                                                      "key": "wid"
+                                                    },
+                                                    {
+                                                      "key": "eid"
+                                                    }
+                                                  ]
+                                                }
+                                              },
+                                              "status": "Internal Server Error",
+                                              "code": 500,
+                                              "_postman_previewlanguage": "json",
+                                              "header": [
+                                                {
+                                                  "key": "Content-Type",
+                                                  "value": "application/json;charset=UTF-8; qs=0.09"
+                                                }
+                                              ],
+                                              "cookie": [],
+                                              "responseTime": null,
+                                              "body": "{}",
+                                              "createdAt": "2026-10-22T02:11:35.000Z",
+                                              "updatedAt": "2026-10-22T02:11:35.000Z",
+                                              "uid": "35240-770cd48a-9c8c-4d29-a8c0-18e74cb48560"
+                                            }
+                                          ],
+                                          "createdAt": "2026-10-22T02:11:35.000Z",
+                                          "updatedAt": "2026-10-22T02:11:35.000Z",
+                                          "uid": "35240-1f767db1-0353-496e-a1b7-1d2521b9d08e"
+                                        }
+                                      ],
+                                      "id": "2b33aedc-4b7f-4fa7-9acd-2f7469d72c21",
+                                      "createdAt": "2026-10-22T02:11:35.000Z",
+                                      "updatedAt": "2026-10-22T02:11:35.000Z",
+                                      "uid": "35240-2b33aedc-4b7f-4fa7-9acd-2f7469d72c21"
+                                    }
+                                  ],
+                                  "id": "16d6c3b2-fb5f-46f1-91c0-6f6849dace77",
+                                  "createdAt": "2026-10-22T02:11:35.000Z",
+                                  "updatedAt": "2026-10-22T02:11:35.000Z",
+                                  "uid": "35240-16d6c3b2-fb5f-46f1-91c0-6f6849dace77"
+                                }
+                              ],
+                              "id": "d679fd44-8aa6-455d-8c0b-e85919e0fc05",
+                              "createdAt": "2026-10-22T02:11:35.000Z",
+                              "updatedAt": "2026-10-22T02:11:35.000Z",
+                              "uid": "35240-d679fd44-8aa6-455d-8c0b-e85919e0fc05"
+                            }
+                          ],
+                          "id": "607afde5-250b-4fd7-854e-ecfa01705557",
+                          "createdAt": "2026-10-22T02:11:35.000Z",
+                          "updatedAt": "2026-10-22T02:11:35.000Z",
+                          "uid": "35240-607afde5-250b-4fd7-854e-ecfa01705557"
+                        }
+                      ],
+                      "id": "69190509-52a9-4769-8c37-f89284bc4d46",
+                      "createdAt": "2026-10-22T02:11:35.000Z",
+                      "updatedAt": "2026-10-22T02:11:35.000Z",
+                      "uid": "35240-69190509-52a9-4769-8c37-f89284bc4d46"
+                    },
+                    {
+                      "name": "{wvm}",
+                      "item": [
+                        {
+                          "name": "{wvmid}",
+                          "item": [
+                            {
+                              "name": "e",
+                              "item": [
+                                {
+                                  "name": "{eid}",
+                                  "item": [
+                                    {
+                                      "name": "Get a list of materials from a material library",
+                                      "id": "a4c3ddc7-52be-48a5-9592-230eed853a6c",
+                                      "protocolProfileBehavior": {
+                                        "disableBodyPruning": true
+                                      },
+                                      "request": {
+                                        "auth": {
+                                          "type": "oauth2",
+                                          "oauth2": [
+                                            {
+                                              "key": "scope",
+                                              "value": "OAuth2Internal OAuth2ReadPII OAuth2Read OAuth2Write OAuth2Delete OAuth2Purchase OAuth2Share document.create document.edit document.delete document.read enterprise.create enterprise.read enterprise.edit enterprise.delete enterprise.member.create enterprise.member.read enterprise.member.edit enterprise.member.delete webhook.create webhook.edit webhook.read webhook.delete PLMIntegration",
+                                              "type": "string"
+                                            },
+                                            {
+                                              "key": "redirect_uri",
+                                              "value": "/oauth/token",
+                                              "type": "string"
+                                            },
+                                            {
+                                              "key": "accessTokenUrl",
+                                              "value": "/oauth/token",
+                                              "type": "string"
+                                            },
+                                            {
+                                              "key": "authUrl",
+                                              "value": "/oauth/authorize",
+                                              "type": "string"
+                                            },
+                                            {
+                                              "key": "grant_type",
+                                              "value": "authorization_code",
+                                              "type": "string"
+                                            }
+                                          ]
+                                        },
+                                        "method": "GET",
+                                        "header": [
+                                          {
+                                            "key": "Accept",
+                                            "value": "application/json;charset=UTF-8; qs=0.09"
+                                          }
+                                        ],
+                                        "url": {
+                                          "raw": "{{baseUrl}}/materials/libraries/d/:did/:wvm/:wvmid/e/:eid",
+                                          "host": [
+                                            "{{baseUrl}}"
+                                          ],
+                                          "path": [
+                                            "materials",
+                                            "libraries",
+                                            "d",
+                                            ":did",
+                                            ":wvm",
+                                            ":wvmid",
+                                            "e",
+                                            ":eid"
+                                          ],
+                                          "variable": [
+                                            {
+                                              "id": "5cc1c4ef-48ae-4653-9979-436d304c1822",
+                                              "key": "did",
+                                              "value": "<string>",
+                                              "description": "(Required) Document ID."
+                                            },
+                                            {
+                                              "id": "5840bca1-5e00-44f0-9862-8e4e80652b42",
+                                              "key": "wvm",
+                                              "value": "<string>",
+                                              "description": "(Required) One of w or v or m corresponding to whether a workspace or version or microversion was entered."
+                                            },
+                                            {
+                                              "id": "794774c8-fa96-442c-9c01-76ef0c086aec",
+                                              "key": "wvmid",
+                                              "value": "<string>",
+                                              "description": "(Required) Workspace (w), Version (v) or Microversion (m) ID."
+                                            },
+                                            {
+                                              "id": "a2d56ac8-a8db-4a86-b4ed-3001732d8158",
+                                              "key": "eid",
+                                              "value": "<string>",
+                                              "description": "(Required) Element ID."
+                                            }
+                                          ]
+                                        },
+                                        "description": "Get a JSON representation of the material library."
+                                      },
+                                      "response": [
+                                        {
+                                          "id": "7a9e2f2e-b06e-47ff-9476-db65bbf2fe22",
+                                          "name": "Success!",
+                                          "originalRequest": {
+                                            "method": "GET",
+                                            "header": [
+                                              {
+                                                "key": "Accept",
+                                                "value": "application/json;charset=UTF-8; qs=0.09"
+                                              },
+                                              {
+                                                "description": "Added as a part of security scheme: oauth2",
+                                                "key": "Authorization",
+                                                "value": "<token>"
+                                              }
+                                            ],
+                                            "url": {
+                                              "raw": "{{baseUrl}}/materials/libraries/d/:did/:wvm/:wvmid/e/:eid",
+                                              "host": [
+                                                "{{baseUrl}}"
+                                              ],
+                                              "path": [
+                                                "materials",
+                                                "libraries",
+                                                "d",
+                                                ":did",
+                                                ":wvm",
+                                                ":wvmid",
+                                                "e",
+                                                ":eid"
+                                              ],
+                                              "variable": [
+                                                {
+                                                  "key": "did"
+                                                },
+                                                {
+                                                  "key": "wvm"
+                                                },
+                                                {
+                                                  "key": "wvmid"
+                                                },
+                                                {
+                                                  "key": "eid"
+                                                }
+                                              ]
+                                            }
+                                          },
+                                          "status": "OK",
+                                          "code": 200,
+                                          "_postman_previewlanguage": "json",
+                                          "header": [
+                                            {
+                                              "key": "Content-Type",
+                                              "value": "application/json;charset=UTF-8; qs=0.09"
+                                            }
+                                          ],
+                                          "cookie": [],
+                                          "responseTime": null,
+                                          "body": "{\n  \"description\": \"<string>\",\n  \"displayName\": \"<string>\",\n  \"externalElementReference\": {\n    \"documentId\": \"<string>\",\n    \"elementId\": \"<string>\",\n    \"elementMicroversionId\": \"<string>\",\n    \"versionId\": \"<string>\"\n  },\n  \"materials\": [\n    {\n      \"category\": \"<string>\",\n      \"displayName\": \"<string>\",\n      \"id\": \"<string>\",\n      \"propertyValues\": {\n        \"velitf1\": \"<string>\"\n      }\n    },\n    {\n      \"category\": \"<string>\",\n      \"displayName\": \"<string>\",\n      \"id\": \"<string>\",\n      \"propertyValues\": {\n        \"enim_1\": \"<string>\",\n        \"et__d8\": \"<string>\",\n        \"ind7_\": \"<string>\",\n        \"adipisicing_6\": \"<string>\"\n      }\n    }\n  ],\n  \"name\": \"<string>\",\n  \"propertyDefinitions\": [\n    {\n      \"category\": \"<string>\",\n      \"description\": \"<string>\",\n      \"displayName\": \"<string>\",\n      \"displayUnits\": \"<string>\",\n      \"name\": \"<string>\",\n      \"type\": \"<string>\",\n      \"units\": \"<string>\",\n      \"unitsChoices\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    {\n      \"category\": \"<string>\",\n      \"description\": \"<string>\",\n      \"displayName\": \"<string>\",\n      \"displayUnits\": \"<string>\",\n      \"name\": \"<string>\",\n      \"type\": \"<string>\",\n      \"units\": \"<string>\",\n      \"unitsChoices\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    }\n  ],\n  \"versioned\": \"<boolean>\"\n}",
+                                          "createdAt": "2026-10-22T02:11:35.000Z",
+                                          "updatedAt": "2026-10-22T02:11:35.000Z",
+                                          "uid": "35240-7a9e2f2e-b06e-47ff-9476-db65bbf2fe22"
+                                        }
+                                      ],
+                                      "createdAt": "2026-10-22T02:11:35.000Z",
+                                      "updatedAt": "2026-10-22T02:11:35.000Z",
+                                      "uid": "35240-a4c3ddc7-52be-48a5-9592-230eed853a6c"
+                                    }
+                                  ],
+                                  "id": "2f5ab8a2-0972-44bc-b179-b2afb1422ac8",
+                                  "createdAt": "2026-10-22T02:11:35.000Z",
+                                  "updatedAt": "2026-10-22T02:11:35.000Z",
+                                  "uid": "35240-2f5ab8a2-0972-44bc-b179-b2afb1422ac8"
+                                }
+                              ],
+                              "id": "2266c461-7f8c-43e7-b3e3-d8f8b27aff4d",
+                              "createdAt": "2026-10-22T02:11:35.000Z",
+                              "updatedAt": "2026-10-22T02:11:35.000Z",
+                              "uid": "35240-2266c461-7f8c-43e7-b3e3-d8f8b27aff4d"
+                            }
+                          ],
+                          "id": "d7c8be1d-8907-46fb-ab1c-75e1d9328b9c",
+                          "createdAt": "2026-10-22T02:11:35.000Z",
+                          "updatedAt": "2026-10-22T02:11:35.000Z",
+                          "uid": "35240-d7c8be1d-8907-46fb-ab1c-75e1d9328b9c"
+                        }
+                      ],
+                      "id": "2c560846-f7f9-48da-a8c3-543e866ee357",
+                      "createdAt": "2026-10-22T02:11:35.000Z",
+                      "updatedAt": "2026-10-22T02:11:35.000Z",
+                      "uid": "35240-2c560846-f7f9-48da-a8c3-543e866ee357"
+                    }
+                  ],
+                  "id": "9005caf8-545e-4610-90aa-ff8a57c68371",
+                  "createdAt": "2026-10-22T02:11:35.000Z",
+                  "updatedAt": "2026-10-22T02:11:35.000Z",
+                  "uid": "35240-9005caf8-545e-4610-90aa-ff8a57c68371"
                 }
               ],
-              "body": "{}",
-              "cookie": [],
-              "_postman_previewlanguage": "json"
+              "id": "cb0700a9-c3a5-4a2b-a6ad-d524bc064f96",
+              "createdAt": "2026-10-22T02:11:35.000Z",
+              "updatedAt": "2026-10-22T02:11:35.000Z",
+              "uid": "35240-cb0700a9-c3a5-4a2b-a6ad-d524bc064f96"
             }
           ],
-          "event": [],
-          "protocolProfileBehavior": {
-            "disableBodyPruning": true
-          }
-        },
-        {
-          "id": "42bba563-64e8-4f38-a3fc-67d3e4570fc1",
-          "name": "Get a list of materials from a material library.",
-          "request": {
-            "name": "Get a list of materials from a material library.",
-            "description": {
-              "content": "Get a JSON representation of the material library.",
-              "type": "text/plain"
-            },
-            "url": {
-              "path": [
-                "materials",
-                "libraries",
-                "d",
-                ":did",
-                ":wvm",
-                ":wvmid",
-                "e",
-                ":eid"
-              ],
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "query": [],
-              "variable": [
-                {
-                  "disabled": false,
-                  "type": "any",
-                  "value": "<string>",
-                  "key": "did",
-                  "description": "(Required) Document ID."
-                },
-                {
-                  "disabled": false,
-                  "type": "any",
-                  "value": "<string>",
-                  "key": "wvm",
-                  "description": "(Required) One of w or v or m corresponding to whether a workspace or version or microversion was entered."
-                },
-                {
-                  "disabled": false,
-                  "type": "any",
-                  "value": "<string>",
-                  "key": "wvmid",
-                  "description": "(Required) Workspace (w), Version (v) or Microversion (m) ID."
-                },
-                {
-                  "disabled": false,
-                  "type": "any",
-                  "value": "<string>",
-                  "key": "eid",
-                  "description": "(Required) Element ID."
-                }
-              ]
-            },
-            "header": [
-              {
-                "key": "Accept",
-                "value": "application/json;charset=UTF-8; qs=0.09"
-              }
-            ],
-            "method": "GET",
-            "auth": {
-              "type": "oauth2",
-              "oauth2": [
-                {
-                  "key": "scope",
-                  "value": "OAuth2Internal OAuth2ReadPII OAuth2Read OAuth2Write OAuth2Delete OAuth2Purchase OAuth2Share document.create document.edit document.delete document.read enterprise.create enterprise.read enterprise.edit enterprise.delete enterprise.member.create enterprise.member.read enterprise.member.edit enterprise.member.delete webhook.create webhook.edit webhook.read webhook.delete PLMIntegration"
-                },
-                {
-                  "key": "redirect_uri",
-                  "value": "/oauth/token"
-                },
-                {
-                  "key": "accessTokenUrl",
-                  "value": "/oauth/token"
-                },
-                {
-                  "key": "authUrl",
-                  "value": "/oauth/authorize"
-                },
-                {
-                  "key": "grant_type",
-                  "value": "authorization_code"
-                }
-              ]
-            }
-          },
-          "response": [
-            {
-              "id": "a21dd12b-ed89-4dcf-981c-463dc5ff0841",
-              "name": "Success!",
-              "originalRequest": {
-                "url": {
-                  "path": [
-                    "materials",
-                    "libraries",
-                    "d",
-                    ":did",
-                    ":wvm",
-                    ":wvmid",
-                    "e",
-                    ":eid"
-                  ],
-                  "host": [
-                    "{{baseUrl}}"
-                  ],
-                  "query": [],
-                  "variable": [
-                    {
-                      "disabled": false,
-                      "type": "any",
-                      "value": "<string>",
-                      "key": "did",
-                      "description": "(Required) Document ID."
-                    },
-                    {
-                      "disabled": false,
-                      "type": "any",
-                      "value": "<string>",
-                      "key": "wvm",
-                      "description": "(Required) One of w or v or m corresponding to whether a workspace or version or microversion was entered."
-                    },
-                    {
-                      "disabled": false,
-                      "type": "any",
-                      "value": "<string>",
-                      "key": "wvmid",
-                      "description": "(Required) Workspace (w), Version (v) or Microversion (m) ID."
-                    },
-                    {
-                      "disabled": false,
-                      "type": "any",
-                      "value": "<string>",
-                      "key": "eid",
-                      "description": "(Required) Element ID."
-                    }
-                  ]
-                },
-                "header": [
-                  {
-                    "description": {
-                      "content": "Added as a part of security scheme: oauth2",
-                      "type": "text/plain"
-                    },
-                    "key": "Authorization",
-                    "value": "<token>"
-                  },
-                  {
-                    "key": "Accept",
-                    "value": "application/json;charset=UTF-8; qs=0.09"
-                  }
-                ],
-                "method": "GET",
-                "body": {}
-              },
-              "status": "OK",
-              "code": 200,
-              "header": [
-                {
-                  "key": "Content-Type",
-                  "value": "application/json;charset=UTF-8; qs=0.09"
-                }
-              ],
-              "body": "{\n  \"description\": \"string\",\n  \"displayName\": \"string\",\n  \"externalElementReference\": {\n    \"documentId\": \"string\",\n    \"elementId\": \"string\",\n    \"elementMicroversionId\": \"string\",\n    \"versionId\": \"string\"\n  },\n  \"materials\": [\n    {\n      \"category\": \"string\",\n      \"displayName\": \"string\",\n      \"id\": \"string\",\n      \"propertyValues\": {\n        \"key_0\": \"string\",\n        \"key_1\": \"string\"\n      }\n    },\n    {\n      \"category\": \"string\",\n      \"displayName\": \"string\",\n      \"id\": \"string\",\n      \"propertyValues\": {\n        \"key_0\": \"string\",\n        \"key_1\": \"string\",\n        \"key_2\": \"string\"\n      }\n    }\n  ],\n  \"name\": \"string\",\n  \"propertyDefinitions\": [\n    {\n      \"category\": \"string\",\n      \"description\": \"string\",\n      \"displayName\": \"string\",\n      \"displayUnits\": \"string\",\n      \"name\": \"string\",\n      \"type\": \"string\",\n      \"units\": \"string\",\n      \"unitsChoices\": [\n        \"string\"\n      ]\n    },\n    {\n      \"category\": \"string\",\n      \"description\": \"string\",\n      \"displayName\": \"string\",\n      \"displayUnits\": \"string\",\n      \"name\": \"string\",\n      \"type\": \"string\",\n      \"units\": \"string\",\n      \"unitsChoices\": [\n        \"string\"\n      ]\n    }\n  ],\n  \"versioned\": true\n}",
-              "cookie": [],
-              "_postman_previewlanguage": "json"
-            }
-          ],
-          "event": [],
-          "protocolProfileBehavior": {
-            "disableBodyPruning": true
-          }
+          "id": "b9914040-1ad9-4baa-b8a3-1790884b05e3",
+          "createdAt": "2026-10-22T02:11:35.000Z",
+          "updatedAt": "2026-10-22T02:11:35.000Z",
+          "uid": "35240-b9914040-1ad9-4baa-b8a3-1790884b05e3"
         }
       ],
-      "event": []
-    }
-  ],
-  "event": [],
-  "variable": [
-    {
-      "type": "string",
-      "value": "https://cad.onshape.com/api/v16",
-      "key": "baseUrl"
+      "id": "fc3ba262-b16a-41cd-b52b-72b05f59729a",
+      "createdAt": "2026-10-22T02:11:35.000Z",
+      "updatedAt": "2026-10-22T02:11:35.000Z",
+      "uid": "35240-fc3ba262-b16a-41cd-b52b-72b05f59729a"
     }
   ],
   "auth": {
@@ -388,21 +469,20 @@
     "basic": [
       {
         "key": "username",
-        "value": "{{basicAuthUsername}}"
+        "value": "{{basicAuthUsername}}",
+        "type": "string"
       },
       {
         "key": "password",
-        "value": "{{basicAuthPassword}}"
+        "value": "{{basicAuthPassword}}",
+        "type": "string"
       }
     ]
   },
-  "info": {
-    "_postman_id": "9d021ce3-ad36-4a78-a0ba-12bea7ed0cb8",
-    "name": "Onshape REST Account Material API",
-    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-    "description": {
-      "content": "## Welcome to the Onshape REST API Explorer\n\n**See the [API Explorer Guide](https://onshape-public.github.io/docs/api-intro/explorer/) for help navigating this page.**\n\n### Using this page\n1. Sign in to your [Onshape](https://cad.onshape.com) account in another tab.\n2. Click the `Try it out` button below. It toggles to a `Cancel` button when selected.\n\n### Authenticating\nTo authenticate your calls, click the `Authorize` button. See [API Explorer Guide: Authentication](https://onshape-public.github.io/docs/api-intro/explorer/#authentication) for details. Calls made when authenticated via API Keys or OAuth count against your annual [API limits](https://onshape-public.github.io/docs/auth/limits/#annual-api-call-limits).\n* **Tip:** To ensure the current session isn't used when trying other authentication techniques, make sure to [remove the Onshape cookie](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site) as per the instructions for your browser, or use a private or incognito window.\n\n### Additional resources\n\n* [Onshape API Guide](https://onshape-public.github.io/docs/): Our full suite of developer guides, to be used as an accompaniment to this API Explorer.\n* [Onshape Developer Portal](https://cad.onshape.com/appstore/dev-portal): The Onshape portal for managing your API keys, OAuth2 credentials, your Onshape applications, and your Onshape App Store entries.\n* [Authentication Guide](https://onshape-public.github.io/docs/auth/): Our guide to using API keys, request signatures, and OAuth2 in your Onshape applications.\n\nContact Support:\n Email: api-support@onshape.zendesk.com",
-      "type": "text/plain"
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://cad.onshape.com/api/v16"
     }
-  }
+  ]
 }

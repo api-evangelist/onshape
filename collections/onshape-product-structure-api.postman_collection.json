@@ -1,0 +1,272 @@
+{
+  "info": {
+    "_postman_id": "b1ac2162-0646-4db8-b902-a055d621d90e",
+    "name": "Onshape REST Product Structure API",
+    "description": "## Welcome to the Onshape REST API Explorer\n\n**See the API Explorer Guide for help navigating this page.**\n\n### Using this page\n1.\n\nContact Support:\n Email: api-support@onshape.zendesk.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-10-22T02:14:04.000Z",
+    "updatedAt": "2026-10-22T02:14:04.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-b1ac2162-0646-4db8-b902-a055d621d90e"
+  },
+  "item": [
+    {
+      "name": "productstructure",
+      "item": [
+        {
+          "name": "whereused",
+          "item": [
+            {
+              "name": "Find where a part or assembly is used",
+              "id": "203a23a0-25df-47be-abcd-a739eba08f69",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "auth": {
+                  "type": "oauth2",
+                  "oauth2": [
+                    {
+                      "key": "scope",
+                      "value": "OAuth2Internal OAuth2ReadPII OAuth2Read OAuth2Write OAuth2Delete OAuth2Purchase OAuth2Share document.create document.edit document.delete document.read enterprise.create enterprise.read enterprise.edit enterprise.delete enterprise.member.create enterprise.member.read enterprise.member.edit enterprise.member.delete webhook.create webhook.edit webhook.read webhook.delete PLMIntegration",
+                      "type": "string"
+                    },
+                    {
+                      "key": "redirect_uri",
+                      "value": "/oauth/token",
+                      "type": "string"
+                    },
+                    {
+                      "key": "accessTokenUrl",
+                      "value": "/oauth/token",
+                      "type": "string"
+                    },
+                    {
+                      "key": "authUrl",
+                      "value": "/oauth/authorize",
+                      "type": "string"
+                    },
+                    {
+                      "key": "grant_type",
+                      "value": "authorization_code",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json;charset=UTF-8; qs=0.09"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/productstructure/whereused?documentId=<string>&elementId=<string>&versionId=<string>&configuration=<string>&partId=<string>&partNumber=<string>&includeProperties=false&filter=<integer>&includeVersionInfo=<boolean>&useLatestVersion=false&limitToTypes=",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "productstructure",
+                    "whereused"
+                  ],
+                  "query": [
+                    {
+                      "description": "Document that contains the part or assembly.",
+                      "key": "documentId",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Element that contains the part or assembly.",
+                      "key": "elementId",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Version that contains the part or assembly. One of `versionId` and `useLatestVersion` is required.",
+                      "key": "versionId",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "URL-encoded string of configuration values (separated by `;`). See the [Configurations API Guide](https://onshape-public.github.io/docs/api-adv/configs/) for details.",
+                      "key": "configuration",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Part to find. When `elementId` is a Part Studio, `partId` or `partNumber` is required. Call [getPartsWMVE](https://cad.onshape.com/glassworks/explorer/#/Part/getPartsWMVE) to get a list of parts in the Part Studio.",
+                      "key": "partId",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Part to find. When `elementId` is a Part Studio, `partId` or `partNumber` is required. Call [getPartsWMVE](https://cad.onshape.com/glassworks/explorer/#/Part/getPartsWMVE) to get a list of parts in the Part Studio.",
+                      "key": "partNumber",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "If true, include metadata properties for each result item.",
+                      "key": "includeProperties",
+                      "value": "false"
+                    },
+                    {
+                      "description": "Filter results by one of the following:  `0: LATEST_REVISION, 1: ALL_REVISIONS, 2: ALL_VERSIONS (default), 3: ALL, 5: LATEST_VERSIONS, 6: MOST_RECENT_REVISION`.",
+                      "key": "filter",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "If `true`, include the list of document versions in which the queried item has been referenced by other documents. Each entry contains the version ID and name.",
+                      "key": "includeVersionInfo",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "description": "If `true`, automatically resolves to the most recent referenced document version for the queried item. One of `versionId` and `useLatestVersion` is required.",
+                      "key": "useLatestVersion",
+                      "value": "false"
+                    },
+                    {
+                      "description": "Comma-separated list of element types to limit results to. Valid values: `0: PARTSTUDIO, 1: ASSEMBLY, 2: DRAWING`.",
+                      "key": "limitToTypes",
+                      "value": ""
+                    }
+                  ]
+                },
+                "description": "Only supported for Enterprise and Professional plans. See Dev Docs: Where Used for a tutorial on using this endpoint."
+              },
+              "response": [
+                {
+                  "id": "df1acc86-0ce0-4189-8a51-3c8eec726796",
+                  "name": "Success!",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json;charset=UTF-8; qs=0.09"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: oauth2",
+                        "key": "Authorization",
+                        "value": "<token>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/productstructure/whereused?documentId=<string>&elementId=<string>&versionId=<string>&configuration=<string>&partId=<string>&partNumber=<string>&includeProperties=false&filter=<integer>&includeVersionInfo=<boolean>&useLatestVersion=false&limitToTypes=",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "productstructure",
+                        "whereused"
+                      ],
+                      "query": [
+                        {
+                          "description": "Document that contains the part or assembly.",
+                          "key": "documentId",
+                          "value": "<string>"
+                        },
+                        {
+                          "description": "Element that contains the part or assembly.",
+                          "key": "elementId",
+                          "value": "<string>"
+                        },
+                        {
+                          "description": "Version that contains the part or assembly. One of `versionId` and `useLatestVersion` is required.",
+                          "key": "versionId",
+                          "value": "<string>"
+                        },
+                        {
+                          "description": "URL-encoded string of configuration values (separated by `;`). See the [Configurations API Guide](https://onshape-public.github.io/docs/api-adv/configs/) for details.",
+                          "key": "configuration",
+                          "value": "<string>"
+                        },
+                        {
+                          "description": "Part to find. When `elementId` is a Part Studio, `partId` or `partNumber` is required. Call [getPartsWMVE](https://cad.onshape.com/glassworks/explorer/#/Part/getPartsWMVE) to get a list of parts in the Part Studio.",
+                          "key": "partId",
+                          "value": "<string>"
+                        },
+                        {
+                          "description": "Part to find. When `elementId` is a Part Studio, `partId` or `partNumber` is required. Call [getPartsWMVE](https://cad.onshape.com/glassworks/explorer/#/Part/getPartsWMVE) to get a list of parts in the Part Studio.",
+                          "key": "partNumber",
+                          "value": "<string>"
+                        },
+                        {
+                          "description": "If true, include metadata properties for each result item.",
+                          "key": "includeProperties",
+                          "value": "false"
+                        },
+                        {
+                          "description": "Filter results by one of the following:  `0: LATEST_REVISION, 1: ALL_REVISIONS, 2: ALL_VERSIONS (default), 3: ALL, 5: LATEST_VERSIONS, 6: MOST_RECENT_REVISION`.",
+                          "key": "filter",
+                          "value": "<integer>"
+                        },
+                        {
+                          "description": "If `true`, include the list of document versions in which the queried item has been referenced by other documents. Each entry contains the version ID and name.",
+                          "key": "includeVersionInfo",
+                          "value": "<boolean>"
+                        },
+                        {
+                          "description": "If `true`, automatically resolves to the most recent referenced document version for the queried item. One of `versionId` and `useLatestVersion` is required.",
+                          "key": "useLatestVersion",
+                          "value": "false"
+                        },
+                        {
+                          "description": "Comma-separated list of element types to limit results to. Valid values: `0: PARTSTUDIO, 1: ASSEMBLY, 2: DRAWING`.",
+                          "key": "limitToTypes",
+                          "value": ""
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json;charset=UTF-8; qs=0.09"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"defaultConfig\": [\n    {\n      \"displayValue\": \"<string>\",\n      \"displayValueAbbrUnit\": \"<string>\",\n      \"id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"type\": \"<integer>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"displayValue\": \"<string>\",\n      \"displayValueAbbrUnit\": \"<string>\",\n      \"id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"type\": \"<integer>\",\n      \"value\": \"<string>\"\n    }\n  ],\n  \"href\": \"<uri>\",\n  \"items\": [\n    {\n      \"jsonType\": \"velit\",\n      \"href\": \"<uri>\",\n      \"id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"viewRef\": \"<uri>\",\n      \"configuration\": [\n        {\n          \"displayValue\": \"<string>\",\n          \"displayValueAbbrUnit\": \"<string>\",\n          \"id\": \"<string>\",\n          \"name\": \"<string>\",\n          \"type\": \"<integer>\",\n          \"value\": \"<string>\"\n        },\n        {\n          \"displayValue\": \"<string>\",\n          \"displayValueAbbrUnit\": \"<string>\",\n          \"id\": \"<string>\",\n          \"name\": \"<string>\",\n          \"type\": \"<integer>\",\n          \"value\": \"<string>\"\n        }\n      ],\n      \"documentId\": \"<string>\",\n      \"documentName\": \"<string>\",\n      \"documentState\": \"<integer>\",\n      \"elementId\": \"<string>\",\n      \"elementType\": \"<integer>\",\n      \"flattenedBody\": \"<boolean>\",\n      \"folderId\": \"<string>\",\n      \"hasDrawing\": \"<boolean>\",\n      \"latestRevision\": \"<boolean>\",\n      \"notRevisionManaged\": \"<boolean>\",\n      \"partNumber\": \"<string>\",\n      \"projectId\": \"<string>\",\n      \"properties\": [\n        {\n          \"jsonType\": \"<string>\",\n          \"propertyId\": \"<string>\",\n          \"value\": \"<string>\"\n        },\n        {\n          \"jsonType\": \"<string>\",\n          \"propertyId\": \"<string>\",\n          \"value\": \"<string>\"\n        }\n      ],\n      \"resourceType\": \"<string>\",\n      \"revision\": \"<string>\",\n      \"revisionObsolete\": \"<boolean>\",\n      \"standardProperties\": [\n        {\n          \"id\": \"<string>\",\n          \"name\": \"<string>\",\n          \"type\": \"<string>\",\n          \"value\": \"<string>\"\n        },\n        {\n          \"id\": \"<string>\",\n          \"name\": \"<string>\",\n          \"type\": \"<string>\",\n          \"value\": \"<string>\"\n        }\n      ],\n      \"thumbnail\": {\n        \"href\": \"<uri>\",\n        \"id\": \"<string>\",\n        \"secondarySizes\": [\n          [\n            {\n              \"href\": \"<uri>\",\n              \"mediaType\": \"<string>\",\n              \"renderMode\": \"<string>\",\n              \"sheetName\": \"<string>\",\n              \"size\": \"<string>\",\n              \"uniqueId\": \"<string>\",\n              \"viewOrientation\": \"<string>\"\n            },\n            {\n              \"href\": \"<uri>\",\n              \"mediaType\": \"<string>\",\n              \"renderMode\": \"<string>\",\n              \"sheetName\": \"<string>\",\n              \"size\": \"<string>\",\n              \"uniqueId\": \"<string>\",\n              \"viewOrientation\": \"<string>\"\n            }\n          ],\n          [\n            {\n              \"href\": \"<uri>\",\n              \"mediaType\": \"<string>\",\n              \"renderMode\": \"<string>\",\n              \"sheetName\": \"<string>\",\n              \"size\": \"<string>\",\n              \"uniqueId\": \"<string>\",\n              \"viewOrientation\": \"<string>\"\n            },\n            {\n              \"href\": \"<uri>\",\n              \"mediaType\": \"<string>\",\n              \"renderMode\": \"<string>\",\n              \"sheetName\": \"<string>\",\n              \"size\": \"<string>\",\n              \"uniqueId\": \"<string>\",\n              \"viewOrientation\": \"<string>\"\n            }\n          ]\n        ],\n        \"sizes\": [\n          {\n            \"href\": \"<uri>\",\n            \"mediaType\": \"<string>\",\n            \"renderMode\": \"<string>\",\n            \"sheetName\": \"<string>\",\n            \"size\": \"<string>\",\n            \"uniqueId\": \"<string>\",\n            \"viewOrientation\": \"<string>\"\n          },\n          {\n            \"href\": \"<uri>\",\n            \"mediaType\": \"<string>\",\n            \"renderMode\": \"<string>\",\n            \"sheetName\": \"<string>\",\n            \"size\": \"<string>\",\n            \"uniqueId\": \"<string>\",\n            \"viewOrientation\": \"<string>\"\n          }\n        ]\n      },\n      \"thumbnailHref\": \"<uri>\",\n      \"versionId\": \"<string>\",\n      \"versionName\": \"<string>\",\n      \"wvCreatedAt\": \"<dateTime>\"\n    },\n    {\n      \"jsonType\": \"labore eiusmod\",\n      \"href\": \"<uri>\",\n      \"id\": \"<string>\",\n      \"name\": \"<string>\",\n      \"viewRef\": \"<uri>\",\n      \"configuration\": [\n        {\n          \"displayValue\": \"<string>\",\n          \"displayValueAbbrUnit\": \"<string>\",\n          \"id\": \"<string>\",\n          \"name\": \"<string>\",\n          \"type\": \"<integer>\",\n          \"value\": \"<string>\"\n        },\n        {\n          \"displayValue\": \"<string>\",\n          \"displayValueAbbrUnit\": \"<string>\",\n          \"id\": \"<string>\",\n          \"name\": \"<string>\",\n          \"type\": \"<integer>\",\n          \"value\": \"<string>\"\n        }\n      ],\n      \"documentId\": \"<string>\",\n      \"documentName\": \"<string>\",\n      \"documentState\": \"<integer>\",\n      \"elementId\": \"<string>\",\n      \"elementType\": \"<integer>\",\n      \"flattenedBody\": \"<boolean>\",\n      \"folderId\": \"<string>\",\n      \"hasDrawing\": \"<boolean>\",\n      \"latestRevision\": \"<boolean>\",\n      \"notRevisionManaged\": \"<boolean>\",\n      \"partNumber\": \"<string>\",\n      \"projectId\": \"<string>\",\n      \"properties\": [\n        {\n          \"jsonType\": \"<string>\",\n          \"propertyId\": \"<string>\",\n          \"value\": \"<string>\"\n        },\n        {\n          \"jsonType\": \"<string>\",\n          \"propertyId\": \"<string>\",\n          \"value\": \"<string>\"\n        }\n      ],\n      \"resourceType\": \"<string>\",\n      \"revision\": \"<string>\",\n      \"revisionObsolete\": \"<boolean>\",\n      \"standardProperties\": [\n        {\n          \"id\": \"<string>\",\n          \"name\": \"<string>\",\n          \"type\": \"<string>\",\n          \"value\": \"<string>\"\n        },\n        {\n          \"id\": \"<string>\",\n          \"name\": \"<string>\",\n          \"type\": \"<string>\",\n          \"value\": \"<string>\"\n        }\n      ],\n      \"thumbnail\": {\n        \"href\": \"<uri>\",\n        \"id\": \"<string>\",\n        \"secondarySizes\": [\n          [\n            {\n              \"href\": \"<uri>\",\n              \"mediaType\": \"<string>\",\n              \"renderMode\": \"<string>\",\n              \"sheetName\": \"<string>\",\n              \"size\": \"<string>\",\n              \"uniqueId\": \"<string>\",\n              \"viewOrientation\": \"<string>\"\n            },\n            {\n              \"href\": \"<uri>\",\n              \"mediaType\": \"<string>\",\n              \"renderMode\": \"<string>\",\n              \"sheetName\": \"<string>\",\n              \"size\": \"<string>\",\n              \"uniqueId\": \"<string>\",\n              \"viewOrientation\": \"<string>\"\n            }\n          ],\n          [\n            {\n              \"href\": \"<uri>\",\n              \"mediaType\": \"<string>\",\n              \"renderMode\": \"<string>\",\n              \"sheetName\": \"<string>\",\n              \"size\": \"<string>\",\n              \"uniqueId\": \"<string>\",\n              \"viewOrientation\": \"<string>\"\n            },\n            {\n              \"href\": \"<uri>\",\n              \"mediaType\": \"<string>\",\n              \"renderMode\": \"<string>\",\n              \"sheetName\": \"<string>\",\n              \"size\": \"<string>\",\n              \"uniqueId\": \"<string>\",\n              \"viewOrientation\": \"<string>\"\n            }\n          ]\n        ],\n        \"sizes\": [\n          {\n            \"href\": \"<uri>\",\n            \"mediaType\": \"<string>\",\n            \"renderMode\": \"<string>\",\n            \"sheetName\": \"<string>\",\n            \"size\": \"<string>\",\n            \"uniqueId\": \"<string>\",\n            \"viewOrientation\": \"<string>\"\n          },\n          {\n            \"href\": \"<uri>\",\n            \"mediaType\": \"<string>\",\n            \"renderMode\": \"<string>\",\n            \"sheetName\": \"<string>\",\n            \"size\": \"<string>\",\n            \"uniqueId\": \"<string>\",\n            \"viewOrientation\": \"<string>\"\n          }\n        ]\n      },\n      \"thumbnailHref\": \"<uri>\",\n      \"versionId\": \"<string>\",\n      \"versionName\": \"<string>\",\n      \"wvCreatedAt\": \"<dateTime>\"\n    }\n  ],\n  \"next\": \"<uri>\",\n  \"previous\": \"<uri>\",\n  \"versions\": [\n    {\n      \"configuration\": [\n        {\n          \"displayValue\": \"<string>\",\n          \"displayValueAbbrUnit\": \"<string>\",\n          \"id\": \"<string>\",\n          \"name\": \"<string>\",\n          \"type\": \"<integer>\",\n          \"value\": \"<string>\"\n        },\n        {\n          \"displayValue\": \"<string>\",\n          \"displayValueAbbrUnit\": \"<string>\",\n          \"id\": \"<string>\",\n          \"name\": \"<string>\",\n          \"type\": \"<integer>\",\n          \"value\": \"<string>\"\n        }\n      ],\n      \"createdAt\": \"<dateTime>\",\n      \"document\": {\n        \"createdBy\": {\n          \"jsonType\": \"ut veniam non aliqua\",\n          \"href\": \"<uri>\",\n          \"id\": \"<string>\",\n          \"name\": \"<string>\",\n          \"viewRef\": \"<uri>\",\n          \"image\": \"<string>\",\n          \"isOnshapeSupport\": \"<boolean>\",\n          \"state\": \"<integer>\"\n        },\n        \"href\": \"<uri>\",\n        \"id\": \"<string>\",\n        \"modifiedBy\": {\n          \"jsonType\": \"et non c\",\n          \"href\": \"<uri>\",\n          \"id\": \"<string>\",\n          \"name\": \"<string>\",\n          \"viewRef\": \"<uri>\",\n          \"image\": \"<string>\",\n          \"isOnshapeSupport\": \"<boolean>\",\n          \"state\": \"<integer>\"\n        },\n        \"name\": \"<string>\",\n        \"state\": \"<integer>\",\n        \"storageSize\": \"<long>\",\n        \"viewRef\": \"<uri>\"\n      },\n      \"elementId\": \"<string>\",\n      \"elementType\": \"<integer>\",\n      \"partId\": \"<string>\",\n      \"partName\": \"<string>\",\n      \"partNumber\": \"<string>\",\n      \"revision\": \"<string>\",\n      \"revisionObsolete\": \"<boolean>\",\n      \"version\": {\n        \"href\": \"<uri>\",\n        \"id\": \"<string>\",\n        \"name\": \"<string>\",\n        \"viewRef\": \"<uri>\"\n      }\n    },\n    {\n      \"configuration\": [\n        {\n          \"displayValue\": \"<string>\",\n          \"displayValueAbbrUnit\": \"<string>\",\n          \"id\": \"<string>\",\n          \"name\": \"<string>\",\n          \"type\": \"<integer>\",\n          \"value\": \"<string>\"\n        },\n        {\n          \"displayValue\": \"<string>\",\n          \"displayValueAbbrUnit\": \"<string>\",\n          \"id\": \"<string>\",\n          \"name\": \"<string>\",\n          \"type\": \"<integer>\",\n          \"value\": \"<string>\"\n        }\n      ],\n      \"createdAt\": \"<dateTime>\",\n      \"document\": {\n        \"createdBy\": {\n          \"jsonType\": \"ni\",\n          \"href\": \"<uri>\",\n          \"id\": \"<string>\",\n          \"name\": \"<string>\",\n          \"viewRef\": \"<uri>\",\n          \"image\": \"<string>\",\n          \"isOnshapeSupport\": \"<boolean>\",\n          \"state\": \"<integer>\"\n        },\n        \"href\": \"<uri>\",\n        \"id\": \"<string>\",\n        \"modifiedBy\": {\n          \"jsonType\": \"Ut\",\n          \"href\": \"<uri>\",\n          \"id\": \"<string>\",\n          \"name\": \"<string>\",\n          \"viewRef\": \"<uri>\",\n          \"image\": \"<string>\",\n          \"isOnshapeSupport\": \"<boolean>\",\n          \"state\": \"<integer>\"\n        },\n        \"name\": \"<string>\",\n        \"state\": \"<integer>\",\n        \"storageSize\": \"<long>\",\n        \"viewRef\": \"<uri>\"\n      },\n      \"elementId\": \"<string>\",\n      \"elementType\": \"<integer>\",\n      \"partId\": \"<string>\",\n      \"partName\": \"<string>\",\n      \"partNumber\": \"<string>\",\n      \"revision\": \"<string>\",\n      \"revisionObsolete\": \"<boolean>\",\n      \"version\": {\n        \"href\": \"<uri>\",\n        \"id\": \"<string>\",\n        \"name\": \"<string>\",\n        \"viewRef\": \"<uri>\"\n      }\n    }\n  ]\n}",
+                  "createdAt": "2026-10-22T02:14:04.000Z",
+                  "updatedAt": "2026-10-22T02:14:04.000Z",
+                  "uid": "35240-df1acc86-0ce0-4189-8a51-3c8eec726796"
+                }
+              ],
+              "createdAt": "2026-10-22T02:14:04.000Z",
+              "updatedAt": "2026-10-22T02:14:04.000Z",
+              "uid": "35240-203a23a0-25df-47be-abcd-a739eba08f69"
+            }
+          ],
+          "id": "e0439610-db35-40aa-a797-580e18cf3389",
+          "createdAt": "2026-10-22T02:14:04.000Z",
+          "updatedAt": "2026-10-22T02:14:04.000Z",
+          "uid": "35240-e0439610-db35-40aa-a797-580e18cf3389"
+        }
+      ],
+      "id": "b0da4c11-66eb-423f-84a2-19d6d922936e",
+      "createdAt": "2026-10-22T02:14:04.000Z",
+      "updatedAt": "2026-10-22T02:14:04.000Z",
+      "uid": "35240-b0da4c11-66eb-423f-84a2-19d6d922936e"
+    }
+  ],
+  "auth": {
+    "type": "basic",
+    "basic": [
+      {
+        "key": "username",
+        "value": "{{basicAuthUsername}}",
+        "type": "string"
+      },
+      {
+        "key": "password",
+        "value": "{{basicAuthPassword}}",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://cad.onshape.com/api/v16"
+    }
+  ]
+}
